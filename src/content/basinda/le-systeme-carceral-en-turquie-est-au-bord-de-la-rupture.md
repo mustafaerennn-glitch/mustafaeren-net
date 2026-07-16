@@ -6,7 +6,7 @@ topics:
   - toplu-hapsetme
 publishDate: '2016-08-06'
 mecra: rts
-featuredImage: ./_images/le-systeme-carceral-en-turquie-est-au-bord-de-la-rupture%ef%bb%bf-featured.webp
+featuredImage: ./_images/le-systeme-carceral-en-turquie-est-au-bord-de-la-rupture-featured.webp
 featuredImageAlt: ''
 ---
 

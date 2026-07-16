@@ -38,7 +38,9 @@
     "extraTopics": [
       "toplu-hapsetme"
     ],
-    "title": "Le système carcéral en Turquie est au bord de la rupture﻿"
+    "title": "Le système carcéral en Turquie est au bord de la rupture﻿",
+    "slugOverride": "le-systeme-carceral-en-turquie-est-au-bord-de-la-rupture",
+    "_not": "WordPress post_name'inde görünmez bir BOM karakteri (%ef%bb%bf) vardı, temizlendi (2026-07-16)."
   },
   "528": {
     "collection": "basinda",
