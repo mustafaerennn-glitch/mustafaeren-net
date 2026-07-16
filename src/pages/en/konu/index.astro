@@ -1,0 +1,101 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { ALAN_LABELS_I18N, ALAN_SLUGS } from '../../../lib/taxonomy';
+import { TOPIC_LABELS_I18N } from '../../../i18n/topics';
+import { routes } from '../../../i18n/routes';
+import { ui } from '../../../i18n/ui';
+
+const lang = 'en';
+if (Astro.currentLocale !== lang) {
+  throw new Error(`i18n locale eşleşmedi: beklenen "${lang}", Astro.currentLocale="${Astro.currentLocale}"`);
+}
+const t = ui[lang];
+
+const [topics, yazilar, basinda, videolar, kitaplar] = await Promise.all([
+  getCollection('topics'),
+  getCollection('yazilar', (e) => e.data.lang === lang),
+  getCollection('basinda', (e) => e.data.lang === lang),
+  getCollection('videolar', (e) => e.data.lang === lang),
+  getCollection('kitaplar', (e) => e.data.lang === lang),
+]);
+
+// Yalnızca bu dilde gerçek en az 1 içeriği olan konular listelenir — boş/ölü sayfa üretilmez.
+const topicIdsWithContent = new Set<string>();
+for (const e of [...yazilar, ...basinda, ...videolar, ...kitaplar]) {
+  for (const ref of e.data.topics) topicIdsWithContent.add(ref.id);
+}
+
+const groups = ALAN_SLUGS.map((alan) => ({
+  alan,
+  label: ALAN_LABELS_I18N[lang][alan],
+  topics: topics.filter((tp) => tp.data.alan === alan && topicIdsWithContent.has(tp.id)),
+})).filter((g) => g.topics.length > 0);
+---
+
+<BaseLayout
+  lang={lang}
+  title={t.navKonular}
+  description={t.konularAciklama}
+  canonical="/en/konu/"
+  current="konular"
+  breadcrumb={[{ label: t.anaSayfa, href: routes.anaSayfa.en }, { label: t.navKonular }]}
+>
+  <h1>{t.navKonular}</h1>
+  <p class="desc">{t.konularAciklama}</p>
+
+  {
+    groups.map((group) => (
+      <div class="group">
+        <div class="group-head">
+          <h2><a href={`/en/alanlar/${group.alan}/`}>{group.label}</a></h2>
+        </div>
+        <div class="topic-links">
+          {group.topics.map((tp) => (
+            <a class="topic-link" href={`/en/konu/${tp.id}/`}>{TOPIC_LABELS_I18N[lang][tp.id] ?? tp.data.ad}</a>
+          ))}
+        </div>
+      </div>
+    ))
+  }
+</BaseLayout>
+
+<style>
+  .desc {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    max-width: 520px;
+    margin: 1rem 0 1.75rem;
+  }
+  .group {
+    margin-bottom: 2rem;
+  }
+  .group-head h2 {
+    font-size: 16px;
+    margin-bottom: 0.75rem;
+  }
+  .group-head a {
+    color: var(--text-primary);
+    text-decoration: none;
+  }
+  .group-head a:hover {
+    color: var(--text-accent);
+  }
+  .topic-links {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .topic-link {
+    font-size: 13px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: var(--surface-1);
+    color: var(--text-secondary);
+    text-decoration: none;
+  }
+  .topic-link:hover {
+    color: var(--text-accent);
+  }
+</style>

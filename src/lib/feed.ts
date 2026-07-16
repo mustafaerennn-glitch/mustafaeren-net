@@ -13,7 +13,7 @@ export interface FeedItem {
 
 // Feed'deki tip rozetlerinin (Yazı/Basında/Video/Kitap) dile göre çevirisi — iç `type` alanı
 // (sıralama/mantık için) TR sabit kalıyor, yalnızca ekranda gösterilen `typeLabel` değişiyor.
-const TYPE_LABELS: Record<string, Record<FeedItem['type'], string>> = {
+export const TYPE_LABELS: Record<string, Record<FeedItem['type'], string>> = {
   tr: { Yazı: 'Yazı', Basında: 'Basında', Video: 'Video', Kitap: 'Kitap' },
   en: { Yazı: 'Article', Basında: 'Press', Video: 'Video', Kitap: 'Book' },
   de: { Yazı: 'Artikel', Basında: 'Presse', Video: 'Video', Kitap: 'Buch' },

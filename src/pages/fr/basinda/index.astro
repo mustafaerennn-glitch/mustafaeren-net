@@ -1,0 +1,72 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PressList from '../../../components/navigation/PressList.astro';
+import PressRow from '../../../components/navigation/PressRow.astro';
+import Pagination from '../../../components/navigation/Pagination.astro';
+import { contentUrl, routes } from '../../../i18n/routes';
+import { ui } from '../../../i18n/ui';
+
+const lang = 'fr';
+if (Astro.currentLocale !== lang) {
+  throw new Error(`i18n locale eşleşmedi: beklenen "${lang}", Astro.currentLocale="${Astro.currentLocale}"`);
+}
+const t = ui[lang];
+
+const entries = await getCollection('basinda', (e) => e.data.lang === lang);
+entries.sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime());
+
+const rows = await Promise.all(
+  entries.map(async (entry) => {
+    const mecra = await getEntry(entry.data.mecra);
+    return {
+      href: contentUrl('basinda', entry.data.lang, entry.id),
+      title: entry.data.title,
+      date: new Intl.DateTimeFormat(lang, { month: 'long', year: 'numeric' }).format(entry.data.publishDate),
+      // Not: /mecra/{id}/ arşiv sayfaları yalnızca TR içeriğe referans veren mecralar için
+      // üretiliyor — bu dilde link kırılmasın diye tıklanamaz düz metin olarak gösteriliyor.
+      secondary: { label: mecra.data.ad },
+    };
+  }),
+);
+
+const lastUpdate = entries.length
+  ? new Intl.DateTimeFormat(lang, { month: 'long', year: 'numeric' }).format(
+      entries.reduce((latest, e) => (e.data.publishDate > latest ? e.data.publishDate : latest), entries[0].data.publishDate),
+    )
+  : null;
+---
+
+<BaseLayout
+  lang={lang}
+  title={t.navBasinda}
+  description={t.basindaAciklama}
+  canonical="/fr/basinda/"
+  current="basinda"
+  breadcrumb={[{ label: t.anaSayfa, href: routes.anaSayfa.fr }, { label: t.navBasinda }]}
+>
+  <h1>{t.navBasinda}</h1>
+  <p class="desc">{t.basindaAciklama}</p>
+  {lastUpdate && <p class="meta-line">{rows.length} {rows.length === 1 ? t.icerikSayisiTekil : t.icerikSayisiCogul} · {t.sonGuncelleme} {lastUpdate}</p>}
+
+  <PressList>
+    {rows.map((row) => <PressRow href={row.href} title={row.title} date={row.date} secondary={row.secondary} />)}
+  </PressList>
+
+  <Pagination currentPage={1} totalPages={1} basePath="/fr/basinda/" />
+</BaseLayout>
+
+<style>
+  .desc {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    max-width: 520px;
+    margin: 1rem 0 0.75rem;
+  }
+  .meta-line {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 1.75rem;
+  }
+</style>

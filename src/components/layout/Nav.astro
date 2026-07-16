@@ -1,13 +1,14 @@
 ---
 import { ui, type Locale } from '../../i18n/ui';
 import { routes, LANG_NAMES } from '../../i18n/routes';
+import { ALAN_LABELS, ALAN_LABELS_I18N, ALAN_SLUGS } from '../../lib/taxonomy';
+import { getContentAvailability } from '../../lib/availability';
 import LangCluster from '../metadata/LangCluster.astro';
 
-// Not: Yazılar/Videolar/Kitaplar/Basında/Konular/İletişim'in şu an yalnızca Türkçe sürümü var
-// (çeviri içerik üretimi Faz 4-5'e ait) — bu yüzden bu öğeler her dilde TR URL'sine gider.
-// Yalnızca Hakkımda, i18n spike'ında doğrulanan 4 dilli routes.ts kaydını kullanıyor.
-// Bu, "kısmi çok dillilik" modeliyle tutarlı: sahte/boş çeviri sayfası üretmek yerine dürüstçe
-// mevcut olan tek sürüme yönlendiriyoruz.
+// İlke (kullanıcı onaylı): kullanıcı hangi dili seçtiyse, yalnızca o dilde mevcut içerik
+// gösterilir — başka dile fallback YOK. Bir koleksiyonda (Yazılar/Basında/Videolar/Kitaplar)
+// o dilde hiç gerçek girdi yoksa, o menü öğesi bu dilde hiç gösterilmez (bkz. lib/availability.ts).
+// İletişim'in henüz per-locale sayfası yok, o yüzden TR'ye gider (ayrı, bilinen bir eksik).
 
 interface Props {
   lang: Locale;
@@ -20,14 +21,10 @@ const { lang, current, alternates = [] } = Astro.props;
 const t = ui[lang];
 const showSwitcher = alternates.length > 1;
 const otherLangs = alternates.filter((a) => a.lang !== lang);
+const availability = await getContentAvailability(lang);
 
-const ALANLAR = [
-  { slug: 'hapishane', label: 'Hapishane' },
-  { slug: 'siyasi-tarih', label: 'Siyasi Tarih' },
-  { slug: 'goc', label: 'Göç' },
-  { slug: 'emek', label: 'Emek' },
-  { slug: 'diger', label: 'Diğer' },
-] as const;
+const alanLabels = lang === 'tr' ? ALAN_LABELS : ALAN_LABELS_I18N[lang];
+const ALANLAR = ALAN_SLUGS.filter((slug) => slug !== 'diger').map((slug) => ({ slug, label: alanLabels[slug] }));
 
 const VIDEO_TURLERI = [
   { tur: 'söyleşi', label: 'Söyleşi' },
@@ -45,36 +42,48 @@ const KITAP_TURLERI = [
 const hakkimdaHref = routes.hakkimda[lang];
 // Ana sayfa artık 4 dilde de gerçek (bkz. src/pages/{en,de,fr}/index.astro).
 const brandHref = routes.anaSayfa[lang];
+
+const localePrefix = lang === 'tr' ? '' : `/${lang}`;
+const yazilarHref = `${localePrefix}/yazilar/`;
+const basindaHref = `${localePrefix}/basinda/`;
 ---
 
 <header class="site-header">
   <nav class:list={['topnav', { 'has-switcher': showSwitcher }]}>
     <a class="brand" href={brandHref}>Mustafa Eren</a>
     <div class="nav-items">
-      <a class:list={['nav-link', { current: current === 'yazilar' }]} href="/yazilar/">{t.navYazilar}</a>
+      {availability.yazilar && (
+        <a class:list={['nav-link', { current: current === 'yazilar' }]} href={yazilarHref}>{t.navYazilar}</a>
+      )}
 
-      <details class="dropdown">
-        <summary class:list={{ current: current === 'videolar' }}>{t.navVideolar}</summary>
-        <div class="menu">
-          <a href="/videolar/">Tümü</a>
-          {VIDEO_TURLERI.map((v) => <a href={`/videolar/?tur=${v.tur}`}>{v.label}</a>)}
-        </div>
-      </details>
+      {availability.videolar && (
+        <details class="dropdown">
+          <summary class:list={{ current: current === 'videolar' }}>{t.navVideolar}</summary>
+          <div class="menu">
+            <a href={`${localePrefix}/videolar/`}>{t.pillTumu}</a>
+            {VIDEO_TURLERI.map((v) => <a href={`${localePrefix}/videolar/?tur=${v.tur}`}>{v.label}</a>)}
+          </div>
+        </details>
+      )}
 
-      <details class="dropdown">
-        <summary class:list={{ current: current === 'kitaplar' }}>{t.navKitaplar}</summary>
-        <div class="menu">
-          <a href="/kitaplar/">Tümü</a>
-          {KITAP_TURLERI.map((k) => <a href={`/kitaplar/?tip=${k.tip}`}>{k.label}</a>)}
-        </div>
-      </details>
+      {availability.kitaplar && (
+        <details class="dropdown">
+          <summary class:list={{ current: current === 'kitaplar' }}>{t.navKitaplar}</summary>
+          <div class="menu">
+            <a href={`${localePrefix}/kitaplar/`}>{t.pillTumu}</a>
+            {KITAP_TURLERI.map((k) => <a href={`${localePrefix}/kitaplar/?tip=${k.tip}`}>{k.label}</a>)}
+          </div>
+        </details>
+      )}
 
-      <a class:list={['nav-link', { current: current === 'basinda' }]} href="/basinda/">{t.navBasinda}</a>
+      {availability.basinda && (
+        <a class:list={['nav-link', { current: current === 'basinda' }]} href={basindaHref}>{t.navBasinda}</a>
+      )}
 
       <details class="dropdown">
         <summary class:list={{ current: current === 'konular' }}>{t.navKonular}</summary>
         <div class="menu">
-          {ALANLAR.map((a) => <a href={`/alanlar/${a.slug}/`}>{a.label}</a>)}
+          {ALANLAR.map((a) => <a href={`${localePrefix}/alanlar/${a.slug}/`}>{a.label}</a>)}
         </div>
       </details>
 

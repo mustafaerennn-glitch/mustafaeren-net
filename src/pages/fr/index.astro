@@ -5,6 +5,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import BookCard from '../../components/cards/BookCard.astro';
 import { getAreaCounts, ALAN_LABELS, ALAN_LABELS_I18N } from '../../lib/taxonomy';
 import { getMergedFeed } from '../../lib/feed';
+import { getContentAvailability } from '../../lib/availability';
 import { routes, type Locale } from '../../i18n/routes';
 import { ui } from '../../i18n/ui';
 import profilFoto from '../../assets/profil-fotografi.jpg';
@@ -16,6 +17,13 @@ if (Astro.currentLocale !== lang) {
 
 const t = ui[lang];
 const alternates = (Object.entries(routes.anaSayfa) as [Locale, string][]).map(([l, href]) => ({ lang: l, href }));
+const availability = await getContentAvailability(lang);
+
+const primaryCta = availability.yazilar
+  ? { href: '/fr/yazilar/', label: t.anaSayfaCtaYazilar }
+  : availability.basinda
+    ? { href: '/fr/basinda/', label: t.navBasinda }
+    : null;
 
 const bio =
   "Sociologue et chercheur travaillant sur les politiques carcérales, la migration, les droits humains et l'histoire politique récente — écrivant et développant des archives numériques.";
@@ -63,7 +71,7 @@ const kitaplar = (await getCollection('kitaplar', (e) => e.data.lang === lang &&
       <h1>Mustafa Eren</h1>
       <p class="bio">{bio}</p>
       <div class="cta-row">
-        <a class="btn-primary" href="/yazilar/">{t.anaSayfaCtaYazilar}</a>
+        {primaryCta && <a class="btn-primary" href={primaryCta.href}>{primaryCta.label}</a>}
         <a class="btn-secondary" href={routes.hakkimda.fr}>{t.hakkimdaBaslik}</a>
       </div>
     </div>
@@ -86,12 +94,12 @@ const kitaplar = (await getCollection('kitaplar', (e) => e.data.lang === lang &&
   <section class="section">
     <div class="section-head">
       <h2>{t.arastirmaAlanlari}</h2>
-      <a class="section-link" href="/konu/">{t.tumunuGor}</a>
+      <a class="section-link" href="/fr/konu/">{t.tumunuGor}</a>
     </div>
     <div class="areas-grid">
       {
         areas.map((area) => (
-          <a class="area-card" href={`/alanlar/${area.slug}/`}>
+          <a class="area-card" href={`/fr/alanlar/${area.slug}/`}>
             <div class="area-icon" set:html={area.icon} />
             <p class="area-name">{area.label}</p>
             <p class="area-count">{area.count} {area.count === 1 ? t.icerikSayisiTekil : t.icerikSayisiCogul}</p>
@@ -104,7 +112,7 @@ const kitaplar = (await getCollection('kitaplar', (e) => e.data.lang === lang &&
   <section class="section">
     <div class="section-head">
       <h2>{t.sonEklenenler}</h2>
-      <a class="section-link" href="/yazilar/">{t.tumunuGor}</a>
+      {primaryCta && <a class="section-link" href={primaryCta.href}>{t.tumunuGor}</a>}
     </div>
     <div>
       {
@@ -127,7 +135,7 @@ const kitaplar = (await getCollection('kitaplar', (e) => e.data.lang === lang &&
       <section class="section" style="margin-bottom: 2rem;">
         <div class="section-head">
           <h2>{t.navKitaplar}</h2>
-          <a class="section-link" href="/kitaplar/">{t.tumunuGor}</a>
+          <a class="section-link" href="/fr/kitaplar/">{t.tumunuGor}</a>
         </div>
         <div class="books-grid">
           {kitaplar.map((k) => (
