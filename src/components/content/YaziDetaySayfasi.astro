@@ -39,9 +39,8 @@ const areas = areaSlugs.map((slug) => ({ slug, label: ALAN_LABELS[slug] }));
 
 const siteUrl = new URL(canonical, 'https://mustafaeren.net').toString();
 
-// TR'de gerçek bir ana sayfa var (/); diğer dillerde henüz yok — en yakın gerçek karşılık
-// Hakkımda'ya gider (Faz 2C'den kalma bilinçli karar, bkz. routes.ts).
-const homeHref = lang === 'tr' ? '/' : routes.hakkimda[lang];
+// Ana sayfa artık 4 dilde de gerçek (bkz. src/pages/{en,de,fr}/index.astro).
+const homeHref = routes.anaSayfa[lang];
 ---
 
 <BaseLayout
