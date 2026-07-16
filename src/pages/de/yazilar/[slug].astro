@@ -3,7 +3,7 @@ import { getCollection } from 'astro:content';
 import YaziDetaySayfasi from '../../../components/content/YaziDetaySayfasi.astro';
 
 export async function getStaticPaths() {
-  const entries = await getCollection('yazilar', (entry) => entry.data.lang === 'en');
+  const entries = await getCollection('yazilar', (entry) => entry.data.lang === 'de');
   return entries.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
 }
 

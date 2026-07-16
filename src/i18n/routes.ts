@@ -30,3 +30,24 @@ export const LANG_NAMES: Record<Locale, string> = {
   de: 'Deutsch',
   fr: 'Français',
 };
+
+// İçerik detay sayfalarının breadcrumb'ında kullanılan dil-bazlı etiketler (Yazılar/Basında
+// detay şablonları arasında paylaşılıyor — bkz. src/components/content/*DetaySayfasi.astro).
+export const BREADCRUMB_HOME_LABEL: Record<Locale, string> = {
+  tr: 'Ana sayfa',
+  en: 'Home',
+  de: 'Startseite',
+  fr: 'Accueil',
+};
+export const YAZILAR_LABEL: Record<Locale, string> = {
+  tr: 'Yazılar',
+  en: 'Articles',
+  de: 'Artikel',
+  fr: 'Articles',
+};
+export const BASINDA_LABEL: Record<Locale, string> = {
+  tr: 'Basında',
+  en: 'Press',
+  de: 'Presse',
+  fr: 'Presse',
+};

@@ -1,16 +1,6 @@
 ---
-import { getCollection, getEntry, render } from 'astro:content';
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import MecraRozeti from '../../components/metadata/MecraRozeti.astro';
-import MetaCluster from '../../components/metadata/MetaCluster.astro';
-import EditorNote from '../../components/metadata/EditorNote.astro';
-import TopicsRow from '../../components/metadata/TopicsRow.astro';
-import PreviewImage from '../../components/content/PreviewImage.astro';
-import ArticleBody from '../../components/content/ArticleBody.astro';
-import ShareRow from '../../components/content/ShareRow.astro';
-import { getTranslationCluster } from '../../i18n/translationLookup';
-import { contentUrl } from '../../i18n/routes';
-import { getAreasForTopicRefs, getTopicsMap, ALAN_LABELS } from '../../lib/taxonomy';
+import { getCollection } from 'astro:content';
+import YaziDetaySayfasi from '../../components/content/YaziDetaySayfasi.astro';
 
 export async function getStaticPaths() {
   const entries = await getCollection('yazilar', (entry) => entry.data.lang === 'tr');
@@ -18,64 +8,6 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props;
-if (Astro.currentLocale !== 'tr') {
-  throw new Error(`i18n locale eşleşmedi: beklenen "tr", Astro.currentLocale="${Astro.currentLocale}"`);
-}
-
-const { Content } = await render(entry);
-const cluster = await getTranslationCluster('yazilar', entry);
-const canonical = contentUrl('yazilar', entry.data.lang, entry.id);
-const alternates = cluster.map((c) => ({ lang: c.lang, href: contentUrl('yazilar', c.lang, c.slug) }));
-
-const mecra = entry.data.mecra ? await getEntry(entry.data.mecra) : undefined;
-
-const areaSlug = (await getAreasForTopicRefs(entry.data.topics))[0];
-const topicsMap = await getTopicsMap();
-const topics = entry.data.topics
-  .map((ref) => topicsMap.get(ref.id))
-  .filter((t): t is NonNullable<typeof t> => Boolean(t))
-  .map((t) => ({ slug: t.id, label: t.data.ad }));
-const areas = areaSlug ? [{ slug: areaSlug, label: ALAN_LABELS[areaSlug] }] : [];
-
-const siteUrl = new URL(canonical, 'https://mustafaeren.net').toString();
 ---
 
-<BaseLayout
-  lang={entry.data.lang}
-  title={entry.data.title}
-  description={entry.data.description}
-  canonical={canonical}
-  alternates={alternates}
-  current="yazilar"
-  breadcrumb={[{ label: 'Ana sayfa', href: '/' }, { label: 'Yazılar', href: '/yazilar/' }, { label: entry.data.title }]}
->
-  <MecraRozeti mecra={mecra ? { ad: mecra.data.ad, url: mecra.data.url } : undefined} />
-
-  <h1 class="title">{entry.data.title}</h1>
-
-  <MetaCluster
-    date={entry.data.publishDate}
-    lang={entry.data.lang}
-    langItems={cluster.map((c) => ({ lang: c.lang, href: contentUrl('yazilar', c.lang, c.slug) }))}
-    pdfHref={entry.data.pdf}
-  />
-
-  {entry.data.editorNote && <EditorNote>{entry.data.editorNote}</EditorNote>}
-
-  <PreviewImage image={entry.data.featuredImage} alt={entry.data.featuredImageAlt} />
-
-  <ArticleBody>
-    <Content />
-  </ArticleBody>
-
-  <ShareRow url={siteUrl} title={entry.data.title} />
-
-  <TopicsRow areas={areas} topics={topics} />
-</BaseLayout>
-
-<style>
-  .title {
-    font-size: 26px;
-    line-height: 1.35;
-  }
-</style>
+<YaziDetaySayfasi entry={entry} />
