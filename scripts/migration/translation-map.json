@@ -43,21 +43,17 @@
       "ceviriler": [
         { "postId": "4414", "lang": "en", "title": "To Be a Migrant, Refugee, Asylum Seeker, and Prisoner in EU Countries", "date": "2025-04-24" }
       ]
-    },
-    {
-      "guven": "orta",
-      "not": "Tarih 2013 vs 'I first wrote this article in 2014' — yaklaşık 1 yıl fark, yazarın hafızasından kaynaklanıyor olabilir. KULLANICI DOĞRULAMASI ÖNERİLİR.",
-      "tr": { "postId": "641", "title": "Hapishanelerin Engelli Mahpuslar İçin Kabus Olmasının Önüne Geçebilmek", "date": "2013-05-09" },
-      "ceviriler": [
-        { "postId": "4492", "lang": "en", "title": "Prisoners with Special Needs and Turkey's Prisons Built for Adult, Sunni, Healthy, Heterosexual Turkish Men", "date": "2025-05-11" }
-      ]
     }
   ],
   "eslenemeyenler": {
-    "_aciklama": "TR orijinali export'ta bulunamadı — bu parçalar TEK BAŞINA (translations alanı boş) Yazı olarak migre edilecek. Kullanıcı gerçek TR orijinalini biliyorsa eklenebilir.",
+    "_aciklama": "TR orijinali export'ta bulunamadı VEYA eşleştirme kullanıcı tarafından reddedildi — bu parçalar TEK BAŞINA (translations alanı boş) Yazı olarak migre edilecek. Kullanıcı gerçek TR orijinalini biliyorsa eklenebilir.",
     "4467": {
       "title": "Prisoners with Special Needs and Human Rights",
       "not": "'2013'te CİSST tarafından yayımlanan UNODC El Kitabı Türkçe çevirisine giriş notu olarak yazıldı' — muhtemelen ayrı bir WordPress yazısı olarak hiç yayımlanmamış, doğrudan kitap/rapor metni."
+    },
+    "4492": {
+      "title": "Prisoners with Special Needs and Turkey's Prisons Built for Adult, Sunni, Healthy, Heterosexual Turkish Men",
+      "not": "Aday TR eşleşmesi (post 641, 'Hapishanelerin Engelli Mahpuslar İçin Kabus Olmasının Önüne Geçebilmek', 2013-05-09) kullanıcı tarafından reddedildi — 1 yıllık tarih farkı yeterince güvenilir bulunmadı. Tek başına Yazı olarak kalıyor."
     },
     "4875": {
       "title": "Death Fasts: A Kind of Action within the Dilemma between the Sanctity of Life and the Right to Resist",
