@@ -42,7 +42,7 @@ Die Anzahl und die möglichen Kapazitäten der Hochsicherheitsgefängnisse – e
 
 Es handelt sich um nach dem sogenannten “Raumsystem” errichtete Gefängnisse, die aus Ein- und Drei-Personen-Zellen bestehen. In einer Standard-F-Typ-Strafvollzugsanstalt gibt es 103 Dreipersonenzellen und 59 Einzelzellen. Während die Einzelzellen einstöckig und 10 m2 groß sind, sind die Dreipersonenzellen zweistöckig.iii
 
-![Tekirdağ F-Typ-Hochsicherheits-Geschlossene Strafvollzugsanstalten Nr. 1 und 2](https://mustafaeren.net/wp-content/uploads/2025/08/image.png)
+![Tekirdağ F-Typ-Hochsicherheits-Geschlossene Strafvollzugsanstalten Nr. 1 und 2](./_images/neue-hochsicherheits-gefaengnisse-tuerkei-inline-1.webp)
 
 Tekirdağ F-Typ-Hochsicherheits-Geschlossene Strafvollzugsanstalten Nr. 1 und 2
 
@@ -77,7 +77,7 @@ Zum 30. September 2022 existieren lediglich zwei D-Typ-Gefängnisse:
 
 Wie im untenstehenden Bild zu sehen ist, gehören die D-Typ-Gefängnisse architektonisch zu den auffälligsten und eigenständigsten Bauformen innerhalb des türkischen Gefängnissystems.
 
-![D-Typ-Geschlossene Strafvollzugsanstalt Denizli](https://mustafaeren.net/wp-content/uploads/2025/08/image-1.png)
+![D-Typ-Geschlossene Strafvollzugsanstalt Denizli](./_images/neue-hochsicherheits-gefaengnisse-tuerkei-inline-2.webp)
 
 D-Typ-Geschlossene Strafvollzugsanstalt Denizli
 
@@ -87,7 +87,7 @@ Die H-Typ-Gefängnisse, auch als „Sondertyp“ bezeichnet, wurden in den 1970e
 
 Das Gefängnis besteht aus zwei Abteilungen und zwölf Blöcken und verfügt über „79 Doppelstockeinheiten für jeweils vier Personen sowie 26 Einzelzellen für Disziplinarmassnahmen“ (Webseite der H-Typ-Strafvollzugsanstalt Erzurum, 2022). Die Gesamtkapazität beträgt 316 Plätze.vi
 
-![H-Typ-Hochsicherheits-Geschlossene Strafvollzugsanstalt Erzurum](https://mustafaeren.net/wp-content/uploads/2025/08/image-2.png)
+![H-Typ-Hochsicherheits-Geschlossene Strafvollzugsanstalt Erzurum](./_images/neue-hochsicherheits-gefaengnisse-tuerkei-inline-3.webp)
 
 H-Typ-Hochsicherheits-Geschlossene Strafvollzugsanstalt Erzurum
 
@@ -107,7 +107,7 @@ Zum 1. September 2022 existierten sieben Y-Typ-Gefängnisse:
 
 Obwohl in den Medien unterschiedliche Angaben zur Kapazität dieser Gefängnisse zu finden sind, wird sowohl auf der Webseite des Strafvollzugskampüs Ereğli als auch im Tätigkeitsbericht des Justizministeriums für das Jahr 2021 eine Kapazität von 1.135 Plätzen angegeben.
 
-![Ereğli Y-Typ-Gefängnisse Nr. 1 und Nr. 2](https://mustafaeren.net/wp-content/uploads/2025/08/image-3.png)
+![Ereğli Y-Typ-Gefängnisse Nr. 1 und Nr. 2](./_images/neue-hochsicherheits-gefaengnisse-tuerkei-inline-4.webp)
 
 Ereğli Y-Typ-Gefängnisse Nr. 1 und Nr. 2
 
@@ -136,11 +136,11 @@ Sie verfügen über eine Kapazität von 487 Plätzen (Webseite NNC Haber, 2022; 
 
 Die Architektur dieser Gefängnisse erscheint von aussen betrachtet identisch mit jener der Y- Typ-Gefängnisse. Die beiden folgenden Fotos verdeutlichen dies anschaulich.
 
-![Strafvollzugskampüs Çorlu](https://mustafaeren.net/wp-content/uploads/2025/08/image-4.png)
+![Strafvollzugskampüs Çorlu](./_images/neue-hochsicherheits-gefaengnisse-tuerkei-inline-5.webp)
 
 Strafvollzugskampüs Çorlu
 
-![Strafvollzugskampüs Ereğli](https://mustafaeren.net/wp-content/uploads/2025/08/image-5.png)
+![Strafvollzugskampüs Ereğli](./_images/neue-hochsicherheits-gefaengnisse-tuerkei-inline-6.webp)
 
 Strafvollzugskampüs Ereğli
 
@@ -156,7 +156,7 @@ Diese bestehen aus Ein- und Drei-Personen-Zellen (Bişkin, 2021). Ihre Kapazitä
 
 Nach dem Gesetz müssen Inhaftierte, die zu einer verschärften lebenslangen Freiheitsstrafe verurteilt wurden, in Einzelhaft gehalten werden und dürfen – abgesehen von den im Gesetz ausdrücklich vorgesehenen Ausnahmefällen – nicht mit anderen Inhaftierten zusammenkommen. Eine genauere Betrachtung der Fotos dieser Gefängnisse zeigt, dass ein erheblicher Teil der Höfe in kleine Einheiten unterteilt ist. Dies bestätigt die Angaben, dass diese Gefängnisse speziell für Inhaftierte mit verschärfter lebenslanger Freiheitsstrafe errichtet wurden.
 
-![Bodrum S-Typ-Gefängnis](https://mustafaeren.net/wp-content/uploads/2025/08/image-6.png)
+![Bodrum S-Typ-Gefängnis](./_images/neue-hochsicherheits-gefaengnisse-tuerkei-inline-7.webp)
 
 Bodrum S-Typ-Gefängnis
 
@@ -173,7 +173,7 @@ Zum 1. September 2022 existierten sechs S-Typ-Gefängnisse:
 
 Die Gesamtzahl der Hochsicherheits-Gefängnisse beläuft sich auf 47, ihre mögliche Gesamtkapazität auf 26.742 Plätze. Vergleicht man dies mit der Situation bis zum Jahr 2020, als die drei neuen Typen von Hochsicherheits-Gefängnissen eröffnet wurden, so betrug die Kapazität lediglich 7.206 Plätze (Gesamtkapazität von 14 F-Typ-, 2 D-Typ- und dem H-Typ- Gefängnis Erzurum). Innerhalb von nur zwei Jahren ist also nahezu eine Verdreifachung zu verzeichnen.
 
-![](https://mustafaeren.net/wp-content/uploads/2025/10/Hochsicherheitsgefagnisse.png)
+![](./_images/neue-hochsicherheits-gefaengnisse-tuerkei-inline-8.webp)
 
 **Hochsicherheitsgefängnisse (1. September 2022) Gefängnistyp Anzahl Einzelkapazität Gesamtkapazität**
 
@@ -330,6 +330,6 @@ Eine besondere Sanktion, die in der Türkei nach der Abschaffung der Todesstrafe
 
 [🔗 **Englische Version**](/en/yazilar/new-high-security-prisons-turkey/)
 
-[📥 **PDF Herunterladen**](https://mustafaeren.net/wp-content/uploads/2025/10/Eren-2022-neue-hochsicherheits-gefaengnisse-Tuerkei.pdf)
+[📥 **PDF Herunterladen**](/pdf/neue-hochsicherheits-gefaengnisse-tuerkei.pdf)
 
 [🔗 B**ianet (Orijinal)**](https://bianet.org/yazi/yeni-tip-hapishaneler-ve-toplumsal-muhalefete-gozdagi-267878)

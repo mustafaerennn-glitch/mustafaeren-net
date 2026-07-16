@@ -46,6 +46,45 @@ function convertGalleryShortcode(html, attachmentsById) {
 }
 
 /**
+ * Kopyala-yapıştır kaynaklı haber sitelerinden (BirGün vb.) gelen "spot" (lead paragraf)
+ * öğeleri, kaynak sitenin kendi CSS sınıfıyla birlikte `<h5 class="detail__spot">` olarak
+ * WP'ye yapışmış — gerçek bir başlık değil, vurgulu bir giriş cümlesi. Başlık anlamı taşımadan
+ * kalın metin olarak korunuyor (Aşama 5 Lighthouse denetiminde bulundu — heading-order ihlali).
+ */
+function unwrapSpotHeadings(html) {
+  // NOT: "spot" alt çizgiyle bitişik olabiliyor (ör. "detail__spot") — \b kullanılmıyor,
+  // çünkü "_" bir kelime karakteri olduğundan \bspot\b "detail__spot" içinde eşleşmiyor.
+  return html.replace(/<h[1-6][^>]*class="[^"]*spot[^"]*"[^>]*>([\s\S]*?)<\/h[1-6]>/gi, '<p><strong>$1</strong></p>');
+}
+
+/**
+ * Bazı Basında gövdelerinde mecra/tarih alıntı satırı (`Mecra Adı - tarih`) yanlışlıkla bir
+ * başlık olarak WP'ye girilmiş (`<h5><strong><a>Mecra</a> - tarih</strong></h5>`). Diğer tüm
+ * kayıtlarda bu satır düz paragraf olarak duruyor — tutarlılık ve heading-order için başlık
+ * sarmalayıcısı kaldırılıyor, içerik (link + tarih) olduğu gibi korunuyor.
+ */
+function unwrapCitationHeadings(html) {
+  return html.replace(
+    /<h[1-6][^>]*>\s*<strong>\s*(<a[^>]*>.*?<\/a>\s*[-–—]\s*[^<]*)<\/strong>\s*<\/h[1-6]>/gi,
+    '<p>$1</p>',
+  );
+}
+
+/**
+ * Markdown başlıklarını normalize eder: gövdede kullanılan en sığ başlık seviyesi H2 olacak
+ * şekilde tüm başlıklar kaydırılır (göreli iç içelik korunarak). H1 sayfanın kendi başlığı
+ * olduğu için gövdede hiç kullanılmıyor; bazı WP gövdeleri doğrudan H5'ten başlıyordu, bu da
+ * başlık hiyerarşisini atlayan bir erişilebilirlik ihlaliydi (Aşama 5 Lighthouse bulgusu).
+ */
+function normalizeHeadingLevels(markdown) {
+  const levels = [...markdown.matchAll(/^(#{2,6})\s/gm)].map((m) => m[1].length);
+  if (levels.length === 0) return markdown;
+  const shift = Math.min(...levels) - 2;
+  if (shift <= 0) return markdown;
+  return markdown.replace(/^(#{2,6})(\s)/gm, (_match, hashes, space) => '#'.repeat(hashes.length - shift) + space);
+}
+
+/**
  * HTML gövdesini Markdown'a çevirir.
  * @param {string} html - content:encoded ham HTML'i
  * @param {Map<string, {url: string, alt: string}>} attachmentsById - [gallery] çözümü için
@@ -55,14 +94,46 @@ export function htmlToMarkdown(html, attachmentsById) {
   let processed = html;
   processed = convertCaptionShortcode(processed);
   processed = convertGalleryShortcode(processed, attachmentsById);
+  processed = unwrapSpotHeadings(processed);
+  processed = unwrapCitationHeadings(processed);
   // &nbsp; → normal boşluk (82 gövdede görüldü, markdown'da anlamsız/görünmez karaktere yol açar)
   processed = processed.replace(/&nbsp;/gi, ' ');
   // Ardışık boş paragraflar WordPress editörünün kalıntısı, gereksiz boşluk üretir
   processed = processed.replace(/<p>\s*<\/p>/gi, '');
 
-  const markdown = turndown.turndown(processed);
+  let markdown = turndown.turndown(processed);
   // Turndown bazen 3+ ardışık boş satır bırakabiliyor (shortcode temizliğinden sonra)
-  return markdown.replace(/\n{3,}/g, '\n\n').trim();
+  markdown = markdown.replace(/\n{3,}/g, '\n\n').trim();
+  return normalizeHeadingLevels(markdown);
+}
+
+/**
+ * Gövde-içi görsellerin (Markdown `![alt](url)`), kendi sitesinin (mustafaeren.net/wp-content/
+ * uploads) barındırdığı, WordPress'ten hiç işlenmeden geçen URL'lerini bulur. Bunlar yalnızca
+ * öne çıkan görselden farklı olarak Aşama 4C'nin görsel indirme adımının hiç kapsamadığı,
+ * canlı eski siteye bağımlı kalan görsellerdi (Aşama 5 Lighthouse denetiminde bulundu — 6.7 MB
+ * sayfa ağırlığı, 7.3s LCP). Yinelenen URL'ler tek kayıt olarak döner.
+ * @param {string} markdown
+ * @returns {string[]} benzersiz URL listesi, gövdede geçiş sırasına göre
+ */
+export function extractInlineOwnSiteImages(markdown) {
+  const urls = [...markdown.matchAll(/!\[[^\]]*\]\((https:\/\/mustafaeren\.net\/wp-content\/uploads\/[^)]+)\)/g)].map((m) => m[1]);
+  return [...new Set(urls)];
+}
+
+/**
+ * extractInlineOwnSiteImages() ile bulunan URL'leri, indirilip işlendikten sonra yerel göreli
+ * yollarla değiştirir.
+ * @param {string} markdown
+ * @param {Map<string, string>} urlToLocalPath - orijinal URL -> `./_images/...` göreli yol
+ * @returns {string}
+ */
+export function rewriteInlineImages(markdown, urlToLocalPath) {
+  let rewritten = markdown;
+  for (const [url, localPath] of urlToLocalPath) {
+    rewritten = rewritten.split(`(${url})`).join(`(${localPath})`);
+  }
+  return rewritten;
 }
 
 /**

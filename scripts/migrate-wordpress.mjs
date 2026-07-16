@@ -35,7 +35,14 @@ import { resolveMecra, buildDomainMap } from './migration/lib/resolve-mecra.mjs'
 import { resolveFeaturedImage } from './migration/lib/resolve-media.mjs';
 import { resolveSlugs } from './migration/lib/resolve-slug.mjs';
 import { buildTranslationIndex, resolveTranslations } from './migration/lib/resolve-translations.mjs';
-import { htmlToMarkdown, rewireInternalLinks, stripDeadFileLinks, findSelfHostedPdf } from './migration/lib/content-to-markdown.mjs';
+import {
+  htmlToMarkdown,
+  rewireInternalLinks,
+  stripDeadFileLinks,
+  findSelfHostedPdf,
+  extractInlineOwnSiteImages,
+  rewriteInlineImages,
+} from './migration/lib/content-to-markdown.mjs';
 import { resolveVideoFields } from './migration/lib/resolve-video-fields.mjs';
 import { resolveBookFields } from './migration/lib/resolve-book-fields.mjs';
 import { resolveDescription } from './migration/lib/resolve-description.mjs';
@@ -376,12 +383,40 @@ if (produce) {
       }
     }
 
+    // Gövde-içi görseller (öne çıkan görselden AYRI) — kendi sitesinden barındırılanlar canlı
+    // eski WordPress'e bağımlı ve optimize edilmemiş kalıyordu (Aşama 5 Lighthouse bulgusu:
+    // 6.7 MB sayfa, 7.3s LCP). Yalnızca Yazı/Basında'da render ediliyor (bkz. Content
+    // bileşeni) — Video/Kitap gövdesi hiç render edilmiyor, indirmeye gerek yok.
+    let bodyMarkdown = r.markdown;
+    if (r.proposedCollection === 'yazilar' || r.proposedCollection === 'basinda') {
+      const inlineUrls = extractInlineOwnSiteImages(bodyMarkdown);
+      if (inlineUrls.length > 0) {
+        const urlToLocalPath = new Map();
+        for (let i = 0; i < inlineUrls.length; i++) {
+          const url = inlineUrls[i];
+          const result = await downloadAndProcessImage(url, imagesDir, `${r.slug}-inline-${i + 1}`, 'webp');
+          if (result.error) {
+            vlog(`  [gövde görsel uyarı] post_id=${r.sourcePostId}: ${result.error} — bu görsel eski URL'sinde kaldı`);
+            continue;
+          }
+          urlToLocalPath.set(url, result.relativePath);
+        }
+        bodyMarkdown = rewriteInlineImages(bodyMarkdown, urlToLocalPath);
+      }
+      // Gövdede bazen makalenin kendi PDF'ine düz bir link olarak da atıf var (ör. "PDF
+      // versiyonuna buradan ulaşabilirsiniz") — aynı dosya zaten yukarıda yerel /pdf/'e
+      // kopyalandı, gövdedeki linki de eski siteye değil oraya işaret edecek şekilde güncelle.
+      if (pdfPath && r.pdfUrl) {
+        bodyMarkdown = bodyMarkdown.split(`(${r.pdfUrl})`).join(`(${pdfPath})`);
+      }
+    }
+
     const { frontmatter, errors: fmErrors } = buildFrontmatter(r, image, pdfPath, r.description, validTopicIds, validMecraIds);
     if (fmErrors.length > 0) {
       return { skipped: true, sourcePostId: r.sourcePostId, title: r.title, collection: r.proposedCollection, reason: fmErrors.join(' | ') };
     }
 
-    const outPath = writeContentFile(destDir, r.slug, frontmatter, r.markdown);
+    const outPath = writeContentFile(destDir, r.slug, frontmatter, bodyMarkdown);
     return { skipped: false, sourcePostId: r.sourcePostId, title: r.title, collection: r.proposedCollection, file: path.relative(ROOT, outPath) };
   }
 

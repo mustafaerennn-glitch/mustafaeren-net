@@ -12,7 +12,7 @@ featuredImageAlt: ''
 
 [Bedford Row International](http://9bri.com/the-trial-of-iihan-comak-in-istanbul/), October 6, 2016 By [Alexander Kay](http://9bri.com/author/gillian-higgins/)
 
-![](https://mustafaeren.net/wp-content/uploads/2019/01/Resim1-770x1024.png)
+![](./_images/the-trial-of-iihan-comak-in-istanbul-inline-1.webp)
 
 By Margaret Owen, Door Tenant at 9 Bedford Row, London
 
@@ -24,7 +24,7 @@ For Ilhan’s case is a dramatic one – so many years held in detention, he is 
 
 According to his lawyers there is not a shred of evidence to prove he has ever been “a member of a terrorist organisation”, or that he carried out acts under orders of the PKK. Ilhan states he signed confessions under torture. This afternoon, at last, the verdict will be given. Everyone is nervous, dreading the worst.
 
-![](https://mustafaeren.net/wp-content/uploads/2019/01/Resim2.png)
+![](./_images/the-trial-of-iihan-comak-in-istanbul-inline-2.webp)
 
 Margaret Owen wiht Ilhan's parents
 
@@ -48,13 +48,13 @@ After a 15-minute break, the verdict came. No change of verdict. No acquittal. T
 
 Outside in the square the people, angry, gathered, made speeches, carried banners bearing Ilhan’s picture. There is misery and disgust. But the lawyers tell me they expected this result. “There is no independent judiciary. There is no justice. We need international support now in our struggle for the Rule of Law and for democracy. We do not even have freedom of thought anymore, nor of speech. Neither do we have freedom of assembly or freedom of the press. Help us”. So I too made a short speech.
 
-![](https://mustafaeren.net/wp-content/uploads/2019/01/Resim3.png)
+![](./_images/the-trial-of-iihan-comak-in-istanbul-inline-3.webp)
 
 Margaret joins other people gathered in the square
 
 Later we had a long meeting at the offices of the TCPS (Turkey’s Centre for Prison Studies). Several of the people gathered round the table had spent months or even years in prison, arrested when they were students. Mustafa Eren, was in prison for 11 years, and was released in his early 30s. He managed to return to university, obtain his degree and then a PH.D in sociology. But we heard shocking stories of torture and abuse of detainees. And especially of the brutal degrading treatment of women prisoners. Although there are, in theory, mechanisms for prisoners to report ill-treatment and torture, either the reports get “lost” and never reach Ministry of Justice officials who should receive them; or, those alleged to have inflicted acts of torture have a ready defence – that the prisoner was attacking them, or the allegation was malicious. Many prisoners dare not report these violations.
 
-![](https://mustafaeren.net/wp-content/uploads/2019/01/Resim4.png)
+![](./_images/the-trial-of-iihan-comak-in-istanbul-inline-4.webp)
 
 Margaret speaks with a female MP and a Kurdish writer
 

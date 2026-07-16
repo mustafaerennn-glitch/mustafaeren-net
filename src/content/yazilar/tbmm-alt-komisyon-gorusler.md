@@ -196,7 +196,7 @@ Bu görüşlerin, 2016’da olduğu gibi bugün de arkasında durduğumu vurgula
 Mustafa Eren  
 Zürih / 17 Mayıs 2025
 
-[📥 PDF’i İndir](https://mustafaeren.net/wp-content/uploads/2025/06/TBMM_Alt_Komisyon_Sunumu_MustafaEren_2016.pdf)
+[📥 PDF’i İndir](/pdf/tbmm-alt-komisyon-gorusler.pdf)
 
 [⬇️ TBMM Tutanağı (PDF)](https://mustafaeren.net/wp-content/uploads/2025/06/TBMM-hukumlu-tutuklu-haklari-alt-komisyon-Kirac-Eren.pdf)
 

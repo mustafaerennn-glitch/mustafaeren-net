@@ -14,7 +14,7 @@ Bianet / Beyza Kural, 22.11.2016
 
 TCPS'den Mustafa Eren örgüt çerçevesinde suçlarla ilgili tutuklu ve hükümlülerin sınavlara girme hakkını kaldıran KHK maddesinin yasalarca tanımlanan öğrenim hakkını engellediğini belirtti.
 
-![](https://mustafaeren.net/wp-content/uploads/2025/02/image-3.png)
+![](./_images/khk-ile-mahpuslarin-ogrenim-hakkina-engelleme-inline-1.webp)
 
 677 sayılı [Kanun Hükmünde Kararname](http://www.resmigazete.gov.tr/eskiler/2016/11/20161122-1.htm) (KHK) mahpusların sınavlara girme hakkında engelleme getirdi.
 

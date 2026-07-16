@@ -70,7 +70,7 @@ Hikmet Andal, “His Release Lasted Less Than a Day: Selçuk Kozağaçlı Sent B
 Evrim Kepenek, “How Do Prison Administration Boards Operate? The Case of İlhan Sami Çolak,” _Bianet_, August 23, 2024.  
 [https://bianet.org/haber/ilhan-sami-comakin-tahliyesini-engelleyen-cezaevi-idare-kurullari-nasil-calisiyor-298913](https://bianet.org/haber/ilhan-sami-comakin-tahliyesini-engelleyen-cezaevi-idare-kurullari-nasil-calisiyor-298913) (Accessed: May 13, 2025)
 
-### **References**
+## **References**
 
 Council of Europe. (2023). _SPACE I – Annual Penal Statistics of the Council of Europe_. Strasbourg: Council of Europe. Retrieved from [https://www.coe.int/en/web/prison/space](https://www.coe.int/en/web/prison/space)
 
@@ -82,7 +82,7 @@ Andal, H. (2025, April 17). _His Release Lasted Less Than a Day: Selçuk Kozağa
 
 Kepenek, E. (2024, August 23). _How Do Prison Administration Boards Operate? The Case of İlhan Sami Çolak_. Bianet. Retrieved May 13, 2025, from [https://bianet.org/haber/ilhan-sami-comakin-tahliyesini-engelleyen-cezaevi-idare-kurullari-nasil-calisiyor-298913](https://bianet.org/haber/ilhan-sami-comakin-tahliyesini-engelleyen-cezaevi-idare-kurullari-nasil-calisiyor-298913)
 
-[**📥 Download PDF**](https://mustafaeren.net/wp-content/uploads/2025/05/eren-2025-first-step-peace-political-prisoners.pdf)
+[**📥 Download PDF**](/pdf/peace-freedom-for-political-prisoners.pdf)
 
 🔗 **Turkish Version**
 

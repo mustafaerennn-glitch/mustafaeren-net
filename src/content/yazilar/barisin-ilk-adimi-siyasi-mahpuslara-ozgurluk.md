@@ -54,7 +54,7 @@ On yıllardır çifte standarda maruz bırakılarak adaletsizliğin hedefi ve ma
 Evrim Kepenek, İlhan Sami Çolak’ın tahliyesini engelleyen Cezaevi İdare Kurulları nasıl çalışıyor?, Bianet, 23 Ağustos 2024 [https://bianet.org/haber/ilhan-sami-comakin-tahliyesini-engelleyen-cezaevi-idare-kurullari-nasil-calisiyor-298913](https://bianet.org/haber/ilhan-sami-comakin-tahliyesini-engelleyen-cezaevi-idare-kurullari-nasil-calisiyor-298913) Erişim Tarihi: 13 Mayıs 2025  
   
 
-### 📚 **Kaynakça**
+## 📚 **Kaynakça**
 
 Andal, H. (17 Nisan 2025). _Tahliyesi bir günden az sürdü: Selçuk Kozağaçlı hapse gönderildi_. Bianet. Erişim tarihi: 13 Mayıs 2025.  
 [https://bianet.org/haber/tahliyesi-bir-gunden-az-surdu-selcuk-kozagacli-hapse-gonderildi-306546](https://bianet.org/haber/tahliyesi-bir-gunden-az-surdu-selcuk-kozagacli-hapse-gonderildi-306546)
@@ -68,7 +68,7 @@ Hürriyet. (11 Mayıs 2025). _Adalet Bakanı Yılmaz Tunç’tan 10. Yargı Pake
 Kepenek, E. (23 Ağustos 2024). _İlhan Sami Çolak’ın tahliyesini engelleyen Cezaevi İdare Kurulları nasıl çalışıyor?_ Bianet. Erişim tarihi: 13 Mayıs 2025.  
 [https://bianet.org/haber/ilhan-sami-comakin-tahliyesini-engelleyen-cezaevi-idare-kurullari-nasil-calisiyor-298913](https://bianet.org/haber/ilhan-sami-comakin-tahliyesini-engelleyen-cezaevi-idare-kurullari-nasil-calisiyor-298913)
 
-[📤 PDF'i İndir](https://mustafaeren.net/wp-content/uploads/2025/05/eren-2025-barisin-ilk-adimi-siyasi-mahpuslara-ozgurluk.pdf)
+[📤 PDF'i İndir](/pdf/barisin-ilk-adimi-siyasi-mahpuslara-ozgurluk.pdf)
 
 [🔗 İngilizce Versiyon](/en/yazilar/peace-freedom-for-political-prisoners/)
 

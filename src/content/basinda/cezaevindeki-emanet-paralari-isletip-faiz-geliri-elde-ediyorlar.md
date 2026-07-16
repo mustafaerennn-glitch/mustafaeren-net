@@ -10,4 +10,4 @@ featuredImage: ./_images/cezaevindeki-emanet-paralari-isletip-faiz-geliri-elde-e
 featuredImageAlt: ''
 ---
 
-Cezaevindeki Emanet Paraları İşletip Faiz Geliri Elde Ediyorlar BirGün - Çağla Ağırgöl - 27 Şubat 2014 [![](https://mustafaeren.net/wp-content/uploads/2022/09/BirGun-2014-02-27.jpg)](https://mustafaeren.net/wp-content/uploads/2022/09/BirGun-2014-02-27.jpg)
+Cezaevindeki Emanet Paraları İşletip Faiz Geliri Elde Ediyorlar BirGün - Çağla Ağırgöl - 27 Şubat 2014 [![](./_images/cezaevindeki-emanet-paralari-isletip-faiz-geliri-elde-ediyorlar-inline-1.webp)](./_images/cezaevindeki-emanet-paralari-isletip-faiz-geliri-elde-ediyorlar-inline-1.webp)

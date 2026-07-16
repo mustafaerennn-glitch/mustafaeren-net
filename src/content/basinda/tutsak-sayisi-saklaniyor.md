@@ -10,7 +10,7 @@ featuredImage: ./_images/tutsak-sayisi-saklaniyor-featured.webp
 featuredImageAlt: ''
 ---
 
-### [Yeni Özgür Politika - 10 Kasım 2020](https://www.ozgurpolitika.com/haberi-tutsak-sayisi-saklaniyor-6796)
+## [Yeni Özgür Politika - 10 Kasım 2020](https://www.ozgurpolitika.com/haberi-tutsak-sayisi-saklaniyor-6796)
 
 # Tutsak sayısı saklanıyor
 

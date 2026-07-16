@@ -11,7 +11,7 @@ featuredImage: ./_images/yapay-zeka-etik-uretim-featured.webp
 featuredImageAlt: ''
 ---
 
-![](https://mustafaeren.net/wp-content/uploads/2025/04/Yapay-Zeka-Uretim-web.png)
+![](./_images/yapay-zeka-etik-uretim-inline-1.webp)
 
 [Bianet](https://bianet.org/yazi/yapay-zeka-destekli-icerik-uretimi-uzerine-etik-politika-bir-tutum-ve-cagri-metni-306787) - 26 Nisan 2025
 

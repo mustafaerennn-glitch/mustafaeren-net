@@ -19,7 +19,7 @@ pdf: /pdf/akp-criminalization-and-the-republic-of-campus-prisons.pdf
 
 The penal enforcement regime in Turkey has been transformed in the last 20 years not only by the increase in the number of prisoners but also by the ideological orientation behind this increase. Under AKP rule, prisons have transformed from being a “punitive” part of the criminal justice system into a mechanism of administration and social discipline. This new period, which started in the 1970s, was carried to a new phase with the opening of the Type-F prisons, and under AKP rule, it has been further scaled up and almost all of its characteristic features have become visible.\[1\]
 
-### An explosion in the number of prisoners: From 50,000 to 400,000
+## An explosion in the number of prisoners: From 50,000 to 400,000
 
 In 2002, when the AKP came to power, there were 524 prisons in Turkey and the total capacity of these prisons was 73,725, while the number of prisoners in the same year was 59,512. In other words, there were about 15,000 empty beds in prisons. It has been 23 years since the AKP came to power and as of Apr 2025, there are 395 prisons in Turkey with a total capacity of 299,940. The number of prisoners has increased to over 400,000 (On Apr 7, 2025, the number of prisoners was 403,060. In other words, more than 100,000 prisoners have to sleep on the floor even though the capacity has been increased more than five times).
 
@@ -29,7 +29,7 @@ The graph below shows the dramatic change in the number of prisoners and capacit
 
 ![](https://static.bianet.org/2025/04/prison-stats-2002-2025.png)
 
-### Prisoner labor: Invisible labor exploitation
+## Prisoner labor: Invisible labor exploitation
 
 From a human rights-centered perspective, two aspects of this transformation should be particularly noted. The first of these is that the AKP government has turned prisons into a place of prisoner labor exploitation. In 2024, Turkey's prisons employed 58,193 prisoners and as a result of the employment of these prisoners, the Provincial Organization of the Departmenf of Workshops earned 25,913,39,882 liras. The portion of this income given to prisoners as daily wages is only 756,817,630 liras. Even if we add 69,41,598 liras paid as insurance premiums to this, we see that only 3.18 percent of the income is returned to the prisoners.\[3\]
 
@@ -37,7 +37,7 @@ From a human rights-centered perspective, two aspects of this transformation sho
 
 Prisons have been turned into a serious place of production and labor exploitation for the current government. However, since this is a secondary issue for this article, we can concentrate on the second issue that needs attention after presenting this labor exploitation determination.
 
-#### The new penal execution regime: Isolation and 'campusization'
+### The new penal execution regime: Isolation and 'campusization'
 
 In 2002, when the AKP came to power, there were 525 prisons with a capacity of 73,725, whereas by Mar 2025 there were 395 prisons, i.e. the capacity reached nearly 300,000, although there were far fewer prisons. The reason for this change is the closure of low-capacity prisons and the opening of new high-capacity prisons, largely based on the cell system.
 
@@ -57,7 +57,7 @@ The distribution of the 395 existing prisons by type as of Mar 2025 is as follow
 
 If the table is observed, all three of the new types of prisons opened in the last years of the AKP rule (High Security, Type-S, Type-Y) are isolation-based solitary confinement prisons, which are called “High-Security Closed Penal Enforcement Institutions” in the legislation. When the Type-D prisons opened in 2003 and the Type-F prisons opened between 2000 and 2007 are added to these prisons, the number of isolation-based solitary confinement prisons reaches 57 and their current capacity reaches 36,721.
 
-### The increasingly authoritarian regime and our freedoms
+## The increasingly authoritarian regime and our freedoms
 
 As stated in the legislation these cell-type prisons are used for;
 
@@ -93,7 +93,7 @@ Since the table also lists prisons that do not have their own directorate and ar
 
 \[6\] Image taken from Google Maps. Accessed Apr 13, 2025
 
-[📥 Download PDF Version](https://mustafaeren.net/wp-content/uploads/2025/04/akp_criminalization_campus_prisons.pdf)
+[📥 Download PDF Version](/pdf/akp-criminalization-and-the-republic-of-campus-prisons.pdf)
 
 [🔗 **Original article in Turkish**](/yazilar/barisin-ilk-adimi-siyasi-mahpuslara-ozgurluk/)
 

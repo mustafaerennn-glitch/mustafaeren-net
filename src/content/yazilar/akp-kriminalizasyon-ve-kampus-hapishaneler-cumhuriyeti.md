@@ -23,7 +23,7 @@ pdf: /pdf/akp-kriminalizasyon-ve-kampus-hapishaneler-cumhuriyeti.pdf
 
 ## MAHPUS SAYISI RESMİ OLARAK 400 BİNİ AŞTI
 
-![](https://mustafaeren.net/wp-content/uploads/2025/04/file_00000000f3c4620abba644b66a77257a_conversation_id67f26c26-3770-8008-b300-94d584dc1dcbmessage_id414d045a-afdd-483f-9a18-c6f391e0a232-1024x683.png)
+![](./_images/akp-kriminalizasyon-ve-kampus-hapishaneler-cumhuriyeti-inline-1.webp)
 
 AKP rejiminin hapishane politikaları, yalnızca bir cezalandırma mantığının değil; aynı zamanda bir siyasal ve toplumsal düzen kurma pratiğinin ürünüdür. Bu nedenle hapishaneler üzerine düşünmek yalnızca mahpusları değil, özgürlük sınırlarımızı da konuşmaktır.
 
@@ -101,7 +101,7 @@ Tabloda kendi müdürlüğü olmayan, bir başka hapishaneye “bağlı” hapis
 
 📄 15 Nisan 2025 tarihde Bianet'te yayınlanan bu yazının PDF versiyonuna buradan ulaşabilirsiniz:
 
-[📥 Yazının PDF Versiyonu](https://mustafaeren.net/wp-content/uploads/2025/04/akp-kriminalizasyon-kampus-hapishaneler.pdf)
+[📥 Yazının PDF Versiyonu](/pdf/akp-kriminalizasyon-ve-kampus-hapishaneler-cumhuriyeti.pdf)
 
 [🇩🇪 Yazının Almanca Versiyonu](/de/yazilar/die-akp-und-der-strafvollzug-kriminalisierung-und-die-republik-der-gefangniscampus/)
 

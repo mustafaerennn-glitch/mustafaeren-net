@@ -86,7 +86,7 @@ Hürriyet. (2025, 11. Mai). _Justizminister Yılmaz Tunç äußert sich zum 10. 
 Kepenek, E. (2024, 23. August). _Wie funktionieren die Gefängnisverwaltungs- und Beobachtungsausschüsse, die die Freilassung von İlhan Sami Çolak verhinderten?_ Bianet. Zugriff: 13. Mai 2025.  
 [https://bianet.org/haber/ilhan-sami-comakin-tahliyesini-engelleyen-cezaevi-idare-kurullari-nasil-calisiyor-298913](https://bianet.org/haber/ilhan-sami-comakin-tahliyesini-engelleyen-cezaevi-idare-kurullari-nasil-calisiyor-298913)
 
-[📥 **PDF Herunterladen**](https://mustafaeren.net/wp-content/uploads/2025/05/eren-2025-erste-schritt-frieden-politische-gefangene.pdf)
+[📥 **PDF Herunterladen**](/pdf/der-erste-schritt-zum-frieden-freiheit-fur-politische-gefangene.pdf)
 
 [🔗 **Türkische Version**](/yazilar/barisin-ilk-adimi-siyasi-mahpuslara-ozgurluk/)
 

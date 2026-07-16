@@ -17,7 +17,7 @@ pdf: /pdf/die-akp-und-der-strafvollzug-kriminalisierung-und-die-republik-der-gef
 
 Dieser Text wurde ursprünglich am 15. April 2025 auf der Website von [Bianet](https://bianet.org/yazi/akp-kriminalizasyon-ve-kampus-hapishaneler-cumhuriyeti-306454) auf Türkisch veröffentlicht. Die vorliegende deutsche Übersetzung wurde mit Unterstützung von ChatGPT angefertigt.
 
-![](https://mustafaeren.net/wp-content/uploads/2025/04/file_00000000f3c4620abba644b66a77257a_conversation_id67f26c26-3770-8008-b300-94d584dc1dcbmessage_id414d045a-afdd-483f-9a18-c6f391e0a232-1024x683.png)
+![](./_images/die-akp-und-der-strafvollzug-kriminalisierung-und-die-republik-der-gefangniscampus-inline-1.webp)
 
 Das Strafvollzugsregime in der Türkei hat sich in den letzten zwanzig Jahren nicht nur durch den Anstieg der Gefangenenzahlen gewandelt, sondern vor allem durch die ideologische Ausrichtung, die diesem Anstieg zugrunde liegt. Unter der Herrschaft der AKP sind Gefängnisse über ihre traditionelle Rolle als Instrumente der Strafjustiz hinausgewachsen und haben sich zu einem Mittel staatlicher Kontrolle und gesellschaftlicher Disziplinierung entwickelt. Diese Entwicklung, die in den 1970er Jahren begann, erreichte mit der Einführung der sogenannten F-Typ-Gefängnisse eine neue Phase und wurde unter der AKP-Regierung weiter ausgebaut – so weit, dass heute nahezu alle charakteristischen Merkmale dieses neuen Strafvollzugsregimes deutlich sichtbar geworden sind.[\[i\]](#_edn1)
 
@@ -27,13 +27,13 @@ Im Jahr 2002, als die AKP an die Macht kam, gab es in der Türkei 524 Gefängnis
 
 Die folgende Grafik verdeutlicht auf eindrückliche Weise die dramatischen Veränderungen bei der Zahl der Inhaftierten und der Gefängniskapazitäten in den Jahren 2002 bis 2025.
 
-![](https://mustafaeren.net/wp-content/uploads/2025/04/output-4-1024x610.png)
+![](./_images/die-akp-und-der-strafvollzug-kriminalisierung-und-die-republik-der-gefangniscampus-inline-2.webp)
 
 **Gefängnisarbeit: Unsichtbare Ausbeutung von Arbeitskraft**
 
 Aus einer menschenrechtszentrierten Perspektive betrachtet, verdienen zwei Aspekte dieser Transformation besondere Aufmerksamkeit. Der erste betrifft die Tatsache, dass die AKP-Regierung Gefängnisse in Orte systematischer Ausbeutung von Häftlingsarbeit verwandelt hat. Im Jahr 2024 wurden in türkischen Gefängnissen insgesamt 58.193 Inhaftierte zur Arbeit herangezogen. Durch ihre Beschäftigung erzielte das Arbeitsbetriebssystem der Strafvollzugsanstalten (İşyurtları Kurumu) Einnahmen in Höhe 25.913.039.882 TL. Der Anteil dieses Betrags, der den Gefangenen als Tagelohn ausgezahlt wurde, belief sich lediglich auf 756.817.630 TL. Selbst wenn man die als Sozialversicherungsbeiträge eingezahlten 69.041.598 TL hinzurechnet, ergibt sich, dass lediglich 3,18 % der Einnahmen an die arbeitenden Häftlinge zurückflossen.[\[iii\]](#_edn3)
 
-![](https://mustafaeren.net/wp-content/uploads/2025/04/output-5-1024x862.png)
+![](./_images/die-akp-und-der-strafvollzug-kriminalisierung-und-die-republik-der-gefangniscampus-inline-3.webp)
 
 Gefängnisse sind unter der aktuellen Regierung zu bedeutenden Produktionsstätten und Schauplätzen massiver Ausbeutung von Arbeitskraft geworden. Da diese Problematik jedoch im Rahmen dieses Textes nur eine untergeordnete Rolle spielt, wollen wir uns nach dieser Feststellung dem zweiten zentralen Aspekt widmen.
 
@@ -415,7 +415,7 @@ Die zunehmend autoritäre Ausrichtung des derzeitigen Regimes lässt sich sowohl
 
 Die Gefängnispolitik des AKP-Regimes ist nicht bloß Ausdruck eines strafenden Denkens, sondern Teil einer umfassenden politischen und gesellschaftlichen Ordnungsstrategie. Über Gefängnisse nachzudenken heißt daher nicht nur, über Inhaftierte zu sprechen – sondern auch über die Grenzen unserer Freiheit.
 
-![](https://mustafaeren.net/wp-content/uploads/2025/04/Ekran-Resmi-2025-04-13-11.12.01-1024x553.png)
+![](./_images/die-akp-und-der-strafvollzug-kriminalisierung-und-die-republik-der-gefangniscampus-inline-4.webp)
 
 _(Das sogenannte „Marmara Strafvollzugskomplex“, vormals bekannt als „Silivri“, umfasst heute insgesamt 11 Gefängnisse mit einer Gesamtkapazität von rund 20.000 Insassen. In fast jeder Provinz der Türkei wurde – wenn auch in kleinerem Maßstab – ein vergleichbarer „Strafvollzugscampus“ errichtet: ein Gefängnisdorf unter staatlicher Kontrolle.)[**\[vi\]**](#_edn6)_
 
@@ -441,6 +441,6 @@ Die letzten beiden Spalten der Tabelle wurden unter Rückgriff auf zahlreiche un
 
 📄 Dieser Artikel ist auch als PDF verfügbar:
 
-[📥 _PDF-Version herunterladen_](https://mustafaeren.net/wp-content/uploads/2025/04/akp-campus-gefaengnisse-de.pdf)
+[📥 _PDF-Version herunterladen_](/pdf/die-akp-und-der-strafvollzug-kriminalisierung-und-die-republik-der-gefangniscampus.pdf)
 
 [📎 Die Originalversion dieses Artikels auf Türkisch finden Sie hier](/yazilar/akp-kriminalizasyon-ve-kampus-hapishaneler-cumhuriyeti/)

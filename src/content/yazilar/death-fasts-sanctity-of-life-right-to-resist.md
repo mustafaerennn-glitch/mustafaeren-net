@@ -640,7 +640,7 @@ Available at: [https://www.ohchr.org/sites/default/files/documents/publications/
 [\[xlvii\]](#_ednref47) **Henry David Thoreau**, “_Civil Disobedience_” (1849), in _The Writings of Henry D. Thoreau_, vol. 4 (Boston: Houghton Mifflin, 1906), p. 225.  
 Available at: [https://www.gutenberg.org/ebooks/71](https://www.gutenberg.org/ebooks/71)
 
-[📥 Download PDF](https://mustafaeren.net/wp-content/uploads/2025/10/Death_Fasts_Right_to_Resist_Mustafa_Eren.pdf)
+[📥 Download PDF](/pdf/death-fasts-sanctity-of-life-right-to-resist.pdf)
 
 [🔗 Turkish Version](/yazilar/olum-oruclari-yasamin-kutsalligi-ve-direnme-hakki-ikileminde-bir-eylem-tarzi/) 
 

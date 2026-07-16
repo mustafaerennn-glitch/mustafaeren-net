@@ -534,7 +534,7 @@ Yine 1989 Haziran’ında başlayan ve 1990 Şubat’ına kadar devam eden bir b
 
 [\[47\]](#_ftnref47) Gandhi ve Thoreau, 2015, s. 62-63
 
-[📥  PDF’i İndir](https://mustafaeren.net/wp-content/uploads/2025/10/Olum_Orucu_Yasamin_Kutsalligi_ve_Direnme_Hakki_Mustafa_Eren.pdf)
+[📥  PDF’i İndir](/pdf/olum-oruclari-yasamin-kutsalligi-ve-direnme-hakki-ikileminde-bir-eylem-tarzi.pdf)
 
 [🔗  İngilizce Versiyon](/en/yazilar/death-fasts-sanctity-of-life-right-to-resist/)
 

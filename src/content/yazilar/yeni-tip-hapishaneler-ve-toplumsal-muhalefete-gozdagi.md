@@ -244,7 +244,7 @@ Ayrıca unutmamak gerekir ki 19 Aralık 2000 tarihinde “Hayata Dönüş Operas
 
 **_TTB_** _(2000) F Tipi Cezaevlerine İlişkin Türk Tabipleri Birliği Raporu, [https://www.ttb.org.tr/eweb/rapor/f\_tipi.html](https://www.ttb.org.tr/eweb/rapor/f_tipi.html)_
 
-[📄 PDF olarak indir](https://mustafaeren.net/wp-content/uploads/2025/05/eren-2022-yeni-tip-hapishaneler.pdf)
+[📄 PDF olarak indir](/pdf/yeni-tip-hapishaneler-ve-toplumsal-muhalefete-gozdagi.pdf)
 
 [🔗 İngilizce Versiyon](/en/yazilar/new-high-security-prisons-turkey/)
 

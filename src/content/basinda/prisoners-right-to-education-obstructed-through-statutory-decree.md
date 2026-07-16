@@ -12,7 +12,7 @@ featuredImageAlt: ''
 
 [Bianet](https://bianet.org/haber/prisoners-right-to-education-obstructed-through-statutory-decree-180983) / Beyza Kural, 22.11.2016
 
-![](https://mustafaeren.net/wp-content/uploads/2025/02/image-2.png)
+![](./_images/prisoners-right-to-education-obstructed-through-statutory-decree-inline-1.webp)
 
 Statutory Decree (KHK) No.667 has brought obstruction to prisoners’ right to enter exams.
 

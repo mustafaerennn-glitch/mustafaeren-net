@@ -12,7 +12,7 @@ featuredImageAlt: ''
 
 [RTS](https://www.rts.ch/info/monde/7922500-le-systeme-carceral-en-turquie-est-au-bord-de-la-rupture.html) - Modifié le 06 août 2016 à 10:59
 
-![](https://mustafaeren.net/wp-content/uploads/2019/01/7922495.jpeg)
+![](./_images/le-systeme-carceral-en-turquie-est-au-bord-de-la-rupture-inline-1.webp)
 
 Manifestation devant la prison de Metris, à Istanbul. \[Keystone\]
 
@@ -24,7 +24,7 @@ En mars, le pays comptait 188'000 détenus, soit 8000 de plus que la capacité e
 
 "Pour faire de la place, ils les empilent les uns sur les autres", déclare Mustafa Eren, président du CISST (Société civile pour le système pénal), un groupe de défense des droits. A la prison de Tekirdag, dans le nord-ouest du pays, six détenus s'entassent dans des cellules prévues pour trois. Dans la prison de Silivri, à l'ouest d'Istanbul, des détenus dorment dans le gymnase, détaille-t-il.
 
-### **Pas de problème**
+## **Pas de problème**
 
 Pour le gouvernement, il n'y a pas de problème dans les prisons. "Il n'y a pas de pénurie. Nous n'arrêtons pas d'investir dans notre système carcéral", explique un responsable.
 
@@ -32,7 +32,7 @@ D'après le numéro deux du principal parti d'opposition (CHP, Parti républicai
 
 "Des détenus dorment dans les couloirs ou les toilettes", accuse cet opposant. Veli Agbaba a effectué des centaines de visites dans les prisons au cours des cinq dernières années en tant que responsable d'une commission d'enquête du CHP sur la condition des détenus.
 
-### **Se relayer pour dormir**
+## **Se relayer pour dormir**
 
 La surpopulation est telle que des prisonniers sont obligés de se relayer pour dormir. Dans certaines cellules, des nouveaux lits ont été apportés, mais il n'y a plus d'espace pour marcher.
 
@@ -44,7 +44,7 @@ Aux yeux des mouvements de défense des droits de l'homme, la surpopulation carc
 
 Le ministre de la Justice Bekir Bozdag a répondu cette semaine dans une interview à la télévision que la torture n'existait pas dans les prisons turques.
 
-### **Pénurie d'avocats**
+## **Pénurie d'avocats**
 
 Les suspects ont du mal à trouver des avocats pour les défendre. D'une part, parce que les membres du barreau redoutent d'être associés aux putschistes. D'autre part, parce qu'ils sont personnellement révoltés contre la tentative de coup d'Etat, qui a fait au moins 246 morts.
 

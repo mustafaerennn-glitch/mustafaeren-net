@@ -12,7 +12,7 @@ featuredImageAlt: ''
 
 **[ntv](https://www.n-tv.de/politik/Selbst-Autokennzeichen-machen-verdaechtig-article18600236.html) –** _Von Nadja Kriewald, Istanbul – 9 September 2016_
 
-![](https://mustafaeren.net/wp-content/uploads/2019/01/RTSJ3MA.jpg)
+![](./_images/erdogans-absurde-hatz-auf-gulenisten-selbst-autokennzeichen-machen-verdachtig-inline-1.webp)
 
 Autos mit Türkei-Flaggen im Fenster sind gern gesehen, Nummernschilder mit den Buchstaben F und G überhaupt nicht. REUTERS
 
@@ -42,7 +42,7 @@ Wie Özdemir wurden zehntausende Lehrer, Dozenten und Professoren seit dem Putsc
 
 Im Fall Özdemir hat es eine Online-Petition gegeben. Der Sportlehrer wollte die Suspendierung nicht hinnehmen. Und er hat Glück gehabt, seit Anfang September darf er wieder unterrichten.
 
-![](https://mustafaeren.net/wp-content/uploads/2019/01/ARPics05-1024x768.jpg)
+![](./_images/erdogans-absurde-hatz-auf-gulenisten-selbst-autokennzeichen-machen-verdachtig-inline-2.webp)
 
 Nadja Kriewald im Gespräch mit Emma Sinclair-Webb von Human Rights Watch.
 

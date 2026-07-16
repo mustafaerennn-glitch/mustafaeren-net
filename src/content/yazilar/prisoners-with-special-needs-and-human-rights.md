@@ -13,7 +13,7 @@ pdf: /pdf/prisoners-with-special-needs-and-human-rights.pdf
 
 \* _This text was originally written as the introductory note to the unofficial Turkish edition of the UNODC Handbook on Prisoners with Special Needs, published by CİSST in 2013._
 
-![](https://mustafaeren.net/wp-content/uploads/2025/05/PSN2.png)
+![](./_images/prisoners-with-special-needs-and-human-rights-inline-1.webp)
 
 Prisons, as sociologist Erving Goffman famously noted, are "total institutions." That is, they are institutions that seek to encompass the entirety of life for those held within; they draw rigid boundaries between inside and outside and wield a totalizing form of control over the individuals confined within them. These institutions are closed off in both directions: just as they isolate the inside from the outside world, they also render the outside inaccessible and unknowable to those inside.
 
@@ -51,6 +51,6 @@ Source: _United Nations Standard Minimum Rules for the Treatment of Prisoners (t
 
 [🔗 **Original article in Turkish**](/yazilar/ozel-ihtiyaclari-olan-mahpuslar-ve-insan-haklari/)
 
-[📄 **Download PDF Version**](https://mustafaeren.net/wp-content/uploads/2025/05/PSN-Onsoz-Eng.pdf)
+[📄 **Download PDF Version**](/pdf/prisoners-with-special-needs-and-human-rights.pdf)
 
 [🔗 **View the full UN Handbook**](https://www.unodc.org/pdf/criminal_justice/Handbook_on_Prisoners_with_Special_Needs.pdf)

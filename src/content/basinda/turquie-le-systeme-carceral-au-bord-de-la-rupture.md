@@ -12,7 +12,7 @@ featuredImageAlt: ''
 
 [Ouest France](https://www.ouest-france.fr/monde/turquie/turquie-le-systeme-carceral-au-bord-de-la-rupture-4404136) \- Publié le 05/08/2016 à 10:05
 
-![](https://mustafaeren.net/wp-content/uploads/2019/01/Resim5.png)
+![](./_images/turquie-le-systeme-carceral-au-bord-de-la-rupture-inline-1.webp)
 
 En mars, la Turquie comptait 188 000 détenus, depuis le putsch, 12 000 personnes supplémentaires ont été placées en détention provisoire. | Reuters
 
@@ -22,7 +22,7 @@ Même si le gouvernement assure contrôler la situation, la surpopulation dans l
 
 La population pénitentiaire en Turquie a triplé depuis l'arrivée au pouvoir du parti de la Justice et du développement (AKP) en 2002.
 
-### **Surpopulation**
+## **Surpopulation**
 
 En mars, le pays comptait 188 000 détenus, soit 8 000 de plus que la capacité existante. [Depuis la tentative de coup d'État](https://www.ouest-france.fr/monde/turquie/turquie-tentative-de-coup-de-force-militaire-situation-tendue-ankara-4369461), 12 000 personnes ont été placées en détention provisoire en attendant d'être jugées et des milliers d'autres sont encore en garde à vue, dont la durée a été étendue de quatre à trente jours par décret présidentiel.
 
@@ -32,7 +32,7 @@ En mars, le pays comptait 188 000 détenus, soit 8 000 de plus que la capaci
 
 Pour le gouvernement, il n'y a pas de problème dans les prisons. **« Il n'y a pas de pénurie. Nous n'arrêtons pas d'investir dans notre système carcéral »**, explique un responsable.
 
-### **Se relayer pour dormir**
+## **Se relayer pour dormir**
 
 D'après le numéro deux du principal parti d'opposition (CHP, Parti républicain du peuple) Veli Agbaba, pourtant, **« les prisons avaient déjà dépassé leurs capacités avant le 15 juillet »**.
 
@@ -42,7 +42,7 @@ La surpopulation est telle que des prisonniers sont obligés de se relayer pour 
 
 Le journal pro-gouvernemental Yeni Safak a rapporté que les autorités de la prison de Sincan, à Ankara, avaient installé une grande tente dans l'enceinte de la centrale pour y loger les putschistes présumés. Le gouvernement a rejeté l'information, assurant que tous les détenus sont enfermés entre quatre murs.
 
-### **« C'est de la torture »**
+## **« C'est de la torture »**
 
 Aux yeux des mouvements de défense des droits de l'homme, la surpopulation carcérale constitue une nouvelle forme de torture pour des détenus qui, pour certains d'entre eux, ont déjà subi des mauvais traitements, comme l'ont montré des photos de prisonniers couverts d'hématomes ou portant des bandages.
 
@@ -52,7 +52,7 @@ Le ministre de la Justice Bekir Bozdag a répondu cette semaine dans une intervi
 
 Il a ajouté qu'aucun tribunal ne serait capable d'absorber un aussi grand nombre de prévenus, qui pourrait monter jusqu'à 30 000 personnes, et il a annoncé la construction de nouvelles salles de jugement.
 
-### **Difficulté à trouver des avocats**
+## **Difficulté à trouver des avocats**
 
 Les putschistes, a précisé le ministre, seront jugés à Sincan, un quartier d'Ankara symboliquement chargé car le théâtre, en 1997, d'une démonstration de force de l'armée qui conduisit le premier gouvernement islamiste de Necmettin Erbakan à démissionner.
 
@@ -60,7 +60,7 @@ Les suspects ont du mal à trouver des avocats pour les défendre, soit parce qu
 
 Lors d'une récente visite en prison, un avocat s'en est pris ainsi à son client, un ancien commandant de l'armée de l'air, qu'il a tenté d'agresser avant d'être maîtrisé par les gardiens, a déclaré l'autorité pénitentiaire dans un communiqué.
 
-### **Construction de nouvelles prisons**
+## **Construction de nouvelles prisons**
 
 Il y a dix ans, afin de réduire la surpopulation carcérale, le gouvernement avait créé un mécanisme en vertu duquel les détenus condamnés à des peines inférieures à dix-huit mois d'emprisonnement étaient libérés sur parole. Le CHP demande qu'il soit étendu aux peines inférieures à deux ans, mais le ministre de la Justice a rejeté cette hypothèse, estimant qu'elle pourrait nuire à l'ordre public.
 

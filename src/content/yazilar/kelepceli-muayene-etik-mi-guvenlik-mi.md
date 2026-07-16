@@ -18,7 +18,7 @@ Hasta mahpusların, revire ve hastaneye çıkarılmaları, hastane koşullarınd
 
 Diş tedavisi için, Aliağa 4 nolu T Tipi Hapishanesi'nden Konak Diş Hastanesi'ne götürülen bir tutuklunun "doktorların kelepçeleri çıkarttırmaması nedeniyle muayene olamadığı" ve "askerler tarafından da rencide edici uygulamalara maruz kaldığı" iddiası üzerine Kaymakamlık aşağıda aktardığımız kararı alıyor:
 
-![](https://mustafaeren.net/wp-content/uploads/2019/01/Ekran-Resmi-2019-01-13-20.59.37.png)
+![](./_images/kelepceli-muayene-etik-mi-guvenlik-mi-inline-1.webp)
 
 Bu kararda kelepçeli muayene ve rencide edici uygulamalar için "soruşturma izni verilmediği" belirtiliyor ve bu gerekçelendiriliyor. Bu kararın gerekçesi olarak, Jandarma Genel Komutanlığının Cezaevlerinin Dış Koruması Sevk ve Nakil Hizmetleri Yönergesinde yer alan "Kelepçeler ölüm, yaralanma, kalp krizi, ağır hastalık gibi zaruri haller dışında kesinlikle açılamaz" ve "zorunlu ihtiyaçları birer birer ve hiçbir şekilde kelepçeleri açılmaksızın gerekli tedbirleri alındıktan sonra giderilir" ifadeleri gösteriliyor.
 

@@ -11,7 +11,7 @@ featuredImageAlt: ''
 pdf: /pdf/ozel-ihtiyaclari-olan-mahpuslar-ve-insan-haklari.pdf
 ---
 
-![Özel İhtiyaçlara Sahip Mahpuslar Üzerine El Kitabı](https://mustafaeren.net/wp-content/uploads/2025/05/PSN2.png)
+![Özel İhtiyaçlara Sahip Mahpuslar Üzerine El Kitabı](./_images/ozel-ihtiyaclari-olan-mahpuslar-ve-insan-haklari-inline-1.webp)
 
 **Özel İhtiyaçlara Sahip Mahpuslar Üzerine El Kitabı - Birleşmiş Milletler - Çev. Ömer B. Albayrak - 2013**
 
@@ -35,4 +35,4 @@ Ceza İnfaz Sisteminde Sivil Toplum Derneği’nin (CİSST) kitabın çevirisini
 
 [🔗 **Birleşmiş Milletler El Kitabının Tam Metni**](https://www.unodc.org/documents/justice-and-prison-reform/Prisoners_with_special_needs_HB_Turkish.pdf)
 
-[**📥 Yazının PDF Versiyonu**](https://mustafaeren.net/wp-content/uploads/2025/05/Ozel-Ihtiyaclari-Olan-Mahpuslar-ve-Insan-Haklari.pdf)
+[**📥 Yazının PDF Versiyonu**](/pdf/ozel-ihtiyaclari-olan-mahpuslar-ve-insan-haklari.pdf)

@@ -6,6 +6,12 @@
       "runtimeExecutable": "/Users/Tevrat/.nvm/versions/node/v24.18.0/bin/node",
       "runtimeArgs": ["node_modules/astro/bin/astro.mjs", "dev"],
       "port": 4321
+    },
+    {
+      "name": "astro-preview",
+      "runtimeExecutable": "/Users/Tevrat/.nvm/versions/node/v24.18.0/bin/node",
+      "runtimeArgs": ["node_modules/astro/bin/astro.mjs", "preview", "--port", "4322"],
+      "port": 4322
     }
   ]
 }

@@ -34,7 +34,7 @@ Below is an overview of the number and estimated capacities of high-security pri
 **F-Type Prisons**  
 These prisons are constructed based on the “room system” and consist of single-occupancy and three-person cells. A standard F-Type prison includes 103 three-person cells and 59 single-person cells. The single cells are single-story and measure approximately 10 square meters, while the three-person cells are two-story units.[\[iii\]](#_edn3)
 
-![](https://mustafaeren.net/wp-content/uploads/2025/08/image.png)
+![](./_images/new-high-security-prisons-turkey-inline-1.webp)
 
 Tekirdağ No 1 and No 2 F Type High Security Closed Penal Institution
 
@@ -67,7 +67,7 @@ As of September 30, 2022, the two existing D-Type prisons are as follows:
 
 As can be seen in the image below, D-Type prisons stand out as having the most distinct architectural style among all Turkish prison types.
 
-![](https://mustafaeren.net/wp-content/uploads/2025/08/image-1.png)
+![](./_images/new-high-security-prisons-turkey-inline-2.webp)
 
 Denizli D Type Closed Penal Institution
 
@@ -76,7 +76,7 @@ H-Type prisons—also referred to as “Special-Type” facilities—began to be
 
 The prison consists of two sections and twelve blocks, including **seventy-nine duplex units designed for four inmates each****,** and**twenty-six single-occupancy disciplinary cells (solitary confinement units)** (Erzurum H-Type official website, 2022). The total capacity of the prison is 316 inmates.[\[vi\]](#_edn6)
 
-![](https://mustafaeren.net/wp-content/uploads/2025/08/image-2.png)
+![](./_images/new-high-security-prisons-turkey-inline-3.webp)
 
 Erzurum H Type High Security Closed Penal Institution
 
@@ -95,7 +95,7 @@ As of September 1, 2022, there are seven Y-Type prisons in operation:
 
 Although media reports vary regarding the capacity of these prisons, both the official website of the Ereğli Penal Institutions Campus and the Ministry of Justice’s 2021 Annual Activity Report state the capacity as 1,135.
 
-![](https://mustafaeren.net/wp-content/uploads/2025/08/image-3.png)
+![](./_images/new-high-security-prisons-turkey-inline-4.webp)
 
 Ereğli No 1 and No 2 Y Type Closed Penal Institution
 
@@ -122,11 +122,11 @@ These prisons are two-story facilities composed of 1-person and 3-person cells. 
 
 From the outside, the architecture of these prisons appears to be identical to that of the Y-Type prisons. The two photos below clearly illustrate this resemblance.
 
-![](https://mustafaeren.net/wp-content/uploads/2025/08/image-4.png)
+![](./_images/new-high-security-prisons-turkey-inline-5.webp)
 
 Çorlu Penal Institutions Campus
 
-![](https://mustafaeren.net/wp-content/uploads/2025/08/image-5.png)
+![](./_images/new-high-security-prisons-turkey-inline-6.webp)
 
 Ereğli Penal Institutions Campus
 
@@ -140,7 +140,7 @@ _(Adalet TV website, 2021)_
 
 According to the law, prisoners sentenced to aggravated life imprisonment must be held in solitary confinement, and—except under certain exceptional circumstances outlined in the law—they are not permitted to interact with other inmates. A close examination of photographs from these prisons reveals that many of the exercise yards (courtyards) are divided into small individual units. This architectural feature supports the claim that these facilities are specifically built for inmates serving aggravated life sentences.
 
-![](https://mustafaeren.net/wp-content/uploads/2025/08/image-6.png)
+![](./_images/new-high-security-prisons-turkey-inline-7.webp)
 
 Bodrum S Type Closed Penal Institution
 
@@ -306,4 +306,4 @@ This version has been prepared for open access circulation. For citation, please
 
 [🔗 Turkish Version](/yazilar/yeni-tip-hapishaneler-ve-toplumsal-muhalefete-gozdagi/)
 
-[📥 Download PDF](https://mustafaeren.net/wp-content/uploads/2025/08/new-high-security-prisons-turkey.pdf)
+[📥 Download PDF](/pdf/new-high-security-prisons-turkey.pdf)

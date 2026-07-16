@@ -14,7 +14,7 @@ Spiegel - Samstag, **06.08.2016**
 
 **Schon vor dem Putschversuch waren die Gefängnisse in der Türkei überfüllt, jetzt droht das Justizsystem zu kollabieren. Menschenrechtler kritisieren prekäre Haftbedingungen und gewaltsame Übergriffe.**
 
-![](https://mustafaeren.net/wp-content/uploads/2019/01/Ekran-Resmi-2019-01-10-21.45.33.png)
+![](./_images/lage-in-turkischen-gefangnissensie-stapeln-sie-ubereinander-inline-1.webp)
 
 Insassin im Metris-Gefängnis in Istanbul / REUTERS
 

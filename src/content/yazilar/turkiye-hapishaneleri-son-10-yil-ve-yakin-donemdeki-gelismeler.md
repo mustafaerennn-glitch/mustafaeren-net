@@ -19,7 +19,7 @@ Türkiye, kimi zaman hak ihlalleri, kimi zamansa tanınmış isimler ya da toplu
 
 Öncelikle mahpus nüfusundaki önemli değişimden başlamak faydalı olabilir. CİSST/TCPS paylaştığı **\[1\]** sayılara ve grafiğe baktığımızda özellikle son 10 yılda ciddi bir artışı gözlemlemek mümkün. Bu artış, ceza kanununda suç olarak tasnif edilen her tür fiile ve bu fiillerin zeminini oluşturan toplumsal sorunlara yönelik olarak faili kapatmanın öne çıktığı bir politikaya işaret etmektedir.
 
-![](https://mustafaeren.net/wp-content/uploads/2016/12/image.png)
+![](./_images/turkiye-hapishaneleri-son-10-yil-ve-yakin-donemdeki-gelismeler-inline-1.webp)
 
 Türkiye’de 2005 yılına kadar mahpus sayısı 50 bin civarında seyretmişti. Grafikte de görüldüğü üzere bunun tek istisnası mahpus sayısının 79 bine yükseldiği 1980 darbesi ve sonrasındaki birkaç yıldır. Bu dönemde nüfusu yaklaşık 45 milyon olan ülkenin % 0.18’i hapsedilmişti. 2000 yılında 49 bin, 2005’te 55 bin 870 olan mahpus sayısı düzenli bir artış ile Nisan 2016’da 187 bine ulaştı. Türkiye’de mahpus sayısında 10 yıllık zaman dilimi içinde 3 katı aşan bir artış gerçekleşti.
 

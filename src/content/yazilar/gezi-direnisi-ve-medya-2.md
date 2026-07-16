@@ -19,7 +19,7 @@ Ve “kökü dışarıda” söylemine “teorik” olarak açıklama getirmeye 
 
 Bir önceki yazımızda “yabancı parmağı”, “dış güçler” söylemlerinin polisin söylemleri dışında bir kaynağı olmadan, sorgulanmadan aktarıldığını örnekleriyle açıklamıştık. Bu yazımızda ise “kökü dışarıda” söylemine “teorik” olarak açıklama getirmeye çalışan köşe yazarlarını değerlendireceğiz.
 
-![](https://mustafaeren.net/wp-content/uploads/2019/01/Ekran-Resmi-2019-01-13-21.38.42.png)
+![](./_images/gezi-direnisi-ve-medya-2-inline-1.webp)
 
 **Abdullah Muradoğlu – Yeni Şafak 11 Haziran 2013**
 
@@ -37,7 +37,7 @@ Bu düşünceleri savunan yazarların dayanakları neler diye bakıldığında d
 
 1- Almanlar telaşlı çünkü Batı’nın özellikle 28 Şubat sürecindeki rolünün açığa çıkacağından endişeleniyorlar. Türkiye’deki Batı ajanları ve onların işbirlikçileri açığa çıkacak, bunu istemediklerinden böyle bir oyuna girişildi.
 
-![](https://mustafaeren.net/wp-content/uploads/2019/01/Ekran-Resmi-2019-01-13-21.38.57.png)
+![](./_images/gezi-direnisi-ve-medya-2-inline-2.webp)
 
 **Yaşar Taşkınkoç – Yeni Şafak 11 Haziran 2013**
 
@@ -47,7 +47,7 @@ Olaylar büyür ve genişlerken, hedef değiştirip özellikle Başbakan'a yöne
 
 3- Yabancı insanlar “sokakları coşturuyor”, eylemlerde yabancılar da var. Eylemde yabancılar varsa bunlar olsa olsa ajan olabilir. Demek ki Batılı güçler bu komplonun içinde.
 
-![](https://mustafaeren.net/wp-content/uploads/2019/01/Ekran-Resmi-2019-01-13-21.39.09.png)
+![](./_images/gezi-direnisi-ve-medya-2-inline-3.webp)
 
 **Yener Dönmez – Yeni Akit 11 Haziran 2013**
 
@@ -74,7 +74,7 @@ Bu süreçte ne yaparsan yap bu Tayyip’i devirmek, ülkeyi engellemek içindir
 
 Öylesine kördürler ki, AKP’nin Türkiye’de yaşayan milyonlarca Alevi’yi hiçe sayarak üçüncü köprüye Yavuz Sultan Selim ismini koymasını es geçerek, “Batı ve işbirlikçileri Türkiye’de mezhep kavgasını kışkırtacak” diyebilmektedirler (Aynı komplocu akla sahip olsak bu işbirlikçinin Tayyip/AKP olduğunu söylememiz gerekirdi).
 
-![](https://mustafaeren.net/wp-content/uploads/2019/01/Ekran-Resmi-2019-01-13-21.39.21.png)
+![](./_images/gezi-direnisi-ve-medya-2-inline-4.webp)
 
 **Abdurrahman Dilipak – 11 Haziran 2013**
 
@@ -91,7 +91,7 @@ Uzun sözün kısası, bu aklın sahipleri bütün o afili, “derin” konjonkt
 
 Eğer ki yaptığınız bir gönüllü kölelik, çıkar birlikteliği değilse, ince hesaplarınız yoksa –ki o zaman ümitsiz vakasınız demektir- kafanızı kumdan çıkarın, körlemesine kapattığınız o gözlerinizi açın ve neler yaşanıyor bir bakın beyler. Ortaçağ döneminde atların ağzında kaç diş olduğu üzerine felsefi tartışmalar yürüten akıldanelerin akıl tutulmasını yaşıyorsunuz çünkü. (ME/HK)
 
-![](https://mustafaeren.net/wp-content/uploads/2019/01/Ekran-Resmi-2019-01-13-21.39.33.png)
+![](./_images/gezi-direnisi-ve-medya-2-inline-5.webp)
 
 **İbrahim Karagül  
 **

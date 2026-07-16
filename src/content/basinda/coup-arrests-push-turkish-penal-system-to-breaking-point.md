@@ -16,7 +16,7 @@ featuredImageAlt: ''
 
 ISTANBUL (Reuters) - Even before last month’s coup attempt, Turkey’s penal system was overstretched, with crowded prisons and backlogged courts. Now, it is struggling to cope with an influx of thousands who have been detained in the aftermath of the attempted putsch.
 
-![](https://mustafaeren.net/wp-content/uploads/2019/01/Ekran-Resmi-2019-01-10-21.45.33.png)
+![](./_images/coup-arrests-push-turkish-penal-system-to-breaking-point-inline-1.webp)
 
 A woman walks behind a fence with padlocks left by prisoners, during a protest against the arrest of three prominent activists for press freedom, in front of Metris prison in Istanbul, Turkey, June 24, 2016. REUTERS/Murad Sezer/File Photo
 
@@ -46,15 +46,15 @@ The overcrowding was such that prisoners were sleeping in shifts and in response
 
 Slideshow (3 Images)
 
-![](https://mustafaeren.net/wp-content/uploads/2019/01/Ekran-Resmi-2019-01-10-21.45.51.png)
+![](./_images/coup-arrests-push-turkish-penal-system-to-breaking-point-inline-2.webp)
 
 Turkish soldiers detain Staff Sergeant Erkan Cikat, one of the missing military personnel suspected of being involved in the coup attempt, in Marmaris, Turkey, July 25, 2016. REUTERS/Kenan Gurbuz/File Photo
 
-![](https://mustafaeren.net/wp-content/uploads/2019/01/Ekran-Resmi-2019-01-10-21.46.04.png)
+![](./_images/coup-arrests-push-turkish-penal-system-to-breaking-point-inline-3.webp)
 
 A soldier beaten by the mob (C) is protected by plainclothes policemen after troops involved in the coup surrendered on the Bosphorus Bridge in Istanbul, Turkey July 16,2016. REUTERS/Murad Sezer/File Photo
 
-![](https://mustafaeren.net/wp-content/uploads/2019/01/Ekran-Resmi-2019-01-10-21.46.17.png)
+![](./_images/coup-arrests-push-turkish-penal-system-to-breaking-point-inline-4.webp)
 
 A policeman checks a soldier beaten by the mob after troops involved in the coup attempt surrendered on the Bosphorus Bridge in Istanbul, Turkey July 16, 2016. REUTERS/Murad Sezer/File Photo
 

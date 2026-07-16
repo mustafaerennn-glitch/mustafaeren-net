@@ -16,19 +16,19 @@ pdf: /pdf/migrants-refugees-prison-eu.pdf
 
 **Foreigners Are Incarcerated Four Times More Often**
 
-![](https://mustafaeren.net/wp-content/uploads/2025/04/foreigners-and-incarceration-in-the-eu-1024x683.png)
+![](./_images/migrants-refugees-prison-eu-inline-1.webp)
 
 _Bianet – 26 June 2021_
 
 The importance of interdisciplinary studies is increasing day by day. These studies allow for the development of new insights and new findings by offering fresh perspectives. Just like interdisciplinary work, cross-thematic approaches can also be enlightening. This short article aims to examine two rarely linked subjects — migration and imprisonment — together, and to present a broad picture of the current situation.[\[i\]](#_edn1)
 
-![](https://mustafaeren.net/wp-content/uploads/2025/04/Ekran-Resmi-2025-04-24-00.03.16.png)
+![](./_images/migrants-refugees-prison-eu-inline-2.webp)
 
 As of January 1, 2020, in 31 European countries with a total population of 447.3 million, 23 million people were living who were not citizens of any EU member state. According to this data, at the beginning of 2020, migrants, refugees, or asylum seekers constituted 5.1% of the total population in EU countries.[\[ii\]](#_edn2) According to data dated January 31, 2020, the total number of prisoners in these 31 European countries was 505,309. Of these prisoners, 107,135 — or 21.2% — were foreign nationals.[\[iii\]](#_edn3) These figures show that while foreigners make up 5.1% of the total population in the EU, they represent 21.2% of the prison population. In other words, within the borders of the EU, if you are a foreigner, your likelihood of being imprisoned is approximately four times higher than that of a citizen of an EU member state.[\[iv\]](#_edn4)
 
-![](https://mustafaeren.net/wp-content/uploads/2025/04/Ekran-Resmi-2025-04-24-00.04.12.png)
+![](./_images/migrants-refugees-prison-eu-inline-3.webp)
 
-![](https://mustafaeren.net/wp-content/uploads/2025/04/Ekran-Resmi-2025-04-24-00.04.47.png)
+![](./_images/migrants-refugees-prison-eu-inline-4.webp)
 
 Although the rate of imprisonment for migrants, refugees, or asylum seekers in EU member states is four times higher than for citizens of those countries, this rate varies by country. The two countries where the imprisonment rate for migrants, refugees, or asylum seekers is the highest — with a difference of approximately seven times — are Greece and Croatia. It would not be incorrect to say that a significant reason for this high rate is that these two countries lie along major migration routes. Following these are Sweden with a rate of 4.3, and Germany, Italy, Finland, and Slovenia with rates of approximately 4. Countries where the rate is 3 to 3.5 times higher include Belgium, Denmark, the Netherlands, Austria, and France. In the 2 to 3 range are Cyprus, Switzerland, Portugal, Norway, Malta, and Spain. The five countries with the lowest imprisonment rates are, in order: Latvia, Lithuania, Ireland, Iceland, and Romania.
 
@@ -40,7 +40,7 @@ If we include Türkiye in this picture, it ranks as the second country where the
 
 The chart below shows how many times higher the imprisonment rate of migrants, refugees, and asylum seekers is compared to the citizens of each EU member state.
 
-![](https://mustafaeren.net/wp-content/uploads/2025/04/Ekran-Resmi-2025-04-24-00.05.35.png)
+![](./_images/migrants-refugees-prison-eu-inline-5.webp)
 
 When looking at this chart, it is evident that in the EU’s leading countries in terms of population and economy, this rate is around 3 to 4 times higher. Stating that migrants, refugees, and asylum seekers are imprisoned 3 to 4 times more often than EU citizens is a significant finding and indicates the presence of a serious issue. This is an important observation. Those approaching from a right-wing, nationalist perspective might say, “migrants commit more crimes,” but this merely describes the outcome and says nothing about the underlying causes. From a leftist, pluralist, and democratic perspective, it is possible to say that there is a serious integration problem. Although EU countries have gained substantial experience in integrating migrants, refugees, and asylum seekers, the issue remains a matter of criminality, especially for Central European countries. Migrants, refugees, and asylum seekers are being criminalized. There is a need for an approach that reconsiders migration outside the realm of criminality, focusing instead on democracy, human rights, and integration.
 
@@ -60,7 +60,7 @@ In the tables and graphs, data from Türkiye is also included to allow for compa
 
 [\[v\]](#_ednref5) As this article primarily focuses on EU member states, the evaluation of Türkiye has been kept relatively brief.
 
-[Download PDF Version](https://mustafaeren.net/wp-content/uploads/2025/04/foreigners-and-incarceration-in-the-eu.pdf)
+[Download PDF Version](/pdf/migrants-refugees-prison-eu.pdf)
 
 [🔗 Original article in Turkish](/yazilar/multeci-ve-mahpus-olmak-abde-yabancilar-dort-kat-fazla-hapsediliyor/)
 
