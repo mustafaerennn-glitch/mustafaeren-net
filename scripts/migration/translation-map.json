@@ -1,0 +1,71 @@
+{
+  "_aciklama": "TR 'yazilar' orijinali ↔ yabancı-dil çevirisi eşleştirmesi, WordPress post_id bazında. Her grupta tam olarak 1 ana dil (tr) + 0..n çeviri olmalı. Migrasyon script'i bu dosyayı dosya üretiminden ÖNCE tam olarak çıkarıp tutarlılığını doğrular (aynı dilde iki kardeş yok, bir çeviri birden fazla gruba bağlı değil, referans hedefi gerçekten üretilecek).",
+  "_guvenSeviyeleri": {
+    "yuksek": "Tarih tam/neredeyse tam eşleşiyor VE/VEYA çeviri gövdesinde TR orijinaline açık referans var",
+    "orta": "Tematik eşleşme güçlü ama tarih ~1 yıl farklı, kullanıcı doğrulaması önerilir"
+  },
+  "groups": [
+    {
+      "guven": "yuksek",
+      "tr": { "postId": "4347", "title": "AKP, Kriminalizasyon ve \"Kampüs\" Hapishaneler Cumhuriyeti", "date": "2025-04-15" },
+      "ceviriler": [
+        { "postId": "4398", "lang": "en", "title": "AKP, criminalization and the Republic of 'Campus' Prisons", "date": "2025-04-15" },
+        { "postId": "4372", "lang": "de", "title": "Die AKP und der Strafvollzug: Kriminalisierung und die Republik der „Gefängniscampus“", "date": "2025-04-16" }
+      ]
+    },
+    {
+      "guven": "yuksek",
+      "tr": { "postId": "4428", "title": "Yapay Zekâ Destekli İçerik Üretimi Üzerine Etik Politika", "date": "2025-04-27" },
+      "ceviriler": [
+        { "postId": "4436", "lang": "en", "title": "Ethical Policy on AI-Assisted Content Creation", "date": "2025-04-27" }
+      ]
+    },
+    {
+      "guven": "yuksek",
+      "tr": { "postId": "4526", "title": "Barışın İlk Adımı: Siyasi Mahpuslara Özgürlük", "date": "2025-05-14" },
+      "ceviriler": [
+        { "postId": "4515", "lang": "en", "title": "The First Step Toward Peace: Freedom for Political Prisoners", "date": "2025-05-14" },
+        { "postId": "4529", "lang": "de", "title": "Der Erste Schritt zum Frieden: Freiheit für politische Gefangene", "date": "2025-05-14" }
+      ]
+    },
+    {
+      "guven": "yuksek",
+      "tr": { "postId": "2195", "title": "Yeni Tip Hapishaneler ve Toplumsal Muhalefete Gözdağı", "date": "2022-10-01" },
+      "ceviriler": [
+        { "postId": "4685", "lang": "en", "title": "New High-Security Prisons as a Tool to Intimidate Social Dissent", "date": "2022-10-01" },
+        { "postId": "4821", "lang": "de", "title": "Neue Gefängnistypen und die Einschüchterung der gesellschaftlichen Opposition", "date": "2022-10-01" }
+      ]
+    },
+    {
+      "guven": "yuksek",
+      "not": "EN çevirisinin gövdesinde 'Bianet – 26 June 2021' notu var, TR postun tarihiyle (2021-06-26) tam eşleşiyor.",
+      "tr": { "postId": "1614", "title": "Mülteci ve Mahpus Olmak / AB'de \"Yabancılar\" Dört Kat Fazla Hapsediliyor", "date": "2021-06-26" },
+      "ceviriler": [
+        { "postId": "4414", "lang": "en", "title": "To Be a Migrant, Refugee, Asylum Seeker, and Prisoner in EU Countries", "date": "2025-04-24" }
+      ]
+    },
+    {
+      "guven": "orta",
+      "not": "Tarih 2013 vs 'I first wrote this article in 2014' — yaklaşık 1 yıl fark, yazarın hafızasından kaynaklanıyor olabilir. KULLANICI DOĞRULAMASI ÖNERİLİR.",
+      "tr": { "postId": "641", "title": "Hapishanelerin Engelli Mahpuslar İçin Kabus Olmasının Önüne Geçebilmek", "date": "2013-05-09" },
+      "ceviriler": [
+        { "postId": "4492", "lang": "en", "title": "Prisoners with Special Needs and Turkey's Prisons Built for Adult, Sunni, Healthy, Heterosexual Turkish Men", "date": "2025-05-11" }
+      ]
+    }
+  ],
+  "eslenemeyenler": {
+    "_aciklama": "TR orijinali export'ta bulunamadı — bu parçalar TEK BAŞINA (translations alanı boş) Yazı olarak migre edilecek. Kullanıcı gerçek TR orijinalini biliyorsa eklenebilir.",
+    "4467": {
+      "title": "Prisoners with Special Needs and Human Rights",
+      "not": "'2013'te CİSST tarafından yayımlanan UNODC El Kitabı Türkçe çevirisine giriş notu olarak yazıldı' — muhtemelen ayrı bir WordPress yazısı olarak hiç yayımlanmamış, doğrudan kitap/rapor metni."
+    },
+    "4875": {
+      "title": "Death Fasts: A Kind of Action within the Dilemma between the Sanctity of Life and the Right to Resist",
+      "not": "Gövdede TR orijinal başlığı açıkça geçiyor ('Ölüm Orucu: Yaşamın Kutsallığı ile Direnme Hakkı Arasında Bir Eylem Tarzı') ama bu başlıkla eşleşen bir 'yazilar' kategorili post export'ta bulunamadı."
+    }
+  },
+  "_standaloneYabanciOzgunler": {
+    "_aciklama": "Bunlar ÇEVİRİ DEĞİL — WP'de doğrudan hem dil hem tip kategorisiyle etiketlenmiş, TR karşılığı olmayan özgün yabancı-dil içerikler. Normal kategori-bazlı sınıflandırmayla (content-overrides.json'a gerek yok) doğru şekilde Yazı/Basında'ya düşerler, translations alanı boş kalır.",
+    "postIds": ["525", "1403", "1552", "1640", "1784", "1969"]
+  }
+}

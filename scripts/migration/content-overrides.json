@@ -1,0 +1,299 @@
+{
+  "_aciklama": "WordPress post_id bazlı manuel istisna tablosu. Migrasyon script'i her kayıt için önce buraya bakar, yoksa genel kurala (tag-topic-map.json / tag-mecra-map.json) düşer. Bu dosyadaki her giriş bu oturumda elle doğrulanmış bir karardır (bkz. wp-analiz-27-yabanci-dil.md).",
+  "_alanlar": {
+    "collection": "yazilar | basinda — otomatik sınıflandırmayı (kategori tabanlı) geçersiz kılar, yalnızca yabancı-dil kategorisiz parçalar için gerekli",
+    "mecra": "mecralar.json id'si — gövde metninde geçtiği halde etiketlenmemiş mecra düzeltmesi",
+    "extraTopics": "tag-topic-map.json'dan gelen konulara EK olarak eklenecek konu id(ler)i — yalnızca genel hapishane-eşanlamlısı etiketten başka spesifik etiketi olmayan 35 parça için"
+  },
+  "1057": {
+    "extraTopics": [
+      "kritik-hapishane-calismalari"
+    ],
+    "title": "Hapishane Konulu Tezler Üzerinden Bir Değerlendirme Girişimi"
+  },
+  "130": {
+    "collection": "basinda",
+    "title": "Die Türkei baut «Gefängnis-Städte"
+  },
+  "1357": {
+    "extraTopics": [
+      "ceza-infaz-istatistikleri"
+    ],
+    "title": "Mahpus sayısı \"400 bin\"i gördü mü? Bakanlık neden açıklamıyor?"
+  },
+  "1403": {
+    "extraTopics": [
+      "isci-mahpuslar"
+    ],
+    "title": "Turkish gov’t accused of turning prisons into enterprises, exploiting inmates’ labor"
+  },
+  "1552": {
+    "extraTopics": [
+      "genel-hapishane-yazilari"
+    ],
+    "title": "Évolutions du régime carcéral en Turquie"
+  },
+  "176": {
+    "extraTopics": [
+      "kritik-hapishane-calismalari"
+    ],
+    "title": "Akademi, hapishane düzenini eleştirmeli"
+  },
+  "1969": {
+    "extraTopics": [
+      "genel-hapishane-yazilari"
+    ],
+    "title": "Im Porträt: Der Soziologe Mustafa Eren"
+  },
+  "2178": {
+    "mecra": "birgun",
+    "title": "Paran Yoksa 10 Ay Daha Ceza"
+  },
+  "2185": {
+    "extraTopics": [
+      "genel-hapishane-yazilari"
+    ],
+    "mecra": "birgun",
+    "title": "Cezaevindeki Emanet Paraları İşletip Faiz Geliri Elde Ediyorlar"
+  },
+  "2479": {
+    "extraTopics": [
+      "genel-hapishane-yazilari"
+    ],
+    "title": "Hapsedilmeye Hazır mısınız?"
+  },
+  "4132": {
+    "extraTopics": [
+      "toplu-hapsetme"
+    ],
+    "title": "Hapsetmenin Alternatifleri Konferansı"
+  },
+  "4141": {
+    "extraTopics": [
+      "genel-hapishane-yazilari"
+    ],
+    "title": "Aktivizm Nedir?"
+  },
+  "4143": {
+    "extraTopics": [
+      "genel-hapishane-yazilari"
+    ],
+    "title": "CİSST/TCPS Tanıtımı / Sivil Düşün"
+  },
+  "4144": {
+    "extraTopics": [
+      "genel-hapishane-yazilari"
+    ],
+    "title": "ASULİS Türkiye Hapishaneleri Paneli"
+  },
+  "4150": {
+    "extraTopics": [
+      "genel-hapishane-yazilari"
+    ],
+    "title": "Avlu Dizisi ve Türkiye Hapishaneleri"
+  },
+  "4154": {
+    "extraTopics": [
+      "hapishanelerin-tarihi"
+    ],
+    "title": "Kapatılmanın Patolojisi ve Türkiye Hapishaneleri"
+  },
+  "4164": {
+    "collection": "basinda",
+    "title": "Prisoners’ Right to Education Obstructed Through Statutory Decree"
+  },
+  "4372": {
+    "collection": "yazilar",
+    "title": "Die AKP und der Strafvollzug: Kriminalisierung und die Republik der „Gefängniscampus“"
+  },
+  "4398": {
+    "collection": "yazilar",
+    "title": "AKP, criminalization and the Republic of 'Campus' Prisons"
+  },
+  "4414": {
+    "collection": "yazilar",
+    "title": "To Be a Migrant, Refugee, Asylum Seeker, and Prisoner in EU Countries"
+  },
+  "4436": {
+    "collection": "yazilar",
+    "title": "Ethical Policy on AI-Assisted Content Creation"
+  },
+  "4467": {
+    "collection": "yazilar",
+    "title": "Prisoners with Special Needs and Human Rights"
+  },
+  "4492": {
+    "collection": "yazilar",
+    "title": "Prisoners with Special Needs and Turkey’s Prisons Built for Adult, Sunni, Healthy, Heterosexual Turkish Men"
+  },
+  "4515": {
+    "collection": "yazilar",
+    "title": "The First Step Toward Peace: Freedom for Political Prisoners"
+  },
+  "4529": {
+    "collection": "yazilar",
+    "title": "Der Erste Schritt zum Frieden: Freiheit für politische Gefangene"
+  },
+  "4685": {
+    "collection": "yazilar",
+    "title": "New High-Security Prisons as a Tool to Intimidate Social Dissent"
+  },
+  "4821": {
+    "collection": "yazilar",
+    "title": "Neue Gefängnistypen und die Einschüchterung der gesellschaftlichen Opposition"
+  },
+  "4875": {
+    "collection": "yazilar",
+    "title": "Death Fasts: A Kind of Action within the Dilemma between the Sanctity of Life and the Right to Resist"
+  },
+  "502": {
+    "collection": "basinda",
+    "title": "Towards A Homosexual-Only Prison"
+  },
+  "508": {
+    "collection": "basinda",
+    "extraTopics": [
+      "mahpus"
+    ],
+    "title": "EU-sponsored ‘The Handbook on Prisoners’ Rights’ not allowed in Turkish prisons"
+  },
+  "511": {
+    "collection": "basinda",
+    "extraTopics": [
+      "siyasi-mahpuslar"
+    ],
+    "title": "The Trial of IIhan Comak in Istanbul"
+  },
+  "519": {
+    "collection": "basinda",
+    "extraTopics": [
+      "toplu-hapsetme"
+    ],
+    "title": "Le système carcéral en Turquie est au bord de la rupture﻿"
+  },
+  "528": {
+    "collection": "basinda",
+    "extraTopics": [
+      "toplu-hapsetme"
+    ],
+    "title": "Turquie. Le système carcéral au bord de la rupture"
+  },
+  "532": {
+    "collection": "basinda",
+    "title": "Outside/Turkey: 1914 children officially in prison"
+  },
+  "535": {
+    "collection": "basinda",
+    "extraTopics": [
+      "toplu-hapsetme"
+    ],
+    "title": "Après Le Putsch, Les Prısons Turques Sont Complètement Saturées"
+  },
+  "538": {
+    "collection": "basinda",
+    "extraTopics": [
+      "toplu-hapsetme"
+    ],
+    "title": "Coup arrests push Turkish penal system to breaking point"
+  },
+  "545": {
+    "collection": "basinda",
+    "extraTopics": [
+      "cocuk-mahpuslar"
+    ],
+    "title": "1914 enfants étaient officiellement encore en prison en Turquie en Juillet"
+  },
+  "551": {
+    "collection": "basinda",
+    "extraTopics": [
+      "lgbti-mahpuslar",
+      "engelli-yasli-mahpuslar"
+    ],
+    "title": "Report shows hard prison conditions for LGBTs, people with disabilities"
+  },
+  "554": {
+    "collection": "basinda",
+    "extraTopics": [
+      "hasta-mahpuslar"
+    ],
+    "title": "Sentenced to death in Turkish jails"
+  },
+  "557": {
+    "collection": "basinda",
+    "title": "1,914 Children Officially in Prison in Turkey"
+  },
+  "560": {
+    "collection": "basinda",
+    "extraTopics": [
+      "kriminalizasyon"
+    ],
+    "title": "Erdogans absurde Hatz auf Gülenisten Selbst Autokennzeichen machen verdächtig"
+  },
+  "565": {
+    "collection": "basinda",
+    "extraTopics": [
+      "toplu-hapsetme"
+    ],
+    "title": "Lage in türkischen Gefängnissen\"Sie stapeln sie übereinander\""
+  },
+  "626": {
+    "extraTopics": [
+      "genel-hapishane-yazilari"
+    ],
+    "title": "#HakÇetelesi CİSST/TCPS- Mustafa Eren"
+  },
+  "629": {
+    "extraTopics": [
+      "genel-hapishane-yazilari"
+    ],
+    "title": "Hapishane"
+  },
+  "632": {
+    "extraTopics": [
+      "ceza-infaz-istatistikleri"
+    ],
+    "title": "Mahpus sayısı 15 Temmuz'dan sonra 194 bine ulaştı"
+  },
+  "638": {
+    "extraTopics": [
+      "disiplin-cezalari"
+    ],
+    "title": "90'ların işkence yöntemi falaka cezaevine geri döndü"
+  },
+  "648": {
+    "extraTopics": [
+      "genel-hapishane-yazilari"
+    ],
+    "title": "Türkiye Hapishaneleri: Son 10 Yıl ve Yakın Dönemdeki Gelişmeler"
+  },
+  "670": {
+    "extraTopics": [
+      "toplu-hapsetme"
+    ],
+    "title": "Türkiye Hapishanelerinde Yeni İnfaz Rejimi[1]"
+  },
+  "852": {
+    "extraTopics": [
+      "ceza-infaz-istatistikleri"
+    ],
+    "title": "Mahpus Ölümleri Belgelerinde Farklı Rakamlar"
+  },
+  "903": {
+    "extraTopics": [
+      "hapishanelerin-tarihi"
+    ],
+    "title": "\"Hapishane\"den \"Cezaevi\"ne Türkiye'de Değişen Mahpusluk"
+  },
+  "911": {
+    "extraTopics": [
+      "genel-hapishane-yazilari"
+    ],
+    "title": "Urfa Hapishanesi'nde Bir Başka Tuzak"
+  },
+  "989": {
+    "extraTopics": [
+      "genel-hapishane-yazilari"
+    ],
+    "title": "Ceza İnfaz Kurumu Yönetimi El Kitabı Üzerinde Bir Değerlendirme  Hapishanelere İlişkin Avrupa Kriterlerinin ve Türkiye Pratiğinin Bir Belge Üzerinden Okunması"
+  }
+}
