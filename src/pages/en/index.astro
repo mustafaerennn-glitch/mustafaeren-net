@@ -15,7 +15,7 @@ if (Astro.currentLocale !== lang) {
 }
 
 const t = ui[lang];
-const alternates = (Object.entries(routes.hakkimda) as [Locale, string][]).map(([l, href]) => ({ lang: l, href }));
+const alternates = (Object.entries(routes.anaSayfa) as [Locale, string][]).map(([l, href]) => ({ lang: l, href }));
 
 const bio =
   'Sociologist and researcher studying prison policy, migration, human rights, and recent political history — writing and building digital archives.';
