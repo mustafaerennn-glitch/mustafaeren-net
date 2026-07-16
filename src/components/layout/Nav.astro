@@ -49,7 +49,7 @@ const brandHref = lang === 'tr' ? '/' : hakkimdaHref;
 ---
 
 <header class="site-header">
-  <nav class:list={['topnav', { 'no-divider': showSwitcher }]}>
+  <nav class:list={['topnav', { 'has-switcher': showSwitcher }]}>
     <a class="brand" href={brandHref}>Mustafa Eren</a>
     <div class="nav-items">
       <a class:list={['nav-link', { current: current === 'yazilar' }]} href="/yazilar/">{t.navYazilar}</a>
@@ -107,29 +107,24 @@ const brandHref = lang === 'tr' ? '/' : hakkimdaHref;
     align-items: center;
     justify-content: space-between;
     padding: 0 0 1rem;
+    border-bottom: 0.5px solid var(--border);
     flex-wrap: wrap;
     gap: 12px;
   }
-  .topnav:not(.no-divider) {
-    border-bottom: 0.5px solid var(--border);
+  .topnav:not(.has-switcher) {
     margin-bottom: 2rem;
   }
-  .topnav.no-divider {
-    padding-bottom: 0.75rem;
+  .topnav.has-switcher {
+    margin-bottom: 0.75rem;
   }
   .lang-row {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding-bottom: 1rem;
-    border-bottom: 0.5px solid var(--border);
     margin-bottom: 2rem;
   }
   .lang-row-desktop {
     font-size: 12px;
-  }
-  .lang-row-desktop :global(.lang-cluster a) {
-    color: var(--text-muted);
   }
   .lang-dropdown {
     display: none;
