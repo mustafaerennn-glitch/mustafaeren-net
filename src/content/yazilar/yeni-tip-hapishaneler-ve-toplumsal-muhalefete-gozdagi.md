@@ -9,6 +9,7 @@ topics:
 translations:
   - new-high-security-prisons-turkey
   - neue-hochsicherheits-gefaengnisse-tuerkei
+  - nouvelles-prisons-de-haute-securite-turquie
 publishDate: '2022-10-01'
 featuredImage: ./_images/yeni-tip-hapishaneler-ve-toplumsal-muhalefete-gozdagi-featured.webp
 featuredImageAlt: ''

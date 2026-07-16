@@ -8,6 +8,7 @@ topics:
 translations:
   - peace-freedom-for-political-prisoners
   - der-erste-schritt-zum-frieden-freiheit-fur-politische-gefangene
+  - premier-pas-vers-la-paix-liberte-pour-les-prisonniers-politiques
 publishDate: '2025-05-14'
 featuredImage: ./_images/barisin-ilk-adimi-siyasi-mahpuslara-ozgurluk-featured.webp
 featuredImageAlt: ''
