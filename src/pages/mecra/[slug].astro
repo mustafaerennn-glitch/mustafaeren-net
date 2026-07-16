@@ -55,7 +55,11 @@ const rows = [
 <BaseLayout lang={lang} title={mecra.data.ad} description={description} canonical={`/mecra/${mecra.id}/`} breadcrumb={[{ label: 'Ana sayfa', href: '/' }, { label: mecra.data.ad }]}>
   <h1>{mecra.data.ad}</h1>
   <p class="desc">{description}</p>
-  <a class="mecra-external" href={mecra.data.url} target="_blank" rel="noopener">{new URL(mecra.data.url).hostname} ↗</a>
+  {
+    mecra.data.url && (
+      <a class="mecra-external" href={mecra.data.url} target="_blank" rel="noopener">{new URL(mecra.data.url).hostname} ↗</a>
+    )
+  }
 
   <PressList>
     {

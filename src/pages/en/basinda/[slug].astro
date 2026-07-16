@@ -40,7 +40,7 @@ const areas = areaSlug ? [{ slug: areaSlug, label: ALAN_LABELS[areaSlug] }] : []
 
 const siteUrl = new URL(canonical, 'https://mustafaeren.net').toString();
 
-let sourcesData: { primary: { name: string; title: string; url: string }; secondary: { name: string; title: string; url: string }[] } | null = null;
+let sourcesData: { primary: { name: string; title: string; url?: string }; secondary: { name: string; title: string; url?: string }[] } | null = null;
 if (entry.data.sources && entry.data.sources.length > 0) {
   const resolved = await Promise.all(
     entry.data.sources.map(async (s) => ({ mecra: await getEntry(s.mecra), tur: s.tur })),

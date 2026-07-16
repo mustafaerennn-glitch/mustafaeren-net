@@ -5,7 +5,7 @@
 interface SourceItem {
   name: string;
   title: string;
-  url: string;
+  url?: string; // bazı mecraların gerçek bir web adresi yok — o durumda tıklanamaz düz metin
 }
 
 interface Props {
@@ -20,22 +20,36 @@ const { primary, secondary } = Astro.props;
   <div class="sources-group">
     <p class="sources-group-label">İlk yayın</p>
     <div class="source-row">
-      <a href={primary.url} target="_blank" rel="noopener">
-        <span class="source-name">{primary.name}</span> — <span class="source-title">"{primary.title}"</span>
-      </a>
+      {primary.url ? (
+        <a href={primary.url} target="_blank" rel="noopener">
+          <span class="source-name">{primary.name}</span> — <span class="source-title">"{primary.title}"</span>
+        </a>
+      ) : (
+        <span>
+          <span class="source-name">{primary.name}</span> — <span class="source-title">"{primary.title}"</span>
+        </span>
+      )}
     </div>
   </div>
   {
     secondary.length > 0 && (
       <div class="sources-group">
         <p class="sources-group-label">Diğer yayımlar</p>
-        {secondary.map((s) => (
-          <div class="source-row">
-            <a href={s.url} target="_blank" rel="noopener">
-              <span class="source-name">{s.name}</span> — <span class="source-title">"{s.title}"</span>
-            </a>
-          </div>
-        ))}
+        {secondary.map((s) =>
+          s.url ? (
+            <div class="source-row">
+              <a href={s.url} target="_blank" rel="noopener">
+                <span class="source-name">{s.name}</span> — <span class="source-title">"{s.title}"</span>
+              </a>
+            </div>
+          ) : (
+            <div class="source-row">
+              <span>
+                <span class="source-name">{s.name}</span> — <span class="source-title">"{s.title}"</span>
+              </span>
+            </div>
+          ),
+        )}
       </div>
     )
   }

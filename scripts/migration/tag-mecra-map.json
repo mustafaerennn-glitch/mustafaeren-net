@@ -37,12 +37,23 @@
   "l'humanité": "l-humanite",
   "ntv": "n-tv",
 
-  "_NOT": "Aşağıdaki mecralar için gerçek URL bulunamadı (XML gövdesinde dış link yok) — kullanıcıdan onay/URL bekleniyor, bu yüzden henüz src/data/mecralar.json'da YOK:",
-  "_eksik_mecralar": [
-    "Akit", "Yeni Şafak", "İMC TV", "Artı TV", "CNN Türk", "Karadeniz TV",
-    "Komün TV", "Medya Haber", "Medyascope TV", "Mezopotamya Ajansı",
-    "Açık Gazete", "Dirok", "Tarihin Peşinde", "Kültür Mantarı",
-    "Hayatın Tanığı", "Teorik Bakış", "Tarih Defteri", "Mercek programı",
-    "Kedistan"
-  ]
+  "Akit": "akit",
+  "Yeni Şafak": "yeni-safak",
+  "İMC TV": "imc-tv",
+  "Artı TV": "arti-tv",
+  "CNN Türk": "cnn-turk",
+  "Karadeniz TV": "karadeniz-tv",
+  "Komün TV": "komun-tv",
+  "Medya Haber": "medya-haber",
+  "Medyascope TV": "medyascope-tv",
+  "Mezopotamya Ajansı": "mezopotamya-ajansi",
+  "Açık Gazete": "acik-gazete",
+  "Dirok": "dirok",
+  "Tarihin Peşinde": "tarihin-pesinde",
+  "Kültür Mantarı": "kultur-mantari",
+  "Hayatın Tanığı": "hayatin-tanigi",
+  "Teorik Bakış": "teorik-bakis",
+  "Tarih Defteri": "tarih-defteri",
+  "Mercek programı": "mercek-programi",
+  "Kedistan": "kedistan"
 }

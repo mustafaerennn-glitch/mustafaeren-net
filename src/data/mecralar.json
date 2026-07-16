@@ -33,5 +33,25 @@
   { "id": "yeni-yasam", "ad": "Yeni Yaşam", "url": "https://www.yeniyasamgazetesi.com", "yayinEki": "'da", "iyelikEki": "'ın" },
   { "id": "yeni-ozgur-politika", "ad": "Yeni Özgür Politika", "url": "https://www.ozgurpolitika.com", "yayinEki": "'da", "iyelikEki": "'nın" },
   { "id": "l-humanite", "ad": "l'humanité", "url": "https://www.humanite.fr", "yayinEki": "'de", "iyelikEki": "'nin" },
-  { "id": "n-tv", "ad": "n-tv", "url": "https://www.n-tv.de", "yayinEki": "'de", "iyelikEki": "'nin" }
+  { "id": "n-tv", "ad": "n-tv", "url": "https://www.n-tv.de", "yayinEki": "'de", "iyelikEki": "'nin" },
+
+  { "id": "akit", "ad": "Akit", "yayinEki": "'te", "iyelikEki": "'in" },
+  { "id": "yeni-safak", "ad": "Yeni Şafak", "yayinEki": "'ta", "iyelikEki": "'ın" },
+  { "id": "imc-tv", "ad": "İMC TV", "yayinEki": "'de", "iyelikEki": "'nin" },
+  { "id": "arti-tv", "ad": "Artı TV", "yayinEki": "'de", "iyelikEki": "'nin" },
+  { "id": "cnn-turk", "ad": "CNN Türk", "yayinEki": "'te", "iyelikEki": "'ün" },
+  { "id": "karadeniz-tv", "ad": "Karadeniz TV", "yayinEki": "'de", "iyelikEki": "'nin" },
+  { "id": "komun-tv", "ad": "Komün TV", "yayinEki": "'de", "iyelikEki": "'nin" },
+  { "id": "medya-haber", "ad": "Medya Haber", "yayinEki": "'de", "iyelikEki": "'in" },
+  { "id": "medyascope-tv", "ad": "Medyascope TV", "yayinEki": "'de", "iyelikEki": "'nin" },
+  { "id": "mezopotamya-ajansi", "ad": "Mezopotamya Ajansı", "yayinEki": "'nda", "iyelikEki": "'nın" },
+  { "id": "acik-gazete", "ad": "Açık Gazete", "yayinEki": "'de", "iyelikEki": "'nin" },
+  { "id": "dirok", "ad": "Dirok", "yayinEki": "'ta", "iyelikEki": "'un" },
+  { "id": "tarihin-pesinde", "ad": "Tarihin Peşinde", "yayinEki": "'de", "iyelikEki": "'nin" },
+  { "id": "kultur-mantari", "ad": "Kültür Mantarı", "yayinEki": "'nda", "iyelikEki": "'nın" },
+  { "id": "hayatin-tanigi", "ad": "Hayatın Tanığı", "yayinEki": "'nda", "iyelikEki": "'nın" },
+  { "id": "teorik-bakis", "ad": "Teorik Bakış", "yayinEki": "'ta", "iyelikEki": "'ın" },
+  { "id": "tarih-defteri", "ad": "Tarih Defteri", "yayinEki": "'nde", "iyelikEki": "'nin" },
+  { "id": "mercek-programi", "ad": "Mercek programı", "yayinEki": "'nda", "iyelikEki": "'nın" },
+  { "id": "kedistan", "ad": "Kedistan", "yayinEki": "'da", "iyelikEki": "'ın" }
 ]

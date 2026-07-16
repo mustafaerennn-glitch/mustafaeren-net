@@ -5,17 +5,21 @@
 // içinde), çünkü orası siteiçi /mecra/ linkine gidiyor, ↗ yok — bkz. bilesen-envanteri.md §3.
 
 interface Props {
-  mecra?: { ad: string; url: string } | null;
+  mecra?: { ad: string; url?: string } | null;
 }
 
 const { mecra } = Astro.props;
 ---
 
 {
-  mecra ? (
+  mecra?.url ? (
     <a class="mecra-rozeti" href={mecra.url} target="_blank" rel="noopener">
       {mecra.ad} ↗
     </a>
+  ) : mecra ? (
+    // Mecra biliniyor ama gerçek bir web adresi yok (örn. kapanmış TV/podcast kanalı) —
+    // "Mustafaeren.net" ile karıştırılmasın diye mecranın kendi adı gösterilir, tıklanamaz.
+    <span class="mecra-rozeti mecra-rozeti--local">{mecra.ad}</span>
   ) : (
     <span class="mecra-rozeti mecra-rozeti--local">Mustafaeren.net</span>
   )

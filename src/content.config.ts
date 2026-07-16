@@ -17,7 +17,10 @@ const mecralar = defineCollection({
   loader: file('./src/data/mecralar.json'),
   schema: z.object({
     ad: z.string(),
-    url: z.string().url(),
+    // Opsiyonel: bazı mecralar (özellikle kapanmış TV/podcast kanalları) için gerçek bir web
+    // adresi yok. Sahte/placeholder URL üretmek yerine alan boş bırakılıyor — MecraRozeti.astro
+    // bu durumda tıklanamaz varyantı, ama mecranın gerçek adıyla gösterir (bkz. component).
+    url: z.string().url().optional(),
     yayinEki: z.string(), // bulunma eki: "Bianet'te yayımlanan..." → "'te"
     iyelikEki: z.string(), // ilgi eki: "Bianet'in yaptığı..." → "'in"
   }),
