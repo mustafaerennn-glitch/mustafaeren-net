@@ -1,25 +1,26 @@
 ---
 import { getCollection } from 'astro:content';
 import { Image } from 'astro:assets';
-import BaseLayout from '../layouts/BaseLayout.astro';
-import BookCard from '../components/cards/BookCard.astro';
-import { getAreaCounts, ALAN_LABELS } from '../lib/taxonomy';
-import { getMergedFeed } from '../lib/feed';
-import { routes, type Locale } from '../i18n/routes';
-import profilFoto from '../assets/profil-fotografi.jpg';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BookCard from '../../components/cards/BookCard.astro';
+import { getAreaCounts, ALAN_LABELS, ALAN_LABELS_I18N } from '../../lib/taxonomy';
+import { getMergedFeed } from '../../lib/feed';
+import { routes, type Locale } from '../../i18n/routes';
+import { ui } from '../../i18n/ui';
+import profilFoto from '../../assets/profil-fotografi.jpg';
 
-const lang = 'tr';
+const lang = 'fr';
 if (Astro.currentLocale !== lang) {
   throw new Error(`i18n locale eşleşmedi: beklenen "${lang}", Astro.currentLocale="${Astro.currentLocale}"`);
 }
 
-const alternates = (Object.entries(routes.anaSayfa) as [Locale, string][]).map(([l, href]) => ({ lang: l, href }));
+const t = ui[lang];
+const alternates = (Object.entries(routes.hakkimda) as [Locale, string][]).map(([l, href]) => ({ lang: l, href }));
 
 const bio =
-  'Hapishane politikaları, göç, insan hakları ve yakın siyasal tarih üzerine araştırmalar yapan, yazan ve dijital arşivler geliştiren sosyolog ve araştırmacı.';
+  "Sociologue et chercheur travaillant sur les politiques carcérales, la migration, les droits humains et l'histoire politique récente — écrivant et développant des archives numériques.";
 
-// "Diğer" ana sayfada gösterilmiyor (tek bir içeriği var, 4'lü ızgarada tek başına ikinci
-// satıra düşüp dengesiz görünüyordu) — kullanıcı kararı, bkz. görsel inceleme notları.
+// TR ana sayfayla aynı SVG ikon seti (kullanıcı onaylı) — yalnızca metin çevrildi, görsel dil aynı.
 const AREA_ICONS: Record<string, string> = {
   hapishane:
     '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="1"/><line x1="7.5" y1="4" x2="7.5" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/><line x1="16.5" y1="4" x2="16.5" y2="20"/></svg>',
@@ -29,34 +30,41 @@ const AREA_ICONS: Record<string, string> = {
   emek: '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 0 0-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 0 0-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 0 0-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 0 0-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 0 0 1.066-2.573c-.94-1.543.826-3.31 2.37-2.37c1 .608 2.296.07 2.572-1.065z"/><circle cx="12" cy="12" r="3"/></svg>',
 };
 
-const areaCounts = await getAreaCounts();
+// TR ana sayfayla aynı kural: "Diğer" gösterilmiyor (kullanıcı kararı). Kart ETİKETİ çevrilir,
+// link hedefi TR Alan Hub sayfasına gider — o sayfalar henüz çok dilli değil (bkz. taxonomy.ts).
+const areaCounts = await getAreaCounts(lang);
 const areas = Object.entries(ALAN_LABELS)
   .filter(([slug]) => slug !== 'diger')
-  .map(([slug, label]) => ({
+  .map(([slug]) => ({
     slug,
-    label,
+    label: ALAN_LABELS_I18N[lang][slug],
     count: areaCounts[slug] ?? 0,
     icon: AREA_ICONS[slug],
   }));
 
-const feed = await getMergedFeed(5);
+const feed = await getMergedFeed(5, lang);
 
-// Ana sayfada gösterilecek 5 kitap ve sırası kullanıcı tarafından elle seçildi (otomatik
-// sıralama değil — bilinçli bir küratörlük kararı).
-const ANA_SAYFA_KITAP_SIRASI = ['kanli-pazar', 'kapatilmanin-patolojisi', 'mahpus-haklari-el-kitabi', 'turkiye-hapishaneler-almanagi', 'haklarim-basvuru-kilavuzu'];
-const tumYazdiklarim = await getCollection('kitaplar', (e) => e.data.lang === lang && e.data.kitapTuru === 'yazdıklarım');
-const kitaplar = ANA_SAYFA_KITAP_SIRASI.map((id) => tumYazdiklarim.find((k) => k.id === id)).filter((k) => k !== undefined);
+// Kitaplar koleksiyonunda şu an FR girdi yok (yalnızca TR yayınlar var) — bölüm bu yüzden
+// TR ana sayfadaki gibi koşullu, sahte/boş kitap kartı üretilmiyor.
+const kitaplar = (await getCollection('kitaplar', (e) => e.data.lang === lang && e.data.kitapTuru === 'yazdıklarım')).slice(0, 5);
 ---
 
-<BaseLayout lang={lang} title="Mustafa Eren" description={bio} canonical="/" alternates={alternates} showLangSwitcher>
+<BaseLayout
+  lang={lang}
+  title="Mustafa Eren"
+  description={bio}
+  canonical={routes.anaSayfa.fr}
+  alternates={alternates}
+  showLangSwitcher
+>
   <section class="hero">
     <div class="hero-text">
-      <p class="eyebrow">Araştırmacı · Yazar · Editör</p>
+      <p class="eyebrow">{t.anaSayfaEyebrow}</p>
       <h1>Mustafa Eren</h1>
       <p class="bio">{bio}</p>
       <div class="cta-row">
-        <a class="btn-primary" href="/yazilar/">Yazıları gör</a>
-        <a class="btn-secondary" href="/hakkimda/">Hakkımda</a>
+        <a class="btn-primary" href="/yazilar/">{t.anaSayfaCtaYazilar}</a>
+        <a class="btn-secondary" href={routes.hakkimda.fr}>{t.hakkimdaBaslik}</a>
       </div>
     </div>
     <div class="avatar">
@@ -67,18 +75,18 @@ const kitaplar = ANA_SAYFA_KITAP_SIRASI.map((id) => tumYazdiklarim.find((k) => k
   <section class="section" style="margin-bottom: 2rem;">
     <div class="project-card">
       <div>
-        <p class="project-label">Proje</p>
+        <p class="project-label">{t.projeEtiket}</p>
         <p class="project-name">Kanlı Pazar</p>
-        <p class="project-desc">Yaşayan dijital arşiv</p>
+        <p class="project-desc">{t.projeAciklama}</p>
       </div>
-      <a class="section-link" href="https://kanlipazar.net" target="_blank" rel="noopener">Git →</a>
+      <a class="section-link" href="https://kanlipazar.net" target="_blank" rel="noopener">{t.projeLink}</a>
     </div>
   </section>
 
   <section class="section">
     <div class="section-head">
-      <h2>Araştırma alanları</h2>
-      <a class="section-link" href="/konu/">Tümünü gör</a>
+      <h2>{t.arastirmaAlanlari}</h2>
+      <a class="section-link" href="/konu/">{t.tumunuGor}</a>
     </div>
     <div class="areas-grid">
       {
@@ -86,7 +94,7 @@ const kitaplar = ANA_SAYFA_KITAP_SIRASI.map((id) => tumYazdiklarim.find((k) => k
           <a class="area-card" href={`/alanlar/${area.slug}/`}>
             <div class="area-icon" set:html={area.icon} />
             <p class="area-name">{area.label}</p>
-            <p class="area-count">{area.count} içerik</p>
+            <p class="area-count">{area.count} {area.count === 1 ? t.icerikSayisiTekil : t.icerikSayisiCogul}</p>
           </a>
         ))
       }
@@ -95,8 +103,8 @@ const kitaplar = ANA_SAYFA_KITAP_SIRASI.map((id) => tumYazdiklarim.find((k) => k
 
   <section class="section">
     <div class="section-head">
-      <h2>Son eklenenler</h2>
-      <a class="section-link" href="/yazilar/">Tümünü gör</a>
+      <h2>{t.sonEklenenler}</h2>
+      <a class="section-link" href="/yazilar/">{t.tumunuGor}</a>
     </div>
     <div>
       {
@@ -118,8 +126,8 @@ const kitaplar = ANA_SAYFA_KITAP_SIRASI.map((id) => tumYazdiklarim.find((k) => k
     kitaplar.length > 0 && (
       <section class="section" style="margin-bottom: 2rem;">
         <div class="section-head">
-          <h2>Kitaplar</h2>
-          <a class="section-link" href="/kitaplar/">Tümünü gör</a>
+          <h2>{t.navKitaplar}</h2>
+          <a class="section-link" href="/kitaplar/">{t.tumunuGor}</a>
         </div>
         <div class="books-grid">
           {kitaplar.map((k) => (

@@ -43,9 +43,8 @@ const KITAP_TURLERI = [
 ] as const;
 
 const hakkimdaHref = routes.hakkimda[lang];
-// EN/DE/FR ana sayfa henüz kurulmadı (yalnızca Hakkımda 4 dilde var, bkz. i18n spike) —
-// marka linki o dillerde en azından gerçek bir sayfaya (Hakkımda) gitsin, kırık linke değil.
-const brandHref = lang === 'tr' ? '/' : hakkimdaHref;
+// Ana sayfa artık 4 dilde de gerçek (bkz. src/pages/{en,de,fr}/index.astro).
+const brandHref = routes.anaSayfa[lang];
 ---
 
 <header class="site-header">

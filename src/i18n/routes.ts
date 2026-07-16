@@ -4,6 +4,12 @@
 // hreflang/canonical/dil değiştirici hepsi bu tek kaynaktan üretilir.
 
 export const routes = {
+  anaSayfa: {
+    tr: '/',
+    en: '/en/',
+    de: '/de/',
+    fr: '/fr/',
+  },
   hakkimda: {
     tr: '/hakkimda/',
     en: '/en/about/',

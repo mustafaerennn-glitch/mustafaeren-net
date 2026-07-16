@@ -10,6 +10,35 @@ export const ALAN_LABELS: Record<string, string> = {
 
 export const ALAN_SLUGS = Object.keys(ALAN_LABELS);
 
+// EN/DE/FR genel sayfalarında (örn. Ana Sayfa alan kartları) gösterilen çevrilmiş alan adları —
+// Alan Hub sayfaları (/alanlar/{slug}/) hâlâ TR-only olduğu için buradaki çeviri yalnızca
+// kart ETİKETİNİ değiştirir, link hedefi bilerek TR sayfaya gider (Nav.astro'daki "kısmi
+// çok dillilik" ilkesiyle aynı: sahte çeviri sayfası üretmek yerine metni çevirip mevcut
+// tek sürüme yönlendiriyoruz).
+export const ALAN_LABELS_I18N: Record<string, Record<string, string>> = {
+  en: {
+    hapishane: 'Prison',
+    'siyasi-tarih': 'Political History',
+    goc: 'Migration',
+    emek: 'Labour',
+    diger: 'Other',
+  },
+  de: {
+    hapishane: 'Gefängnis',
+    'siyasi-tarih': 'Politische Geschichte',
+    goc: 'Migration',
+    emek: 'Arbeit',
+    diger: 'Sonstiges',
+  },
+  fr: {
+    hapishane: 'Prison',
+    'siyasi-tarih': 'Histoire politique',
+    goc: 'Migration',
+    emek: 'Travail',
+    diger: 'Autre',
+  },
+};
+
 type TopicRef = { id: string };
 
 /**
@@ -37,13 +66,13 @@ export async function getTopicsMap(): Promise<Map<string, CollectionEntry<'topic
   return new Map(topics.map((t) => [t.id, t]));
 }
 
-/** Her alan için, o alana ait en az bir konu taşıyan içerik sayısı (4 koleksiyon toplamı, TR). */
-export async function getAreaCounts(): Promise<Record<string, number>> {
+/** Her alan için, o alana ait en az bir konu taşıyan içerik sayısı (4 koleksiyon toplamı, verilen dil). */
+export async function getAreaCounts(lang: string = 'tr'): Promise<Record<string, number>> {
   const [yazilar, basinda, videolar, kitaplar, topics] = await Promise.all([
-    getCollection('yazilar', (e) => e.data.lang === 'tr'),
-    getCollection('basinda', (e) => e.data.lang === 'tr'),
-    getCollection('videolar', (e) => e.data.lang === 'tr'),
-    getCollection('kitaplar', (e) => e.data.lang === 'tr'),
+    getCollection('yazilar', (e) => e.data.lang === lang),
+    getCollection('basinda', (e) => e.data.lang === lang),
+    getCollection('videolar', (e) => e.data.lang === lang),
+    getCollection('kitaplar', (e) => e.data.lang === lang),
     getCollection('topics'),
   ]);
   const topicToAlan = new Map(topics.map((t) => [t.id, t.data.alan]));

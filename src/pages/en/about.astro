@@ -12,7 +12,6 @@ if (Astro.currentLocale !== lang) {
 
 const t = ui[lang];
 const alternates = (Object.entries(routes.hakkimda) as [Locale, string][]).map(([l, href]) => ({ lang: l, href }));
-// Breadcrumb'ta "Home" kırıntısı yok — henüz bir İngilizce ana sayfa (/en/) yok, kırık linke yol açmamak için tek kırıntı bırakıldı.
 
 const paragraphs = [
   "My undergraduate degree is from Mimar Sinan University of Fine Arts, Department of Sociology (Istanbul, Turkey). I hold a master's degree from Istanbul Bilgi University's Department of Cultural Studies, and I attended PhD seminars at Mimar Sinan University of Fine Arts. Between 2019 and 2020, I followed graduate courses as a visiting student at the University of Zurich. In 2026, I began the Migrationsfachperson (Migration Specialist) program at the Schule für Sozialbegleitung.",
@@ -34,7 +33,7 @@ const paragraphs = [
   alternates={alternates}
   showLangSwitcher
   current="hakkimda"
-  breadcrumb={[{ label: t.hakkimdaBaslik }]}
+  breadcrumb={[{ label: t.anaSayfa, href: routes.anaSayfa.en }, { label: t.hakkimdaBaslik }]}
 >
   <div class="bio-hero">
     <div class="avatar">
