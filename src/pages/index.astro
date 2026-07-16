@@ -38,7 +38,7 @@ const areas = Object.entries(ALAN_LABELS)
 
 const feed = await getMergedFeed(5);
 
-const kitaplar = (await getCollection('kitaplar', (e) => e.data.lang === lang)).slice(0, 5);
+const kitaplar = (await getCollection('kitaplar', (e) => e.data.lang === lang && e.data.kitapTuru === 'yazdıklarım')).slice(0, 5);
 ---
 
 <BaseLayout lang={lang} title="Mustafa Eren" description={bio} canonical="/">
