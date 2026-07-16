@@ -1,11 +1,12 @@
 ---
 // Alan pill(ler)i + konu pill'leri — 4 içerik detay sayfasında da (Yazı/Basında/Video/Kitap)
 // birebir aynı bileşen. Bir içerik birden fazla alana ait konular taşıyorsa (taksonomi-denetimi.md)
-// birden fazla area-pill görünür.
+// birden fazla area-pill görünür. `href` çağıran taraftan gelir (dil bazlı, örn. /en/alanlar/{slug}/)
+// — bileşen kendi başına TR path üretmez, aksi halde EN/DE/FR sayfalarında TR'ye link vermiş olurdu.
 
 interface Props {
-  areas: { slug: string; label: string }[];
-  topics: { slug: string; label: string }[];
+  areas: { slug: string; label: string; href: string }[];
+  topics: { slug: string; label: string; href: string }[];
 }
 
 const { areas, topics } = Astro.props;
@@ -13,11 +14,11 @@ const { areas, topics } = Astro.props;
 
 <div class="topics-row">
   {areas.map((a) => (
-    <a class="area-pill" href={`/alanlar/${a.slug}/`}>{a.label}</a>
+    <a class="area-pill" href={a.href}>{a.label}</a>
   ))}
   {areas.length > 0 && topics.length > 0 && <span class="topics-divider" />}
   {topics.map((t) => (
-    <a class="topic-pill" href={`/konu/${t.slug}/`}>{t.label}</a>
+    <a class="topic-pill" href={t.href}>{t.label}</a>
   ))}
 </div>
 

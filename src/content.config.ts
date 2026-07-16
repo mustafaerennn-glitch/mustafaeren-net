@@ -132,6 +132,11 @@ const kitaplar = defineCollection({
       translations: z.array(reference('kitaplar')).optional(),
       year: z.number(), // SADECE YIL — kitaplar gün-bazlı tarihlenmiyor, bilinçli karar
       kitapTuru: z.enum(['yazdıklarım', 'editörlük', 'katkılar']),
+      // Kitabın GERÇEKTEN yayımlandığı dil — `lang` bu sayfanın dili (çeviri tanıtım
+      // sayfalarında `lang` ile farklı olabilir, örn. TR yayımlanmış bir kitabın EN tanıtım
+      // sayfası `lang: en` + `yayinDili: tr` taşır). TR-only kitaplarda boş bırakılır
+      // (lang zaten gerçek yayın dilini temsil eder), yalnızca çeviri sayfalarında zorunlu.
+      yayinDili: localeSchema.optional(),
       yayinevi: z.string(),
       sayfaSayisi: z.number(),
       kapak: image(), // object-fit: contain ile gösterilecek, kırpma YOK

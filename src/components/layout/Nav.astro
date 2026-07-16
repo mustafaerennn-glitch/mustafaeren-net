@@ -26,18 +26,27 @@ const availability = await getContentAvailability(lang);
 const alanLabels = lang === 'tr' ? ALAN_LABELS : ALAN_LABELS_I18N[lang];
 const ALANLAR = ALAN_SLUGS.filter((slug) => slug !== 'diger').map((slug) => ({ slug, label: alanLabels[slug] }));
 
-const VIDEO_TURLERI = [
-  { tur: 'söyleşi', label: 'Söyleşi' },
-  { tur: 'belgesel', label: 'Belgesel' },
-  { tur: 'konferans-panel', label: 'Konferans / Panel' },
-  { tur: 'kısa-video', label: 'Kısa videolar' },
-] as const;
+const VIDEO_TURU_LABELS: Record<Locale, Record<string, string>> = {
+  tr: { 'söyleşi': 'Söyleşi', belgesel: 'Belgesel', 'konferans-panel': 'Konferans / Panel', 'kısa-video': 'Kısa videolar' },
+  en: { 'söyleşi': 'Interview', belgesel: 'Documentary', 'konferans-panel': 'Conference / Panel', 'kısa-video': 'Short videos' },
+  de: { 'söyleşi': 'Gespräch', belgesel: 'Dokumentarfilm', 'konferans-panel': 'Konferenz / Podium', 'kısa-video': 'Kurzvideos' },
+  fr: { 'söyleşi': 'Entretien', belgesel: 'Documentaire', 'konferans-panel': 'Conférence / Table ronde', 'kısa-video': 'Courtes vidéos' },
+};
+const VIDEO_TURLERI = (['söyleşi', 'belgesel', 'konferans-panel', 'kısa-video'] as const).map((tur) => ({
+  tur,
+  label: VIDEO_TURU_LABELS[lang][tur],
+}));
 
-const KITAP_TURLERI = [
-  { tip: 'yazdıklarım', label: 'Yazdıklarım' },
-  { tip: 'editörlük', label: 'Editörlük' },
-  { tip: 'katkılar', label: 'Katkılar' },
-] as const;
+const KITAP_TURU_LABELS: Record<Locale, Record<string, string>> = {
+  tr: { yazdıklarım: 'Yazdıklarım', editörlük: 'Editörlük', katkılar: 'Katkılar' },
+  en: { yazdıklarım: 'My Writing', editörlük: 'Edited', katkılar: 'Contributions' },
+  de: { yazdıklarım: 'Eigene Texte', editörlük: 'Herausgeberschaft', katkılar: 'Beiträge' },
+  fr: { yazdıklarım: 'Mes écrits', editörlük: 'Direction éditoriale', katkılar: 'Contributions' },
+};
+const KITAP_TURLERI = (['yazdıklarım', 'editörlük', 'katkılar'] as const).map((tip) => ({
+  tip,
+  label: KITAP_TURU_LABELS[lang][tip],
+}));
 
 const hakkimdaHref = routes.hakkimda[lang];
 // Ana sayfa artık 4 dilde de gerçek (bkz. src/pages/{en,de,fr}/index.astro).

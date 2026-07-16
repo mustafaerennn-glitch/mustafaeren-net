@@ -1,9 +1,9 @@
 ---
 import { getCollection } from 'astro:content';
-import KitapDetaySayfasi from '../../components/content/KitapDetaySayfasi.astro';
+import KitapDetaySayfasi from '../../../components/content/KitapDetaySayfasi.astro';
 
 export async function getStaticPaths() {
-  const entries = await getCollection('kitaplar', (entry) => entry.data.lang === 'tr');
+  const entries = await getCollection('kitaplar', (entry) => entry.data.lang === 'de');
   return entries.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
 }
 

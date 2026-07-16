@@ -4,6 +4,10 @@ lang: tr
 description: Single thumbnail without hover effect. Featured image also can be set to display a video or animated GIF.
 topics:
   - mahpus
+translations:
+  - handbook-of-prisoners-rights
+  - handbuch-der-gefangenenrechte
+  - manuel-des-droits-des-detenus
 year: 2015
 kitapTuru: yazdıklarım
 yayinevi: CİSST

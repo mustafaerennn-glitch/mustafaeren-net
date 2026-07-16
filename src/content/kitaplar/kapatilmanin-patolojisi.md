@@ -4,6 +4,10 @@ lang: tr
 description: This is project excerpt. You can specify its content and length as you wish
 topics:
   - mahpus
+translations:
+  - the-pathology-of-confinement
+  - die-pathologie-der-einsperrung
+  - la-pathologie-de-l-enfermement
 year: 2014
 kitapTuru: yazdıklarım
 yayinevi: Kalkedon Yayınları

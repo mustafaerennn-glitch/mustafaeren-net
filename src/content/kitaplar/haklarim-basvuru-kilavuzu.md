@@ -4,6 +4,10 @@ lang: tr
 description: 'Eser Adı: Mahpuslar İçin Haklarım Başvuru Kılavuzu Yazar: Mustafa Eren Basım Tarihi: 2016 Sayfa Sayısı: 24 Eğer, hapishane idaresi veya personelinin…'
 topics:
   - mahpus
+translations:
+  - my-rights-an-application-guide-for-prisoners
+  - meine-rechte-ein-antragsleitfaden-fuer-gefangene
+  - mes-droits-guide-de-recours-pour-les-detenus
 year: 2016
 kitapTuru: yazdıklarım
 yayinevi: CİSST

@@ -1,0 +1,267 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import { Image } from 'astro:assets';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import TopicsRow from '../metadata/TopicsRow.astro';
+import LangCluster from '../metadata/LangCluster.astro';
+import AboutModal from '../content/AboutModal.astro';
+import BookCard from '../cards/BookCard.astro';
+import { getAreasForTopicRefs, getTopicsMap, ALAN_LABELS, ALAN_LABELS_I18N } from '../../lib/taxonomy';
+import { getTranslationCluster } from '../../i18n/translationLookup';
+import { contentUrl, routes, LANG_NAMES } from '../../i18n/routes';
+import { TOPIC_LABELS_I18N } from '../../i18n/topics';
+import { ui } from '../../i18n/ui';
+
+interface Props {
+  entry: CollectionEntry<'kitaplar'>;
+}
+
+const { entry } = Astro.props;
+const lang = entry.data.lang;
+if (Astro.currentLocale !== lang) {
+  throw new Error(`i18n locale eşleşmedi: beklenen "${lang}", Astro.currentLocale="${Astro.currentLocale}"`);
+}
+const t = ui[lang];
+const localePrefix = lang === 'tr' ? '' : `/${lang}`;
+
+const cluster = await getTranslationCluster('kitaplar', entry);
+const canonical = `${localePrefix}/kitaplar/${entry.id}/`;
+const alternates = cluster.map((c) => ({ lang: c.lang, href: contentUrl('kitaplar', c.lang, c.slug) }));
+
+const KITAP_TURU_ROL: Record<string, Record<string, string>> = {
+  tr: { yazdıklarım: 'Yazar', editörlük: 'Editör', katkılar: 'Katkı yazarı' },
+  en: { yazdıklarım: 'Author', editörlük: 'Editor', katkılar: 'Contributor' },
+  de: { yazdıklarım: 'Autor', editörlük: 'Herausgeber', katkılar: 'Mitwirkende(r)' },
+  fr: { yazdıklarım: 'Auteur', editörlük: 'Éditeur', katkılar: 'Contributeur' },
+};
+const KITAP_TURU_BADGE: Record<string, Record<string, string>> = {
+  tr: { yazdıklarım: 'Yazdıklarım', editörlük: 'Editörlük', katkılar: 'Katkılar' },
+  en: { yazdıklarım: 'My Writing', editörlük: 'Edited', katkılar: 'Contributions' },
+  de: { yazdıklarım: 'Eigene Texte', editörlük: 'Herausgeberschaft', katkılar: 'Beiträge' },
+  fr: { yazdıklarım: 'Mes écrits', editörlük: 'Direction éditoriale', katkılar: 'Contributions' },
+};
+const rolLabel = KITAP_TURU_ROL[lang][entry.data.kitapTuru];
+const badgeLabel = KITAP_TURU_BADGE[lang][entry.data.kitapTuru];
+
+const areaSlugs = await getAreasForTopicRefs(entry.data.topics);
+const topicsMap = await getTopicsMap();
+const alanLabels = lang === 'tr' ? ALAN_LABELS : ALAN_LABELS_I18N[lang];
+const topics = entry.data.topics
+  .map((ref) => topicsMap.get(ref.id))
+  .filter((tp): tp is NonNullable<typeof tp> => Boolean(tp))
+  .map((tp) => ({
+    slug: tp.id,
+    label: lang === 'tr' ? tp.data.ad : (TOPIC_LABELS_I18N[lang][tp.id] ?? tp.data.ad),
+    href: `${localePrefix}/konu/${tp.id}/`,
+  }));
+const areas = areaSlugs.map((slug) => ({ slug, label: alanLabels[slug], href: `${localePrefix}/alanlar/${slug}/` }));
+
+const others = (await getCollection('kitaplar', (e) => e.data.lang === lang && e.id !== entry.id)).slice(0, 4);
+
+const breadcrumbBaslik = t.navKitaplar;
+const anaSayfaHref = routes.anaSayfa[lang];
+const SAYFA_LABEL: Record<string, string> = { tr: 'sayfa', en: 'pages', de: 'Seiten', fr: 'pages' };
+const sayfaLabel = SAYFA_LABEL[lang];
+---
+
+<BaseLayout
+  lang={lang}
+  title={entry.data.title}
+  description={entry.data.description}
+  canonical={canonical}
+  alternates={alternates}
+  current="kitaplar"
+  breadcrumb={[{ label: t.anaSayfa, href: anaSayfaHref }, { label: breadcrumbBaslik, href: `${localePrefix}/kitaplar/` }, { label: entry.data.title }]}
+>
+  <div class="book-hero">
+    <div class="cover">
+      <Image src={entry.data.kapak} alt={entry.data.kapakAlt} width={300} />
+    </div>
+    <div class="book-info">
+      <p class="role-eyebrow">{rolLabel}</p>
+      <h1>{entry.data.title}</h1>
+      <p class="book-meta-line">{entry.data.year} · {entry.data.yayinevi} · {entry.data.sayfaSayisi} {sayfaLabel}</p>
+      {
+        entry.data.yayinDili && entry.data.yayinDili !== lang && (
+          <p class="yayin-dili-line">{t.yayinDiliEtiket}: {LANG_NAMES[entry.data.yayinDili]}</p>
+        )
+      }
+      <div class="badges">
+        <span class="badge">{badgeLabel}</span>
+        {entry.data.seri && <span class="badge seri">{entry.data.seri}</span>}
+      </div>
+      {cluster.length > 1 && (
+        <p class="lang-line">
+          <LangCluster currentLang={lang} items={cluster.map((c) => ({ lang: c.lang, href: contentUrl('kitaplar', c.lang, c.slug) }))} />
+        </p>
+      )}
+      <div class="cta-row">
+        {entry.data.pdf && <a class="btn-primary" href={entry.data.pdf}>{t.pdfOku}</a>}
+        {entry.data.yayineviUrl && (
+          <a class="btn-secondary" href={entry.data.yayineviUrl} target="_blank" rel="noopener">{t.yayineviSayfasi}</a>
+        )}
+        <AboutModal
+          id="about-modal"
+          triggerLabel={t.kitapHakkinda}
+          title={entry.data.title}
+          metaLine={`${rolLabel} · ${entry.data.yayinevi} · ${entry.data.year} · ${entry.data.sayfaSayisi}`}
+          closeLabel={t.kapat}
+        >
+          <p>{entry.data.description}</p>
+        </AboutModal>
+      </div>
+    </div>
+  </div>
+
+  <p class="short-desc">{entry.data.description}</p>
+
+  <TopicsRow areas={areas} topics={topics} />
+
+  {
+    others.length > 0 && (
+      <div class="section" style="margin-bottom: 0;">
+        <div class="section-head">
+          <h2>{t.digerKitaplar}</h2>
+          <a class="section-link" href={`${localePrefix}/kitaplar/`}>{t.tumunuGor}</a>
+        </div>
+        <div class="other-books-grid">
+          {others.map((o) => (
+            <BookCard href={`${localePrefix}/kitaplar/${o.id}/`} cover={o.data.kapak} coverAlt={o.data.kapakAlt} title={o.data.title} variant="detail" meta={`${KITAP_TURU_ROL[lang][o.data.kitapTuru]} · ${o.data.year}`} />
+          ))}
+        </div>
+      </div>
+    )
+  }
+</BaseLayout>
+
+<style>
+  h1 {
+    font-size: 26px;
+    line-height: 1.3;
+  }
+  .book-hero {
+    display: flex;
+    gap: 28px;
+    margin-bottom: 1.75rem;
+  }
+  .cover {
+    width: 168px;
+    aspect-ratio: 2 / 3;
+    flex-shrink: 0;
+    border-radius: 6px;
+    background: var(--surface-1);
+    border: 0.5px solid var(--border);
+    overflow: hidden;
+  }
+  .cover :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+  .book-info {
+    flex: 1;
+    min-width: 0;
+    padding-top: 4px;
+  }
+  .role-eyebrow {
+    font-size: 12px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 8px;
+  }
+  .book-meta-line {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin: 10px 0 0;
+    line-height: 1.6;
+  }
+  .yayin-dili-line {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin: 4px 0 0;
+  }
+  .lang-line {
+    font-size: 12px;
+    margin: 10px 0 0;
+  }
+  .badges {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin: 14px 0 16px;
+  }
+  .badge {
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    border: 0.5px solid var(--border);
+    color: var(--text-secondary);
+  }
+  .badge.seri {
+    color: var(--text-muted);
+    background: none;
+    border-style: dashed;
+  }
+  .cta-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 16px;
+  }
+  .btn-primary,
+  .btn-secondary {
+    font-size: 13px;
+    font-family: var(--font-sans);
+    border-radius: var(--radius);
+    padding: 9px 18px;
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+    display: inline-block;
+  }
+  .btn-primary {
+    background: var(--fill-primary);
+    color: var(--on-primary);
+  }
+  .btn-secondary {
+    background: transparent;
+    border: 0.5px solid var(--border);
+    color: var(--text-primary);
+  }
+  .short-desc {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    max-width: 520px;
+    margin: 0 0 1.75rem;
+  }
+  .section {
+    margin-bottom: 2.25rem;
+  }
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+  .section-link {
+    font-size: 13px;
+    color: var(--text-accent);
+    text-decoration: none;
+  }
+  .other-books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(112px, 1fr));
+    gap: 14px;
+  }
+  @media (max-width: 600px) {
+    .book-hero {
+      flex-direction: column;
+    }
+    .cover {
+      width: 150px;
+    }
+  }
+</style>

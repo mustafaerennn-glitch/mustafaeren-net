@@ -7,9 +7,10 @@ interface Props {
   triggerLabel: string;
   title: string;
   metaLine: string;
+  closeLabel?: string;
 }
 
-const { id, triggerLabel, title, metaLine } = Astro.props;
+const { id, triggerLabel, title, metaLine, closeLabel = 'Kapat' } = Astro.props;
 ---
 
 <button type="button" class="btn-secondary" data-modal-trigger={id}>{triggerLabel}</button>
@@ -18,7 +19,7 @@ const { id, triggerLabel, title, metaLine } = Astro.props;
   <h3>{title}</h3>
   <p class="modal-meta">{metaLine}</p>
   <slot />
-  <button type="button" class="modal-close" data-modal-close={id}>Kapat</button>
+  <button type="button" class="modal-close" data-modal-close={id}>{closeLabel}</button>
 </dialog>
 
 <script>

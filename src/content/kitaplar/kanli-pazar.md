@@ -4,6 +4,10 @@ lang: tr
 description: 'Eser Adı: Kanlı Pazar – 1960’lar Türkiyesi’nde Milliyetçiler, İslamcılar ve Sol Yazar: Mustafa Eren Yayınevi: Kalkedon Yayıncılık Kapak Tasarımı: Şahan…'
 topics:
   - kanli-pazar
+translations:
+  - kanli-pazar-nationalists-islamists-and-the-left
+  - kanli-pazar-nationalisten-islamisten-und-die-linke
+  - kanli-pazar-nationalistes-islamistes-et-gauche
 year: 2012
 kitapTuru: yazdıklarım
 yayinevi: Kalkedon Yayınları

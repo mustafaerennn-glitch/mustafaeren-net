@@ -141,7 +141,7 @@ const kitaplar = (await getCollection('kitaplar', (e) => e.data.lang === lang &&
         </div>
         <div class="books-grid">
           {kitaplar.map((k) => (
-            <BookCard href={`/kitaplar/${k.id}/`} cover={k.data.kapak} coverAlt={k.data.kapakAlt} title={k.data.title} variant="compact" />
+            <BookCard href={`/en/kitaplar/${k.id}/`} cover={k.data.kapak} coverAlt={k.data.kapakAlt} title={k.data.title} variant="compact" />
           ))}
         </div>
       </section>

@@ -35,8 +35,8 @@ const topicsMap = await getTopicsMap();
 const topics = entry.data.topics
   .map((ref) => topicsMap.get(ref.id))
   .filter((t): t is NonNullable<typeof t> => Boolean(t))
-  .map((t) => ({ slug: t.id, label: t.data.ad }));
-const areas = areaSlugs.map((slug) => ({ slug, label: ALAN_LABELS[slug] }));
+  .map((t) => ({ slug: t.id, label: t.data.ad, href: `/konu/${t.id}/` }));
+const areas = areaSlugs.map((slug) => ({ slug, label: ALAN_LABELS[slug], href: `/alanlar/${slug}/` }));
 
 const others = (await getCollection('videolar', (e) => e.data.lang === 'tr' && e.id !== entry.id))
   .sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime())

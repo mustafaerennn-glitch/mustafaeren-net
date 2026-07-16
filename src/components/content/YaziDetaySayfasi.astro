@@ -10,7 +10,8 @@ import ArticleBody from './ArticleBody.astro';
 import ShareRow from './ShareRow.astro';
 import { getTranslationCluster } from '../../i18n/translationLookup';
 import { contentUrl, routes, BREADCRUMB_HOME_LABEL, YAZILAR_LABEL } from '../../i18n/routes';
-import { getAreasForTopicRefs, getTopicsMap, ALAN_LABELS } from '../../lib/taxonomy';
+import { getAreasForTopicRefs, getTopicsMap, ALAN_LABELS, ALAN_LABELS_I18N } from '../../lib/taxonomy';
+import { TOPIC_LABELS_I18N } from '../../i18n/topics';
 
 interface Props {
   entry: CollectionEntry<'yazilar'>;
@@ -29,13 +30,19 @@ const alternates = cluster.map((c) => ({ lang: c.lang, href: contentUrl('yazilar
 
 const mecra = entry.data.mecra ? await getEntry(entry.data.mecra) : undefined;
 
+const localePrefix = lang === 'tr' ? '' : `/${lang}`;
 const areaSlugs = await getAreasForTopicRefs(entry.data.topics);
 const topicsMap = await getTopicsMap();
+const alanLabels = lang === 'tr' ? ALAN_LABELS : ALAN_LABELS_I18N[lang];
 const topics = entry.data.topics
   .map((ref) => topicsMap.get(ref.id))
   .filter((t): t is NonNullable<typeof t> => Boolean(t))
-  .map((t) => ({ slug: t.id, label: t.data.ad }));
-const areas = areaSlugs.map((slug) => ({ slug, label: ALAN_LABELS[slug] }));
+  .map((t) => ({
+    slug: t.id,
+    label: lang === 'tr' ? t.data.ad : (TOPIC_LABELS_I18N[lang][t.id] ?? t.data.ad),
+    href: `${localePrefix}/konu/${t.id}/`,
+  }));
+const areas = areaSlugs.map((slug) => ({ slug, label: alanLabels[slug], href: `${localePrefix}/alanlar/${slug}/` }));
 
 const siteUrl = new URL(canonical, 'https://mustafaeren.net').toString();
 

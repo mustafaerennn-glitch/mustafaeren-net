@@ -4,6 +4,10 @@ lang: tr
 description: 'Eser Adı: Türkiye Hapishaneler Almanağı 2015 Yazar: Ayşegül Algan, Duygu Koçoğlu, Mustafa Eren Yayınevi: TCPS Kitaplığı Kapak Tasarımı: Tayfun Koç Basım…'
 topics:
   - mahpus
+translations:
+  - turkey-prisons-almanac-2015
+  - tuerkei-gefaengnisalmanach-2015
+  - almanach-des-prisons-de-turquie-2015
 year: 2016
 kitapTuru: yazdıklarım
 yayinevi: CİSST
