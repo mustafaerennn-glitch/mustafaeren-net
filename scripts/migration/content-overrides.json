@@ -1,150 +1,19 @@
 {
-  "_aciklama": "WordPress post_id bazlı manuel istisna tablosu. Migrasyon script'i her kayıt için önce buraya bakar, yoksa genel kurala (tag-topic-map.json / tag-mecra-map.json) düşer. Bu dosyadaki her giriş bu oturumda elle doğrulanmış bir karardır (bkz. wp-analiz-27-yabanci-dil.md).",
-  "_alanlar": {
-    "collection": "yazilar | basinda — otomatik sınıflandırmayı (kategori tabanlı) geçersiz kılar, yalnızca yabancı-dil kategorisiz parçalar için gerekli",
-    "mecra": "mecralar.json id'si — gövde metninde geçtiği halde etiketlenmemiş mecra düzeltmesi",
-    "extraTopics": "tag-topic-map.json'dan gelen konulara EK olarak eklenecek konu id(ler)i — yalnızca genel hapishane-eşanlamlısı etiketten başka spesifik etiketi olmayan 35 parça için"
+  "23": {
+    "localImage": ".tmp/gorsel-girdi/23.png"
   },
-  "1057": {
-    "extraTopics": [
-      "kritik-hapishane-calismalari"
-    ],
-    "title": "Hapishane Konulu Tezler Üzerinden Bir Değerlendirme Girişimi"
+  "46": {
+    "slugOverride": "haklarim-basvuru-kilavuzu"
   },
   "130": {
     "collection": "basinda",
     "title": "Die Türkei baut «Gefängnis-Städte"
-  },
-  "1357": {
-    "extraTopics": [
-      "ceza-infaz-istatistikleri"
-    ],
-    "title": "Mahpus sayısı \"400 bin\"i gördü mü? Bakanlık neden açıklamıyor?"
-  },
-  "1403": {
-    "extraTopics": [
-      "isci-mahpuslar"
-    ],
-    "title": "Turkish gov’t accused of turning prisons into enterprises, exploiting inmates’ labor"
-  },
-  "1552": {
-    "extraTopics": [
-      "genel-hapishane-yazilari"
-    ],
-    "title": "Évolutions du régime carcéral en Turquie"
   },
   "176": {
     "extraTopics": [
       "kritik-hapishane-calismalari"
     ],
     "title": "Akademi, hapishane düzenini eleştirmeli"
-  },
-  "1969": {
-    "extraTopics": [
-      "genel-hapishane-yazilari"
-    ],
-    "title": "Im Porträt: Der Soziologe Mustafa Eren"
-  },
-  "2178": {
-    "mecra": "birgun",
-    "title": "Paran Yoksa 10 Ay Daha Ceza"
-  },
-  "2185": {
-    "extraTopics": [
-      "genel-hapishane-yazilari"
-    ],
-    "mecra": "birgun",
-    "title": "Cezaevindeki Emanet Paraları İşletip Faiz Geliri Elde Ediyorlar"
-  },
-  "2479": {
-    "extraTopics": [
-      "genel-hapishane-yazilari"
-    ],
-    "title": "Hapsedilmeye Hazır mısınız?"
-  },
-  "4132": {
-    "extraTopics": [
-      "toplu-hapsetme"
-    ],
-    "title": "Hapsetmenin Alternatifleri Konferansı"
-  },
-  "4141": {
-    "extraTopics": [
-      "genel-hapishane-yazilari"
-    ],
-    "title": "Aktivizm Nedir?"
-  },
-  "4143": {
-    "extraTopics": [
-      "genel-hapishane-yazilari"
-    ],
-    "title": "CİSST/TCPS Tanıtımı / Sivil Düşün"
-  },
-  "4144": {
-    "extraTopics": [
-      "genel-hapishane-yazilari"
-    ],
-    "title": "ASULİS Türkiye Hapishaneleri Paneli"
-  },
-  "4150": {
-    "extraTopics": [
-      "genel-hapishane-yazilari"
-    ],
-    "title": "Avlu Dizisi ve Türkiye Hapishaneleri"
-  },
-  "4154": {
-    "extraTopics": [
-      "hapishanelerin-tarihi"
-    ],
-    "title": "Kapatılmanın Patolojisi ve Türkiye Hapishaneleri"
-  },
-  "4164": {
-    "collection": "basinda",
-    "title": "Prisoners’ Right to Education Obstructed Through Statutory Decree"
-  },
-  "4372": {
-    "collection": "yazilar",
-    "title": "Die AKP und der Strafvollzug: Kriminalisierung und die Republik der „Gefängniscampus“"
-  },
-  "4398": {
-    "collection": "yazilar",
-    "title": "AKP, criminalization and the Republic of 'Campus' Prisons"
-  },
-  "4414": {
-    "collection": "yazilar",
-    "title": "To Be a Migrant, Refugee, Asylum Seeker, and Prisoner in EU Countries"
-  },
-  "4436": {
-    "collection": "yazilar",
-    "title": "Ethical Policy on AI-Assisted Content Creation"
-  },
-  "4467": {
-    "collection": "yazilar",
-    "title": "Prisoners with Special Needs and Human Rights"
-  },
-  "4492": {
-    "collection": "yazilar",
-    "title": "Prisoners with Special Needs and Turkey’s Prisons Built for Adult, Sunni, Healthy, Heterosexual Turkish Men"
-  },
-  "4515": {
-    "collection": "yazilar",
-    "title": "The First Step Toward Peace: Freedom for Political Prisoners"
-  },
-  "4529": {
-    "collection": "yazilar",
-    "title": "Der Erste Schritt zum Frieden: Freiheit für politische Gefangene"
-  },
-  "4685": {
-    "collection": "yazilar",
-    "title": "New High-Security Prisons as a Tool to Intimidate Social Dissent"
-  },
-  "4821": {
-    "collection": "yazilar",
-    "title": "Neue Gefängnistypen und die Einschüchterung der gesellschaftlichen Opposition"
-  },
-  "4875": {
-    "collection": "yazilar",
-    "title": "Death Fasts: A Kind of Action within the Dilemma between the Sanctity of Life and the Right to Resist"
   },
   "502": {
     "collection": "basinda",
@@ -278,6 +147,9 @@
     ],
     "title": "Mahpus Ölümleri Belgelerinde Farklı Rakamlar"
   },
+  "877": {
+    "localImage": ".tmp/gorsel-girdi/877.png"
+  },
   "903": {
     "extraTopics": [
       "hapishanelerin-tarihi"
@@ -295,5 +167,250 @@
       "genel-hapishane-yazilari"
     ],
     "title": "Ceza İnfaz Kurumu Yönetimi El Kitabı Üzerinde Bir Değerlendirme  Hapishanelere İlişkin Avrupa Kriterlerinin ve Türkiye Pratiğinin Bir Belge Üzerinden Okunması"
+  },
+  "1057": {
+    "extraTopics": [
+      "kritik-hapishane-calismalari"
+    ],
+    "title": "Hapishane Konulu Tezler Üzerinden Bir Değerlendirme Girişimi"
+  },
+  "1357": {
+    "extraTopics": [
+      "ceza-infaz-istatistikleri"
+    ],
+    "title": "Mahpus sayısı \"400 bin\"i gördü mü? Bakanlık neden açıklamıyor?"
+  },
+  "1403": {
+    "extraTopics": [
+      "isci-mahpuslar"
+    ],
+    "title": "Turkish gov’t accused of turning prisons into enterprises, exploiting inmates’ labor"
+  },
+  "1408": {
+    "mecra": "dw",
+    "sources": [
+      {
+        "mecra": "dw",
+        "tur": "birincil"
+      },
+      {
+        "mecra": "birgun",
+        "tur": "ikincil"
+      }
+    ],
+    "title": "Cezaevlerinde emek sömürüsü: Bakanlık, mahkûmları 14 TL yevmiyeyle çalıştırıyor",
+    "not": "Hem BirGün hem DW etiketli, gövdede her iki mecraya da link var. Kullanıcı kararı: DW birincil, BirGün ikincil."
+  },
+  "1542": {
+    "localImage": ".tmp/gorsel-girdi/1542.png"
+  },
+  "1552": {
+    "extraTopics": [
+      "genel-hapishane-yazilari"
+    ],
+    "title": "Évolutions du régime carcéral en Turquie"
+  },
+  "1969": {
+    "extraTopics": [
+      "genel-hapishane-yazilari"
+    ],
+    "title": "Im Porträt: Der Soziologe Mustafa Eren"
+  },
+  "2178": {
+    "mecra": "birgun",
+    "title": "Paran Yoksa 10 Ay Daha Ceza"
+  },
+  "2185": {
+    "extraTopics": [
+      "genel-hapishane-yazilari"
+    ],
+    "mecra": "birgun",
+    "title": "Cezaevindeki Emanet Paraları İşletip Faiz Geliri Elde Ediyorlar"
+  },
+  "2479": {
+    "extraTopics": [
+      "genel-hapishane-yazilari"
+    ],
+    "title": "Hapsedilmeye Hazır mısınız?"
+  },
+  "3332": {
+    "sayfaSayisi": 154,
+    "_not": "Kullanıcı gerçek sayfa sayısını 154 olarak doğruladı — WordPress gövde metninde yanlışlıkla 152 yazıyordu."
+  },
+  "4115": {
+    "durationMinutes": 40,
+    "description": "Medya Haber - Mercek - 22 Ağustos 2022"
+  },
+  "4122": {
+    "durationMinutes": 47,
+    "description": "Erdoğan Aydın ve Ayşe Hür ile Kanlı Pazar üzerine söyleşinin ikinci kısmı"
+  },
+  "4123": {
+    "durationMinutes": 94,
+    "description": "Komün TV - Gamze Yentür'ün moderatörlüğünde Doç. Dr. Ferda K. Keskin ile birlikte hapishanelerin tarihini konuşuyoruz."
+  },
+  "4125": {
+    "durationMinutes": 46,
+    "description": "Kanlı Pazar üzerine Erdoğan Aydın ve Ayşe Hür ile söyleşi"
+  },
+  "4132": {
+    "extraTopics": [
+      "toplu-hapsetme"
+    ],
+    "title": "Hapsetmenin Alternatifleri Konferansı",
+    "durationMinutes": 12,
+    "description": "Ceza İnfaz Sisteminde Sivil Toplum Derneği (CİSST) tarafından, 24-25 Kasım 2018 tarihlerinde, Mimar Sinan Güzel Sanatlar Üniversitesi'nin ev sahipliğinde düzenlenen, uluslararası Hapsetmenin Alternatifleri Konferansı'nda yapılan sunum."
+  },
+  "4135": {
+    "durationMinutes": 5,
+    "description": "Deutsche Welle 11 Aralık 2020 İşçi Mahpuslar"
+  },
+  "4136": {
+    "durationMinutes": 43,
+    "description": "Sosyolog Mustafa Eren CNN Türk'te yayınlanan ve Rıdvan Akar'ın hazırlayıp sunduğu Hayatın Tanığı programında Kanlı Pazar'a ilişkin konuşuyor."
+  },
+  "4141": {
+    "extraTopics": [
+      "genel-hapishane-yazilari"
+    ],
+    "title": "Aktivizm Nedir?",
+    "durationMinutes": 1,
+    "description": "Sosyolog Mustafa Eren, Sivil Düşün'ün #benceaktivizm çalışması için aktivizm tanımı yapıyor"
+  },
+  "4143": {
+    "extraTopics": [
+      "genel-hapishane-yazilari"
+    ],
+    "title": "CİSST/TCPS Tanıtımı / Sivil Düşün",
+    "durationMinutes": 5,
+    "description": "CİSST Yönetim Kurulu Başkanlığı yapmış olan Mustafa Eren, Sivil Düşün'ün #sivilportreler çalışması için CİSST/TCPS'i anlatıyor"
+  },
+  "4144": {
+    "extraTopics": [
+      "genel-hapishane-yazilari"
+    ],
+    "title": "ASULİS Türkiye Hapishaneleri Paneli",
+    "durationMinutes": 95,
+    "description": "ASULİS Türkiye Hapishaneleri Paneli"
+  },
+  "4145": {
+    "durationMinutes": 3,
+    "description": "Sosyolog Mustafa Eren, yaşlı mahpusların durumlarını ve sorunlarını konuşuyor"
+  },
+  "4147": {
+    "durationMinutes": 2,
+    "description": "Sosyolog Mustafa Eren engelli mahpusların durumlarını ve sorunlarını konuşuyor."
+  },
+  "4150": {
+    "extraTopics": [
+      "genel-hapishane-yazilari"
+    ],
+    "title": "Avlu Dizisi ve Türkiye Hapishaneleri",
+    "durationMinutes": 44,
+    "description": "Sosyolog Mustafa Eren, Türkiye hapishaneleri ve Avlu dizisi üzerine konuşuyor"
+  },
+  "4151": {
+    "durationMinutes": 47,
+    "description": "Sosyolog Mustafa Eren, öğrenci mahpusların durumlarını ve sorunlarını konuşuyor"
+  },
+  "4152": {
+    "durationMinutes": 32,
+    "description": "Sosyolog Mustafa Eren'den Türkiye Adalet Bakanlığı'nın LGBTİ+ hapishanesi açma girişimi üzerine değerlendirme"
+  },
+  "4153": {
+    "durationMinutes": 23,
+    "description": "Sosyolog Mustafa Eren'den Türkiye hapishanelerinde Tek Tip Elbise (TTE) dayatması üzerine değerlendirme"
+  },
+  "4154": {
+    "extraTopics": [
+      "hapishanelerin-tarihi"
+    ],
+    "title": "Kapatılmanın Patolojisi ve Türkiye Hapishaneleri",
+    "durationMinutes": 77,
+    "description": "Kapatılmanın Patolojisi'ni ve Türkiye hapishanelerini Ayşe Hür ve Namık Kemal Dinç'in sunduğu Tarih Defteri (İMC TV) programında konuştuk."
+  },
+  "4155": {
+    "durationMinutes": 26,
+    "description": "Proje Koordinatörü olarak çalıştığım Ceza İnfaz Sisteminde Sivil Toplum Derneği'nin Yönetim Kurulu Başkanı Zafer Kıraç ile beraber, Açık Radyo'dan Ömer Madra ve M. Can Tonbil'in konuğu olarak 19 Aralık \"Hayata Dönüş Operasyonu\"nun yıl dönümünde Türkiye hapishanelerini konuştuk."
+  },
+  "4156": {
+    "durationMinutes": 50,
+    "description": "Mustafa Eren, Namık Kemal Dinç'in konuğu olarak İMC TV Dirok programında, Göksun Yazıcı ve Hamit Kankılıç ile beraber açlık grevlerini konuşuyor."
+  },
+  "4157": {
+    "durationMinutes": 39,
+    "description": "Nazım Alpman ile Kanlı Pazar"
+  },
+  "4158": {
+    "durationMinutes": 38,
+    "description": "Kanlı Pazar Dirok Programında"
+  },
+  "4159": {
+    "durationMinutes": 11,
+    "description": "Kanlı Pazar Kültür Mantarı Programında"
+  },
+  "4164": {
+    "collection": "basinda",
+    "title": "Prisoners’ Right to Education Obstructed Through Statutory Decree"
+  },
+  "4372": {
+    "collection": "yazilar",
+    "title": "Die AKP und der Strafvollzug: Kriminalisierung und die Republik der „Gefängniscampus“"
+  },
+  "4398": {
+    "collection": "yazilar",
+    "title": "AKP, criminalization and the Republic of 'Campus' Prisons"
+  },
+  "4414": {
+    "collection": "yazilar",
+    "title": "To Be a Migrant, Refugee, Asylum Seeker, and Prisoner in EU Countries"
+  },
+  "4436": {
+    "collection": "yazilar",
+    "title": "Ethical Policy on AI-Assisted Content Creation"
+  },
+  "4467": {
+    "collection": "yazilar",
+    "title": "Prisoners with Special Needs and Human Rights"
+  },
+  "4492": {
+    "collection": "yazilar",
+    "title": "Prisoners with Special Needs and Turkey’s Prisons Built for Adult, Sunni, Healthy, Heterosexual Turkish Men"
+  },
+  "4515": {
+    "collection": "yazilar",
+    "title": "The First Step Toward Peace: Freedom for Political Prisoners"
+  },
+  "4529": {
+    "collection": "yazilar",
+    "title": "Der Erste Schritt zum Frieden: Freiheit für politische Gefangene"
+  },
+  "4685": {
+    "collection": "yazilar",
+    "title": "New High-Security Prisons as a Tool to Intimidate Social Dissent"
+  },
+  "4821": {
+    "collection": "yazilar",
+    "title": "Neue Gefängnistypen und die Einschüchterung der gesellschaftlichen Opposition"
+  },
+  "4875": {
+    "collection": "yazilar",
+    "title": "Death Fasts: A Kind of Action within the Dilemma between the Sanctity of Life and the Right to Resist"
+  },
+  "6475": {
+    "durationMinutes": 32,
+    "description": "Açık Radyo'da 16 Şubat 2012 tarihinde yayımlanan Açık Gazete programında, Ömer Madra'nın konuğu olarak \"Kanlı Pazar\" kitabı üzerine gerçekleştirilen söyleşi."
+  },
+  "_aciklama": "WordPress post_id bazlı manuel istisna tablosu. Migrasyon script'i her kayıt için önce buraya bakar, yoksa genel kurala (tag-topic-map.json / tag-mecra-map.json) düşer. Bu dosyadaki her giriş bu oturumda elle doğrulanmış bir karardır (bkz. wp-analiz-27-yabanci-dil.md).",
+  "_alanlar": {
+    "collection": "yazilar | basinda — otomatik sınıflandırmayı (kategori tabanlı) geçersiz kılar, yalnızca yabancı-dil kategorisiz parçalar için gerekli",
+    "mecra": "mecralar.json id'si — gövde metninde geçtiği halde etiketlenmemiş mecra düzeltmesi, ya da birden fazla mecra etiketi/linki arasında kullanıcının seçtiği birincil mecra",
+    "extraTopics": "tag-topic-map.json'dan gelen konulara EK olarak eklenecek konu id(ler)i — yalnızca genel hapishane-eşanlamlısı etiketten başka spesifik etiketi olmayan 35 parça için",
+    "sources": "basinda şemasının sources[] alanı — yalnızca birden fazla mecrada çıktığı doğrulanmış kayıtlarda, kullanıcının açıkça onayladığı birincil/ikincil sırayla",
+    "durationMinutes": "videolar.json şemasında WP'de saklanmayan zorunlu alan — YouTube sayfasından (meta[itemprop=duration]) gerçek süre okunup dakikaya yuvarlandı (kullanıcı onaylı liste, 2026-07-16).",
+    "description": "ortakAlanlar.description zorunlu alanı — Videolar için WP gövdesi yalnızca bir video linkinden ibaret olduğundan (bkz. resolve-description.mjs), gerçek YouTube video açıklaması (meta script[type=application/ld+json] -> description) tarayıcıyla okunup buraya işlendi; 4 videonun YouTube açıklaması boştu, onlar için gerçek video başlığı kullanıldı (2026-07-16).",
+    "localImage": "WP'de _thumbnail_id hiç olmayan (3 yazı) kayıtlar için kullanıcının verdiği gerçek görsel dosyasının proje-köküne göreli yolu (2026-07-16).",
+    "sayfaSayisi": "kitaplar şemasının sayfaSayisi alanı — normalde gövde metninden otomatik çıkarılır (resolve-book-fields.mjs), ama kullanıcı doğrulamasıyla çelişirse burada override edilir.",
+    "slugOverride": "wp:post_name anlamsız/otomatik bir isim olduğunda (ör. \"project-2\") kullanıcı onayıyla verilen okunur slug."
   }
 }

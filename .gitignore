@@ -2,6 +2,8 @@
 dist/
 # generated types
 .astro/
+# Faz 4 migrasyon ara üretim alanı (Aşama 4C) — src/content/'e taşınmadan önceki geçici çıktı
+.tmp/
 
 # dependencies
 node_modules/
