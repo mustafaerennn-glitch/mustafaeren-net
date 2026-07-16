@@ -35,7 +35,7 @@ import { resolveMecra, buildDomainMap } from './migration/lib/resolve-mecra.mjs'
 import { resolveFeaturedImage } from './migration/lib/resolve-media.mjs';
 import { resolveSlugs } from './migration/lib/resolve-slug.mjs';
 import { buildTranslationIndex, resolveTranslations } from './migration/lib/resolve-translations.mjs';
-import { htmlToMarkdown, rewireInternalLinks, findSelfHostedPdf } from './migration/lib/content-to-markdown.mjs';
+import { htmlToMarkdown, rewireInternalLinks, stripDeadFileLinks, findSelfHostedPdf } from './migration/lib/content-to-markdown.mjs';
 import { resolveVideoFields } from './migration/lib/resolve-video-fields.mjs';
 import { resolveBookFields } from './migration/lib/resolve-book-fields.mjs';
 import { resolveDescription } from './migration/lib/resolve-description.mjs';
@@ -189,13 +189,28 @@ for (const r of actionable) {
     if (unresolvedInternalLinks.length > 0) {
       warnings.push(`Çözülemeyen iç link(ler): ${unresolvedInternalLinks.join(', ')}`);
     }
+    const { markdown: cleaned, strippedCount } = stripDeadFileLinks(markdown);
+    markdown = cleaned;
+    if (strippedCount > 0) {
+      warnings.push(`${strippedCount} ölü file:/// dipnot linki kaldırıldı (Aşama 4E bulgusu)`);
+    }
+
+    // Elle doğrulanmış, tek-kayıtlık gövde düzeltmeleri (ör. yanlış kopyalanmış künye satırı).
+    for (const { find, replace } of contentOverrides[id]?.bodyFindReplace ?? []) {
+      if (!markdown.includes(find)) {
+        errors.push(`bodyFindReplace: "${find.slice(0, 40)}…" gövdede bulunamadı (post_id=${id})`);
+        continue;
+      }
+      markdown = markdown.replace(find, replace);
+      warnings.push(`Gövdede elle doğrulanmış düzeltme uygulandı (post_id=${id})`);
+    }
   } catch (err) {
     errors.push(`HTML->Markdown dönüşümü başarısız: ${err.message}`);
   }
 
   const pdfUrl = collection !== 'videolar' ? findSelfHostedPdf(bodyHtml(item)) : undefined;
 
-  const { description, warnings: dw } = resolveDescription(item, markdown, contentOverrides);
+  let { description, warnings: dw } = resolveDescription(item, markdown, contentOverrides);
   warnings.push(...dw);
 
   let typeFields = {};
@@ -214,6 +229,14 @@ for (const r of actionable) {
     warnings.push(...bw);
     errors.push(...be);
     typeFields = { kitapTuru, year, yayineviUrl, yazar, yayinevi, sayfaSayisi };
+    // Northeme temasının "editörlük" kayıtlarında (ve bazı "yazdıklarım" kayıtlarında) gövde/excerpt
+    // hiç doldurulmamış, Lorem Ipsum tema demo metni kalmış — resolveDescription bunu reddedip boş
+    // döndürdü (13 gerçek örnekte). Uydurma bir özet yazmak yerine, zaten doğrulanmış gerçek
+    // bibliyografik alanlardan (yazar/yayınevi/yıl/sayfa) dürüst bir künye cümlesi kuruluyor.
+    if (!description && yazar && yayinevi && year) {
+      description = `Yazar: ${yazar}. ${yayinevi}, ${year}, ${sayfaSayisi ? sayfaSayisi + ' sayfa.' : ''}`.trim();
+      warnings.push('description gövde/excerpt\'ten değil, gerçek bibliyografik alanlardan (yazar/yayınevi/yıl) kuruldu');
+    }
   }
 
   const record = {

@@ -7,10 +7,11 @@ import { cdata, postId } from './wxr.mjs';
 
 const MAX_LENGTH = 160;
 const BARE_URL_RE = /^https?:\/\/\S+$/i;
-// Northeme temasının bazı nor-portfolio (Kitaplar) kayıtlarında excerpt hiç doldurulmamış,
-// tema demo içeriğinden kalma Lorem Ipsum metni olduğu gibi kalmış (gerçek veri değil, 3
-// kitapta bulundu — 2026-07-16). Bunu gerçek bir özet gibi kullanmamak için tespit ediliyor.
-const LOREM_IPSUM_RE = /\b(lorem ipsum|dolor sit amet|consectetur adipiscing|nullam|phasellus|vestibulum ante|vivamus id|mauris hendrerit)\b/i;
+// Northeme temasının bazı nor-portfolio (Kitaplar) kayıtlarında excerpt/gövde hiç doldurulmamış,
+// tema demo içeriğinden kalma Lorem Ipsum metni olduğu gibi kalmış — 13 kitapta bulundu
+// (2026-07-16), hepsi "Curabitur tincidunt, ante vel finibus tempor..." cümlesinin aynısı.
+// Farklı Lorem Ipsum varyantlarını da yakalamak için birkaç yaygın sözcük daha eklendi.
+const LOREM_IPSUM_RE = /\b(lorem ipsum|dolor sit amet|consectetur adipiscing|nullam|phasellus|vestibulum ante|vivamus id|mauris hendrerit|curabitur|tincidunt|vestibulum|suspendisse|pellentesque)\b/i;
 
 function stripMarkdown(markdown) {
   return markdown
@@ -56,10 +57,11 @@ export function resolveDescription(item, markdown, contentOverrides = {}) {
 
   const bodyText = stripMarkdown(markdown);
   // Bazı gövdeler (ör. Videolar — WP'de yalnızca bir video linkinden ibaret) çıplak bir URL'den
-  // başka bir şey içermiyor. Bunu description olarak kullanmak anlamsız/bozuk görünür —
-  // needsManualInput'a düşürülüyor, uydurma bir cümle üretilmiyor.
-  if (!bodyText || BARE_URL_RE.test(bodyText)) {
-    warnings.push('description üretilemedi: excerpt/gövde yok ya da yalnızca çıplak bir URL — needsManualInput');
+  // başka bir şey içermiyor. Bazı gövdeler de (13 Kitap kaydında bulundu — Northeme temasının
+  // "editörlük" tipi kayıtları hiç doldurulmamış) tema demo Lorem Ipsum'undan ibaret. İkisi de
+  // description olarak kullanılamaz — needsManualInput'a düşürülüyor, uydurma cümle üretilmiyor.
+  if (!bodyText || BARE_URL_RE.test(bodyText) || LOREM_IPSUM_RE.test(bodyText)) {
+    warnings.push('description üretilemedi: excerpt/gövde yok, çıplak bir URL ya da Lorem Ipsum tema demo metni — needsManualInput');
     return { description: '', warnings };
   }
   warnings.push('description WordPress excerpt\'inden değil, gövde metninden otomatik türetildi — gözden geçirilmeli');

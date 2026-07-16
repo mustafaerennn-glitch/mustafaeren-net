@@ -13,8 +13,10 @@ interface Props {
 const { image, alt, caption } = Astro.props;
 ---
 
+{/* Kaynak görsel 800px'ten küçükse istenen genişlik onu geçmiyor — Astro'nun görsel
+    servisinin küçük orijinalleri büyütüp bulanıklaştırmasını önler (bkz. Aşama 4E bulgusu). */}
 <figure class="preview-image">
-  <Image src={image} alt={alt} width={800} />
+  <Image src={image} alt={alt} width={Math.min(800, image.width)} />
   {caption && <figcaption class="preview-caption">{caption}</figcaption>}
 </figure>
 

@@ -1,7 +1,7 @@
 ---
 title: Türkiye'de Hasta Mahpus Olmak
 lang: tr
-description: Curabitur tincidunt, ante vel finibus tempor, odio neque sagittis mauris, et placerat erat mi et purus.
+description: 'Eser Adı: Türkiye''de Hasta Mahpus Olmak Yazar: Berivan Korkut Yayınevi: TCPS Kitaplığı Editörler: Ayşegül Algan, Mustafa Eren, Hilal Başak Demirbaş Kapak…'
 topics:
   - hasta-mahpuslar
 year: 2018

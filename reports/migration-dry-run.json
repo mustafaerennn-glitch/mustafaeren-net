@@ -2,7 +2,7 @@
   "generatedFrom": "/Users/Tevrat/Desktop/ mustafaeren-net-astro/mustafaeren.WordPress.2026-07-15.xml",
   "totalItems": 955,
   "totalErrors": 0,
-  "totalWarnings": 256,
+  "totalWarnings": 287,
   "byCollection": {
     "kitaplar": 18,
     "videolar": 23,
@@ -84,7 +84,7 @@
       "status": "publish",
       "oldUrl": "https://mustafaeren.net/kitap/isci-mahpuslar/",
       "title": "Türkiye'de İşçi Mahpusların Güncel Durumu",
-      "description": "Curabitur tincidunt, ante vel finibus tempor, odio neque sagittis mauris, et placerat erat mi et purus.",
+      "description": "Eser Adı: Türkiye'de İşçi Mahpusların Güncel Durumu Yazar: Mustafa Eren, Yusuf Engin Yayınevi: TCPS Kitaplığı Kapak Tasarımı: Tayfun Koç Basım Tarihi: Aralık…",
       "proposedCollection": "kitaplar",
       "lang": "tr",
       "slug": "isci-mahpuslar",
@@ -106,7 +106,9 @@
       "markdownLength": 1669,
       "hasEmbed": false,
       "warnings": [
-        "Öne çıkan görselin alt metni boş (post_id=3330, https://mustafaeren.net/wp-content/uploads/2015/05/Ekran-Resmi-2025-02-12-21.27.08.png)"
+        "Öne çıkan görselin alt metni boş (post_id=3330, https://mustafaeren.net/wp-content/uploads/2015/05/Ekran-Resmi-2025-02-12-21.27.08.png)",
+        "WordPress excerpt'i Lorem Ipsum tema demo metni — göz ardı edildi: \"Curabitur tincidunt, ante vel finibus tempor, odio neque sag…\"",
+        "description WordPress excerpt'inden değil, gövde metninden otomatik türetildi — gözden geçirilmeli"
       ],
       "errors": []
     },
@@ -215,7 +217,7 @@
       "status": "publish",
       "oldUrl": "https://mustafaeren.net/kitap/turkiyede-lgbti-mahpus-olmak/",
       "title": "Türkiye'de LGBTİ Mahpus Olmak",
-      "description": "Curabitur tincidunt, ante vel finibus tempor, odio neque sagittis mauris, et placerat erat mi et purus.",
+      "description": "Eser Adı: Türkiye'de LGBTİ Mahpus Olmak Yazar: Hilal Başak Demirbaş Yayınevi: TCPS Kitaplığı Editörler: Ayşegül Algan, Mustafa Eren Kapak Tasarımı: Tayfun Koç…",
       "proposedCollection": "kitaplar",
       "lang": "tr",
       "slug": "turkiyede-lgbti-mahpus-olmak",
@@ -237,7 +239,9 @@
       "markdownLength": 2583,
       "hasEmbed": false,
       "warnings": [
-        "Öne çıkan görselin alt metni boş (post_id=3974, https://mustafaeren.net/wp-content/uploads/2025/02/Turkiyede-LGBTI-Mahpus-Olmak.png)"
+        "Öne çıkan görselin alt metni boş (post_id=3974, https://mustafaeren.net/wp-content/uploads/2025/02/Turkiyede-LGBTI-Mahpus-Olmak.png)",
+        "WordPress excerpt'i Lorem Ipsum tema demo metni — göz ardı edildi: \"Curabitur tincidunt, ante vel finibus tempor, odio neque sag…\"",
+        "description WordPress excerpt'inden değil, gövde metninden otomatik türetildi — gözden geçirilmeli"
       ],
       "errors": []
     },
@@ -247,7 +251,7 @@
       "status": "publish",
       "oldUrl": "https://mustafaeren.net/kitap/turkiyede-agirlastirilmis-muebbet-hukumlusu-mahpus-olmak/",
       "title": "Türkiye'de Ağırlaştırılmış Müebbet Hükümlüsü Mahpus Olmak",
-      "description": "Curabitur tincidunt, ante vel finibus tempor, odio neque sagittis mauris, et placerat erat mi et purus.",
+      "description": "Eser Adı: Türkiye'de Ağırlaştırılmış Müebbet Hükümlüsü Mahpus Olmak Yazar: İdil Aydınoğlu Yayınevi: TCPS Kitaplığı Editörler: Ayşegül Algan, Mustafa Eren Kapak…",
       "proposedCollection": "kitaplar",
       "lang": "tr",
       "slug": "turkiyede-agirlastirilmis-muebbet-hukumlusu-mahpus-olmak",
@@ -269,7 +273,9 @@
       "markdownLength": 2962,
       "hasEmbed": false,
       "warnings": [
-        "Öne çıkan görselin alt metni boş (post_id=3983, https://mustafaeren.net/wp-content/uploads/2025/02/Turkiyede-Agirlastirilmis-Muebbet-Hukumlusu-Mahpus-Olmak.png)"
+        "Öne çıkan görselin alt metni boş (post_id=3983, https://mustafaeren.net/wp-content/uploads/2025/02/Turkiyede-Agirlastirilmis-Muebbet-Hukumlusu-Mahpus-Olmak.png)",
+        "WordPress excerpt'i Lorem Ipsum tema demo metni — göz ardı edildi: \"Curabitur tincidunt, ante vel finibus tempor, odio neque sag…\"",
+        "description WordPress excerpt'inden değil, gövde metninden otomatik türetildi — gözden geçirilmeli"
       ],
       "errors": []
     },
@@ -279,7 +285,7 @@
       "status": "publish",
       "oldUrl": "https://mustafaeren.net/kitap/ozel-ihtiyaclari-olan-mahpuslar-projesi-sonuc-raporu/",
       "title": "Özel İhtiyaçları Olan Mahpuslar Projesi Sonuç Raporu",
-      "description": "Curabitur tincidunt, ante vel finibus tempor, odio neque sagittis mauris, et placerat erat mi et purus.",
+      "description": "Eser Adı: Özel İhtiyaçları Olan Mahpuslar Projesi Sonuç Raporu Yazar: Mustafa Eren Yayınevi: CİSST Basım Tarihi: Kasım 2013 Sayfa Sayısı: 101 Özel İhtiyaçları…",
       "proposedCollection": "kitaplar",
       "lang": "tr",
       "slug": "ozel-ihtiyaclari-olan-mahpuslar-projesi-sonuc-raporu",
@@ -301,7 +307,9 @@
       "markdownLength": 3350,
       "hasEmbed": false,
       "warnings": [
-        "Öne çıkan görselin alt metni boş (post_id=4177, https://mustafaeren.net/wp-content/uploads/2025/02/Ekran-Resmi-2025-02-21-13.29.20.png)"
+        "Öne çıkan görselin alt metni boş (post_id=4177, https://mustafaeren.net/wp-content/uploads/2025/02/Ekran-Resmi-2025-02-21-13.29.20.png)",
+        "WordPress excerpt'i Lorem Ipsum tema demo metni — göz ardı edildi: \"Curabitur tincidunt, ante vel finibus tempor, odio neque sag…\"",
+        "description WordPress excerpt'inden değil, gövde metninden otomatik türetildi — gözden geçirilmeli"
       ],
       "errors": []
     },
@@ -311,7 +319,7 @@
       "status": "publish",
       "oldUrl": "https://mustafaeren.net/kitap/prisoners-with-special-needs-project-final-report/",
       "title": "Prisoners with Special Needs Project Final Report",
-      "description": "Curabitur tincidunt, ante vel finibus tempor, odio neque sagittis mauris, et placerat erat mi et purus.",
+      "description": "Eser Adı: Prisoners with Special Needs Project Final Report Yazar: Mustafa Eren Yayınevi: CİSST Basım Tarihi: Kasım 2013 Sayfa Sayısı: 20 The Prisoners with…",
       "proposedCollection": "kitaplar",
       "lang": "tr",
       "slug": "prisoners-with-special-needs-project-final-report",
@@ -333,7 +341,9 @@
       "markdownLength": 3518,
       "hasEmbed": false,
       "warnings": [
-        "Öne çıkan görselin alt metni boş (post_id=4197, https://mustafaeren.net/wp-content/uploads/2025/02/Ekran-Resmi-2025-02-21-18.56.25.png)"
+        "Öne çıkan görselin alt metni boş (post_id=4197, https://mustafaeren.net/wp-content/uploads/2025/02/Ekran-Resmi-2025-02-21-18.56.25.png)",
+        "WordPress excerpt'i Lorem Ipsum tema demo metni — göz ardı edildi: \"Curabitur tincidunt, ante vel finibus tempor, odio neque sag…\"",
+        "description WordPress excerpt'inden değil, gövde metninden otomatik türetildi — gözden geçirilmeli"
       ],
       "errors": []
     },
@@ -343,7 +353,7 @@
       "status": "publish",
       "oldUrl": "https://mustafaeren.net/kitap/hekimler-icin-mahpusun-saglik-hakki/",
       "title": "Hekimler İçin Mahpusun Sağlık Hakkı",
-      "description": "Curabitur tincidunt, ante vel finibus tempor, odio neque sagittis mauris, et placerat erat mi et purus.",
+      "description": "Eser Adı: Hekimler İçin Mahpusun Sağlık Hakkı Yazar: Berivan Korkut Yayınevi: TCPS Kitaplığı Editörler: Mustafa Eren Kapak Tasarımı: Tayfun Koç Basım Tarihi:…",
       "proposedCollection": "kitaplar",
       "lang": "tr",
       "slug": "hekimler-icin-mahpusun-saglik-hakki",
@@ -365,7 +375,9 @@
       "markdownLength": 437,
       "hasEmbed": false,
       "warnings": [
-        "Öne çıkan görselin alt metni boş (post_id=3991, https://mustafaeren.net/wp-content/uploads/2025/02/Mahpusun-Saglik-Hakki.png)"
+        "Öne çıkan görselin alt metni boş (post_id=3991, https://mustafaeren.net/wp-content/uploads/2025/02/Mahpusun-Saglik-Hakki.png)",
+        "WordPress excerpt'i Lorem Ipsum tema demo metni — göz ardı edildi: \"Curabitur tincidunt, ante vel finibus tempor, odio neque sag…\"",
+        "description WordPress excerpt'inden değil, gövde metninden otomatik türetildi — gözden geçirilmeli"
       ],
       "errors": []
     },
@@ -375,7 +387,7 @@
       "status": "publish",
       "oldUrl": "https://mustafaeren.net/kitap/turkiyede-kadin-mahpus-olmak/",
       "title": "Türkiye'de Kadın Mahpus Olmak",
-      "description": "Curabitur tincidunt, ante vel finibus tempor, odio neque sagittis mauris, et placerat erat mi et purus.",
+      "description": "Eser Adı: Türkiye'de Kadın Mahpus Olmak Yazar: Ezgi Duman Yayınevi: TCPS Kitaplığı Editörler: Ayşegül Algan, Mustafa Eren Kapak Tasarımı: Tayfun Koç Basım…",
       "proposedCollection": "kitaplar",
       "lang": "tr",
       "slug": "turkiyede-kadin-mahpus-olmak",
@@ -394,10 +406,13 @@
       "yazar": "Ezgi Duman",
       "yayinevi": "CİSST",
       "sayfaSayisi": 154,
-      "markdownLength": 2953,
+      "markdownLength": 2925,
       "hasEmbed": false,
       "warnings": [
-        "Öne çıkan görselin alt metni boş (post_id=3995, https://mustafaeren.net/wp-content/uploads/2025/02/Turkiyede-Kadin-Mahpus-Olmak.png)"
+        "Öne çıkan görselin alt metni boş (post_id=3995, https://mustafaeren.net/wp-content/uploads/2025/02/Turkiyede-Kadin-Mahpus-Olmak.png)",
+        "Gövdede elle doğrulanmış düzeltme uygulandı (post_id=3995)",
+        "WordPress excerpt'i Lorem Ipsum tema demo metni — göz ardı edildi: \"Curabitur tincidunt, ante vel finibus tempor, odio neque sag…\"",
+        "description WordPress excerpt'inden değil, gövde metninden otomatik türetildi — gözden geçirilmeli"
       ],
       "errors": []
     },
@@ -407,7 +422,7 @@
       "status": "publish",
       "oldUrl": "https://mustafaeren.net/kitap/turkiyede-cocuk-mahpus-olmak/",
       "title": "Türkiye'de Çocuk Mahpus Olmak",
-      "description": "Curabitur tincidunt, ante vel finibus tempor, odio neque sagittis mauris, et placerat erat mi et purus.",
+      "description": "Eser Adı: Türkiye'de Çocuk Mahpus Olmak Yazar: Alper Yalçın Yayınevi: TCPS Kitaplığı Editörler: Mustafa Eren Kapak Tasarımı: Tayfun Koç Basım Tarihi: Haziran…",
       "proposedCollection": "kitaplar",
       "lang": "tr",
       "slug": "turkiyede-cocuk-mahpus-olmak",
@@ -429,7 +444,9 @@
       "markdownLength": 1281,
       "hasEmbed": false,
       "warnings": [
-        "Öne çıkan görselin alt metni boş (post_id=4000, https://mustafaeren.net/wp-content/uploads/2025/02/Turkiyede-Cocuk-Mahpus-Olmak.png)"
+        "Öne çıkan görselin alt metni boş (post_id=4000, https://mustafaeren.net/wp-content/uploads/2025/02/Turkiyede-Cocuk-Mahpus-Olmak.png)",
+        "WordPress excerpt'i Lorem Ipsum tema demo metni — göz ardı edildi: \"Curabitur tincidunt, ante vel finibus tempor, odio neque sag…\"",
+        "description WordPress excerpt'inden değil, gövde metninden otomatik türetildi — gözden geçirilmeli"
       ],
       "errors": []
     },
@@ -439,7 +456,7 @@
       "status": "publish",
       "oldUrl": "https://mustafaeren.net/kitap/turkiyede-yabanci-mahpus-olmak/",
       "title": "Türkiye'de Yabancı Mahpus Olmak",
-      "description": "Curabitur tincidunt, ante vel finibus tempor, odio neque sagittis mauris, et placerat erat mi et purus.",
+      "description": "Eser Adı: Türkiye'de Yabancı Mahpus Olmak Yazar: Hilal Başak Demirbaş Yayınevi: TCPS Kitaplığı Editörler: Ayşegül Algan, Mustafa Eren Kapak Tasarımı: Tayfun…",
       "proposedCollection": "kitaplar",
       "lang": "tr",
       "slug": "turkiyede-yabanci-mahpus-olmak",
@@ -461,7 +478,9 @@
       "markdownLength": 3597,
       "hasEmbed": false,
       "warnings": [
-        "Öne çıkan görselin alt metni boş (post_id=4004, https://mustafaeren.net/wp-content/uploads/2025/02/Turkiyede-Yabanci-Mahpus-Olmak.png)"
+        "Öne çıkan görselin alt metni boş (post_id=4004, https://mustafaeren.net/wp-content/uploads/2025/02/Turkiyede-Yabanci-Mahpus-Olmak.png)",
+        "WordPress excerpt'i Lorem Ipsum tema demo metni — göz ardı edildi: \"Curabitur tincidunt, ante vel finibus tempor, odio neque sag…\"",
+        "description WordPress excerpt'inden değil, gövde metninden otomatik türetildi — gözden geçirilmeli"
       ],
       "errors": []
     },
@@ -471,7 +490,7 @@
       "status": "publish",
       "oldUrl": "https://mustafaeren.net/kitap/turkiyede-isci-mahpus-olmak/",
       "title": "Türkiye'de İşçi Mahpus Olmak",
-      "description": "Curabitur tincidunt, ante vel finibus tempor, odio neque sagittis mauris, et placerat erat mi et purus.",
+      "description": "Eser Adı: Türkiye'de İşçi Mahpus Olmak Yazar: Tayfun Koç Yayınevi: TCPS Kitaplığı Editörler: Mustafa Eren Kapak Tasarımı: Tayfun Koç Basım Tarihi: Aralık 2016…",
       "proposedCollection": "kitaplar",
       "lang": "tr",
       "slug": "turkiyede-isci-mahpus-olmak",
@@ -493,7 +512,9 @@
       "markdownLength": 1167,
       "hasEmbed": false,
       "warnings": [
-        "Öne çıkan görselin alt metni boş (post_id=4008, https://mustafaeren.net/wp-content/uploads/2025/02/Turkiyede-Isci-Mahpus-Olmak.png)"
+        "Öne çıkan görselin alt metni boş (post_id=4008, https://mustafaeren.net/wp-content/uploads/2025/02/Turkiyede-Isci-Mahpus-Olmak.png)",
+        "WordPress excerpt'i Lorem Ipsum tema demo metni — göz ardı edildi: \"Curabitur tincidunt, ante vel finibus tempor, odio neque sag…\"",
+        "description WordPress excerpt'inden değil, gövde metninden otomatik türetildi — gözden geçirilmeli"
       ],
       "errors": []
     },
@@ -503,7 +524,7 @@
       "status": "publish",
       "oldUrl": "https://mustafaeren.net/kitap/hapiste-saglik/",
       "title": "Hapiste Sağlık",
-      "description": "Curabitur tincidunt, ante vel finibus tempor, odio neque sagittis mauris, et placerat erat mi et purus.",
+      "description": "Eser Adı: Hapiste Sağlık / Proje Kitabı Yazar: Berivan Korkut Yayınevi: TCPS Kitaplığı Editörler: Ayşegül Algan, Mustafa Eren Kapak Tasarımı: Tayfun Koç Basım…",
       "proposedCollection": "kitaplar",
       "lang": "tr",
       "slug": "hapiste-saglik",
@@ -525,7 +546,9 @@
       "markdownLength": 1080,
       "hasEmbed": false,
       "warnings": [
-        "Öne çıkan görselin alt metni boş (post_id=4010, https://mustafaeren.net/wp-content/uploads/2025/02/Hapiste-Saglik.png)"
+        "Öne çıkan görselin alt metni boş (post_id=4010, https://mustafaeren.net/wp-content/uploads/2025/02/Hapiste-Saglik.png)",
+        "WordPress excerpt'i Lorem Ipsum tema demo metni — göz ardı edildi: \"Curabitur tincidunt, ante vel finibus tempor, odio neque sag…\"",
+        "description WordPress excerpt'inden değil, gövde metninden otomatik türetildi — gözden geçirilmeli"
       ],
       "errors": []
     },
@@ -535,7 +558,7 @@
       "status": "publish",
       "oldUrl": "https://mustafaeren.net/kitap/turkiyede-roman-mahpus-olmak/",
       "title": "Türkiye'de Roman Mahpus Olmak",
-      "description": "Curabitur tincidunt, ante vel finibus tempor, odio neque sagittis mauris, et placerat erat mi et purus.",
+      "description": "Eser Adı: Türkiye'de Roman Mahpus Olmak Yazar: Aylin Çelikçi Yayınevi: TCPS Kitaplığı Editörler: Mustafa Eren Kapak Tasarımı: Tayfun Koç Basım Tarihi: Ekim…",
       "proposedCollection": "kitaplar",
       "lang": "tr",
       "slug": "turkiyede-roman-mahpus-olmak",
@@ -557,7 +580,9 @@
       "markdownLength": 1597,
       "hasEmbed": false,
       "warnings": [
-        "Öne çıkan görselin alt metni boş (post_id=4014, https://mustafaeren.net/wp-content/uploads/2025/02/Turkiyede-Roman-Mahpus-Olmak.png)"
+        "Öne çıkan görselin alt metni boş (post_id=4014, https://mustafaeren.net/wp-content/uploads/2025/02/Turkiyede-Roman-Mahpus-Olmak.png)",
+        "WordPress excerpt'i Lorem Ipsum tema demo metni — göz ardı edildi: \"Curabitur tincidunt, ante vel finibus tempor, odio neque sag…\"",
+        "description WordPress excerpt'inden değil, gövde metninden otomatik türetildi — gözden geçirilmeli"
       ],
       "errors": []
     },
@@ -567,7 +592,7 @@
       "status": "publish",
       "oldUrl": "https://mustafaeren.net/kitap/turkiyede-hasta-mahpus-olmak/",
       "title": "Türkiye'de Hasta Mahpus Olmak",
-      "description": "Curabitur tincidunt, ante vel finibus tempor, odio neque sagittis mauris, et placerat erat mi et purus.",
+      "description": "Eser Adı: Türkiye'de Hasta Mahpus Olmak Yazar: Berivan Korkut Yayınevi: TCPS Kitaplığı Editörler: Ayşegül Algan, Mustafa Eren, Hilal Başak Demirbaş Kapak…",
       "proposedCollection": "kitaplar",
       "lang": "tr",
       "slug": "turkiyede-hasta-mahpus-olmak",
@@ -589,7 +614,9 @@
       "markdownLength": 2354,
       "hasEmbed": false,
       "warnings": [
-        "Öne çıkan görselin alt metni boş (post_id=4018, https://mustafaeren.net/wp-content/uploads/2025/02/Turkiyede-Hasta-Mahpus-Olmak.png)"
+        "Öne çıkan görselin alt metni boş (post_id=4018, https://mustafaeren.net/wp-content/uploads/2025/02/Turkiyede-Hasta-Mahpus-Olmak.png)",
+        "WordPress excerpt'i Lorem Ipsum tema demo metni — göz ardı edildi: \"Curabitur tincidunt, ante vel finibus tempor, odio neque sag…\"",
+        "description WordPress excerpt'inden değil, gövde metninden otomatik türetildi — gözden geçirilmeli"
       ],
       "errors": []
     },
@@ -3702,10 +3729,11 @@
         "alt": "",
         "action": "webp"
       },
-      "markdownLength": 7257,
+      "markdownLength": 6975,
       "hasEmbed": false,
       "warnings": [
-        "Öne çıkan görselin alt metni boş (post_id=1357, https://mustafaeren.net/wp-content/uploads/2020/11/Ekran-Resmi-2020-11-10-10.57.50.png)"
+        "Öne çıkan görselin alt metni boş (post_id=1357, https://mustafaeren.net/wp-content/uploads/2020/11/Ekran-Resmi-2020-11-10-10.57.50.png)",
+        "4 ölü file:/// dipnot linki kaldırıldı (Aşama 4E bulgusu)"
       ],
       "errors": []
     },
@@ -3989,10 +4017,11 @@
       "translationTarget": [
         "migrants-refugees-prison-eu"
       ],
-      "markdownLength": 7683,
+      "markdownLength": 6808,
       "hasEmbed": false,
       "warnings": [
-        "Öne çıkan görselin alt metni boş (post_id=1614, https://mustafaeren.net/wp-content/uploads/2021/06/Ekran-Resmi-2021-06-30-15.33.44.png)"
+        "Öne çıkan görselin alt metni boş (post_id=1614, https://mustafaeren.net/wp-content/uploads/2021/06/Ekran-Resmi-2021-06-30-15.33.44.png)",
+        "10 ölü file:/// dipnot linki kaldırıldı (Aşama 4E bulgusu)"
       ],
       "errors": []
     },
@@ -4016,10 +4045,11 @@
         "alt": "",
         "action": "webp"
       },
-      "markdownLength": 7989,
+      "markdownLength": 7465,
       "hasEmbed": false,
       "warnings": [
         "Öne çıkan görselin alt metni boş (post_id=1618, https://mustafaeren.net/wp-content/uploads/2021/06/Ekran-Resmi-2021-06-30-15.41.47.png)",
+        "8 ölü file:/// dipnot linki kaldırıldı (Aşama 4E bulgusu)",
         "description WordPress excerpt'inden değil, gövde metninden otomatik türetildi — gözden geçirilmeli"
       ],
       "errors": []
@@ -4124,10 +4154,11 @@
         "alt": "",
         "action": "webp"
       },
-      "markdownLength": 16976,
+      "markdownLength": 15975,
       "hasEmbed": false,
       "warnings": [
-        "Öne çıkan görselin alt metni boş (post_id=1778, https://mustafaeren.net/wp-content/uploads/2022/01/Bianet-2021-11-22.png)"
+        "Öne çıkan görselin alt metni boş (post_id=1778, https://mustafaeren.net/wp-content/uploads/2022/01/Bianet-2021-11-22.png)",
+        "14 ölü file:/// dipnot linki kaldırıldı (Aşama 4E bulgusu)"
       ],
       "errors": []
     },

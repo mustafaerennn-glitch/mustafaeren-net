@@ -88,6 +88,30 @@ export function rewireInternalLinks(markdown, oldSlugToNewPath) {
 }
 
 /**
+ * Bazı yazılar (Word belgesinden yapıştırılmış, dipnotlu) gövdede `file:///C:/Users/...docx#_ftnN`
+ * gibi yazarın kendi bilgisayarına özel, hiçbir okuyucu için asla çalışmayacak dipnot linkleri
+ * içeriyor (Aşama 4E'de 4 gerçek örnekte bulundu). Link hedefi anlamsız olduğu için kaldırılıp
+ * yalnızca görünür referans numarası metin olarak bırakılıyor — sahte bir hedefe link vermek
+ * yerine dürüst bir "bu bir link değil" davranışı.
+ * @param {string} markdown
+ * @returns {{ markdown: string, strippedCount: number }}
+ */
+export function stripDeadFileLinks(markdown) {
+  let strippedCount = 0;
+  // Link metni her zaman "\[N\]" (kaçışlı köşeli parantezli dipnot numarası) formatında —
+  // desen buna kilitleniyor. Genel bir (.*?) kullanmak TEHLİKELİ: "." satır sonu hariç HER
+  // karakteri eşler (] ve ) dahil), bu yüzden açgözlü olmayan bir joker bile en yakın "](file:"
+  // yerine belgedeki uzaklardaki BAŞKA bir "](file:" oluşumuna kadar genişleyip aradaki tüm
+  // gerçek linkleri (ör. [Bianet](https://...)) yutabiliyor — bu bug canlı veride bulunup
+  // düzeltildi (Aşama 4E, 2026-07-16).
+  const rewritten = markdown.replace(/\[(\\\[\d+\\\])\]\(file:\/\/\/[^)]*\)/gi, (_match, linkText) => {
+    strippedCount += 1;
+    return linkText;
+  });
+  return { markdown: rewritten, strippedCount };
+}
+
+/**
  * Gövdede kendi sitesine (wp-content/uploads) barındırılan bir .pdf linki varsa onu döndürür —
  * şemadaki `pdf` alanı adayı. Dış kaynaklara ait PDF'ler (tcps.org.tr, dergiler.ankara.edu.tr
  * vb. — bunlar kaynakça/dipnot referansı, makalenin KENDİ pdf'i değil) hariç tutulur.

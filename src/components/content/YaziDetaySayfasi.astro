@@ -29,13 +29,13 @@ const alternates = cluster.map((c) => ({ lang: c.lang, href: contentUrl('yazilar
 
 const mecra = entry.data.mecra ? await getEntry(entry.data.mecra) : undefined;
 
-const areaSlug = (await getAreasForTopicRefs(entry.data.topics))[0];
+const areaSlugs = await getAreasForTopicRefs(entry.data.topics);
 const topicsMap = await getTopicsMap();
 const topics = entry.data.topics
   .map((ref) => topicsMap.get(ref.id))
   .filter((t): t is NonNullable<typeof t> => Boolean(t))
   .map((t) => ({ slug: t.id, label: t.data.ad }));
-const areas = areaSlug ? [{ slug: areaSlug, label: ALAN_LABELS[areaSlug] }] : [];
+const areas = areaSlugs.map((slug) => ({ slug, label: ALAN_LABELS[slug] }));
 
 const siteUrl = new URL(canonical, 'https://mustafaeren.net').toString();
 

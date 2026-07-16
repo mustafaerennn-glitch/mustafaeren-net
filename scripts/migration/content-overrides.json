@@ -239,6 +239,15 @@
     "sayfaSayisi": 154,
     "_not": "Kullanıcı gerçek sayfa sayısını 154 olarak doğruladı — WordPress gövde metninde yanlışlıkla 152 yazıyordu."
   },
+  "3995": {
+    "bodyFindReplace": [
+      {
+        "find": "**Eser Adı:** Türkiye'de Ağırlaştırılmış Müebbet Hükümlüsü Mahpus Olmak",
+        "replace": "**Eser Adı:** Türkiye'de Kadın Mahpus Olmak"
+      }
+    ],
+    "_not": "WordPress gövdesinde künye bloğunun \"Eser Adı\" satırı yanlışlıkla önceki kitabın (Ağırlaştırılmış Müebbet) başlığıyla kopyalanmış kalmış — gövdenin geri kalanı ve tüm diğer alanlar (Yazar, sayfa sayısı, konu, yayınevi linki) doğru şekilde Kadın Mahpus Olmak kitabını anlatıyor. Aşama 4E editoryal incelemesinde bulundu, tek satır düzeltildi (2026-07-16)."
+  },
   "4115": {
     "durationMinutes": 40,
     "description": "Medya Haber - Mercek - 22 Ağustos 2022"
@@ -413,6 +422,7 @@
     "description": "ortakAlanlar.description zorunlu alanı — Videolar için WP gövdesi yalnızca bir video linkinden ibaret olduğundan (bkz. resolve-description.mjs), gerçek YouTube video açıklaması (meta script[type=application/ld+json] -> description) tarayıcıyla okunup buraya işlendi; 4 videonun YouTube açıklaması boştu, onlar için gerçek video başlığı kullanıldı (2026-07-16).",
     "localImage": "WP'de _thumbnail_id hiç olmayan (3 yazı) kayıtlar için kullanıcının verdiği gerçek görsel dosyasının proje-köküne göreli yolu (2026-07-16).",
     "sayfaSayisi": "kitaplar şemasının sayfaSayisi alanı — normalde gövde metninden otomatik çıkarılır (resolve-book-fields.mjs), ama kullanıcı doğrulamasıyla çelişirse burada override edilir.",
-    "slugOverride": "wp:post_name anlamsız/otomatik bir isim olduğunda (ör. \"project-2\") kullanıcı onayıyla verilen okunur slug."
+    "slugOverride": "wp:post_name anlamsız/otomatik bir isim olduğunda (ör. \"project-2\") kullanıcı onayıyla verilen okunur slug.",
+    "bodyFindReplace": "Gövde metninde tek seferlik, çok spesifik bir yazım/kopyalama hatasını düzeltmek için find/replace çifti dizisi — genel bir kural değil, yalnızca elle doğrulanmış tek kayıtlarda kullanılır."
   }
 }

@@ -1,7 +1,7 @@
 ---
 title: Türkiye'de LGBTİ Mahpus Olmak
 lang: tr
-description: Curabitur tincidunt, ante vel finibus tempor, odio neque sagittis mauris, et placerat erat mi et purus.
+description: 'Eser Adı: Türkiye''de LGBTİ Mahpus Olmak Yazar: Hilal Başak Demirbaş Yayınevi: TCPS Kitaplığı Editörler: Ayşegül Algan, Mustafa Eren Kapak Tasarımı: Tayfun Koç…'
 topics:
   - lgbti-mahpuslar
 year: 2016

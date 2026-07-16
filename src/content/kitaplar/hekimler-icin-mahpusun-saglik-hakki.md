@@ -1,7 +1,7 @@
 ---
 title: Hekimler İçin Mahpusun Sağlık Hakkı
 lang: tr
-description: Curabitur tincidunt, ante vel finibus tempor, odio neque sagittis mauris, et placerat erat mi et purus.
+description: 'Eser Adı: Hekimler İçin Mahpusun Sağlık Hakkı Yazar: Berivan Korkut Yayınevi: TCPS Kitaplığı Editörler: Mustafa Eren Kapak Tasarımı: Tayfun Koç Basım Tarihi:…'
 topics:
   - hasta-mahpuslar
 year: 2016

@@ -1,7 +1,7 @@
 ---
 title: Türkiye'de Ağırlaştırılmış Müebbet Hükümlüsü Mahpus Olmak
 lang: tr
-description: Curabitur tincidunt, ante vel finibus tempor, odio neque sagittis mauris, et placerat erat mi et purus.
+description: 'Eser Adı: Türkiye''de Ağırlaştırılmış Müebbet Hükümlüsü Mahpus Olmak Yazar: İdil Aydınoğlu Yayınevi: TCPS Kitaplığı Editörler: Ayşegül Algan, Mustafa Eren Kapak…'
 topics:
   - af-ortuk-af
 year: 2016

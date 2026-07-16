@@ -1,7 +1,7 @@
 ---
 title: Türkiye'de İşçi Mahpus Olmak
 lang: tr
-description: Curabitur tincidunt, ante vel finibus tempor, odio neque sagittis mauris, et placerat erat mi et purus.
+description: 'Eser Adı: Türkiye''de İşçi Mahpus Olmak Yazar: Tayfun Koç Yayınevi: TCPS Kitaplığı Editörler: Mustafa Eren Kapak Tasarımı: Tayfun Koç Basım Tarihi: Aralık 2016…'
 topics:
   - isci-mahpuslar
 year: 2016

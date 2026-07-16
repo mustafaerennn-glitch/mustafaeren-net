@@ -1,7 +1,7 @@
 ---
 title: Hapiste Sağlık
 lang: tr
-description: Curabitur tincidunt, ante vel finibus tempor, odio neque sagittis mauris, et placerat erat mi et purus.
+description: 'Eser Adı: Hapiste Sağlık / Proje Kitabı Yazar: Berivan Korkut Yayınevi: TCPS Kitaplığı Editörler: Ayşegül Algan, Mustafa Eren Kapak Tasarımı: Tayfun Koç Basım…'
 topics:
   - hasta-mahpuslar
 year: 2017

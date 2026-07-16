@@ -1,7 +1,7 @@
 ---
 title: Türkiye'de Roman Mahpus Olmak
 lang: tr
-description: Curabitur tincidunt, ante vel finibus tempor, odio neque sagittis mauris, et placerat erat mi et purus.
+description: 'Eser Adı: Türkiye''de Roman Mahpus Olmak Yazar: Aylin Çelikçi Yayınevi: TCPS Kitaplığı Editörler: Mustafa Eren Kapak Tasarımı: Tayfun Koç Basım Tarihi: Ekim…'
 topics:
   - yabanci-azinlik-mahpuslar
 year: 2017

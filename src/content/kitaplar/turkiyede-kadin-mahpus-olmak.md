@@ -1,7 +1,7 @@
 ---
 title: Türkiye'de Kadın Mahpus Olmak
 lang: tr
-description: Curabitur tincidunt, ante vel finibus tempor, odio neque sagittis mauris, et placerat erat mi et purus.
+description: 'Eser Adı: Türkiye''de Kadın Mahpus Olmak Yazar: Ezgi Duman Yayınevi: TCPS Kitaplığı Editörler: Ayşegül Algan, Mustafa Eren Kapak Tasarımı: Tayfun Koç Basım…'
 topics:
   - kadin-mahpuslar
 year: 2016
@@ -13,7 +13,7 @@ kapak: ./_images/turkiyede-kadin-mahpus-olmak-kapak.webp
 kapakAlt: ''
 ---
 
-**Eser Adı:** Türkiye'de Ağırlaştırılmış Müebbet Hükümlüsü Mahpus Olmak
+**Eser Adı:** Türkiye'de Kadın Mahpus Olmak
 
 **Yazar:** Ezgi Duman
 

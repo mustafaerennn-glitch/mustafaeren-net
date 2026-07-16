@@ -1,7 +1,7 @@
 ---
 title: Prisoners with Special Needs Project Final Report
 lang: tr
-description: Curabitur tincidunt, ante vel finibus tempor, odio neque sagittis mauris, et placerat erat mi et purus.
+description: 'Eser Adı: Prisoners with Special Needs Project Final Report Yazar: Mustafa Eren Yayınevi: CİSST Basım Tarihi: Kasım 2013 Sayfa Sayısı: 20 The Prisoners with…'
 topics:
   - engelli-yasli-mahpuslar
 year: 2013

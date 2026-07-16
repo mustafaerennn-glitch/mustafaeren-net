@@ -1,7 +1,7 @@
 ---
 title: Türkiye'de Çocuk Mahpus Olmak
 lang: tr
-description: Curabitur tincidunt, ante vel finibus tempor, odio neque sagittis mauris, et placerat erat mi et purus.
+description: 'Eser Adı: Türkiye''de Çocuk Mahpus Olmak Yazar: Alper Yalçın Yayınevi: TCPS Kitaplığı Editörler: Mustafa Eren Kapak Tasarımı: Tayfun Koç Basım Tarihi: Haziran…'
 topics:
   - cocuk-mahpuslar
 year: 2016
