@@ -1,0 +1,56 @@
+---
+// Tarih + diğer diller + PDF — tek küçük blok, üçü de koşullu (talimat: ayrı "Diğer diller"
+// veya PDF bölümü YOK). Yazı ve Basında detayında birebir aynı bileşen.
+import LangCluster from './LangCluster.astro';
+import type { Locale } from '../../i18n/routes';
+
+interface Props {
+  date: Date;
+  lang: Locale;
+  langItems?: { lang: Locale; href: string }[];
+  pdfHref?: string;
+}
+
+const { date, lang, langItems = [], pdfHref } = Astro.props;
+
+const formattedDate = new Intl.DateTimeFormat(lang, { day: 'numeric', month: 'long', year: 'numeric' }).format(date);
+---
+
+<div class="meta-cluster">
+  <p class="meta-line">{formattedDate}</p>
+  {
+    langItems.length > 1 && (
+      <p class="meta-line">
+        <LangCluster currentLang={lang} items={langItems} />
+      </p>
+    )
+  }
+  {
+    pdfHref && (
+      <p class="meta-line">
+        <a href={pdfHref}>PDF ↓</a>
+      </p>
+    )
+  }
+</div>
+
+<style>
+  .meta-cluster {
+    margin: 10px 0 1.75rem;
+  }
+  .meta-cluster .meta-line {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin: 0 0 4px;
+  }
+  .meta-cluster .meta-line:last-child {
+    margin-bottom: 0;
+  }
+  .meta-cluster :global(a) {
+    color: var(--text-accent);
+    text-decoration: none;
+  }
+  .meta-cluster :global(a:hover) {
+    text-decoration: underline;
+  }
+</style>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Mustafa Eren — Kitap detay sayfası mockup'ı (Hapiste Sağlık örneği)</title>
+<style>
+  :root {
+    --surface-2: #ffffff;
+    --surface-1: #f1efe8;
+    --surface-0: #f7f6f2;
+    --text-primary: #1a1a18;
+    --text-secondary: #5f5e5a;
+    --text-muted: #888780;
+    --text-accent: #185fa5;
+    --border: rgba(0,0,0,0.1);
+    --fill-primary: #1a1a18;
+    --on-primary: #ffffff;
+    --radius: 8px;
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: var(--font-sans);
+    color: var(--text-primary);
+    background: var(--surface-0);
+    margin: 0;
+    padding: 2.5rem 1rem;
+  }
+  .page { max-width: 680px; margin: 0 auto; }
+  h1 { font-weight: 500; margin: 0; font-size: 26px; line-height: 1.3; }
+  h2 { font-weight: 500; margin: 0; font-size: 15px; }
+  p { margin: 0; }
+  nav.topnav {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 0 1rem; border-bottom: 0.5px solid var(--border);
+    margin-bottom: 2rem; flex-wrap: wrap; gap: 12px;
+  }
+  .brand { font-size: 16px; font-weight: 500; }
+  .nav-items { display: flex; gap: 18px; font-size: 13px; color: var(--text-secondary); flex-wrap: wrap; }
+  .nav-items .dropdown::after { content: " ▾"; font-size: 10px; }
+  .nav-items .current { color: var(--text-primary); font-weight: 500; }
+
+  .breadcrumb { font-size: 13px; color: var(--text-muted); margin-bottom: 1.75rem; }
+  .breadcrumb a { color: var(--text-muted); text-decoration: none; }
+  .breadcrumb .current { color: var(--text-secondary); }
+
+  /* Hero: kapak + bilgi */
+  .book-hero { display: flex; gap: 28px; margin-bottom: 1.75rem; }
+  .cover {
+    width: 168px; aspect-ratio: 2 / 3; flex-shrink: 0; border-radius: 6px;
+    background: var(--surface-1); border: 0.5px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--text-muted); font-size: 12px; text-align: center; overflow: hidden;
+  }
+  .cover img { width: 100%; height: 100%; object-fit: contain; display: block; }
+  .book-info { flex: 1; min-width: 0; padding-top: 4px; }
+  .role-eyebrow { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 8px; }
+  .book-meta-line { font-size: 13px; color: var(--text-secondary); margin: 10px 0 14px; line-height: 1.6; }
+  .badges { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+  .badge {
+    font-size: 11px; padding: 4px 10px; border-radius: 999px;
+    border: 0.5px solid var(--border); color: var(--text-secondary);
+  }
+  .badge.seri { color: var(--text-muted); background: none; border-style: dashed; }
+  .cta-row { display: flex; gap: 10px; flex-wrap: wrap; }
+  .btn-primary, .btn-secondary {
+    font-size: 13px; font-family: var(--font-sans); border-radius: var(--radius);
+    padding: 9px 18px; cursor: pointer; border: none; text-decoration: none; display: inline-block;
+  }
+  .btn-primary { background: var(--fill-primary); color: var(--on-primary); }
+  .btn-secondary { background: transparent; border: 0.5px solid var(--border); color: var(--text-primary); }
+
+  .short-desc { font-size: 15px; color: var(--text-secondary); line-height: 1.7; max-width: 520px; margin: 0 0 1.75rem; }
+
+  dialog#about-modal {
+    max-width: 480px; width: 90%; border: none; border-radius: 12px;
+    padding: 1.75rem; background: var(--surface-2); color: var(--text-primary);
+  }
+  dialog#about-modal::backdrop { background: rgba(0,0,0,0.4); }
+  dialog#about-modal h3 { font-size: 17px; font-weight: 500; margin: 0 0 4px; }
+  dialog#about-modal .modal-meta { font-size: 13px; color: var(--text-muted); margin-bottom: 14px; }
+  dialog#about-modal p { font-size: 14px; color: var(--text-secondary); line-height: 1.75; margin-bottom: 12px; }
+  dialog#about-modal .modal-close {
+    margin-top: 8px; font-size: 13px; background: transparent; border: 0.5px solid var(--border);
+    border-radius: var(--radius); padding: 8px 16px; cursor: pointer; color: var(--text-primary);
+  }
+
+  .desc { font-size: 15px; color: var(--text-secondary); line-height: 1.75; margin-bottom: 1.75rem; }
+
+  .topics-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 2.25rem; }
+  .area-pill {
+    font-size: 13px; padding: 6px 14px; border-radius: 999px; font-weight: 500;
+    background: rgba(24,95,165,0.1); color: var(--text-accent);
+    border: 0.5px solid rgba(24,95,165,0.35); text-decoration: none;
+  }
+  .topics-divider { width: 0.5px; height: 18px; background: var(--border); margin: 0 4px; flex-shrink: 0; }
+  .topic-pill {
+    font-size: 13px; padding: 6px 14px; border-radius: 999px;
+    background: var(--surface-1); color: var(--text-secondary); text-decoration: none;
+  }
+
+  .section { margin-bottom: 2.25rem; }
+  .section-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 1rem; }
+  .section-link { font-size: 13px; color: var(--text-accent); text-decoration: none; }
+
+  .press-list { border-top: 0.5px solid var(--border); }
+  .press-row {
+    display: flex; align-items: baseline; gap: 14px; padding: 14px 0;
+    border-bottom: 0.5px solid var(--border); flex-wrap: wrap;
+  }
+  .press-date { font-size: 13px; color: var(--text-muted); width: 64px; flex-shrink: 0; }
+  .press-source {
+    font-size: 11px; font-weight: 500; padding: 3px 8px; border-radius: var(--radius);
+    background: var(--surface-1); color: var(--text-secondary); white-space: nowrap; flex-shrink: 0;
+  }
+  .press-title { font-size: 14px; font-weight: 500; flex: 1; min-width: 180px; }
+
+  .other-books-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(112px, 1fr)); gap: 14px;
+  }
+  .other-book-cover { background: var(--surface-1); border-radius: var(--radius); aspect-ratio: 3/4; margin-bottom: 8px; }
+  .other-book-title { font-size: 13px; font-weight: 500; }
+  .other-book-year { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+
+  footer.pagefooter {
+    border-top: 0.5px solid var(--border); padding-top: 1.25rem;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 13px; color: var(--text-muted);
+  }
+  .social-icons { display: flex; gap: 14px; align-items: center; color: var(--text-muted); }
+
+  @media (max-width: 600px) {
+    .book-hero { flex-direction: column; }
+    .cover { width: 150px; }
+    .cta-row { flex-wrap: wrap; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <nav class="topnav">
+    <span class="brand">Mustafa Eren</span>
+    <div class="nav-items">
+      <span>Yazılar</span>
+      <span class="dropdown">Videolar</span>
+      <span class="dropdown current">Kitaplar</span>
+      <span>Basında</span>
+      <span class="dropdown">Konular</span>
+      <span>Hakkımda</span>
+      <span>İletişim</span>
+    </div>
+  </nav>
+
+  <p class="breadcrumb"><a href="#">Ana sayfa</a> › <a href="#">Kitaplar</a> › <span class="current">Hapiste Sağlık</span></p>
+
+  <div class="book-hero">
+    <div class="cover">[kapak görseli]</div>
+    <div class="book-info">
+      <p class="role-eyebrow">Yazar</p>
+      <h1>Hapiste Sağlık</h1>
+      <p class="book-meta-line">2017 · CİSST Yayınları · 184 sayfa</p>
+      <div class="badges">
+        <span class="badge">Yazdıklarım</span>
+        <span class="badge seri">TCPS Kitaplığı</span>
+      </div>
+      <div class="cta-row">
+        <a class="btn-primary" href="#">PDF'yi oku</a>
+        <a class="btn-secondary" href="#" target="_blank" rel="noopener">Yayınevi sayfası</a>
+        <button type="button" class="btn-secondary" onclick="document.getElementById('about-modal').showModal()">Kitap hakkında</button>
+      </div>
+      <!-- Not: CTA satırı koşullu — bir kitabın hiç bağlantısı/uzun açıklaması yoksa ilgili buton(lar) tek tek kaldırılır -->
+    </div>
+  </div>
+
+  <p class="short-desc">Türkiye hapishanelerinde sağlık hakkına erişimi ve infaz sisteminin sağlık politikalarını ele alan bir alan araştırması.</p>
+
+  <dialog id="about-modal">
+    <h3>Hapiste Sağlık</h3>
+    <p class="modal-meta">Yazar · CİSST Yayınları · 2017 · 184 sayfa</p>
+    <p>Türkiye hapishanelerinde sağlık hakkına erişimi, mahpusların karşılaştığı yapısal engelleri ve infaz sisteminin sağlık politikalarını ele alan bir alan araştırması. CİSST ile yürütülen saha çalışmasına dayanıyor; on iki hapishanede yapılan görüşmelere ve resmi kayıtların analizine dayanan bulguları özetliyor.</p>
+    <p>Kitap üç bölümden oluşuyor: sağlık hakkının hukuki çerçevesi, saha bulguları, ve politika önerileri. CİSST ekibinden Ayşegül Algan ile birlikte yazıldı.</p>
+    <button type="button" class="modal-close" onclick="document.getElementById('about-modal').close()">Kapat</button>
+  </dialog>
+
+  <div class="topics-row">
+    <a class="area-pill" href="#">Hapishane</a>
+    <span class="topics-divider"></span>
+    <a class="topic-pill" href="#">Hasta Mahpuslar</a>
+    <a class="topic-pill" href="#">Mahpus</a>
+  </div>
+
+  <!-- Bu bölüm koşullu: kitaba dair yazı/video/söyleşi yoksa tamamen kaldırılır, boş durum gösterilmez -->
+  <div class="section">
+    <div class="section-head">
+      <h2>Kitap üzerine</h2>
+      <span class="section-link">3 içerik</span>
+    </div>
+    <div class="press-list">
+      <div class="press-row">
+        <span class="press-date">Nis 2018</span>
+        <span class="press-source">Haber</span>
+        <span class="press-title">Mahpusların sağlık hakkına dair yeni bir alan araştırması <span style="color:var(--text-muted); font-weight:400;">· BirGün</span></span>
+      </div>
+      <div class="press-row">
+        <span class="press-date">Mar 2018</span>
+        <span class="press-source">Söyleşi</span>
+        <span class="press-title">Hapiste Sağlık kitabı üzerine <span style="color:var(--text-muted); font-weight:400;">· İMC TV</span></span>
+      </div>
+      <div class="press-row">
+        <span class="press-date">Şub 2018</span>
+        <span class="press-source">Yazı</span>
+        <span class="press-title">Hapiste sağlık hakkı neden ihlal ediliyor? <span style="color:var(--text-muted); font-weight:400;">· Bianet</span></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" style="margin-bottom: 0;">
+    <div class="section-head">
+      <h2>Diğer kitaplar</h2>
+      <a class="section-link" href="#">Tümünü gör</a>
+    </div>
+    <!-- Not: gerçek kapaklar eklenince bu ızgaradaki küçük kapaklar da object-fit: contain kullanmalı, aynı kırpmama ilkesi -->
+    <div class="other-books-grid">
+      <div><div class="other-book-cover"></div><p class="other-book-title">İşçi mahpus olmak</p><p class="other-book-year">Editör · 2019</p></div>
+      <div><div class="other-book-cover"></div><p class="other-book-title">Çocuk mahpus olmak</p><p class="other-book-year">Yazar · 2020</p></div>
+      <div><div class="other-book-cover"></div><p class="other-book-title">Hasta mahpus olmak</p><p class="other-book-year">Yazar · 2021</p></div>
+      <div><div class="other-book-cover"></div><p class="other-book-title">Mahpus hakları</p><p class="other-book-year">Derleyen · 2022</p></div>
+    </div>
+  </div>
+
+  <footer class="pagefooter" style="margin-top: 2.25rem;">
+    <span>© Mustafa Eren</span>
+    <div class="social-icons">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><title>X</title><line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/></svg>
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><title>Facebook</title><circle cx="12" cy="12" r="9"/><path d="M13.5 21v-6.5h2.2l.3-2.6h-2.5V10c0-.8.2-1.3 1.3-1.3h1.4V6.4c-.2 0-1-.1-2-.1-2 0-3.4 1.2-3.4 3.5v2.1H9v2.6h1.8V21"/></svg>
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><title>LinkedIn</title><rect x="3" y="3" width="18" height="18" rx="3"/><line x1="7.5" y1="10" x2="7.5" y2="17"/><circle cx="7.5" cy="6.8" r="0.9" fill="currentColor" stroke="none"/><line x1="11.5" y1="10" x2="11.5" y2="17"/><path d="M11.5 13.2c0-1.4.9-2.3 2.1-2.3 1.2 0 1.9.8 1.9 2.3V17"/></svg>
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><title>Academia</title><path d="M2 9l10-4 10 4-10 4-10-4z"/><path d="M6 11v4c0 1.1 2.7 2 6 2s6-.9 6-2v-4"/><path d="M22 9v5"/></svg>
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><title>Mail</title><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

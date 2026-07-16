@@ -1,0 +1,23 @@
+/* 14 mockup dosyasının :root bloğundan harfi harfine alındı — bkz. bilesen-envanteri.md §1 */
+:root {
+  --surface-2: #ffffff;
+  --surface-1: #f1efe8;
+  --surface-0: #f7f6f2;
+  --text-primary: #1a1a18;
+  --text-secondary: #5f5e5a;
+  /* Mockup'ta #888780 idi — Lighthouse'ta surface-0/1/2 üzerinde WCAG AA'nın altında kaldığı
+     (3.1-3.6:1, gereken 4.5:1) tespit edildi. Kullanıcı onayıyla koyulaştırıldı (2026-07-15);
+     "soluk" hissi korunuyor (--text-secondary'den hâlâ belirgin biçimde açık), tüm zeminlerde
+     4.5:1+ sağlıyor (surface-0: 4.97:1, surface-1: 4.67:1, surface-2: 5.37:1). */
+  --text-muted: #6b6b63;
+  --text-accent: #185fa5;
+  --border: rgba(0, 0, 0, 0.1);
+  --fill-primary: #1a1a18;
+  --on-primary: #ffffff;
+  --radius: 8px;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+
+  /* Site geneli sayfa genişliği (roadmap kararı). Video sayfaları bilinçli istisna olarak
+     kendi layout'unda --page-width: 760px ile override eder (bkz. bilesen-envanteri.md §6.1). */
+  --page-width: 680px;
+}

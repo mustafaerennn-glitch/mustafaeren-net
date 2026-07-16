@@ -1,0 +1,65 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { routes } from '../../i18n/routes';
+import { ui } from '../../i18n/ui';
+
+const lang = 'de';
+if (Astro.currentLocale !== lang) {
+  throw new Error(`i18n locale eşleşmedi: beklenen "${lang}", Astro.currentLocale="${Astro.currentLocale}"`);
+}
+
+const t = ui[lang];
+const alternates = Object.entries(routes.hakkimda).map(([l, href]) => ({ lang: l, href }));
+
+const paragraphs = [
+  'Mein Bachelor-Abschluss ist von der Mimar Sinan Universität der Schönen Künste, Fachbereich Soziologie (Istanbul, Türkei). Ich habe einen Master-Abschluss im Fachbereich Kulturwissenschaften der Istanbul Bilgi Universität und habe Doktorandenseminare an der Mimar Sinan Universität besucht. Zwischen 2019 und 2020 habe ich als Gaststudent Masterlehrveranstaltungen an der Universität Zürich besucht. 2026 habe ich das Programm Migrationsfachperson an der Schule für Sozialbegleitung begonnen.',
+  'Meine Arbeitsbereiche sind Gefängnisse/Haft, Arbeit, soziale Bewegungen, politische Geschichte, Migration und benachteiligte Gruppen.',
+  'Seit 2011 bin ich bei der Ceza İnfaz Sisteminde Sivil Toplum Derneği (CİSST) tätig, als Projektkoordinator, Vorstandsmitglied und Vorstandsvorsitzender. Gemeinsam mit Eva Tanz und Ayşegül Algan habe ich innerhalb des Vereins das Turkey\'s Center for Prison Studies (TCPS) sowie die Hapishane Çalışmaları Kütüphanesi (Bibliothek für Gefängnisforschung) mitgegründet.',
+  'Zwischen 2012 und 2024 habe ich gemeinsam mit einer Freundin die Sendung Emeğin Gündemi (Die Arbeitsagenda) bei Açık Radyo produziert und moderiert.',
+  '2014 habe ich an der Arel Universität den Kurs "Menschenrechte" unterrichtet. Zwischen 2012 und 2014 war ich Vorstandsmitglied der Sosyoloji Mezunları Derneği (SOMDER, Vereinigung der Soziologie-Absolvent:innen).',
+  'Ich habe zahlreiche Bücher über Gefängnisse herausgegeben, und meine Texte wurden in Büchern, Zeitschriften und auf verschiedenen Online-Nachrichtenseiten veröffentlicht.',
+  'Ich habe an vielen Projekten der Mimar Sinan Universität und der CİSST teilgenommen bzw. diese koordiniert. Zudem war ich an der Gründung der İstanbul Toplumsal Araştırmalar Grubu (İSTAG, Istanbuler Gruppe für Gesellschaftsforschung) beteiligt.',
+  'Aufgrund laufender Gerichtsverfahren und drohender Haft musste ich die Türkei 2018 verlassen und setze meine Arbeit seither im Ausland fort. Seit 2023 arbeite ich neben meiner Forschungs- und Schreibtätigkeit als Betreuer in einem Migrationszentrum.',
+];
+---
+
+<BaseLayout
+  lang={lang}
+  title={t.hakkimdaBaslik}
+  description={paragraphs[0]}
+  canonical={routes.hakkimda.de}
+  alternates={alternates}
+  current="hakkimda"
+  breadcrumb={[{ label: t.hakkimdaBaslik }]}
+>
+  <div class="bio-hero">
+    <div class="avatar">[Foto]</div>
+    <div class="bio-info">
+      <h1>Mustafa Eren</h1>
+      <p class="role-eyebrow">Soziologe · Forscher · Autor</p>
+    </div>
+  </div>
+  <div class="bio-body">
+    {paragraphs.map((p) => <p>{p}</p>)}
+  </div>
+</BaseLayout>
+
+<style>
+  .bio-hero { display: flex; align-items: center; gap: 28px; margin-bottom: 2.25rem; }
+  .avatar {
+    width: 152px; height: 152px; flex-shrink: 0; border-radius: 50%;
+    background: var(--surface-1); border: 0.5px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--text-muted); font-size: 12px; text-align: center;
+  }
+  .bio-info { flex: 1; min-width: 0; }
+  .bio-info h1 { font-size: 26px; line-height: 1.3; }
+  .role-eyebrow { font-size: 13px; color: var(--text-secondary); margin: 8px 0 0; }
+  .bio-body { font-size: 15px; color: var(--text-secondary); line-height: 1.75; margin-bottom: 2.25rem; }
+  .bio-body p { margin-bottom: 1.1em; }
+  .bio-body p:last-child { margin-bottom: 0; }
+  @media (max-width: 600px) {
+    .bio-hero { flex-direction: column; }
+    .avatar { width: 120px; height: 120px; }
+  }
+</style>

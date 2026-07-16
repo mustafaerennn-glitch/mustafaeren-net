@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Mustafa Eren — Kitaplar indeks sayfası mockup'ı</title>
+<style>
+  :root {
+    --surface-2: #ffffff;
+    --surface-1: #f1efe8;
+    --surface-0: #f7f6f2;
+    --text-primary: #1a1a18;
+    --text-secondary: #5f5e5a;
+    --text-muted: #888780;
+    --text-accent: #185fa5;
+    --border: rgba(0,0,0,0.1);
+    --fill-primary: #1a1a18;
+    --on-primary: #ffffff;
+    --radius: 8px;
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: var(--font-sans);
+    color: var(--text-primary);
+    background: var(--surface-0);
+    margin: 0;
+    padding: 2.5rem 1rem;
+  }
+  .page { max-width: 680px; margin: 0 auto; }
+  h1 { font-weight: 500; margin: 0; font-size: 28px; }
+  p { margin: 0; }
+  nav.topnav {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 0 1rem; border-bottom: 0.5px solid var(--border);
+    margin-bottom: 2rem; flex-wrap: wrap; gap: 12px;
+  }
+  .brand { font-size: 16px; font-weight: 500; }
+  .nav-items { display: flex; gap: 18px; font-size: 13px; color: var(--text-secondary); flex-wrap: wrap; }
+  .nav-items .dropdown::after { content: " ▾"; font-size: 10px; }
+  .nav-items .current { color: var(--text-primary); font-weight: 500; }
+
+  .breadcrumb { font-size: 13px; color: var(--text-muted); margin-bottom: 1rem; }
+  .breadcrumb a { color: var(--text-muted); text-decoration: none; }
+  .breadcrumb .current { color: var(--text-secondary); }
+
+  .desc { font-size: 15px; color: var(--text-secondary); line-height: 1.7; max-width: 520px; margin: 1rem 0 1.75rem; }
+
+  /* Not: bu pill'ler nav'daki Kitaplar dropdown'ıyla aynı veri kaynağını (kitap-türü alanı) okur.
+     Dropdown'dan "Editörlük" seçilerek gelindiğinde bu pill otomatik aktif başlar. */
+  .pills { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 1.75rem; }
+  .pill {
+    font-size: 13px; padding: 8px 16px; border-radius: 999px;
+    border: 0.5px solid var(--border); color: var(--text-secondary);
+  }
+  .pill.active { background: var(--fill-primary); color: var(--on-primary); border-color: var(--fill-primary); }
+
+  /* Kapak ızgarası — homepage'deki books-grid ile aynı mantık, sadece index sayfası için
+     biraz daha geniş kart alanı (gezinme birincil amaç, önizleme değil).
+     Not: sayfa genişliği bilerek 680px'te tutuldu — video index'in 760px'e çıkması,
+     kartın yatay yapısından (geniş thumbnail + yan bilgi) kaynaklanıyordu; kitap kartı
+     dikey olduğu için o darlık sorunu burada yok. Kapağı büyütmek için minmax genişletildi. */
+  .book-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(148px, 1fr)); gap: 22px 16px;
+    margin-bottom: 1.75rem;
+  }
+  .book-card { text-decoration: none; color: inherit; display: block; }
+  .cover {
+    aspect-ratio: 3 / 4; border-radius: 6px; background: var(--surface-1);
+    border: 0.5px solid var(--border); margin-bottom: 8px; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--text-muted); font-size: 11px; text-align: center; padding: 6px;
+  }
+  .cover img { width: 100%; height: 100%; object-fit: contain; display: block; }
+  .book-title {
+    font-size: 13px; font-weight: 500; line-height: 1.35; margin-bottom: 4px;
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+  }
+  .book-meta { font-size: 11.5px; color: var(--text-muted); }
+  .seri-mark {
+    display: inline-block; margin-top: 5px; font-size: 10.5px; color: var(--text-muted);
+    border: 0.5px dashed var(--border); border-radius: 999px; padding: 2px 8px;
+  }
+
+  .pagination { display: flex; align-items: center; justify-content: center; gap: 18px; padding: 1.5rem 0; font-size: 14px; }
+  .page-num { color: var(--text-secondary); text-decoration: none; }
+  .page-num.active {
+    background: var(--fill-primary); color: var(--on-primary);
+    width: 28px; height: 28px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .page-num.next { color: var(--text-accent); text-decoration: underline; }
+
+  footer.pagefooter {
+    border-top: 0.5px solid var(--border); padding-top: 1.25rem;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 13px; color: var(--text-muted);
+  }
+  .social-icons { display: flex; gap: 14px; align-items: center; color: var(--text-muted); }
+
+  @media (max-width: 520px) {
+    .book-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 14px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <nav class="topnav">
+    <span class="brand">Mustafa Eren</span>
+    <div class="nav-items">
+      <span>Yazılar</span>
+      <span class="dropdown">Videolar</span>
+      <span class="dropdown current">Kitaplar</span>
+      <span>Basında</span>
+      <span class="dropdown">Konular</span>
+      <span>Hakkımda</span>
+      <span>İletişim</span>
+    </div>
+  </nav>
+
+  <p class="breadcrumb"><a href="#">Ana sayfa</a> › <span class="current">Kitaplar</span></p>
+
+  <h1>Kitaplar</h1>
+  <p class="desc">Yazdığım ve editörlüğünü üstlendiğim kitaplar, ayrıca bir bölümüyle katkıda bulunduğum derlemeler — hapishane çalışmaları, göç ve yakın siyasal tarih üzerine.</p>
+
+  <!-- Not: pill filtresi rol metnini değil, ayrı kitap-türü alanını okur:
+       Yazar / Ortak yazar        → Yazdıklarım
+       Editör / Derleyen / Yayına hazırlayan → Editörlük
+       Kart artık rol göstermiyor — yalnızca kapak, başlık ve yıl. Kapak zaten kitabın kimliğini
+       taşıyor; rol ayrımını merak eden kullanıcı Yazdıklarım/Editörlük/Katkılar pill'lerine
+       tıklayarak alabiliyor. Rol bilgisi kitap detay sayfasındaki role-eyebrow'da net biçimde
+       kalıyor (bkz. kitap-detay-mockup.html). -->
+  <div class="pills">
+    <span class="pill active">Tümü · 21</span>
+    <span class="pill">Yazdıklarım · 14</span>
+    <span class="pill">Editörlük · 5</span>
+    <span class="pill">Katkılar · 2</span>
+  </div>
+
+  <!-- Not: sıralama kronolojik DEĞİL. Kitaplarda "en temsil edici / en kapsamlı olan önce"
+       editoryal bir sıra (`featuredOrder` alanı) kullanılıyor — videolardaki tarih sıralamasının
+       aksine. Yıl yalnızca kart bilgisi olarak kalıyor, sıralama ölçütü değil. Filtrelenmiş
+       görünümlerde (Yazdıklarım / Editörlük / Katkıda Bulunduklarım) de aynı editoryal sıra korunur;
+       kategoriye göre bloklama yapılmaz, ayrım yalnızca pill filtresiyle sağlanır. -->
+  <div class="book-grid">
+
+    <a class="book-card" href="#">
+      <div class="cover">[kapak]</div>
+      <p class="book-title">Hapiste Sağlık</p>
+      <p class="book-meta">2017</p>
+      <span class="seri-mark">TCPS Kitaplığı</span>
+    </a>
+
+    <a class="book-card" href="#">
+      <div class="cover">[kapak]</div>
+      <p class="book-title">Türkiye'de Ölüm Oruçları</p>
+      <p class="book-meta">2016</p>
+    </a>
+
+    <a class="book-card" href="#">
+      <div class="cover">[kapak]</div>
+      <p class="book-title">Mahpus Hakları El Kitabı</p>
+      <p class="book-meta">2022</p>
+    </a>
+
+    <a class="book-card" href="#">
+      <div class="cover">[kapak]</div>
+      <p class="book-title">Kanlı Pazar: Bir Hesaplaşma</p>
+      <p class="book-meta">2014</p>
+    </a>
+
+    <a class="book-card" href="#">
+      <div class="cover">[kapak]</div>
+      <p class="book-title">Hasta Mahpus Olmak</p>
+      <p class="book-meta">2021</p>
+      <span class="seri-mark">TCPS Kitaplığı</span>
+    </a>
+
+    <a class="book-card" href="#">
+      <div class="cover">[kapak]</div>
+      <p class="book-title">Tecritin Bedeni</p>
+      <p class="book-meta">2023</p>
+    </a>
+
+    <a class="book-card" href="#">
+      <div class="cover">[kapak]</div>
+      <p class="book-title">İşçi Mahpus Olmak</p>
+      <p class="book-meta">2019</p>
+    </a>
+
+    <a class="book-card" href="#">
+      <div class="cover">[kapak]</div>
+      <p class="book-title">Çocuk Mahpus Olmak</p>
+      <p class="book-meta">2020</p>
+    </a>
+
+    <a class="book-card" href="#">
+      <div class="cover">[kapak]</div>
+      <p class="book-title">Göç ve Hafıza: Bir Derleme</p>
+      <p class="book-meta">2020</p>
+    </a>
+
+    <a class="book-card" href="#">
+      <div class="cover">[kapak]</div>
+      <p class="book-title">Adalet Arayışları</p>
+      <p class="book-meta">2015</p>
+    </a>
+
+    <a class="book-card" href="#">
+      <div class="cover">[kapak]</div>
+      <p class="book-title">Ölüm Orucunun Anatomisi</p>
+      <p class="book-meta">2011</p>
+    </a>
+
+    <a class="book-card" href="#">
+      <div class="cover">[kapak]</div>
+      <p class="book-title">Göç Politikaları Üzerine Notlar</p>
+      <p class="book-meta">2018</p>
+    </a>
+
+  </div>
+
+  <div class="pagination">
+    <span class="page-num active">1</span>
+    <a class="page-num" href="#">2</a>
+    <a class="page-num" href="#">3</a>
+    <a class="page-num next" href="#">Sonraki →</a>
+  </div>
+
+  <footer class="pagefooter">
+    <span>© Mustafa Eren</span>
+    <div class="social-icons">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><title>X</title><line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/></svg>
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><title>Facebook</title><circle cx="12" cy="12" r="9"/><path d="M13.5 21v-6.5h2.2l.3-2.6h-2.5V10c0-.8.2-1.3 1.3-1.3h1.4V6.4c-.2 0-1-.1-2-.1-2 0-3.4 1.2-3.4 3.5v2.1H9v2.6h1.8V21"/></svg>
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><title>LinkedIn</title><rect x="3" y="3" width="18" height="18" rx="3"/><line x1="7.5" y1="10" x2="7.5" y2="17"/><circle cx="7.5" cy="6.8" r="0.9" fill="currentColor" stroke="none"/><line x1="11.5" y1="10" x2="11.5" y2="17"/><path d="M11.5 13.2c0-1.4.9-2.3 2.1-2.3 1.2 0 1.9.8 1.9 2.3V17"/></svg>
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><title>Academia</title><path d="M2 9l10-4 10 4-10 4-10-4z"/><path d="M6 11v4c0 1.1 2.7 2 6 2s6-.9 6-2v-4"/><path d="M22 9v5"/></svg>
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><title>Mail</title><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,14 @@
+---
+// PressRow.astro'nun listesini saran ince kapsayıcı — üst border + alt boşluk.
+---
+
+<div class="press-list">
+  <slot />
+</div>
+
+<style>
+  .press-list {
+    border-top: 0.5px solid var(--border);
+    margin-bottom: 1.5rem;
+  }
+</style>

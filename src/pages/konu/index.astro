@@ -1,0 +1,87 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { ALAN_LABELS, ALAN_SLUGS } from '../../lib/taxonomy';
+
+const lang = 'tr';
+if (Astro.currentLocale !== lang) {
+  throw new Error(`i18n locale eşleşmedi: beklenen "${lang}", Astro.currentLocale="${Astro.currentLocale}"`);
+}
+
+const topics = await getCollection('topics');
+const groups = ALAN_SLUGS.map((alan) => ({
+  alan,
+  label: ALAN_LABELS[alan],
+  topics: topics.filter((t) => t.data.alan === alan),
+}));
+---
+
+<BaseLayout
+  lang={lang}
+  title="Konular"
+  description="Araştırma alanlarına göre gruplanmış tüm konu başlıkları."
+  canonical="/konu/"
+  current="konular"
+  breadcrumb={[{ label: 'Ana sayfa', href: '/' }, { label: 'Konular' }]}
+>
+  <h1>Konular</h1>
+  <p class="desc">Araştırma alanlarına göre gruplanmış tüm konu başlıkları.</p>
+
+  {
+    groups.map(
+      (group) =>
+        group.topics.length > 0 && (
+          <div class="group">
+            <div class="group-head">
+              <h2><a href={`/alanlar/${group.alan}/`}>{group.label}</a></h2>
+            </div>
+            <div class="topic-links">
+              {group.topics.map((t) => (
+                <a class="topic-link" href={`/konu/${t.id}/`}>{t.data.ad}</a>
+              ))}
+            </div>
+          </div>
+        ),
+    )
+  }
+</BaseLayout>
+
+<style>
+  .desc {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    max-width: 520px;
+    margin: 1rem 0 1.75rem;
+  }
+  .group {
+    margin-bottom: 2rem;
+  }
+  .group-head h2 {
+    font-size: 16px;
+    margin-bottom: 0.75rem;
+  }
+  .group-head a {
+    color: var(--text-primary);
+    text-decoration: none;
+  }
+  .group-head a:hover {
+    color: var(--text-accent);
+  }
+  .topic-links {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .topic-link {
+    font-size: 13px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: var(--surface-1);
+    color: var(--text-secondary);
+    text-decoration: none;
+  }
+  .topic-link:hover {
+    color: var(--text-accent);
+  }
+</style>

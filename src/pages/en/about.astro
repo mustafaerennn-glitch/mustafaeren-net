@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { routes } from '../../i18n/routes';
+import { ui } from '../../i18n/ui';
+
+const lang = 'en';
+if (Astro.currentLocale !== lang) {
+  throw new Error(`i18n locale eşleşmedi: beklenen "${lang}", Astro.currentLocale="${Astro.currentLocale}"`);
+}
+
+const t = ui[lang];
+const alternates = Object.entries(routes.hakkimda).map(([l, href]) => ({ lang: l, href }));
+// Breadcrumb'ta "Home" kırıntısı yok — henüz bir İngilizce ana sayfa (/en/) yok, kırık linke yol açmamak için tek kırıntı bırakıldı.
+
+const paragraphs = [
+  "My undergraduate degree is from Mimar Sinan University of Fine Arts, Department of Sociology (Istanbul, Turkey). I hold a master's degree from Istanbul Bilgi University's Department of Cultural Studies, and I attended PhD seminars at Mimar Sinan University of Fine Arts. Between 2019 and 2020, I followed graduate courses as a visiting student at the University of Zurich. In 2026, I began the Migrationsfachperson (Migration Specialist) program at the Schule für Sozialbegleitung.",
+  'My areas of work are prisons/confinement, labour, social movements, political history, migration, and disadvantaged groups.',
+  'Since 2011, I have worked with the Civil Society in the Penal System Association (CİSST) as a project coordinator, board member, and chairman of the board. Together with Eva Tanz and Ayşegül Algan, I co-founded Turkey\'s Center for Prison Studies (TCPS) and the Prison Studies Library within the association.',
+  'Between 2012 and 2024, together with a friend, I produced and hosted the program Emeğin Gündemi (The Labour Agenda) on Açık Radyo.',
+  'In 2014, I taught a course on "Human Rights" at Arel University. Between 2012 and 2014, I served as a board member of the Association of Sociology Graduates (SOMDER).',
+  'I have edited numerous books on prisons, and my writing has appeared in books, journals, and various online news outlets.',
+  'I took part in and coordinated many projects at Mimar Sinan University and CİSST. I was also involved in founding the Istanbul Social Research Group (İSTAG).',
+  'Due to ongoing lawsuits and the threat of imprisonment, I was forced to leave Turkey in 2018 and have continued my work abroad since then. Since 2023, alongside my research and writing, I have worked as a Betreuer (support worker) at a migration center.',
+];
+---
+
+<BaseLayout
+  lang={lang}
+  title={t.hakkimdaBaslik}
+  description={paragraphs[0]}
+  canonical={routes.hakkimda.en}
+  alternates={alternates}
+  current="hakkimda"
+  breadcrumb={[{ label: t.hakkimdaBaslik }]}
+>
+  <div class="bio-hero">
+    <div class="avatar">[photo]</div>
+    <div class="bio-info">
+      <h1>Mustafa Eren</h1>
+      <p class="role-eyebrow">Sociologist · Researcher · Writer</p>
+    </div>
+  </div>
+  <div class="bio-body">
+    {paragraphs.map((p) => <p>{p}</p>)}
+  </div>
+</BaseLayout>
+
+<style>
+  .bio-hero { display: flex; align-items: center; gap: 28px; margin-bottom: 2.25rem; }
+  .avatar {
+    width: 152px; height: 152px; flex-shrink: 0; border-radius: 50%;
+    background: var(--surface-1); border: 0.5px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--text-muted); font-size: 12px; text-align: center;
+  }
+  .bio-info { flex: 1; min-width: 0; }
+  .bio-info h1 { font-size: 26px; line-height: 1.3; }
+  .role-eyebrow { font-size: 13px; color: var(--text-secondary); margin: 8px 0 0; }
+  .bio-body { font-size: 15px; color: var(--text-secondary); line-height: 1.75; margin-bottom: 2.25rem; }
+  .bio-body p { margin-bottom: 1.1em; }
+  .bio-body p:last-child { margin-bottom: 0; }
+  @media (max-width: 600px) {
+    .bio-hero { flex-direction: column; }
+    .avatar { width: 120px; height: 120px; }
+  }
+</style>

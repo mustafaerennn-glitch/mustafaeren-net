@@ -1,0 +1,42 @@
+---
+// Öne çıkan görsel — STANDART alan (Yazı/Basında'da zorunlu). object-fit: contain,
+// farklı en-boy oranları sayfayı bozmasın diye (kitap kapağındaki kırpmama ilkesiyle aynı).
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+interface Props {
+  image: ImageMetadata;
+  alt: string;
+  caption?: string;
+}
+
+const { image, alt, caption } = Astro.props;
+---
+
+<figure class="preview-image">
+  <Image src={image} alt={alt} width={800} />
+  {caption && <figcaption class="preview-caption">{caption}</figcaption>}
+</figure>
+
+<style>
+  .preview-image {
+    margin-bottom: 1.75rem;
+    border: 0.5px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--surface-1);
+  }
+  .preview-image :global(img) {
+    width: 100%;
+    max-height: 320px;
+    object-fit: contain;
+    display: block;
+    background: var(--surface-2);
+  }
+  .preview-caption {
+    font-size: 12px;
+    color: var(--text-muted);
+    padding: 8px 12px;
+    border-top: 0.5px solid var(--border);
+  }
+</style>

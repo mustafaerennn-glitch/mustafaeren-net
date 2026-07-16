@@ -1,0 +1,101 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PressList from '../../components/navigation/PressList.astro';
+import PressRow from '../../components/navigation/PressRow.astro';
+import Pills from '../../components/navigation/Pills.astro';
+import Pagination from '../../components/navigation/Pagination.astro';
+import { getAreasForTopicRefs, ALAN_LABELS } from '../../lib/taxonomy';
+import { contentUrl } from '../../i18n/routes';
+
+const lang = 'tr';
+if (Astro.currentLocale !== lang) {
+  throw new Error(`i18n locale eşleşmedi: beklenen "${lang}", Astro.currentLocale="${Astro.currentLocale}"`);
+}
+
+const entries = await getCollection('yazilar', (e) => e.data.lang === lang);
+entries.sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime());
+
+const rows = await Promise.all(
+  entries.map(async (entry) => {
+    const mecra = entry.data.mecra ? await getEntry(entry.data.mecra) : undefined;
+    const areas = await getAreasForTopicRefs(entry.data.topics);
+    return {
+      href: contentUrl('yazilar', entry.data.lang, entry.id),
+      title: entry.data.title,
+      date: new Intl.DateTimeFormat(lang, { month: 'long', year: 'numeric' }).format(entry.data.publishDate),
+      secondary: mecra ? { label: mecra.data.ad, href: `/mecra/${mecra.id}/` } : { label: 'Mustafaeren.net' },
+      areas,
+    };
+  }),
+);
+
+const areaCounts: Record<string, number> = {};
+for (const row of rows) {
+  for (const a of row.areas) areaCounts[a] = (areaCounts[a] ?? 0) + 1;
+}
+const currentAlan = Astro.url.searchParams.get('alan');
+const pillItems = [
+  { label: 'Tümü', count: rows.length, href: '/yazilar/', active: !currentAlan },
+  ...Object.entries(ALAN_LABELS).map(([slug, label]) => ({
+    label,
+    count: areaCounts[slug] ?? 0,
+    href: `/yazilar/?alan=${slug}`,
+    active: currentAlan === slug,
+  })),
+];
+---
+
+<BaseLayout
+  lang={lang}
+  title="Yazılar"
+  description="Hapishane çalışmaları, siyasi tarih, göç ve emek üzerine yazdıklarım."
+  canonical="/yazilar/"
+  current="yazilar"
+  breadcrumb={[{ label: 'Ana sayfa', href: '/' }, { label: 'Yazılar' }]}
+>
+  <h1>Yazılar</h1>
+  <p class="desc">Hapishane çalışmaları, siyasi tarih, göç ve emek üzerine yazdıklarım.</p>
+
+  <Pills items={pillItems} />
+
+  <PressList>
+    {
+      rows.map((row) => (
+        <div class="row-wrap" data-areas={row.areas.join(',')}>
+          <PressRow href={row.href} title={row.title} date={row.date} secondary={row.secondary} />
+        </div>
+      ))
+    }
+  </PressList>
+
+  <Pagination currentPage={1} totalPages={1} basePath="/yazilar/" />
+</BaseLayout>
+
+<style>
+  .desc {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    max-width: 520px;
+    margin: 1rem 0 1.75rem;
+  }
+</style>
+
+<script>
+  // İlerlemesel geliştirme: JS kapalıyken tüm liste görünür kalır (varsayılan sunucu render'ı).
+  // JS açıkken ?alan= sorgu parametresine göre satırları filtreler — statik site sayfalama
+  // için ayrı route üretmediğinden bu istemci tarafında yapılıyor.
+  const params = new URLSearchParams(location.search);
+  const alan = params.get('alan');
+  if (alan) {
+    document.querySelectorAll<HTMLElement>('[data-areas]').forEach((row) => {
+      const areas = row.dataset.areas?.split(',') ?? [];
+      row.style.display = areas.includes(alan) ? '' : 'none';
+    });
+    document.querySelectorAll<HTMLAnchorElement>('.pill').forEach((pill) => {
+      const url = new URL(pill.href);
+      pill.classList.toggle('active', url.searchParams.get('alan') === alan);
+    });
+  }
+</script>

@@ -1,0 +1,120 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import VideoCard from '../../components/cards/VideoCard.astro';
+import Pills from '../../components/navigation/Pills.astro';
+import Pagination from '../../components/navigation/Pagination.astro';
+import { contentUrl } from '../../i18n/routes';
+import { formatDuration } from '../../lib/format';
+import { getAreasForTopicRefs, ALAN_LABELS } from '../../lib/taxonomy';
+
+const lang = 'tr';
+if (Astro.currentLocale !== lang) {
+  throw new Error(`i18n locale eşleşmedi: beklenen "${lang}", Astro.currentLocale="${Astro.currentLocale}"`);
+}
+
+const VIDEO_TURU_LABELS: Record<string, string> = {
+  söyleşi: 'Söyleşi',
+  belgesel: 'Belgesel',
+  'konferans-panel': 'Konferans / Panel',
+  'kısa-video': 'Kısa videolar',
+};
+
+const entries = await getCollection('videolar', (e) => e.data.lang === lang);
+entries.sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime());
+
+const cards = await Promise.all(
+  entries.map(async (entry) => {
+    const mecra = entry.data.mecra ? await getEntry(entry.data.mecra) : undefined;
+    const year = entry.data.publishDate.getFullYear();
+    const areas = await getAreasForTopicRefs(entry.data.topics);
+    return {
+      href: contentUrl('videolar', entry.data.lang, entry.id),
+      thumbnail: entry.data.thumbnail,
+      thumbnailAlt: entry.data.thumbnailAlt,
+      title: entry.data.title,
+      typeBadge: VIDEO_TURU_LABELS[entry.data.videoTuru],
+      videoTuru: entry.data.videoTuru,
+      sourceText: `${mecra ? mecra.data.ad : 'Mustafaeren.net'} · ${year}`,
+      duration: formatDuration(entry.data.durationMinutes, lang),
+      area: areas[0] ? ALAN_LABELS[areas[0]] : undefined,
+    };
+  }),
+);
+
+const turCounts: Record<string, number> = {};
+for (const c of cards) turCounts[c.videoTuru] = (turCounts[c.videoTuru] ?? 0) + 1;
+
+const currentTur = Astro.url.searchParams.get('tur');
+const pillItems = [
+  { label: 'Tümü', count: cards.length, href: '/videolar/', active: !currentTur },
+  ...Object.entries(VIDEO_TURU_LABELS).map(([tur, label]) => ({
+    label,
+    count: turCounts[tur] ?? 0,
+    href: `/videolar/?tur=${tur}`,
+    active: currentTur === tur,
+  })),
+];
+---
+
+<BaseLayout
+  lang={lang}
+  title="Videolar"
+  description="Söyleşiler, konferans ve panel kayıtları, belgeseller — hapishane çalışmaları, göç ve yakın siyasal tarih üzerine."
+  canonical="/videolar/"
+  current="videolar"
+  breadcrumb={[{ label: 'Ana sayfa', href: '/' }, { label: 'Videolar' }]}
+  pageWidth="760px"
+>
+  <h1>Videolar</h1>
+  <p class="desc">Söyleşiler, konferans ve panel kayıtları, belgeseller — hapishane çalışmaları, göç ve yakın siyasal tarih üzerine.</p>
+
+  <Pills items={pillItems} />
+
+  <div class="video-grid">
+    {
+      cards.map((c) => (
+        <div class="card-wrap" data-tur={c.videoTuru}>
+          <VideoCard href={c.href} thumbnail={c.thumbnail} thumbnailAlt={c.thumbnailAlt} title={c.title} typeBadge={c.typeBadge} sourceText={c.sourceText} duration={c.duration} area={c.area} />
+        </div>
+      ))
+    }
+  </div>
+
+  <Pagination currentPage={1} totalPages={1} basePath="/videolar/" />
+</BaseLayout>
+
+<style>
+  .desc {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    max-width: 520px;
+    margin: 1rem 0 1.5rem;
+  }
+  .video-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    margin-bottom: 1.75rem;
+  }
+  @media (max-width: 520px) {
+    .video-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<script>
+  const params = new URLSearchParams(location.search);
+  const tur = params.get('tur');
+  if (tur) {
+    document.querySelectorAll<HTMLElement>('[data-tur]').forEach((card) => {
+      card.style.display = card.dataset.tur === tur ? '' : 'none';
+    });
+    document.querySelectorAll<HTMLAnchorElement>('.pill').forEach((pill) => {
+      const url = new URL(pill.href);
+      pill.classList.toggle('active', url.searchParams.get('tur') === tur);
+    });
+  }
+</script>

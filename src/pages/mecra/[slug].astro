@@ -1,0 +1,150 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PressList from '../../components/navigation/PressList.astro';
+import Pagination from '../../components/navigation/Pagination.astro';
+import { contentUrl } from '../../i18n/routes';
+
+export async function getStaticPaths() {
+  const mecralar = await getCollection('mecralar');
+  const yazilar = await getCollection('yazilar', (e) => e.data.lang === 'tr');
+  const basinda = await getCollection('basinda', (e) => e.data.lang === 'tr');
+
+  return mecralar
+    .map((mecra) => {
+      const mecraYazilar = yazilar.filter((e) => e.data.mecra?.id === mecra.id);
+      const mecraBasinda = basinda.filter((e) => e.data.mecra.id === mecra.id);
+      return { mecra, mecraYazilar, mecraBasinda };
+    })
+    .filter(({ mecraYazilar, mecraBasinda }) => mecraYazilar.length + mecraBasinda.length > 0)
+    .map(({ mecra, mecraYazilar, mecraBasinda }) => ({
+      params: { slug: mecra.id },
+      props: { mecra, mecraYazilar, mecraBasinda },
+    }));
+}
+
+const { mecra, mecraYazilar, mecraBasinda } = Astro.props;
+const lang = 'tr';
+
+// Build-time açıklama şablonu — talimat dosyasındaki 3 durumdan biri (elle yazılmıyor).
+let description: string;
+if (mecraYazilar.length > 0 && mecraBasinda.length === 0) {
+  description = `${mecra.data.ad}${mecra.data.yayinEki} yayımlanan yazıları bir araya getiren arşiv.`;
+} else if (mecraBasinda.length > 0 && mecraYazilar.length === 0) {
+  description = `${mecra.data.ad}${mecra.data.iyelikEki} yaptığı söyleşi ve haberleri bir araya getiren arşiv.`;
+} else {
+  description = `${mecra.data.ad}${mecra.data.yayinEki} yayımlanan yazıları ve ${mecra.data.ad}${mecra.data.iyelikEki} yaptığı söyleşi/haberleri bir araya getiren arşiv.`;
+}
+
+const rows = [
+  ...mecraYazilar.map((e) => ({
+    typeTag: 'Yazılar',
+    href: contentUrl('yazilar', e.data.lang, e.id),
+    title: e.data.title,
+    date: e.data.publishDate,
+  })),
+  ...mecraBasinda.map((e) => ({
+    typeTag: 'Basında',
+    href: contentUrl('basinda', e.data.lang, e.id),
+    title: e.data.title,
+    date: e.data.publishDate,
+  })),
+].sort((a, b) => b.date.getTime() - a.date.getTime());
+---
+
+<BaseLayout lang={lang} title={mecra.data.ad} description={description} canonical={`/mecra/${mecra.id}/`} breadcrumb={[{ label: 'Ana sayfa', href: '/' }, { label: mecra.data.ad }]}>
+  <h1>{mecra.data.ad}</h1>
+  <p class="desc">{description}</p>
+  <a class="mecra-external" href={mecra.data.url} target="_blank" rel="noopener">{new URL(mecra.data.url).hostname} ↗</a>
+
+  <PressList>
+    {
+      rows.map((row) => (
+        <div class="press-row">
+          <div class="press-main">
+            <a class="press-title" href={row.href}>{row.title}</a>
+            <span class="press-meta">
+              <span class="type-tag">{row.typeTag}</span>
+              <span>·</span>
+              <time>{new Intl.DateTimeFormat(lang, { month: 'long', year: 'numeric' }).format(row.date)}</time>
+            </span>
+          </div>
+          <span class="press-arrow">→</span>
+        </div>
+      ))
+    }
+  </PressList>
+
+  <Pagination currentPage={1} totalPages={1} basePath={`/mecra/${mecra.id}/`} />
+</BaseLayout>
+
+<style>
+  .desc {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    max-width: 520px;
+    margin: 1rem 0 0.5rem;
+  }
+  .mecra-external {
+    font-size: 13.5px;
+    color: var(--text-accent);
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 1.75rem;
+  }
+  .mecra-external:hover {
+    text-decoration: underline;
+  }
+  .press-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 0;
+    border-bottom: 0.5px solid var(--border);
+  }
+  .press-main {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+    min-width: 0;
+  }
+  .press-title {
+    font-size: 15.5px;
+    font-weight: 500;
+    line-height: 1.4;
+    color: var(--text-primary);
+    text-decoration: none;
+  }
+  .press-row:hover .press-title {
+    color: var(--text-accent);
+  }
+  .press-meta {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    font-size: 12.5px;
+    color: var(--text-muted);
+  }
+  .type-tag {
+    color: var(--text-muted);
+  }
+  .press-arrow {
+    color: var(--text-muted);
+    flex-shrink: 0;
+    transition: transform 0.15s ease;
+  }
+  .press-row:hover .press-arrow {
+    transform: translateX(3px);
+    color: var(--text-accent);
+  }
+  @media (max-width: 480px) {
+    .press-row {
+      align-items: flex-start;
+    }
+    .press-arrow {
+      margin-top: 2px;
+    }
+  }
+</style>

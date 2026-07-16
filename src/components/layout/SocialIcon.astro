@@ -1,0 +1,66 @@
+---
+// Simple Icons paketinden gerçek marka SVG'leri — mockup'lardaki elle çizilmiş placeholder'ların
+// yerini alıyor (talimat: "mockup'lardaki elle çizilmiş SVG'ler sadece yer tutucu").
+// LinkedIn istisna: Simple Icons paketi LinkedIn'i marka talebiyle kaldırdı (v16.26.0'da yok),
+// bu yüzden mockup'taki elle çizilmiş stroke-tabanlı "in" işareti korunuyor — talimattaki
+// "yoksa uygun resmi vektör kaynağa geçilir" ilkesine göre bilinçli bir istisna.
+
+const PATHS: Record<string, string> = {
+  x: 'M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z',
+  facebook:
+    'M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z',
+  academia:
+    'M22.033 21.18L13.77.459H7.869l1.049 2.623L1.836 21.18C1.574 22.098.787 22.23 0 22.361v1.18h6.82v-1.18C4.984 22.23 3.934 21.967 4.721 20c.131-.131.656-1.574 1.311-3.41h8.393l1.18 3.016c.131.525.262.918.262 1.311 0 1.049-.918 1.443-2.623 1.443v1.18H24v-1.18c-.918-.13-1.705-.393-1.967-1.18zM6.82 14.361a363.303 363.303 0 0 0 3.279-8.525l3.41 8.525H6.82z',
+  youtube:
+    'M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z',
+  bluesky:
+    'M5.202 2.857C7.954 4.922 10.913 9.11 12 11.358c1.087-2.247 4.046-6.436 6.798-8.501C20.783 1.366 24 .213 24 3.883c0 .732-.42 6.156-.667 7.037-.856 3.061-3.978 3.842-6.755 3.37 4.854.826 6.089 3.562 3.422 6.299-5.065 5.196-7.28-1.304-7.847-2.97-.104-.305-.152-.448-.153-.327 0-.121-.05.022-.153.327-.568 1.666-2.782 8.166-7.847 2.97-2.667-2.737-1.432-5.473 3.422-6.3-2.777.473-5.899-.308-6.755-3.369C.42 10.04 0 4.615 0 3.883c0-3.67 3.217-2.517 5.202-1.026',
+  scholar:
+    'M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z',
+};
+
+const TITLES: Record<string, string> = {
+  x: 'X',
+  facebook: 'Facebook',
+  linkedin: 'LinkedIn',
+  academia: 'Academia',
+  youtube: 'YouTube',
+  bluesky: 'Bluesky',
+  scholar: 'Google Scholar',
+};
+
+interface Props {
+  name: 'x' | 'facebook' | 'linkedin' | 'academia' | 'youtube' | 'bluesky' | 'scholar';
+  size?: number;
+}
+
+const { name, size = 18 } = Astro.props;
+const title = TITLES[name];
+---
+
+{
+  name === 'linkedin' ? (
+    <svg
+      viewBox="0 0 24 24"
+      width={size}
+      height={size}
+      fill="none"
+      stroke="currentColor"
+      stroke-width="1.6"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <title>{title}</title>
+      <rect x="3" y="3" width="18" height="18" rx="3" />
+      <line x1="7.5" y1="10" x2="7.5" y2="17" />
+      <circle cx="7.5" cy="6.8" r="0.9" fill="currentColor" stroke="none" />
+      <line x1="11.5" y1="10" x2="11.5" y2="17" />
+      <path d="M11.5 13.2c0-1.4.9-2.3 2.1-2.3 1.2 0 1.9.8 1.9 2.3V17" />
+    </svg>
+  ) : (
+    <svg viewBox="0 0 24 24" width={size} height={size} fill="currentColor">
+      <title>{title}</title>
+      <path d={PATHS[name]} />
+    </svg>
+  )
+}

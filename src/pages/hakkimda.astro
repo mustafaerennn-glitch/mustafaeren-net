@@ -1,0 +1,173 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { routes } from '../i18n/routes';
+import { ui } from '../i18n/ui';
+
+const lang = 'tr';
+if (Astro.currentLocale !== lang) {
+  throw new Error(`i18n locale eşleşmedi: beklenen "${lang}", Astro.currentLocale="${Astro.currentLocale}"`);
+}
+
+const t = ui[lang];
+const alternates = Object.entries(routes.hakkimda).map(([l, href]) => ({ lang: l, href }));
+
+// Bio metni roadmap'te finalize edilmiş, gerçek/onaylı içerik (WordPress göçüne bağlı değil —
+// bu yüzden Faz 3 XML export'u beklenmeden burada kullanılabilir). Kitap listesi ise gerçek
+// 5 kitabın henüz içerik göçü yapılmadığı için (Faz 3-5), kasıtlı olarak sahte/örnek
+// `kitaplar` koleksiyonundan dinamik üretiliyor — dead link oluşturmamak için.
+const paragraphs = [
+  "MSGSÜ Sosyoloji bölümünden mezun oldum, İstanbul Bilgi Üniversitesi'nde Kültürel İncelemeler yüksek lisansımı tamamladım. MSGSÜ'de doktora derslerine katıldım. 2019-2020 yıllarında Zürih Üniversitesi'nde misafir öğrenci olarak yüksek lisans derslerini takip ettim. 2026 yılında Schule für Sozialbegleitung'da Migrationsfachperson (Göç Uzmanlığı) programına başladım.",
+  'Çalışma alanlarım hapishaneler/kapatılma, emek, toplumsal hareketler, siyasi tarih, göç ve dezavantajlı gruplardır.',
+  "2011 yılından itibaren CİSST'te proje koordinatörü, yönetim kurulu üyesi ve yönetim kurulu başkanı olarak görev aldım. Eva Tanz ve Ayşegül Algan ile birlikte dernek bünyesinde Türkiye Hapishane Çalışmaları Merkezi'ni (Turkey's Center for Prison Studies-TCPS) ve Hapishane Çalışmaları Kütüphanesi'ni kurdum.",
+  "2012-2024 yılları arasında, bir arkadaşımla beraber, Açık Radyo'da Emeğin Gündemi programının yapımcılığını ve sunuculuğunu üstlendim.",
+  '2014 yılında Arel Üniversitesi\'nde "İnsan Hakları" dersi verdim. 2012-2014 yılları arasında Sosyoloji Mezunları Derneği\'nde (SOMDER) Yönetim Kurulu Üyeliği görevinde bulundum.',
+  'Hapishaneler konulu birçok kitabın editörlüğünü üstlendim ve çeşitli kitap, dergi ve online haber sitelerinde yazılarım yayımlandı.',
+  "MSGSÜ'de ve CİSST'te birçok projeye katıldım ve koordine ettim. İstanbul Toplumsal Araştırmalar Grubu'nun (İSTAG) kuruluşunda yer aldım.",
+  "Hakkımda sürmekte olan davalar ve hapis tehdidi nedeniyle 2018 yılında Türkiye'yi terk etmek zorunda kaldım ve çalışmalarımı yurtdışında sürdürüyorum. 2023 yılından bu yana araştırma ve yazı çalışmalarımın yanı sıra bir göç merkezinde Betreuer (sosyal destek görevlisi) olarak çalışıyorum.",
+];
+
+const kitaplar = (await getCollection('kitaplar')).filter((k) => k.data.lang === lang);
+---
+
+<BaseLayout
+  lang={lang}
+  title={t.hakkimdaBaslik}
+  description={paragraphs[0]}
+  canonical={routes.hakkimda.tr}
+  alternates={alternates}
+  current="hakkimda"
+  breadcrumb={[{ label: t.anaSayfa, href: '/' }, { label: t.hakkimdaBaslik }]}
+>
+  <div class="bio-hero">
+    <div class="avatar">[profil fotoğrafı]</div>
+    <div class="bio-info">
+      <h1>Mustafa Eren</h1>
+      <p class="role-eyebrow">Sosyolog · Araştırmacı · Yazar</p>
+    </div>
+  </div>
+
+  <div class="bio-body">
+    {paragraphs.map((p) => <p>{p}</p>)}
+  </div>
+
+  {
+    kitaplar.length > 0 && (
+      <div class="books-box">
+        <div class="section-head">
+          <h2>Yayınlanmış Kitaplar</h2>
+          <a class="section-link" href="/kitaplar/">Tümünü gör</a>
+        </div>
+        <ul class="books-list">
+          {kitaplar.map((k) => (
+            <li>
+              <a class="book-title-link" href={`/kitaplar/${k.id}/`}>{k.data.title}</a>{' '}
+              <span class="book-year">· {k.data.year}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )
+  }
+</BaseLayout>
+
+<style>
+  .bio-hero {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    margin-bottom: 2.25rem;
+  }
+  .avatar {
+    width: 152px;
+    height: 152px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: var(--surface-1);
+    border: 0.5px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    font-size: 12px;
+    text-align: center;
+  }
+  .bio-info {
+    flex: 1;
+    min-width: 0;
+  }
+  .bio-info h1 {
+    font-size: 26px;
+    line-height: 1.3;
+  }
+  .role-eyebrow {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin: 8px 0 0;
+  }
+  .bio-body {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.75;
+    margin-bottom: 2.25rem;
+  }
+  .bio-body p {
+    margin-bottom: 1.1em;
+  }
+  .bio-body p:last-child {
+    margin-bottom: 0;
+  }
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+  .section-link {
+    font-size: 13px;
+    color: var(--text-accent);
+    text-decoration: none;
+  }
+  .books-box {
+    margin-top: 2.5rem;
+    background: var(--surface-1);
+    border-radius: 12px;
+    padding: 1.5rem 1.5rem 0.25rem;
+  }
+  .books-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .books-list li {
+    padding: 12px 0;
+    border-bottom: 0.5px solid var(--border);
+    font-size: 14px;
+    color: var(--text-primary);
+    line-height: 1.6;
+  }
+  .books-list li:last-child {
+    border-bottom: none;
+  }
+  .book-title-link {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .book-title-link:hover {
+    color: var(--text-accent);
+    text-decoration: underline;
+  }
+  .book-year {
+    color: var(--text-muted);
+  }
+  @media (max-width: 600px) {
+    .bio-hero {
+      flex-direction: column;
+    }
+    .avatar {
+      width: 120px;
+      height: 120px;
+    }
+  }
+</style>

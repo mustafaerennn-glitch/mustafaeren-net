@@ -1,0 +1,98 @@
+---
+// Yazılar index + Basında index + Mecra arşivi'nde birebir aynı bileşen (bkz. roadmap: ayrı ayrı
+// icat edilmedi). `secondary.href` varsa tıklanabilir metin (mecra → /mecra/{slug}/, ↗ yok,
+// siteiçi); yoksa düz/tıklanamaz metin (mecrasız içerikte "Mustafaeren.net", ya da Mecra
+// arşivinde içerik-türü etiketi "Yazılar"/"Basında").
+
+interface Props {
+  href: string;
+  title: string;
+  date: string;
+  secondary: { label: string; href?: string };
+}
+
+const { href, title, date, secondary } = Astro.props;
+---
+
+<div class="press-row">
+  <div class="press-main">
+    <a class="press-title" href={href}>{title}</a>
+    <span class="press-meta">
+      <time>{date}</time><span>·</span>
+      {
+        secondary.href ? (
+          <a class="press-source-text" href={secondary.href}>{secondary.label}</a>
+        ) : (
+          <span class="press-source-text press-source-text--local">{secondary.label}</span>
+        )
+      }
+    </span>
+  </div>
+  <span class="press-arrow">→</span>
+</div>
+
+<style>
+  .press-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 0;
+    border-bottom: 0.5px solid var(--border);
+  }
+  .press-main {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+    min-width: 0;
+  }
+  .press-title {
+    font-size: 15.5px;
+    font-weight: 500;
+    line-height: 1.4;
+    color: var(--text-primary);
+    text-decoration: none;
+  }
+  .press-row:hover .press-title {
+    color: var(--text-accent);
+  }
+  .press-meta {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    font-size: 12.5px;
+    color: var(--text-muted);
+  }
+  .press-source-text {
+    color: var(--text-muted);
+    text-decoration: none;
+  }
+  .press-source-text:hover {
+    color: var(--text-accent);
+    text-decoration: underline;
+  }
+  .press-source-text--local {
+    cursor: default;
+  }
+  .press-source-text--local:hover {
+    color: var(--text-muted);
+    text-decoration: none;
+  }
+  .press-arrow {
+    color: var(--text-muted);
+    flex-shrink: 0;
+    transition: transform 0.15s ease;
+  }
+  .press-row:hover .press-arrow {
+    transform: translateX(3px);
+    color: var(--text-accent);
+  }
+  @media (max-width: 480px) {
+    .press-row {
+      align-items: flex-start;
+    }
+    .press-arrow {
+      margin-top: 2px;
+    }
+  }
+</style>

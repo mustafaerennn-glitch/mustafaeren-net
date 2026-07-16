@@ -1,0 +1,286 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BookCard from '../components/cards/BookCard.astro';
+import { getAreaCounts, ALAN_LABELS } from '../lib/taxonomy';
+import { getMergedFeed } from '../lib/feed';
+
+const lang = 'tr';
+if (Astro.currentLocale !== lang) {
+  throw new Error(`i18n locale eşleşmedi: beklenen "${lang}", Astro.currentLocale="${Astro.currentLocale}"`);
+}
+
+const bio =
+  'Hapishane politikaları, göç, insan hakları ve yakın siyasal tarih üzerine araştırmalar yapan, yazan ve dijital arşivler geliştiren sosyolog ve araştırmacı.';
+
+const areaCounts = await getAreaCounts();
+const areas = Object.entries(ALAN_LABELS).map(([slug, label]) => ({
+  slug,
+  label,
+  count: areaCounts[slug] ?? 0,
+}));
+
+const feed = await getMergedFeed(5);
+
+const kitaplar = (await getCollection('kitaplar', (e) => e.data.lang === lang)).slice(0, 5);
+---
+
+<BaseLayout lang={lang} title="Mustafa Eren" description={bio} canonical="/">
+  <section class="hero">
+    <div class="hero-text">
+      <p class="eyebrow">Araştırmacı · Yazar · Editör</p>
+      <h1>Mustafa Eren</h1>
+      <p class="bio">{bio}</p>
+      <div class="cta-row">
+        <a class="btn-primary" href="/yazilar/">Yazıları gör</a>
+        <a class="btn-secondary" href="/hakkimda/">Hakkımda</a>
+      </div>
+    </div>
+    <div class="avatar">[fotoğraf]</div>
+  </section>
+
+  <section class="section" style="margin-bottom: 2rem;">
+    <div class="project-card">
+      <div>
+        <p class="project-label">Proje</p>
+        <p class="project-name">Kanlı Pazar</p>
+        <p class="project-desc">Yaşayan dijital arşiv</p>
+      </div>
+      <a class="section-link" href="https://kanlipazar.net" target="_blank" rel="noopener">Git →</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>Araştırma alanları</h2>
+      <a class="section-link" href="/konu/">Tümünü gör</a>
+    </div>
+    <div class="areas-grid">
+      {
+        areas.map((area) => (
+          <a class="area-card" href={`/alanlar/${area.slug}/`}>
+            <div class="area-icon">◧</div>
+            <p class="area-name">{area.label}</p>
+            <p class="area-count">{area.count} içerik</p>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>Son eklenenler</h2>
+      <a class="section-link" href="/yazilar/">Tümünü gör</a>
+    </div>
+    <div>
+      {
+        feed.map((item) => (
+          <div class="feed-row">
+            <span class="feed-type">{item.type}</span>
+            <a class="feed-title" href={item.href}>
+              {item.title}
+              {item.meta && <span class="meta"> · {item.meta}</span>}
+            </a>
+            <span class="feed-date">{item.dateLabel}</span>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  {
+    kitaplar.length > 0 && (
+      <section class="section" style="margin-bottom: 2rem;">
+        <div class="section-head">
+          <h2>Kitaplar</h2>
+          <a class="section-link" href="/kitaplar/">Tümünü gör</a>
+        </div>
+        <div class="books-grid">
+          {kitaplar.map((k) => (
+            <BookCard href={`/kitaplar/${k.id}/`} cover={k.data.kapak} coverAlt={k.data.kapakAlt} title={k.data.title} variant="compact" />
+          ))}
+        </div>
+      </section>
+    )
+  }
+</BaseLayout>
+
+<style>
+  .hero {
+    padding: 1rem 0 2.5rem;
+    border-bottom: 0.5px solid var(--border);
+    margin-bottom: 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+  }
+  .hero-text {
+    flex: 1;
+    min-width: 0;
+  }
+  .eyebrow {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+  }
+  .hero h1 {
+    font-size: 28px;
+    margin-bottom: 12px;
+  }
+  .bio {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    max-width: 440px;
+    margin-bottom: 20px;
+  }
+  .cta-row {
+    display: flex;
+    gap: 10px;
+  }
+  .btn-primary,
+  .btn-secondary {
+    font-size: 13px;
+    font-family: var(--font-sans);
+    border-radius: var(--radius);
+    padding: 8px 16px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+  }
+  .btn-primary {
+    background: var(--fill-primary);
+    color: var(--on-primary);
+    border: none;
+  }
+  .btn-secondary {
+    background: transparent;
+    border: 0.5px solid var(--border);
+    color: var(--text-primary);
+  }
+  .avatar {
+    width: 128px;
+    height: 128px;
+    border-radius: 50%;
+    background: var(--surface-1);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    font-size: 13px;
+    text-align: center;
+  }
+  .section {
+    margin-bottom: 2.5rem;
+  }
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+  .section-link {
+    font-size: 13px;
+    color: var(--text-accent);
+    text-decoration: none;
+  }
+  .project-card {
+    background: var(--surface-1);
+    border-radius: 12px;
+    padding: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .project-label {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+  }
+  .project-name {
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+  .project-desc {
+    font-size: 13px;
+    color: var(--text-secondary);
+  }
+  .areas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 16px;
+  }
+  .area-card {
+    background: var(--surface-2);
+    border: 0.5px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+  .area-icon {
+    font-size: 22px;
+    color: var(--text-muted);
+  }
+  .area-name {
+    font-size: 13px;
+    font-weight: 500;
+    margin: 10px 0 2px;
+  }
+  .area-count {
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+  .feed-row {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    padding: 12px 0;
+    border-bottom: 0.5px solid var(--border);
+  }
+  .feed-row:last-child {
+    border-bottom: none;
+  }
+  .feed-type {
+    font-size: 11px;
+    font-weight: 500;
+    padding: 3px 8px;
+    border-radius: var(--radius);
+    background: var(--surface-1);
+    color: var(--text-secondary);
+    white-space: nowrap;
+  }
+  .feed-title {
+    flex: 1;
+    min-width: 0;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-primary);
+    text-decoration: none;
+  }
+  .feed-title:hover {
+    color: var(--text-accent);
+  }
+  .feed-title .meta {
+    font-weight: 400;
+    color: var(--text-muted);
+  }
+  .feed-date {
+    font-size: 12px;
+    color: var(--text-muted);
+    white-space: nowrap;
+  }
+  .books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(112px, 1fr));
+    gap: 14px;
+  }
+</style>

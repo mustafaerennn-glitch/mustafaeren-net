@@ -1,0 +1,44 @@
+---
+// Etiketsiz, dil adları yan yana ("Türkçe · English · Deutsch") — mevcut dil koyu/tıklanamaz,
+// diğerleri link. Hem içerik detay sayfalarında (translations alanından) hem Hakkımda'da
+// (routes.ts'ten) kullanılabilecek şekilde genel: sadece {lang, href} listesi alır.
+import { LANG_NAMES, type Locale } from '../../i18n/routes';
+
+interface Props {
+  currentLang: Locale;
+  items: { lang: Locale; href: string }[]; // mevcut dil dahil TÜM diller (talimat: etiketsiz, yan yana)
+}
+
+const { currentLang, items } = Astro.props;
+---
+
+{
+  items.length > 1 && (
+    <span class="lang-cluster">
+      {items.map((item, i) => (
+        <>
+          {i > 0 && ' · '}
+          {item.lang === currentLang ? (
+            <span class="lang-current">{LANG_NAMES[item.lang]}</span>
+          ) : (
+            <a href={item.href}>{LANG_NAMES[item.lang]}</a>
+          )}
+        </>
+      ))}
+    </span>
+  )
+}
+
+<style>
+  .lang-cluster a {
+    color: var(--text-accent);
+    text-decoration: none;
+  }
+  .lang-cluster a:hover {
+    text-decoration: underline;
+  }
+  .lang-current {
+    color: var(--text-primary);
+    font-weight: 600;
+  }
+</style>

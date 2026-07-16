@@ -1,0 +1,68 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PressList from '../../components/navigation/PressList.astro';
+import PressRow from '../../components/navigation/PressRow.astro';
+import Pagination from '../../components/navigation/Pagination.astro';
+import { contentUrl } from '../../i18n/routes';
+
+const lang = 'tr';
+if (Astro.currentLocale !== lang) {
+  throw new Error(`i18n locale eşleşmedi: beklenen "${lang}", Astro.currentLocale="${Astro.currentLocale}"`);
+}
+
+const entries = await getCollection('basinda', (e) => e.data.lang === lang);
+entries.sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime());
+
+const rows = await Promise.all(
+  entries.map(async (entry) => {
+    const mecra = await getEntry(entry.data.mecra);
+    return {
+      href: contentUrl('basinda', entry.data.lang, entry.id),
+      title: entry.data.title,
+      date: new Intl.DateTimeFormat(lang, { month: 'long', year: 'numeric' }).format(entry.data.publishDate),
+      secondary: { label: mecra.data.ad, href: `/mecra/${mecra.id}/` },
+    };
+  }),
+);
+
+const lastUpdate = entries.length
+  ? new Intl.DateTimeFormat(lang, { month: 'long', year: 'numeric' }).format(
+      entries.reduce((latest, e) => (e.data.publishDate > latest ? e.data.publishDate : latest), entries[0].data.publishDate),
+    )
+  : null;
+---
+
+<BaseLayout
+  lang={lang}
+  title="Basında"
+  description="Söyleşiler, röportajlar ve hakkımda çıkan haberler — hapishane çalışmaları, göç ve yakın siyasal tarih üzerine."
+  canonical="/basinda/"
+  current="basinda"
+  breadcrumb={[{ label: 'Ana sayfa', href: '/' }, { label: 'Basında' }]}
+>
+  <h1>Basında</h1>
+  <p class="desc">Söyleşiler, röportajlar ve hakkımda çıkan haberler — hapishane çalışmaları, göç ve yakın siyasal tarih üzerine.</p>
+  {lastUpdate && <p class="meta-line">{rows.length} içerik · son güncelleme {lastUpdate}</p>}
+
+  <PressList>
+    {rows.map((row) => <PressRow href={row.href} title={row.title} date={row.date} secondary={row.secondary} />)}
+  </PressList>
+
+  <Pagination currentPage={1} totalPages={1} basePath="/basinda/" />
+</BaseLayout>
+
+<style>
+  .desc {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    max-width: 520px;
+    margin: 1rem 0 0.75rem;
+  }
+  .meta-line {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 1.75rem;
+  }
+</style>

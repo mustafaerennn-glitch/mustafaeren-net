@@ -1,0 +1,62 @@
+---
+import '../styles/global.css';
+import Nav from '../components/layout/Nav.astro';
+import Footer from '../components/layout/Footer.astro';
+import Breadcrumb from '../components/layout/Breadcrumb.astro';
+import type { Locale } from '../i18n/routes';
+
+interface Alternate {
+  lang: string;
+  href: string;
+}
+
+interface Crumb {
+  label: string;
+  href?: string;
+}
+
+interface Props {
+  lang: Locale;
+  title: string;
+  description?: string;
+  canonical: string;
+  alternates?: Alternate[];
+  current?: 'yazilar' | 'videolar' | 'kitaplar' | 'basinda' | 'konular' | 'hakkimda' | 'iletisim';
+  breadcrumb?: Crumb[]; // ana sayfada verilmez — anlamsız (talimat)
+  pageWidth?: string; // yalnızca Video sayfalarındaki bilinçli 760px istisnası için (bkz. bilesen-envanteri.md §6.1)
+}
+
+const { lang, title, description, canonical, alternates = [], current, breadcrumb, pageWidth } = Astro.props;
+
+// Yalnızca gerçekten birden fazla dil sürümü varsa hreflang üretilir —
+// tek dilli bir sayfada kendine referans veren hreflang anlamsız/gürültü olurdu.
+const showHreflang = alternates.length > 1;
+const trAlternate = alternates.find((a) => a.lang === 'tr');
+
+// Lighthouse SEO denetimi göreli canonical/hreflang'ı geçersiz sayıyor — ikisi de mutlak URL olmalı.
+const SITE_URL = 'https://mustafaeren.net';
+const canonicalAbsolute = new URL(canonical, SITE_URL).toString();
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    {description && <meta name="description" content={description} />}
+    <link rel="canonical" href={canonicalAbsolute} />
+    {showHreflang && alternates.map((a) => <link rel="alternate" hreflang={a.lang} href={new URL(a.href, SITE_URL).toString()} />)}
+    {showHreflang && trAlternate && <link rel="alternate" hreflang="x-default" href={new URL(trAlternate.href, SITE_URL).toString()} />}
+  </head>
+  <body>
+    <div class="page" style={pageWidth ? `--page-width: ${pageWidth}` : undefined}>
+      <Nav lang={lang} current={current} />
+      <main>
+        {breadcrumb && <Breadcrumb items={breadcrumb} />}
+        <slot />
+      </main>
+      <Footer />
+    </div>
+  </body>
+</html>

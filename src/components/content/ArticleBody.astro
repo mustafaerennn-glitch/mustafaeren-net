@@ -1,0 +1,47 @@
+---
+// Yazı/Basında gövdesi — Markdown'dan render edilen <Content/> bunun içine slot edilir.
+// Basında'daki blockquote ve Yazı'daki footnote stilleri birlikte tutuluyor (aynı bileşen,
+// kullanılmayan seçici zararsız — iki mockup'ın CSS'i burada birleştirildi).
+---
+
+<div class="article-body">
+  <slot />
+</div>
+
+<style>
+  .article-body {
+    font-size: 16px;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 2.25rem;
+  }
+  .article-body :global(p) {
+    margin-bottom: 1.1em;
+  }
+  .article-body :global(h2) {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin: 2em 0 0.75em;
+  }
+  .article-body :global(h3) {
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin: 1.75em 0 0.75em;
+  }
+  .article-body :global(blockquote) {
+    margin: 1em 0;
+    padding-left: 14px;
+    border-left: 2px solid var(--border);
+    color: var(--text-primary);
+    font-style: italic;
+  }
+  .article-body :global(.footnote) {
+    font-size: 13.5px;
+    color: var(--text-muted);
+  }
+  .article-body :global(.footnote a) {
+    color: var(--text-accent);
+  }
+</style>

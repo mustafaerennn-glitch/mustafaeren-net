@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Mustafa Eren — Basında detay sayfası mockup'ı v2 (ANKA Haber Ajansı örneği)</title>
+<style>
+  :root {
+    --surface-2: #ffffff;
+    --surface-1: #f1efe8;
+    --surface-0: #f7f6f2;
+    --text-primary: #1a1a18;
+    --text-secondary: #5f5e5a;
+    --text-muted: #888780;
+    --text-accent: #185fa5;
+    --border: rgba(0,0,0,0.1);
+    --fill-primary: #1a1a18;
+    --on-primary: #ffffff;
+    --radius: 8px;
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: var(--font-sans);
+    color: var(--text-primary);
+    background: var(--surface-0);
+    margin: 0;
+    padding: 2.5rem 1rem;
+  }
+  .page { max-width: 680px; margin: 0 auto; }
+  h1 { font-weight: 500; margin: 0; font-size: 26px; line-height: 1.35; }
+  h2 { font-weight: 500; margin: 0; font-size: 15px; }
+  p { margin: 0; }
+  nav.topnav {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 0 1rem; border-bottom: 0.5px solid var(--border);
+    margin-bottom: 2rem; flex-wrap: wrap; gap: 12px;
+  }
+  .brand { font-size: 16px; font-weight: 500; }
+  .nav-items { display: flex; gap: 18px; font-size: 13px; color: var(--text-secondary); flex-wrap: wrap; }
+  .nav-items .dropdown::after { content: " ▾"; font-size: 10px; }
+  .nav-items .current { color: var(--text-primary); font-weight: 500; }
+
+  .breadcrumb { font-size: 13px; color: var(--text-muted); margin-bottom: 1.5rem; }
+  .breadcrumb a { color: var(--text-muted); text-decoration: none; }
+  .breadcrumb .current { color: var(--text-secondary); }
+
+  /* Mecra rozeti — Yazı detayındaki ile birebir aynı bileşen. ↗ ikonu dış bağlantı olduğunu
+     belirtiyor (index sayfalarındaki /mecra/'ye giden siteiçi rozetten ayırt etmek için).
+     Bu örnekte birden fazla mecra aynı haberi işlediği için rozet BİRİNCİL kaynağa gidiyor
+     (ANKA) — ikincil kaynaklar (Cumhuriyet, Gazete Pencere) aşağıdaki Kaynaklar bloğunda. */
+  .mecra-rozeti {
+    display: inline-flex; align-items: center; gap: 5px;
+    font-size: 13px; font-weight: 600; letter-spacing: 0.03em; text-transform: uppercase;
+    color: var(--text-accent); text-decoration: none; margin-bottom: 10px;
+  }
+  .mecra-rozeti:hover { text-decoration: underline; }
+  /* Siteye özgü içerik varyantı — Yazı detayıyla aynı bileşen. Basında'da bu durum nadir
+     (tanım gereği neredeyse her zaman bir mecra var) ama veri modeli ve bileşen tutarlılığı
+     için burada da destekleniyor. */
+  .mecra-rozeti--local { color: var(--text-muted); cursor: default; }
+  .mecra-rozeti--local:hover { text-decoration: none; }
+
+  /* Meta kümesi — mecra rozeti zaten ayrı bir üst satır (bu içerikte birincil kaynak,
+     ↗ ile dışarı gidiyor), ama tarih + varsa diğer diller + varsa PDF aynı küçük blokta
+     toplanıyor. Yazı detayıyla birebir aynı bileşen — ayrı bir "Diğer diller" bölümü yok. */
+  .meta-cluster { margin: 10px 0 1.75rem; }
+  .meta-cluster .meta-line { font-size: 13px; color: var(--text-muted); margin: 0 0 4px; }
+  .meta-cluster .meta-line:last-child { margin-bottom: 0; }
+  .meta-cluster a { color: var(--text-accent); text-decoration: none; }
+  .meta-cluster a:hover { text-decoration: underline; }
+  .meta-cluster .lang-current { color: var(--text-primary); font-weight: 600; }
+
+  /* Editoryal not — tek genel bileşen, hem arşiv notu hem çeviri notu için kullanılıyor.
+     Nadir/koşullu: sadece bu örnekteki gibi özel bir açıklama gerektiğinde (birden fazla
+     mecranın aynı haberi işlemesi) kullanılıyor. Görsel olarak gövdeden net ayrılıyor
+     (sol çizgi + açık zemin) ki "bu benim editoryal notum, arşivlenen metnin parçası değil"
+     ayrımı netleşsin. */
+  .editor-note {
+    background: var(--surface-1); border-left: 2px solid var(--text-accent);
+    padding: 12px 16px; font-size: 13.5px; color: var(--text-secondary); line-height: 1.6;
+    margin: 0 0 1.75rem; border-radius: 0 6px 6px 0;
+  }
+
+  /* Önizleme görseli — opsiyonel, orijinal yayının ekran görüntüsü. Kasıtlı olarak KÜÇÜK
+     ve başlıktan SONRA — büyük bir "hero" değil, sakin bir kanıt/belge önizlemesi.
+     Farklı en-boy oranlarındaki ekran görüntülerinin sayfayı bozmaması için sabit
+     max-height + object-fit: contain kullanılıyor (kitap kapağındaki kırpmama ilkesiyle aynı). */
+  .preview-image {
+    margin-bottom: 1.75rem; border: 0.5px solid var(--border); border-radius: 8px;
+    overflow: hidden; background: var(--surface-1);
+  }
+  .preview-image img {
+    width: 100%; max-height: 320px; object-fit: contain; display: block; background: var(--surface-2);
+  }
+  .preview-caption {
+    font-size: 12px; color: var(--text-muted); padding: 8px 12px; border-top: 0.5px solid var(--border);
+  }
+
+  .article-body { font-size: 16px; color: var(--text-secondary); line-height: 1.8; margin-bottom: 2.25rem; }
+  .article-body p { margin-bottom: 1.1em; }
+  .article-body h3 { font-size: 15px; font-weight: 600; color: var(--text-primary); margin: 1.6em 0 0.6em; }
+  .article-body blockquote {
+    margin: 1em 0; padding-left: 14px; border-left: 2px solid var(--border);
+    color: var(--text-primary); font-style: italic;
+  }
+
+  /* Kaynaklar bloğu — SADECE birden fazla kaynak olduğunda render edilir. Tek kaynaklı
+     içerikte (bkz. yazi-detay-mockup.html) bu blok tamamen yok, üstteki mecra rozeti zaten
+     yeterli — burada tekrar etmemek için bilinçli bir kural. Birincil/ikincil ayrımı var:
+     ANKA orijinal haber, Cumhuriyet ve Gazete Pencere ondan yola çıkarak yayımlamış. */
+  .sources-section {
+    margin-bottom: 2.25rem; padding-top: 1.5rem; border-top: 0.5px solid var(--border);
+  }
+  .sources-group-label {
+    font-size: 11.5px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.04em;
+    margin: 0 0 8px;
+  }
+  .sources-group { margin-bottom: 16px; }
+  .sources-group:last-child { margin-bottom: 0; }
+  .source-row {
+    display: flex; align-items: baseline; gap: 8px; padding: 6px 0; font-size: 14px;
+  }
+  .source-name { font-weight: 600; color: var(--text-primary); white-space: nowrap; }
+  .source-title { color: var(--text-secondary); }
+  .source-row a { color: inherit; text-decoration: none; }
+  .source-row a:hover .source-title { text-decoration: underline; }
+
+  .share-row {
+    display: flex; align-items: center; gap: 14px; margin-bottom: 2.25rem;
+    padding-top: 1.5rem; border-top: 0.5px solid var(--border);
+  }
+  .share-label { font-size: 13px; color: var(--text-muted); margin-right: 2px; }
+  .share-icons { display: flex; gap: 12px; color: var(--text-muted); }
+  .share-icons a { color: inherit; display: flex; }
+  .share-icons a:hover { color: var(--text-primary); }
+
+  .topics-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 2.25rem; }
+  .area-pill {
+    font-size: 13px; padding: 6px 14px; border-radius: 999px; font-weight: 500;
+    background: rgba(24,95,165,0.1); color: var(--text-accent);
+    border: 0.5px solid rgba(24,95,165,0.35); text-decoration: none;
+  }
+  .topics-divider { width: 0.5px; height: 18px; background: var(--border); margin: 0 4px; flex-shrink: 0; }
+  .topic-pill {
+    font-size: 13px; padding: 6px 14px; border-radius: 999px;
+    background: var(--surface-1); color: var(--text-secondary); text-decoration: none;
+  }
+
+  .section { margin-bottom: 2.25rem; }
+  .section-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 1rem; }
+  .section-link { font-size: 13px; color: var(--text-accent); text-decoration: none; }
+
+  .related-list { border-top: 0.5px solid var(--border); }
+  .related-row {
+    display: flex; align-items: baseline; gap: 14px; padding: 14px 0;
+    border-bottom: 0.5px solid var(--border); flex-wrap: wrap;
+  }
+  .related-date { font-size: 13px; color: var(--text-muted); width: 64px; flex-shrink: 0; }
+  .related-type {
+    font-size: 11px; font-weight: 500; padding: 3px 8px; border-radius: var(--radius);
+    background: var(--surface-1); color: var(--text-secondary); white-space: nowrap; flex-shrink: 0;
+  }
+  .related-title { font-size: 14px; font-weight: 500; flex: 1; min-width: 180px; }
+  .related-title .meta { font-weight: 400; color: var(--text-muted); }
+
+  footer.pagefooter {
+    border-top: 0.5px solid var(--border); padding-top: 1.25rem;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 13px; color: var(--text-muted);
+  }
+  .social-icons { display: flex; gap: 14px; align-items: center; color: var(--text-muted); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <nav class="topnav">
+    <span class="brand">Mustafa Eren</span>
+    <div class="nav-items">
+      <span>Yazılar</span>
+      <span class="dropdown">Videolar</span>
+      <span class="dropdown">Kitaplar</span>
+      <span class="current">Basında</span>
+      <span class="dropdown">Konular</span>
+      <span>Hakkımda</span>
+      <span>İletişim</span>
+    </div>
+  </nav>
+
+  <p class="breadcrumb"><a href="#">Ana sayfa</a> › <a href="#">Basında</a> › <span class="current">Kuyu Tipi Hapishaneler Üzerine Görüş</span></p>
+
+  <a class="mecra-rozeti" href="https://ankahaber.net/haber/detay/kuyu_tipi_hapishanelere_karsi_aclik_grevleri_suruyor" target="_blank" rel="noopener">Anka Haber Ajansı ↗</a>
+
+  <h1>Kuyu Tipi Hapishaneler Üzerine Görüş</h1>
+
+  <div class="meta-cluster">
+    <p class="meta-line">15 Ekim 2025</p>
+  </div>
+
+  <!-- Bu arşiv notu KOŞULLU — çoğu Basında girdisinde olmayacak. Burada var çünkü haber
+       birden fazla mecrada çıktı ve bunun editoryal olarak açıklanması gerekiyordu. -->
+  <p class="editor-note">Anka Haber Ajansı, 15 Ekim 2025 tarihli haberinde "kuyu tipi hapishaneler" konusundaki değerlendirmelerime yer verdi. Aşağıda haberin tam metnini arşiv formatında paylaşıyorum. Haberin yayımlanmasının ardından Cumhuriyet, Gazete Pencere ve bazı başka yayın organları da aynı konuyu Anka'nın haberinden yola çıkarak haberleştirdi.</p>
+
+  <figure class="preview-image">
+    <img src="#" alt="Anka Haber Ajansı'nın 15 Ekim 2025 tarihli haberinin sayfa görüntüsü">
+    <figcaption class="preview-caption">Anka Haber Ajansı'ndaki özgün yayının ekran görüntüsü</figcaption>
+  </figure>
+
+  <div class="article-body">
+    <p><strong>Anka Haber Ajansı – 15 Ekim 2025 – Esra Tokat</strong></p>
+    <p>Kamuoyunda "kuyu tipi" olarak bilinen S, Y ve yüksek güvenlikli cezaevlerinde tutuklular ölüm orucu ve açlık grevlerine devam ediyor. Bunlardan bir kısmı açlık grevlerini "ölüm orucuna" çevirdi.</p>
+    <h3>"Beton kutu, taştan mezar" benzetmesi</h3>
+    <p>"Kuyu tipi" cezaevlerindeki tutuklular, günün 23 saatini havalandırmasız hücrelerde geçirirken pencereler ise metal levhayla kapalı. Bu hapishanelerde bulunan tutuklular, gönderdikleri mektuplarda Y tipi hapishanelerin "insanlık dışı" olduğunu ifade ediyor.</p>
+    <blockquote>"Bu hapishanelerde hava akışı bile sorunlu. Hücrenin açık havaya açılan tek gözü bu pencereler ve onlar da tel örgülerle neredeyse kapalı halde."</blockquote>
+    <h3>"Burada amaç mahpusları küçük gruplara ayırarak toplumsal ilişkilerden koparmak"</h3>
+    <p>Türkiye Hapishane Çalışmaları Merkezi ve Hapishane Çalışmaları Kütüphanesi Kurucusu sosyolog Mustafa Eren de şunları söyledi: "Y tipi ya da aynı dönemde inşa edilen S tipi ve yüksek güvenlikli hapishaneler, devletin 1980'ler sonrası girdiği yeni yönelimin bir başka aşamasıdır. Burada amaç mahpusları daha da küçük gruplara ayırarak toplumsal ilişkilerden koparmak ve 'makbul vatandaşlar' yaratmaktır."</p>
+  </div>
+
+  <!-- Kaynaklar bloğu — SADECE burada, çünkü birden fazla kaynak var. Tek kaynaklı bir Basında
+       girdisinde bu blok hiç render edilmez, üstteki mecra rozeti yeterli olur. -->
+  <div class="sources-section">
+    <div class="sources-group">
+      <p class="sources-group-label">İlk yayın</p>
+      <div class="source-row">
+        <a href="#" target="_blank" rel="noopener">
+          <span class="source-name">Anka Haber Ajansı</span> —
+          <span class="source-title">"Kuyu tipi hapishanelere karşı açlık grevleri sürüyor, tepkiler artıyor"</span>
+        </a>
+      </div>
+    </div>
+    <div class="sources-group">
+      <p class="sources-group-label">Diğer yayımlar</p>
+      <div class="source-row">
+        <a href="#" target="_blank" rel="noopener">
+          <span class="source-name">Cumhuriyet</span> —
+          <span class="source-title">"Kuyu tipi hapishanelere karşı açlık grevleri sürüyor, tepkiler artıyor"</span>
+        </a>
+      </div>
+      <div class="source-row">
+        <a href="#" target="_blank" rel="noopener">
+          <span class="source-name">Gazete Pencere</span> —
+          <span class="source-title">"Kuyu tipi hapishanelere yönelik açlık grevleri ve artan tepkiler"</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="share-row">
+    <span class="share-label">Paylaş</span>
+    <div class="share-icons">
+      <a href="#" title="Facebook'ta paylaş" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M13.5 21v-6.5h2.2l.3-2.6h-2.5V10c0-.8.2-1.3 1.3-1.3h1.4V6.4c-.2 0-1-.1-2-.1-2 0-3.4 1.2-3.4 3.5v2.1H9v2.6h1.8V21"/></svg></a>
+      <a href="#" title="X'te paylaş" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/></svg></a>
+      <a href="#" title="WhatsApp'ta paylaş" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l1.3-4.1A8 8 0 1 1 9 18.6z"/><path d="M8.5 9.5c0 3 2.5 5.5 5.5 5.5.8 0 1.2-.6 1-1.2l-.4-1a.9.9 0 0 0-1-.5l-1 .2c-.7-.4-1.6-1.3-2-2l.2-1a.9.9 0 0 0-.5-1l-1-.4c-.6-.2-1.2.2-1.2 1z"/></svg></a>
+      <a href="#" title="E-posta ile paylaş"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
+    </div>
+  </div>
+
+  <div class="topics-row">
+    <a class="area-pill" href="#">Hapishane</a>
+    <span class="topics-divider"></span>
+    <a class="topic-pill" href="#">Tecrit / İzolasyon</a>
+    <a class="topic-pill" href="#">D/F/S/Y Tipi Hapishaneler</a>
+  </div>
+
+  <div class="section" style="margin-bottom: 0;">
+    <div class="section-head">
+      <h2>İlgili içerikler</h2>
+      <span class="section-link">3 içerik</span>
+    </div>
+    <div class="related-list">
+      <div class="related-row">
+        <span class="related-date">Eki 2025</span>
+        <span class="related-type">Yazı</span>
+        <span class="related-title">Kuyu tipi hapishaneler üzerine değerlendirme</span>
+      </div>
+      <div class="related-row">
+        <span class="related-date">Eyl 2024</span>
+        <span class="related-type">Video</span>
+        <span class="related-title">Panel: Ceza infaz sisteminde güncel tartışmalar</span>
+      </div>
+      <div class="related-row">
+        <span class="related-date">2017</span>
+        <span class="related-type">Kitap</span>
+        <span class="related-title">Hapiste Sağlık</span>
+      </div>
+    </div>
+  </div>
+
+  <footer class="pagefooter" style="margin-top: 2.25rem;">
+    <span>© Mustafa Eren</span>
+    <div class="social-icons">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><title>X</title><line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/></svg>
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><title>Facebook</title><circle cx="12" cy="12" r="9"/><path d="M13.5 21v-6.5h2.2l.3-2.6h-2.5V10c0-.8.2-1.3 1.3-1.3h1.4V6.4c-.2 0-1-.1-2-.1-2 0-3.4 1.2-3.4 3.5v2.1H9v2.6h1.8V21"/></svg>
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><title>LinkedIn</title><rect x="3" y="3" width="18" height="18" rx="3"/><line x1="7.5" y1="10" x2="7.5" y2="17"/><circle cx="7.5" cy="6.8" r="0.9" fill="currentColor" stroke="none"/><line x1="11.5" y1="10" x2="11.5" y2="17"/><path d="M11.5 13.2c0-1.4.9-2.3 2.1-2.3 1.2 0 1.9.8 1.9 2.3V17"/></svg>
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><title>Academia</title><path d="M2 9l10-4 10 4-10 4-10-4z"/><path d="M6 11v4c0 1.1 2.7 2 6 2s6-.9 6-2v-4"/><path d="M22 9v5"/></svg>
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><title>Mail</title><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

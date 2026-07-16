@@ -1,0 +1,45 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const lang = 'tr';
+if (Astro.currentLocale !== lang) {
+  throw new Error(`i18n locale eşleşmedi: beklenen "${lang}", Astro.currentLocale="${Astro.currentLocale}"`);
+}
+---
+
+<BaseLayout
+  lang={lang}
+  title="Teşekkürler — İletişim"
+  canonical="/iletisim/tesekkur/"
+  current="iletisim"
+  breadcrumb={[{ label: 'Ana sayfa', href: '/' }, { label: 'İletişim', href: '/iletisim/' }, { label: 'Teşekkürler' }]}
+>
+  <h1>Yanıtınız için teşekkür ederiz ✨</h1>
+  <p class="desc">Mesajınız iletildi, en kısa sürede dönüş yapacağım.</p>
+  <a class="btn-secondary" href="/">Ana sayfaya dön</a>
+</BaseLayout>
+
+<style>
+  .desc {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    max-width: 480px;
+    margin: 1rem 0 1.75rem;
+  }
+  .btn-secondary {
+    font-size: 13.5px;
+    font-family: var(--font-sans);
+    border-radius: var(--radius);
+    padding: 9px 16px;
+    border: 0.5px solid var(--border);
+    background: transparent;
+    color: var(--text-primary);
+    text-decoration: none;
+    display: inline-block;
+  }
+  .btn-secondary:hover {
+    border-color: var(--text-accent);
+    color: var(--text-accent);
+  }
+</style>

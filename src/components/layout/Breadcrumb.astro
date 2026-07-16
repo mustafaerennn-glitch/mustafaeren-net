@@ -1,0 +1,54 @@
+---
+// Görsel breadcrumb ile JSON-LD BreadcrumbList aynı veri kaynağından üretilir (talimat).
+// Ana sayfada kullanılmaz (anlamsız), diğer tüm sayfalarda kullanılır.
+
+interface Crumb {
+  label: string;
+  href?: string; // son öğede href yok (mevcut sayfa)
+}
+
+interface Props {
+  items: Crumb[];
+  siteUrl?: string; // JSON-LD için mutlak URL üretmede kullanılır
+}
+
+const { items, siteUrl = 'https://mustafaeren.net' } = Astro.props;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: items.map((item, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: item.label,
+    ...(item.href ? { item: new URL(item.href, siteUrl).toString() } : {}),
+  })),
+};
+---
+
+<p class="breadcrumb">
+  {
+    items.map((item, i) => (
+      <>
+        {i > 0 && ' › '}
+        {item.href ? <a href={item.href}>{item.label}</a> : <span class="current">{item.label}</span>}
+      </>
+    ))
+  }
+</p>
+<script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+<style>
+  .breadcrumb {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+  }
+  .breadcrumb a {
+    color: var(--text-muted);
+    text-decoration: none;
+  }
+  .breadcrumb .current {
+    color: var(--text-secondary);
+  }
+</style>

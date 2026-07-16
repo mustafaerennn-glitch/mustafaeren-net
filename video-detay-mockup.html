@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Mustafa Eren — Video detay sayfası mockup'ı (Türkiye Hapishaneleri ve Hasta Mahpuslar örneği)</title>
+<style>
+  :root {
+    --surface-2: #ffffff;
+    --surface-1: #f1efe8;
+    --surface-0: #f7f6f2;
+    --text-primary: #1a1a18;
+    --text-secondary: #5f5e5a;
+    --text-muted: #888780;
+    --text-accent: #185fa5;
+    --border: rgba(0,0,0,0.1);
+    --fill-primary: #1a1a18;
+    --on-primary: #ffffff;
+    --radius: 8px;
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: var(--font-sans);
+    color: var(--text-primary);
+    background: var(--surface-0);
+    margin: 0;
+    padding: 2.5rem 1rem;
+  }
+  .page { max-width: 760px; margin: 0 auto; }
+  h1 { font-weight: 500; margin: 0; font-size: 24px; line-height: 1.35; }
+  h2 { font-weight: 500; margin: 0; font-size: 15px; }
+  p { margin: 0; }
+  nav.topnav {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 0 1rem; border-bottom: 0.5px solid var(--border);
+    margin-bottom: 2rem; flex-wrap: wrap; gap: 12px;
+  }
+  .brand { font-size: 16px; font-weight: 500; }
+  .nav-items { display: flex; gap: 18px; font-size: 13px; color: var(--text-secondary); flex-wrap: wrap; }
+  .nav-items .dropdown::after { content: " ▾"; font-size: 10px; }
+  .nav-items .current { color: var(--text-primary); font-weight: 500; }
+
+  .breadcrumb { font-size: 13px; color: var(--text-muted); margin-bottom: 1.75rem; }
+  .breadcrumb a { color: var(--text-muted); text-decoration: none; }
+  .breadcrumb .current { color: var(--text-secondary); }
+
+  /* Embed hero — kitaptaki yan yana kapak+bilgi yerine, video tam genişlik üstte */
+  .embed {
+    width: 100%; aspect-ratio: 16/9; border-radius: 10px; background: var(--surface-1);
+    border: 0.5px solid var(--border); margin-bottom: 1.25rem;
+    display: flex; align-items: center; justify-content: center; overflow: hidden;
+  }
+  .embed img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .embed .play-badge svg { filter: drop-shadow(0 1px 3px rgba(0,0,0,0.3)); }
+
+  .role-eyebrow { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 8px; }
+  .video-meta-line { font-size: 13px; color: var(--text-secondary); margin: 10px 0 14px; line-height: 1.6; }
+
+  .cta-row { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 1.75rem; }
+  .btn-secondary {
+    font-size: 13px; font-family: var(--font-sans); border-radius: var(--radius);
+    padding: 9px 18px; cursor: pointer; border: 0.5px solid var(--border); color: var(--text-primary);
+    background: transparent; text-decoration: none; display: inline-block;
+  }
+
+  .short-desc { font-size: 15px; color: var(--text-secondary); line-height: 1.7; max-width: 520px; margin: 0 0 1.75rem; }
+
+  dialog#about-modal {
+    max-width: 480px; width: 90%; border: none; border-radius: 12px;
+    padding: 1.75rem; background: var(--surface-2); color: var(--text-primary);
+  }
+  dialog#about-modal::backdrop { background: rgba(0,0,0,0.4); }
+  dialog#about-modal h3 { font-size: 17px; font-weight: 500; margin: 0 0 4px; }
+  dialog#about-modal .modal-meta { font-size: 13px; color: var(--text-muted); margin-bottom: 14px; }
+  dialog#about-modal p { font-size: 14px; color: var(--text-secondary); line-height: 1.75; margin-bottom: 12px; }
+  dialog#about-modal .modal-close {
+    margin-top: 8px; font-size: 13px; background: transparent; border: 0.5px solid var(--border);
+    border-radius: var(--radius); padding: 8px 16px; cursor: pointer; color: var(--text-primary);
+  }
+
+  .topics-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 2.25rem; }
+  .area-pill {
+    font-size: 13px; padding: 6px 14px; border-radius: 999px; font-weight: 500;
+    background: rgba(24,95,165,0.1); color: var(--text-accent);
+    border: 0.5px solid rgba(24,95,165,0.35); text-decoration: none;
+  }
+  .topics-divider { width: 0.5px; height: 18px; background: var(--border); margin: 0 4px; flex-shrink: 0; }
+  .topic-pill {
+    font-size: 13px; padding: 6px 14px; border-radius: 999px;
+    background: var(--surface-1); color: var(--text-secondary); text-decoration: none;
+  }
+
+  .section { margin-bottom: 2.25rem; }
+  .section-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 1rem; }
+  .section-link { font-size: 13px; color: var(--text-accent); text-decoration: none; }
+
+  /* İlgili içerikler — tip karışık, tek liste (yazı/kitap/söyleşi ayrı bölümlere bölünmüyor) */
+  .related-list { border-top: 0.5px solid var(--border); }
+  .related-row {
+    display: flex; align-items: baseline; gap: 14px; padding: 14px 0;
+    border-bottom: 0.5px solid var(--border); flex-wrap: wrap;
+  }
+  .related-date { font-size: 13px; color: var(--text-muted); width: 64px; flex-shrink: 0; }
+  .related-type {
+    font-size: 11px; font-weight: 500; padding: 3px 8px; border-radius: var(--radius);
+    background: var(--surface-1); color: var(--text-secondary); white-space: nowrap; flex-shrink: 0;
+  }
+  .related-title { font-size: 14px; font-weight: 500; flex: 1; min-width: 180px; }
+  .related-title .meta { font-weight: 400; color: var(--text-muted); }
+
+  /* Diğer videolar — index sayfasındaki kanıtlanmış kart bileşeni: min-height + stretch + ortalanmış thumbnail */
+  .video-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px;
+  }
+  .video-card {
+    display: flex; gap: 12px; background: var(--surface-2);
+    border: 0.5px solid var(--border); border-radius: 10px; padding: 10px;
+    min-height: 118px; align-items: stretch;
+  }
+  .thumb {
+    width: 128px; height: 72px; flex-shrink: 0; border-radius: 6px;
+    background: var(--surface-1); position: relative; overflow: hidden;
+    align-self: center;
+  }
+  .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .play-badge { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+  .duration-tag {
+    position: absolute; bottom: 4px; right: 4px; background: rgba(0,0,0,0.68); color: #fff;
+    font-size: 10px; padding: 1px 5px; border-radius: 3px; line-height: 1.4;
+  }
+  .video-info { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 6px; min-height: 0; }
+  .video-title {
+    font-size: 13.5px; font-weight: 500; line-height: 1.35;
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+  }
+  .video-meta-row { font-size: 11.5px; color: var(--text-muted); display: flex; align-items: center; gap: 5px; flex-wrap: wrap; }
+  .type-badge {
+    font-size: 11px; padding: 2px 8px; border-radius: 999px;
+    background: var(--surface-1); color: var(--text-secondary);
+  }
+  .dot { opacity: 0.6; }
+  .video-area-pill {
+    font-size: 11px; padding: 3px 9px; border-radius: 999px; font-weight: 500;
+    background: rgba(24,95,165,0.1); color: var(--text-accent);
+    border: 0.5px solid rgba(24,95,165,0.3); display: inline-block; margin-top: auto; width: fit-content;
+  }
+
+  footer.pagefooter {
+    border-top: 0.5px solid var(--border); padding-top: 1.25rem;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 13px; color: var(--text-muted);
+  }
+  .social-icons { display: flex; gap: 14px; align-items: center; color: var(--text-muted); }
+
+  @media (max-width: 520px) {
+    .video-grid { grid-template-columns: 1fr; }
+    .topics-divider { display: none; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <nav class="topnav">
+    <span class="brand">Mustafa Eren</span>
+    <div class="nav-items">
+      <span>Yazılar</span>
+      <span class="dropdown current">Videolar</span>
+      <span class="dropdown">Kitaplar</span>
+      <span>Basında</span>
+      <span class="dropdown">Konular</span>
+      <span>Hakkımda</span>
+      <span>İletişim</span>
+    </div>
+  </nav>
+
+  <p class="breadcrumb"><a href="#">Ana sayfa</a> › <a href="#">Videolar</a> › <span class="current">Türkiye Hapishaneleri ve Hasta Mahpuslar</span></p>
+
+  <!-- Not: Bu kutu mockup'ta placeholder. Gerçek implementasyonda buraya YouTube <iframe> embed kodu gelecek —
+       video sayfadan ayrılmadan, sitenin içinde oynatılır. "YouTube'da izle" butonu zorunlu değil,
+       yalnızca isteyen için ek bir seçenek; tıklamak video oynatmayı YouTube'a yönlendirmez. -->
+  <div class="embed">
+    <div class="play-badge"><svg width="52" height="52" viewBox="0 0 52 52"><circle cx="26" cy="26" r="25" fill="none" stroke="#fff" stroke-width="1.6"/><path d="M20 15l19 11-19 11z" fill="#fff"/></svg></div>
+  </div>
+
+  <p class="role-eyebrow">Söyleşi</p>
+  <h1>Türkiye Hapishaneleri ve Hasta Mahpuslar</h1>
+  <p class="video-meta-line">14 Mart 2025 · Medya Haber · 38 dk</p>
+
+  <!-- Not: Gerçek uygulamada embed lazy-load olmalı — sayfa açılışında thumbnail gösterilir,
+       kullanıcı play'e bastığında YouTube <iframe>'i yüklenir. Böylece ilk yükte gereksiz
+       YouTube kaynak/çerez çağrısı olmaz. -->
+  <div class="cta-row">
+    <a class="btn-secondary" href="#" target="_blank" rel="noopener">YouTube'da izle</a>
+    <button type="button" class="btn-secondary" onclick="document.getElementById('about-modal').showModal()">Video hakkında</button>
+  </div>
+
+  <p class="short-desc">Hasta mahpusların sağlık hakkına erişimini ve infaz sisteminin bu alandaki uygulamalarını ele alan bir televizyon söyleşisi.</p>
+
+  <dialog id="about-modal">
+    <h3>Türkiye Hapishaneleri ve Hasta Mahpuslar</h3>
+    <p class="modal-meta">Söyleşi · Medya Haber · 14 Mart 2025 · 38 dk</p>
+    <p>Hasta mahpusların sağlık hakkına erişimini, infaz sisteminin bu alandaki yapısal engellerini ve CİSST'in konuyla ilgili saha çalışmalarını ele alan bir televizyon söyleşisi. Sunucu Eylem Barayigit ile birlikte, hasta mahpusların hukuki statüsü ve tahliye süreçleri üzerine konuşuldu.</p>
+    <button type="button" class="modal-close" onclick="document.getElementById('about-modal').close()">Kapat</button>
+  </dialog>
+
+  <div class="topics-row">
+    <a class="area-pill" href="#">Hapishane</a>
+    <span class="topics-divider"></span>
+    <a class="topic-pill" href="#">Hasta Mahpuslar</a>
+    <a class="topic-pill" href="#">Sağlık Hakkı</a>
+    <a class="topic-pill" href="#">İnfaz Sistemi</a>
+  </div>
+
+  <!-- Bu bölüm koşullu: video'ya dair yazı/kitap/söyleşi yoksa tamamen kaldırılır.
+       ÖNEMLİ: otomatik etiket eşleşmesiyle doldurulmaz (aksi halde aynı geniş konudaki
+       düzinelerce içerik dökülür, bölüm anlamını kaybeder). Elle seçilen, videoyla doğrudan
+       editoryal ilişkisi olan içerikler gelir — söyleşide bahsedilen kitap, aynı çalışmaya
+       dayanan yazı, panelin devamı olan başka kayıt gibi.
+       SINIR: en fazla 3-4 öğe listelenir (tarihe göre en yeni/en ilgili öncelikli). Toplam sayı
+       bundan fazlaysa sağ üstteki metin "Tümünü gör →" linkine dönüşür (kitaptaki "Diğer kitaplar"
+       paterniyle aynı mantık); azsa (örn. 3 öğenin hepsi gösteriliyorsa) düz metin "3 içerik" kalır. -->
+  <div class="section">
+    <div class="section-head">
+      <h2>İlgili içerikler</h2>
+      <a class="section-link" href="#">Tümünü gör →</a>
+    </div>
+    <div class="related-list">
+      <div class="related-row">
+        <span class="related-date">Şub 2018</span>
+        <span class="related-type">Yazı</span>
+        <span class="related-title">Hapiste sağlık hakkı neden ihlal ediliyor? <span class="meta">· Bianet</span></span>
+      </div>
+      <div class="related-row">
+        <span class="related-date">2017</span>
+        <span class="related-type">Kitap</span>
+        <span class="related-title">Hapiste Sağlık</span>
+      </div>
+      <div class="related-row">
+        <span class="related-date">Nis 2018</span>
+        <span class="related-type">Söyleşi</span>
+        <span class="related-title">Mahpusların sağlık hakkına dair yeni bir alan araştırması <span class="meta">· BirGün</span></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Seçim önceliği (elle/algoritma sırası): 1) aynı konu 2) aynı araştırma alanı
+       3) serinin devamı (örn. "Kanlı Pazar — 1" → "Kanlı Pazar — 2") 4) en yeni diğer videolar -->
+  <div class="section" style="margin-bottom: 0;">
+    <div class="section-head">
+      <h2>Diğer videolar</h2>
+      <a class="section-link" href="#">Tümünü gör</a>
+    </div>
+    <div class="video-grid">
+      <div class="video-card">
+        <div class="thumb">
+          <div class="play-badge"><svg width="26" height="26" viewBox="0 0 26 26"><circle cx="13" cy="13" r="12.5" fill="none" stroke="#fff" stroke-width="1.3"/><path d="M10.5 8.5l7.5 4.5-7.5 4.5z" fill="#fff"/></svg></div>
+          <span class="duration-tag">24 dk</span>
+        </div>
+        <div class="video-info">
+          <p class="video-title">İşçi Mahpuslar</p>
+          <div class="video-meta-row">
+            <span class="type-badge">Söyleşi</span>
+            <span class="dot">·</span>
+            <span>Deutsche Welle · 2023</span>
+          </div>
+          <span class="video-area-pill">Hapishane</span>
+        </div>
+      </div>
+      <div class="video-card">
+        <div class="thumb">
+          <div class="play-badge"><svg width="26" height="26" viewBox="0 0 26 26"><circle cx="13" cy="13" r="12.5" fill="none" stroke="#fff" stroke-width="1.3"/><path d="M10.5 8.5l7.5 4.5-7.5 4.5z" fill="#fff"/></svg></div>
+          <span class="duration-tag">31 dk</span>
+        </div>
+        <div class="video-info">
+          <p class="video-title">Hapsetmenin Alternatifleri Var mı?</p>
+          <div class="video-meta-row">
+            <span class="type-badge">Konferans / Panel</span>
+            <span class="dot">·</span>
+            <span>CİSST · 2021</span>
+          </div>
+          <span class="video-area-pill">Hapishane</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="pagefooter" style="margin-top: 2.25rem;">
+    <span>© Mustafa Eren</span>
+    <div class="social-icons">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><title>X</title><line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/></svg>
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><title>Facebook</title><circle cx="12" cy="12" r="9"/><path d="M13.5 21v-6.5h2.2l.3-2.6h-2.5V10c0-.8.2-1.3 1.3-1.3h1.4V6.4c-.2 0-1-.1-2-.1-2 0-3.4 1.2-3.4 3.5v2.1H9v2.6h1.8V21"/></svg>
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><title>LinkedIn</title><rect x="3" y="3" width="18" height="18" rx="3"/><line x1="7.5" y1="10" x2="7.5" y2="17"/><circle cx="7.5" cy="6.8" r="0.9" fill="currentColor" stroke="none"/><line x1="11.5" y1="10" x2="11.5" y2="17"/><path d="M11.5 13.2c0-1.4.9-2.3 2.1-2.3 1.2 0 1.9.8 1.9 2.3V17"/></svg>
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><title>Academia</title><path d="M2 9l10-4 10 4-10 4-10-4z"/><path d="M6 11v4c0 1.1 2.7 2 6 2s6-.9 6-2v-4"/><path d="M22 9v5"/></svg>
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><title>Mail</title><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

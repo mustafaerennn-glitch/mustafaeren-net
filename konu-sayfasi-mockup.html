@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Mustafa Eren — Konu sayfası mockup'ı (Hapishane çalışmaları örneği)</title>
+<style>
+  :root {
+    --surface-2: #ffffff;
+    --surface-1: #f1efe8;
+    --surface-0: #f7f6f2;
+    --text-primary: #1a1a18;
+    --text-secondary: #5f5e5a;
+    --text-muted: #888780;
+    --text-accent: #185fa5;
+    --border: rgba(0,0,0,0.1);
+    --fill-primary: #1a1a18;
+    --on-primary: #ffffff;
+    --radius: 8px;
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: var(--font-sans);
+    color: var(--text-primary);
+    background: var(--surface-0);
+    margin: 0;
+    padding: 2.5rem 1rem;
+  }
+  .page { max-width: 680px; margin: 0 auto; }
+  h1 { font-weight: 500; margin: 0; font-size: 28px; }
+  p { margin: 0; }
+  nav.topnav {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 0 1rem; border-bottom: 0.5px solid var(--border);
+    margin-bottom: 2rem; flex-wrap: wrap; gap: 12px;
+  }
+  .brand { font-size: 16px; font-weight: 500; }
+  .nav-items { display: flex; gap: 18px; font-size: 13px; color: var(--text-secondary); flex-wrap: wrap; }
+  .nav-items .dropdown::after { content: " ▾"; font-size: 10px; }
+
+  .breadcrumb { font-size: 13px; color: var(--text-muted); margin-bottom: 1rem; }
+  .breadcrumb a { color: var(--text-muted); text-decoration: none; }
+  .breadcrumb .current { color: var(--text-secondary); }
+
+  .desc { font-size: 15px; color: var(--text-secondary); line-height: 1.7; max-width: 520px; margin: 1rem 0 0.75rem; }
+  .meta-line { font-size: 13px; color: var(--text-muted); margin-bottom: 1.5rem; }
+
+  .pills { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 1.5rem; }
+  .pill {
+    font-size: 13px; padding: 8px 16px; border-radius: 999px;
+    border: 0.5px solid var(--border); color: var(--text-secondary);
+    display: flex; align-items: center; gap: 6px;
+  }
+  .pill svg { flex-shrink: 0; }
+  .pill.active { background: var(--fill-primary); color: var(--on-primary); border-color: var(--fill-primary); }
+
+  .content-list { border-top: 0.5px solid var(--border); margin-bottom: 1.5rem; }
+  .content-row {
+    display: flex; align-items: baseline; gap: 16px; padding: 16px 0;
+    border-bottom: 0.5px solid var(--border);
+  }
+  .content-date { font-size: 13px; color: var(--text-muted); width: 72px; flex-shrink: 0; }
+  .content-type {
+    font-size: 11px; font-weight: 500; padding: 3px 8px; border-radius: var(--radius);
+    background: var(--surface-1); color: var(--text-secondary); white-space: nowrap; flex-shrink: 0;
+  }
+  .content-title { font-size: 15px; font-weight: 500; }
+
+  .pagination { display: flex; align-items: center; justify-content: center; gap: 18px; padding: 1.5rem 0; font-size: 14px; }
+  .page-num { color: var(--text-secondary); text-decoration: none; }
+  .page-num.active {
+    background: var(--fill-primary); color: var(--on-primary);
+    width: 28px; height: 28px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .page-num.next { color: var(--text-accent); text-decoration: underline; }
+
+  .related-section { border-top: 0.5px solid var(--border); padding-top: 1.5rem; margin-bottom: 1.5rem; }
+  .section-label { font-size: 13px; color: var(--text-muted); margin-bottom: 12px; }
+  .related-pills { display: flex; gap: 10px; flex-wrap: wrap; }
+  .related-pill {
+    font-size: 14px; padding: 10px 16px; border-radius: 12px;
+    border: 0.5px solid var(--border); color: var(--text-secondary); background: var(--surface-2);
+  }
+  .related-pill .count { color: var(--text-muted); font-size: 12px; }
+
+  .mecra-section { margin-bottom: 2rem; }
+  .mecra-pills { display: flex; gap: 8px; flex-wrap: wrap; }
+  .mecra-pill {
+    font-size: 13px; padding: 5px 10px; border-radius: 999px;
+    background: var(--surface-1); color: var(--text-secondary);
+  }
+
+  footer.pagefooter {
+    border-top: 0.5px solid var(--border); padding-top: 1.25rem;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 13px; color: var(--text-muted);
+  }
+  .social-icons { display: flex; gap: 14px; align-items: center; color: var(--text-muted); }
+  .social-icons svg { display: block; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <nav class="topnav">
+    <span class="brand">Mustafa Eren</span>
+    <div class="nav-items">
+      <span>Yazılar</span>
+      <span class="dropdown">Videolar</span>
+      <span class="dropdown">Kitaplar</span>
+      <span>Basında</span>
+      <span class="dropdown">Konular</span>
+      <span>Hakkımda</span>
+      <span>İletişim</span>
+    </div>
+  </nav>
+
+  <p class="breadcrumb"><a href="#">Ana sayfa</a> › <a href="#">Konular</a> › <span class="current">Hapishane çalışmaları</span></p>
+
+  <h1>Hapishane çalışmaları</h1>
+  <p class="desc">Ceza infaz sistemi, mahpus hakları ve hapishane rejimleri üzerine yazılar, videolar, söyleşiler ve kitaplar.</p>
+  <p class="meta-line">42 içerik · son güncelleme Temmuz 2026</p>
+
+  <div class="pills">
+    <span class="pill active">Tümü · 42</span>
+    <span class="pill"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M9 12h6M9 16h6M9 8h3"/></svg>Yazılar · 24</span>
+    <span class="pill"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" stroke="none"><path d="M6 4l14 8-14 8z"/></svg>Videolar · 6</span>
+    <span class="pill"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6.5c-1.4-1.6-3.8-2.2-6.5-2.2a1 1 0 0 0-1 1v12.4c0 .5.4 1 1 1 2.7 0 5.1.6 6.5 2.3 1.4-1.7 3.8-2.3 6.5-2.3.6 0 1-.5 1-1V5.3a1 1 0 0 0-1-1c-2.7 0-5.1.6-6.5 2.2z"/><line x1="12" y1="6.5" x2="12" y2="20"/></svg>Kitaplar · 2</span>
+    <span class="pill"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="9" y1="22" x2="15" y2="22"/></svg>Söyleşiler · 9</span>
+  </div>
+
+  <div class="content-list">
+    <div class="content-row">
+      <span class="content-date">Eki 2025</span>
+      <span class="content-type">Yazı</span>
+      <span class="content-title">Kuyu tipi hapishaneler üzerine değerlendirme</span>
+    </div>
+    <div class="content-row">
+      <span class="content-date">Eyl 2024</span>
+      <span class="content-type">Video</span>
+      <span class="content-title">Panel: Ceza infaz sisteminde güncel tartışmalar</span>
+    </div>
+    <div class="content-row">
+      <span class="content-date">Ağu 2022</span>
+      <span class="content-type">Yazı</span>
+      <span class="content-title">Hapishaneden cezaevine: Türkiye'de değişen mahpusluk</span>
+    </div>
+    <div class="content-row">
+      <span class="content-date">2017</span>
+      <span class="content-type">Kitap</span>
+      <span class="content-title">Hapiste sağlık</span>
+    </div>
+    <div class="content-row">
+      <span class="content-date">Oca 2019</span>
+      <span class="content-type">Yazı</span>
+      <span class="content-title">Yaşamın kutsallığı ve direnme hakkı ikileminde bir eylem tarzı</span>
+    </div>
+  </div>
+
+  <div class="pagination">
+    <span class="page-num active">1</span>
+    <a class="page-num" href="#">2</a>
+    <a class="page-num" href="#">3</a>
+    <a class="page-num next" href="#">Sonraki →</a>
+  </div>
+
+  <div class="related-section">
+    <p class="section-label">İlgili konular</p>
+    <div class="related-pills">
+      <span class="related-pill">Tecrit <span class="count">· 18</span></span>
+      <span class="related-pill">F Tipi <span class="count">· 12</span></span>
+      <span class="related-pill">İnsan Hakları <span class="count">· 44</span></span>
+      <span class="related-pill">Hasta Mahpuslar <span class="count">· 9</span></span>
+    </div>
+  </div>
+
+  <div class="mecra-section">
+    <p class="section-label">Yayınlandığı mecralar</p>
+    <div class="mecra-pills">
+      <span class="mecra-pill">Bianet · 6</span>
+      <span class="mecra-pill">BirGün · 3</span>
+      <span class="mecra-pill">İMC TV · 2</span>
+      <span class="mecra-pill">Cumhuriyet · 4</span>
+    </div>
+  </div>
+
+  <footer class="pagefooter">
+    <span>© Mustafa Eren</span>
+    <div class="social-icons">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><title>X</title><line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/></svg>
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><title>Facebook</title><circle cx="12" cy="12" r="9"/><path d="M13.5 21v-6.5h2.2l.3-2.6h-2.5V10c0-.8.2-1.3 1.3-1.3h1.4V6.4c-.2 0-1-.1-2-.1-2 0-3.4 1.2-3.4 3.5v2.1H9v2.6h1.8V21"/></svg>
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><title>LinkedIn</title><rect x="3" y="3" width="18" height="18" rx="3"/><line x1="7.5" y1="10" x2="7.5" y2="17"/><circle cx="7.5" cy="6.8" r="0.9" fill="currentColor" stroke="none"/><line x1="11.5" y1="10" x2="11.5" y2="17"/><path d="M11.5 13.2c0-1.4.9-2.3 2.1-2.3 1.2 0 1.9.8 1.9 2.3V17"/></svg>
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><title>Academia</title><path d="M2 9l10-4 10 4-10 4-10-4z"/><path d="M6 11v4c0 1.1 2.7 2 6 2s6-.9 6-2v-4"/><path d="M22 9v5"/></svg>
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><title>Mail</title><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,158 @@
+---
+import { ui, type Locale } from '../../i18n/ui';
+import { routes } from '../../i18n/routes';
+
+// Not: Yazılar/Videolar/Kitaplar/Basında/Konular/İletişim'in şu an yalnızca Türkçe sürümü var
+// (çeviri içerik üretimi Faz 4-5'e ait) — bu yüzden bu öğeler her dilde TR URL'sine gider.
+// Yalnızca Hakkımda, i18n spike'ında doğrulanan 4 dilli routes.ts kaydını kullanıyor.
+// Bu, "kısmi çok dillilik" modeliyle tutarlı: sahte/boş çeviri sayfası üretmek yerine dürüstçe
+// mevcut olan tek sürüme yönlendiriyoruz.
+
+interface Props {
+  lang: Locale;
+  current?: 'yazilar' | 'videolar' | 'kitaplar' | 'basinda' | 'konular' | 'hakkimda' | 'iletisim';
+}
+
+const { lang, current } = Astro.props;
+const t = ui[lang];
+
+const ALANLAR = [
+  { slug: 'hapishane', label: 'Hapishane' },
+  { slug: 'siyasi-tarih', label: 'Siyasi Tarih' },
+  { slug: 'goc', label: 'Göç' },
+  { slug: 'emek', label: 'Emek' },
+  { slug: 'diger', label: 'Diğer' },
+] as const;
+
+const VIDEO_TURLERI = [
+  { tur: 'söyleşi', label: 'Söyleşi' },
+  { tur: 'belgesel', label: 'Belgesel' },
+  { tur: 'konferans-panel', label: 'Konferans / Panel' },
+  { tur: 'kısa-video', label: 'Kısa videolar' },
+] as const;
+
+const KITAP_TURLERI = [
+  { tip: 'yazdıklarım', label: 'Yazdıklarım' },
+  { tip: 'editörlük', label: 'Editörlük' },
+  { tip: 'katkılar', label: 'Katkılar' },
+] as const;
+
+const hakkimdaHref = routes.hakkimda[lang];
+// EN/DE/FR ana sayfa henüz kurulmadı (yalnızca Hakkımda 4 dilde var, bkz. i18n spike) —
+// marka linki o dillerde en azından gerçek bir sayfaya (Hakkımda) gitsin, kırık linke değil.
+const brandHref = lang === 'tr' ? '/' : hakkimdaHref;
+---
+
+<nav class="topnav">
+  <a class="brand" href={brandHref}>Mustafa Eren</a>
+  <div class="nav-items">
+    <a class:list={['nav-link', { current: current === 'yazilar' }]} href="/yazilar/">{t.navYazilar}</a>
+
+    <details class="dropdown">
+      <summary class:list={{ current: current === 'videolar' }}>{t.navVideolar}</summary>
+      <div class="menu">
+        <a href="/videolar/">Tümü</a>
+        {VIDEO_TURLERI.map((v) => <a href={`/videolar/?tur=${v.tur}`}>{v.label}</a>)}
+      </div>
+    </details>
+
+    <details class="dropdown">
+      <summary class:list={{ current: current === 'kitaplar' }}>{t.navKitaplar}</summary>
+      <div class="menu">
+        <a href="/kitaplar/">Tümü</a>
+        {KITAP_TURLERI.map((k) => <a href={`/kitaplar/?tip=${k.tip}`}>{k.label}</a>)}
+      </div>
+    </details>
+
+    <a class:list={['nav-link', { current: current === 'basinda' }]} href="/basinda/">{t.navBasinda}</a>
+
+    <details class="dropdown">
+      <summary class:list={{ current: current === 'konular' }}>{t.navKonular}</summary>
+      <div class="menu">
+        {ALANLAR.map((a) => <a href={`/alanlar/${a.slug}/`}>{a.label}</a>)}
+      </div>
+    </details>
+
+    <a class:list={['nav-link', { current: current === 'hakkimda' }]} href={hakkimdaHref}>{t.navHakkimda}</a>
+    <a class:list={['nav-link', { current: current === 'iletisim' }]} href="/iletisim/">{t.navIletisim}</a>
+  </div>
+</nav>
+
+<style>
+  .topnav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 0 1rem;
+    border-bottom: 0.5px solid var(--border);
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .brand {
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--text-primary);
+  }
+  .nav-items {
+    display: flex;
+    gap: 18px;
+    font-size: 13px;
+    color: var(--text-secondary);
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .nav-link {
+    color: inherit;
+    text-decoration: none;
+  }
+  .nav-link.current {
+    color: var(--text-primary);
+    font-weight: 500;
+  }
+  .dropdown {
+    position: relative;
+  }
+  .dropdown summary {
+    list-style: none;
+    cursor: pointer;
+    color: var(--text-secondary);
+  }
+  .dropdown summary.current {
+    color: var(--text-primary);
+    font-weight: 500;
+  }
+  .dropdown summary::-webkit-details-marker {
+    display: none;
+  }
+  .dropdown summary::after {
+    content: ' ▾';
+    font-size: 10px;
+  }
+  .dropdown .menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    background: var(--surface-2);
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius);
+    padding: 6px;
+    display: flex;
+    flex-direction: column;
+    min-width: 160px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    z-index: 10;
+  }
+  .dropdown .menu a {
+    padding: 6px 10px;
+    border-radius: 6px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .dropdown .menu a:hover {
+    background: var(--surface-1);
+    color: var(--text-primary);
+  }
+</style>

@@ -1,0 +1,63 @@
+---
+// Yazılar/Basında/Videolar/Kitaplar index + Alan Hub + Konu sayfası + Mecra arşivi ortak.
+// URL şeması ("/{basePath}sayfa/{n}/") bir yer tutucu — gerçek 145 içerik Faz 3-5'te gelene
+// kadar sayfalama ihtiyacı test verisiyle doğrulanamıyor, bu yüzden şema henüz kesinleşmedi.
+
+interface Props {
+  currentPage: number;
+  totalPages: number;
+  basePath: string; // örn. "/yazilar/"
+}
+
+const { currentPage, totalPages, basePath } = Astro.props;
+
+function pageHref(page: number): string {
+  return page === 1 ? basePath : `${basePath}sayfa/${page}/`;
+}
+---
+
+{
+  totalPages > 1 && (
+    <div class="pagination">
+      {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) =>
+        page === currentPage ? (
+          <span class="page-num active">{page}</span>
+        ) : (
+          <a class="page-num" href={pageHref(page)}>{page}</a>
+        ),
+      )}
+      {currentPage < totalPages && (
+        <a class="page-num next" href={pageHref(currentPage + 1)}>Sonraki →</a>
+      )}
+    </div>
+  )
+}
+
+<style>
+  .pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    padding: 1.5rem 0;
+    font-size: 14px;
+  }
+  .page-num {
+    color: var(--text-secondary);
+    text-decoration: none;
+  }
+  .page-num.active {
+    background: var(--fill-primary);
+    color: var(--on-primary);
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .page-num.next {
+    color: var(--text-accent);
+    text-decoration: underline;
+  }
+</style>

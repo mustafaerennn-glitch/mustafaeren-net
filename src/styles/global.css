@@ -1,0 +1,32 @@
+@import "./tokens.css";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--text-primary);
+  background: var(--surface-0);
+  margin: 0;
+  padding: 2.5rem 1rem;
+}
+
+.page {
+  max-width: var(--page-width);
+  margin: 0 auto;
+}
+
+h1,
+h2 {
+  font-weight: 500;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}

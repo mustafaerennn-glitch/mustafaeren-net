@@ -1,0 +1,245 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ContentListRow from '../../components/cards/ContentListRow.astro';
+import Pagination from '../../components/navigation/Pagination.astro';
+import Pills from '../../components/navigation/Pills.astro';
+import { contentUrl } from '../../i18n/routes';
+
+export async function getStaticPaths() {
+  const topics = await getCollection('topics');
+  return topics.map((t) => ({ params: { slug: t.id } }));
+}
+
+const { slug } = Astro.params;
+const lang = 'tr';
+const topic = await getEntry('topics', slug!);
+if (!topic) throw new Error(`Konu bulunamadı: ${slug}`);
+
+const [yazilar, basinda, videolar, kitaplar] = await Promise.all([
+  getCollection('yazilar', (e) => e.data.lang === lang),
+  getCollection('basinda', (e) => e.data.lang === lang),
+  getCollection('videolar', (e) => e.data.lang === lang),
+  getCollection('kitaplar', (e) => e.data.lang === lang),
+]);
+
+type Item = { tip: 'Yazı' | 'Basında' | 'Video' | 'Kitap'; title: string; href: string; date: Date; topicRefs: string[]; mecraId?: string };
+
+const items: Item[] = [
+  ...yazilar
+    .filter((e) => e.data.topics.some((t) => t.id === slug))
+    .map((e): Item => ({ tip: 'Yazı', title: e.data.title, href: contentUrl('yazilar', e.data.lang, e.id), date: e.data.publishDate, topicRefs: e.data.topics.map((t) => t.id), mecraId: e.data.mecra?.id })),
+  ...basinda
+    .filter((e) => e.data.topics.some((t) => t.id === slug))
+    .map((e): Item => ({ tip: 'Basında', title: e.data.title, href: contentUrl('basinda', e.data.lang, e.id), date: e.data.publishDate, topicRefs: e.data.topics.map((t) => t.id), mecraId: e.data.mecra.id })),
+  ...videolar
+    .filter((e) => e.data.topics.some((t) => t.id === slug))
+    .map((e): Item => ({ tip: 'Video', title: e.data.title, href: contentUrl('videolar', e.data.lang, e.id), date: e.data.publishDate, topicRefs: e.data.topics.map((t) => t.id), mecraId: e.data.mecra?.id })),
+  ...kitaplar
+    .filter((e) => e.data.topics.some((t) => t.id === slug))
+    .map((e): Item => ({ tip: 'Kitap', title: e.data.title, href: contentUrl('kitaplar', e.data.lang, e.id), date: new Date(e.data.year, 0, 1), topicRefs: e.data.topics.map((t) => t.id) })),
+].sort((a, b) => b.date.getTime() - a.date.getTime());
+
+const tipCounts = { Yazı: 0, Basında: 0, Video: 0, Kitap: 0 };
+for (const item of items) tipCounts[item.tip]++;
+const currentTip = Astro.url.searchParams.get('tip');
+const pillItems = [
+  { label: 'Tümü', count: items.length, href: `/konu/${slug}/`, active: !currentTip },
+  {
+    label: 'Yazılar',
+    count: tipCounts['Yazı'],
+    href: `/konu/${slug}/?tip=yazi`,
+    active: currentTip === 'yazi',
+    icon: '<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M9 12h6M9 16h6M9 8h3"/></svg>',
+  },
+  {
+    label: 'Videolar',
+    count: tipCounts['Video'],
+    href: `/konu/${slug}/?tip=video`,
+    active: currentTip === 'video',
+    icon: '<svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" stroke="none"><path d="M6 4l14 8-14 8z"/></svg>',
+  },
+  {
+    label: 'Kitaplar',
+    count: tipCounts['Kitap'],
+    href: `/konu/${slug}/?tip=kitap`,
+    active: currentTip === 'kitap',
+    icon: '<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6.5c-1.4-1.6-3.8-2.2-6.5-2.2a1 1 0 0 0-1 1v12.4c0 .5.4 1 1 1 2.7 0 5.1.6 6.5 2.3 1.4-1.7 3.8-2.3 6.5-2.3.6 0 1-.5 1-1V5.3a1 1 0 0 0-1-1c-2.7 0-5.1.6-6.5 2.2z"/><line x1="12" y1="6.5" x2="12" y2="20"/></svg>',
+  },
+  {
+    label: 'Söyleşiler',
+    count: tipCounts['Basında'],
+    href: `/konu/${slug}/?tip=basinda`,
+    active: currentTip === 'basinda',
+    icon: '<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="9" y1="22" x2="15" y2="22"/></svg>',
+  },
+];
+const TIP_TO_QUERY: Record<Item['tip'], string> = { Yazı: 'yazi', Basında: 'basinda', Video: 'video', Kitap: 'kitap' };
+
+// İlgili konular — bu konuyla aynı içeriklerde birlikte geçen diğer konular, birlikte-geçme
+// sayısına göre sıralı (gerçek bir "ilgili" alanı yok, build-time'da veriden türetiliyor).
+const coOccurrence = new Map<string, number>();
+for (const item of items) {
+  for (const t of item.topicRefs) {
+    if (t !== slug) coOccurrence.set(t, (coOccurrence.get(t) ?? 0) + 1);
+  }
+}
+const allTopics = await getCollection('topics');
+const topicLabelById = new Map(allTopics.map((t) => [t.id, t.data.ad]));
+const relatedTopics = [...coOccurrence.entries()]
+  .sort((a, b) => b[1] - a[1])
+  .slice(0, 4)
+  .map(([id, count]) => ({ id, label: topicLabelById.get(id) ?? id, count }));
+
+const mecraCounts = new Map<string, number>();
+for (const item of items) {
+  if (item.mecraId) mecraCounts.set(item.mecraId, (mecraCounts.get(item.mecraId) ?? 0) + 1);
+}
+const mecraEntries = (
+  await Promise.all([...mecraCounts.entries()].map(async ([id, count]) => ({ mecra: await getEntry('mecralar', id), count })))
+).filter((e): e is { mecra: NonNullable<typeof e.mecra>; count: number } => Boolean(e.mecra));
+---
+
+<BaseLayout
+  lang={lang}
+  title={topic.data.ad}
+  description={`${topic.data.ad} üzerine yazılar, videolar, söyleşiler ve kitaplar.`}
+  canonical={`/konu/${topic.id}/`}
+  current="konular"
+  breadcrumb={[{ label: 'Ana sayfa', href: '/' }, { label: 'Konular', href: '/konu/' }, { label: topic.data.ad }]}
+>
+  <h1>{topic.data.ad}</h1>
+  <p class="desc">{topic.data.ad} üzerine yazılar, videolar, söyleşiler ve kitaplar.</p>
+  <p class="meta-line">{items.length} içerik</p>
+
+  <Pills items={pillItems} />
+
+  <div class="content-list">
+    {
+      items.map((item) => (
+        <div class="row-wrap" data-tip={TIP_TO_QUERY[item.tip]}>
+          <ContentListRow
+            date={item.tip === 'Kitap' ? String(item.date.getFullYear()) : new Intl.DateTimeFormat(lang, { month: 'short', year: 'numeric' }).format(item.date)}
+            badge={item.tip}
+            title={item.title}
+            href={item.href}
+          />
+        </div>
+      ))
+    }
+  </div>
+
+  <Pagination currentPage={1} totalPages={1} basePath={`/konu/${topic.id}/`} />
+
+  {
+    relatedTopics.length > 0 && (
+      <div class="related-section">
+        <p class="section-label">İlgili konular</p>
+        <div class="related-pills">
+          {relatedTopics.map((t) => (
+            <a class="related-pill" href={`/konu/${t.id}/`}>
+              {t.label} <span class="count">· {t.count}</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    )
+  }
+
+  {
+    mecraEntries.length > 0 && (
+      <div class="mecra-section">
+        <p class="section-label">Yayınlandığı mecralar</p>
+        <div class="mecra-pills">
+          {mecraEntries.map(({ mecra, count }) => (
+            <span class="mecra-pill">{mecra.data.ad} · {count}</span>
+          ))}
+        </div>
+      </div>
+    )
+  }
+</BaseLayout>
+
+<style>
+  .desc {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    max-width: 520px;
+    margin: 1rem 0 0.75rem;
+  }
+  .meta-line {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+  }
+  .pills {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+  }
+  .content-list {
+    border-top: 0.5px solid var(--border);
+    margin-bottom: 1.5rem;
+  }
+  .section-label {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+  }
+  .related-section {
+    border-top: 0.5px solid var(--border);
+    padding-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .related-pills {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .related-pill {
+    font-size: 14px;
+    padding: 10px 16px;
+    border-radius: 12px;
+    border: 0.5px solid var(--border);
+    color: var(--text-secondary);
+    background: var(--surface-2);
+    text-decoration: none;
+  }
+  .related-pill .count {
+    color: var(--text-muted);
+    font-size: 12px;
+  }
+  .mecra-section {
+    margin-bottom: 2rem;
+  }
+  .mecra-pills {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .mecra-pill {
+    font-size: 13px;
+    padding: 5px 10px;
+    border-radius: 999px;
+    background: var(--surface-1);
+    color: var(--text-secondary);
+  }
+</style>
+
+<script>
+  const params = new URLSearchParams(location.search);
+  const tip = params.get('tip');
+  if (tip) {
+    document.querySelectorAll<HTMLElement>('[data-tip]').forEach((row) => {
+      row.style.display = row.dataset.tip === tip ? '' : 'none';
+    });
+    document.querySelectorAll<HTMLAnchorElement>('.pill').forEach((pill) => {
+      try {
+        const url = new URL(pill.href);
+        pill.classList.toggle('active', url.searchParams.get('tip') === tip);
+      } catch {}
+    });
+  }
+</script>

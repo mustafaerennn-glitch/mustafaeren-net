@@ -1,0 +1,47 @@
+---
+// Detay sayfalarına özgü rozet — HER ZAMAN render edilir (koşullu gizleme yok, bkz. roadmap).
+// Mecra varsa dış bağlantı (↗), yoksa tıklanamaz "Mustafaeren.net" varyantı.
+// Index sayfalarındaki (press-list) mecra göstergesi bilerek AYRI bir bileşen (ContentListRow
+// içinde), çünkü orası siteiçi /mecra/ linkine gidiyor, ↗ yok — bkz. bilesen-envanteri.md §3.
+
+interface Props {
+  mecra?: { ad: string; url: string } | null;
+}
+
+const { mecra } = Astro.props;
+---
+
+{
+  mecra ? (
+    <a class="mecra-rozeti" href={mecra.url} target="_blank" rel="noopener">
+      {mecra.ad} ↗
+    </a>
+  ) : (
+    <span class="mecra-rozeti mecra-rozeti--local">Mustafaeren.net</span>
+  )
+}
+
+<style>
+  .mecra-rozeti {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--text-accent);
+    text-decoration: none;
+    margin-bottom: 10px;
+  }
+  .mecra-rozeti:hover {
+    text-decoration: underline;
+  }
+  .mecra-rozeti--local {
+    color: var(--text-muted);
+    cursor: default;
+  }
+  .mecra-rozeti--local:hover {
+    text-decoration: none;
+  }
+</style>

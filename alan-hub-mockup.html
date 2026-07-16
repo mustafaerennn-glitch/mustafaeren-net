@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Mustafa Eren — Alan hub sayfası mockup'ı (Hapishane alanı örneği)</title>
+<style>
+  :root {
+    --surface-2: #ffffff;
+    --surface-1: #f1efe8;
+    --surface-0: #f7f6f2;
+    --text-primary: #1a1a18;
+    --text-secondary: #5f5e5a;
+    --text-muted: #888780;
+    --text-accent: #185fa5;
+    --border: rgba(0,0,0,0.1);
+    --fill-primary: #1a1a18;
+    --on-primary: #ffffff;
+    --radius: 8px;
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: var(--font-sans);
+    color: var(--text-primary);
+    background: var(--surface-0);
+    margin: 0;
+    padding: 2.5rem 1rem;
+  }
+  .page { max-width: 680px; margin: 0 auto; }
+  h1 { font-weight: 500; margin: 0; font-size: 28px; }
+  h2 { font-weight: 500; margin: 0; font-size: 15px; }
+  p { margin: 0; }
+  nav.topnav {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 0 1rem; border-bottom: 0.5px solid var(--border);
+    margin-bottom: 2rem; flex-wrap: wrap; gap: 12px;
+  }
+  .brand { font-size: 16px; font-weight: 500; }
+  .nav-items { display: flex; gap: 18px; font-size: 13px; color: var(--text-secondary); flex-wrap: wrap; }
+  .nav-items .dropdown::after { content: " ▾"; font-size: 10px; }
+  .nav-items .current { color: var(--text-primary); font-weight: 500; }
+
+  .breadcrumb { font-size: 13px; color: var(--text-muted); margin-bottom: 1rem; }
+  .breadcrumb a { color: var(--text-muted); text-decoration: none; }
+  .breadcrumb .current { color: var(--text-secondary); }
+
+  .eyebrow { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 8px; }
+  .desc { font-size: 15px; color: var(--text-secondary); line-height: 1.7; max-width: 540px; margin: 0.75rem 0 0.75rem; }
+  .meta-line { font-size: 13px; color: var(--text-muted); margin-bottom: 2rem; }
+
+  /* Bu alandaki konular — hub sayfasının imzası: birincil gezinme burası */
+  .topics-section { margin-bottom: 2.5rem; }
+  .section-label {
+    font-size: 12px; color: var(--text-muted); text-transform: uppercase;
+    letter-spacing: 0.04em; margin-bottom: 12px;
+  }
+  .topics-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px;
+  }
+  .topic-card {
+    background: var(--surface-2); border: 0.5px solid var(--border); border-radius: 10px;
+    padding: 14px 16px; text-decoration: none; color: inherit;
+    display: flex; flex-direction: column; gap: 6px;
+  }
+  .topic-name { font-size: 14px; font-weight: 500; }
+  .topic-count { font-size: 12px; color: var(--text-muted); }
+  .topic-bar { height: 3px; border-radius: 2px; background: var(--surface-1); overflow: hidden; }
+  .topic-bar-fill { height: 100%; background: var(--text-accent); opacity: 0.55; }
+
+  .feed-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 1rem; }
+  .feed-head h2 { font-size: 15px; }
+  .feed-note { font-size: 12px; color: var(--text-muted); }
+
+  .pills { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 1.5rem; }
+  .pill {
+    font-size: 13px; padding: 8px 16px; border-radius: 999px;
+    border: 0.5px solid var(--border); color: var(--text-secondary);
+  }
+  .pill.active { background: var(--fill-primary); color: var(--on-primary); border-color: var(--fill-primary); }
+
+  .content-list { border-top: 0.5px solid var(--border); margin-bottom: 1.5rem; }
+  .content-row {
+    display: flex; align-items: baseline; gap: 14px; padding: 16px 0;
+    border-bottom: 0.5px solid var(--border); flex-wrap: wrap;
+  }
+  .content-date { font-size: 13px; color: var(--text-muted); width: 64px; flex-shrink: 0; }
+  .content-type {
+    font-size: 11px; font-weight: 500; padding: 3px 8px; border-radius: var(--radius);
+    background: var(--surface-1); color: var(--text-secondary); white-space: nowrap; flex-shrink: 0;
+  }
+  .content-title { font-size: 15px; font-weight: 500; flex: 1; min-width: 180px; }
+  .content-topic {
+    font-size: 11px; color: var(--text-accent); white-space: nowrap;
+    border: 0.5px solid var(--border); border-radius: 999px; padding: 2px 9px;
+  }
+
+  .pagination { display: flex; align-items: center; justify-content: center; gap: 18px; padding: 1.5rem 0; font-size: 14px; }
+  .page-num { color: var(--text-secondary); text-decoration: none; }
+  .page-num.active {
+    background: var(--fill-primary); color: var(--on-primary);
+    width: 28px; height: 28px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .page-num.next { color: var(--text-accent); text-decoration: underline; }
+
+  .mecra-section { border-top: 0.5px solid var(--border); padding-top: 1.5rem; margin-bottom: 2rem; }
+  .mecra-pills { display: flex; gap: 8px; flex-wrap: wrap; }
+  .mecra-pill {
+    font-size: 13px; padding: 5px 10px; border-radius: 999px;
+    background: var(--surface-1); color: var(--text-secondary);
+  }
+
+  footer.pagefooter {
+    border-top: 0.5px solid var(--border); padding-top: 1.25rem;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 13px; color: var(--text-muted);
+  }
+  .social-icons { display: flex; gap: 14px; align-items: center; color: var(--text-muted); }
+
+  .note {
+    background: var(--surface-1); border-radius: 10px; padding: 14px 16px;
+    font-size: 12.5px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 2rem;
+  }
+  .note strong { color: var(--text-primary); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <nav class="topnav">
+    <span class="brand">Mustafa Eren</span>
+    <div class="nav-items">
+      <span>Yazılar</span>
+      <span class="dropdown">Videolar</span>
+      <span class="dropdown">Kitaplar</span>
+      <span>Basında</span>
+      <span class="dropdown current">Konular</span>
+      <span>Hakkımda</span>
+      <span>İletişim</span>
+    </div>
+  </nav>
+
+  <p class="breadcrumb"><a href="#">Ana sayfa</a> › <a href="#">Konular</a> › <span class="current">Hapishane</span></p>
+
+  <p class="eyebrow">Araştırma alanı</p>
+  <h1>Hapishane</h1>
+  <p class="desc">Ceza infaz sistemi, mahpus hakları, hapishane rejimleri ve direniş biçimleri üzerine on altı konu başlığını bir araya getiren araştırma alanı.</p>
+  <p class="meta-line">89 içerik · 16 konu · son güncelleme Temmuz 2026</p>
+
+  <div class="note">
+    <strong>Not:</strong> Bu sayfa <code>/alanlar/hapishane/</code> adresinde yaşıyor — kanonik konu sayfası olan <code>/konu/hapishane/</code>'dan (yalnızca "Hapishane" etiketli 32 içerik) kasıtlı olarak ayrı bir URL alanında. Aynı isim iki farklı kapsamı (dar konu / geniş alan) taşıdığı için bu ayrım isim çakışmasını önlüyor; alan ataması yine de URL'e değil tek kaynaklı metadata'ya dayanıyor.
+  </div>
+
+  <div class="topics-section">
+    <p class="section-label">Bu alandaki konular</p>
+    <div class="topics-grid">
+      <a class="topic-card" href="#"><span class="topic-name">Hapishane</span><span class="topic-count">32 içerik</span><span class="topic-bar"><span class="topic-bar-fill" style="width:100%"></span></span></a>
+      <a class="topic-card" href="#"><span class="topic-name">Tecrit / İzolasyon</span><span class="topic-count">18 içerik</span><span class="topic-bar"><span class="topic-bar-fill" style="width:56%"></span></span></a>
+      <a class="topic-card" href="#"><span class="topic-name">Ölüm Oruçları</span><span class="topic-count">14 içerik</span><span class="topic-bar"><span class="topic-bar-fill" style="width:44%"></span></span></a>
+      <a class="topic-card" href="#"><span class="topic-name">Mahpus</span><span class="topic-count">14 içerik</span><span class="topic-bar"><span class="topic-bar-fill" style="width:44%"></span></span></a>
+      <a class="topic-card" href="#"><span class="topic-name">D/F/S/Y Tipi Hapishaneler</span><span class="topic-count">9 içerik</span><span class="topic-bar"><span class="topic-bar-fill" style="width:28%"></span></span></a>
+      <a class="topic-card" href="#"><span class="topic-name">Hasta Mahpuslar</span><span class="topic-count">9 içerik</span><span class="topic-bar"><span class="topic-bar-fill" style="width:28%"></span></span></a>
+      <a class="topic-card" href="#"><span class="topic-name">Ceza İnfaz İstatistikleri</span><span class="topic-count">7 içerik</span><span class="topic-bar"><span class="topic-bar-fill" style="width:22%"></span></span></a>
+      <a class="topic-card" href="#"><span class="topic-name">İşçi Mahpuslar</span><span class="topic-count">6 içerik</span><span class="topic-bar"><span class="topic-bar-fill" style="width:19%"></span></span></a>
+      <a class="topic-card" href="#"><span class="topic-name">LGBTİ Mahpuslar</span><span class="topic-count">6 içerik</span><span class="topic-bar"><span class="topic-bar-fill" style="width:19%"></span></span></a>
+      <a class="topic-card" href="#"><span class="topic-name">Yüksek Güvenlikli Hapishaneler</span><span class="topic-count">5 içerik</span><span class="topic-bar"><span class="topic-bar-fill" style="width:16%"></span></span></a>
+      <a class="topic-card" href="#"><span class="topic-name">Çocuk Mahpuslar</span><span class="topic-count">5 içerik</span><span class="topic-bar"><span class="topic-bar-fill" style="width:16%"></span></span></a>
+      <a class="topic-card" href="#"><span class="topic-name">Kritik Hapishane Çalışmaları</span><span class="topic-count">5 içerik</span><span class="topic-bar"><span class="topic-bar-fill" style="width:16%"></span></span></a>
+      <a class="topic-card" href="#"><span class="topic-name">Kadın Mahpuslar</span><span class="topic-count">4 içerik</span><span class="topic-bar"><span class="topic-bar-fill" style="width:12%"></span></span></a>
+      <a class="topic-card" href="#"><span class="topic-name">Af / Örtük Af</span><span class="topic-count">4 içerik</span><span class="topic-bar"><span class="topic-bar-fill" style="width:12%"></span></span></a>
+      <a class="topic-card" href="#"><span class="topic-name">Kuyu Tipi Hapishane</span><span class="topic-count">3 içerik</span><span class="topic-bar"><span class="topic-bar-fill" style="width:9%"></span></span></a>
+      <a class="topic-card" href="#"><span class="topic-name">Kriminalizasyon</span><span class="topic-count">3 içerik</span><span class="topic-bar"><span class="topic-bar-fill" style="width:9%"></span></span></a>
+    </div>
+  </div>
+
+  <div class="feed-head">
+    <h2>Alandaki tüm içerik</h2>
+    <span class="feed-note">konulara göre birleştirilmiş, kronolojik</span>
+  </div>
+
+  <div class="pills">
+    <span class="pill active">Tümü · 89</span>
+    <span class="pill">Yazılar · 51</span>
+    <span class="pill">Videolar · 14</span>
+    <span class="pill">Kitaplar · 8</span>
+    <span class="pill">Söyleşiler · 16</span>
+  </div>
+
+  <div class="content-list">
+    <div class="content-row">
+      <span class="content-date">Eki 2025</span>
+      <span class="content-type">Yazı</span>
+      <span class="content-title">Kuyu tipi hapishaneler üzerine değerlendirme</span>
+      <span class="content-topic">Kuyu Tipi Hapishane</span>
+    </div>
+    <div class="content-row">
+      <span class="content-date">Eyl 2024</span>
+      <span class="content-type">Video</span>
+      <span class="content-title">Panel: Ceza infaz sisteminde güncel tartışmalar</span>
+      <span class="content-topic">Hapishane</span>
+    </div>
+    <div class="content-row">
+      <span class="content-date">Mar 2023</span>
+      <span class="content-type">Yazı</span>
+      <span class="content-title">Tecritin bedeni: F tipinde zamanın deneyimi</span>
+      <span class="content-topic">Tecrit / İzolasyon</span>
+    </div>
+    <div class="content-row">
+      <span class="content-date">Ağu 2022</span>
+      <span class="content-type">Yazı</span>
+      <span class="content-title">Hapishaneden cezaevine: Türkiye'de değişen mahpusluk</span>
+      <span class="content-topic">Hapishane</span>
+    </div>
+    <div class="content-row">
+      <span class="content-date">2017</span>
+      <span class="content-type">Kitap</span>
+      <span class="content-title">Hapiste sağlık</span>
+      <span class="content-topic">Hasta Mahpuslar</span>
+    </div>
+    <div class="content-row">
+      <span class="content-date">Oca 2019</span>
+      <span class="content-type">Yazı</span>
+      <span class="content-title">Yaşamın kutsallığı ve direnme hakkı ikileminde bir eylem tarzı</span>
+      <span class="content-topic">Ölüm Oruçları</span>
+    </div>
+  </div>
+
+  <div class="pagination">
+    <span class="page-num active">1</span>
+    <a class="page-num" href="#">2</a>
+    <a class="page-num" href="#">3</a>
+    <a class="page-num" href="#">4</a>
+    <a class="page-num next" href="#">Sonraki →</a>
+  </div>
+
+  <div class="mecra-section">
+    <p class="section-label">Yayınlandığı mecralar</p>
+    <div class="mecra-pills">
+      <span class="mecra-pill">Bianet · 14</span>
+      <span class="mecra-pill">BirGün · 7</span>
+      <span class="mecra-pill">İMC TV · 5</span>
+      <span class="mecra-pill">Cumhuriyet · 9</span>
+      <span class="mecra-pill">CİSST · 4</span>
+    </div>
+  </div>
+
+  <footer class="pagefooter">
+    <span>© Mustafa Eren</span>
+    <div class="social-icons">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><title>X</title><line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/></svg>
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><title>Facebook</title><circle cx="12" cy="12" r="9"/><path d="M13.5 21v-6.5h2.2l.3-2.6h-2.5V10c0-.8.2-1.3 1.3-1.3h1.4V6.4c-.2 0-1-.1-2-.1-2 0-3.4 1.2-3.4 3.5v2.1H9v2.6h1.8V21"/></svg>
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><title>LinkedIn</title><rect x="3" y="3" width="18" height="18" rx="3"/><line x1="7.5" y1="10" x2="7.5" y2="17"/><circle cx="7.5" cy="6.8" r="0.9" fill="currentColor" stroke="none"/><line x1="11.5" y1="10" x2="11.5" y2="17"/><path d="M11.5 13.2c0-1.4.9-2.3 2.1-2.3 1.2 0 1.9.8 1.9 2.3V17"/></svg>
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><title>Academia</title><path d="M2 9l10-4 10 4-10 4-10-4z"/><path d="M6 11v4c0 1.1 2.7 2 6 2s6-.9 6-2v-4"/><path d="M22 9v5"/></svg>
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><title>Mail</title><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

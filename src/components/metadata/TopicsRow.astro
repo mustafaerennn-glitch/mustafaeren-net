@@ -1,0 +1,57 @@
+---
+// Alan pill(ler)i + konu pill'leri — 4 içerik detay sayfasında da (Yazı/Basında/Video/Kitap)
+// birebir aynı bileşen. Bir içerik birden fazla alana ait konular taşıyorsa (taksonomi-denetimi.md)
+// birden fazla area-pill görünür.
+
+interface Props {
+  areas: { slug: string; label: string }[];
+  topics: { slug: string; label: string }[];
+}
+
+const { areas, topics } = Astro.props;
+---
+
+<div class="topics-row">
+  {areas.map((a) => (
+    <a class="area-pill" href={`/alanlar/${a.slug}/`}>{a.label}</a>
+  ))}
+  {areas.length > 0 && topics.length > 0 && <span class="topics-divider" />}
+  {topics.map((t) => (
+    <a class="topic-pill" href={`/konu/${t.slug}/`}>{t.label}</a>
+  ))}
+</div>
+
+<style>
+  .topics-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 2.25rem;
+  }
+  .area-pill {
+    font-size: 13px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-weight: 500;
+    background: rgba(24, 95, 165, 0.1);
+    color: var(--text-accent);
+    border: 0.5px solid rgba(24, 95, 165, 0.35);
+    text-decoration: none;
+  }
+  .topics-divider {
+    width: 0.5px;
+    height: 18px;
+    background: var(--border);
+    margin: 0 4px;
+    flex-shrink: 0;
+  }
+  .topic-pill {
+    font-size: 13px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: var(--surface-1);
+    color: var(--text-secondary);
+    text-decoration: none;
+  }
+</style>

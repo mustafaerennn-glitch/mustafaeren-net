@@ -1,0 +1,85 @@
+---
+// SADECE birden fazla kaynak olduğunda render edilir — tek kaynaklı içerikte üstteki mecra
+// rozeti zaten yeterli. Basında detayına özgü.
+
+interface SourceItem {
+  name: string;
+  title: string;
+  url: string;
+}
+
+interface Props {
+  primary: SourceItem;
+  secondary: SourceItem[];
+}
+
+const { primary, secondary } = Astro.props;
+---
+
+<div class="sources-section">
+  <div class="sources-group">
+    <p class="sources-group-label">İlk yayın</p>
+    <div class="source-row">
+      <a href={primary.url} target="_blank" rel="noopener">
+        <span class="source-name">{primary.name}</span> — <span class="source-title">"{primary.title}"</span>
+      </a>
+    </div>
+  </div>
+  {
+    secondary.length > 0 && (
+      <div class="sources-group">
+        <p class="sources-group-label">Diğer yayımlar</p>
+        {secondary.map((s) => (
+          <div class="source-row">
+            <a href={s.url} target="_blank" rel="noopener">
+              <span class="source-name">{s.name}</span> — <span class="source-title">"{s.title}"</span>
+            </a>
+          </div>
+        ))}
+      </div>
+    )
+  }
+</div>
+
+<style>
+  .sources-section {
+    margin-bottom: 2.25rem;
+    padding-top: 1.5rem;
+    border-top: 0.5px solid var(--border);
+  }
+  .sources-group-label {
+    font-size: 11.5px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin: 0 0 8px;
+  }
+  .sources-group {
+    margin-bottom: 16px;
+  }
+  .sources-group:last-child {
+    margin-bottom: 0;
+  }
+  .source-row {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    padding: 6px 0;
+    font-size: 14px;
+  }
+  .source-name {
+    font-weight: 600;
+    color: var(--text-primary);
+    white-space: nowrap;
+  }
+  .source-title {
+    color: var(--text-secondary);
+  }
+  .source-row a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .source-row a:hover .source-title {
+    text-decoration: underline;
+  }
+</style>

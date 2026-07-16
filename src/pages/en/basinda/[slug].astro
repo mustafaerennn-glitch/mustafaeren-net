@@ -1,0 +1,98 @@
+---
+import { getCollection, getEntry, render } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import MecraRozeti from '../../../components/metadata/MecraRozeti.astro';
+import MetaCluster from '../../../components/metadata/MetaCluster.astro';
+import EditorNote from '../../../components/metadata/EditorNote.astro';
+import TopicsRow from '../../../components/metadata/TopicsRow.astro';
+import PreviewImage from '../../../components/content/PreviewImage.astro';
+import ArticleBody from '../../../components/content/ArticleBody.astro';
+import ShareRow from '../../../components/content/ShareRow.astro';
+import SourcesBlock from '../../../components/content/SourcesBlock.astro';
+import { getTranslationCluster } from '../../../i18n/translationLookup';
+import { contentUrl, routes } from '../../../i18n/routes';
+import { getAreasForTopicRefs, getTopicsMap, ALAN_LABELS } from '../../../lib/taxonomy';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('basinda', (entry) => entry.data.lang === 'en');
+  return entries.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+if (Astro.currentLocale !== 'en') {
+  throw new Error(`i18n locale eşleşmedi: beklenen "en", Astro.currentLocale="${Astro.currentLocale}"`);
+}
+
+const { Content } = await render(entry);
+const cluster = await getTranslationCluster('basinda', entry);
+const canonical = contentUrl('basinda', entry.data.lang, entry.id);
+const alternates = cluster.map((c) => ({ lang: c.lang, href: contentUrl('basinda', c.lang, c.slug) }));
+
+const mecra = await getEntry(entry.data.mecra);
+
+const areaSlug = (await getAreasForTopicRefs(entry.data.topics))[0];
+const topicsMap = await getTopicsMap();
+const topics = entry.data.topics
+  .map((ref) => topicsMap.get(ref.id))
+  .filter((t): t is NonNullable<typeof t> => Boolean(t))
+  .map((t) => ({ slug: t.id, label: t.data.ad }));
+const areas = areaSlug ? [{ slug: areaSlug, label: ALAN_LABELS[areaSlug] }] : [];
+
+const siteUrl = new URL(canonical, 'https://mustafaeren.net').toString();
+
+let sourcesData: { primary: { name: string; title: string; url: string }; secondary: { name: string; title: string; url: string }[] } | null = null;
+if (entry.data.sources && entry.data.sources.length > 0) {
+  const resolved = await Promise.all(
+    entry.data.sources.map(async (s) => ({ mecra: await getEntry(s.mecra), tur: s.tur })),
+  );
+  const primaryItem = resolved.find((s) => s.tur === 'birincil') ?? resolved[0];
+  sourcesData = {
+    primary: { name: primaryItem.mecra.data.ad, title: entry.data.title, url: primaryItem.mecra.data.url },
+    secondary: resolved
+      .filter((s) => s !== primaryItem)
+      .map((s) => ({ name: s.mecra.data.ad, title: entry.data.title, url: s.mecra.data.url })),
+  };
+}
+---
+
+<BaseLayout
+  lang={entry.data.lang}
+  title={entry.data.title}
+  description={entry.data.description}
+  canonical={canonical}
+  alternates={alternates}
+  current="basinda"
+  breadcrumb={[{ label: 'Home', href: routes.hakkimda.en }, { label: 'Press', href: '/basinda/' }, { label: entry.data.title }]}
+>
+  <MecraRozeti mecra={{ ad: mecra.data.ad, url: mecra.data.url }} />
+
+  <h1 class="title">{entry.data.title}</h1>
+
+  <MetaCluster
+    date={entry.data.publishDate}
+    lang={entry.data.lang}
+    langItems={cluster.map((c) => ({ lang: c.lang, href: contentUrl('basinda', c.lang, c.slug) }))}
+    pdfHref={entry.data.pdf}
+  />
+
+  {entry.data.editorNote && <EditorNote>{entry.data.editorNote}</EditorNote>}
+
+  <PreviewImage image={entry.data.featuredImage} alt={entry.data.featuredImageAlt} />
+
+  <ArticleBody>
+    <Content />
+  </ArticleBody>
+
+  {sourcesData && <SourcesBlock primary={sourcesData.primary} secondary={sourcesData.secondary} />}
+
+  <ShareRow url={siteUrl} title={entry.data.title} />
+
+  <TopicsRow areas={areas} topics={topics} />
+</BaseLayout>
+
+<style>
+  .title {
+    font-size: 26px;
+    line-height: 1.35;
+  }
+</style>

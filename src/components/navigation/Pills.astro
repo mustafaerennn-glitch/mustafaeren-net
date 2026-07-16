@@ -1,0 +1,54 @@
+---
+// Filtre pilleri — Yazılar/Videolar/Kitaplar index, Alan Hub, Konu sayfası ortak.
+// Konu sayfasındaki varyant her pilin içinde küçük bir SVG ikon taşıyor (icon alanı, opsiyonel).
+
+interface PillItem {
+  label: string;
+  count: number;
+  href: string;
+  active?: boolean;
+  icon?: string; // ham SVG markup, yalnızca Konu sayfası varyantında kullanılıyor
+}
+
+interface Props {
+  items: PillItem[];
+}
+
+const { items } = Astro.props;
+---
+
+<div class="pills">
+  {
+    items.map((item) => (
+      <a class:list={['pill', { active: item.active }]} href={item.href}>
+        {item.icon && <Fragment set:html={item.icon} />}
+        {item.label} · {item.count}
+      </a>
+    ))
+  }
+</div>
+
+<style>
+  .pills {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 1.75rem;
+  }
+  .pill {
+    font-size: 13px;
+    padding: 8px 16px;
+    border-radius: 999px;
+    border: 0.5px solid var(--border);
+    color: var(--text-secondary);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .pill.active {
+    background: var(--fill-primary);
+    color: var(--on-primary);
+    border-color: var(--fill-primary);
+  }
+</style>

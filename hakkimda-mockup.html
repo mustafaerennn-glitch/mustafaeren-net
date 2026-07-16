@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Mustafa Eren — Hakkımda sayfası mockup'ı (4 dilli)</title>
+<!--
+  HREFLANG NOTU (gerçek Astro implementasyonunda):
+  <link rel="alternate" hreflang="tr" href="https://mustafaeren.net/hakkimda/" />
+  <link rel="alternate" hreflang="en" href="https://mustafaeren.net/en/about/" />
+  <link rel="alternate" hreflang="de" href="https://mustafaeren.net/de/ueber-mich/" />
+  <link rel="alternate" hreflang="fr" href="https://mustafaeren.net/fr/a-propos/" />
+  <link rel="alternate" hreflang="x-default" href="https://mustafaeren.net/hakkimda/" />
+
+  Bu mockup'ta dil geçişi tek sayfada JS ile simüle ediliyor (gösterim kolaylığı için).
+  Gerçek sitede her dil ayrı URL/sayfa olacak (yukarıdaki hreflang haritası), nav de o dile göre
+  render olacak. Bu switcher, üstteki nav'a DOKUNMUYOR — sadece bu sayfanın içeriğini değiştiriyor,
+  çünkü site geneli dil değiştirici mekanizması (Faz 2, ayrı karar) henüz tasarlanmadı. Burada
+  gösterilen, Yazı/Basında detaylarındaki "diğer diller" meta-bileşeninin aynısı — sadece bu sayfada
+  koşullu değil, kalıcı ve 4 dilin tamamını kapsıyor.
+-->
+<style>
+  :root {
+    --surface-2: #ffffff;
+    --surface-1: #f1efe8;
+    --surface-0: #f7f6f2;
+    --text-primary: #1a1a18;
+    --text-secondary: #5f5e5a;
+    --text-muted: #888780;
+    --text-accent: #185fa5;
+    --border: rgba(0,0,0,0.1);
+    --fill-primary: #1a1a18;
+    --on-primary: #ffffff;
+    --radius: 8px;
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: var(--font-sans);
+    color: var(--text-primary);
+    background: var(--surface-0);
+    margin: 0;
+    padding: 2.5rem 1rem;
+  }
+  .page { max-width: 680px; margin: 0 auto; }
+  h1 { font-weight: 500; margin: 0; font-size: 26px; line-height: 1.3; }
+  h2 { font-weight: 500; margin: 0; font-size: 15px; }
+  p { margin: 0; }
+  nav.topnav {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 0 1rem; border-bottom: 0.5px solid var(--border);
+    margin-bottom: 2rem; flex-wrap: wrap; gap: 12px;
+  }
+  .brand { font-size: 16px; font-weight: 500; }
+  .nav-items { display: flex; gap: 18px; font-size: 13px; color: var(--text-secondary); flex-wrap: wrap; }
+  .nav-items .dropdown::after { content: " ▾"; font-size: 10px; }
+  .nav-items .current { color: var(--text-primary); font-weight: 500; }
+
+  .breadcrumb { font-size: 13px; color: var(--text-muted); margin-bottom: 1.75rem; }
+  .breadcrumb a { color: var(--text-muted); text-decoration: none; }
+  .breadcrumb .current { color: var(--text-secondary); }
+
+  /* Hero: fotoğraf + isim + dil switcher */
+  .bio-hero { display: flex; align-items: center; gap: 28px; margin-bottom: 2.25rem; }
+  .avatar {
+    width: 152px; height: 152px; flex-shrink: 0; border-radius: 50%;
+    background: var(--surface-1); border: 0.5px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--text-muted); font-size: 12px; text-align: center; overflow: hidden;
+  }
+  .avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .bio-info { flex: 1; min-width: 0; }
+  .role-eyebrow { font-size: 13px; color: var(--text-secondary); margin: 8px 0 16px; }
+
+  .lang-switch { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; font-size: 13px; }
+  .lang-switch button {
+    font-family: var(--font-sans); font-size: 13px; background: none; border: none;
+    padding: 2px 0; cursor: pointer; color: var(--text-accent); text-decoration: none;
+  }
+  .lang-switch button:hover { text-decoration: underline; }
+  .lang-switch button.current { color: var(--text-primary); font-weight: 600; cursor: default; }
+  .lang-switch button.current:hover { text-decoration: none; }
+  .lang-switch .sep { color: var(--text-muted); }
+
+  .bio-body { font-size: 15px; color: var(--text-secondary); line-height: 1.75; margin-bottom: 2.25rem; }
+  .bio-body p { margin-bottom: 1.1em; }
+  .bio-body p:last-child { margin-bottom: 0; }
+
+  .section { margin-bottom: 2.25rem; }
+  .section-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 1rem; }
+  .section-link { font-size: 13px; color: var(--text-accent); text-decoration: none; }
+
+  .books-box {
+    margin-top: 2.5rem;
+    background: var(--surface-1);
+    border-radius: 12px;
+    padding: 1.5rem 1.5rem 0.25rem;
+  }
+  .books-list { list-style: none; margin: 0; padding: 0; }
+  .books-list li {
+    padding: 12px 0; border-bottom: 0.5px solid var(--border);
+    font-size: 14px; color: var(--text-primary); line-height: 1.6;
+  }
+  .books-list li:last-child { border-bottom: none; }
+  .books-list a.book-title-link { color: var(--text-primary); text-decoration: none; font-weight: 500; }
+  .books-list a.book-title-link:hover { color: var(--text-accent); text-decoration: underline; }
+  .books-list .book-orig { color: var(--text-muted); font-style: italic; }
+  .books-list .book-year { color: var(--text-muted); }
+
+  footer.pagefooter {
+    border-top: 0.5px solid var(--border); padding-top: 1.25rem;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 13px; color: var(--text-muted);
+  }
+  .social-icons { display: flex; gap: 14px; align-items: center; color: var(--text-muted); }
+
+  @media (max-width: 600px) {
+    .bio-hero { flex-direction: column; }
+    .avatar { width: 120px; height: 120px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <nav class="topnav">
+    <span class="brand">Mustafa Eren</span>
+    <div class="nav-items">
+      <span>Yazılar</span>
+      <span class="dropdown">Videolar</span>
+      <span class="dropdown">Kitaplar</span>
+      <span>Basında</span>
+      <span class="dropdown">Konular</span>
+      <span class="current">Hakkımda</span>
+      <span>İletişim</span>
+    </div>
+  </nav>
+
+  <p class="breadcrumb"><a href="#">Ana sayfa</a> › <span class="current" id="bc-current">Hakkımda</span></p>
+
+  <div class="bio-hero">
+    <div class="avatar">[profil fotoğrafı]</div>
+    <div class="bio-info">
+      <h1 id="h1-name">Mustafa Eren</h1>
+      <p class="role-eyebrow" id="role-eyebrow">Sosyolog · Araştırmacı · Yazar</p>
+      <div class="lang-switch" id="lang-switch">
+        <button type="button" class="current" data-lang="tr">Türkçe</button>
+        <span class="sep">·</span>
+        <button type="button" data-lang="en">English</button>
+        <span class="sep">·</span>
+        <button type="button" data-lang="de">Deutsch</button>
+        <span class="sep">·</span>
+        <button type="button" data-lang="fr">Français</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="bio-body" id="bio-body"></div>
+
+  <div class="books-box">
+    <div class="section-head">
+      <h2 id="books-heading">Yayınlanmış Kitaplar</h2>
+      <a class="section-link" href="#">Tümünü gör</a>
+    </div>
+    <ul class="books-list" id="books-list"></ul>
+  </div>
+
+  <footer class="pagefooter" style="margin-top: 2.25rem;">
+    <span>© Mustafa Eren</span>
+    <div class="social-icons">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><title>X</title><line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/></svg>
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><title>Facebook</title><circle cx="12" cy="12" r="9"/><path d="M13.5 21v-6.5h2.2l.3-2.6h-2.5V10c0-.8.2-1.3 1.3-1.3h1.4V6.4c-.2 0-1-.1-2-.1-2 0-3.4 1.2-3.4 3.5v2.1H9v2.6h1.8V21"/></svg>
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><title>LinkedIn</title><rect x="3" y="3" width="18" height="18" rx="3"/><line x1="7.5" y1="10" x2="7.5" y2="17"/><circle cx="7.5" cy="6.8" r="0.9" fill="currentColor" stroke="none"/><line x1="11.5" y1="10" x2="11.5" y2="17"/><path d="M11.5 13.2c0-1.4.9-2.3 2.1-2.3 1.2 0 1.9.8 1.9 2.3V17"/></svg>
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><title>Academia</title><path d="M12 4l7.5 16M12 4L4.5 20"/><path d="M8 14.5h8"/></svg>
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><title>YouTube</title><rect x="3" y="6" width="18" height="12" rx="3"/><path d="M10.5 9.5l5 2.5-5 2.5v-5z" fill="currentColor" stroke="none"/></svg>
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><title>Bluesky</title><path d="M12 8c-1.5-3-4.5-5-6.5-4.5C4.2 4 4.5 7 6 9c-1.5.5-3 1.5-3 3s2 2.5 4 2c-1 1.5-1 3 0 4s3 .5 4-1c.5 1 1 1.5 1 1.5s.5-.5 1-1.5c1 1.5 3 2 4 1s1-2.5 0-4c2 .5 4-.5 4-2s-1.5-2.5-3-3c1.5-2 1.8-5 0-5.5C16.5 3 13.5 5 12 8z"/></svg>
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><title>Google Scholar</title><path d="M2 9l10-4 10 4-10 4-10-4z"/><path d="M6 11v4c0 1.1 2.7 2 6 2s6-.9 6-2v-4"/><path d="M22 9v5"/></svg>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+const CONTENT = {
+  tr: {
+    breadcrumb: "Hakkımda",
+    role: "Sosyolog · Araştırmacı · Yazar",
+    booksHeading: "Yayınlanmış Kitaplar",
+    paragraphs: [
+      "MSGSÜ Sosyoloji bölümünden mezun oldum, İstanbul Bilgi Üniversitesi'nde Kültürel İncelemeler yüksek lisansımı tamamladım. MSGSÜ'de doktora derslerine katıldım. 2019-2020 yıllarında Zürih Üniversitesi'nde misafir öğrenci olarak yüksek lisans derslerini takip ettim. 2026 yılında Schule für Sozialbegleitung'da Migrationsfachperson (Göç Uzmanlığı) programına başladım.",
+      "Çalışma alanlarım hapishaneler/kapatılma, emek, toplumsal hareketler, siyasi tarih, göç ve dezavantajlı gruplardır.",
+      "2011 yılından itibaren CİSST'te proje koordinatörü, yönetim kurulu üyesi ve yönetim kurulu başkanı olarak görev aldım. Eva Tanz ve Ayşegül Algan ile birlikte dernek bünyesinde Türkiye Hapishane Çalışmaları Merkezi'ni (Turkey's Center for Prison Studies-TCPS) ve Hapishane Çalışmaları Kütüphanesi'ni kurdum.",
+      "2012-2024 yılları arasında, bir arkadaşımla beraber, Açık Radyo'da Emeğin Gündemi programının yapımcılığını ve sunuculuğunu üstlendim.",
+      "2014 yılında Arel Üniversitesi'nde \"İnsan Hakları\" dersi verdim. 2012-2014 yılları arasında Sosyoloji Mezunları Derneği'nde (SOMDER) Yönetim Kurulu Üyeliği görevinde bulundum.",
+      "Hapishaneler konulu birçok kitabın editörlüğünü üstlendim ve çeşitli kitap, dergi ve online haber sitelerinde yazılarım yayımlandı.",
+      "MSGSÜ'de ve CİSST'te birçok projeye katıldım ve koordine ettim. İstanbul Toplumsal Araştırmalar Grubu'nun (İSTAG) kuruluşunda yer aldım.",
+      "Hakkımda sürmekte olan davalar ve hapis tehdidi nedeniyle 2018 yılında Türkiye'yi terk etmek zorunda kaldım ve çalışmalarımı yurtdışında sürdürüyorum. 2023 yılından bu yana araştırma ve yazı çalışmalarımın yanı sıra bir göç merkezinde Betreuer (sosyal destek görevlisi) olarak çalışıyorum."
+    ],
+    books: [
+      {slug:"kanli-pazar", title:"Kanlı Pazar / 1960'lar Türkiyesi'nde Milliyetçiler, İslamcılar ve Sol", year:"2012"},
+      {slug:"kapatilmanin-patolojisi", title:"Kapatılmanın Patolojisi / Osmanlı'dan Günümüze Hapishanenin Tarihi", year:"2014"},
+      {slug:"mahpus-haklari-el-kitabi", title:"Mahpus Hakları El Kitabı", note:"Başak Ekinci ile beraber", year:"2015"},
+      {slug:"haklarim-basvuru-kilavuzu", title:"Mahpuslar İçin Haklarım Başvuru Kılavuzu", year:"2016"},
+      {slug:"turkiye-hapishaneler-almanagi-2015", title:"Türkiye Hapishaneler Almanağı 2015", note:"Ayşegül Algan ve Duygu Koçoğlu ile beraber", year:"2016"}
+    ]
+  },
+  en: {
+    breadcrumb: "About",
+    role: "Sociologist · Researcher · Writer",
+    booksHeading: "Published Books",
+    paragraphs: [
+      "My undergraduate degree is from Mimar Sinan University of Fine Arts, Department of Sociology (Istanbul, Turkey). I hold a master's degree from Istanbul Bilgi University's Department of Cultural Studies, and I attended PhD seminars at Mimar Sinan University of Fine Arts. Between 2019 and 2020, I followed graduate courses as a visiting student at the University of Zurich. In 2026, I began the Migrationsfachperson (Migration Specialist) program at the Schule für Sozialbegleitung.",
+      "My areas of work are prisons/confinement, labour, social movements, political history, migration, and disadvantaged groups.",
+      "Since 2011, I have worked with the Civil Society in the Penal System Association (CİSST) as a project coordinator, board member, and chairman of the board. Together with Eva Tanz and Ayşegül Algan, I co-founded Turkey's Center for Prison Studies (TCPS) and the Prison Studies Library within the association.",
+      "Between 2012 and 2024, together with a friend, I produced and hosted the program Emeğin Gündemi (The Labour Agenda) on Açık Radyo.",
+      "In 2014, I taught a course on \"Human Rights\" at Arel University. Between 2012 and 2014, I served as a board member of the Association of Sociology Graduates (SOMDER).",
+      "I have edited numerous books on prisons, and my writing has appeared in books, journals, and various online news outlets.",
+      "I took part in and coordinated many projects at Mimar Sinan University and CİSST. I was also involved in founding the Istanbul Social Research Group (İSTAG).",
+      "Due to ongoing lawsuits and the threat of imprisonment, I was forced to leave Turkey in 2018 and have continued my work abroad since then. Since 2023, alongside my research and writing, I have worked as a Betreuer (support worker) at a migration center."
+    ],
+    books: [
+      {slug:"kanli-pazar", title:"The Bloody Sunday: Nationalists, Islamists and the Left in 1960s Turkey", orig:"Kanlı Pazar", year:"2012"},
+      {slug:"kapatilmanin-patolojisi", title:"The Pathology of Confinement: A History of Prisons from the Ottoman Era to the Present", orig:"Kapatılmanın Patolojisi", year:"2014"},
+      {slug:"mahpus-haklari-el-kitabi", title:"Handbook on Prisoners' Rights", note:"with Başak Ekinci", year:"2015"},
+      {slug:"haklarim-basvuru-kilavuzu", title:"Rights Application Guide for Prisoners", year:"2016"},
+      {slug:"turkiye-hapishaneler-almanagi-2015", title:"Turkey's Prisons Almanac 2015", note:"with Ayşegül Algan and Duygu Koçoğlu", year:"2016"}
+    ]
+  },
+  de: {
+    breadcrumb: "Über mich",
+    role: "Soziologe · Forscher · Autor",
+    booksHeading: "Veröffentlichte Bücher",
+    paragraphs: [
+      "Mein Bachelor-Abschluss ist von der Mimar Sinan Universität der Schönen Künste, Fachbereich Soziologie (Istanbul, Türkei). Ich habe einen Master-Abschluss im Fachbereich Kulturwissenschaften der Istanbul Bilgi Universität und habe Doktorandenseminare an der Mimar Sinan Universität besucht. Zwischen 2019 und 2020 habe ich als Gaststudent Masterlehrveranstaltungen an der Universität Zürich besucht. 2026 habe ich das Programm Migrationsfachperson an der Schule für Sozialbegleitung begonnen.",
+      "Meine Arbeitsbereiche sind Gefängnisse/Haft, Arbeit, soziale Bewegungen, politische Geschichte, Migration und benachteiligte Gruppen.",
+      "Seit 2011 bin ich bei der Ceza İnfaz Sisteminde Sivil Toplum Derneği (CİSST) tätig, als Projektkoordinator, Vorstandsmitglied und Vorstandsvorsitzender. Gemeinsam mit Eva Tanz und Ayşegül Algan habe ich innerhalb des Vereins das Turkey's Center for Prison Studies (TCPS) sowie die Hapishane Çalışmaları Kütüphanesi (Bibliothek für Gefängnisforschung) mitgegründet.",
+      "Zwischen 2012 und 2024 habe ich gemeinsam mit einer Freundin die Sendung Emeğin Gündemi (Die Arbeitsagenda) bei Açık Radyo produziert und moderiert.",
+      "2014 habe ich an der Arel Universität den Kurs \"Menschenrechte\" unterrichtet. Zwischen 2012 und 2014 war ich Vorstandsmitglied der Sosyoloji Mezunları Derneği (SOMDER, Vereinigung der Soziologie-Absolvent:innen).",
+      "Ich habe zahlreiche Bücher über Gefängnisse herausgegeben, und meine Texte wurden in Büchern, Zeitschriften und auf verschiedenen Online-Nachrichtenseiten veröffentlicht.",
+      "Ich habe an vielen Projekten der Mimar Sinan Universität und der CİSST teilgenommen bzw. diese koordiniert. Zudem war ich an der Gründung der İstanbul Toplumsal Araştırmalar Grubu (İSTAG, Istanbuler Gruppe für Gesellschaftsforschung) beteiligt.",
+      "Aufgrund laufender Gerichtsverfahren und drohender Haft musste ich die Türkei 2018 verlassen und setze meine Arbeit seither im Ausland fort. Seit 2023 arbeite ich neben meiner Forschungs- und Schreibtätigkeit als Betreuer in einem Migrationszentrum."
+    ],
+    books: [
+      {slug:"kanli-pazar", title:"Blutiger Sonntag: Nationalisten, Islamisten und die Linke in der Türkei der 1960er Jahre", orig:"Kanlı Pazar", year:"2012"},
+      {slug:"kapatilmanin-patolojisi", title:"Die Pathologie der Einsperrung: Geschichte der Gefängnisse vom Osmanischen Reich bis heute", orig:"Kapatılmanın Patolojisi", year:"2014"},
+      {slug:"mahpus-haklari-el-kitabi", title:"Handbuch der Gefangenenrechte", note:"mit Başak Ekinci", year:"2015"},
+      {slug:"haklarim-basvuru-kilavuzu", title:"Rechtsratgeber für Gefangene", year:"2016"},
+      {slug:"turkiye-hapishaneler-almanagi-2015", title:"Almanach der türkischen Gefängnisse 2015", note:"mit Ayşegül Algan und Duygu Koçoğlu", year:"2016"}
+    ]
+  },
+  fr: {
+    breadcrumb: "À propos",
+    role: "Sociologue · Chercheur · Auteur",
+    booksHeading: "Ouvrages publiés",
+    paragraphs: [
+      "J'ai obtenu ma licence en sociologie à l'Université des Beaux-Arts Mimar Sinan (Istanbul, Turquie). Je suis titulaire d'un master en études culturelles de l'Université Bilgi d'Istanbul et j'ai suivi des séminaires doctoraux à l'Université Mimar Sinan. Entre 2019 et 2020, j'ai suivi des cours de master en tant qu'étudiant invité à l'Université de Zurich. En 2026, j'ai débuté le programme Migrationsfachperson (spécialiste des migrations) à la Schule für Sozialbegleitung.",
+      "Mes domaines de travail sont les prisons/l'enfermement, le travail, les mouvements sociaux, l'histoire politique, la migration et les groupes désavantagés.",
+      "Depuis 2011, je suis engagé au sein de l'Association de la société civile dans le système carcéral (CİSST), où j'ai occupé les fonctions de coordinateur de projet, membre du conseil d'administration et président du conseil d'administration. Avec Eva Tanz et Ayşegül Algan, j'ai cofondé au sein de l'association le Centre pour l'étude des prisons de Turquie (TCPS) ainsi que sa bibliothèque de recherche.",
+      "Entre 2012 et 2024, avec un ami, j'ai produit et présenté l'émission Emeğin Gündemi (L'actualité du travail) sur Açık Radyo.",
+      "En 2014, j'ai enseigné le cours « Droits humains » à l'Université Arel. Entre 2012 et 2014, j'ai été membre du conseil d'administration de l'Association des diplômés de sociologie (SOMDER).",
+      "J'ai dirigé l'édition de nombreux ouvrages sur les prisons, et mes textes ont été publiés dans des livres, des revues et divers sites d'actualité en ligne.",
+      "J'ai participé à de nombreux projets à l'Université Mimar Sinan et au sein de CİSST, dont j'ai coordonné plusieurs. J'ai également pris part à la création du Groupe de recherches sociales d'Istanbul (İSTAG).",
+      "En raison de poursuites judiciaires en cours et de la menace d'emprisonnement, j'ai dû quitter la Turquie en 2018 et poursuis depuis lors mes travaux à l'étranger. Depuis 2023, en parallèle de mes recherches et de mes écrits, je travaille comme Betreuer (accompagnant social) dans un centre pour migrants."
+    ],
+    books: [
+      {slug:"kanli-pazar", title:"Le Dimanche sanglant : nationalistes, islamistes et gauche dans la Turquie des années 1960", orig:"Kanlı Pazar", year:"2012"},
+      {slug:"kapatilmanin-patolojisi", title:"La Pathologie de l'enfermement : histoire des prisons de l'époque ottomane à nos jours", orig:"Kapatılmanın Patolojisi", year:"2014"},
+      {slug:"mahpus-haklari-el-kitabi", title:"Manuel des droits du prisonnier", note:"avec Başak Ekinci", year:"2015"},
+      {slug:"haklarim-basvuru-kilavuzu", title:"Guide de recours pour les droits des prisonniers", year:"2016"},
+      {slug:"turkiye-hapishaneler-almanagi-2015", title:"Almanach des prisons de Turquie 2015", note:"avec Ayşegül Algan et Duygu Koçoğlu", year:"2016"}
+    ]
+  }
+};
+
+function renderLang(lang) {
+  const c = CONTENT[lang];
+
+  document.getElementById('bc-current').textContent = c.breadcrumb;
+  document.getElementById('role-eyebrow').textContent = c.role;
+  document.getElementById('books-heading').textContent = c.booksHeading;
+
+  const bioBody = document.getElementById('bio-body');
+  bioBody.innerHTML = c.paragraphs.map(p => `<p>${p}</p>`).join('');
+
+  const booksList = document.getElementById('books-list');
+  booksList.innerHTML = c.books.map(b => {
+    const orig = b.orig ? ` <span class="book-orig">(${b.orig})</span>` : '';
+    const note = b.note ? ` — ${b.note}` : '';
+    return `<li><a class="book-title-link" href="/kitap/${b.slug}/">${b.title}</a>${orig}${note} <span class="book-year">· ${b.year}</span></li>`;
+  }).join('');
+
+  document.querySelectorAll('#lang-switch button').forEach(btn => {
+    btn.classList.toggle('current', btn.dataset.lang === lang);
+  });
+
+  document.documentElement.lang = lang;
+}
+
+document.getElementById('lang-switch').addEventListener('click', (e) => {
+  const btn = e.target.closest('button[data-lang]');
+  if (!btn || btn.classList.contains('current')) return;
+  renderLang(btn.dataset.lang);
+});
+
+renderLang('tr');
+</script>
+</body>
+</html>

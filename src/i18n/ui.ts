@@ -1,0 +1,64 @@
+// Genel/indeks sayfalarındaki arayüz metinleri (nav/başlık/açıklama), sayfanın URL diline göre.
+// EN/DE/FR nav çevirileri bu fazda ilk kez üretiliyor (mockup'larda yalnızca TR var,
+// Hakkımda mockup'ının JS demosu hariç) — içerik kalitesi Faz 4-5'teki gerçek çeviri
+// sürecinde gözden geçirilecek, burada yalnızca teknik iskelet doğru çalışsın diye var.
+
+export const ui = {
+  tr: {
+    navYazilar: 'Yazılar',
+    navVideolar: 'Videolar',
+    navKitaplar: 'Kitaplar',
+    navBasinda: 'Basında',
+    navKonular: 'Konular',
+    navHakkimda: 'Hakkımda',
+    navIletisim: 'İletişim',
+    anaSayfa: 'Ana sayfa',
+    hakkimdaBaslik: 'Hakkımda',
+    hakkimdaOzet:
+      'Bu, i18n yönlendirme spike testi için oluşturulan örnek bir "genel sayfa" içeriğidir.',
+    iletisimNav: 'İletişim',
+  },
+  en: {
+    navYazilar: 'Articles',
+    navVideolar: 'Videos',
+    navKitaplar: 'Books',
+    navBasinda: 'Press',
+    navKonular: 'Topics',
+    navHakkimda: 'About',
+    navIletisim: 'Contact',
+    anaSayfa: 'Home',
+    hakkimdaBaslik: 'About',
+    hakkimdaOzet: 'This is a sample "general page" created to test the i18n routing spike.',
+    iletisimNav: 'Contact',
+  },
+  de: {
+    navYazilar: 'Artikel',
+    navVideolar: 'Videos',
+    navKitaplar: 'Bücher',
+    navBasinda: 'Presse',
+    navKonular: 'Themen',
+    navHakkimda: 'Über mich',
+    navIletisim: 'Kontakt',
+    anaSayfa: 'Startseite',
+    hakkimdaBaslik: 'Über mich',
+    hakkimdaOzet:
+      'Dies ist eine Beispiel-„allgemeine Seite“, die für den i18n-Routing-Spike erstellt wurde.',
+    iletisimNav: 'Kontakt',
+  },
+  fr: {
+    navYazilar: 'Articles',
+    navVideolar: 'Vidéos',
+    navKitaplar: 'Livres',
+    navBasinda: 'Presse',
+    navKonular: 'Sujets',
+    navHakkimda: 'À propos',
+    navIletisim: 'Contact',
+    anaSayfa: 'Accueil',
+    hakkimdaBaslik: 'À propos',
+    hakkimdaOzet:
+      'Ceci est un exemple de « page générale » créée pour tester le spike de routage i18n.',
+    iletisimNav: 'Contact',
+  },
+} as const;
+
+export type Locale = keyof typeof ui;

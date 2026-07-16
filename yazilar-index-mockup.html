@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Mustafa Eren — Yazılar indeks sayfası mockup'ı</title>
+<style>
+  :root {
+    --surface-2: #ffffff;
+    --surface-1: #f1efe8;
+    --surface-0: #f7f6f2;
+    --text-primary: #1a1a18;
+    --text-secondary: #5f5e5a;
+    --text-muted: #888780;
+    --text-accent: #185fa5;
+    --border: rgba(0,0,0,0.1);
+    --fill-primary: #1a1a18;
+    --on-primary: #ffffff;
+    --radius: 8px;
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: var(--font-sans);
+    color: var(--text-primary);
+    background: var(--surface-0);
+    margin: 0;
+    padding: 2.5rem 1rem;
+  }
+  .page { max-width: 680px; margin: 0 auto; }
+  h1 { font-weight: 500; margin: 0; font-size: 28px; }
+  p { margin: 0; }
+  nav.topnav {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 0 1rem; border-bottom: 0.5px solid var(--border);
+    margin-bottom: 2rem; flex-wrap: wrap; gap: 12px;
+  }
+  .brand { font-size: 16px; font-weight: 500; }
+  .nav-items { display: flex; gap: 18px; font-size: 13px; color: var(--text-secondary); flex-wrap: wrap; }
+  .nav-items .dropdown::after { content: " ▾"; font-size: 10px; }
+  .nav-items .current { color: var(--text-primary); font-weight: 500; }
+
+  .breadcrumb { font-size: 13px; color: var(--text-muted); margin-bottom: 1rem; }
+  .breadcrumb a { color: var(--text-muted); text-decoration: none; }
+  .breadcrumb .current { color: var(--text-secondary); }
+
+  .desc { font-size: 15px; color: var(--text-secondary); line-height: 1.7; max-width: 520px; margin: 1rem 0 1.75rem; }
+
+  /* Pill filtresi — ~30 granüler konu değil, dört araştırma alanı (+ Diğer). Kitaplar/Videolar'daki
+     "yönetilebilir sayıda pill" ilkesiyle tutarlı. Bu, nav'daki Konular dropdown'ı ve Alan Hub
+     sayfalarıyla aynı dört alanı kullanıyor — yeni bir taksonomi katmanı icat edilmiyor. */
+  .pills { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 1.75rem; }
+  .pill {
+    font-size: 13px; padding: 8px 16px; border-radius: 999px;
+    border: 0.5px solid var(--border); color: var(--text-secondary);
+  }
+  .pill.active { background: var(--fill-primary); color: var(--on-primary); border-color: var(--fill-primary); }
+
+  /* Satır listesi — Basında index'teki bileşenle birebir aynı, bugün iki katmanlı hiyerarşiye
+     çevrildi (başlık üstte güçlü, tarih+mecra altta soluk tek satır) — önceki "her şey aynı
+     ağırlıkta tek çizgi" hali tablo gibi duruyordu. Mecra artık kutu/pill değil, düz metin link
+     — konu-sayfasi-tasarimi.md'deki "mecra rozetleri kutu değil, düz metin" ilkesiyle şimdi
+     tutarlı (index'teki eski pill hali bu ilkeyle baştan tutarsızdı). Mecra hâlâ /mecra/'ye
+     gidiyor, ↗ yok (siteiçi). "Mustafaeren.net" fallback'i KALIYOR ama artık düz metin, tıklanamaz
+     — sitede ilk yayınlandığı açıkça görünsün diye, mecrasız gibi kalmasın diye tutuluyor. */
+  .press-list { border-top: 0.5px solid var(--border); margin-bottom: 1.5rem; }
+  .press-row {
+    display: flex; align-items: center; gap: 16px; padding: 16px 0;
+    border-bottom: 0.5px solid var(--border);
+  }
+  .press-main {
+    display: flex; flex-direction: column; gap: 6px; flex: 1; min-width: 0;
+  }
+  .press-title { font-size: 15.5px; font-weight: 500; line-height: 1.4; color: var(--text-primary); text-decoration: none; }
+  .press-row:hover .press-title { color: var(--text-accent); }
+  .press-meta { display: flex; gap: 6px; flex-wrap: wrap; font-size: 12.5px; color: var(--text-muted); }
+  .press-source-text { color: var(--text-muted); text-decoration: none; }
+  .press-source-text:hover { color: var(--text-accent); text-decoration: underline; }
+  .press-source-text--local { cursor: default; }
+  .press-source-text--local:hover { color: var(--text-muted); text-decoration: none; }
+  .press-arrow { color: var(--text-muted); flex-shrink: 0; transition: transform 0.15s ease; }
+  .press-row:hover .press-arrow { transform: translateX(3px); color: var(--text-accent); }
+
+  .pagination { display: flex; align-items: center; justify-content: center; gap: 18px; padding: 1.5rem 0; font-size: 14px; }
+  .page-num { color: var(--text-secondary); text-decoration: none; }
+  .page-num.active {
+    background: var(--fill-primary); color: var(--on-primary);
+    width: 28px; height: 28px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .page-num.next { color: var(--text-accent); text-decoration: underline; }
+
+  footer.pagefooter {
+    border-top: 0.5px solid var(--border); padding-top: 1.25rem;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 13px; color: var(--text-muted);
+  }
+  .social-icons { display: flex; gap: 14px; align-items: center; color: var(--text-muted); }
+  @media (max-width: 480px) {
+    .press-row { align-items: flex-start; }
+    .press-arrow { margin-top: 2px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <nav class="topnav">
+    <span class="brand">Mustafa Eren</span>
+    <div class="nav-items">
+      <span class="current">Yazılar</span>
+      <span class="dropdown">Videolar</span>
+      <span class="dropdown">Kitaplar</span>
+      <span>Basında</span>
+      <span class="dropdown">Konular</span>
+      <span>Hakkımda</span>
+      <span>İletişim</span>
+    </div>
+  </nav>
+
+  <p class="breadcrumb"><a href="#">Ana sayfa</a> › <span class="current">Yazılar</span></p>
+
+  <h1>Yazılar</h1>
+  <p class="desc">Hapishane çalışmaları, siyasi tarih, göç ve emek üzerine yazdıklarım.</p>
+
+  <div class="pills">
+    <span class="pill active">Tümü · 65</span>
+    <span class="pill">Hapishane · 38</span>
+    <span class="pill">Siyasi Tarih · 12</span>
+    <span class="pill">Göç · 6</span>
+    <span class="pill">Emek · 5</span>
+    <span class="pill">Diğer · 4</span>
+  </div>
+
+  <div class="press-list">
+
+
+    <div class="press-row">
+      <div class="press-main">
+        <a class="press-title" href="#">TBMM Hükümlü ve Tutuklu Hakları Alt Komisyonu'nda Dile Getirdiğim Görüşler</a>
+        <span class="press-meta">
+          <time>Haziran 2025</time><span>·</span>
+          <span class="press-source-text press-source-text--local">Mustafaeren.net</span>
+        </span>
+      </div>
+      <span class="press-arrow">→</span>
+    </div>
+
+    <div class="press-row">
+      <div class="press-main">
+        <a class="press-title" href="#">Barışın İlk Adımı: Siyasi Mahpuslara Özgürlük</a>
+        <span class="press-meta">
+          <time>Mayıs 2025</time><span>·</span>
+          <a class="press-source-text" href="#">Bianet</a>
+        </span>
+      </div>
+      <span class="press-arrow">→</span>
+    </div>
+
+    <div class="press-row">
+      <div class="press-main">
+        <a class="press-title" href="#">Yapay Zekâ Destekli İçerik Üretimi Üzerine Etik Politika</a>
+        <span class="press-meta">
+          <time>Nisan 2025</time><span>·</span>
+          <a class="press-source-text" href="#">Toplum ve Bilim</a>
+        </span>
+      </div>
+      <span class="press-arrow">→</span>
+    </div>
+
+    <div class="press-row">
+      <div class="press-main">
+        <a class="press-title" href="#">AKP, Kriminalizasyon ve "Kampüs" Hapishaneler Cumhuriyeti</a>
+        <span class="press-meta">
+          <time>Nisan 2025</time><span>·</span>
+          <a class="press-source-text" href="#">Bianet</a>
+        </span>
+      </div>
+      <span class="press-arrow">→</span>
+    </div>
+
+
+    <div class="press-row">
+      <div class="press-main">
+        <a class="press-title" href="#">Lümpenleşme Üzerine Notlar</a>
+        <span class="press-meta">
+          <time>Ocak 2024</time><span>·</span>
+          <a class="press-source-text" href="#">Birikim</a>
+        </span>
+      </div>
+      <span class="press-arrow">→</span>
+    </div>
+
+
+    <div class="press-row">
+      <div class="press-main">
+        <a class="press-title" href="#">Ceza İnfaz Sisteminde Dijitalleşme ve Denetim</a>
+        <span class="press-meta">
+          <time>Eylül 2023</time><span>·</span>
+          <a class="press-source-text" href="#">Bianet</a>
+        </span>
+      </div>
+      <span class="press-arrow">→</span>
+    </div>
+
+
+    <div class="press-row">
+      <div class="press-main">
+        <a class="press-title" href="#">Yeni Tip Hapishaneler ve Toplumsal Muhalefete Gözdağı</a>
+        <span class="press-meta">
+          <time>Ekim 2022</time><span>·</span>
+          <a class="press-source-text" href="#">Bianet</a>
+        </span>
+      </div>
+      <span class="press-arrow">→</span>
+    </div>
+
+    <div class="press-row">
+      <div class="press-main">
+        <a class="press-title" href="#">Hapishaneden Cezaevine: Türkiye'de Değişen Mahpusluk</a>
+        <span class="press-meta">
+          <time>Ağustos 2022</time><span>·</span>
+          <a class="press-source-text" href="#">Bianet</a>
+        </span>
+      </div>
+      <span class="press-arrow">→</span>
+    </div>
+
+    <div class="press-row">
+      <div class="press-main">
+        <a class="press-title" href="#">Göç Politikalarında Değişen Eksen</a>
+        <span class="press-meta">
+          <time>Mart 2022</time><span>·</span>
+          <a class="press-source-text" href="#">Açık Radyo</a>
+        </span>
+      </div>
+      <span class="press-arrow">→</span>
+    </div>
+
+
+    <div class="press-row">
+      <div class="press-main">
+        <a class="press-title" href="#">İşçi Mahpusların Sosyal Güvenlik Sorunu</a>
+        <span class="press-meta">
+          <time>Haziran 2021</time><span>·</span>
+          <a class="press-source-text" href="#">Birikim</a>
+        </span>
+      </div>
+      <span class="press-arrow">→</span>
+    </div>
+
+
+    <div class="press-row">
+      <div class="press-main">
+        <a class="press-title" href="#">Devletin Partileşmesi Üzerine</a>
+        <span class="press-meta">
+          <time>Kasım 2020</time><span>·</span>
+          <a class="press-source-text" href="#">Toplum ve Bilim</a>
+        </span>
+      </div>
+      <span class="press-arrow">→</span>
+    </div>
+
+    <div class="press-row">
+      <div class="press-main">
+        <a class="press-title" href="#">Göç, Emek ve Hapishane: Kesişen Alanlar Üzerine</a>
+        <span class="press-meta">
+          <time>Mart 2020</time><span>·</span>
+          <a class="press-source-text" href="#">Toplum ve Bilim</a>
+        </span>
+      </div>
+      <span class="press-arrow">→</span>
+    </div>
+
+  </div>
+
+  <div class="pagination">
+    <span class="page-num active">1</span>
+    <a class="page-num" href="#">2</a>
+    <a class="page-num" href="#">3</a>
+    <a class="page-num" href="#">4</a>
+    <a class="page-num next" href="#">Sonraki →</a>
+  </div>
+
+  <footer class="pagefooter">
+    <span>© Mustafa Eren</span>
+    <div class="social-icons">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><title>X</title><line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/></svg>
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><title>Facebook</title><circle cx="12" cy="12" r="9"/><path d="M13.5 21v-6.5h2.2l.3-2.6h-2.5V10c0-.8.2-1.3 1.3-1.3h1.4V6.4c-.2 0-1-.1-2-.1-2 0-3.4 1.2-3.4 3.5v2.1H9v2.6h1.8V21"/></svg>
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><title>LinkedIn</title><rect x="3" y="3" width="18" height="18" rx="3"/><line x1="7.5" y1="10" x2="7.5" y2="17"/><circle cx="7.5" cy="6.8" r="0.9" fill="currentColor" stroke="none"/><line x1="11.5" y1="10" x2="11.5" y2="17"/><path d="M11.5 13.2c0-1.4.9-2.3 2.1-2.3 1.2 0 1.9.8 1.9 2.3V17"/></svg>
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><title>Academia</title><path d="M2 9l10-4 10 4-10 4-10-4z"/><path d="M6 11v4c0 1.1 2.7 2 6 2s6-.9 6-2v-4"/><path d="M22 9v5"/></svg>
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><title>Mail</title><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+---
+import SocialIcon from './SocialIcon.astro';
+
+// Roadmap'te finalize edilen 7 ikonluk set (Mail kaldırıldı) — bkz. bilesen-envanteri.md §2.
+const SOCIAL_LINKS = [
+  { name: 'x' as const, href: 'https://x.com/' },
+  { name: 'facebook' as const, href: 'https://www.facebook.com/' },
+  { name: 'linkedin' as const, href: 'https://www.linkedin.com/' },
+  { name: 'academia' as const, href: 'https://independent.academia.edu/' },
+  { name: 'youtube' as const, href: 'https://www.youtube.com/' },
+  { name: 'bluesky' as const, href: 'https://bsky.app/' },
+  { name: 'scholar' as const, href: 'https://scholar.google.com/citations?user=ewQr0rAAAAAJ' },
+];
+---
+
+<footer class="pagefooter">
+  <span>© Mustafa Eren</span>
+  <div class="social-icons">
+    {
+      SOCIAL_LINKS.map((link) => (
+        <a href={link.href} target="_blank" rel="noopener">
+          <SocialIcon name={link.name} />
+        </a>
+      ))
+    }
+  </div>
+</footer>
+
+<style>
+  .pagefooter {
+    border-top: 0.5px solid var(--border);
+    padding-top: 1.25rem;
+    margin-top: 2.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+  .social-icons {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    color: var(--text-muted);
+  }
+  .social-icons a {
+    color: inherit;
+    display: flex;
+  }
+  .social-icons a:hover {
+    color: var(--text-primary);
+  }
+</style>

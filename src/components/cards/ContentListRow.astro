@@ -1,0 +1,77 @@
+---
+// Üç mockup'ta üç farklı isimle (related-row / content-row / kitap-detaydaki press-row) görülen
+// aynı satır deseni — tek component. Bkz. bilesen-envanteri.md §3a. "İlgili içerikler" (Yazı/
+// Basında/Video detay), "Alandaki tüm içerik" (Alan Hub/Konu sayfası), "Kitap üzerine" (Kitap
+// detay) hepsi bunu kullanır.
+
+interface Props {
+  date: string; // önceden formatlanmış ("Eki 2025", "2017")
+  badge: string; // içerik tipi ("Yazı"/"Video"/"Kitap"/"Basında") veya kaynak türü ("Haber"/"Söyleşi")
+  title: string;
+  href: string;
+  meta?: string; // başlıktan sonra soluk ek bilgi ("· Bianet")
+  topicBadge?: string; // sağda küçük konu etiketi — yalnızca Alan Hub'da kullanılıyor
+}
+
+const { date, badge, title, href, meta, topicBadge } = Astro.props;
+---
+
+<div class="content-row">
+  <span class="content-date">{date}</span>
+  <span class="content-type">{badge}</span>
+  <a class="content-title" href={href}>
+    {title}
+    {meta && <span class="row-meta">{meta}</span>}
+  </a>
+  {topicBadge && <span class="content-topic">{topicBadge}</span>}
+</div>
+
+<style>
+  .content-row {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    padding: 14px 0;
+    border-bottom: 0.5px solid var(--border);
+    flex-wrap: wrap;
+  }
+  .content-date {
+    font-size: 13px;
+    color: var(--text-muted);
+    width: 64px;
+    flex-shrink: 0;
+  }
+  .content-type {
+    font-size: 11px;
+    font-weight: 500;
+    padding: 3px 8px;
+    border-radius: var(--radius);
+    background: var(--surface-1);
+    color: var(--text-secondary);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .content-title {
+    font-size: 14px;
+    font-weight: 500;
+    flex: 1;
+    min-width: 180px;
+    color: var(--text-primary);
+    text-decoration: none;
+  }
+  .content-title:hover {
+    color: var(--text-accent);
+  }
+  .row-meta {
+    font-weight: 400;
+    color: var(--text-muted);
+  }
+  .content-topic {
+    font-size: 11px;
+    color: var(--text-accent);
+    white-space: nowrap;
+    border: 0.5px solid var(--border);
+    border-radius: 999px;
+    padding: 2px 9px;
+  }
+</style>
