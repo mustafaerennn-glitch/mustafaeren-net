@@ -46,6 +46,8 @@ export const ui = {
     yayineviSayfasi: 'Yayınevi sayfası',
     kapat: 'Kapat',
     kitaplarAciklama: 'Yazdığım ve editörlüğünü üstlendiğim kitaplar — hapishane çalışmaları, göç ve yakın siyasal tarih üzerine.',
+    videolarAciklama: 'Söyleşiler, konferans ve panel kayıtları, belgeseller — hapishane çalışmaları, göç ve yakın siyasal tarih üzerine.',
+    bosIcerikMesaji: 'Bu dilde henüz içerik yayımlanmadı.',
   },
   en: {
     navYazilar: 'Articles',
@@ -88,6 +90,8 @@ export const ui = {
     yayineviSayfasi: "Publisher's page",
     kapat: 'Close',
     kitaplarAciklama: 'English-language overviews of books I have written, originally published in Turkish — on prison studies, migration, and recent political history.',
+    videolarAciklama: 'Interviews, conference and panel recordings, documentaries — on prison studies, migration, and recent political history.',
+    bosIcerikMesaji: 'No content has been published in this language yet.',
   },
   de: {
     navYazilar: 'Artikel',
@@ -131,6 +135,8 @@ export const ui = {
     yayineviSayfasi: 'Verlagsseite',
     kapat: 'Schließen',
     kitaplarAciklama: 'Deutschsprachige Übersichten über von mir verfasste Bücher, die im Original auf Türkisch erschienen sind — zu Gefängnisforschung, Migration und jüngerer politischer Geschichte.',
+    videolarAciklama: 'Interviews, Konferenz- und Podiumsaufzeichnungen, Dokumentarfilme — zu Gefängnisforschung, Migration und jüngerer politischer Geschichte.',
+    bosIcerikMesaji: 'In dieser Sprache wurde noch kein Inhalt veröffentlicht.',
   },
   fr: {
     navYazilar: 'Articles',
@@ -174,6 +180,8 @@ export const ui = {
     yayineviSayfasi: "Page de l'éditeur",
     kapat: 'Fermer',
     kitaplarAciklama: "Aperçus en français de livres que j'ai écrits, publiés à l'origine en turc — sur les études carcérales, la migration et l'histoire politique récente.",
+    videolarAciklama: "Entretiens, enregistrements de conférences et de tables rondes, documentaires — sur les études carcérales, la migration et l'histoire politique récente.",
+    bosIcerikMesaji: "Aucun contenu n'a encore été publié dans cette langue.",
   },
 } as const;
 

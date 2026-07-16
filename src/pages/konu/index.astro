@@ -2,6 +2,9 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { ALAN_LABELS, ALAN_SLUGS } from '../../lib/taxonomy';
+import LangCountRow from '../../components/metadata/LangCountRow.astro';
+import { getContentCountsByLang } from '../../lib/availability';
+import type { Locale } from '../../i18n/routes';
 
 const lang = 'tr';
 if (Astro.currentLocale !== lang) {
@@ -14,6 +17,12 @@ const groups = ALAN_SLUGS.map((alan) => ({
   label: ALAN_LABELS[alan],
   topics: topics.filter((t) => t.data.alan === alan),
 }));
+
+const langCounts = await getContentCountsByLang();
+const langItems = (['tr', 'en', 'de', 'fr'] as Locale[]).map((l) => {
+  const c = langCounts[l];
+  return { lang: l, href: l === 'tr' ? '/konu/' : `/${l}/konu/`, count: c.yazilar + c.basinda + c.videolar + c.kitaplar };
+});
 ---
 
 <BaseLayout
@@ -26,6 +35,8 @@ const groups = ALAN_SLUGS.map((alan) => ({
 >
   <h1>Konular</h1>
   <p class="desc">Araştırma alanlarına göre gruplanmış tüm konu başlıkları.</p>
+
+  <LangCountRow currentLang={lang} items={langItems} />
 
   {
     groups.map(

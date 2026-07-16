@@ -1,0 +1,61 @@
+---
+// Index sayfalarında (Yazılar/Basında/Videolar/Kitaplar/Konular/Alan Hub) başlık+açıklamanın
+// altında, tür filtre pillerinin üstünde gösterilen dil+sayı satırı. LangCluster'la aynı görsel
+// dili kullanır (etiketsiz, nokta ile ayrılmış, aktif dil koyu) ama üç farklı durumu var:
+//   - Aktif dil: koyu, tıklanamaz.
+//   - Sayısı >0 olan diğer diller: link (o dildeki eşdeğer sayfaya gider).
+//   - Sayısı 0 olan diğer diller: soluk, tıklanamaz düz metin — kullanıcı "bu dilde henüz
+//     içerik yok" bilgisini görür ama var olmayan bir sayfaya yönlendirilmez.
+import { LANG_NAMES, type Locale } from '../../i18n/routes';
+
+interface Props {
+  currentLang: Locale;
+  items: { lang: Locale; href: string; count: number }[]; // TÜM 4 dil, count=0 dahil
+}
+
+const { currentLang, items } = Astro.props;
+---
+
+<div class="lang-count-row">
+  {
+    items.map((item, i) => (
+      <>
+        {i > 0 && ' · '}
+        {item.lang === currentLang ? (
+          <span class="lc-current">
+            {LANG_NAMES[item.lang]} ({item.count})
+          </span>
+        ) : item.count > 0 ? (
+          <a href={item.href}>
+            {LANG_NAMES[item.lang]} ({item.count})
+          </a>
+        ) : (
+          <span class="lc-empty">
+            {LANG_NAMES[item.lang]} ({item.count})
+          </span>
+        )}
+      </>
+    ))
+  }
+</div>
+
+<style>
+  .lang-count-row {
+    font-size: 13px;
+    margin: 0.75rem 0 1.5rem;
+  }
+  .lang-count-row a {
+    color: var(--text-accent);
+    text-decoration: none;
+  }
+  .lang-count-row a:hover {
+    text-decoration: underline;
+  }
+  .lc-current {
+    color: var(--text-primary);
+    font-weight: 600;
+  }
+  .lc-empty {
+    color: var(--text-muted);
+  }
+</style>

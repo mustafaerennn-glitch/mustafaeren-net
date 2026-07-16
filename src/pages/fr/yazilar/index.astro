@@ -1,19 +1,21 @@
 ---
 import { getCollection, getEntry } from 'astro:content';
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import PressList from '../../components/navigation/PressList.astro';
-import PressRow from '../../components/navigation/PressRow.astro';
-import Pills from '../../components/navigation/Pills.astro';
-import Pagination from '../../components/navigation/Pagination.astro';
-import { getAreasForTopicRefs, ALAN_LABELS } from '../../lib/taxonomy';
-import { contentUrl, type Locale } from '../../i18n/routes';
-import LangCountRow from '../../components/metadata/LangCountRow.astro';
-import { getContentCountsByLang } from '../../lib/availability';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PressList from '../../../components/navigation/PressList.astro';
+import PressRow from '../../../components/navigation/PressRow.astro';
+import Pills from '../../../components/navigation/Pills.astro';
+import Pagination from '../../../components/navigation/Pagination.astro';
+import LangCountRow from '../../../components/metadata/LangCountRow.astro';
+import { ALAN_LABELS_I18N, getAreasForTopicRefs } from '../../../lib/taxonomy';
+import { contentUrl, routes, type Locale } from '../../../i18n/routes';
+import { getContentCountsByLang } from '../../../lib/availability';
+import { ui } from '../../../i18n/ui';
 
-const lang = 'tr';
+const lang = 'fr';
 if (Astro.currentLocale !== lang) {
   throw new Error(`i18n locale eşleşmedi: beklenen "${lang}", Astro.currentLocale="${Astro.currentLocale}"`);
 }
+const t = ui[lang];
 
 const entries = await getCollection('yazilar', (e) => e.data.lang === lang);
 entries.sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime());
@@ -26,7 +28,7 @@ const rows = await Promise.all(
       href: contentUrl('yazilar', entry.data.lang, entry.id),
       title: entry.data.title,
       date: new Intl.DateTimeFormat(lang, { month: 'long', year: 'numeric' }).format(entry.data.publishDate),
-      secondary: mecra ? { label: mecra.data.ad, href: `/mecra/${mecra.id}/` } : { label: 'Mustafaeren.net' },
+      secondary: { label: mecra ? mecra.data.ad : 'Mustafaeren.net' },
       areas,
     };
   }),
@@ -38,11 +40,11 @@ for (const row of rows) {
 }
 const currentAlan = Astro.url.searchParams.get('alan');
 const pillItems = [
-  { label: 'Tümü', count: rows.length, href: '/yazilar/', active: !currentAlan },
-  ...Object.entries(ALAN_LABELS).map(([slug, label]) => ({
+  { label: t.pillTumu, count: rows.length, href: '/fr/yazilar/', active: !currentAlan },
+  ...Object.entries(ALAN_LABELS_I18N[lang]).map(([slug, label]) => ({
     label,
     count: areaCounts[slug] ?? 0,
-    href: `/yazilar/?alan=${slug}`,
+    href: `/fr/yazilar/?alan=${slug}`,
     active: currentAlan === slug,
   })),
 ];
@@ -57,30 +59,34 @@ const langItems = (['tr', 'en', 'de', 'fr'] as Locale[]).map((l) => ({
 
 <BaseLayout
   lang={lang}
-  title="Yazılar"
-  description="Hapishane çalışmaları, siyasi tarih, göç ve emek üzerine yazdıklarım."
-  canonical="/yazilar/"
+  title={t.navYazilar}
+  description={t.yazilarAciklama}
+  canonical="/fr/yazilar/"
   current="yazilar"
-  breadcrumb={[{ label: 'Ana sayfa', href: '/' }, { label: 'Yazılar' }]}
+  breadcrumb={[{ label: t.anaSayfa, href: routes.anaSayfa.fr }, { label: t.navYazilar }]}
 >
-  <h1>Yazılar</h1>
-  <p class="desc">Hapishane çalışmaları, siyasi tarih, göç ve emek üzerine yazdıklarım.</p>
+  <h1>{t.navYazilar}</h1>
+  <p class="desc">{t.yazilarAciklama}</p>
 
   <LangCountRow currentLang={lang} items={langItems} />
 
   <Pills items={pillItems} />
 
-  <PressList>
-    {
-      rows.map((row) => (
-        <div class="row-wrap" data-areas={row.areas.join(',')}>
-          <PressRow href={row.href} title={row.title} date={row.date} secondary={row.secondary} />
-        </div>
-      ))
-    }
-  </PressList>
+  {
+    rows.length === 0 ? (
+      <p class="empty-note">{t.bosIcerikMesaji}</p>
+    ) : (
+      <PressList>
+        {rows.map((row) => (
+          <div class="row-wrap" data-areas={row.areas.join(',')}>
+            <PressRow href={row.href} title={row.title} date={row.date} secondary={row.secondary} />
+          </div>
+        ))}
+      </PressList>
+    )
+  }
 
-  <Pagination currentPage={1} totalPages={1} basePath="/yazilar/" />
+  <Pagination currentPage={1} totalPages={1} basePath="/fr/yazilar/" />
 </BaseLayout>
 
 <style>
@@ -89,14 +95,16 @@ const langItems = (['tr', 'en', 'de', 'fr'] as Locale[]).map((l) => ({
     color: var(--text-secondary);
     line-height: 1.7;
     max-width: 520px;
-    margin: 1rem 0 1.75rem;
+    margin: 1rem 0 0;
+  }
+  .empty-note {
+    font-size: 14px;
+    color: var(--text-muted);
+    padding: 1.5rem 0;
   }
 </style>
 
 <script>
-  // İlerlemesel geliştirme: JS kapalıyken tüm liste görünür kalır (varsayılan sunucu render'ı).
-  // JS açıkken ?alan= sorgu parametresine göre satırları filtreler — statik site sayfalama
-  // için ayrı route üretmediğinden bu istemci tarafında yapılıyor.
   const params = new URLSearchParams(location.search);
   const alan = params.get('alan');
   if (alan) {

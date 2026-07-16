@@ -7,7 +7,9 @@ import Pills from '../../../components/navigation/Pills.astro';
 import Pagination from '../../../components/navigation/Pagination.astro';
 import { ALAN_LABELS_I18N } from '../../../lib/taxonomy';
 import { getAreasForTopicRefs } from '../../../lib/taxonomy';
-import { contentUrl, routes } from '../../../i18n/routes';
+import { contentUrl, routes, type Locale } from '../../../i18n/routes';
+import LangCountRow from '../../../components/metadata/LangCountRow.astro';
+import { getContentCountsByLang } from '../../../lib/availability';
 import { ui } from '../../../i18n/ui';
 
 const lang = 'de';
@@ -50,6 +52,13 @@ const pillItems = [
     active: currentAlan === slug,
   })),
 ];
+
+const langCounts = await getContentCountsByLang();
+const langItems = (['tr', 'en', 'de', 'fr'] as Locale[]).map((l) => ({
+  lang: l,
+  href: l === 'tr' ? '/yazilar/' : `/${l}/yazilar/`,
+  count: langCounts[l].yazilar,
+}));
 ---
 
 <BaseLayout
@@ -62,6 +71,8 @@ const pillItems = [
 >
   <h1>{t.navYazilar}</h1>
   <p class="desc">{t.yazilarAciklama}</p>
+
+  <LangCountRow currentLang={lang} items={langItems} />
 
   <Pills items={pillItems} />
 

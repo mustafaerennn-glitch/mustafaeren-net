@@ -1,25 +1,27 @@
 ---
 import { getCollection, getEntry } from 'astro:content';
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import VideoCard from '../../components/cards/VideoCard.astro';
-import Pills from '../../components/navigation/Pills.astro';
-import Pagination from '../../components/navigation/Pagination.astro';
-import { contentUrl, type Locale } from '../../i18n/routes';
-import { formatDuration } from '../../lib/format';
-import { getAreasForTopicRefs, ALAN_LABELS } from '../../lib/taxonomy';
-import LangCountRow from '../../components/metadata/LangCountRow.astro';
-import { getContentCountsByLang } from '../../lib/availability';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import VideoCard from '../../../components/cards/VideoCard.astro';
+import Pills from '../../../components/navigation/Pills.astro';
+import Pagination from '../../../components/navigation/Pagination.astro';
+import LangCountRow from '../../../components/metadata/LangCountRow.astro';
+import { contentUrl, routes, type Locale } from '../../../i18n/routes';
+import { formatDuration } from '../../../lib/format';
+import { getAreasForTopicRefs, ALAN_LABELS_I18N } from '../../../lib/taxonomy';
+import { getContentCountsByLang } from '../../../lib/availability';
+import { ui } from '../../../i18n/ui';
 
-const lang = 'tr';
+const lang = 'de';
 if (Astro.currentLocale !== lang) {
   throw new Error(`i18n locale eşleşmedi: beklenen "${lang}", Astro.currentLocale="${Astro.currentLocale}"`);
 }
+const t = ui[lang];
 
 const VIDEO_TURU_LABELS: Record<string, string> = {
-  söyleşi: 'Söyleşi',
-  belgesel: 'Belgesel',
-  'konferans-panel': 'Konferans / Panel',
-  'kısa-video': 'Kısa videolar',
+  'söyleşi': 'Gespräch',
+  belgesel: 'Dokumentarfilm',
+  'konferans-panel': 'Konferenz / Podium',
+  'kısa-video': 'Kurzvideos',
 };
 
 const entries = await getCollection('videolar', (e) => e.data.lang === lang);
@@ -39,7 +41,7 @@ const cards = await Promise.all(
       videoTuru: entry.data.videoTuru,
       sourceText: `${mecra ? mecra.data.ad : 'Mustafaeren.net'} · ${year}`,
       duration: formatDuration(entry.data.durationMinutes, lang),
-      area: areas[0] ? ALAN_LABELS[areas[0]] : undefined,
+      area: areas[0] ? ALAN_LABELS_I18N[lang][areas[0]] : undefined,
     };
   }),
 );
@@ -49,11 +51,11 @@ for (const c of cards) turCounts[c.videoTuru] = (turCounts[c.videoTuru] ?? 0) + 
 
 const currentTur = Astro.url.searchParams.get('tur');
 const pillItems = [
-  { label: 'Tümü', count: cards.length, href: '/videolar/', active: !currentTur },
+  { label: t.pillTumu, count: cards.length, href: '/de/videolar/', active: !currentTur },
   ...Object.entries(VIDEO_TURU_LABELS).map(([tur, label]) => ({
     label,
     count: turCounts[tur] ?? 0,
-    href: `/videolar/?tur=${tur}`,
+    href: `/de/videolar/?tur=${tur}`,
     active: currentTur === tur,
   })),
 ];
@@ -68,31 +70,35 @@ const langItems = (['tr', 'en', 'de', 'fr'] as Locale[]).map((l) => ({
 
 <BaseLayout
   lang={lang}
-  title="Videolar"
-  description="Söyleşiler, konferans ve panel kayıtları, belgeseller — hapishane çalışmaları, göç ve yakın siyasal tarih üzerine."
-  canonical="/videolar/"
+  title={t.navVideolar}
+  description={t.videolarAciklama}
+  canonical="/de/videolar/"
   current="videolar"
-  breadcrumb={[{ label: 'Ana sayfa', href: '/' }, { label: 'Videolar' }]}
+  breadcrumb={[{ label: t.anaSayfa, href: routes.anaSayfa.de }, { label: t.navVideolar }]}
   pageWidth="760px"
 >
-  <h1>Videolar</h1>
-  <p class="desc">Söyleşiler, konferans ve panel kayıtları, belgeseller — hapishane çalışmaları, göç ve yakın siyasal tarih üzerine.</p>
+  <h1>{t.navVideolar}</h1>
+  <p class="desc">{t.videolarAciklama}</p>
 
   <LangCountRow currentLang={lang} items={langItems} />
 
   <Pills items={pillItems} />
 
-  <div class="video-grid">
-    {
-      cards.map((c) => (
-        <div class="card-wrap" data-tur={c.videoTuru}>
-          <VideoCard href={c.href} thumbnail={c.thumbnail} thumbnailAlt={c.thumbnailAlt} title={c.title} typeBadge={c.typeBadge} sourceText={c.sourceText} duration={c.duration} area={c.area} />
-        </div>
-      ))
-    }
-  </div>
+  {
+    cards.length === 0 ? (
+      <p class="empty-note">{t.bosIcerikMesaji}</p>
+    ) : (
+      <div class="video-grid">
+        {cards.map((c) => (
+          <div class="card-wrap" data-tur={c.videoTuru}>
+            <VideoCard href={c.href} thumbnail={c.thumbnail} thumbnailAlt={c.thumbnailAlt} title={c.title} typeBadge={c.typeBadge} sourceText={c.sourceText} duration={c.duration} area={c.area} />
+          </div>
+        ))}
+      </div>
+    )
+  }
 
-  <Pagination currentPage={1} totalPages={1} basePath="/videolar/" />
+  <Pagination currentPage={1} totalPages={1} basePath="/de/videolar/" />
 </BaseLayout>
 
 <style>
@@ -101,7 +107,12 @@ const langItems = (['tr', 'en', 'de', 'fr'] as Locale[]).map((l) => ({
     color: var(--text-secondary);
     line-height: 1.7;
     max-width: 520px;
-    margin: 1rem 0 1.5rem;
+    margin: 1rem 0 0;
+  }
+  .empty-note {
+    font-size: 14px;
+    color: var(--text-muted);
+    padding: 1.5rem 0;
   }
   .video-grid {
     display: grid;

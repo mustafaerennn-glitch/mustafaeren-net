@@ -2,13 +2,15 @@
 import { ui, type Locale } from '../../i18n/ui';
 import { routes, LANG_NAMES } from '../../i18n/routes';
 import { ALAN_LABELS, ALAN_LABELS_I18N, ALAN_SLUGS } from '../../lib/taxonomy';
-import { getContentAvailability } from '../../lib/availability';
 import LangCluster from '../metadata/LangCluster.astro';
 
-// İlke (kullanıcı onaylı): kullanıcı hangi dili seçtiyse, yalnızca o dilde mevcut içerik
-// gösterilir — başka dile fallback YOK. Bir koleksiyonda (Yazılar/Basında/Videolar/Kitaplar)
-// o dilde hiç gerçek girdi yoksa, o menü öğesi bu dilde hiç gösterilmez (bkz. lib/availability.ts).
-// İletişim'in henüz per-locale sayfası yok, o yüzden TR'ye gider (ayrı, bilinen bir eksik).
+// İlke (kullanıcı onaylı, revize edildi): Nav'daki menü öğeleri artık HER dilde her zaman
+// gösterilir, içerik sayısı 0 olsa bile (örn. Fransızca'da "Videolar" görünür durumda kalır).
+// Şeffaflık ilkesi: kullanıcı, sitenin diğer dillerde ne kadar içerik barındırdığını fark
+// edebilsin. Her index sayfasının kendisinde ayrıca bir dil+sayı satırı var (bkz.
+// LangCountRow.astro) — 0 içerikli diller orada da görünür ama tıklanamaz; Nav'daki link ise
+// her zaman gerçek (ve artık her dil için var olan) sayfaya gider. İletişim'in henüz
+// per-locale sayfası yok, o yüzden TR'ye gider (ayrı, bilinen bir eksik).
 
 interface Props {
   lang: Locale;
@@ -21,7 +23,6 @@ const { lang, current, alternates = [] } = Astro.props;
 const t = ui[lang];
 const showSwitcher = alternates.length > 1;
 const otherLangs = alternates.filter((a) => a.lang !== lang);
-const availability = await getContentAvailability(lang);
 
 const alanLabels = lang === 'tr' ? ALAN_LABELS : ALAN_LABELS_I18N[lang];
 const ALANLAR = ALAN_SLUGS.filter((slug) => slug !== 'diger').map((slug) => ({ slug, label: alanLabels[slug] }));
@@ -61,33 +62,25 @@ const basindaHref = `${localePrefix}/basinda/`;
   <nav class:list={['topnav', { 'has-switcher': showSwitcher }]}>
     <a class="brand" href={brandHref}>Mustafa Eren</a>
     <div class="nav-items">
-      {availability.yazilar && (
-        <a class:list={['nav-link', { current: current === 'yazilar' }]} href={yazilarHref}>{t.navYazilar}</a>
-      )}
+      <a class:list={['nav-link', { current: current === 'yazilar' }]} href={yazilarHref}>{t.navYazilar}</a>
 
-      {availability.videolar && (
-        <details class="dropdown">
-          <summary class:list={{ current: current === 'videolar' }}>{t.navVideolar}</summary>
-          <div class="menu">
-            <a href={`${localePrefix}/videolar/`}>{t.pillTumu}</a>
-            {VIDEO_TURLERI.map((v) => <a href={`${localePrefix}/videolar/?tur=${v.tur}`}>{v.label}</a>)}
-          </div>
-        </details>
-      )}
+      <details class="dropdown">
+        <summary class:list={{ current: current === 'videolar' }}>{t.navVideolar}</summary>
+        <div class="menu">
+          <a href={`${localePrefix}/videolar/`}>{t.pillTumu}</a>
+          {VIDEO_TURLERI.map((v) => <a href={`${localePrefix}/videolar/?tur=${v.tur}`}>{v.label}</a>)}
+        </div>
+      </details>
 
-      {availability.kitaplar && (
-        <details class="dropdown">
-          <summary class:list={{ current: current === 'kitaplar' }}>{t.navKitaplar}</summary>
-          <div class="menu">
-            <a href={`${localePrefix}/kitaplar/`}>{t.pillTumu}</a>
-            {KITAP_TURLERI.map((k) => <a href={`${localePrefix}/kitaplar/?tip=${k.tip}`}>{k.label}</a>)}
-          </div>
-        </details>
-      )}
+      <details class="dropdown">
+        <summary class:list={{ current: current === 'kitaplar' }}>{t.navKitaplar}</summary>
+        <div class="menu">
+          <a href={`${localePrefix}/kitaplar/`}>{t.pillTumu}</a>
+          {KITAP_TURLERI.map((k) => <a href={`${localePrefix}/kitaplar/?tip=${k.tip}`}>{k.label}</a>)}
+        </div>
+      </details>
 
-      {availability.basinda && (
-        <a class:list={['nav-link', { current: current === 'basinda' }]} href={basindaHref}>{t.navBasinda}</a>
-      )}
+      <a class:list={['nav-link', { current: current === 'basinda' }]} href={basindaHref}>{t.navBasinda}</a>
 
       <details class="dropdown">
         <summary class:list={{ current: current === 'konular' }}>{t.navKonular}</summary>
@@ -225,3 +218,12 @@ const basindaHref = `${localePrefix}/basinda/`;
     }
   }
 </style>
+
+<script>
+  // Açık bir dropdown'ın dışına tıklanınca kapanır (talimat: bu artık evrensel bir refleks).
+  document.addEventListener('click', (e) => {
+    document.querySelectorAll<HTMLDetailsElement>('.dropdown[open]').forEach((details) => {
+      if (!details.contains(e.target as Node)) details.removeAttribute('open');
+    });
+  });
+</script>

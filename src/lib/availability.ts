@@ -1,28 +1,37 @@
 import { getCollection } from 'astro:content';
+import type { Locale } from '../i18n/routes';
 
-export interface ContentAvailability {
-  yazilar: boolean;
-  basinda: boolean;
-  videolar: boolean;
-  kitaplar: boolean;
+export interface ContentCounts {
+  yazilar: number;
+  basinda: number;
+  videolar: number;
+  kitaplar: number;
 }
 
+const LOCALES: Locale[] = ['tr', 'en', 'de', 'fr'];
+
 /**
- * Bir dilde her koleksiyonda en az 1 gerçek girdi var mı — Nav'da o dile ait menü öğesini
- * göstermek/gizlemek için kullanılır (talimat: bir dilde hiç içerik yoksa menü öğesi
- * gösterilmez, boş sayfaya ya da başka dile yönlendirme yapılmaz).
+ * 4 koleksiyonun (Yazılar/Basında/Videolar/Kitaplar) her dildeki gerçek girdi sayısı —
+ * index sayfalarındaki "Türkçe (145) · English (10) · ..." dil+sayı satırı için kullanılır
+ * (bkz. LangCountRow.astro). Tek seferde tüm koleksiyonları okuyup dile göre gruplar,
+ * her sayfa için ayrı ayrı 4 dil × 4 koleksiyon sorgusu yapmaktan kaçınır.
  */
-export async function getContentAvailability(lang: string): Promise<ContentAvailability> {
+export async function getContentCountsByLang(): Promise<Record<Locale, ContentCounts>> {
   const [yazilar, basinda, videolar, kitaplar] = await Promise.all([
-    getCollection('yazilar', (e) => e.data.lang === lang),
-    getCollection('basinda', (e) => e.data.lang === lang),
-    getCollection('videolar', (e) => e.data.lang === lang),
-    getCollection('kitaplar', (e) => e.data.lang === lang),
+    getCollection('yazilar'),
+    getCollection('basinda'),
+    getCollection('videolar'),
+    getCollection('kitaplar'),
   ]);
-  return {
-    yazilar: yazilar.length > 0,
-    basinda: basinda.length > 0,
-    videolar: videolar.length > 0,
-    kitaplar: kitaplar.length > 0,
-  };
+
+  const counts = Object.fromEntries(
+    LOCALES.map((l) => [l, { yazilar: 0, basinda: 0, videolar: 0, kitaplar: 0 }]),
+  ) as Record<Locale, ContentCounts>;
+
+  for (const e of yazilar) counts[e.data.lang as Locale].yazilar++;
+  for (const e of basinda) counts[e.data.lang as Locale].basinda++;
+  for (const e of videolar) counts[e.data.lang as Locale].videolar++;
+  for (const e of kitaplar) counts[e.data.lang as Locale].kitaplar++;
+
+  return counts;
 }

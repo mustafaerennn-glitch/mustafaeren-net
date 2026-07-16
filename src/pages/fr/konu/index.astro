@@ -3,7 +3,9 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { ALAN_LABELS_I18N, ALAN_SLUGS } from '../../../lib/taxonomy';
 import { TOPIC_LABELS_I18N } from '../../../i18n/topics';
-import { routes } from '../../../i18n/routes';
+import { routes, type Locale } from '../../../i18n/routes';
+import LangCountRow from '../../../components/metadata/LangCountRow.astro';
+import { getContentCountsByLang } from '../../../lib/availability';
 import { ui } from '../../../i18n/ui';
 
 const lang = 'fr';
@@ -30,6 +32,12 @@ const groups = ALAN_SLUGS.map((alan) => ({
   label: ALAN_LABELS_I18N[lang][alan],
   topics: topics.filter((tp) => tp.data.alan === alan && topicIdsWithContent.has(tp.id)),
 })).filter((g) => g.topics.length > 0);
+
+const langCounts = await getContentCountsByLang();
+const langItems = (['tr', 'en', 'de', 'fr'] as Locale[]).map((l) => {
+  const c = langCounts[l];
+  return { lang: l, href: l === 'tr' ? '/konu/' : `/${l}/konu/`, count: c.yazilar + c.basinda + c.videolar + c.kitaplar };
+});
 ---
 
 <BaseLayout
@@ -42,6 +50,8 @@ const groups = ALAN_SLUGS.map((alan) => ({
 >
   <h1>{t.navKonular}</h1>
   <p class="desc">{t.konularAciklama}</p>
+
+  <LangCountRow currentLang={lang} items={langItems} />
 
   {
     groups.map((group) => (

@@ -4,8 +4,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Pills from '../../components/navigation/Pills.astro';
 import ContentListRow from '../../components/cards/ContentListRow.astro';
 import Pagination from '../../components/navigation/Pagination.astro';
-import { ALAN_LABELS, ALAN_SLUGS } from '../../lib/taxonomy';
-import { contentUrl } from '../../i18n/routes';
+import { ALAN_LABELS, ALAN_SLUGS, getAreaCounts } from '../../lib/taxonomy';
+import { contentUrl, type Locale } from '../../i18n/routes';
+import LangCountRow from '../../components/metadata/LangCountRow.astro';
 
 export async function getStaticPaths() {
   return ALAN_SLUGS.map((alan) => ({ params: { alan } }));
@@ -89,6 +90,14 @@ const mecraEntries = (
 
 const topicLabelById = new Map(topics.map((t) => [t.id, t.data.ad]));
 const TIP_TO_QUERY: Record<Item['tip'], string> = { Yazı: 'yazi', Basında: 'basinda', Video: 'video', Kitap: 'kitap' };
+
+const LOCALES: Locale[] = ['tr', 'en', 'de', 'fr'];
+const areaCountsByLang = await Promise.all(LOCALES.map((l) => getAreaCounts(l)));
+const langItems = LOCALES.map((l, i) => ({
+  lang: l,
+  href: l === 'tr' ? `/alanlar/${alan}/` : `/${l}/alanlar/${alan}/`,
+  count: areaCountsByLang[i][alan as string] ?? 0,
+}));
 ---
 
 <BaseLayout
@@ -103,6 +112,8 @@ const TIP_TO_QUERY: Record<Item['tip'], string> = { Yazı: 'yazi', Basında: 'ba
   <h1>{alanLabel}</h1>
   <p class="desc">{`${alanLabel} alanındaki ${topicsWithCounts.length} konu başlığını bir araya getiren araştırma alanı.`}</p>
   <p class="meta-line">{items.length} içerik · {topicsWithCounts.length} konu</p>
+
+  <LangCountRow currentLang={lang} items={langItems} />
 
   {
     topicsWithCounts.length > 0 && (

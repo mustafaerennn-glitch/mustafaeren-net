@@ -4,7 +4,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import PressList from '../../components/navigation/PressList.astro';
 import PressRow from '../../components/navigation/PressRow.astro';
 import Pagination from '../../components/navigation/Pagination.astro';
-import { contentUrl } from '../../i18n/routes';
+import { contentUrl, type Locale } from '../../i18n/routes';
+import LangCountRow from '../../components/metadata/LangCountRow.astro';
+import { getContentCountsByLang } from '../../lib/availability';
 
 const lang = 'tr';
 if (Astro.currentLocale !== lang) {
@@ -31,6 +33,13 @@ const lastUpdate = entries.length
       entries.reduce((latest, e) => (e.data.publishDate > latest ? e.data.publishDate : latest), entries[0].data.publishDate),
     )
   : null;
+
+const langCounts = await getContentCountsByLang();
+const langItems = (['tr', 'en', 'de', 'fr'] as Locale[]).map((l) => ({
+  lang: l,
+  href: l === 'tr' ? '/basinda/' : `/${l}/basinda/`,
+  count: langCounts[l].basinda,
+}));
 ---
 
 <BaseLayout
@@ -44,6 +53,8 @@ const lastUpdate = entries.length
   <h1>Basında</h1>
   <p class="desc">Söyleşiler, röportajlar ve hakkımda çıkan haberler — hapishane çalışmaları, göç ve yakın siyasal tarih üzerine.</p>
   {lastUpdate && <p class="meta-line">{rows.length} içerik · son güncelleme {lastUpdate}</p>}
+
+  <LangCountRow currentLang={lang} items={langItems} />
 
   <PressList>
     {rows.map((row) => <PressRow href={row.href} title={row.title} date={row.date} secondary={row.secondary} />)}

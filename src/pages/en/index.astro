@@ -5,7 +5,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import BookCard from '../../components/cards/BookCard.astro';
 import { getAreaCounts, ALAN_LABELS, ALAN_LABELS_I18N } from '../../lib/taxonomy';
 import { getMergedFeed } from '../../lib/feed';
-import { getContentAvailability } from '../../lib/availability';
+import { getContentCountsByLang } from '../../lib/availability';
 import { routes, type Locale } from '../../i18n/routes';
 import { ui } from '../../i18n/ui';
 import profilFoto from '../../assets/profil-fotografi.jpg';
@@ -17,13 +17,13 @@ if (Astro.currentLocale !== lang) {
 
 const t = ui[lang];
 const alternates = (Object.entries(routes.anaSayfa) as [Locale, string][]).map(([l, href]) => ({ lang: l, href }));
-const availability = await getContentAvailability(lang);
+const contentCounts = (await getContentCountsByLang())[lang];
 
 // İlke: kullanıcı bu dildeyse yalnızca bu dilde mevcut içeriğe yönlendirilir — Yazılar boşsa
 // (bu dilde hiç yoksa) birincil CTA Basında'ya döner, o da boşsa buton hiç gösterilmez.
-const primaryCta = availability.yazilar
+const primaryCta = contentCounts.yazilar > 0
   ? { href: '/en/yazilar/', label: t.anaSayfaCtaYazilar }
-  : availability.basinda
+  : contentCounts.basinda > 0
     ? { href: '/en/basinda/', label: t.navBasinda }
     : null;
 

@@ -4,7 +4,9 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 import BookCard from '../../../components/cards/BookCard.astro';
 import Pills from '../../../components/navigation/Pills.astro';
 import Pagination from '../../../components/navigation/Pagination.astro';
-import { routes } from '../../../i18n/routes';
+import { routes, type Locale } from '../../../i18n/routes';
+import LangCountRow from '../../../components/metadata/LangCountRow.astro';
+import { getContentCountsByLang } from '../../../lib/availability';
 import { ui } from '../../../i18n/ui';
 
 const lang = 'de';
@@ -36,6 +38,13 @@ const pillItems = [
       active: currentTip === tip,
     })),
 ];
+
+const langCounts = await getContentCountsByLang();
+const langItems = (['tr', 'en', 'de', 'fr'] as Locale[]).map((l) => ({
+  lang: l,
+  href: l === 'tr' ? '/kitaplar/' : `/${l}/kitaplar/`,
+  count: langCounts[l].kitaplar,
+}));
 ---
 
 <BaseLayout
@@ -48,6 +57,8 @@ const pillItems = [
 >
   <h1>{t.navKitaplar}</h1>
   <p class="desc">{t.kitaplarAciklama}</p>
+
+  <LangCountRow currentLang={lang} items={langItems} />
 
   <Pills items={pillItems} />
 
