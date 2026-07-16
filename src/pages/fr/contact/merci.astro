@@ -1,9 +1,9 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import { routes } from '../../i18n/routes';
-import { ui } from '../../i18n/ui';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { routes } from '../../../i18n/routes';
+import { ui } from '../../../i18n/ui';
 
-const lang = 'tr';
+const lang = 'fr';
 if (Astro.currentLocale !== lang) {
   throw new Error(`i18n locale eşleşmedi: beklenen "${lang}", Astro.currentLocale="${Astro.currentLocale}"`);
 }
@@ -14,17 +14,17 @@ const t = ui[lang];
 <BaseLayout
   lang={lang}
   title={t.tesekkurBaslik}
-  canonical={`${routes.iletisim.tr}tesekkur/`}
+  canonical={`${routes.iletisim.fr}merci/`}
   current="iletisim"
   breadcrumb={[
-    { label: t.anaSayfa, href: routes.anaSayfa.tr },
-    { label: t.navIletisim, href: routes.iletisim.tr },
+    { label: t.anaSayfa, href: routes.anaSayfa.fr },
+    { label: t.navIletisim, href: routes.iletisim.fr },
     { label: t.tesekkurler },
   ]}
 >
   <h1>{t.tesekkurBaslikH1}</h1>
   <p class="desc">{t.tesekkurAciklama}</p>
-  <a class="btn-secondary" href={routes.anaSayfa.tr}>{t.anaSayfayaDon}</a>
+  <a class="btn-secondary" href={routes.anaSayfa.fr}>{t.anaSayfayaDon}</a>
 </BaseLayout>
 
 <style>

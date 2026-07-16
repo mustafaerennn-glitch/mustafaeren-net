@@ -9,8 +9,7 @@ import LangCluster from '../metadata/LangCluster.astro';
 // Şeffaflık ilkesi: kullanıcı, sitenin diğer dillerde ne kadar içerik barındırdığını fark
 // edebilsin. Her index sayfasının kendisinde ayrıca bir dil+sayı satırı var (bkz.
 // LangCountRow.astro) — 0 içerikli diller orada da görünür ama tıklanamaz; Nav'daki link ise
-// her zaman gerçek (ve artık her dil için var olan) sayfaya gider. İletişim'in henüz
-// per-locale sayfası yok, o yüzden TR'ye gider (ayrı, bilinen bir eksik).
+// her zaman gerçek sayfaya gider.
 
 interface Props {
   lang: Locale;
@@ -50,6 +49,7 @@ const KITAP_TURLERI = (['yazdıklarım', 'editörlük', 'katkılar'] as const).m
 }));
 
 const hakkimdaHref = routes.hakkimda[lang];
+const iletisimHref = routes.iletisim[lang];
 // Ana sayfa artık 4 dilde de gerçek (bkz. src/pages/{en,de,fr}/index.astro).
 const brandHref = routes.anaSayfa[lang];
 
@@ -90,7 +90,7 @@ const basindaHref = `${localePrefix}/basinda/`;
       </details>
 
       <a class:list={['nav-link', { current: current === 'hakkimda' }]} href={hakkimdaHref}>{t.navHakkimda}</a>
-      <a class:list={['nav-link', { current: current === 'iletisim' }]} href="/iletisim/">{t.navIletisim}</a>
+      <a class:list={['nav-link', { current: current === 'iletisim' }]} href={iletisimHref}>{t.navIletisim}</a>
     </div>
   </nav>
 

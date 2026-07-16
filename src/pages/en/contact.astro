@@ -1,9 +1,9 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import { routes, type Locale } from '../i18n/routes';
-import { ui } from '../i18n/ui';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { routes, type Locale } from '../../i18n/routes';
+import { ui } from '../../i18n/ui';
 
-const lang = 'tr';
+const lang = 'en';
 if (Astro.currentLocale !== lang) {
   throw new Error(`i18n locale eşleşmedi: beklenen "${lang}", Astro.currentLocale="${Astro.currentLocale}"`);
 }
@@ -16,11 +16,11 @@ const alternates = (Object.entries(routes.iletisim) as [Locale, string][]).map((
   lang={lang}
   title={t.navIletisim}
   description={t.iletisimAciklama}
-  canonical={routes.iletisim.tr}
+  canonical={routes.iletisim.en}
   alternates={alternates}
   showLangSwitcher
   current="iletisim"
-  breadcrumb={[{ label: t.anaSayfa, href: routes.anaSayfa.tr }, { label: t.navIletisim }]}
+  breadcrumb={[{ label: t.anaSayfa, href: routes.anaSayfa.en }, { label: t.navIletisim }]}
 >
   <h1>{t.navIletisim}</h1>
   <p class="desc">{t.iletisimAciklama}</p>
@@ -29,7 +29,7 @@ const alternates = (Object.entries(routes.iletisim) as [Locale, string][]).map((
     info@mustafaeren.net
   </a>
 
-  <form class="contact-form" name="iletisim" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/iletisim/tesekkur/">
+  <form class="contact-form" name="iletisim" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/en/contact/thank-you/">
     <input type="hidden" name="form-name" value="iletisim" />
     <p hidden>
       <label>{t.iletisimBotUyari} <input name="bot-field" /></label>
