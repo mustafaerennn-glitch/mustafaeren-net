@@ -9,6 +9,11 @@
 // Not: routes.ts'te KAYITLI OLMAYAN sayfalar (örn. /iletisim/, /yazilar/ — henüz çevirisi
 // olmayan bölümler) bilerek atlanır; bunlar gerçek bir boşluk, hata değil.
 //
+// Not 2: `data-lang-switch` attribute'lu <a> etiketleri (bkz. LangCluster.astro) locale
+// hardcode kuralından muaf — dil değiştiricinin işi zaten KASITLI olarak başka dillere link
+// vermek, bu yüzden "kendi dilinde karşılığı varken başka dile gitmiş" hatası burada geçersiz.
+// Kırık-link kontrolüne dahil olmaya devam ederler.
+//
 // Kullanım: npm run check-links  (önce `astro build` çalıştırılmış olmalı)
 
 import { readdirSync, readFileSync, statSync } from 'node:fs';
@@ -64,6 +69,15 @@ for (const file of htmlFiles) {
 
   const hrefs = [...body.matchAll(/href="(\/[^"]*)"/g)].map((m) => m[1]);
 
+  // data-lang-switch taşıyan <a> etiketlerinin href'leri — locale hardcode kuralından muaf.
+  const langSwitchHrefs = new Set(
+    [...body.matchAll(/<a\b[^>]*>/g)]
+      .map((m) => m[0])
+      .filter((tag) => /data-lang-switch/.test(tag))
+      .map((tag) => tag.match(/href="(\/[^"]*)"/)?.[1])
+      .filter(Boolean),
+  );
+
   for (const rawHref of hrefs) {
     const clean = rawHref.split('?')[0].split('#')[0];
     const normalized = clean === '' || clean.endsWith('/') ? clean || '/' : clean + '/';
@@ -76,7 +90,7 @@ for (const file of htmlFiles) {
     }
 
     // 2) Locale hardcode kontrolü — routes.ts'te kayıtlı bir sayfaya mı gidiyor?
-    if (pageLang && LOCALES.includes(pageLang)) {
+    if (pageLang && LOCALES.includes(pageLang) && !langSwitchHrefs.has(rawHref)) {
       const entry = hrefToRouteEntry.get(normalized);
       if (entry && entry.lang !== pageLang) {
         const expectedHref = routes[entry.key][pageLang];

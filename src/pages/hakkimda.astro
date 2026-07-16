@@ -2,7 +2,7 @@
 import { getCollection } from 'astro:content';
 import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { routes } from '../i18n/routes';
+import { routes, type Locale } from '../i18n/routes';
 import { ui } from '../i18n/ui';
 import profilFoto from '../assets/profil-fotografi.jpg';
 
@@ -12,7 +12,7 @@ if (Astro.currentLocale !== lang) {
 }
 
 const t = ui[lang];
-const alternates = Object.entries(routes.hakkimda).map(([l, href]) => ({ lang: l, href }));
+const alternates = (Object.entries(routes.hakkimda) as [Locale, string][]).map(([l, href]) => ({ lang: l, href }));
 
 // Bio metni roadmap'te finalize edilmiş, gerçek/onaylı içerik (WordPress göçüne bağlı değil —
 // bu yüzden Faz 3 XML export'u beklenmeden burada kullanılabilir). Kitap listesi ise gerçek
@@ -38,6 +38,7 @@ const kitaplar = (await getCollection('kitaplar')).filter((k) => k.data.lang ===
   description={paragraphs[0]}
   canonical={routes.hakkimda.tr}
   alternates={alternates}
+  showLangSwitcher
   current="hakkimda"
   breadcrumb={[{ label: t.anaSayfa, href: '/' }, { label: t.hakkimdaBaslik }]}
 >

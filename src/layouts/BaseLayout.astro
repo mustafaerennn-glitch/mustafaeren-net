@@ -6,7 +6,7 @@ import Breadcrumb from '../components/layout/Breadcrumb.astro';
 import type { Locale } from '../i18n/routes';
 
 interface Alternate {
-  lang: string;
+  lang: Locale;
   href: string;
 }
 
@@ -24,9 +24,14 @@ interface Props {
   current?: 'yazilar' | 'videolar' | 'kitaplar' | 'basinda' | 'konular' | 'hakkimda' | 'iletisim';
   breadcrumb?: Crumb[]; // ana sayfada verilmez — anlamsız (talimat)
   pageWidth?: string; // yalnızca Video sayfalarındaki bilinçli 760px istisnası için (bkz. bilesen-envanteri.md §6.1)
+  // Site geneli dil değiştirici Nav'da yalnızca genel/indeks sayfalarında (Ana Sayfa, Hakkımda,
+  // İletişim, indeksler) gösterilir. İçerik detay sayfaları (Yazı/Basında) da hreflang için
+  // `alternates` geçer ama kendi gövde-içi LangCluster'ı zaten var — Nav'da tekrar göstermek
+  // roadmap'in "aynı bilgiyi tekrar etme" kuralını ihlal eder, bu yüzden ayrı bir bayrakla kontrol edilir.
+  showLangSwitcher?: boolean;
 }
 
-const { lang, title, description, canonical, alternates = [], current, breadcrumb, pageWidth } = Astro.props;
+const { lang, title, description, canonical, alternates = [], current, breadcrumb, pageWidth, showLangSwitcher = false } = Astro.props;
 
 // Yalnızca gerçekten birden fazla dil sürümü varsa hreflang üretilir —
 // tek dilli bir sayfada kendine referans veren hreflang anlamsız/gürültü olurdu.
@@ -51,7 +56,7 @@ const canonicalAbsolute = new URL(canonical, SITE_URL).toString();
   </head>
   <body>
     <div class="page" style={pageWidth ? `--page-width: ${pageWidth}` : undefined}>
-      <Nav lang={lang} current={current} />
+      <Nav lang={lang} current={current} alternates={showLangSwitcher ? alternates : []} />
       <main>
         {breadcrumb && <Breadcrumb items={breadcrumb} />}
         <slot />

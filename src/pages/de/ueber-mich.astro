@@ -1,7 +1,9 @@
 ---
+import { Image } from 'astro:assets';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { routes } from '../../i18n/routes';
+import { routes, type Locale } from '../../i18n/routes';
 import { ui } from '../../i18n/ui';
+import profilFoto from '../../assets/profil-fotografi.jpg';
 
 const lang = 'de';
 if (Astro.currentLocale !== lang) {
@@ -9,7 +11,7 @@ if (Astro.currentLocale !== lang) {
 }
 
 const t = ui[lang];
-const alternates = Object.entries(routes.hakkimda).map(([l, href]) => ({ lang: l, href }));
+const alternates = (Object.entries(routes.hakkimda) as [Locale, string][]).map(([l, href]) => ({ lang: l, href }));
 
 const paragraphs = [
   'Mein Bachelor-Abschluss ist von der Mimar Sinan Universität der Schönen Künste, Fachbereich Soziologie (Istanbul, Türkei). Ich habe einen Master-Abschluss im Fachbereich Kulturwissenschaften der Istanbul Bilgi Universität und habe Doktorandenseminare an der Mimar Sinan Universität besucht. Zwischen 2019 und 2020 habe ich als Gaststudent Masterlehrveranstaltungen an der Universität Zürich besucht. 2026 habe ich das Programm Migrationsfachperson an der Schule für Sozialbegleitung begonnen.',
@@ -29,11 +31,14 @@ const paragraphs = [
   description={paragraphs[0]}
   canonical={routes.hakkimda.de}
   alternates={alternates}
+  showLangSwitcher
   current="hakkimda"
   breadcrumb={[{ label: t.hakkimdaBaslik }]}
 >
   <div class="bio-hero">
-    <div class="avatar">[Foto]</div>
+    <div class="avatar">
+      <Image src={profilFoto} alt="Mustafa Eren" width={304} height={304} />
+    </div>
     <div class="bio-info">
       <h1>Mustafa Eren</h1>
       <p class="role-eyebrow">Soziologe · Forscher · Autor</p>
@@ -49,8 +54,10 @@ const paragraphs = [
   .avatar {
     width: 152px; height: 152px; flex-shrink: 0; border-radius: 50%;
     background: var(--surface-1); border: 0.5px solid var(--border);
-    display: flex; align-items: center; justify-content: center;
-    color: var(--text-muted); font-size: 12px; text-align: center;
+    overflow: hidden;
+  }
+  .avatar :global(img) {
+    width: 100%; height: 100%; object-fit: cover; display: block;
   }
   .bio-info { flex: 1; min-width: 0; }
   .bio-info h1 { font-size: 26px; line-height: 1.3; }

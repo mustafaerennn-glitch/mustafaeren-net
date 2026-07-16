@@ -10,6 +10,10 @@ export const routes = {
     de: '/de/ueber-mich/',
     fr: '/fr/a-propos/',
   },
+  // "iletisim" kaydı bilerek henüz eklenmedi: EN/DE/FR İletişim sayfaları kurulana kadar
+  // burada bir kayıt olması check-links'in locale-hardcode kuralını haklı olarak tetikliyor
+  // (Nav'daki /iletisim/ linki henüz locale-aware değil). Sayfalar kurulduğunda bu kayıt
+  // Nav'daki güncellemeyle BİRLİKTE eklenecek.
 } as const;
 
 export type RouteKey = keyof typeof routes;

@@ -1,6 +1,7 @@
 ---
 import { ui, type Locale } from '../../i18n/ui';
 import { routes } from '../../i18n/routes';
+import LangCluster from '../metadata/LangCluster.astro';
 
 // Not: Yazılar/Videolar/Kitaplar/Basında/Konular/İletişim'in şu an yalnızca Türkçe sürümü var
 // (çeviri içerik üretimi Faz 4-5'e ait) — bu yüzden bu öğeler her dilde TR URL'sine gider.
@@ -11,9 +12,11 @@ import { routes } from '../../i18n/routes';
 interface Props {
   lang: Locale;
   current?: 'yazilar' | 'videolar' | 'kitaplar' | 'basinda' | 'konular' | 'hakkimda' | 'iletisim';
+  // Yalnızca genel/indeks sayfaları bu listeyi doldurur (bkz. BaseLayout'taki showLangSwitcher).
+  alternates?: { lang: Locale; href: string }[];
 }
 
-const { lang, current } = Astro.props;
+const { lang, current, alternates = [] } = Astro.props;
 const t = ui[lang];
 
 const ALANLAR = [
@@ -75,6 +78,14 @@ const brandHref = lang === 'tr' ? '/' : hakkimdaHref;
 
     <a class:list={['nav-link', { current: current === 'hakkimda' }]} href={hakkimdaHref}>{t.navHakkimda}</a>
     <a class:list={['nav-link', { current: current === 'iletisim' }]} href="/iletisim/">{t.navIletisim}</a>
+
+    {
+      alternates.length > 1 && (
+        <span class="lang-switcher">
+          <LangCluster currentLang={lang} items={alternates} />
+        </span>
+      )
+    }
   </div>
 </nav>
 
@@ -110,6 +121,12 @@ const brandHref = lang === 'tr' ? '/' : hakkimdaHref;
   .nav-link.current {
     color: var(--text-primary);
     font-weight: 500;
+  }
+  .lang-switcher {
+    padding-left: 14px;
+    margin-left: 4px;
+    border-left: 0.5px solid var(--border);
+    font-size: 12px;
   }
   .dropdown {
     position: relative;

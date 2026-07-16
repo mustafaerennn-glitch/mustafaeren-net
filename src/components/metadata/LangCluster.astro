@@ -21,7 +21,7 @@ const { currentLang, items } = Astro.props;
           {item.lang === currentLang ? (
             <span class="lang-current">{LANG_NAMES[item.lang]}</span>
           ) : (
-            <a href={item.href}>{LANG_NAMES[item.lang]}</a>
+            <a href={item.href} data-lang-switch>{LANG_NAMES[item.lang]}</a>
           )}
         </>
       ))}
