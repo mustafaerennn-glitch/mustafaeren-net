@@ -37,6 +37,16 @@ const { id, triggerLabel, title, metaLine, closeLabel = 'Kapat' } = Astro.props;
       if (dialog instanceof HTMLDialogElement) dialog.close();
     });
   });
+  // Dışarı (backdrop) tıklayınca da kapansın — <dialog>'un backdrop'ı ayrı bir DOM node değil,
+  // bu yüzden tıklamanın gerçek içerik kutusunun dışında olup olmadığı koordinatla kontrol edilir.
+  document.querySelectorAll('dialog').forEach((dialog) => {
+    dialog.addEventListener('click', (e) => {
+      if (!(dialog instanceof HTMLDialogElement) || !dialog.open) return;
+      const rect = dialog.getBoundingClientRect();
+      const inside = e.clientX >= rect.left && e.clientX <= rect.right && e.clientY >= rect.top && e.clientY <= rect.bottom;
+      if (!inside) dialog.close();
+    });
+  });
 </script>
 
 <style>
