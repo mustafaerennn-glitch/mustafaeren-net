@@ -38,7 +38,11 @@ const areas = Object.entries(ALAN_LABELS)
 
 const feed = await getMergedFeed(5);
 
-const kitaplar = (await getCollection('kitaplar', (e) => e.data.lang === lang && e.data.kitapTuru === 'yazdıklarım')).slice(0, 5);
+// Ana sayfada gösterilecek 5 kitap ve sırası kullanıcı tarafından elle seçildi (otomatik
+// sıralama değil — bilinçli bir küratörlük kararı).
+const ANA_SAYFA_KITAP_SIRASI = ['kanli-pazar', 'kapatilmanin-patolojisi', 'mahpus-haklari-el-kitabi', 'turkiye-hapishaneler-almanagi', 'haklarim-basvuru-kilavuzu'];
+const tumYazdiklarim = await getCollection('kitaplar', (e) => e.data.lang === lang && e.data.kitapTuru === 'yazdıklarım');
+const kitaplar = ANA_SAYFA_KITAP_SIRASI.map((id) => tumYazdiklarim.find((k) => k.id === id)).filter((k) => k !== undefined);
 ---
 
 <BaseLayout lang={lang} title="Mustafa Eren" description={bio} canonical="/">
