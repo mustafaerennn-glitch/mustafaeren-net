@@ -4,6 +4,7 @@ lang: tr
 description: 'Eser Adı: Türkiye''de İşçi Mahpusların Güncel Durumu Yazar: Mustafa Eren, Yusuf Engin Yayınevi: TCPS Kitaplığı Kapak Tasarımı: Tayfun Koç Basım Tarihi: Aralık…'
 topics:
   - isci-mahpuslar
+  - emek-isci-haklari
 year: 2018
 kitapTuru: yazdıklarım
 yayinevi: CİSST

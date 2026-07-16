@@ -15,6 +15,11 @@
     ],
     "title": "Akademi, hapishane düzenini eleştirmeli"
   },
+  "468": {
+    "extraTopics": [
+      "emek-isci-haklari"
+    ]
+  },
   "502": {
     "collection": "basinda",
     "title": "Towards A Homosexual-Only Prison"
@@ -182,9 +187,15 @@
     ],
     "title": "Mahpus sayısı \"400 bin\"i gördü mü? Bakanlık neden açıklamıyor?"
   },
+  "1385": {
+    "extraTopics": [
+      "emek-isci-haklari"
+    ]
+  },
   "1403": {
     "extraTopics": [
-      "isci-mahpuslar"
+      "isci-mahpuslar",
+      "emek-isci-haklari"
     ],
     "title": "Turkish gov’t accused of turning prisons into enterprises, exploiting inmates’ labor"
   },
@@ -201,7 +212,10 @@
       }
     ],
     "title": "Cezaevlerinde emek sömürüsü: Bakanlık, mahkûmları 14 TL yevmiyeyle çalıştırıyor",
-    "not": "Hem BirGün hem DW etiketli, gövdede her iki mecraya da link var. Kullanıcı kararı: DW birincil, BirGün ikincil."
+    "not": "Hem BirGün hem DW etiketli, gövdede her iki mecraya da link var. Kullanıcı kararı: DW birincil, BirGün ikincil.",
+    "extraTopics": [
+      "emek-isci-haklari"
+    ]
   },
   "1542": {
     "localImage": ".tmp/gorsel-girdi/1542.png"
@@ -217,6 +231,11 @@
       "genel-hapishane-yazilari"
     ],
     "title": "Im Porträt: Der Soziologe Mustafa Eren"
+  },
+  "2171": {
+    "extraTopics": [
+      "emek-isci-haklari"
+    ]
   },
   "2178": {
     "mecra": "birgun",
@@ -235,6 +254,11 @@
     ],
     "title": "Hapsedilmeye Hazır mısınız?"
   },
+  "3330": {
+    "extraTopics": [
+      "emek-isci-haklari"
+    ]
+  },
   "3332": {
     "sayfaSayisi": 154,
     "_not": "Kullanıcı gerçek sayfa sayısını 154 olarak doğruladı — WordPress gövde metninde yanlışlıkla 152 yazıyordu."
@@ -247,6 +271,11 @@
       }
     ],
     "_not": "WordPress gövdesinde künye bloğunun \"Eser Adı\" satırı yanlışlıkla önceki kitabın (Ağırlaştırılmış Müebbet) başlığıyla kopyalanmış kalmış — gövdenin geri kalanı ve tüm diğer alanlar (Yazar, sayfa sayısı, konu, yayınevi linki) doğru şekilde Kadın Mahpus Olmak kitabını anlatıyor. Aşama 4E editoryal incelemesinde bulundu, tek satır düzeltildi (2026-07-16)."
+  },
+  "4008": {
+    "extraTopics": [
+      "emek-isci-haklari"
+    ]
   },
   "4115": {
     "durationMinutes": 40,
@@ -274,7 +303,10 @@
   },
   "4135": {
     "durationMinutes": 5,
-    "description": "Deutsche Welle 11 Aralık 2020 İşçi Mahpuslar"
+    "description": "Deutsche Welle 11 Aralık 2020 İşçi Mahpuslar",
+    "extraTopics": [
+      "emek-isci-haklari"
+    ]
   },
   "4136": {
     "durationMinutes": 43,
@@ -416,7 +448,7 @@
   "_alanlar": {
     "collection": "yazilar | basinda — otomatik sınıflandırmayı (kategori tabanlı) geçersiz kılar, yalnızca yabancı-dil kategorisiz parçalar için gerekli",
     "mecra": "mecralar.json id'si — gövde metninde geçtiği halde etiketlenmemiş mecra düzeltmesi, ya da birden fazla mecra etiketi/linki arasında kullanıcının seçtiği birincil mecra",
-    "extraTopics": "tag-topic-map.json'dan gelen konulara EK olarak eklenecek konu id(ler)i — yalnızca genel hapishane-eşanlamlısı etiketten başka spesifik etiketi olmayan 35 parça için",
+    "extraTopics": "tag-topic-map.json'dan gelen konulara EK olarak eklenecek konu id(ler)i — yalnızca genel hapishane-eşanlamlısı etiketten başka spesifik etiketi olmayan 35 parça için NOT: işçi-mahpuslar konusu taşıyan 8 gerçek içeriğe kullanıcı kararıyla emek-isci-haklari de eklendi (2026-07-16) — bir içerik hem Hapishane hem Emek alanına ait olabilir, çoklu-alan mimarisiyle tutarlı.",
     "sources": "basinda şemasının sources[] alanı — yalnızca birden fazla mecrada çıktığı doğrulanmış kayıtlarda, kullanıcının açıkça onayladığı birincil/ikincil sırayla",
     "durationMinutes": "videolar.json şemasında WP'de saklanmayan zorunlu alan — YouTube sayfasından (meta[itemprop=duration]) gerçek süre okunup dakikaya yuvarlandı (kullanıcı onaylı liste, 2026-07-16).",
     "description": "ortakAlanlar.description zorunlu alanı — Videolar için WP gövdesi yalnızca bir video linkinden ibaret olduğundan (bkz. resolve-description.mjs), gerçek YouTube video açıklaması (meta script[type=application/ld+json] -> description) tarayıcıyla okunup buraya işlendi; 4 videonun YouTube açıklaması boştu, onlar için gerçek video başlığı kullanıldı (2026-07-16).",

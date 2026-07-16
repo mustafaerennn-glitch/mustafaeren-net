@@ -4,6 +4,7 @@ lang: tr
 description: Tarihin eski dönemlerinden beri ucuz veya zorunlu işgücü olarak görülen mahkûmlar, Türkiye ekonomisine sağladıkları katkılara rağmen, hâlâ uluslararası hak ve…
 topics:
   - isci-mahpuslar
+  - emek-isci-haklari
 publishDate: '2022-06-27'
 mecra: agos
 featuredImage: ./_images/mahkum-calisanlarin-sosyal-hak-hayali-featured.webp

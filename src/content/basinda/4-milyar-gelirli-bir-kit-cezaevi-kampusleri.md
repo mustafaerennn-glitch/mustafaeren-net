@@ -4,6 +4,7 @@ lang: tr
 description: Ceza İnfaz Sisteminde Sivil Toplum Derneği (CİSST) Yönetim Kurulu Üyesi Mustafa Eren, Türkiye cezaevlerinde kalan on binlerce tutuklunun asgari ücretin dörtte…
 topics:
   - isci-mahpuslar
+  - emek-isci-haklari
 publishDate: '2018-11-06'
 mecra: mezopotamya-ajansi
 featuredImage: ./_images/4-milyar-gelirli-bir-kit-cezaevi-kampusleri-featured.webp

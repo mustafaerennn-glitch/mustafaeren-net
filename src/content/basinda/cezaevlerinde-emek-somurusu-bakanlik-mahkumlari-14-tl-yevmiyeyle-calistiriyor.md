@@ -4,6 +4,7 @@ lang: tr
 description: BirGün 14 Aralık 2020 Türkiye'de 60 binden fazla mahkûm, Adalet Bakanlığı'na bağlı işyurt kurumlarında çalıştırılıyor. Elde edilen gelirin sadece yüzde 2'si…
 topics:
   - isci-mahpuslar
+  - emek-isci-haklari
 publishDate: '2020-12-14'
 mecra: dw
 featuredImage: ./_images/cezaevlerinde-emek-somurusu-bakanlik-mahkumlari-14-tl-yevmiyeyle-calistiriyor-featured.webp

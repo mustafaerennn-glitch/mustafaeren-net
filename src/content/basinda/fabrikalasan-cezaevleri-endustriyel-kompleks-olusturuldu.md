@@ -4,6 +4,7 @@ lang: tr
 description: Deutsche Welle 11.12.2020 Türkiye'de 60 binden fazla mahkum, Adalet Bakanlığı'na bağlı işyurt kurumlarında çalıştırılıyor. Elde edilen gelirin sadece yüzde…
 topics:
   - isci-mahpuslar
+  - emek-isci-haklari
 publishDate: '2020-12-11'
 mecra: dw
 featuredImage: ./_images/fabrikalasan-cezaevleri-endustriyel-kompleks-olusturuldu-featured.webp

@@ -4,6 +4,7 @@ lang: tr
 description: Deutsche Welle 11 Aralık 2020 İşçi Mahpuslar
 topics:
   - isci-mahpuslar
+  - emek-isci-haklari
 publishDate: '2020-12-11'
 videoTuru: kısa-video
 embedUrl: https://www.youtube.com/embed/iHRn_D3WCw4
