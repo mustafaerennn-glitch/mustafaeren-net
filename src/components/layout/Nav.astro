@@ -1,6 +1,6 @@
 ---
 import { ui, type Locale } from '../../i18n/ui';
-import { routes } from '../../i18n/routes';
+import { routes, LANG_NAMES } from '../../i18n/routes';
 import LangCluster from '../metadata/LangCluster.astro';
 
 // Not: Yazılar/Videolar/Kitaplar/Basında/Konular/İletişim'in şu an yalnızca Türkçe sürümü var
@@ -18,6 +18,8 @@ interface Props {
 
 const { lang, current, alternates = [] } = Astro.props;
 const t = ui[lang];
+const showSwitcher = alternates.length > 1;
+const otherLangs = alternates.filter((a) => a.lang !== lang);
 
 const ALANLAR = [
   { slug: 'hapishane', label: 'Hapishane' },
@@ -46,48 +48,58 @@ const hakkimdaHref = routes.hakkimda[lang];
 const brandHref = lang === 'tr' ? '/' : hakkimdaHref;
 ---
 
-<nav class="topnav">
-  <a class="brand" href={brandHref}>Mustafa Eren</a>
-  <div class="nav-items">
-    <a class:list={['nav-link', { current: current === 'yazilar' }]} href="/yazilar/">{t.navYazilar}</a>
+<header class="site-header">
+  <nav class:list={['topnav', { 'no-divider': showSwitcher }]}>
+    <a class="brand" href={brandHref}>Mustafa Eren</a>
+    <div class="nav-items">
+      <a class:list={['nav-link', { current: current === 'yazilar' }]} href="/yazilar/">{t.navYazilar}</a>
 
-    <details class="dropdown">
-      <summary class:list={{ current: current === 'videolar' }}>{t.navVideolar}</summary>
-      <div class="menu">
-        <a href="/videolar/">Tümü</a>
-        {VIDEO_TURLERI.map((v) => <a href={`/videolar/?tur=${v.tur}`}>{v.label}</a>)}
-      </div>
-    </details>
+      <details class="dropdown">
+        <summary class:list={{ current: current === 'videolar' }}>{t.navVideolar}</summary>
+        <div class="menu">
+          <a href="/videolar/">Tümü</a>
+          {VIDEO_TURLERI.map((v) => <a href={`/videolar/?tur=${v.tur}`}>{v.label}</a>)}
+        </div>
+      </details>
 
-    <details class="dropdown">
-      <summary class:list={{ current: current === 'kitaplar' }}>{t.navKitaplar}</summary>
-      <div class="menu">
-        <a href="/kitaplar/">Tümü</a>
-        {KITAP_TURLERI.map((k) => <a href={`/kitaplar/?tip=${k.tip}`}>{k.label}</a>)}
-      </div>
-    </details>
+      <details class="dropdown">
+        <summary class:list={{ current: current === 'kitaplar' }}>{t.navKitaplar}</summary>
+        <div class="menu">
+          <a href="/kitaplar/">Tümü</a>
+          {KITAP_TURLERI.map((k) => <a href={`/kitaplar/?tip=${k.tip}`}>{k.label}</a>)}
+        </div>
+      </details>
 
-    <a class:list={['nav-link', { current: current === 'basinda' }]} href="/basinda/">{t.navBasinda}</a>
+      <a class:list={['nav-link', { current: current === 'basinda' }]} href="/basinda/">{t.navBasinda}</a>
 
-    <details class="dropdown">
-      <summary class:list={{ current: current === 'konular' }}>{t.navKonular}</summary>
-      <div class="menu">
-        {ALANLAR.map((a) => <a href={`/alanlar/${a.slug}/`}>{a.label}</a>)}
-      </div>
-    </details>
+      <details class="dropdown">
+        <summary class:list={{ current: current === 'konular' }}>{t.navKonular}</summary>
+        <div class="menu">
+          {ALANLAR.map((a) => <a href={`/alanlar/${a.slug}/`}>{a.label}</a>)}
+        </div>
+      </details>
 
-    <a class:list={['nav-link', { current: current === 'hakkimda' }]} href={hakkimdaHref}>{t.navHakkimda}</a>
-    <a class:list={['nav-link', { current: current === 'iletisim' }]} href="/iletisim/">{t.navIletisim}</a>
+      <a class:list={['nav-link', { current: current === 'hakkimda' }]} href={hakkimdaHref}>{t.navHakkimda}</a>
+      <a class:list={['nav-link', { current: current === 'iletisim' }]} href="/iletisim/">{t.navIletisim}</a>
+    </div>
+  </nav>
 
-    {
-      alternates.length > 1 && (
-        <span class="lang-switcher">
+  {
+    showSwitcher && (
+      <div class="lang-row">
+        <span class="lang-row-desktop">
           <LangCluster currentLang={lang} items={alternates} />
         </span>
-      )
-    }
-  </div>
-</nav>
+        <details class="dropdown lang-dropdown">
+          <summary>{LANG_NAMES[lang]}</summary>
+          <div class="menu">
+            {otherLangs.map((a) => <a href={a.href}>{LANG_NAMES[a.lang]}</a>)}
+          </div>
+        </details>
+      </div>
+    )
+  }
+</header>
 
 <style>
   .topnav {
@@ -95,10 +107,32 @@ const brandHref = lang === 'tr' ? '/' : hakkimdaHref;
     align-items: center;
     justify-content: space-between;
     padding: 0 0 1rem;
-    border-bottom: 0.5px solid var(--border);
-    margin-bottom: 2rem;
     flex-wrap: wrap;
     gap: 12px;
+  }
+  .topnav:not(.no-divider) {
+    border-bottom: 0.5px solid var(--border);
+    margin-bottom: 2rem;
+  }
+  .topnav.no-divider {
+    padding-bottom: 0.75rem;
+  }
+  .lang-row {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-bottom: 1rem;
+    border-bottom: 0.5px solid var(--border);
+    margin-bottom: 2rem;
+  }
+  .lang-row-desktop {
+    font-size: 12px;
+  }
+  .lang-row-desktop :global(.lang-cluster a) {
+    color: var(--text-muted);
+  }
+  .lang-dropdown {
+    display: none;
   }
   .brand {
     font-size: 16px;
@@ -121,12 +155,6 @@ const brandHref = lang === 'tr' ? '/' : hakkimdaHref;
   .nav-link.current {
     color: var(--text-primary);
     font-weight: 500;
-  }
-  .lang-switcher {
-    padding-left: 14px;
-    margin-left: 4px;
-    border-left: 0.5px solid var(--border);
-    font-size: 12px;
   }
   .dropdown {
     position: relative;
@@ -171,5 +199,17 @@ const brandHref = lang === 'tr' ? '/' : hakkimdaHref;
   .dropdown .menu a:hover {
     background: var(--surface-1);
     color: var(--text-primary);
+  }
+  @media (max-width: 600px) {
+    .lang-row-desktop {
+      display: none;
+    }
+    .lang-dropdown {
+      display: block;
+    }
+    .lang-dropdown .menu {
+      left: auto;
+      right: 0;
+    }
   }
 </style>
