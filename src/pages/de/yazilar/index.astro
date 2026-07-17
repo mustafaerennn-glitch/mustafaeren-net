@@ -1,16 +1,15 @@
 ---
-import { getCollection, getEntry } from 'astro:content';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import PressList from '../../../components/navigation/PressList.astro';
 import PressRow from '../../../components/navigation/PressRow.astro';
 import Pills from '../../../components/navigation/Pills.astro';
 import Pagination from '../../../components/navigation/Pagination.astro';
 import { ALAN_LABELS_I18N } from '../../../lib/taxonomy';
-import { getAreasForTopicRefs } from '../../../lib/taxonomy';
-import { contentUrl, routes, type Locale } from '../../../i18n/routes';
+import { routes, type Locale } from '../../../i18n/routes';
 import LangCountRow from '../../../components/metadata/LangCountRow.astro';
 import { getContentCountsByLang } from '../../../lib/availability';
 import { ui } from '../../../i18n/ui';
+import { buildYazilarRows, paginateRows } from '../../../lib/pressPagination';
 
 const lang = 'de';
 if (Astro.currentLocale !== lang) {
@@ -18,38 +17,20 @@ if (Astro.currentLocale !== lang) {
 }
 const t = ui[lang];
 
-const entries = await getCollection('yazilar', (e) => e.data.lang === lang);
-entries.sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime());
-
-const rows = await Promise.all(
-  entries.map(async (entry) => {
-    const mecra = entry.data.mecra ? await getEntry(entry.data.mecra) : undefined;
-    const areas = await getAreasForTopicRefs(entry.data.topics);
-    return {
-      href: contentUrl('yazilar', entry.data.lang, entry.id),
-      title: entry.data.title,
-      date: new Intl.DateTimeFormat(lang, { month: 'long', year: 'numeric' }).format(entry.data.publishDate),
-      // Not: /mecra/{id}/ arşiv sayfaları yalnızca TR içeriğe referans veren mecralar için
-      // üretiliyor (bkz. mecra/[slug].astro) — bu dilde link kırılmasın diye burada bilerek
-      // tıklanamaz düz metin olarak gösteriliyor (mecra arşivinin kendisi henüz çok dilli değil).
-      secondary: { label: mecra ? mecra.data.ad : 'Mustafaeren.net' },
-      areas,
-    };
-  }),
-);
+const allRows = await buildYazilarRows(lang);
+const { pageRows: rows, totalPages } = paginateRows(allRows, 1);
 
 const areaCounts: Record<string, number> = {};
-for (const row of rows) {
+for (const row of allRows) {
   for (const a of row.areas) areaCounts[a] = (areaCounts[a] ?? 0) + 1;
 }
-const currentAlan = Astro.url.searchParams.get('alan');
 const pillItems = [
-  { label: t.pillTumu, count: rows.length, href: '/de/yazilar/', active: !currentAlan },
+  { label: t.pillTumu, count: allRows.length, href: '/de/yazilar/', active: true },
   ...Object.entries(ALAN_LABELS_I18N[lang]).map(([slug, label]) => ({
     label,
     count: areaCounts[slug] ?? 0,
-    href: `/de/yazilar/?alan=${slug}`,
-    active: currentAlan === slug,
+    href: `/de/yazilar/alan/${slug}/`,
+    active: false,
   })),
 ];
 
@@ -76,17 +57,17 @@ const langItems = (['tr', 'en', 'de', 'fr'] as Locale[]).map((l) => ({
 
   <Pills items={pillItems} />
 
-  <PressList>
-    {
-      rows.map((row) => (
-        <div class="row-wrap" data-areas={row.areas.join(',')}>
-          <PressRow href={row.href} title={row.title} date={row.date} secondary={row.secondary} />
-        </div>
-      ))
-    }
-  </PressList>
+  {
+    rows.length === 0 ? (
+      <p class="empty-note">{t.bosIcerikMesaji}</p>
+    ) : (
+      <PressList>
+        {rows.map((row) => <PressRow href={row.href} title={row.title} date={row.date} secondary={row.secondary} />)}
+      </PressList>
+    )
+  }
 
-  <Pagination currentPage={1} totalPages={1} basePath="/de/yazilar/" />
+  <Pagination currentPage={1} totalPages={totalPages} basePath="/de/yazilar/" />
 </BaseLayout>
 
 <style>
@@ -97,19 +78,9 @@ const langItems = (['tr', 'en', 'de', 'fr'] as Locale[]).map((l) => ({
     max-width: 520px;
     margin: 1rem 0 1.75rem;
   }
-</style>
-
-<script>
-  const params = new URLSearchParams(location.search);
-  const alan = params.get('alan');
-  if (alan) {
-    document.querySelectorAll<HTMLElement>('[data-areas]').forEach((row) => {
-      const areas = row.dataset.areas?.split(',') ?? [];
-      row.style.display = areas.includes(alan) ? '' : 'none';
-    });
-    document.querySelectorAll<HTMLAnchorElement>('.pill').forEach((pill) => {
-      const url = new URL(pill.href);
-      pill.classList.toggle('active', url.searchParams.get('alan') === alan);
-    });
+  .empty-note {
+    font-size: 14px;
+    color: var(--text-muted);
+    padding: 1.5rem 0;
   }
-</script>
+</style>

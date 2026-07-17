@@ -1,13 +1,13 @@
 ---
-import { getCollection, getEntry } from 'astro:content';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import PressList from '../../../components/navigation/PressList.astro';
 import PressRow from '../../../components/navigation/PressRow.astro';
 import Pagination from '../../../components/navigation/Pagination.astro';
-import { contentUrl, routes, type Locale } from '../../../i18n/routes';
+import { routes, type Locale } from '../../../i18n/routes';
 import LangCountRow from '../../../components/metadata/LangCountRow.astro';
 import { getContentCountsByLang } from '../../../lib/availability';
 import { ui } from '../../../i18n/ui';
+import { buildBasindaRows, paginateRows } from '../../../lib/pressPagination';
 
 const lang = 'en';
 if (Astro.currentLocale !== lang) {
@@ -15,26 +15,12 @@ if (Astro.currentLocale !== lang) {
 }
 const t = ui[lang];
 
-const entries = await getCollection('basinda', (e) => e.data.lang === lang);
-entries.sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime());
+const allRows = await buildBasindaRows(lang);
+const { pageRows: rows, totalPages } = paginateRows(allRows, 1);
 
-const rows = await Promise.all(
-  entries.map(async (entry) => {
-    const mecra = await getEntry(entry.data.mecra);
-    return {
-      href: contentUrl('basinda', entry.data.lang, entry.id),
-      title: entry.data.title,
-      date: new Intl.DateTimeFormat(lang, { month: 'long', year: 'numeric' }).format(entry.data.publishDate),
-      // Not: /mecra/{id}/ arşiv sayfaları yalnızca TR içeriğe referans veren mecralar için
-      // üretiliyor — bu dilde link kırılmasın diye tıklanamaz düz metin olarak gösteriliyor.
-      secondary: { label: mecra.data.ad },
-    };
-  }),
-);
-
-const lastUpdate = entries.length
+const lastUpdate = allRows.length
   ? new Intl.DateTimeFormat(lang, { month: 'long', year: 'numeric' }).format(
-      entries.reduce((latest, e) => (e.data.publishDate > latest ? e.data.publishDate : latest), entries[0].data.publishDate),
+      allRows.reduce((latest, r) => (r.publishDate > latest ? r.publishDate : latest), allRows[0].publishDate),
     )
   : null;
 
@@ -56,7 +42,7 @@ const langItems = (['tr', 'en', 'de', 'fr'] as Locale[]).map((l) => ({
 >
   <h1>{t.navBasinda}</h1>
   <p class="desc">{t.basindaAciklama}</p>
-  {lastUpdate && <p class="meta-line">{rows.length} {rows.length === 1 ? t.icerikSayisiTekil : t.icerikSayisiCogul} · {t.sonGuncelleme} {lastUpdate}</p>}
+  {lastUpdate && <p class="meta-line">{allRows.length} {allRows.length === 1 ? t.icerikSayisiTekil : t.icerikSayisiCogul} · {t.sonGuncelleme} {lastUpdate}</p>}
 
   <LangCountRow currentLang={lang} items={langItems} />
 
@@ -64,7 +50,7 @@ const langItems = (['tr', 'en', 'de', 'fr'] as Locale[]).map((l) => ({
     {rows.map((row) => <PressRow href={row.href} title={row.title} date={row.date} secondary={row.secondary} />)}
   </PressList>
 
-  <Pagination currentPage={1} totalPages={1} basePath="/en/basinda/" />
+  <Pagination currentPage={1} totalPages={totalPages} basePath="/en/basinda/" />
 </BaseLayout>
 
 <style>

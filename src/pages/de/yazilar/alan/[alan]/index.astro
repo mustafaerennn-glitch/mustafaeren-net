@@ -1,0 +1,94 @@
+---
+import BaseLayout from '../../../../../layouts/BaseLayout.astro';
+import PressList from '../../../../../components/navigation/PressList.astro';
+import PressRow from '../../../../../components/navigation/PressRow.astro';
+import Pills from '../../../../../components/navigation/Pills.astro';
+import Pagination from '../../../../../components/navigation/Pagination.astro';
+import { ALAN_LABELS_I18N, ALAN_SLUGS } from '../../../../../lib/taxonomy';
+import { ui } from '../../../../../i18n/ui';
+import { routes, type Locale } from '../../../../../i18n/routes';
+import LangCountRow from '../../../../../components/metadata/LangCountRow.astro';
+import { getContentCountsByLang } from '../../../../../lib/availability';
+import { buildYazilarRows, paginateRows } from '../../../../../lib/pressPagination';
+
+export async function getStaticPaths() {
+  return ALAN_SLUGS.map((alan) => ({ params: { alan } }));
+}
+
+const lang = 'de';
+if (Astro.currentLocale !== lang) {
+  throw new Error(`i18n locale eşleşmedi: beklenen "${lang}", Astro.currentLocale="${Astro.currentLocale}"`);
+}
+const t = ui[lang];
+
+const currentAlan = Astro.params.alan as string;
+const allRows = await buildYazilarRows(lang);
+const areaRows = allRows.filter((row) => row.areas.includes(currentAlan));
+const { pageRows: rows, totalPages } = paginateRows(areaRows, 1);
+
+const areaCounts: Record<string, number> = {};
+for (const row of allRows) {
+  for (const a of row.areas) areaCounts[a] = (areaCounts[a] ?? 0) + 1;
+}
+const pillItems = [
+  { label: t.pillTumu, count: allRows.length, href: '/de/yazilar/', active: false },
+  ...Object.entries(ALAN_LABELS_I18N[lang]).map(([slug, label]) => ({
+    label,
+    count: areaCounts[slug] ?? 0,
+    href: `/de/yazilar/alan/${slug}/`,
+    active: slug === currentAlan,
+  })),
+];
+
+const langCounts = await getContentCountsByLang();
+const langItems = (['tr', 'en', 'de', 'fr'] as Locale[]).map((l) => ({
+  lang: l,
+  href: l === 'tr' ? '/yazilar/' : `/${l}/yazilar/`,
+  count: langCounts[l].yazilar,
+}));
+
+const alanLabel = ALAN_LABELS_I18N[lang][currentAlan];
+---
+
+<BaseLayout
+  lang={lang}
+  title={`${t.navYazilar} — ${alanLabel}`}
+  description={t.yazilarAciklama}
+  canonical={`/de/yazilar/alan/${currentAlan}/`}
+  current="yazilar"
+  breadcrumb={[{ label: t.anaSayfa, href: routes.anaSayfa.de }, { label: t.navYazilar, href: '/de/yazilar/' }, { label: alanLabel }]}
+>
+  <h1>{t.navYazilar}</h1>
+  <p class="desc">{t.yazilarAciklama}</p>
+
+  <LangCountRow currentLang={lang} items={langItems} />
+
+  <Pills items={pillItems} />
+
+  {
+    areaRows.length === 0 ? (
+      <p class="empty-note">{t.bosIcerikMesaji}</p>
+    ) : (
+      <>
+        <PressList>
+          {rows.map((row) => <PressRow href={row.href} title={row.title} date={row.date} secondary={row.secondary} />)}
+        </PressList>
+        <Pagination currentPage={1} totalPages={totalPages} basePath={`/de/yazilar/alan/${currentAlan}/`} />
+      </>
+    )
+  }
+</BaseLayout>
+
+<style>
+  .desc {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    max-width: 520px;
+    margin: 1rem 0 1.75rem;
+  }
+  .empty-note {
+    font-size: 14px;
+    color: var(--text-muted);
+  }
+</style>

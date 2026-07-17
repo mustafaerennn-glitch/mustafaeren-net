@@ -1,20 +1,27 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import PressList from '../../components/navigation/PressList.astro';
-import PressRow from '../../components/navigation/PressRow.astro';
-import Pagination from '../../components/navigation/Pagination.astro';
-import { type Locale } from '../../i18n/routes';
-import LangCountRow from '../../components/metadata/LangCountRow.astro';
-import { getContentCountsByLang } from '../../lib/availability';
-import { buildBasindaRows, paginateRows } from '../../lib/pressPagination';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PressList from '../../../components/navigation/PressList.astro';
+import PressRow from '../../../components/navigation/PressRow.astro';
+import Pagination from '../../../components/navigation/Pagination.astro';
+import { type Locale } from '../../../i18n/routes';
+import LangCountRow from '../../../components/metadata/LangCountRow.astro';
+import { getContentCountsByLang } from '../../../lib/availability';
+import { buildBasindaRows, paginateRows, extraPageParams } from '../../../lib/pressPagination';
+
+export async function getStaticPaths() {
+  const allRows = await buildBasindaRows('tr');
+  const { totalPages } = paginateRows(allRows, 1);
+  return extraPageParams(totalPages);
+}
 
 const lang = 'tr';
 if (Astro.currentLocale !== lang) {
   throw new Error(`i18n locale eşleşmedi: beklenen "${lang}", Astro.currentLocale="${Astro.currentLocale}"`);
 }
 
+const page = Number(Astro.params.page);
 const allRows = await buildBasindaRows(lang);
-const { pageRows: rows, totalPages } = paginateRows(allRows, 1);
+const { pageRows: rows, totalPages } = paginateRows(allRows, page);
 
 const lastUpdate = allRows.length
   ? new Intl.DateTimeFormat(lang, { month: 'long', year: 'numeric' }).format(
@@ -34,9 +41,9 @@ const langItems = (['tr', 'en', 'de', 'fr'] as Locale[]).map((l) => ({
   lang={lang}
   title="Basında"
   description="Söyleşiler, röportajlar ve hakkımda çıkan haberler — hapishane çalışmaları, göç ve yakın siyasal tarih üzerine."
-  canonical="/basinda/"
+  canonical={`/basinda/sayfa/${page}/`}
   current="basinda"
-  breadcrumb={[{ label: 'Ana sayfa', href: '/' }, { label: 'Basında' }]}
+  breadcrumb={[{ label: 'Ana sayfa', href: '/' }, { label: 'Basında', href: '/basinda/' }, { label: `Sayfa ${page}` }]}
 >
   <h1>Basında</h1>
   <p class="desc">Söyleşiler, röportajlar ve hakkımda çıkan haberler — hapishane çalışmaları, göç ve yakın siyasal tarih üzerine.</p>
@@ -48,7 +55,7 @@ const langItems = (['tr', 'en', 'de', 'fr'] as Locale[]).map((l) => ({
     {rows.map((row) => <PressRow href={row.href} title={row.title} date={row.date} secondary={row.secondary} />)}
   </PressList>
 
-  <Pagination currentPage={1} totalPages={totalPages} basePath="/basinda/" />
+  <Pagination currentPage={page} totalPages={totalPages} basePath="/basinda/" />
 </BaseLayout>
 
 <style>

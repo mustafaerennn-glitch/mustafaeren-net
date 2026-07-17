@@ -1,13 +1,19 @@
 ---
-import BaseLayout from '../../../layouts/BaseLayout.astro';
-import PressList from '../../../components/navigation/PressList.astro';
-import PressRow from '../../../components/navigation/PressRow.astro';
-import Pagination from '../../../components/navigation/Pagination.astro';
-import { routes, type Locale } from '../../../i18n/routes';
-import LangCountRow from '../../../components/metadata/LangCountRow.astro';
-import { getContentCountsByLang } from '../../../lib/availability';
-import { ui } from '../../../i18n/ui';
-import { buildBasindaRows, paginateRows } from '../../../lib/pressPagination';
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import PressList from '../../../../components/navigation/PressList.astro';
+import PressRow from '../../../../components/navigation/PressRow.astro';
+import Pagination from '../../../../components/navigation/Pagination.astro';
+import { routes, type Locale } from '../../../../i18n/routes';
+import LangCountRow from '../../../../components/metadata/LangCountRow.astro';
+import { getContentCountsByLang } from '../../../../lib/availability';
+import { ui } from '../../../../i18n/ui';
+import { buildBasindaRows, paginateRows, extraPageParams } from '../../../../lib/pressPagination';
+
+export async function getStaticPaths() {
+  const allRows = await buildBasindaRows('fr');
+  const { totalPages } = paginateRows(allRows, 1);
+  return extraPageParams(totalPages);
+}
 
 const lang = 'fr';
 if (Astro.currentLocale !== lang) {
@@ -15,8 +21,9 @@ if (Astro.currentLocale !== lang) {
 }
 const t = ui[lang];
 
+const page = Number(Astro.params.page);
 const allRows = await buildBasindaRows(lang);
-const { pageRows: rows, totalPages } = paginateRows(allRows, 1);
+const { pageRows: rows, totalPages } = paginateRows(allRows, page);
 
 const lastUpdate = allRows.length
   ? new Intl.DateTimeFormat(lang, { month: 'long', year: 'numeric' }).format(
@@ -36,9 +43,9 @@ const langItems = (['tr', 'en', 'de', 'fr'] as Locale[]).map((l) => ({
   lang={lang}
   title={t.navBasinda}
   description={t.basindaAciklama}
-  canonical="/fr/basinda/"
+  canonical={`/fr/basinda/sayfa/${page}/`}
   current="basinda"
-  breadcrumb={[{ label: t.anaSayfa, href: routes.anaSayfa.fr }, { label: t.navBasinda }]}
+  breadcrumb={[{ label: t.anaSayfa, href: routes.anaSayfa.fr }, { label: t.navBasinda, href: '/fr/basinda/' }, { label: `${t.sayfaEtiketi} ${page}` }]}
 >
   <h1>{t.navBasinda}</h1>
   <p class="desc">{t.basindaAciklama}</p>
@@ -50,7 +57,7 @@ const langItems = (['tr', 'en', 'de', 'fr'] as Locale[]).map((l) => ({
     {rows.map((row) => <PressRow href={row.href} title={row.title} date={row.date} secondary={row.secondary} />)}
   </PressList>
 
-  <Pagination currentPage={1} totalPages={totalPages} basePath="/fr/basinda/" />
+  <Pagination currentPage={page} totalPages={totalPages} basePath="/fr/basinda/" />
 </BaseLayout>
 
 <style>
