@@ -13,7 +13,10 @@ body {
 }
 
 .page {
-  max-width: var(--page-width);
+  /* İçerik genişliği --page-width'te (roadmap kararı) kalsın diye, kartın kendi dolgusu
+     (2.5rem = 40px her yanda) max-width'e geri ekleniyor — yoksa dolgu içerik alanını
+     daraltıp, örneğin ana sayfadaki 4'lü/5'li grid'lerin bir öğesini alt satıra düşürüyordu. */
+  max-width: calc(var(--page-width) + 5rem);
   margin: 0 auto;
   background: var(--surface-0);
   border: 0.5px solid var(--border);
