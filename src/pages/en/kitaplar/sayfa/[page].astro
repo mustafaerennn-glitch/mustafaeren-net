@@ -1,34 +1,43 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import BookCard from '../../components/cards/BookCard.astro';
-import Pills from '../../components/navigation/Pills.astro';
-import Pagination from '../../components/navigation/Pagination.astro';
-import LangCountRow from '../../components/metadata/LangCountRow.astro';
-import { getContentCountsByLang } from '../../lib/availability';
-import type { Locale } from '../../i18n/routes';
-import { buildKitaplarEntries, KITAP_TURU_SLUGS, KITAP_TURU_LABELS_I18N } from '../../lib/kitaplar';
-import { paginateRows } from '../../lib/pressPagination';
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import BookCard from '../../../../components/cards/BookCard.astro';
+import Pills from '../../../../components/navigation/Pills.astro';
+import Pagination from '../../../../components/navigation/Pagination.astro';
+import { routes, type Locale } from '../../../../i18n/routes';
+import LangCountRow from '../../../../components/metadata/LangCountRow.astro';
+import { getContentCountsByLang } from '../../../../lib/availability';
+import { ui } from '../../../../i18n/ui';
+import { buildKitaplarEntries, KITAP_TURU_SLUGS, KITAP_TURU_LABELS_I18N } from '../../../../lib/kitaplar';
+import { paginateRows, extraPageParams } from '../../../../lib/pressPagination';
 
-const lang = 'tr';
+export async function getStaticPaths() {
+  const entries = await buildKitaplarEntries('en');
+  const { totalPages } = paginateRows(entries, 1);
+  return extraPageParams(totalPages);
+}
+
+const lang = 'en';
 if (Astro.currentLocale !== lang) {
   throw new Error(`i18n locale eşleşmedi: beklenen "${lang}", Astro.currentLocale="${Astro.currentLocale}"`);
 }
+const t = ui[lang];
 
+const page = Number(Astro.params.page);
 const entries = await buildKitaplarEntries(lang);
-const { pageRows: pageEntries, totalPages } = paginateRows(entries, 1);
+const { pageRows: pageEntries, totalPages } = paginateRows(entries, page);
 
 const turCounts: Record<string, number> = {};
 for (const e of entries) turCounts[e.data.kitapTuru] = (turCounts[e.data.kitapTuru] ?? 0) + 1;
 
 const turuLabels = KITAP_TURU_LABELS_I18N[lang];
 const pillItems = [
-  { label: 'Tümü', count: entries.length, href: '/kitaplar/', active: true },
+  { label: t.pillTumu, count: entries.length, href: '/en/kitaplar/', active: true },
   ...Object.entries(turuLabels)
     .filter(([tur]) => (turCounts[tur] ?? 0) > 0)
     .map(([tur, label]) => ({
       label,
       count: turCounts[tur] ?? 0,
-      href: `/kitaplar/tip/${KITAP_TURU_SLUGS[tur]}/`,
+      href: `/en/kitaplar/tip/${KITAP_TURU_SLUGS[tur]}/`,
       active: false,
     })),
 ];
@@ -43,14 +52,18 @@ const langItems = (['tr', 'en', 'de', 'fr'] as Locale[]).map((l) => ({
 
 <BaseLayout
   lang={lang}
-  title="Kitaplar"
-  description="Yazdığım ve editörlüğünü üstlendiğim kitaplar, ayrıca bir bölümüyle katkıda bulunduğum derlemeler — hapishane çalışmaları, göç ve yakın siyasal tarih üzerine."
-  canonical="/kitaplar/"
+  title={t.navKitaplar}
+  description={t.kitaplarAciklama}
+  canonical={`/en/kitaplar/sayfa/${page}/`}
   current="kitaplar"
-  breadcrumb={[{ label: 'Ana sayfa', href: '/' }, { label: 'Kitaplar' }]}
+  breadcrumb={[
+    { label: t.anaSayfa, href: routes.anaSayfa.en },
+    { label: t.navKitaplar, href: '/en/kitaplar/' },
+    { label: `${t.sayfaEtiketi} ${page}` },
+  ]}
 >
-  <h1>Kitaplar</h1>
-  <p class="desc">Yazdığım ve editörlüğünü üstlendiğim kitaplar, ayrıca bir bölümüyle katkıda bulunduğum derlemeler — hapishane çalışmaları, göç ve yakın siyasal tarih üzerine.</p>
+  <h1>{t.navKitaplar}</h1>
+  <p class="desc">{t.kitaplarAciklama}</p>
 
   <LangCountRow currentLang={lang} items={langItems} />
 
@@ -60,7 +73,7 @@ const langItems = (['tr', 'en', 'de', 'fr'] as Locale[]).map((l) => ({
     {
       pageEntries.map((entry) => (
         <BookCard
-          href={`/kitaplar/${entry.id}/`}
+          href={`/en/kitaplar/${entry.id}/`}
           cover={entry.data.kapak}
           coverAlt={entry.data.kapakAlt}
           title={entry.data.title}
@@ -72,7 +85,7 @@ const langItems = (['tr', 'en', 'de', 'fr'] as Locale[]).map((l) => ({
     }
   </div>
 
-  <Pagination currentPage={1} totalPages={totalPages} basePath="/kitaplar/" />
+  <Pagination currentPage={page} totalPages={totalPages} basePath="/en/kitaplar/" />
 </BaseLayout>
 
 <style>

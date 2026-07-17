@@ -2,6 +2,7 @@
 import { ui, type Locale } from '../../i18n/ui';
 import { routes, LANG_NAMES } from '../../i18n/routes';
 import { ALAN_LABELS, ALAN_LABELS_I18N, ALAN_SLUGS } from '../../lib/taxonomy';
+import { KITAP_TURU_SLUGS } from '../../lib/kitaplar';
 import LangCluster from '../metadata/LangCluster.astro';
 import Search from '../navigation/Search.astro';
 
@@ -81,7 +82,7 @@ const basindaHref = `${localePrefix}/basinda/`;
       <summary class:list={{ current: current === 'kitaplar' }}>{t.navKitaplar}</summary>
       <div class="menu">
         <a href={`${localePrefix}/kitaplar/`}>{t.pillTumu}</a>
-        {KITAP_TURLERI.map((k) => <a href={`${localePrefix}/kitaplar/?tip=${k.tip}`}>{k.label}</a>)}
+        {KITAP_TURLERI.map((k) => <a href={`${localePrefix}/kitaplar/tip/${KITAP_TURU_SLUGS[k.tip]}/`}>{k.label}</a>)}
       </div>
     </details>
 

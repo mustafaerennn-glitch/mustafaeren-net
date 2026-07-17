@@ -1,5 +1,4 @@
 ---
-import { getCollection } from 'astro:content';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import BookCard from '../../../components/cards/BookCard.astro';
 import Pills from '../../../components/navigation/Pills.astro';
@@ -8,6 +7,8 @@ import { routes, type Locale } from '../../../i18n/routes';
 import LangCountRow from '../../../components/metadata/LangCountRow.astro';
 import { getContentCountsByLang } from '../../../lib/availability';
 import { ui } from '../../../i18n/ui';
+import { buildKitaplarEntries, KITAP_TURU_SLUGS, KITAP_TURU_LABELS_I18N } from '../../../lib/kitaplar';
+import { paginateRows } from '../../../lib/pressPagination';
 
 const lang = 'en';
 if (Astro.currentLocale !== lang) {
@@ -15,29 +16,22 @@ if (Astro.currentLocale !== lang) {
 }
 const t = ui[lang];
 
-const KITAP_TURU_LABELS: Record<string, string> = {
-  yazdıklarım: 'My Writing',
-  editörlük: 'Edited',
-  katkılar: 'Contributions',
-};
-
-const entries = (await getCollection('kitaplar', (e) => e.data.lang === lang)).sort(
-  (a, b) => b.data.year - a.data.year,
-);
+const entries = await buildKitaplarEntries(lang);
+const { pageRows: pageEntries, totalPages } = paginateRows(entries, 1);
 
 const turCounts: Record<string, number> = {};
 for (const e of entries) turCounts[e.data.kitapTuru] = (turCounts[e.data.kitapTuru] ?? 0) + 1;
 
-const currentTip = Astro.url.searchParams.get('tip');
+const turuLabels = KITAP_TURU_LABELS_I18N[lang];
 const pillItems = [
-  { label: t.pillTumu, count: entries.length, href: '/en/kitaplar/', active: !currentTip },
-  ...Object.entries(KITAP_TURU_LABELS)
-    .filter(([tip]) => (turCounts[tip] ?? 0) > 0)
-    .map(([tip, label]) => ({
+  { label: t.pillTumu, count: entries.length, href: '/en/kitaplar/', active: true },
+  ...Object.entries(turuLabels)
+    .filter(([tur]) => (turCounts[tur] ?? 0) > 0)
+    .map(([tur, label]) => ({
       label,
-      count: turCounts[tip] ?? 0,
-      href: `/en/kitaplar/?tip=${tip}`,
-      active: currentTip === tip,
+      count: turCounts[tur] ?? 0,
+      href: `/en/kitaplar/tip/${KITAP_TURU_SLUGS[tur]}/`,
+      active: false,
     })),
 ];
 
@@ -66,23 +60,21 @@ const langItems = (['tr', 'en', 'de', 'fr'] as Locale[]).map((l) => ({
 
   <div class="book-grid">
     {
-      entries.map((entry) => (
-        <div class="card-wrap" data-tip={entry.data.kitapTuru}>
-          <BookCard
-            href={`/en/kitaplar/${entry.id}/`}
-            cover={entry.data.kapak}
-            coverAlt={entry.data.kapakAlt}
-            title={entry.data.title}
-            variant="grid"
-            meta={String(entry.data.year)}
-            seri={entry.data.seri}
-          />
-        </div>
+      pageEntries.map((entry) => (
+        <BookCard
+          href={`/en/kitaplar/${entry.id}/`}
+          cover={entry.data.kapak}
+          coverAlt={entry.data.kapakAlt}
+          title={entry.data.title}
+          variant="grid"
+          meta={String(entry.data.year)}
+          seri={entry.data.seri}
+        />
       ))
     }
   </div>
 
-  <Pagination currentPage={1} totalPages={1} basePath="/en/kitaplar/" />
+  <Pagination currentPage={1} totalPages={totalPages} basePath="/en/kitaplar/" />
 </BaseLayout>
 
 <style>
@@ -106,17 +98,3 @@ const langItems = (['tr', 'en', 'de', 'fr'] as Locale[]).map((l) => ({
     }
   }
 </style>
-
-<script>
-  const params = new URLSearchParams(location.search);
-  const tip = params.get('tip');
-  if (tip) {
-    document.querySelectorAll<HTMLElement>('[data-tip]').forEach((card) => {
-      card.style.display = card.dataset.tip === tip ? '' : 'none';
-    });
-    document.querySelectorAll<HTMLAnchorElement>('.pill').forEach((pill) => {
-      const url = new URL(pill.href);
-      pill.classList.toggle('active', url.searchParams.get('tip') === tip);
-    });
-  }
-</script>

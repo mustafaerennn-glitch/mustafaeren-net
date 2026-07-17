@@ -1,0 +1,130 @@
+---
+import BaseLayout from '../../../../../../layouts/BaseLayout.astro';
+import BookCard from '../../../../../../components/cards/BookCard.astro';
+import Pills from '../../../../../../components/navigation/Pills.astro';
+import Pagination from '../../../../../../components/navigation/Pagination.astro';
+import { routes, type Locale } from '../../../../../../i18n/routes';
+import LangCountRow from '../../../../../../components/metadata/LangCountRow.astro';
+import { getContentCountsByLang } from '../../../../../../lib/availability';
+import { ui } from '../../../../../../i18n/ui';
+import {
+  buildKitaplarEntries,
+  KITAP_TURU_SLUGS,
+  KITAP_TURU_BY_SLUG,
+  KITAP_TURU_LABELS_I18N,
+} from '../../../../../../lib/kitaplar';
+import { paginateRows, extraPageParams } from '../../../../../../lib/pressPagination';
+
+export async function getStaticPaths() {
+  const entries = await buildKitaplarEntries('en');
+  const turSet = new Set(entries.map((e) => e.data.kitapTuru));
+  const paths: { params: { tip: string; page: string } }[] = [];
+  for (const tur of turSet) {
+    const turEntries = entries.filter((e) => e.data.kitapTuru === tur);
+    const { totalPages } = paginateRows(turEntries, 1);
+    for (const p of extraPageParams(totalPages)) {
+      paths.push({ params: { tip: KITAP_TURU_SLUGS[tur], page: p.params.page } });
+    }
+  }
+  return paths;
+}
+
+const lang = 'en';
+if (Astro.currentLocale !== lang) {
+  throw new Error(`i18n locale eşleşmedi: beklenen "${lang}", Astro.currentLocale="${Astro.currentLocale}"`);
+}
+const t = ui[lang];
+
+const tipSlug = Astro.params.tip as string;
+const currentTur = KITAP_TURU_BY_SLUG[tipSlug];
+const page = Number(Astro.params.page);
+const allEntries = await buildKitaplarEntries(lang);
+const turEntries = allEntries.filter((e) => e.data.kitapTuru === currentTur);
+const { pageRows: pageEntries, totalPages } = paginateRows(turEntries, page);
+
+const turCounts: Record<string, number> = {};
+for (const e of allEntries) turCounts[e.data.kitapTuru] = (turCounts[e.data.kitapTuru] ?? 0) + 1;
+
+const turuLabels = KITAP_TURU_LABELS_I18N[lang];
+const pillItems = [
+  { label: t.pillTumu, count: allEntries.length, href: '/en/kitaplar/', active: false },
+  ...Object.entries(turuLabels)
+    .filter(([tur]) => (turCounts[tur] ?? 0) > 0)
+    .map(([tur, label]) => ({
+      label,
+      count: turCounts[tur] ?? 0,
+      href: `/en/kitaplar/tip/${KITAP_TURU_SLUGS[tur]}/`,
+      active: tur === currentTur,
+    })),
+];
+
+const langCounts = await getContentCountsByLang();
+const langItems = (['tr', 'en', 'de', 'fr'] as Locale[]).map((l) => ({
+  lang: l,
+  href: l === 'tr' ? '/kitaplar/' : `/${l}/kitaplar/`,
+  count: langCounts[l].kitaplar,
+}));
+
+const turLabel = turuLabels[currentTur];
+---
+
+<BaseLayout
+  lang={lang}
+  title={`${t.navKitaplar} — ${turLabel}`}
+  description={t.kitaplarAciklama}
+  canonical={`/en/kitaplar/tip/${tipSlug}/sayfa/${page}/`}
+  current="kitaplar"
+  breadcrumb={[
+    { label: t.anaSayfa, href: routes.anaSayfa.en },
+    { label: t.navKitaplar, href: '/en/kitaplar/' },
+    { label: turLabel, href: `/en/kitaplar/tip/${tipSlug}/` },
+    { label: `${t.sayfaEtiketi} ${page}` },
+  ]}
+>
+  <h1>{t.navKitaplar}</h1>
+  <p class="desc">{t.kitaplarAciklama}</p>
+
+  <LangCountRow currentLang={lang} items={langItems} />
+
+  <Pills items={pillItems} />
+
+  <div class="book-grid">
+    {
+      pageEntries.map((entry) => (
+        <BookCard
+          href={`/en/kitaplar/${entry.id}/`}
+          cover={entry.data.kapak}
+          coverAlt={entry.data.kapakAlt}
+          title={entry.data.title}
+          variant="grid"
+          meta={String(entry.data.year)}
+          seri={entry.data.seri}
+        />
+      ))
+    }
+  </div>
+
+  <Pagination currentPage={page} totalPages={totalPages} basePath={`/en/kitaplar/tip/${tipSlug}/`} />
+</BaseLayout>
+
+<style>
+  .desc {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    max-width: 520px;
+    margin: 1rem 0 1.75rem;
+  }
+  .book-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(148px, 1fr));
+    gap: 22px 16px;
+    margin-bottom: 1.75rem;
+  }
+  @media (max-width: 520px) {
+    .book-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px 14px;
+    }
+  }
+</style>
