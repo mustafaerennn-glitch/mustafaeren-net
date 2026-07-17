@@ -34,7 +34,7 @@ Koğuş sisteminden o çok övülen "oda sistemi"ne geçilmesinin ardından hapi
 
 Adalet Bakanlığı'nın kendi verilerine göre Türkiye hapishanelerinde 1997'de 123 mahpus, 1998'de 156 mahpus, 1999'da 194 mahpus yaşamını yitirirken, 2010'da yaşamını yitiren mahpus sayısı 252, 2011'de ise 268'dir. Yaşamını yitiren insanların sayısı neredeyse iki kat artmış durumdadır.
 
-![](https://m.bianet.org/resim/olcekle/37857/490/162)
+![](https://static.bianet.org/system/uploads/1/images/000/037/857/original/tablo.jpg)
 
 Yukarıdaki tablo \[2\] incelendiğinde görülecektir ki Türkiye hapishanelerinde 15 yıl içerisinde 2497 mahpus yaşamını yitirmiştir. Yani her gün sessiz sedasız Urfa hadiseleri yaşanmaktadır. "Oda sistemi"ne geçilmesinin ardından hem "eceliyle ölümler" hem de "intihar" vakaları artış göstermiştir.
 
