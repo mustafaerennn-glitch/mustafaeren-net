@@ -35,4 +35,6 @@ Ceza İnfaz Sisteminde Sivil Toplum Derneği’nin (CİSST) kitabın çevirisini
 
 [🔗 **Birleşmiş Milletler El Kitabının Tam Metni**](https://www.unodc.org/documents/justice-and-prison-reform/Prisoners_with_special_needs_HB_Turkish.pdf)
 
+[🔗 **Elkitabının CİSST Baskısı (Tam Metin)**](https://cisst.org.tr/wp-content/uploads/2025/07/ozel-ihtiyaclara-sahip-mahpuslar-uzerine-el-kitabi.pdf)
+
 [**📥 Yazının PDF Versiyonu**](/pdf/ozel-ihtiyaclari-olan-mahpuslar-ve-insan-haklari.pdf)
