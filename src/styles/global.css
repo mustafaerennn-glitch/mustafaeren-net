@@ -7,7 +7,7 @@
 body {
   font-family: var(--font-sans);
   color: var(--text-primary);
-  background: var(--surface-0);
+  background: var(--surface-1);
   margin: 0;
   padding: 2.5rem 1rem;
 }
@@ -15,6 +15,20 @@ body {
 .page {
   max-width: var(--page-width);
   margin: 0 auto;
+  background: var(--surface-0);
+  border: 0.5px solid var(--border);
+  border-radius: 16px;
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.04),
+    0 12px 32px rgba(0, 0, 0, 0.06);
+  padding: 2.5rem;
+}
+
+@media (max-width: 600px) {
+  .page {
+    padding: 1.5rem 1.25rem;
+    border-radius: 12px;
+  }
 }
 
 h1,
