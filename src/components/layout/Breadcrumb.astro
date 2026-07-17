@@ -40,9 +40,14 @@ const jsonLd = {
 
 <style>
   .breadcrumb {
+    position: sticky;
+    top: var(--nav-stack-height, 0px);
+    z-index: 20;
+    background: var(--surface-0);
     font-size: 13px;
     color: var(--text-muted);
-    margin-bottom: 1rem;
+    padding: 0.6rem 0;
+    margin-bottom: 0.4rem;
   }
   .breadcrumb a {
     color: var(--text-muted);
@@ -50,5 +55,12 @@ const jsonLd = {
   }
   .breadcrumb .current {
     color: var(--text-secondary);
+  }
+  @media (max-width: 600px) {
+    .breadcrumb {
+      position: static;
+      padding: 0;
+      margin-bottom: 1rem;
+    }
   }
 </style>

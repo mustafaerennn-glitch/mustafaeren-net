@@ -58,61 +58,68 @@ const yazilarHref = `${localePrefix}/yazilar/`;
 const basindaHref = `${localePrefix}/basinda/`;
 ---
 
-<header class="site-header">
-  <nav class:list={['topnav', { 'has-switcher': showSwitcher }]}>
-    <a class="brand" href={brandHref}>Mustafa Eren</a>
-    <div class="nav-items">
-      <a class:list={['nav-link', { current: current === 'yazilar' }]} href={yazilarHref}>{t.navYazilar}</a>
+<!-- Not: eskiden <header class="site-header"> içine sarılıydı. O sarmalayıcı kaldırıldı çünkü
+     position:sticky elemanları kendi içinde bulunduğu block'un YÜKSEKLİĞİYLE sınırlı kalır —
+     <header> yalnızca nav+dil-satırı kadar uzun bir kutuydu, bu yüzden sayfa o yüksekliği
+     geçince sticky nav yapışık kalmayı bırakıp kayboluyordu. .topnav ve .lang-row artık
+     doğrudan .page'in (tüm sayfa kadar uzun) çocukları, sticky boyunca "yapışacak yer" var. -->
+<nav class:list={['topnav', { 'has-switcher': showSwitcher }]}>
+  <a class="brand" href={brandHref}>Mustafa Eren</a>
+  <div class="nav-items">
+    <a class:list={['nav-link', { current: current === 'yazilar' }]} href={yazilarHref}>{t.navYazilar}</a>
 
-      <details class="dropdown">
-        <summary class:list={{ current: current === 'videolar' }}>{t.navVideolar}</summary>
-        <div class="menu">
-          <a href={`${localePrefix}/videolar/`}>{t.pillTumu}</a>
-          {VIDEO_TURLERI.map((v) => <a href={`${localePrefix}/videolar/?tur=${v.tur}`}>{v.label}</a>)}
-        </div>
-      </details>
-
-      <details class="dropdown">
-        <summary class:list={{ current: current === 'kitaplar' }}>{t.navKitaplar}</summary>
-        <div class="menu">
-          <a href={`${localePrefix}/kitaplar/`}>{t.pillTumu}</a>
-          {KITAP_TURLERI.map((k) => <a href={`${localePrefix}/kitaplar/?tip=${k.tip}`}>{k.label}</a>)}
-        </div>
-      </details>
-
-      <a class:list={['nav-link', { current: current === 'basinda' }]} href={basindaHref}>{t.navBasinda}</a>
-
-      <details class="dropdown">
-        <summary class:list={{ current: current === 'konular' }}>{t.navKonular}</summary>
-        <div class="menu">
-          {ALANLAR.map((a) => <a href={`${localePrefix}/alanlar/${a.slug}/`}>{a.label}</a>)}
-        </div>
-      </details>
-
-      <a class:list={['nav-link', { current: current === 'hakkimda' }]} href={hakkimdaHref}>{t.navHakkimda}</a>
-      <a class:list={['nav-link', { current: current === 'iletisim' }]} href={iletisimHref}>{t.navIletisim}</a>
-    </div>
-  </nav>
-
-  {
-    showSwitcher && (
-      <div class="lang-row">
-        <span class="lang-row-desktop">
-          <LangCluster currentLang={lang} items={alternates} />
-        </span>
-        <details class="dropdown lang-dropdown">
-          <summary>{LANG_NAMES[lang]}</summary>
-          <div class="menu">
-            {otherLangs.map((a) => <a href={a.href}>{LANG_NAMES[a.lang]}</a>)}
-          </div>
-        </details>
+    <details class="dropdown">
+      <summary class:list={{ current: current === 'videolar' }}>{t.navVideolar}</summary>
+      <div class="menu">
+        <a href={`${localePrefix}/videolar/`}>{t.pillTumu}</a>
+        {VIDEO_TURLERI.map((v) => <a href={`${localePrefix}/videolar/?tur=${v.tur}`}>{v.label}</a>)}
       </div>
-    )
-  }
-</header>
+    </details>
+
+    <details class="dropdown">
+      <summary class:list={{ current: current === 'kitaplar' }}>{t.navKitaplar}</summary>
+      <div class="menu">
+        <a href={`${localePrefix}/kitaplar/`}>{t.pillTumu}</a>
+        {KITAP_TURLERI.map((k) => <a href={`${localePrefix}/kitaplar/?tip=${k.tip}`}>{k.label}</a>)}
+      </div>
+    </details>
+
+    <a class:list={['nav-link', { current: current === 'basinda' }]} href={basindaHref}>{t.navBasinda}</a>
+
+    <details class="dropdown">
+      <summary class:list={{ current: current === 'konular' }}>{t.navKonular}</summary>
+      <div class="menu">
+        {ALANLAR.map((a) => <a href={`${localePrefix}/alanlar/${a.slug}/`}>{a.label}</a>)}
+      </div>
+    </details>
+
+    <a class:list={['nav-link', { current: current === 'hakkimda' }]} href={hakkimdaHref}>{t.navHakkimda}</a>
+    <a class:list={['nav-link', { current: current === 'iletisim' }]} href={iletisimHref}>{t.navIletisim}</a>
+  </div>
+</nav>
+
+{
+  showSwitcher && (
+    <div class="lang-row">
+      <span class="lang-row-desktop">
+        <LangCluster currentLang={lang} items={alternates} />
+      </span>
+      <details class="dropdown lang-dropdown">
+        <summary>{LANG_NAMES[lang]}</summary>
+        <div class="menu">
+          {otherLangs.map((a) => <a href={a.href}>{LANG_NAMES[a.lang]}</a>)}
+        </div>
+      </details>
+    </div>
+  )
+}
 
 <style>
   .topnav {
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    background: var(--surface-0);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -128,10 +135,15 @@ const basindaHref = `${localePrefix}/basinda/`;
     margin-bottom: 0.75rem;
   }
   .lang-row {
+    position: sticky;
+    top: var(--nav-height, 0px);
+    z-index: 25;
+    background: var(--surface-0);
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    margin-bottom: 2rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
   }
   .lang-row-desktop {
     font-size: 12px;
@@ -216,6 +228,12 @@ const basindaHref = `${localePrefix}/basinda/`;
       left: auto;
       right: 0;
     }
+    /* Dar ekranda birkaç sticky bar üst üste dikey alanın çoğunu yiyeceği için kaldırıldı
+       (talimat) — navbar dahil hiçbiri mobilde sticky kalmıyor, normal akışta kayıyor. */
+    .topnav,
+    .lang-row {
+      position: static;
+    }
   }
 </style>
 
@@ -226,4 +244,25 @@ const basindaHref = `${localePrefix}/basinda/`;
       if (!details.contains(e.target as Node)) details.removeAttribute('open');
     });
   });
+
+  // Sticky yığın senkronizasyonu: navbar + dil satırının GERÇEK yüksekliklerini ölçüp
+  // :root üzerinde CSS custom property olarak yayınlıyoruz. Nav.astro'daki .lang-row (top:
+  // var(--nav-height)) ve Breadcrumb.astro'daki .breadcrumb (top: var(--nav-stack-height))
+  // bu değerleri okuyor — böylece navbar'ın padding/yüksekliği ileride değişirse hardcode
+  // píxel değerlerini elle güncellemek gerekmiyor, ResizeObserver otomatik yeniden hesaplıyor.
+  function syncStickyOffsets() {
+    const topnav = document.querySelector<HTMLElement>('.topnav');
+    const langRow = document.querySelector<HTMLElement>('.lang-row');
+    const navHeight = topnav?.getBoundingClientRect().height ?? 0;
+    const langRowHeight = langRow ? langRow.getBoundingClientRect().height : 0;
+    const root = document.documentElement.style;
+    root.setProperty('--nav-height', `${navHeight}px`);
+    root.setProperty('--nav-stack-height', `${navHeight + langRowHeight}px`);
+  }
+
+  syncStickyOffsets();
+
+  const resizeObserver = new ResizeObserver(() => syncStickyOffsets());
+  document.querySelectorAll<HTMLElement>('.topnav, .lang-row').forEach((el) => resizeObserver.observe(el));
+  window.addEventListener('resize', syncStickyOffsets);
 </script>
