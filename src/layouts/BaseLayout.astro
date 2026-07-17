@@ -24,6 +24,11 @@ interface Props {
   current?: 'yazilar' | 'videolar' | 'kitaplar' | 'basinda' | 'konular' | 'hakkimda' | 'iletisim';
   breadcrumb?: Crumb[]; // ana sayfada verilmez — anlamsız (talimat)
   pageWidth?: string; // yalnızca Video sayfalarındaki bilinçli 760px istisnası için (bkz. bilesen-envanteri.md §6.1)
+  // Site arama (Pagefind) kapsamı: yalnızca bu prop'u geçen sayfalar indekslenir (Yazı/Basında/
+  // Video/Kitap detay sayfaları). Verilince <main>'e data-pagefind-body + tür meta'sı eklenir —
+  // Pagefind'da bu attribute site genelinde bir kez kullanılınca, kullanılmayan TÜM sayfalar
+  // (index/hub/Hakkımda/İletişim dahil) otomatik olarak indeks dışı kalır.
+  pagefindType?: 'Yazı' | 'Basında' | 'Video' | 'Kitap';
   // Site geneli dil değiştirici Nav'da yalnızca genel/indeks sayfalarında (Ana Sayfa, Hakkımda,
   // İletişim, indeksler) gösterilir. İçerik detay sayfaları (Yazı/Basında) da hreflang için
   // `alternates` geçer ama kendi gövde-içi LangCluster'ı zaten var — Nav'da tekrar göstermek
@@ -31,7 +36,7 @@ interface Props {
   showLangSwitcher?: boolean;
 }
 
-const { lang, title, description, canonical, alternates = [], current, breadcrumb, pageWidth, showLangSwitcher = false } = Astro.props;
+const { lang, title, description, canonical, alternates = [], current, breadcrumb, pageWidth, showLangSwitcher = false, pagefindType } = Astro.props;
 
 // Yalnızca gerçekten birden fazla dil sürümü varsa hreflang üretilir —
 // tek dilli bir sayfada kendine referans veren hreflang anlamsız/gürültü olurdu.
@@ -61,7 +66,7 @@ const canonicalAbsolute = new URL(canonical, SITE_URL).toString();
   <body>
     <div class="page" style={pageWidth ? `--page-width: ${pageWidth}` : undefined}>
       <Nav lang={lang} current={current} alternates={showLangSwitcher ? alternates : []} />
-      <main>
+      <main data-pagefind-body={pagefindType ? true : undefined} data-pagefind-meta={pagefindType ? `type:${pagefindType}` : undefined}>
         {breadcrumb && <Breadcrumb items={breadcrumb} />}
         <slot />
       </main>

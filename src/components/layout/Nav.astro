@@ -3,6 +3,7 @@ import { ui, type Locale } from '../../i18n/ui';
 import { routes, LANG_NAMES } from '../../i18n/routes';
 import { ALAN_LABELS, ALAN_LABELS_I18N, ALAN_SLUGS } from '../../lib/taxonomy';
 import LangCluster from '../metadata/LangCluster.astro';
+import Search from '../navigation/Search.astro';
 
 // İlke (kullanıcı onaylı, revize edildi): Nav'daki menü öğeleri artık HER dilde her zaman
 // gösterilir, içerik sayısı 0 olsa bile (örn. Fransızca'da "Videolar" görünür durumda kalır).
@@ -95,6 +96,7 @@ const basindaHref = `${localePrefix}/basinda/`;
 
     <a class:list={['nav-link', { current: current === 'hakkimda' }]} href={hakkimdaHref}>{t.navHakkimda}</a>
     <a class:list={['nav-link', { current: current === 'iletisim' }]} href={iletisimHref}>{t.navIletisim}</a>
+    <Search lang={lang} />
   </div>
 </nav>
 

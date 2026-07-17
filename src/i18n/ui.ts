@@ -63,6 +63,10 @@ export const ui = {
     yayinlanmisKitaplar: 'Yayınlanmış Kitaplar',
     sayfaEtiketi: 'Sayfa',
     alandaTurYok: 'Bu alanda henüz bu türde içerik yayımlanmadı.',
+    searchAriaLabel: 'Ara',
+    searchPlaceholder: 'Yazılarda, basında, video ve kitaplarda ara…',
+    searchNoResults: 'Sonuç bulunamadı.',
+    searchHint: 'kapatmak için ESC',
   },
   en: {
     navYazilar: 'Articles',
@@ -122,6 +126,10 @@ export const ui = {
     yayinlanmisKitaplar: 'Published Books',
     sayfaEtiketi: 'Page',
     alandaTurYok: 'No content of this type has been published in this area yet.',
+    searchAriaLabel: 'Search',
+    searchPlaceholder: 'Search articles, press, videos and books…',
+    searchNoResults: 'No results found.',
+    searchHint: 'ESC to close',
   },
   de: {
     navYazilar: 'Artikel',
@@ -182,6 +190,10 @@ export const ui = {
     yayinlanmisKitaplar: 'Veröffentlichte Bücher',
     sayfaEtiketi: 'Seite',
     alandaTurYok: 'In diesem Bereich wurde noch kein Inhalt dieser Art veröffentlicht.',
+    searchAriaLabel: 'Suchen',
+    searchPlaceholder: 'Artikel, Presse, Videos und Bücher durchsuchen…',
+    searchNoResults: 'Keine Ergebnisse gefunden.',
+    searchHint: 'ESC zum Schließen',
   },
   fr: {
     navYazilar: 'Articles',
@@ -242,6 +254,10 @@ export const ui = {
     yayinlanmisKitaplar: 'Ouvrages publiés',
     sayfaEtiketi: 'Page',
     alandaTurYok: "Aucun contenu de ce type n'a encore été publié dans ce domaine.",
+    searchAriaLabel: 'Rechercher',
+    searchPlaceholder: 'Rechercher des articles, de la presse, des vidéos et des livres…',
+    searchNoResults: 'Aucun résultat trouvé.',
+    searchHint: 'ESC pour fermer',
   },
 } as const;
 

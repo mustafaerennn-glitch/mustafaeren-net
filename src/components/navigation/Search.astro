@@ -1,0 +1,257 @@
+---
+// Site arama — Pagefind (bkz. package.json build script'i: "astro build && pagefind --site dist").
+// Yalnızca üretim derlemesinde çalışır (dist/pagefind/pagefind.js orada üretiliyor); dev
+// sunucusunda tetikleyici görünür ama arama "Arama yalnızca üretim derlemesinde çalışır" gibi
+// bir hataya düşmez, sessizce sonuç bulamaz — bkz. aşağıdaki try/catch.
+import { ui, type Locale } from '../../i18n/ui';
+import { TYPE_LABELS } from '../../lib/feed';
+
+interface Props {
+  lang: Locale;
+}
+
+const { lang } = Astro.props;
+const t = ui[lang];
+// TYPE_LABELS burada, sunucu tarafında çözülüyor ve JSON olarak DOM'a taşınıyor — istemci
+// script'i lib/feed.ts'i doğrudan import edemez, o dosya astro:content'e bağımlı (sunucu-only).
+const typeLabels = TYPE_LABELS[lang] ?? TYPE_LABELS.tr;
+---
+
+<button type="button" class="search-trigger" aria-label={t.searchAriaLabel} data-search-open>
+  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="11" cy="11" r="7" />
+    <line x1="21" y1="21" x2="16.65" y2="16.65" />
+  </svg>
+</button>
+
+<dialog id="search-dialog" data-search-dialog data-no-results={t.searchNoResults} data-type-labels={JSON.stringify(typeLabels)}>
+  <div class="search-head">
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="11" cy="11" r="7" />
+      <line x1="21" y1="21" x2="16.65" y2="16.65" />
+    </svg>
+    <input type="search" placeholder={t.searchPlaceholder} data-search-input aria-label={t.searchAriaLabel} />
+    <span class="search-hint">{t.searchHint}</span>
+  </div>
+  <div class="search-results" data-search-results></div>
+</dialog>
+
+<script>
+  const openBtnQuery = document.querySelector('[data-search-open]');
+  const dialogQuery = document.querySelector('[data-search-dialog]');
+  const inputQuery = document.querySelector('[data-search-input]');
+  const resultsQuery = document.querySelector('[data-search-results]');
+
+  if (
+    openBtnQuery instanceof HTMLElement &&
+    dialogQuery instanceof HTMLDialogElement &&
+    inputQuery instanceof HTMLInputElement &&
+    resultsQuery instanceof HTMLElement
+  ) {
+    // Narrow'lanmış tipler kapatma (closure) fonksiyonlarına taşınmıyor — TS'in bilinen
+    // sınırlaması. Bu yüzden yeniden bağlanıyor, aşağıdaki iç içe fonksiyonlar bu adlarla çalışır.
+    const openBtnEl = openBtnQuery;
+    const dialogEl = dialogQuery;
+    const inputEl = inputQuery;
+    const resultsEl = resultsQuery;
+
+    const labels: Record<string, string> = JSON.parse(dialogEl.dataset.typeLabels || '{}');
+    const noResultsMsg = dialogEl.dataset.noResults || 'No results.';
+
+    let pagefind: any = null;
+    let pagefindLoadFailed = false;
+    let debounceTimer: ReturnType<typeof setTimeout> | undefined;
+    let requestId = 0;
+
+    async function ensurePagefind() {
+      if (pagefind || pagefindLoadFailed) return pagefind;
+      try {
+        // Vite, /* @vite-ignore */ + değişken specifier'a rağmen build sırasında bu import()'u
+        // kendi modulepreload sarmalayıcısına sabitliyor (sabit değişkeni "inline" edip yeniden
+        // statik analiz ediyor) — pagefind.js Vite'ın hiç bilmediği bir modül olduğu için
+        // (pagefind CLI, Vite build'i BİTTİKTEN sonra ayrı bir adımda üretiyor) bu sarmalama
+        // sessizce başarısız oluyordu. Kesin çözüm: import()'u bir string'den Function()
+        // ile üretmek — bundler'ın hiç göremeyeceği, gerçekten çalışma zamanında çözülen bir
+        // dynamic import.
+        // @ts-ignore — yalnızca build sonrası dist/pagefind/ altında var olan bir modül.
+        pagefind = await new Function('return import("/pagefind/pagefind.js")')();
+        await pagefind.init();
+      } catch {
+        pagefindLoadFailed = true;
+      }
+      return pagefind;
+    }
+
+    function openDialog() {
+      dialogEl.showModal();
+      inputEl.focus();
+      ensurePagefind();
+    }
+
+    openBtnEl.addEventListener('click', openDialog);
+
+    document.addEventListener('keydown', (e) => {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        if (dialogEl.open) {
+          dialogEl.close();
+        } else {
+          openDialog();
+        }
+      }
+    });
+
+    dialogEl.addEventListener('click', (e) => {
+      const rect = dialogEl.getBoundingClientRect();
+      const inside = e.clientX >= rect.left && e.clientX <= rect.right && e.clientY >= rect.top && e.clientY <= rect.bottom;
+      if (!inside) dialogEl.close();
+    });
+
+    dialogEl.addEventListener('close', () => {
+      inputEl.value = '';
+      resultsEl.innerHTML = '';
+    });
+
+    inputEl.addEventListener('input', () => {
+      clearTimeout(debounceTimer);
+      const query = inputEl.value.trim();
+      if (!query) {
+        resultsEl.innerHTML = '';
+        return;
+      }
+      debounceTimer = setTimeout(() => runSearch(query), 150);
+    });
+
+    async function runSearch(query: string) {
+      const currentRequest = ++requestId;
+      const pf = await ensurePagefind();
+      if (!pf) {
+        resultsEl.innerHTML = `<p class="search-empty">${noResultsMsg}</p>`;
+        return;
+      }
+      const search = await pf.search(query);
+      if (currentRequest !== requestId) return; // eski istek — yarışa girme
+
+      if (search.results.length === 0) {
+        resultsEl.innerHTML = `<p class="search-empty">${noResultsMsg}</p>`;
+        return;
+      }
+
+      const items = await Promise.all(search.results.slice(0, 20).map((r: any) => r.data()));
+      if (currentRequest !== requestId) return;
+
+      resultsEl.innerHTML = items
+        .map((item: any) => {
+          const type = item.meta?.type ?? '';
+          const typeLabel = labels[type as keyof typeof labels] ?? type;
+          return `<a class="search-result" href="${item.url}">
+            <span class="search-result-type">${typeLabel}</span>
+            <span class="search-result-title">${item.meta?.title ?? item.url}</span>
+            <span class="search-result-excerpt">${item.excerpt}</span>
+          </a>`;
+        })
+        .join('');
+    }
+  }
+</script>
+
+<style>
+  .search-trigger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    padding: 0;
+    color: var(--text-secondary);
+    cursor: pointer;
+  }
+  .search-trigger:hover {
+    color: var(--text-primary);
+  }
+  dialog[data-search-dialog] {
+    width: 90%;
+    max-width: 560px;
+    border: none;
+    border-radius: 12px;
+    padding: 0;
+    background: var(--surface-2);
+    color: var(--text-primary);
+    margin-top: 10vh;
+  }
+  dialog[data-search-dialog]::backdrop {
+    background: rgba(0, 0, 0, 0.4);
+  }
+  .search-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 18px;
+    border-bottom: 0.5px solid var(--border);
+    color: var(--text-muted);
+  }
+  .search-head input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 15px;
+    font-family: var(--font-sans);
+    color: var(--text-primary);
+  }
+  .search-hint {
+    font-size: 11px;
+    color: var(--text-muted);
+    white-space: nowrap;
+  }
+  @media (max-width: 600px) {
+    .search-hint {
+      display: none;
+    }
+  }
+  .search-results {
+    max-height: 60vh;
+    overflow-y: auto;
+    padding: 8px;
+  }
+  /* Bu sonuçlar Pagefind tarafından çalışma zamanında innerHTML ile ekleniyor — Astro'nun
+     build-time scoped CSS'i bu elemanlara hiç işlemiyor, bu yüzden hepsi :global(). */
+  :global(.search-result) {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 10px 10px;
+    border-radius: var(--radius);
+    text-decoration: none;
+    color: inherit;
+  }
+  :global(.search-result:hover) {
+    background: var(--surface-1);
+  }
+  :global(.search-result-type) {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--text-accent);
+  }
+  :global(.search-result-title) {
+    font-size: 14px;
+    font-weight: 500;
+  }
+  :global(.search-result-excerpt) {
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+  :global(.search-result-excerpt mark) {
+    background: none;
+    color: var(--text-primary);
+    font-weight: 500;
+  }
+  :global(.search-empty) {
+    font-size: 13px;
+    color: var(--text-muted);
+    padding: 1.5rem 1rem;
+    text-align: center;
+    margin: 0;
+  }
+</style>
