@@ -56,5 +56,6 @@
   { "id": "kedistan", "ad": "Kedistan", "yayinEki": "'da", "iyelikEki": "'ın" },
   { "id": "engelliler-biz-platformu", "ad": "Engelliler Biz Platformu", "url": "https://www.engelliler.biz", "yayinEki": "'nda", "iyelikEki": "'nun" },
   { "id": "msgsu-sosyal-bilimler-dergisi", "ad": "MSGSÜ Sosyal Bilimler Dergisi", "url": "https://sosbildergi.msgsu.edu.tr", "yayinEki": "'nde", "iyelikEki": "'nin" },
-  { "id": "guncel-hukuk", "ad": "Güncel Hukuk", "url": "http://www.guncelhukuk.com.tr", "yayinEki": "'ta", "iyelikEki": "'un" }
+  { "id": "guncel-hukuk", "ad": "Güncel Hukuk", "url": "http://www.guncelhukuk.com.tr", "yayinEki": "'ta", "iyelikEki": "'un" },
+  { "id": "sosyal-hukuk", "ad": "Sosyal Hukuk", "yayinEki": "'ta", "iyelikEki": "'un" }
 ]

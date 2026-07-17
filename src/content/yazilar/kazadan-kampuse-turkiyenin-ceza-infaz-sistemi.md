@@ -5,6 +5,7 @@ description: Mahpus sayısının artışı ve her yıl yeni ve mimarisinin yukar
 topics:
   - hukuk-adalet-sistemi
 publishDate: '2017-08-11'
+mecra: sosyal-hukuk
 featuredImage: ./_images/kazadan-kampuse-turkiyenin-ceza-infaz-sistemi-featured.webp
 featuredImageAlt: ''
 ---
