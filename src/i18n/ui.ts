@@ -62,6 +62,7 @@ export const ui = {
     tesekkurler: 'Teşekkürler',
     yayinlanmisKitaplar: 'Yayınlanmış Kitaplar',
     sayfaEtiketi: 'Sayfa',
+    alandaTurYok: 'Bu alanda henüz bu türde içerik yayımlanmadı.',
   },
   en: {
     navYazilar: 'Articles',
@@ -120,6 +121,7 @@ export const ui = {
     tesekkurler: 'Thank you',
     yayinlanmisKitaplar: 'Published Books',
     sayfaEtiketi: 'Page',
+    alandaTurYok: 'No content of this type has been published in this area yet.',
   },
   de: {
     navYazilar: 'Artikel',
@@ -179,6 +181,7 @@ export const ui = {
     tesekkurler: 'Danke',
     yayinlanmisKitaplar: 'Veröffentlichte Bücher',
     sayfaEtiketi: 'Seite',
+    alandaTurYok: 'In diesem Bereich wurde noch kein Inhalt dieser Art veröffentlicht.',
   },
   fr: {
     navYazilar: 'Articles',
@@ -238,6 +241,7 @@ export const ui = {
     tesekkurler: 'Merci',
     yayinlanmisKitaplar: 'Ouvrages publiés',
     sayfaEtiketi: 'Page',
+    alandaTurYok: "Aucun contenu de ce type n'a encore été publié dans ce domaine.",
   },
 } as const;
 

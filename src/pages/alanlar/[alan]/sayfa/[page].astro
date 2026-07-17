@@ -1,0 +1,248 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import Pills from '../../../../components/navigation/Pills.astro';
+import ContentListRow from '../../../../components/cards/ContentListRow.astro';
+import Pagination from '../../../../components/navigation/Pagination.astro';
+import { ALAN_LABELS, ALAN_SLUGS, getAreaCounts } from '../../../../lib/taxonomy';
+import { type Locale } from '../../../../i18n/routes';
+import LangCountRow from '../../../../components/metadata/LangCountRow.astro';
+import { buildAlanHubItems, ALAN_TIP_QUERIES, type AlanHubItem } from '../../../../lib/alanHub';
+import { paginateRows, extraPageParams } from '../../../../lib/pressPagination';
+
+export async function getStaticPaths() {
+  const paths: { params: { alan: string; page: string } }[] = [];
+  for (const alan of ALAN_SLUGS) {
+    const items = await buildAlanHubItems(alan, 'tr');
+    const { totalPages } = paginateRows(items, 1);
+    for (const p of extraPageParams(totalPages)) {
+      paths.push({ params: { alan, page: p.params.page } });
+    }
+  }
+  return paths;
+}
+
+const { alan } = Astro.params;
+const page = Number(Astro.params.page);
+const alanLabel = ALAN_LABELS[alan as keyof typeof ALAN_LABELS];
+const lang = 'tr';
+
+const items = await buildAlanHubItems(alan as string, lang);
+const { pageRows: rows, totalPages } = paginateRows(items, page);
+
+const topicCounts = new Map<string, number>();
+for (const item of items) topicCounts.set(item.topicId, (topicCounts.get(item.topicId) ?? 0) + 1);
+const maxTopicCount = Math.max(1, ...topicCounts.values());
+
+const topics = await getCollection('topics');
+const topicsInAlan = topics.filter((t) => t.data.alan === alan);
+const topicsWithCounts = topicsInAlan
+  .map((t) => ({ id: t.id, label: t.data.ad, count: topicCounts.get(t.id) ?? 0 }))
+  .filter((t) => t.count > 0)
+  .sort((a, b) => b.count - a.count);
+
+const tipCounts: Record<AlanHubItem['tip'], number> = { Yazı: 0, Basında: 0, Video: 0, Kitap: 0 };
+for (const item of items) tipCounts[item.tip]++;
+
+const TIP_LABEL: Record<(typeof ALAN_TIP_QUERIES)[number], string> = { yazi: 'Yazılar', video: 'Videolar', kitap: 'Kitaplar', basinda: 'Söyleşiler' };
+const TIP_COUNT_KEY: Record<(typeof ALAN_TIP_QUERIES)[number], AlanHubItem['tip']> = { yazi: 'Yazı', video: 'Video', kitap: 'Kitap', basinda: 'Basında' };
+const pillItems = [
+  { label: 'Tümü', count: items.length, href: `/alanlar/${alan}/`, active: true },
+  ...ALAN_TIP_QUERIES.map((tq) => ({
+    label: TIP_LABEL[tq],
+    count: tipCounts[TIP_COUNT_KEY[tq]],
+    href: `/alanlar/${alan}/tip/${tq}/`,
+    active: false,
+  })),
+];
+
+const mecraCounts = new Map<string, number>();
+for (const item of items) {
+  if (item.mecraId) mecraCounts.set(item.mecraId, (mecraCounts.get(item.mecraId) ?? 0) + 1);
+}
+const mecraEntries = (
+  await Promise.all([...mecraCounts.entries()].map(async ([id, count]) => ({ mecra: await getEntry('mecralar', id), count })))
+).filter((e): e is { mecra: NonNullable<typeof e.mecra>; count: number } => Boolean(e.mecra));
+
+const topicLabelById = new Map(topics.map((t) => [t.id, t.data.ad]));
+
+const LOCALES: Locale[] = ['tr', 'en', 'de', 'fr'];
+const areaCountsByLang = await Promise.all(LOCALES.map((l) => getAreaCounts(l)));
+const langItems = LOCALES.map((l, i) => ({
+  lang: l,
+  href: l === 'tr' ? `/alanlar/${alan}/` : `/${l}/alanlar/${alan}/`,
+  count: areaCountsByLang[i][alan as string] ?? 0,
+}));
+---
+
+<BaseLayout
+  lang={lang}
+  title={alanLabel}
+  description={`${alanLabel} alanındaki ${topicsWithCounts.length} konu başlığını bir araya getiren araştırma alanı.`}
+  canonical={`/alanlar/${alan}/sayfa/${page}/`}
+  current="konular"
+  breadcrumb={[{ label: 'Ana sayfa', href: '/' }, { label: 'Konular', href: '/konu/' }, { label: alanLabel, href: `/alanlar/${alan}/` }, { label: `Sayfa ${page}` }]}
+>
+  <p class="eyebrow">Araştırma alanı</p>
+  <h1>{alanLabel}</h1>
+  <p class="desc">{`${alanLabel} alanındaki ${topicsWithCounts.length} konu başlığını bir araya getiren araştırma alanı.`}</p>
+  <p class="meta-line">{items.length} içerik · {topicsWithCounts.length} konu</p>
+
+  <LangCountRow currentLang={lang} items={langItems} />
+
+  {
+    topicsWithCounts.length > 0 && (
+      <div class="topics-section">
+        <p class="section-label">Bu alandaki konular</p>
+        <div class="topics-grid">
+          {topicsWithCounts.map((t) => (
+            <a class="topic-card" href={`/konu/${t.id}/`}>
+              <span class="topic-name">{t.label}</span>
+              <span class="topic-count">{t.count} içerik</span>
+              <span class="topic-bar"><span class="topic-bar-fill" style={`width:${Math.round((t.count / maxTopicCount) * 100)}%`} /></span>
+            </a>
+          ))}
+        </div>
+      </div>
+    )
+  }
+
+  <div class="feed-head">
+    <h2>Alandaki tüm içerik</h2>
+    <span class="feed-note">konulara göre birleştirilmiş, kronolojik</span>
+  </div>
+
+  <Pills items={pillItems} />
+
+  <div class="content-list">
+    {
+      rows.map((item) => (
+        <ContentListRow
+          date={item.tip === 'Kitap' ? String(item.date.getFullYear()) : new Intl.DateTimeFormat(lang, { month: 'short', year: 'numeric' }).format(item.date)}
+          badge={item.tip}
+          title={item.title}
+          href={item.href}
+          topicBadge={topicLabelById.get(item.topicId)}
+        />
+      ))
+    }
+  </div>
+
+  <Pagination currentPage={page} totalPages={totalPages} basePath={`/alanlar/${alan}/`} />
+
+  {
+    mecraEntries.length > 0 && (
+      <div class="mecra-section">
+        <p class="section-label">Yayınlandığı mecralar</p>
+        <div class="mecra-pills">
+          {mecraEntries.map(({ mecra, count }) => (
+            <span class="mecra-pill">{mecra.data.ad} · {count}</span>
+          ))}
+        </div>
+      </div>
+    )
+  }
+</BaseLayout>
+
+<style>
+  .eyebrow {
+    font-size: 12px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 8px;
+  }
+  .desc {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    max-width: 540px;
+    margin: 0.75rem 0;
+  }
+  .meta-line {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+  }
+  .topics-section {
+    margin-bottom: 2.5rem;
+  }
+  .section-label {
+    font-size: 12px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 12px;
+  }
+  .topics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+  }
+  .topic-card {
+    background: var(--surface-2);
+    border: 0.5px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 16px;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .topic-name {
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .topic-count {
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+  .topic-bar {
+    height: 3px;
+    border-radius: 2px;
+    background: var(--surface-1);
+    overflow: hidden;
+    display: block;
+  }
+  .topic-bar-fill {
+    height: 100%;
+    background: var(--text-accent);
+    opacity: 0.55;
+    display: block;
+  }
+  .feed-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+  .feed-head h2 {
+    font-size: 15px;
+  }
+  .feed-note {
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+  .content-list {
+    border-top: 0.5px solid var(--border);
+    margin-bottom: 1.5rem;
+  }
+  .mecra-section {
+    border-top: 0.5px solid var(--border);
+    padding-top: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .mecra-pills {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .mecra-pill {
+    font-size: 13px;
+    padding: 5px 10px;
+    border-radius: 999px;
+    background: var(--surface-1);
+    color: var(--text-secondary);
+  }
+</style>

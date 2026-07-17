@@ -1,83 +1,58 @@
 ---
 import { getCollection, getEntry } from 'astro:content';
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import Pills from '../../components/navigation/Pills.astro';
-import ContentListRow from '../../components/cards/ContentListRow.astro';
-import Pagination from '../../components/navigation/Pagination.astro';
-import { ALAN_LABELS, ALAN_SLUGS, getAreaCounts } from '../../lib/taxonomy';
-import { contentUrl, type Locale } from '../../i18n/routes';
-import LangCountRow from '../../components/metadata/LangCountRow.astro';
+import BaseLayout from '../../../../../layouts/BaseLayout.astro';
+import Pills from '../../../../../components/navigation/Pills.astro';
+import ContentListRow from '../../../../../components/cards/ContentListRow.astro';
+import Pagination from '../../../../../components/navigation/Pagination.astro';
+import { ALAN_LABELS, ALAN_SLUGS, getAreaCounts } from '../../../../../lib/taxonomy';
+import { type Locale } from '../../../../../i18n/routes';
+import LangCountRow from '../../../../../components/metadata/LangCountRow.astro';
+import { buildAlanHubItems, ALAN_TIP_QUERIES, type AlanHubItem, type AlanTipQuery } from '../../../../../lib/alanHub';
+import { paginateRows } from '../../../../../lib/pressPagination';
 
 export async function getStaticPaths() {
-  return ALAN_SLUGS.map((alan) => ({ params: { alan } }));
+  const paths: { params: { alan: string; tip: string } }[] = [];
+  for (const alan of ALAN_SLUGS) {
+    for (const tip of ALAN_TIP_QUERIES) {
+      paths.push({ params: { alan, tip } });
+    }
+  }
+  return paths;
 }
 
 const { alan } = Astro.params;
+const currentTip = Astro.params.tip as AlanTipQuery;
 const alanLabel = ALAN_LABELS[alan as keyof typeof ALAN_LABELS];
 const lang = 'tr';
 
-const topics = await getCollection('topics');
-const topicsInAlan = topics.filter((t) => t.data.alan === alan);
-const topicIdsInAlan = new Set(topicsInAlan.map((t) => t.id));
-
-const [yazilar, basinda, videolar, kitaplar] = await Promise.all([
-  getCollection('yazilar', (e) => e.data.lang === lang),
-  getCollection('basinda', (e) => e.data.lang === lang),
-  getCollection('videolar', (e) => e.data.lang === lang),
-  getCollection('kitaplar', (e) => e.data.lang === lang),
-]);
-
-type Item = {
-  tip: 'Yazı' | 'Basında' | 'Video' | 'Kitap';
-  title: string;
-  href: string;
-  date: Date;
-  topicId: string;
-  mecraId?: string;
-};
-
-function entryAlanTopics(entryTopics: { id: string }[]): string[] {
-  return entryTopics.map((t) => t.id).filter((id) => topicIdsInAlan.has(id));
-}
-
-const items: Item[] = [];
-for (const e of yazilar) {
-  const matches = entryAlanTopics(e.data.topics);
-  if (matches.length) items.push({ tip: 'Yazı', title: e.data.title, href: contentUrl('yazilar', e.data.lang, e.id), date: e.data.publishDate, topicId: matches[0], mecraId: e.data.mecra?.id });
-}
-for (const e of basinda) {
-  const matches = entryAlanTopics(e.data.topics);
-  if (matches.length) items.push({ tip: 'Basında', title: e.data.title, href: contentUrl('basinda', e.data.lang, e.id), date: e.data.publishDate, topicId: matches[0], mecraId: e.data.mecra.id });
-}
-for (const e of videolar) {
-  const matches = entryAlanTopics(e.data.topics);
-  if (matches.length) items.push({ tip: 'Video', title: e.data.title, href: contentUrl('videolar', e.data.lang, e.id), date: e.data.publishDate, topicId: matches[0], mecraId: e.data.mecra?.id });
-}
-for (const e of kitaplar) {
-  const matches = entryAlanTopics(e.data.topics);
-  if (matches.length) items.push({ tip: 'Kitap', title: e.data.title, href: contentUrl('kitaplar', e.data.lang, e.id), date: new Date(e.data.year, 0, 1), topicId: matches[0] });
-}
-items.sort((a, b) => b.date.getTime() - a.date.getTime());
+const items = await buildAlanHubItems(alan as string, lang);
+const tipRows = items.filter((item) => item.tipQuery === currentTip);
+const { pageRows: rows, totalPages } = paginateRows(tipRows, 1);
 
 const topicCounts = new Map<string, number>();
 for (const item of items) topicCounts.set(item.topicId, (topicCounts.get(item.topicId) ?? 0) + 1);
 const maxTopicCount = Math.max(1, ...topicCounts.values());
 
+const topics = await getCollection('topics');
+const topicsInAlan = topics.filter((t) => t.data.alan === alan);
 const topicsWithCounts = topicsInAlan
   .map((t) => ({ id: t.id, label: t.data.ad, count: topicCounts.get(t.id) ?? 0 }))
   .filter((t) => t.count > 0)
   .sort((a, b) => b.count - a.count);
 
-const tipCounts = { Yazı: 0, Basında: 0, Video: 0, Kitap: 0 };
+const tipCounts: Record<AlanHubItem['tip'], number> = { Yazı: 0, Basında: 0, Video: 0, Kitap: 0 };
 for (const item of items) tipCounts[item.tip]++;
 
-const currentTip = Astro.url.searchParams.get('tip');
+const TIP_LABEL: Record<AlanTipQuery, string> = { yazi: 'Yazılar', video: 'Videolar', kitap: 'Kitaplar', basinda: 'Söyleşiler' };
+const TIP_COUNT_KEY: Record<AlanTipQuery, AlanHubItem['tip']> = { yazi: 'Yazı', video: 'Video', kitap: 'Kitap', basinda: 'Basında' };
 const pillItems = [
-  { label: 'Tümü', count: items.length, href: `/alanlar/${alan}/`, active: !currentTip },
-  { label: 'Yazılar', count: tipCounts['Yazı'], href: `/alanlar/${alan}/?tip=yazi`, active: currentTip === 'yazi' },
-  { label: 'Videolar', count: tipCounts['Video'], href: `/alanlar/${alan}/?tip=video`, active: currentTip === 'video' },
-  { label: 'Kitaplar', count: tipCounts['Kitap'], href: `/alanlar/${alan}/?tip=kitap`, active: currentTip === 'kitap' },
-  { label: 'Söyleşiler', count: tipCounts['Basında'], href: `/alanlar/${alan}/?tip=basinda`, active: currentTip === 'basinda' },
+  { label: 'Tümü', count: items.length, href: `/alanlar/${alan}/`, active: false },
+  ...ALAN_TIP_QUERIES.map((tq) => ({
+    label: TIP_LABEL[tq],
+    count: tipCounts[TIP_COUNT_KEY[tq]],
+    href: `/alanlar/${alan}/tip/${tq}/`,
+    active: tq === currentTip,
+  })),
 ];
 
 const mecraCounts = new Map<string, number>();
@@ -89,7 +64,6 @@ const mecraEntries = (
 ).filter((e): e is { mecra: NonNullable<typeof e.mecra>; count: number } => Boolean(e.mecra));
 
 const topicLabelById = new Map(topics.map((t) => [t.id, t.data.ad]));
-const TIP_TO_QUERY: Record<Item['tip'], string> = { Yazı: 'yazi', Basında: 'basinda', Video: 'video', Kitap: 'kitap' };
 
 const LOCALES: Locale[] = ['tr', 'en', 'de', 'fr'];
 const areaCountsByLang = await Promise.all(LOCALES.map((l) => getAreaCounts(l)));
@@ -102,11 +76,11 @@ const langItems = LOCALES.map((l, i) => ({
 
 <BaseLayout
   lang={lang}
-  title={alanLabel}
+  title={`${alanLabel} — ${TIP_LABEL[currentTip]}`}
   description={`${alanLabel} alanındaki ${topicsWithCounts.length} konu başlığını bir araya getiren araştırma alanı.`}
-  canonical={`/alanlar/${alan}/`}
+  canonical={`/alanlar/${alan}/tip/${currentTip}/`}
   current="konular"
-  breadcrumb={[{ label: 'Ana sayfa', href: '/' }, { label: 'Konular', href: '/konu/' }, { label: alanLabel }]}
+  breadcrumb={[{ label: 'Ana sayfa', href: '/' }, { label: 'Konular', href: '/konu/' }, { label: alanLabel, href: `/alanlar/${alan}/` }, { label: TIP_LABEL[currentTip] }]}
 >
   <p class="eyebrow">Araştırma alanı</p>
   <h1>{alanLabel}</h1>
@@ -139,23 +113,28 @@ const langItems = LOCALES.map((l, i) => ({
 
   <Pills items={pillItems} />
 
-  <div class="content-list">
-    {
-      items.map((item) => (
-        <div class="row-wrap" data-tip={TIP_TO_QUERY[item.tip]}>
-          <ContentListRow
-            date={item.tip === 'Kitap' ? String(item.date.getFullYear()) : new Intl.DateTimeFormat(lang, { month: 'short', year: 'numeric' }).format(item.date)}
-            badge={item.tip}
-            title={item.title}
-            href={item.href}
-            topicBadge={topicLabelById.get(item.topicId)}
-          />
+  {
+    tipRows.length === 0 ? (
+      <p class="empty-note">Bu alanda henüz bu türde içerik yayımlanmadı.</p>
+    ) : (
+      <>
+        <div class="content-list">
+          {
+            rows.map((item) => (
+              <ContentListRow
+                date={item.tip === 'Kitap' ? String(item.date.getFullYear()) : new Intl.DateTimeFormat(lang, { month: 'short', year: 'numeric' }).format(item.date)}
+                badge={item.tip}
+                title={item.title}
+                href={item.href}
+                topicBadge={topicLabelById.get(item.topicId)}
+              />
+            ))
+          }
         </div>
-      ))
-    }
-  </div>
-
-  <Pagination currentPage={1} totalPages={1} basePath={`/alanlar/${alan}/`} />
+        <Pagination currentPage={1} totalPages={totalPages} basePath={`/alanlar/${alan}/tip/${currentTip}/`} />
+      </>
+    )
+  }
 
   {
     mecraEntries.length > 0 && (
@@ -255,6 +234,11 @@ const langItems = LOCALES.map((l, i) => ({
     border-top: 0.5px solid var(--border);
     margin-bottom: 1.5rem;
   }
+  .empty-note {
+    font-size: 14px;
+    color: var(--text-muted);
+    padding: 1.5rem 0;
+  }
   .mecra-section {
     border-top: 0.5px solid var(--border);
     padding-top: 1.5rem;
@@ -273,17 +257,3 @@ const langItems = LOCALES.map((l, i) => ({
     color: var(--text-secondary);
   }
 </style>
-
-<script>
-  const params = new URLSearchParams(location.search);
-  const tip = params.get('tip');
-  if (tip) {
-    document.querySelectorAll<HTMLElement>('[data-tip]').forEach((row) => {
-      row.style.display = row.dataset.tip === tip ? '' : 'none';
-    });
-    document.querySelectorAll<HTMLAnchorElement>('.pill').forEach((pill) => {
-      const url = new URL(pill.href);
-      pill.classList.toggle('active', url.searchParams.get('tip') === tip);
-    });
-  }
-</script>
