@@ -30,7 +30,7 @@ Hepsi CIA ya da askeri birimlerin finansmanıyla yürütülmese de 1950’lerden
 
 Bu deney 1951 – 1954 yılları arasında Professor D. O. Hebb başkanlığında yürütülür. Hebb’in deneyi insanların kulaklarının, gözlerinin ve ellerinin özel aparatlarla kaplanarak yetilerini yitirmesi esasına dayanmaktadır. Bu esnada zihinsel, algısal, duygusal, motor, tutumsal ve beyin dalgalarının aktivitesindeki değişimlerin ölçümlerine bakılır ve algı yitiminin insan üzerindeki etkileri anlaşılmaya çalışılır. Hebb’in deneylerini CIA finanse eder ve bu verilerden elde edilen veriler dünyadaki pek çok gizli hapishanede işkence tekniği olarak kullanılır. (5)
 
-![](https://m.bianet.org/resim/olcekle/60774/500/260)
+![](https://static.bianet.org/system/uploads/1/images/000/060/774/original/500_1.jpg)
 
 2 – Princeton Üniversitesi (Princeton, New Jersey, USA)
 
@@ -38,7 +38,7 @@ Bu deney 1955 yılında fizyoloji psikologu Jack A. Vernon başkanlığında yü
 
 3- National Institute of Mental Health (Bethesda, Maryland, USA)
 
-![](https://m.bianet.org/resim/olcekle/60778/250/119)
+![](https://static.bianet.org/system/uploads/1/images/000/060/778/original/250_2.jpg)
 
 Bu çalışmaların başında psikiyatrist John C. Lilly vardır. Lilly, 1955-1956 yılları arasında yürüttüğü bu çalışmalarda duyusal yoksunluk için suya batırma tekniğini kullanır. Bu deneyler için katılımcıların yatay bir şekilde tüm vücutlarının su altında kalacağı ve “izolasyon tankı” adı verilen bir özel bir su tankı inşa edilir. Katılımcıların yüzlerini de tamamen kapatacak ve ışığı hissetmelerini engelleyecek, iki adet hava borusu da içeren bir maske takmaları istenir. Bu “izolasyon tankı” sayesinde vücut, duyusal mahrumiyet bir yana, kısmen yer çekiminden ve hep aynı sıcaklıkta tutulan su ile çevresel etkenlerden de tamamen yalıtılmaya çalışılır. (7) Bu sayede Lilly, duyusal yoksunluğa maruz bıraktığı insanların deneyimlerini ayrıntılı bir şekilde tanımlama imkanı bulur. Bu tekniğin tesislerden büyük talepleri olduğu için, bu teknik yaygınlaşamaz ancak duyusal algı yitimi deneylerine ilişkin kurguya etkisi olur. (8)
 
@@ -56,7 +56,7 @@ Bu deneyler 1956-1966 yıllarında Thomas I. Myers başkanlığında Seward Smit
 
 7- Manitoba Üniversitesi (Kanada)
 
-![](https://m.bianet.org/resim/olcekle/60780/500/333)
+![](https://static.bianet.org/system/uploads/1/images/000/060/780/original/500_4.jpg)
 
 1959 yılında John P. Zubek tarafından yürütülmüştür. Zubek, Manitoba Üniversitesi’nde özel bir laboratuar inşa eder ve izolasyon için balona benzer bir “kubbe” kullanır. Deneye katılan insanlar, bu kubbe içerisinde, bu deneyler için oldukça uzun sayılacak bir süre (7-14 gün) için tutulurlar.
 
@@ -64,7 +64,7 @@ Zubek, deprivasyon deneylerinde elde edilen sonuçların CIA tarafından işkenc
 
 8- Michigan Üniversitesi (Ann Arbor, Michigan, USA)
 
-![](https://m.bianet.org/resim/olcekle/60781/500/402)
+![](https://static.bianet.org/system/uploads/1/images/000/060/781/original/500_5.jpg)
 
 Bu deneyler 1958 yılında psikiyatrist John C. Pollard tarafından Michigan’daki Ruh Sağlığı Araştırma Merkezi’nde yürütülmüştür. İlk defa kadın katılımcılar kullanılmış, duyusal yoksunluktaki davranışların temeli atılmaya çalışılmış ve bu stres tepkileri psikoaktif uyuşturucu maddelerin davranışsal etkileriyle karşılaştırılmıştır. Grup en çok tavsiyenin ve sahte-duyusal yoksunluk fenomeni beklentisinin ortaya çıkmasının önemine yaptığı vurguyla bilinir. (12)
 
@@ -94,7 +94,7 @@ Bu çalışmaları Austin Jones, H. Jean Wilkinson ve Ina Braden yürütür. 195
 
 15- Oklahoma City V A Hospital (USA)
 
-![](https://m.bianet.org/resim/olcekle/60783/500/370)
+![](https://static.bianet.org/system/uploads/1/images/000/060/783/original/500_7.jpg)
 
 Jay T. Shurley, deprivasyon deneylerinde John C. Lilly gibi suya batırma tekniğini kullanır. Bu teknik için özel bir laboratuar tasarlanır. Shurley, çok katılımcılı deneyler gerçekleştirerek sistematik çalışmalar üretmeye ve niceliksel ölçümler kullanarak bu tekniğin etkilerini diğer duyusal yoksunluk durumlarıyla karşılaştırmaya çalışmıştır. (19)
 
@@ -142,7 +142,7 @@ Pishkin, V. Ve Shurley, J.T.’nin 1966 yılında gerçekleştirdikleri bu deney
 
 ## Sonuç olarak...
 
-![](https://m.bianet.org/resim/olcekle/60784/500/386)
+![](https://static.bianet.org/system/uploads/1/images/000/060/784/original/500_6.jpg)
 
 Burada, birkaç günlük çalışmayla ulaşabildiğimiz sadece 25 deneye yer verdik. 1970’lı yıllarda açığa çıkan bilgilere göre CIA’in finansmanıyla aralarında 44 yüksekokul veya üniversitenin, hastanelerin, hapishanelerin ve ilaç şirketlerinin de bulunduğu 80 kuruluşun bu çalışmaları yürüttüğü düşünülürse bu sayının çok daha yüksek olduğu ve bu konuda çok daha ciddi bir çalışma yürütülmesi gerektiği açıktır.
 

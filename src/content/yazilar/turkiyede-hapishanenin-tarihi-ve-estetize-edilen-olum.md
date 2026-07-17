@@ -29,7 +29,7 @@ Mekan, yani hapishane, koğuş sisteminden, "oda"lara doğru evrilmektedir. "Oda
 
 ## **"Yusuf'un Medresesi" olarak hapishaneler**
 
-![](https://m.bianet.org/resim/olcekle/42642/400/270)
+![](https://static.bianet.org/system/uploads/1/images/000/042/642/original/sinop_cezaevi.jpg)
 
 Hapishaneler denilince akla ilk gelen anlatılardan birini, belki de ilkini **Yusuf Peygamber**'in hapse atılması oluşturur. **Yakup Peygamber**'in oğlu olan Yusuf, kendisini kıskanan üvey kardeşleri tarafından atıldığı kuyudan kervancılar tarafından kurtarılır ve Mısır'da köle olarak satılır. Yusuf'u alan kişi (**Aziz**), Mısır'ın mali işlerinden sorumludur. Bu kişinin karısı **Züleyha**, Yusuf'u çok beğenir ve ona "istek duyar"[\[1\]](https://m.bianet.org/biamag/insan-haklari/142062-turkiye-de-hapishanenin-tarihi-ve-estetize-edilen-olum#_ftn1). Ancak Yusuf bu isteğe cevap vermeyince onu zindana attırır. Uzun yıllar zindanda kalan Yusuf, hükümdarın bir rüyasını yorumlayınca zindandan çıkartılır ve Mısır'ın mali işlerinin başına getirilir.[\[2\]](https://m.bianet.org/biamag/insan-haklari/142062-turkiye-de-hapishanenin-tarihi-ve-estetize-edilen-olum#_ftn2)
 
@@ -103,7 +103,7 @@ Köşelerde değilse bile hiç olmazsa duvar diplerinde yer tutabilmek için dah
 
 Sonra ne köşelerde, ne duvarlar boyunda yerleri olmayan mahkumlar gelirdi. Bunlar itibarsız kimselerdi. Gündüzleri pılıpırtılarını duvar diplerine istif edilen diğer yorgan, yatakların üzerlerine atarlardı. Gece olunca da, bunları koğuşların ortasına sıra sıra yayarak, orta yerlerde yatarlardı. Bu yataklarda yatanların da, koğuş kapısına veya duvar diplerine yakınlık bakımından hesaplanan itibar dereceleri vardı. Koğuş kapıları arkasında ancak, en itibarsız mahkumlar yatardı.
 
-![](https://m.bianet.org/resim/olcekle/42641/300/370)
+![](https://static.bianet.org/system/uploads/1/images/000/042/641/original/Naz%C4%B1m_Bursa_Hapishanesinde.jpg)
 
 Gerek koğuşlar arasındaki, gerek koğuşlar içindeki bu meratip silsilesi değişmez değildi. Hapishaneye ilk girince postunu bir tarafa istifleyip, akşam olunca da kapı arkalarında serilip yatanların bütün ümidi, yavaş yavaş ortalara ve nihayet duvar diplerine sokulabilmekteydi. Fakat bunun için yalnız kendi cezasının ağırlığına, yahut kendi kabadayılığına güvenmek yetmezdi. Yerine göre ve eğer gücü yetiyorsa para harcamak, yahut cezaevinin veya koğuşun iç politikasına karışmak, hamiler, dostlar müttefikler tedarik etmek, kavgalarda gürültülerde kendini tanıtmak, hatta hapishane idaresine hapishane dışından tesirler yaptırmak da icap ederdi. O zaman, evvela kapıların arkasına serilerek, koğuş hayatına karışan bir yatağın, adım adım ilerlediği görülürdü. Bir defa yolu açılan bu talihlinin, koğuş içindeki itibarı da, yatağının ilerleyişi nispetinde artardı.[\[14\]](https://m.bianet.org/biamag/insan-haklari/142062-turkiye-de-hapishanenin-tarihi-ve-estetize-edilen-olum#_ftn14)
 
@@ -123,7 +123,7 @@ Hasan İzettin Dinamo da, 1935-1939 yılları arasındaki mahpusluk deneyimini a
 
 > _Hapishanenin asli milleti olan Adem babalar üzerinde ne kadar tafsilat versem az... Onlar için kitaplık çapta konuşmak lazım... Tıpkı milletlerin asli kitleleri gibi, onlar da, hapishanede, adedi üstünlüğün biricik sahibi; fakat ferdi ve zümrevi tasallut ve istismarın da tek hedefidir. Hapishane, içinde 'Adem Baba' isimli bir sürü soyu bozuk koyunla, aralarına salıverilmiş kurt gruplarının bir arada barındığı ağıldır. Bu Adem babaların, dilenerek, ağalara iş görerek, sağdan soldan getirerek her gün topladıkları yarımşar, birer liraları, sonra aynı ağalar, muhtelif tertiplerle onların elinden alır. Hiçbir Adem babanın şahsi parası kendi başına değer belirtmez de, aynen milletlerde olduğu gibi, bu paralar bir araya gelince, bundan bütün bir içtimai kıymet doğar. İstanbul tevkifhanesi gibi, en aşağı 500 Adem babası bulunan bir zindanda, Adem baba başına günde tek liralık mali takat hesap edecek olursanız, nihayet üç beş kişiyi geçmeyen efeler grubunun iktisadiyatını tasarlayabilirsiniz. Bu iktisadi sistemin istihsal usulü de, kahve, çay, haraç maraç, hepsi laf; sadece eroindir. Hapishanede efe, eroin ticaretini elinde tutan onun istihlak sahasını tanzim ve idare eden kahraman demektir. Kumarlar, kahve ocakları, esrar vesaire, efe muavinlerine mahsus küçük arpalıklardır.[\[18\]](https://m.bianet.org/biamag/insan-haklari/142062-turkiye-de-hapishanenin-tarihi-ve-estetize-edilen-olum#_ftn18)_
 
-![](https://m.bianet.org/resim/olcekle/42590/490/260)
+![](https://static.bianet.org/system/uploads/1/images/000/042/590/original/27-1975-1976-TATAR-RAMAZAN-4jpg.jpg)
 
 Adem baba nitelendirmesi, **Aristo**'nun ortaya attığı ve Agamben'in vurguladığı "zoe", "bios" ayrımını çağrıştırmaktadır.[\[19\]](https://m.bianet.org/biamag/insan-haklari/142062-turkiye-de-hapishanenin-tarihi-ve-estetize-edilen-olum#_ftn19) Zoe olmak, Adem olmak halidir. Adem babalar, zoe'dir, "çıplak hayat"tır. Sadece insandırlar, insan olmanın ötesinde bir nitelikleri yoktur.[\[20\]](https://m.bianet.org/biamag/insan-haklari/142062-turkiye-de-hapishanenin-tarihi-ve-estetize-edilen-olum#_ftn20)
 

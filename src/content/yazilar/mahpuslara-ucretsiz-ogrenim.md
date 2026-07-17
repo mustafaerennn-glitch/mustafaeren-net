@@ -103,17 +103,17 @@ Saldırım, verdiği bu oranların sınav merkezi olan kurumla aynı il merkezin
 
 Bu oranların düşüklüğü, yüzde 50'yi dahi hedeflemiyor oluşu eleştiri konusu. Bu eleştiri bir yana yıllara göre mahpusların sayısı, sınavlara giren ve mezun olan mahpuslarla karşılaştırıldığında hedeflerin ne kadar küçük olduğu daha iyi görülür. (10)
 
-![](https://m.bianet.org/resim/olcekle/39467/490/222)
+![](https://static.bianet.org/system/uploads/1/images/000/039/467/original/mahpus2.jpg)
 
 Bu sayılar genel mahpus kitlesine oranlandığında ortaya çıkan yüzdeler oldukça çarpıcı. En son verilerin olduğu yıl olan 2008 dikkate alınırsa kursa katılan ve sınava girenlerin oranı yüzde 21'dir. Öğrenime katılıp da başarı belgesi alan ve mezun olanların oranı ise sadece yüzde 6.
 
-![](https://m.bianet.org/resim/olcekle/39470/490/274)
+![](https://static.bianet.org/system/uploads/1/images/000/039/470/original/mahpus3.jpg)
 
-![](https://m.bianet.org/resim/olcekle/39471/490/273)
+![](https://static.bianet.org/system/uploads/1/images/000/039/471/original/mahpus4.jpg)
 
 Sınavlara girenlerin ve başarılı olanların oranları, öğrenime devam edebilecek mahpusların oranlarıyla karşılaştırıldığında yukarıdaki rakamların ne kadar düşük olduğu anlaşılır olacaktır. (11)
 
-![](https://m.bianet.org/resim/olcekle/39466/490/277)
+![](https://static.bianet.org/system/uploads/1/images/000/039/466/original/mahpus1.jpg)
 
 Bu grafiğe göre ilkokul mezunu olan mahpusların oranı yüzde 45. Bu durumda mahpusların yüzde 45'i Açık İlköğretime devam edebilir. Ancak 2008'de Açık İlköğretime devam edenlerin oranı sadece yüzde 1'di.
 

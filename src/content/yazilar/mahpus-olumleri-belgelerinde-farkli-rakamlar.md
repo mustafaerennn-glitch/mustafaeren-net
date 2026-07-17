@@ -22,7 +22,7 @@ Bu cevabı, açıklanan rakamları ve Avrupa Konseyi karşılaştırmasını bir
 
 ## İlk olarak: Rakamlar tutarsız…
 
-![](https://m.bianet.org/resim/olcekle/54748/300/402)
+![](https://static.bianet.org/system/uploads/1/images/000/054/748/original/tablo1.jpg)
 
 12 Mart 2012 tarihli Hürriyet gazetesinde Faruk Bildirici’nin “Cezaevlerinde Ölümler ve Gazetecilik” başlığını taşıyan bir yazısı yayınlanmıştı. Bildirici, bu yazısında, hapishanelerden kendisine gelen mektuplar nedeniyle Adalet Bakanlığı’na mahpus ölümlerini sorduğu bir bilgi edinme başvurusu yaptığını ifade etmiş ve kendisine gelen cevabı okuyucularıyla paylaşmıştı. Yazının içerisinde Bakanlık’tan gelen istatistiki tablo da yer alıyordu.
 

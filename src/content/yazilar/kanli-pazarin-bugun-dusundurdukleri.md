@@ -43,7 +43,7 @@ Bugün gazetesi bu yayınlarına, solcu gençlerin eylemlilikleri süresince dev
 
 Eygi ise 14 Şubat tarihli köşe yazısında, "bütün mü'min kardeşlerini" 16 Şubat günü toplu namaza davet ettikten sonra 16 Şubat tarihli başyazısında da, "Cihada hazır olunuz" diye yazar.
 
-![](https://m.bianet.org/resim/olcekle/45631/490/260)
+![](https://static.bianet.org/system/uploads/1/images/000/045/631/original/kanl%C4%B1_p_490.jpg)
 
 Bütün bu provokatif haber ve çağrılar meyvesini verecek, 16 Şubat günü 6. Filo'yu protesto için miting düzenleyen ve "boğulma vakti gelen", "kızıllar" (Sayıları 25-30 binle başlayıp yürüyüş sırasındaki katılımlarla 40 bine ulaşmıştır) saldırıya uğrayacak ve onlarca kişi yaralanırken Ali Turgut Aytaç ve Duran Erdoğan yaşamını yitirecektir.
 

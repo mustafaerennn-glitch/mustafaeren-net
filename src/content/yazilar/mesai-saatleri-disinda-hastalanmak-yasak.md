@@ -42,7 +42,7 @@ Turanlıoğlu, doktorun olmadığı saatlerde hastalandıklarında olanları da 
 
 ## **Hastanelere sevklerde yaşanan sıkıntılar**
 
-![](https://m.bianet.org/resim/olcekle/68862/250/508)
+![](https://static.bianet.org/system/uploads/1/images/000/068/862/original/mahpus.jpg)
 
 Turanlıoğlu’nun dile getirdiği bir diğer sorun ise “bir üst kuruma sevk”:
 

@@ -18,9 +18,9 @@ Gezi Direnişi'nde “araba yaktılar”, “milyonlarca lira zarar”, “provo
 
 **Yeni Şafak ve Akit Gazetelerinin, Taksim Gezi Parkı İsyanındaki Tutumu - 5**
 
-![](https://m.bianet.org/resim/olcekle/52009/501/260)
+![](https://static.bianet.org/system/uploads/1/images/000/052/009/original/1---_20130702_145255_501.jpg)
 
-![](https://m.bianet.org/resim/olcekle/52010/300/391)
+![](https://static.bianet.org/system/uploads/1/images/000/052/010/original/2----_20130702_145308.jpg)
 
 Dört gün boyunca süren yazı dizisinde Yeni Şafak ve Akit gazetelerini, haberleri üzerinden ayrıntılı olarak değerlendirmeye çalıştık.
 
@@ -36,7 +36,7 @@ Kupürlerden yola çıkarak yaptığımız değerlendirmeleri özetleyecek olurs
 
 \- Bu gazeteler, “camide içki içildi”, “hedef miraç gecesi”, “katliam yapacaklardı”, “camiye saldırdılar” benzeri provokatif haberler yapmaktan kaçınmamaktadır.
 
-![](https://m.bianet.org/resim/olcekle/52011/300/253)
+![](https://static.bianet.org/system/uploads/1/images/000/052/011/original/3---_20130702_145442.jpg)
 
 \-Bu gazeteler insanları hedef gösterecek nitelikteki haberler yapmakta, isimler yayınlamakta, bu insanlardan hesap sorulmasını istemektedirler.
 
@@ -46,7 +46,7 @@ Aşağıdaki kupür Akit gazetesine ait. Akit, Sivas katliamının 21. yılında
 
 Gazete spotunda aşağıdaki satırlara yer veriyor:
 
-![](https://m.bianet.org/resim/olcekle/52012/300/510)
+![](https://static.bianet.org/system/uploads/1/images/000/052/012/original/4---_20130612_124915_-_Kopya.jpg)
 
 “Sivas Madımak Otel’de Alevi-Sünni çatışması çıkarmak isteyenlerin planladığı provokatif olaylar 21. yılına girerken, olaylarda suçsuz yere mahkum edilen onlarca masum insan ve aileleri ise büyük mağduriyet yaşıyor.
 
