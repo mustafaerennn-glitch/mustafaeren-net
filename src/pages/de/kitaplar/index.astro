@@ -21,7 +21,9 @@ const KITAP_TURU_LABELS: Record<string, string> = {
   katkılar: 'Beiträge',
 };
 
-const entries = await getCollection('kitaplar', (e) => e.data.lang === lang);
+const entries = (await getCollection('kitaplar', (e) => e.data.lang === lang)).sort(
+  (a, b) => b.data.year - a.data.year,
+);
 
 const turCounts: Record<string, number> = {};
 for (const e of entries) turCounts[e.data.kitapTuru] = (turCounts[e.data.kitapTuru] ?? 0) + 1;

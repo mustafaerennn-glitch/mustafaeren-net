@@ -19,10 +19,9 @@ const KITAP_TURU_LABELS: Record<string, string> = {
   katkılar: 'Katkılar',
 };
 
-// Not: sıralama kronolojik DEĞİL — roadmap'e göre editoryal bir sıra (`featuredOrder`) esas
-// alınacak, ama bu alan henüz şemaya eklenmedi (spekülatif alan yok ilkesi). Şimdilik koleksiyon
-// sırası (dosya adı) kullanılıyor, gerçek editoryal sıra Faz 3-5'te netleşecek.
-const entries = await getCollection('kitaplar', (e) => e.data.lang === lang);
+const entries = (await getCollection('kitaplar', (e) => e.data.lang === lang)).sort(
+  (a, b) => b.data.year - a.data.year,
+);
 
 const turCounts: Record<string, number> = {};
 for (const e of entries) turCounts[e.data.kitapTuru] = (turCounts[e.data.kitapTuru] ?? 0) + 1;
