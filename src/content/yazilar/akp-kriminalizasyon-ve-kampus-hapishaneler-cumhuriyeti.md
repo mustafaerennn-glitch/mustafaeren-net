@@ -14,6 +14,7 @@ translations:
   - akp-criminalization-and-the-republic-of-campus-prisons
   - die-akp-und-der-strafvollzug-kriminalisierung-und-die-republik-der-gefangniscampus
 publishDate: '2025-04-15'
+mecra: bianet
 featuredImage: ./_images/akp-kriminalizasyon-ve-kampus-hapishaneler-cumhuriyeti-featured.webp
 featuredImageAlt: AKP, Kriminalizasyon ve "Kampüs" Hapishaneler
 pdf: /pdf/akp-kriminalizasyon-ve-kampus-hapishaneler-cumhuriyeti.pdf

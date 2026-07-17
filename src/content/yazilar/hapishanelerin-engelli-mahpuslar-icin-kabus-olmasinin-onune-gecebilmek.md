@@ -5,6 +5,7 @@ description: Engelliler Biz Platformu 9 Mayıs 2013 Ceza İnfaz Sisteminde Sivil
 topics:
   - engelli-yasli-mahpuslar
 publishDate: '2013-05-09'
+mecra: engelliler-biz-platformu
 featuredImage: ./_images/hapishanelerin-engelli-mahpuslar-icin-kabus-olmasinin-onune-gecebilmek-featured.webp
 featuredImageAlt: ''
 ---

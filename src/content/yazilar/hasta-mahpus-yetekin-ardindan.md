@@ -5,6 +5,7 @@ description: Şehmus Yetek’in hastalığının teşhisi ve tedavisi geciktiril
 topics:
   - hasta-mahpuslar
 publishDate: '2014-08-30'
+mecra: bianet
 featuredImage: ./_images/hasta-mahpus-yetekin-ardindan-featured.webp
 featuredImageAlt: ''
 ---

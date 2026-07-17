@@ -8,6 +8,7 @@ topics:
   - tecrit-izolasyon
   - insan-haklari
 publishDate: '2025-04-16'
+mecra: bianet
 featuredImage: ./_images/die-akp-und-der-strafvollzug-kriminalisierung-und-die-republik-der-gefangniscampus-featured.webp
 featuredImageAlt: ''
 pdf: /pdf/die-akp-und-der-strafvollzug-kriminalisierung-und-die-republik-der-gefangniscampus.pdf

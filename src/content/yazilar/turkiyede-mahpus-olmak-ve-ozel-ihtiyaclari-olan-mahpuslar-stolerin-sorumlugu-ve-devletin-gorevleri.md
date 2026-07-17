@@ -6,6 +6,7 @@ topics:
   - engelli-yasli-mahpuslar
   - hukuk-adalet-sistemi
 publishDate: '2016-07-18'
+mecra: guncel-hukuk
 featuredImage: ./_images/turkiyede-mahpus-olmak-ve-ozel-ihtiyaclari-olan-mahpuslar-stolerin-sorumlugu-ve-devletin-gorevleri-featured.webp
 featuredImageAlt: ''
 ---

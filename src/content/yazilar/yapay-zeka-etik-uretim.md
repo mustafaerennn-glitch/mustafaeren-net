@@ -7,6 +7,7 @@ topics:
 translations:
   - ai-assisted-content-ethics
 publishDate: '2025-04-27'
+mecra: bianet
 featuredImage: ./_images/yapay-zeka-etik-uretim-featured.webp
 featuredImageAlt: ''
 ---

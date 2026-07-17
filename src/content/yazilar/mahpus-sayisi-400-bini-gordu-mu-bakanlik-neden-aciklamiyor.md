@@ -5,6 +5,7 @@ description: Adalet Bakanlığı ve CTE güncel rakamları açıklamadığı iç
 topics:
   - ceza-infaz-istatistikleri
 publishDate: '2020-11-10'
+mecra: bianet
 featuredImage: ./_images/mahpus-sayisi-400-bini-gordu-mu-bakanlik-neden-aciklamiyor-featured.webp
 featuredImageAlt: ''
 ---

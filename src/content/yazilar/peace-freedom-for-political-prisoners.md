@@ -10,6 +10,7 @@ topics:
   - siyasi-mahpuslar
   - toplu-hapsetme
 publishDate: '2025-05-14'
+mecra: bianet
 featuredImage: ./_images/peace-freedom-for-political-prisoners-featured.webp
 featuredImageAlt: ''
 pdf: /pdf/peace-freedom-for-political-prisoners.pdf

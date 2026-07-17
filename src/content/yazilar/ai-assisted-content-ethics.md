@@ -5,6 +5,7 @@ description: As AIassisted content creation rapidly becomes part of our lives, i
 topics:
   - yapay-zeka-etik
 publishDate: '2025-04-27'
+mecra: bianet
 featuredImage: ./_images/ai-assisted-content-ethics-featured.webp
 featuredImageAlt: ''
 ---

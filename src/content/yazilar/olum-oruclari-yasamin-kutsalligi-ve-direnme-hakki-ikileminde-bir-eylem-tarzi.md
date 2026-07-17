@@ -6,6 +6,7 @@ topics:
   - olum-oruclari
   - mahpus
 publishDate: '2017-09-30'
+mecra: msgsu-sosyal-bilimler-dergisi
 featuredImage: ./_images/olum-oruclari-yasamin-kutsalligi-ve-direnme-hakki-ikileminde-bir-eylem-tarzi-featured.webp
 featuredImageAlt: ''
 pdf: /pdf/olum-oruclari-yasamin-kutsalligi-ve-direnme-hakki-ikileminde-bir-eylem-tarzi.pdf

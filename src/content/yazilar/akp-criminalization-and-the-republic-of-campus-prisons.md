@@ -10,6 +10,7 @@ topics:
   - hukuk-adalet-sistemi
   - toplu-hapsetme
 publishDate: '2025-04-15'
+mecra: bianet
 featuredImage: ./_images/akp-criminalization-and-the-republic-of-campus-prisons-featured.webp
 featuredImageAlt: ''
 pdf: /pdf/akp-criminalization-and-the-republic-of-campus-prisons.pdf

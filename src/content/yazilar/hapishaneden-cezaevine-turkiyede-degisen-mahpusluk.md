@@ -5,6 +5,7 @@ description: FOUCAULT'NUN "EPİSTEME" KAVRAMI IŞIĞINDA"Hapishane"den "Cezaevi"
 topics:
   - hapishanelerin-tarihi
 publishDate: '2012-07-21'
+mecra: bianet
 featuredImage: ./_images/hapishaneden-cezaevine-turkiyede-degisen-mahpusluk-featured.webp
 featuredImageAlt: ''
 ---

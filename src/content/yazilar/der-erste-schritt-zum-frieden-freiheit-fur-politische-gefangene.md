@@ -9,6 +9,7 @@ topics:
   - insan-haklari
   - siyasi-mahpuslar
 publishDate: '2025-05-14'
+mecra: bianet
 featuredImage: ./_images/der-erste-schritt-zum-frieden-freiheit-fur-politische-gefangene-featured.webp
 featuredImageAlt: ''
 pdf: /pdf/der-erste-schritt-zum-frieden-freiheit-fur-politische-gefangene.pdf

@@ -10,6 +10,7 @@ topics:
   - siyasi-mahpuslar
   - toplu-hapsetme
 publishDate: '2025-05-14'
+mecra: bianet
 featuredImage: ./_images/barisin-ilk-adimi-siyasi-mahpuslara-ozgurluk-featured.webp
 featuredImageAlt: ''
 ---
