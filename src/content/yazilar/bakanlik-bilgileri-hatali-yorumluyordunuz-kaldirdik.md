@@ -6,6 +6,7 @@ topics:
   - hukuk-adalet-sistemi
   - ceza-infaz-istatistikleri
 publishDate: '2020-12-16'
+mecra: bianet
 featuredImage: ./_images/bakanlik-bilgileri-hatali-yorumluyordunuz-kaldirdik-featured.webp
 featuredImageAlt: ''
 ---

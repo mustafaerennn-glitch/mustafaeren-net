@@ -6,6 +6,7 @@ topics:
   - ceza-infaz-istatistikleri
   - af-ortuk-af
 publishDate: '2021-02-22'
+mecra: bianet
 featuredImage: ./_images/ortuk-af-ile-kac-mahpus-tahliye-edildi-featured.webp
 featuredImageAlt: ''
 ---

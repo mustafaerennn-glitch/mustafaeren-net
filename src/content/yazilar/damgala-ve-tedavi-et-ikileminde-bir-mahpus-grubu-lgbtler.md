@@ -5,6 +5,7 @@ description: Devlet nezdinde LGBT'lere yönelik etiketleyici, damgalayıcı yakl
 topics:
   - lgbti-mahpuslar
 publishDate: '2013-08-21'
+mecra: bianet
 featuredImage: ./_images/damgala-ve-tedavi-et-ikileminde-bir-mahpus-grubu-lgbtler-featured.webp
 featuredImageAlt: ''
 ---

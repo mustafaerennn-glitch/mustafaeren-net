@@ -6,6 +6,7 @@ topics:
   - lgbti-mahpuslar
   - mahpus
 publishDate: '2016-01-08'
+mecra: bianet
 featuredImage: ./_images/alanyada-lgbti-mahpuslar-tekli-hucrede-tutuluyor-featured.webp
 featuredImageAlt: ''
 ---

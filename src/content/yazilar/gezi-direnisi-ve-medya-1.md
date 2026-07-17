@@ -5,6 +5,7 @@ description: “Kökü Dışarıda”nın Yeni Versiyonu “Yabancı Parmağı�
 topics:
   - gezi
 publishDate: '2013-06-14'
+mecra: bianet
 featuredImage: ./_images/gezi-direnisi-ve-medya-1-featured.webp
 featuredImageAlt: ''
 ---

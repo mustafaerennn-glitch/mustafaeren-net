@@ -6,6 +6,7 @@ topics:
   - cocuk-mahpuslar
   - mahpus
 publishDate: '2016-06-18'
+mecra: sivil-dusun
 featuredImage: ./_images/cocuk-mahpuslara-yonelik-tecavuzler-hak-talepleri-featured.webp
 featuredImageAlt: ''
 ---

@@ -11,6 +11,7 @@ topics:
   - kriminalizasyon
   - tecrit-izolasyon
 publishDate: '2022-10-01'
+mecra: bianet
 featuredImage: ./_images/new-high-security-prisons-turkey-inline-7.webp
 featuredImageAlt: Vue aérienne de l'établissement pénitentiaire fermé de type S de Bodrum
 ---

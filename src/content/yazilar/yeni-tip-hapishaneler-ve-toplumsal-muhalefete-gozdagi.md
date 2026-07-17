@@ -11,6 +11,7 @@ translations:
   - neue-hochsicherheits-gefaengnisse-tuerkei
   - nouvelles-prisons-de-haute-securite-turquie
 publishDate: '2022-10-01'
+mecra: bianet
 featuredImage: ./_images/yeni-tip-hapishaneler-ve-toplumsal-muhalefete-gozdagi-featured.webp
 featuredImageAlt: ''
 pdf: /pdf/yeni-tip-hapishaneler-ve-toplumsal-muhalefete-gozdagi.pdf

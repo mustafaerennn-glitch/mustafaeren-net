@@ -5,6 +5,7 @@ description: Hak ihlallerine ilişkin idari ve hukuki süreçleri işletmek ve t
 topics:
   - genel-hapishane-yazilari
 publishDate: '2016-12-10'
+mecra: bianet
 featuredImage: ./_images/turkiye-hapishaneleri-son-10-yil-ve-yakin-donemdeki-gelismeler-featured.webp
 featuredImageAlt: ''
 ---

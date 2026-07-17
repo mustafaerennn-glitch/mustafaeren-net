@@ -5,6 +5,7 @@ description: Ceza İnfaz Sisteminde Sivil Toplum Derneği / Türkiye Hapishane �
 topics:
   - cocuk-mahpuslar
 publishDate: '2017-08-02'
+mecra: bianet
 featuredImage: ./_images/cocuk-mahpus-sayisi-iki-ayda-yuzde-116-artti-featured.webp
 featuredImageAlt: ''
 ---

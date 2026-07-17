@@ -5,6 +5,7 @@ description: Hedef Göstermenin Üç Adımı İsimler, resimler yayınlanıyorsa
 topics:
   - gezi
 publishDate: '2013-07-01'
+mecra: bianet
 featuredImage: ./_images/gezi-direnisi-ve-medya-4-featured.webp
 featuredImageAlt: ''
 ---

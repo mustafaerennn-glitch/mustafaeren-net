@@ -6,6 +6,7 @@ topics:
   - mahpus
   - siyasi-mahpuslar
 publishDate: '2012-11-17'
+mecra: bianet
 featuredImage: ./_images/turkiyede-hapishanenin-tarihi-ve-estetize-edilen-olum-featured.webp
 featuredImageAlt: ''
 ---

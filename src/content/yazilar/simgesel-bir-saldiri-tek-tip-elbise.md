@@ -6,6 +6,7 @@ topics:
   - mahpus
   - tek-tip-elbise
 publishDate: '2017-08-26'
+mecra: bianet
 featuredImage: ./_images/simgesel-bir-saldiri-tek-tip-elbise-featured.webp
 featuredImageAlt: ''
 ---

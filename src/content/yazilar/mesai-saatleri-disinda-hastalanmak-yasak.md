@@ -5,6 +5,7 @@ description: Kamil Turanlıoğlu’nun mektubundan yola çıkarak bir hasta mahp
 topics:
   - hasta-mahpuslar
 publishDate: '2015-07-18'
+mecra: bianet
 featuredImage: ./_images/mesai-saatleri-disinda-hastalanmak-yasak-featured.webp
 featuredImageAlt: ''
 ---

@@ -6,6 +6,7 @@ topics:
   - hasta-mahpuslar
   - ciplak-arama-kelepceli-muayene
 publishDate: '2013-08-27'
+mecra: bianet
 featuredImage: ./_images/kelepceli-muayene-etik-mi-guvenlik-mi-featured.webp
 featuredImageAlt: ''
 ---

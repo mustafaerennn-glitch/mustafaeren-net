@@ -5,6 +5,7 @@ description: Türkiye, Avrupa Konseyi’nin açıkladığı 2020 verilerine gör
 topics:
   - ceza-infaz-istatistikleri
 publishDate: '2021-11-22'
+mecra: bianet
 featuredImage: ./_images/soyledikleri-ve-soylemedikleriyle-tuik-cik-istatistikleri-1-featured.webp
 featuredImageAlt: ''
 ---

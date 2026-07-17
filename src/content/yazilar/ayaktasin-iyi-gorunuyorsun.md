@@ -5,6 +5,7 @@ description: HASTA MAHPUSA TIBBİ DEĞERLENDİRME "Ayaktasın, İyi Görünüyor
 topics:
   - hasta-mahpuslar
 publishDate: '2014-10-18'
+mecra: bianet
 featuredImage: ./_images/ayaktasin-iyi-gorunuyorsun-featured.webp
 featuredImageAlt: ''
 ---

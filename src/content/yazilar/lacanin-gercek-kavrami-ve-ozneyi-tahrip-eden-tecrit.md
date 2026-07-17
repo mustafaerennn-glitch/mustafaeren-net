@@ -6,6 +6,7 @@ topics:
   - kutsal-insan
   - tecrit-izolasyon
 publishDate: '2012-06-30'
+mecra: bianet
 featuredImage: ./_images/lacanin-gercek-kavrami-ve-ozneyi-tahrip-eden-tecrit-featured.webp
 featuredImageAlt: ''
 ---

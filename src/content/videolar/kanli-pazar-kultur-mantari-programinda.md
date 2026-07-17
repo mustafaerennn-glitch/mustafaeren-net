@@ -5,6 +5,7 @@ description: Kanlı Pazar Kültür Mantarı Programında
 topics:
   - kanli-pazar
 publishDate: '2012-05-12'
+mecra: kultur-mantari
 videoTuru: söyleşi
 embedUrl: https://www.youtube.com/embed/_AZNEufRTn4
 durationMinutes: 11

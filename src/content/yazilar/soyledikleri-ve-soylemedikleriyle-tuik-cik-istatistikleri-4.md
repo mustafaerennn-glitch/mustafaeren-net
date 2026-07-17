@@ -5,6 +5,7 @@ description: Yaklaşık 37 bin “terör” tutuklusu ve hükümlüsü ile Avrup
 topics:
   - ceza-infaz-istatistikleri
 publishDate: '2021-11-25'
+mecra: bianet
 featuredImage: ./_images/soyledikleri-ve-soylemedikleriyle-tuik-cik-istatistikleri-4-featured.webp
 featuredImageAlt: ''
 ---

@@ -5,6 +5,7 @@ description: Sosyolog Mustafa Eren CNN Türk'te yayınlanan ve Rıdvan Akar'ın 
 topics:
   - kanli-pazar
 publishDate: '2013-02-16'
+mecra: hayatin-tanigi
 videoTuru: belgesel
 embedUrl: https://www.youtube.com/embed/k2ropmsnwWM
 durationMinutes: 43

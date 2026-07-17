@@ -6,6 +6,7 @@ topics:
   - ogrenci-mahpuslar
   - mahpus
 publishDate: '2012-08-18'
+mecra: bianet
 featuredImage: ./_images/mahpuslara-ucretsiz-ogrenim-featured.webp
 featuredImageAlt: ''
 ---

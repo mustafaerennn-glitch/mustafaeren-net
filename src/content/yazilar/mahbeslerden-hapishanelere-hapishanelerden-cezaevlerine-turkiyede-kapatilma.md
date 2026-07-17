@@ -6,6 +6,7 @@ topics:
   - mahpus
   - hapishanelerin-tarihi
 publishDate: '2014-01-26'
+mecra: bilim-ve-gelecek
 featuredImage: ./_images/mahbeslerden-hapishanelere-hapishanelerden-cezaevlerine-turkiyede-kapatilma-featured.webp
 featuredImageAlt: ''
 ---

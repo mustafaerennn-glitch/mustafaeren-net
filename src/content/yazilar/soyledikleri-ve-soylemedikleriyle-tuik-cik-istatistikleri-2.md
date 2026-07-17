@@ -5,6 +5,7 @@ description: Vatandaş olmayan nüfus içerisinde 10 yılda “hırsızlık” v
 topics:
   - ceza-infaz-istatistikleri
 publishDate: '2021-11-23'
+mecra: bianet
 featuredImage: ./_images/soyledikleri-ve-soylemedikleriyle-tuik-cik-istatistikleri-2-featured.webp
 featuredImageAlt: ''
 ---

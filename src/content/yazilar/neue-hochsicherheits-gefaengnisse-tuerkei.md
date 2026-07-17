@@ -11,6 +11,7 @@ topics:
   - kriminalizasyon
   - siyasi-mahpuslar
 publishDate: '2022-10-01'
+mecra: bianet
 featuredImage: ./_images/neue-hochsicherheits-gefaengnisse-tuerkei-featured.webp
 featuredImageAlt: ''
 pdf: /pdf/neue-hochsicherheits-gefaengnisse-tuerkei.pdf

@@ -9,6 +9,7 @@ topics:
   - insan-haklari
   - toplu-hapsetme
 publishDate: '2025-04-24'
+mecra: bianet
 featuredImage: ./_images/migrants-refugees-prison-eu-featured.webp
 featuredImageAlt: ''
 pdf: /pdf/migrants-refugees-prison-eu.pdf

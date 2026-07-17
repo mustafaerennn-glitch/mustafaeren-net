@@ -5,6 +5,7 @@ description: Bir insanın “tahliye umudu olmadan” hapiste tutulması, hapis 
 topics:
   - af-ortuk-af
 publishDate: '2016-01-28'
+mecra: bianet
 featuredImage: ./_images/aihmden-3-karar-tahliye-umudu-olmayan-hapis-cezasi-hak-ihlalidir-featured.webp
 featuredImageAlt: ''
 ---

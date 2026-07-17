@@ -7,6 +7,7 @@ topics:
   - mahpus
   - hukuk-adalet-sistemi
 publishDate: '2021-07-03'
+mecra: bianet
 featuredImage: ./_images/disiplin-cezalariyla-islah-hapishaneler-yoluyla-hayati-dizayn-etmek-featured.webp
 featuredImageAlt: ''
 ---

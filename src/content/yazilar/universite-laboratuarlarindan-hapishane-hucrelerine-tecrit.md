@@ -5,6 +5,7 @@ description: Ü1950’lerden itibaren yapılmış onlarca “duyusal yoksunluk�
 topics:
   - tecrit-izolasyon
 publishDate: '2014-04-19'
+mecra: bianet
 featuredImage: ./_images/universite-laboratuarlarindan-hapishane-hucrelerine-tecrit-featured.webp
 featuredImageAlt: ''
 ---

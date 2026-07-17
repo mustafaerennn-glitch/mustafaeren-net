@@ -5,6 +5,7 @@ description: 2011’e oranla 2020 yılında hırsızlık ve yaralama suçlarınd
 topics:
   - ceza-infaz-istatistikleri
 publishDate: '2021-11-24'
+mecra: bianet
 featuredImage: ./_images/soyledikleri-ve-soylemedikleriyle-tuik-cik-istatistikleri-3-featured.webp
 featuredImageAlt: ''
 ---

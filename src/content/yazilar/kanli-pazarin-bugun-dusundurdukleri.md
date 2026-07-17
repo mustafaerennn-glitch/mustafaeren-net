@@ -6,6 +6,7 @@ topics:
   - 16-subat-1969
   - kanli-pazar
 publishDate: '2013-02-16'
+mecra: bianet
 featuredImage: ./_images/kanli-pazarin-bugun-dusundurdukleri-featured.webp
 featuredImageAlt: ''
 ---

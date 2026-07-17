@@ -5,6 +5,7 @@ description: Proje Koordinatörü olarak çalıştığım Ceza İnfaz Sisteminde
 topics:
   - olum-oruclari
 publishDate: '2013-12-19'
+mecra: acik-radyo
 videoTuru: söyleşi
 embedUrl: https://www.youtube.com/embed/Zf14bpjzcYI
 durationMinutes: 26

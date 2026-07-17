@@ -5,6 +5,7 @@ description: 'Provokatif Haberler: “Hedef Miraç Gecesi”, “Camiye Saldırd
 topics:
   - gezi
 publishDate: '2013-06-17'
+mecra: bianet
 featuredImage: ./_images/gezi-direnisi-ve-medya-3-featured.webp
 featuredImageAlt: ''
 ---

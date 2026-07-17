@@ -11,6 +11,7 @@ topics:
   - kriminalizasyon
   - tecrit-izolasyon
 publishDate: '2022-10-01'
+mecra: bianet
 featuredImage: ./_images/new-high-security-prisons-turkey-featured.webp
 featuredImageAlt: Illustration of a high-security prison door and text describing new prison models introduced in Turkey
 pdf: /pdf/new-high-security-prisons-turkey.pdf

@@ -5,6 +5,7 @@ description: Açık Radyo'da 16 Şubat 2012 tarihinde yayımlanan Açık Gazete 
 topics:
   - kanli-pazar
 publishDate: '2012-02-16'
+mecra: acik-radyo
 videoTuru: söyleşi
 embedUrl: https://www.youtube.com/embed/16P7wp-6Hw4
 durationMinutes: 32

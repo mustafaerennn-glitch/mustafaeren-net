@@ -5,6 +5,7 @@ description: Akıldane Komplo Teorisyenlerinin Körlüğü Ve “kökü dışar�
 topics:
   - gezi
 publishDate: '2013-06-15'
+mecra: bianet
 featuredImage: ./_images/gezi-direnisi-ve-medya-2-featured.webp
 featuredImageAlt: ''
 ---

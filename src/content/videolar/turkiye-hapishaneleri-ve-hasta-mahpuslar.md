@@ -5,6 +5,7 @@ description: Medya Haber - Mercek - 22 Ağustos 2022
 topics:
   - hasta-mahpuslar
 publishDate: '2022-08-22'
+mecra: mercek-programi
 videoTuru: söyleşi
 embedUrl: https://www.youtube.com/embed/ApRUspflCNc
 durationMinutes: 40

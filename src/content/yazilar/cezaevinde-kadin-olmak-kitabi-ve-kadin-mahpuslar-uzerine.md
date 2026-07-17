@@ -5,6 +5,7 @@ description: Bianet 15.01.2022 M.D., 2004 yılında tutuklanmış ve 14 ay hapis
 topics:
   - kadin-mahpuslar
 publishDate: '2022-01-18'
+mecra: bianet
 featuredImage: ./_images/cezaevinde-kadin-olmak-kitabi-ve-kadin-mahpuslar-uzerine-featured.webp
 featuredImageAlt: ''
 ---

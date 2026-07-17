@@ -5,6 +5,7 @@ description: Elif Kaya’yla gündeme gelen çıplak arama yeni bir dayatma değ
 topics:
   - ciplak-arama-kelepceli-muayene
 publishDate: '2013-11-25'
+mecra: bianet
 featuredImage: ./_images/devletin-sarsilmaz-otoritesi-ve-hapishanelerde-ciplak-arama-featured.webp
 featuredImageAlt: ''
 ---

@@ -6,6 +6,7 @@ topics:
   - kadin-mahpuslar
   - lgbti-mahpuslar
 publishDate: '2012-10-01'
+mecra: bianet
 featuredImage: ./_images/alti-maddede-evli-mahpuslara-ozel-oda-featured.webp
 featuredImageAlt: ''
 ---

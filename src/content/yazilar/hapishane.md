@@ -5,6 +5,7 @@ description: Saygın Serdaroğlu'nun Postseyyah sitesinde yayınlanan, Bursa Hap
 topics:
   - genel-hapishane-yazilari
 publishDate: '2018-02-20'
+mecra: postseyyah
 featuredImage: ./_images/hapishane-featured.webp
 featuredImageAlt: ''
 ---

@@ -5,6 +5,7 @@ description: Türkiye’deki hapishaneler, nötr ve standart yapılar gibi gör�
 topics:
   - engelli-yasli-mahpuslar
 publishDate: '2014-05-18'
+mecra: teorik-bakis
 featuredImage: ./_images/ozel-ihtiyacli-mahpuslar-ve-turkiye-hapishaneleri-featured.webp
 featuredImageAlt: ''
 ---

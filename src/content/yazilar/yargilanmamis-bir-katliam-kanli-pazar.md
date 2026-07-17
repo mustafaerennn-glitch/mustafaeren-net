@@ -6,6 +6,7 @@ topics:
   - 16-subat-1969
   - kanli-pazar
 publishDate: '2014-02-16'
+mecra: birgun
 featuredImage: ./_images/yargilanmamis-bir-katliam-kanli-pazar-featured.webp
 featuredImageAlt: ''
 ---

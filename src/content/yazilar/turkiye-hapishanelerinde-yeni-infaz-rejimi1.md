@@ -5,6 +5,7 @@ description: Duvar Eylül 2014 Mustafa Eren\ Türkiye Hapishanelerinde Yeni İnf
 topics:
   - toplu-hapsetme
 publishDate: '2014-10-11'
+mecra: duvar
 featuredImage: ./_images/turkiye-hapishanelerinde-yeni-infaz-rejimi1-featured.webp
 featuredImageAlt: ''
 ---

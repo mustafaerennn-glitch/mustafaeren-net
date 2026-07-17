@@ -5,6 +5,7 @@ description: MTürkiye hapishanelerinde her hafta beş mahpusun yaşamını yiti
 topics:
   - ceza-infaz-istatistikleri
 publishDate: '2013-09-24'
+mecra: bianet
 featuredImage: ./_images/mahpus-olumleri-belgelerinde-farkli-rakamlar-featured.webp
 featuredImageAlt: ''
 ---

@@ -5,6 +5,7 @@ description: '"Agamben''in "bugün hepimiz kutsal insanız" sözü, "hiç kimsen
 topics:
   - kutsal-insan
 publishDate: '2012-07-02'
+mecra: bianet
 featuredImage: ./_images/kutsal-insan-kavrami-isiginda-turkiye-hapishaneleri-featured.webp
 featuredImageAlt: ''
 ---

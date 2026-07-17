@@ -5,6 +5,7 @@ description: Kanlı Pazar, Madımak, Gezi'ye Uzanan Yayın Çizgisi Gezi Direni�
 topics:
   - gezi
 publishDate: '2013-07-04'
+mecra: bianet
 featuredImage: ./_images/gezi-direnisi-ve-medya-5-featured.webp
 featuredImageAlt: ''
 ---
