@@ -1,4 +1,5 @@
 ---
+import { getCollection } from 'astro:content';
 import { Image } from 'astro:assets';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { routes, type Locale } from '../../i18n/routes';
@@ -23,6 +24,19 @@ const paragraphs = [
   'Ich habe an vielen Projekten der Mimar Sinan Universität und der CİSST teilgenommen bzw. diese koordiniert. Zudem war ich an der Gründung der İstanbul Toplumsal Araştırmalar Grubu (İSTAG, Istanbuler Gruppe für Gesellschaftsforschung) beteiligt.',
   'Aufgrund laufender Gerichtsverfahren und drohender Haft musste ich die Türkei 2018 verlassen und setze meine Arbeit seither im Ausland fort. Seit 2023 arbeite ich neben meiner Forschungs- und Schreibtätigkeit als Betreuer in einem Migrationszentrum.',
 ];
+
+// Roadmap kararı: Hakkımda'daki gibi, editoryal olarak seçilmiş 5 kitap — önem sırasına göre
+// (kronolojik değil, tarih sırasının tam tersi). Bu 5 TR kitabın gerçek Almanca çeviri
+// sayfaları — bkz. src/pages/hakkimda.astro'daki aynı karar.
+const SECILI_KITAPLAR = [
+  'tuerkei-gefaengnisalmanach-2015',
+  'meine-rechte-ein-antragsleitfaden-fuer-gefangene',
+  'handbuch-der-gefangenenrechte',
+  'die-pathologie-der-einsperrung',
+  'kanli-pazar-nationalisten-islamisten-und-die-linke',
+];
+const kitaplarMap = new Map((await getCollection('kitaplar')).filter((k) => k.data.lang === lang).map((k) => [k.id, k]));
+const kitaplar = SECILI_KITAPLAR.map((id) => kitaplarMap.get(id)).filter((k) => k !== undefined);
 ---
 
 <BaseLayout
@@ -47,6 +61,25 @@ const paragraphs = [
   <div class="bio-body">
     {paragraphs.map((p) => <p>{p}</p>)}
   </div>
+
+  {
+    kitaplar.length > 0 && (
+      <div class="books-box">
+        <div class="section-head">
+          <h2>{t.yayinlanmisKitaplar}</h2>
+          <a class="section-link" href="/de/kitaplar/">{t.tumunuGor}</a>
+        </div>
+        <ul class="books-list">
+          {kitaplar.map((k) => (
+            <li>
+              <a class="book-title-link" href={`/de/kitaplar/${k.id}/`}>{k.data.title}</a>{' '}
+              <span class="book-year">· {k.data.year}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )
+  }
 </BaseLayout>
 
 <style>
@@ -65,6 +98,50 @@ const paragraphs = [
   .bio-body { font-size: 15px; color: var(--text-secondary); line-height: 1.75; margin-bottom: 2.25rem; }
   .bio-body p { margin-bottom: 1.1em; }
   .bio-body p:last-child { margin-bottom: 0; }
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+  .section-link {
+    font-size: 13px;
+    color: var(--text-accent);
+    text-decoration: none;
+  }
+  .books-box {
+    margin-top: 2.5rem;
+    background: var(--surface-1);
+    border-radius: 12px;
+    padding: 1.5rem 1.5rem 0.25rem;
+  }
+  .books-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .books-list li {
+    padding: 12px 0;
+    border-bottom: 0.5px solid var(--border);
+    font-size: 14px;
+    color: var(--text-primary);
+    line-height: 1.6;
+  }
+  .books-list li:last-child {
+    border-bottom: none;
+  }
+  .book-title-link {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .book-title-link:hover {
+    color: var(--text-accent);
+    text-decoration: underline;
+  }
+  .book-year {
+    color: var(--text-muted);
+  }
   @media (max-width: 600px) {
     .bio-hero { flex-direction: column; }
     .avatar { width: 120px; height: 120px; }

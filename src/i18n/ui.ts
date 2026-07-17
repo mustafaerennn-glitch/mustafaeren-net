@@ -60,6 +60,8 @@ export const ui = {
     tesekkurAciklama: 'Mesajınız iletildi, en kısa sürede dönüş yapacağım.',
     anaSayfayaDon: 'Ana sayfaya dön',
     tesekkurler: 'Teşekkürler',
+    yayinlanmisKitaplar: 'Yayınlanmış Kitaplar',
+    sayfaEtiketi: 'Sayfa',
   },
   en: {
     navYazilar: 'Articles',
@@ -116,6 +118,8 @@ export const ui = {
     tesekkurAciklama: "Your message has been sent, I'll get back to you as soon as I can.",
     anaSayfayaDon: 'Return to homepage',
     tesekkurler: 'Thank you',
+    yayinlanmisKitaplar: 'Published Books',
+    sayfaEtiketi: 'Page',
   },
   de: {
     navYazilar: 'Artikel',
@@ -173,6 +177,8 @@ export const ui = {
     tesekkurAciklama: 'Ihre Nachricht wurde übermittelt, ich melde mich so bald wie möglich bei Ihnen.',
     anaSayfayaDon: 'Zurück zur Startseite',
     tesekkurler: 'Danke',
+    yayinlanmisKitaplar: 'Veröffentlichte Bücher',
+    sayfaEtiketi: 'Seite',
   },
   fr: {
     navYazilar: 'Articles',
@@ -230,6 +236,8 @@ export const ui = {
     tesekkurAciklama: 'Votre message a bien été envoyé, je vous répondrai dès que possible.',
     anaSayfayaDon: "Retour à l'accueil",
     tesekkurler: 'Merci',
+    yayinlanmisKitaplar: 'Ouvrages publiés',
+    sayfaEtiketi: 'Page',
   },
 } as const;
 

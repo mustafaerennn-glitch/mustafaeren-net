@@ -14,10 +14,7 @@ if (Astro.currentLocale !== lang) {
 const t = ui[lang];
 const alternates = (Object.entries(routes.hakkimda) as [Locale, string][]).map(([l, href]) => ({ lang: l, href }));
 
-// Bio metni roadmap'te finalize edilmiş, gerçek/onaylı içerik (WordPress göçüne bağlı değil —
-// bu yüzden Faz 3 XML export'u beklenmeden burada kullanılabilir). Kitap listesi ise gerçek
-// 5 kitabın henüz içerik göçü yapılmadığı için (Faz 3-5), kasıtlı olarak sahte/örnek
-// `kitaplar` koleksiyonundan dinamik üretiliyor — dead link oluşturmamak için.
+// Bio metni roadmap'te finalize edilmiş, gerçek/onaylı içerik.
 const paragraphs = [
   "MSGSÜ Sosyoloji bölümünden mezun oldum, İstanbul Bilgi Üniversitesi'nde Kültürel İncelemeler yüksek lisansımı tamamladım. MSGSÜ'de doktora derslerine katıldım. 2019-2020 yıllarında Zürih Üniversitesi'nde misafir öğrenci olarak yüksek lisans derslerini takip ettim. 2026 yılında Schule für Sozialbegleitung'da Migrationsfachperson (Göç Uzmanlığı) programına başladım.",
   'Çalışma alanlarım hapishaneler/kapatılma, emek, toplumsal hareketler, siyasi tarih, göç ve dezavantajlı gruplardır.',
@@ -29,7 +26,20 @@ const paragraphs = [
   "Hakkımda sürmekte olan davalar ve hapis tehdidi nedeniyle 2018 yılında Türkiye'yi terk etmek zorunda kaldım ve çalışmalarımı yurtdışında sürdürüyorum. 2023 yılından bu yana araştırma ve yazı çalışmalarımın yanı sıra bir göç merkezinde Betreuer (sosyal destek görevlisi) olarak çalışıyorum.",
 ];
 
-const kitaplar = (await getCollection('kitaplar')).filter((k) => k.data.lang === lang);
+// Roadmap kararı: Hakkımda sayfasında kitapların tamamı değil, editoryal olarak seçilmiş
+// 5 kitap gösterilir ("5 kitap, 6.'sı çıkarıldı" — bkz. mustafaeren-net-gocu-yol-haritasi.md).
+// Bu 5 kitap aynı zamanda EN/DE/FR'ye çevrilen tek kitaplardır. Sıra kronolojik DEĞİL, önem
+// sırasına göre — Kullanıcı onaylı: bu, tarih sırasının tam tersi. Tüm kitapları görmek
+// isteyenler "Tümünü gör" linkiyle /kitaplar/ sayfasına gidiyor.
+const SECILI_KITAPLAR = [
+  'turkiye-hapishaneler-almanagi',
+  'haklarim-basvuru-kilavuzu',
+  'mahpus-haklari-el-kitabi',
+  'kapatilmanin-patolojisi',
+  'kanli-pazar',
+];
+const kitaplarMap = new Map((await getCollection('kitaplar')).filter((k) => k.data.lang === lang).map((k) => [k.id, k]));
+const kitaplar = SECILI_KITAPLAR.map((id) => kitaplarMap.get(id)).filter((k) => k !== undefined);
 ---
 
 <BaseLayout
