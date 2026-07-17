@@ -3,6 +3,11 @@
   --surface-2: #ffffff;
   --surface-1: #f1efe8;
   --surface-0: #f7f6f2;
+  /* Yalnızca sayfa kartının DIŞINDAKİ zemin (body) için — surface-1'den bilinçli olarak ayrı:
+     surface-1 zaten sayfa içinde "kutu" bileşenleri için kullanılıyor (Proje kartı, feed
+     rozetleri), body'de de aynı tonu kullanmak o kutuları dış zeminle aynı renge düşürüp
+     görünmez kılıyordu. */
+  --surface-canvas: #e9e7df;
   --text-primary: #1a1a18;
   --text-secondary: #5f5e5a;
   /* Mockup'ta #888780 idi — Lighthouse'ta surface-0/1/2 üzerinde WCAG AA'nın altında kaldığı
