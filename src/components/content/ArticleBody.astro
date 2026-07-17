@@ -37,6 +37,25 @@
     color: var(--text-primary);
     margin: 1.75em 0 0.75em;
   }
+  .article-body :global(table) {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5em 0;
+    font-size: 14px;
+    display: block;
+    overflow-x: auto;
+  }
+  .article-body :global(th),
+  .article-body :global(td) {
+    padding: 6px 10px;
+    border: 0.5px solid var(--border);
+    text-align: left;
+    white-space: nowrap;
+  }
+  .article-body :global(th) {
+    color: var(--text-primary);
+    font-weight: 500;
+  }
   .article-body :global(blockquote) {
     margin: 1em 0;
     padding-left: 14px;

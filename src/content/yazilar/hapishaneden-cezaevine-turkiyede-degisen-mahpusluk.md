@@ -42,409 +42,36 @@ Bu çalışmada, Milliyet gazetesinin, internet ortamında bulunan arşivinden y
 
 Ardından bu sayılardan yararlanılarak, onar yıllık bir tablo çıkarılmıştır. Böylece, bu kelimelerin kullanılışındaki artış ve azalışı, yeni kelimelerin ortaya çıkışını onar yıllık dilimler içerisinde tespit etmek mümkün olabilmiştir. Bu değişiklikler, değişen dönemin, epistemenin de göstergesidir.
 
-**50-60**
-
-**60-70**
-
-**70-80**
-
-**80-90**
-
-**90-00**
-
-**2000-04**
-
-**_hapishane_**
-
-2037
-
-1256
-
-1524
-
-2222
-
-2725
-
-953
-
-**_cezaevi_**
-
-2107
-
-2432
-
-3610
-
-7457
-
-8146
-
-3845
-
-**_mahpushane_**
-
-1
-
-6
-
-25
-
-44
-
-35
-
-7
-
-**_tutukevi_**
-
-0
-
-2
-
-260
-
-502
-
-256
-
-130
-
-**_tevkifhane_**
-
-77
-
-15
-
-5
-
-14
-
-21
-
-8
-
-**_tutuklu_**
-
-238
-
-969
-
-3567
-
-6295
-
-4846
-
-1951
-
-**_hükümlü_**
-
-151
-
-527
-
-1062
-
-1951
-
-1612
-
-778
-
-**_mahpus_**
-
-10
-
-42
-
-71
-
-81
-
-89
-
-26
-
-**_mahkum_**
-
-10092
-
-6187
-
-7083
-
-8769
-
-11034
-
-4157
-
-**_anarşist_**
-
-67
-
-185
-
-1800
-
-630
-
-396
-
-348
-
-**_Terörist_**
-
-17
-
-8
-
-519
-
-6976
-
-8925
-
-2675
-
-**_kader kurbanı_**
-
-0
-
-5
-
-22
-
-46
-
-75
-
-62
-
-**_kader mahkumu_**
-
-2
-
-2
-
-1
-
-6
-
-13
-
-9
-
-**_hapishane, mahkum_**
-
-1266
-
-454
-
-400
-
-514
-
-775
-
-309
-
-**_hapishane, anarşist_**
-
-6
-
-4
-
-64
-
-36
-
-19
-
-18
-
-**_hapishane, terörist_**
-
-0
-
-0
-
-38
-
-187
-
-242
-
-93
-
-**_hapishane,kaderkurbanı_**
-
-0
-
-1
-
-10
-
-12
-
-21
-
-13
-
-**_hapishane, tutuklu_**
-
-4
-
-66
-
-264
-
-447
-
-325
-
-164
-
-**_hapishane, hükümlü_**
-
-2
-
-38
-
-68
-
-130
-
-101
-
-56
-
-**_cezaevi, mahkum_**
-
-672
-
-1047
-
-1150
-
-1862
-
-2316
-
-1309
-
-**_cezaevi, anarşist_**
-
-1
-
-7
-
-110
-
-50
-
-41
-
-16
-
-**_cezaevi, terörist_**
-
-0
-
-0
-
-47
-
-582
-
-924
-
-501
-
-**_cezaevi, kader kurbanı_**
-
-0
-
-2
-
-14
-
-30
-
-76
-
-37
-
-**_cezaevi, tutuklu_**
-
-24
-
-279
-
-1085
-
-2237
-
-2222
-
-1112
-
-**_cezaevi, hükümlü_**
-
-46
-
-233
-
-530
-
-1132
-
-930
-
-533
-
-**_işkence_**
-
-918
-
-805
-
-2154
-
-4382
-
-4814
-
-1904
-
-**_hapishane, işkence_**
-
-58
-
-42
-
-131
-
-277
-
-300
-
-107
-
-**_cezaevi, işkence_**
-
-9
-
-37
-
-212
-
-711
-
-898
-
-620
+| Kelime(ler) | 50-60 | 60-70 | 70-80 | 80-90 | 90-00 | 2000-04 |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| **_hapishane_** | 2037 | 1256 | 1524 | 2222 | 2725 | 953 |
+| **_cezaevi_** | 2107 | 2432 | 3610 | 7457 | 8146 | 3845 |
+| **_mahpushane_** | 1 | 6 | 25 | 44 | 35 | 7 |
+| **_tutukevi_** | 0 | 2 | 260 | 502 | 256 | 130 |
+| **_tevkifhane_** | 77 | 15 | 5 | 14 | 21 | 8 |
+| **_tutuklu_** | 238 | 969 | 3567 | 6295 | 4846 | 1951 |
+| **_hükümlü_** | 151 | 527 | 1062 | 1951 | 1612 | 778 |
+| **_mahpus_** | 10 | 42 | 71 | 81 | 89 | 26 |
+| **_mahkum_** | 10092 | 6187 | 7083 | 8769 | 11034 | 4157 |
+| **_anarşist_** | 67 | 185 | 1800 | 630 | 396 | 348 |
+| **_Terörist_** | 17 | 8 | 519 | 6976 | 8925 | 2675 |
+| **_kader kurbanı_** | 0 | 5 | 22 | 46 | 75 | 62 |
+| **_kader mahkumu_** | 2 | 2 | 1 | 6 | 13 | 9 |
+| **_hapishane, mahkum_** | 1266 | 454 | 400 | 514 | 775 | 309 |
+| **_hapishane, anarşist_** | 6 | 4 | 64 | 36 | 19 | 18 |
+| **_hapishane, terörist_** | 0 | 0 | 38 | 187 | 242 | 93 |
+| **_hapishane,kaderkurbanı_** | 0 | 1 | 10 | 12 | 21 | 13 |
+| **_hapishane, tutuklu_** | 4 | 66 | 264 | 447 | 325 | 164 |
+| **_hapishane, hükümlü_** | 2 | 38 | 68 | 130 | 101 | 56 |
+| **_cezaevi, mahkum_** | 672 | 1047 | 1150 | 1862 | 2316 | 1309 |
+| **_cezaevi, anarşist_** | 1 | 7 | 110 | 50 | 41 | 16 |
+| **_cezaevi, terörist_** | 0 | 0 | 47 | 582 | 924 | 501 |
+| **_cezaevi, kader kurbanı_** | 0 | 2 | 14 | 30 | 76 | 37 |
+| **_cezaevi, tutuklu_** | 24 | 279 | 1085 | 2237 | 2222 | 1112 |
+| **_cezaevi, hükümlü_** | 46 | 233 | 530 | 1132 | 930 | 533 |
+| **_işkence_** | 918 | 805 | 2154 | 4382 | 4814 | 1904 |
+| **_hapishane, işkence_** | 58 | 42 | 131 | 277 | 300 | 107 |
+| **_cezaevi, işkence_** | 9 | 37 | 212 | 711 | 898 | 620 |
 
 Bu tablodan çıkarılacak sonuçları şöyle sıralamak mümkün:
 
@@ -460,7 +87,7 @@ Bu değişiklik, kapatılmanın gerçekleştirildiği bu mekanlara bir değer ya
 
 “Cezaevi”, “ceza” verilen kişilerin kapatıldığı mekan olarak düşünüldüğünde, cezaya çarptırılan kişiler de otomatikman, “suçlu” olarak damgalanmış olmaktadır.
 
-![](https://m.bianet.org/resim/olcekle/38606/490/248)
+![](https://static.bianet.org/system/uploads/1/images/000/038/606/original/11.jpg)
 
 ## **Mahpusların değişen sıfat ve isimleri \[4\]**
 
@@ -468,7 +95,7 @@ Bu değişiklik, kapatılmanın gerçekleştirildiği bu mekanlara bir değer ya
 
 Burada asıl dikkat çeken ise, “hapishane” ve “cezaevi” kelimeleriyle birlikte “anarşist” ve “terörist” kelimesinin kullanımında görülen artıştır. Bu durum da, “hapishane” yerine “cezaevi” kullanımının yaygınlaşmasıyla paralellik taşımaktadır.
 
-![](https://m.bianet.org/resim/olcekle/38607/490/345)
+![](https://static.bianet.org/system/uploads/1/images/000/038/607/original/22.jpg)
 
 ## **Sağlık köşesinin ruh hastası anarşistleri ve anarşizmin 70'lerde değişen kullanımı**
 
@@ -476,7 +103,7 @@ Burada asıl dikkat çeken ise, “hapishane” ve “cezaevi” kelimeleriyle b
 
 12 Temmuz 1956 tarihli gazetenin, "Sağlık Ansiklopedisi" köşesinin başlığı "Anarşistlik"tir ve yazı, " Akıl ve ruh hastası olmayan fakat hastalık sınırına yakın bazı insanlar vardır, bunlara psikopat denir." diye başladıktan sonra ikinci paragrafta, "Anarşistler, psikopatların bir çeşididir." sözleriyle devam etmektedir.
 
-![](https://m.bianet.org/resim/olcekle/38602/435/370)
+![](https://static.bianet.org/system/uploads/1/images/000/038/602/original/%C4%B0%C3%873.jpg)
 
 Anarşist kelimesi, 50 ve 60'lı yıllarda çok az kullanılmaktayken (bu 20 yıl içerisinde toplam olarak sadece 252 kere), 70'li yıllara gelindiğinde bu sayı birden 1800'e fırlar.
 
@@ -484,7 +111,7 @@ Anarşist kelimesinin, Türkiye'de yaygın kullanımı asıl olarak 60'ların so
 
 Anarşizm, 60'ların sonlarından itibaren, silahlı mücadeleye yönelen solu nitelendirmek için kullanılmaya başlar. Bu durum, 80'lerle beraber "anarşizm"in yerini, "terörizm" kelimesi alana kadar devam eder.
 
-![](https://m.bianet.org/resim/olcekle/38603/317/385)
+![](https://static.bianet.org/system/uploads/1/images/000/038/603/original/%C4%B0%C3%874.jpg)
 
 ## **80'li yıllar; "terörist"in kullanımındaki artış ve "terör"le anılmaya başlanan mahpuslar**
 
@@ -494,7 +121,7 @@ Asıl önemlisi de, hapishanede tutulanlara dair "terörist" nitelendirmesinin b
 
 50'li yıllardan 70'lı yıllara gelindiğinde ise, "hapishane" ve "cezaevi" kelimeleriyle birilikte terörist kelimesi kullanılmaya başlar ancak "terörist" kelimesinin asıl kullanımı 80'li yıllarla beraber olur ve 90'lar ile 2000 sonrasında da artarak devam eder.
 
-![](https://m.bianet.org/resim/olcekle/38604/412/383)
+![](https://static.bianet.org/system/uploads/1/images/000/038/604/original/%C4%B0%C3%875.jpg)
 
 ## **Bu Çalışmanın Handikapları ve Sonuç Olarak**
 
