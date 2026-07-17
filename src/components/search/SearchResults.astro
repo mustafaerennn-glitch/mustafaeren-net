@@ -64,6 +64,25 @@ const alternates = (Object.entries(routes.ara) as [Locale, string][]).map(([l, h
     return div.innerHTML;
   }
 
+  // Text Fragment (#:~:text=) hedefi için mark'ın etrafına kelime eklemek denendi (önce ±2,
+  // sonra yalnızca sonrasına ~12 kelime) ama ikisi de sık sık HİÇ eşleşmiyordu — çünkü
+  // tırnak/noktalama işaretiyle bitişik kelimeler arasına (örn. gerçek metinde boşluksuz
+  // Hapishane"den) benim kodum yapay bir boşluk sokuyordu, tam eşleşme bozuluyordu. En güvenilir
+  // çözüm: yalnızca mark'ın kendi metnini kullanmak — noktalama içermiyor, gerçek sayfada
+  // birebir aynı şekilde var. Tek bilinen istisna: sorgu tam olarak bir Konular menü etiketiyle
+  // (hapishane/siyasi tarih/göç/emek) birebir aynıysa, tarayıcı bazen makale yerine o menü
+  // öğesini işaretleyebilir — nadir, kabul edilmiş bir sınır.
+  function extractFragmentPhrase(excerptHtml: string, fallback: string): string {
+    const div = document.createElement('div');
+    div.innerHTML = excerptHtml;
+    const mark = div.querySelector('mark');
+    const raw = mark?.textContent?.trim() || '';
+    // Kenar noktalama işaretleri (mark bazen bitişik noktalama ile birlikte geliyor, örn.
+    // "Mahpusluk.") eşleşmeyi bozabiliyor — temizleniyor.
+    const cleaned = raw.replace(/^[^\p{L}\p{N}]+|[^\p{L}\p{N}]+$/gu, '');
+    return cleaned || raw || fallback;
+  }
+
   async function run() {
     if (!(headingEl instanceof HTMLElement) || !(metaEl instanceof HTMLElement) || !(langsEl instanceof HTMLElement) || !(listEl instanceof HTMLElement)) {
       return;
@@ -135,7 +154,12 @@ const alternates = (Object.entries(routes.ara) as [Locale, string][]).map(([l, h
         const matchCount = item.locations?.length ?? 0;
         const typeLabel = typeLabels[item.meta?.type ?? ''] ?? item.meta?.type ?? '';
         const mecra = item.meta?.mecra;
-        return `<a class="result-row" href="${item.url}">
+        // Text Fragments (native tarayıcı özelliği, ek JS gerektirmiyor): hedef sayfada
+        // kelimeye kaydırıp sarı ile işaretliyor. Chrome/Edge'de çalışıyor, Safari/Firefox'ta
+        // sessizce yoksayılıyor (link normal çalışmaya devam ediyor, hata yok).
+        const fragmentPhrase = extractFragmentPhrase(item.excerpt ?? '', query);
+        const href = `${item.url}#:~:text=${encodeURIComponent(fragmentPhrase)}`;
+        return `<a class="result-row" href="${href}">
           <div class="result-row-head">
             <span class="result-title">${escapeHtml(item.meta?.title ?? item.url)}</span>
             ${matchCount > 0 ? `<span class="result-match-count">${pluralize(matchCount, t.searchMatchSingular, t.searchMatchPlural)}</span>` : ''}
