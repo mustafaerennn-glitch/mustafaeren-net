@@ -1,10 +1,10 @@
 ---
-// Site arama — Pagefind (bkz. package.json build script'i: "astro build && pagefind --site dist").
-// Yalnızca üretim derlemesinde çalışır (dist/pagefind/pagefind.js orada üretiliyor); dev
-// sunucusunda tetikleyici görünür ama arama "Arama yalnızca üretim derlemesinde çalışır" gibi
-// bir hataya düşmez, sessizce sonuç bulamaz — bkz. aşağıdaki try/catch.
+// Site arama tetikleyicisi — sade bir modal, yalnızca sorguyu alıp Enter'da sonuç sayfasına
+// (routes.ara[lang]) yönlendirir. Gerçek arama (Pagefind) o sayfada çalışır — bkz.
+// src/components/search/SearchResults.astro. Modalın kendisi Pagefind'a hiç dokunmuyor, bu
+// yüzden dev sunucusunda da (build sonrası indeks üretilmeden) sorunsuz çalışır.
 import { ui, type Locale } from '../../i18n/ui';
-import { TYPE_LABELS } from '../../lib/feed';
+import { routes } from '../../i18n/routes';
 
 interface Props {
   lang: Locale;
@@ -12,9 +12,7 @@ interface Props {
 
 const { lang } = Astro.props;
 const t = ui[lang];
-// TYPE_LABELS burada, sunucu tarafında çözülüyor ve JSON olarak DOM'a taşınıyor — istemci
-// script'i lib/feed.ts'i doğrudan import edemez, o dosya astro:content'e bağımlı (sunucu-only).
-const typeLabels = TYPE_LABELS[lang] ?? TYPE_LABELS.tr;
+const searchPath = routes.ara[lang];
 ---
 
 <button type="button" class="search-trigger" aria-label={t.searchAriaLabel} data-search-open>
@@ -24,7 +22,7 @@ const typeLabels = TYPE_LABELS[lang] ?? TYPE_LABELS.tr;
   </svg>
 </button>
 
-<dialog id="search-dialog" data-search-dialog data-no-results={t.searchNoResults} data-type-labels={JSON.stringify(typeLabels)}>
+<dialog id="search-dialog" data-search-dialog data-search-path={searchPath}>
   <div class="search-head">
     <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
       <circle cx="11" cy="11" r="7" />
@@ -33,59 +31,24 @@ const typeLabels = TYPE_LABELS[lang] ?? TYPE_LABELS.tr;
     <input type="search" placeholder={t.searchPlaceholder} data-search-input aria-label={t.searchAriaLabel} />
     <span class="search-hint">{t.searchHint}</span>
   </div>
-  <div class="search-results" data-search-results></div>
 </dialog>
 
 <script>
   const openBtnQuery = document.querySelector('[data-search-open]');
   const dialogQuery = document.querySelector('[data-search-dialog]');
   const inputQuery = document.querySelector('[data-search-input]');
-  const resultsQuery = document.querySelector('[data-search-results]');
 
-  if (
-    openBtnQuery instanceof HTMLElement &&
-    dialogQuery instanceof HTMLDialogElement &&
-    inputQuery instanceof HTMLInputElement &&
-    resultsQuery instanceof HTMLElement
-  ) {
+  if (openBtnQuery instanceof HTMLElement && dialogQuery instanceof HTMLDialogElement && inputQuery instanceof HTMLInputElement) {
     // Narrow'lanmış tipler kapatma (closure) fonksiyonlarına taşınmıyor — TS'in bilinen
-    // sınırlaması. Bu yüzden yeniden bağlanıyor, aşağıdaki iç içe fonksiyonlar bu adlarla çalışır.
+    // sınırlaması. Bu yüzden yeniden bağlanıyor.
     const openBtnEl = openBtnQuery;
     const dialogEl = dialogQuery;
     const inputEl = inputQuery;
-    const resultsEl = resultsQuery;
-
-    const labels: Record<string, string> = JSON.parse(dialogEl.dataset.typeLabels || '{}');
-    const noResultsMsg = dialogEl.dataset.noResults || 'No results.';
-
-    let pagefind: any = null;
-    let pagefindLoadFailed = false;
-    let debounceTimer: ReturnType<typeof setTimeout> | undefined;
-    let requestId = 0;
-
-    async function ensurePagefind() {
-      if (pagefind || pagefindLoadFailed) return pagefind;
-      try {
-        // Vite, /* @vite-ignore */ + değişken specifier'a rağmen build sırasında bu import()'u
-        // kendi modulepreload sarmalayıcısına sabitliyor (sabit değişkeni "inline" edip yeniden
-        // statik analiz ediyor) — pagefind.js Vite'ın hiç bilmediği bir modül olduğu için
-        // (pagefind CLI, Vite build'i BİTTİKTEN sonra ayrı bir adımda üretiyor) bu sarmalama
-        // sessizce başarısız oluyordu. Kesin çözüm: import()'u bir string'den Function()
-        // ile üretmek — bundler'ın hiç göremeyeceği, gerçekten çalışma zamanında çözülen bir
-        // dynamic import.
-        // @ts-ignore — yalnızca build sonrası dist/pagefind/ altında var olan bir modül.
-        pagefind = await new Function('return import("/pagefind/pagefind.js")')();
-        await pagefind.init();
-      } catch {
-        pagefindLoadFailed = true;
-      }
-      return pagefind;
-    }
+    const searchPath = dialogEl.dataset.searchPath || '/ara/';
 
     function openDialog() {
       dialogEl.showModal();
       inputEl.focus();
-      ensurePagefind();
     }
 
     openBtnEl.addEventListener('click', openDialog);
@@ -109,49 +72,16 @@ const typeLabels = TYPE_LABELS[lang] ?? TYPE_LABELS.tr;
 
     dialogEl.addEventListener('close', () => {
       inputEl.value = '';
-      resultsEl.innerHTML = '';
     });
 
-    inputEl.addEventListener('input', () => {
-      clearTimeout(debounceTimer);
-      const query = inputEl.value.trim();
-      if (!query) {
-        resultsEl.innerHTML = '';
-        return;
+    inputEl.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        const query = inputEl.value.trim();
+        if (!query) return;
+        window.location.href = `${searchPath}?q=${encodeURIComponent(query)}`;
       }
-      debounceTimer = setTimeout(() => runSearch(query), 150);
     });
-
-    async function runSearch(query: string) {
-      const currentRequest = ++requestId;
-      const pf = await ensurePagefind();
-      if (!pf) {
-        resultsEl.innerHTML = `<p class="search-empty">${noResultsMsg}</p>`;
-        return;
-      }
-      const search = await pf.search(query);
-      if (currentRequest !== requestId) return; // eski istek — yarışa girme
-
-      if (search.results.length === 0) {
-        resultsEl.innerHTML = `<p class="search-empty">${noResultsMsg}</p>`;
-        return;
-      }
-
-      const items = await Promise.all(search.results.slice(0, 20).map((r: any) => r.data()));
-      if (currentRequest !== requestId) return;
-
-      resultsEl.innerHTML = items
-        .map((item: any) => {
-          const type = item.meta?.type ?? '';
-          const typeLabel = labels[type as keyof typeof labels] ?? type;
-          return `<a class="search-result" href="${item.url}">
-            <span class="search-result-type">${typeLabel}</span>
-            <span class="search-result-title">${item.meta?.title ?? item.url}</span>
-            <span class="search-result-excerpt">${item.excerpt}</span>
-          </a>`;
-        })
-        .join('');
-    }
   }
 </script>
 
@@ -187,7 +117,6 @@ const typeLabels = TYPE_LABELS[lang] ?? TYPE_LABELS.tr;
     align-items: center;
     gap: 10px;
     padding: 14px 18px;
-    border-bottom: 0.5px solid var(--border);
     color: var(--text-muted);
   }
   .search-head input {
@@ -208,50 +137,5 @@ const typeLabels = TYPE_LABELS[lang] ?? TYPE_LABELS.tr;
     .search-hint {
       display: none;
     }
-  }
-  .search-results {
-    max-height: 60vh;
-    overflow-y: auto;
-    padding: 8px;
-  }
-  /* Bu sonuçlar Pagefind tarafından çalışma zamanında innerHTML ile ekleniyor — Astro'nun
-     build-time scoped CSS'i bu elemanlara hiç işlemiyor, bu yüzden hepsi :global(). */
-  :global(.search-result) {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-    padding: 10px 10px;
-    border-radius: var(--radius);
-    text-decoration: none;
-    color: inherit;
-  }
-  :global(.search-result:hover) {
-    background: var(--surface-1);
-  }
-  :global(.search-result-type) {
-    font-size: 11px;
-    font-weight: 500;
-    color: var(--text-accent);
-  }
-  :global(.search-result-title) {
-    font-size: 14px;
-    font-weight: 500;
-  }
-  :global(.search-result-excerpt) {
-    font-size: 12px;
-    color: var(--text-muted);
-    line-height: 1.5;
-  }
-  :global(.search-result-excerpt mark) {
-    background: none;
-    color: var(--text-primary);
-    font-weight: 500;
-  }
-  :global(.search-empty) {
-    font-size: 13px;
-    color: var(--text-muted);
-    padding: 1.5rem 1rem;
-    text-align: center;
-    margin: 0;
   }
 </style>

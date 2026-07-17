@@ -58,6 +58,7 @@ const homeHref = routes.anaSayfa[lang];
   alternates={alternates}
   current="yazilar"
   pagefindType="Yazı"
+  pagefindMecra={mecra?.data.ad}
   breadcrumb={[{ label: BREADCRUMB_HOME_LABEL[lang], href: homeHref }, { label: YAZILAR_LABEL[lang], href: '/yazilar/' }, { label: entry.data.title }]}
 >
   <MecraRozeti mecra={mecra ? { ad: mecra.data.ad, url: mecra.data.url } : undefined} />

@@ -22,6 +22,12 @@ export const routes = {
     de: '/de/kontakt/',
     fr: '/fr/contact/',
   },
+  ara: {
+    tr: '/ara/',
+    en: '/en/search/',
+    de: '/de/suche/',
+    fr: '/fr/recherche/',
+  },
 } as const;
 
 export type RouteKey = keyof typeof routes;

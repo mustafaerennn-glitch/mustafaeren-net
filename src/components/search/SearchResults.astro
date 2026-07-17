@@ -1,0 +1,250 @@
+---
+// Arama sonuç sayfası — 4 dilin tamamı bu paylaşılan bileşeni kullanıyor (bkz. src/pages/ara/,
+// en/search/, de/suche/, fr/recherche/). Sayfa büyük ölçüde statik bir kabuk; gerçek arama
+// tamamen istemci tarafında (Pagefind), ?q= parametresi okunup script sonuçları dolduruyor.
+// Yalnızca üretim derlemesinde çalışır (bkz. Search.astro'daki not).
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { ui, type Locale } from '../../i18n/ui';
+import { routes, BREADCRUMB_HOME_LABEL } from '../../i18n/routes';
+import { TYPE_LABELS } from '../../lib/feed';
+
+interface Props {
+  lang: Locale;
+}
+
+const { lang } = Astro.props;
+const t = ui[lang];
+// TYPE_LABELS lib/feed.ts'te, astro:content'e bağımlı (sunucu-only) — istemci script'i bunu
+// import edemiyor, bu yüzden sunucu tarafında çözülüp JSON olarak DOM'a taşınıyor.
+const typeLabels = TYPE_LABELS[lang] ?? TYPE_LABELS.tr;
+
+const alternates = (Object.entries(routes.ara) as [Locale, string][]).map(([l, href]) => ({ lang: l, href }));
+---
+
+<BaseLayout
+  lang={lang}
+  title={t.searchEyebrow}
+  canonical={routes.ara[lang]}
+  alternates={alternates}
+  showLangSwitcher
+  breadcrumb={[{ label: BREADCRUMB_HOME_LABEL[lang], href: routes.anaSayfa[lang] }, { label: t.navArama }]}
+>
+  <p class="eyebrow">{t.searchEyebrow}</p>
+  <h1 data-search-heading>&nbsp;</h1>
+  <p class="meta-line" data-search-meta></p>
+  <div class="lang-count-row" data-search-langs></div>
+  <div class="results-list" data-search-list></div>
+
+  <div data-search-i18n hidden data-type-labels={JSON.stringify(typeLabels)}></div>
+</BaseLayout>
+
+<script>
+  import { ui } from '../../i18n/ui';
+  import { routes, LANG_NAMES, type Locale } from '../../i18n/routes';
+
+  const LOCALES: Locale[] = ['tr', 'en', 'de', 'fr'];
+  const lang = (document.documentElement.lang as Locale) || 'tr';
+  const t = ui[lang];
+
+  const i18nEl = document.querySelector('[data-search-i18n]');
+  const typeLabels: Record<string, string> = i18nEl instanceof HTMLElement ? JSON.parse(i18nEl.dataset.typeLabels || '{}') : {};
+
+  const headingEl = document.querySelector('[data-search-heading]');
+  const metaEl = document.querySelector('[data-search-meta]');
+  const langsEl = document.querySelector('[data-search-langs]');
+  const listEl = document.querySelector('[data-search-list]');
+
+  function pluralize(n: number, singular: string, plural: string) {
+    return `${n} ${n === 1 ? singular : plural}`;
+  }
+
+  function escapeHtml(s: string) {
+    const div = document.createElement('div');
+    div.textContent = s;
+    return div.innerHTML;
+  }
+
+  async function run() {
+    if (!(headingEl instanceof HTMLElement) || !(metaEl instanceof HTMLElement) || !(langsEl instanceof HTMLElement) || !(listEl instanceof HTMLElement)) {
+      return;
+    }
+
+    const params = new URLSearchParams(window.location.search);
+    const query = (params.get('q') || '').trim();
+
+    if (!query) {
+      headingEl.textContent = t.searchEyebrow;
+      metaEl.textContent = t.searchNoQuery;
+      return;
+    }
+
+    headingEl.textContent = `“${query}”`;
+    document.title = `${query} — ${t.searchEyebrow}`;
+    metaEl.textContent = '…';
+
+    let pagefind: any;
+    try {
+      // Bkz. Search.astro'daki not: import()'u Function() içinden üretmek, Vite'ın statik
+      // analiz + modulepreload sarmalamasından kaçınmanın kesin yolu.
+      pagefind = await new Function('return import("/pagefind/pagefind.js")')();
+      await pagefind.init();
+      await Promise.all(LOCALES.filter((l) => l !== lang).map((l) => pagefind.mergeIndex('/pagefind/', { language: l })));
+    } catch {
+      metaEl.textContent = t.searchNoResults;
+      return;
+    }
+
+    const countsByLang: Record<string, number> = {};
+    let currentLangResults: any[] = [];
+    for (const l of LOCALES) {
+      const res = await pagefind.search(query, { filters: { lang: [l] } });
+      countsByLang[l] = res.results.length;
+      if (l === lang) currentLangResults = res.results;
+    }
+
+    const items = await Promise.all(currentLangResults.map((r: any) => r.data()));
+
+    // Dil satırı — LangCountRow ile aynı görsel dil: aktif dil koyu, >0 diğerleri link, 0 olanlar soluk.
+    langsEl.innerHTML = LOCALES.map((l, i) => {
+      const count = countsByLang[l] ?? 0;
+      const label = `${LANG_NAMES[l]} (${count})`;
+      const sep = i > 0 ? ' &middot; ' : '';
+      if (l === lang) return `${sep}<span class="lc-current">${label}</span>`;
+      if (count > 0) return `${sep}<a href="${routes.ara[l]}?q=${encodeURIComponent(query)}">${label}</a>`;
+      return `${sep}<span class="lc-empty">${label}</span>`;
+    }).join('');
+
+    if (items.length === 0) {
+      metaEl.textContent = t.searchNoResults;
+      listEl.innerHTML = '';
+      return;
+    }
+
+    const typeCounts: Record<string, number> = {};
+    for (const item of items) {
+      const type = item.meta?.type ?? '';
+      typeCounts[type] = (typeCounts[type] ?? 0) + 1;
+    }
+    const typeSummary = Object.entries(typeCounts)
+      .map(([type, count]) => `${typeLabels[type] ?? type} (${count})`)
+      .join(' · ');
+    metaEl.textContent = `${pluralize(items.length, t.searchResultsSingular, t.searchResultsPlural)} · ${typeSummary}`;
+
+    listEl.innerHTML = items
+      .map((item: any) => {
+        const matchCount = item.locations?.length ?? 0;
+        const typeLabel = typeLabels[item.meta?.type ?? ''] ?? item.meta?.type ?? '';
+        const mecra = item.meta?.mecra;
+        return `<a class="result-row" href="${item.url}">
+          <div class="result-row-head">
+            <span class="result-title">${escapeHtml(item.meta?.title ?? item.url)}</span>
+            ${matchCount > 0 ? `<span class="result-match-count">${pluralize(matchCount, t.searchMatchSingular, t.searchMatchPlural)}</span>` : ''}
+          </div>
+          <div class="result-badges">
+            <span class="badge-type">${escapeHtml(typeLabel)}</span>
+            ${mecra ? `<span class="badge-mecra">${escapeHtml(mecra)}</span>` : ''}
+          </div>
+          <p class="result-excerpt">${item.excerpt}</p>
+        </a>`;
+      })
+      .join('');
+  }
+
+  run();
+</script>
+
+<style>
+  .eyebrow {
+    font-size: 12px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 8px;
+  }
+  h1 {
+    font-size: 24px;
+    margin-bottom: 8px;
+    word-break: break-word;
+  }
+  .meta-line {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+  }
+  .lang-count-row {
+    font-size: 13px;
+    margin: 0 0 2rem;
+  }
+  .results-list {
+    border-top: 0.5px solid var(--border);
+  }
+  /* Sonuçlar Pagefind tarafından çalışma zamanında innerHTML ile ekleniyor — Astro'nun
+     build-time scoped CSS'i bu elemanlara işlemiyor, bu yüzden hepsi :global(). */
+  :global(.lang-count-row a) {
+    color: var(--text-accent);
+    text-decoration: none;
+  }
+  :global(.lang-count-row a:hover) {
+    text-decoration: underline;
+  }
+  :global(.lc-current) {
+    color: var(--text-primary);
+    font-weight: 600;
+  }
+  :global(.lc-empty) {
+    color: var(--text-muted);
+  }
+  :global(.result-row) {
+    display: block;
+    padding: 16px 0;
+    border-bottom: 0.5px solid var(--border);
+    text-decoration: none;
+    color: inherit;
+  }
+  :global(.result-row:hover .result-title) {
+    color: var(--text-accent);
+  }
+  :global(.result-row-head) {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  :global(.result-title) {
+    font-size: 15px;
+    font-weight: 500;
+  }
+  :global(.result-match-count) {
+    font-size: 12px;
+    color: var(--text-muted);
+    white-space: nowrap;
+  }
+  :global(.result-badges) {
+    display: flex;
+    gap: 8px;
+    margin: 6px 0;
+  }
+  :global(.badge-type) {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--text-accent);
+  }
+  :global(.badge-mecra) {
+    font-size: 11px;
+    color: var(--text-muted);
+  }
+  :global(.badge-mecra::before) {
+    content: '\00b7 ';
+  }
+  :global(.result-excerpt) {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+  }
+  :global(.result-excerpt mark) {
+    background: none;
+    color: var(--text-primary);
+    font-weight: 500;
+  }
+</style>

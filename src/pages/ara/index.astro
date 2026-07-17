@@ -1,0 +1,10 @@
+---
+import SearchResults from '../../components/search/SearchResults.astro';
+
+const lang = 'tr';
+if (Astro.currentLocale !== lang) {
+  throw new Error(`i18n locale eşleşmedi: beklenen "${lang}", Astro.currentLocale="${Astro.currentLocale}"`);
+}
+---
+
+<SearchResults lang={lang} />
