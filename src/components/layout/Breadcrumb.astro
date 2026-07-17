@@ -3,9 +3,8 @@
 // Ana sayfada kullanılmaz (anlamsız), diğer tüm sayfalarda kullanılır.
 // data-pagefind-ignore: breadcrumb, içerik detay sayfasının başlığını tekrarlıyor (örn.
 // "Yazılar › Urfa Hapishanesi'nde..."). Bu, Pagefind'ın arama sonucundaki "kaç kez geçiyor"
-// sayısını şişiriyordu ve Text Fragment (#:~:text=) vurgusunun asıl gövde yerine breadcrumb'a
-// kaymasına yol açıyordu — breadcrumb <main data-pagefind-body> içinde slot'tan önce geldiği
-// için Pagefind'ın bulduğu İLK eşleşme hep orada oluyordu.
+// sayısını yapay olarak şişiriyordu (başlığın kendisi de ayrıca sayılıyordu) — bu yüzden
+// gövde dışı tutuldu.
 
 interface Crumb {
   label: string;

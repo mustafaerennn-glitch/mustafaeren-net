@@ -47,11 +47,3 @@ p {
 a {
   color: inherit;
 }
-
-/* Arama sonuçlarından #:~:text= ile gelen Text Fragment vurgusu — tarayıcı/tema varsayılanına
-   bırakmak yerine sabit sarı (kullanıcı talebi: "sarı kutu"). Yalnızca Chrome/Edge destekliyor,
-   desteklemeyen tarayıcılarda bu kural etkisiz kalır, link normal çalışır. */
-::target-text {
-  background-color: #fef08a;
-  color: #1a1a18;
-}
