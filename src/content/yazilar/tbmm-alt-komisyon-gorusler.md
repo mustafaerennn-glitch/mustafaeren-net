@@ -198,6 +198,6 @@ Zürih / 17 Mayıs 2025
 
 [📥 PDF’i İndir](/pdf/tbmm-alt-komisyon-gorusler.pdf)
 
-[⬇️ TBMM Tutanağı (PDF)](https://mustafaeren.net/wp-content/uploads/2025/06/TBMM-hukumlu-tutuklu-haklari-alt-komisyon-Kirac-Eren.pdf)
+[⬇️ TBMM Tutanağı (PDF)](/pdf/tbmm-tutanak-kirac-eren.pdf)
 
 [🔗 TBMM Tutanağı (Web)](https://www5.tbmm.gov.tr/develop/owa/komisyon_tutanaklari.goruntule?pTutanakId=1546)
