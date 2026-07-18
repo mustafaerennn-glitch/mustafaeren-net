@@ -7,7 +7,7 @@ topics:
 publishDate: '2014-05-11'
 videoTuru: söyleşi
 embedUrl: https://www.youtube.com/embed/oS7_JI5EW7I
-mecra: tarih-defteri
+mecra: imc-tv
 durationMinutes: 77
 thumbnail: ./_images/kapatilmanin-patolojisi-ve-turkiye-hapishaneleri-thumb.webp
 thumbnailAlt: Kapatılmanın Patolojisi ve Türkiye Hapishaneleri

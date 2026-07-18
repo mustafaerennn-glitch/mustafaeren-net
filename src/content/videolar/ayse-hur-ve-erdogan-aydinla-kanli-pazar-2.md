@@ -5,7 +5,7 @@ description: Erdoğan Aydın ve Ayşe Hür ile Kanlı Pazar üzerine söyleşini
 topics:
   - kanli-pazar
 publishDate: '2022-02-13'
-mecra: tarihin-pesinde
+mecra: arti-tv
 videoTuru: söyleşi
 embedUrl: https://www.youtube.com/embed/oyDOOVWVTEA
 durationMinutes: 47
