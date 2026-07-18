@@ -192,16 +192,26 @@ const kitaplar = (await getCollection('kitaplar', (e) => e.data.lang === lang &&
     cursor: pointer;
     text-decoration: none;
     display: inline-block;
+    transition: transform 0.15s ease, opacity 0.15s ease, border-color 0.15s ease, color 0.15s ease;
   }
   .btn-primary {
     background: var(--fill-primary);
     color: var(--on-primary);
     border: none;
   }
+  .btn-primary:hover {
+    opacity: 0.85;
+    transform: translateY(-1px);
+  }
   .btn-secondary {
     background: transparent;
     border: 0.5px solid var(--border);
     color: var(--text-primary);
+  }
+  .btn-secondary:hover {
+    border-color: var(--text-accent);
+    color: var(--text-accent);
+    transform: translateY(-1px);
   }
   .avatar {
     width: 128px;
