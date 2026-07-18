@@ -13,25 +13,20 @@ kapak: ./_images/haciyatmazi-devirmek-kapak.webp
 kapakAlt: 'Hacıyatmazı Devirmek kitabı kapağı'
 seri: Siyaset ve Ekonomi Kitaplığı
 pdf: /pdf/haciyatmazi-devirmek-poas-bolumu.pdf
+kunye:
+  - etiket: 'Katkım'
+    deger: '“POAŞ’ın Özelleştirilmesi ve Kâr Merkezli Bir Yönetimin Sorgulanması” bölümü (s. 321-354)'
+  - etiket: 'Yayına Hazırlayanlar'
+    deger: 'Yıldırım Şentürk & Sibel Yardımcı'
+  - etiket: 'Diğer Yazarlar'
+    deger: 'Ebru Aykut, Ebru Soytemel, Eylem Akçay, Feryal Saygılıgil, Kemal Dil, Mert Tokur, Sibel Yardımcı, Yıldırım Şentürk'
+  - etiket: 'Kapak Tasarımı'
+    deger: 'Semiha Şahin'
+  - etiket: 'Basım Tarihi'
+    deger: 'Eylül 2010'
+  - etiket: 'ISBN No'
+    deger: '978-605-5679-54-5'
 ---
-
-**Eser Adı:** Hacıyatmazı Devirmek: Neoliberal Pratiklere Karşı Kolektivite
-
-**Katkım:** “POAŞ’ın Özelleştirilmesi ve Kâr Merkezli Bir Yönetimin Sorgulanması” bölümü (s. 321-354)
-
-**Yayına Hazırlayanlar:** Yıldırım Şentürk & Sibel Yardımcı
-
-**Diğer Yazarlar:** Ebru Aykut, Ebru Soytemel, Eylem Akçay, Feryal Saygılıgil, Kemal Dil, Mert Tokur, Sibel Yardımcı, Yıldırım Şentürk
-
-**Yayınevi:** Kalkedon Yayınları
-
-**Kapak Tasarımı:** Semiha Şahin
-
-**Basım Tarihi:** Eylül 2010
-
-**Sayfa Sayısı:** 400
-
-**ISBN No:** 978-605-5679-54-5
 
 Yıldırım Şentürk ve Sibel Yardımcı'nın yayına hazırladığı bu derleme, neoliberal politikaların Türkiye'deki farklı toplumsal alanlardaki yansımalarını ve bu politikalara karşı geliştirilen kolektif direniş biçimlerini konu alan sekiz bölümden oluşuyor.
 

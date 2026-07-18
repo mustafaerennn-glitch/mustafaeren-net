@@ -12,23 +12,18 @@ sayfaSayisi: 114
 kapak: ./_images/turkiyede-roman-mahpus-olmak-kapak.webp
 kapakAlt: 'Türkiye''de Roman Mahpus Olmak kitabı kapağı'
 pdf: /pdf/turkiyede-roman-mahpus-olmak.pdf
+kunye:
+  - etiket: 'Yazar'
+    deger: 'Aylin Çelikçi'
+  - etiket: 'Editörler'
+    deger: 'Mustafa Eren'
+  - etiket: 'Kapak Tasarımı'
+    deger: 'Tayfun Koç'
+  - etiket: 'Basım Tarihi'
+    deger: 'Ekim 2017'
+  - etiket: 'ISBN No'
+    deger: '978-605-82675-2-7'
 ---
-
-**Eser Adı:** Türkiye'de Roman Mahpus Olmak
-
-**Yazar:** Aylin Çelikçi
-
-**Yayınevi:** TCPS Kitaplığı
-
-**Editörler:** Mustafa Eren
-
-**Kapak Tasarımı:** Tayfun Koç
-
-**Basım Tarihi**: Ekim 2017
-
-**Sayfa Sayısı:** 114
-
-**ISBN No:** 978-605-82675-2-7
 
 Ceza İnfaz Sisteminde Sivil Toplum Derneği/Türkiye Hapishane Çalışmaları Merkezi olarak 2015 yılı sonunda “Hapiste Azınlık Olmak” olmak başlıklı bir çalışma başlatmış ve “azınlık” olma halini siyasi ve hukuki tanımların ötesinde hapishane koşullarında “azlık” olma haline bağlayarak daha kapsayıcı ele almıştık. Roman, Ermeni, Rum, Yahudi, Hristiyan, Alevi ve hatta vegan, vejeteryan olan “azlık”ların, bireylerin hapishanelerdeki durumlarını ve sorunlarını ortaya koymak, çözüm önerileri üretmek hedeflerimiz vardı. Zamanla bu çalışma, mevcut “azlık”lar içinde ciddi bir yoğunluğu olan Romanlar üzerine odaklandı ve çalışmamız “Hapiste Azınlık Olmak”tan “Hapiste Roman Olmak”a evrildi (...)
 

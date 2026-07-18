@@ -12,23 +12,18 @@ sayfaSayisi: 154
 kapak: ./_images/turkiyede-kadin-mahpus-olmak-kapak.webp
 kapakAlt: 'Türkiye''de Kadın Mahpus Olmak kitabı kapağı'
 pdf: /pdf/turkiyede-kadin-mahpus-olmak.pdf
+kunye:
+  - etiket: 'Yazar'
+    deger: 'Ezgi Duman'
+  - etiket: 'Editörler'
+    deger: 'Ayşegül Algan, Mustafa Eren'
+  - etiket: 'Kapak Tasarımı'
+    deger: 'Tayfun Koç'
+  - etiket: 'Basım Tarihi'
+    deger: 'Haziran 2016'
+  - etiket: 'ISBN No'
+    deger: '978-605-83651-0-0'
 ---
-
-**Eser Adı:** Türkiye'de Kadın Mahpus Olmak
-
-**Yazar:** Ezgi Duman
-
-**Yayınevi:** TCPS Kitaplığı
-
-**Editörler:** Ayşegül Algan, Mustafa Eren
-
-**Kapak Tasarımı:** Tayfun Koç
-
-**Basım Tarihi**: Haziran 2016
-
-**Sayfa Sayısı:** 154
-
-**ISBN No:** 978-605-83651-0-0
 
 Türkiye’de Kadın Mahpus Olmak isimli bu çalışma kadın mahpusların özel sorun ve ihtiyaçları hakkında tespitler yapmayı, bu sorun ve ihtiyaçlar doğrultusunda bazı önerileri gündeme getirmeyi amaçlamaktadır. Kitap, Ceza İnfaz Sisteminde Sivil Toplum Derneği/Türkiye Hapishane Çalışmaları Merkezi’nin (CİSST/TCPS) Kadın Mahpuslar Ağı çalışmaları çerçevesinde edinilen bilgiler temel alınarak hazırlanmıştır. Önemli bilgi kaynaklarından biri kadın mahpuslarla yürütülen mektuplaşma faaliyetidir. Türkiye hapishanelerinde çalışma yürütmenin STÖ’ler için sınırlılıklarla çevrili oluşu ve Adalet Bakanlığı’na yapılan bilgi edinme başvurularının çoğunlukla yanıtsız kalması mektupları, avukat görüşlerini ve farklı STÖ’lerin elinde dağınık halde bulunan bilgilerin derlenmesini başlıca bilgi kaynakları haline getirmiştir. Bu sebeple çalışma süresince çeşitli alanlarda ve şehirlerde etkinlik gösteren kadın hakları örgütleriyle bir araya gelinmiş, hapishaneler konusunda bilgi ve deneyim paylaşımı sağlanmıştır. Tüm bu bilgiler ve özellikle de kadın mahpusların seslerini duyulur kılmak adına anlatım boyunca yer verilecek olan mektup alıntıları sorunların birinci ağızdan aktarımı olmasına karşın bu sorunların yaygınlık durumu hakkında bilgi vermemektedir.
 

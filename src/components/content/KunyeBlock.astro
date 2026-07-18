@@ -1,0 +1,57 @@
+---
+// Kitap detay sayfasındaki yapısal künye (Yazar/Editörler/Kapak Tasarımı/Basım Tarihi/ISBN
+// gibi) — gövdedeki serbest metinden görsel olarak ayrışsın diye kompakt bir kutuda,
+// ArticleBody'nin makale tipografisinden (büyük punto, geniş satır aralığı) bağımsız
+// kendi stiliyle render edilir.
+interface Props {
+  items: { etiket: string; deger: string }[];
+}
+
+const { items } = Astro.props;
+---
+
+<dl class="kunye">
+  {
+    items.map(({ etiket, deger }) => (
+      <div class="kunye-row">
+        <dt>{etiket}</dt>
+        <dd>{deger}</dd>
+      </div>
+    ))
+  }
+</dl>
+
+<style>
+  .kunye {
+    background: var(--surface-1);
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius);
+    padding: 4px 18px;
+    margin: 0 0 1.75rem;
+  }
+  .kunye-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 8px;
+    padding: 9px 0;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  .kunye-row + .kunye-row {
+    border-top: 0.5px solid var(--border);
+  }
+  .kunye-row dt {
+    flex: 0 0 128px;
+    color: var(--text-muted);
+  }
+  .kunye-row dd {
+    flex: 1 1 200px;
+    margin: 0;
+    color: var(--text-primary);
+  }
+  @media (max-width: 480px) {
+    .kunye-row dt {
+      flex-basis: 100%;
+    }
+  }
+</style>

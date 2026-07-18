@@ -12,20 +12,15 @@ sayfaSayisi: 26
 kapak: ./_images/hekimler-icin-mahpusun-saglik-hakki-kapak.webp
 kapakAlt: 'Hekimler İçin Mahpusun Sağlık Hakkı broşürü kapağı'
 pdf: /pdf/hekimler-icin-mahpusun-saglik-hakki.pdf
+kunye:
+  - etiket: 'Yazar'
+    deger: 'Berivan Korkut'
+  - etiket: 'Editörler'
+    deger: 'Mustafa Eren'
+  - etiket: 'Kapak Tasarımı'
+    deger: 'Tayfun Koç'
+  - etiket: 'Basım Tarihi'
+    deger: 'Mayıs 2016'
 ---
-
-**Eser Adı:** Hekimler İçin Mahpusun Sağlık Hakkı
-
-**Yazar:** Berivan Korkut
-
-**Yayınevi:** TCPS Kitaplığı
-
-**Editörler:** Mustafa Eren
-
-**Kapak Tasarımı:** Tayfun Koç
-
-**Basım Tarihi**: Mayıs 2016
-
-**Sayfa Sayısı:** 26
 
 Bu broşür, hekimlere yönelik olarak kaleme alınmıştır. Hekimlere, hasta mahpuslarla ilgilenirken haklarının ve yükümlülüklerinin ne olduğunu, ulusal ve uluslararası sözleşmelerden yola çıkarak sunmayı amaçlamaktadır.

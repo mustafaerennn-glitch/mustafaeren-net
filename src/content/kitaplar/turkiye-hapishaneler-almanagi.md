@@ -16,21 +16,16 @@ sayfaSayisi: 250
 kapak: ./_images/turkiye-hapishaneler-almanagi-kapak.webp
 kapakAlt: 'Türkiye Hapishaneler Almanağı 2015 kitabı kapağı'
 pdf: /pdf/turkiye-hapishaneler-almanagi-2015.pdf
+kunye:
+  - etiket: 'Yazar'
+    deger: 'Ayşegül Algan, Duygu Koçoğlu, Mustafa Eren'
+  - etiket: 'Kapak Tasarımı'
+    deger: 'Tayfun Koç'
+  - etiket: 'Basım Tarihi'
+    deger: 'Temmuz 2016'
+  - etiket: 'ISBN No'
+    deger: '978-605-83651-4-8'
 ---
-
-**Eser Adı:** Türkiye Hapishaneler Almanağı 2015
-
-**Yazar:** Ayşegül Algan, Duygu Koçoğlu, Mustafa Eren
-
-**Yayınevi:** TCPS Kitaplığı
-
-**Kapak Tasarımı:** Tayfun Koç
-
-**Basım Tarihi:** Temmuz 2016
-
-**Sayfa Sayısı:** 250
-
-**ISBN No:** 978-605-83651-4-8
 
 2015 yılı içerisinde basında yer alan, Türkiye hapishaneleri konulu haberlerin derlendiği "Türkiye Hapishaneler Almanağı 2015" isimli bu çalışmamız hem Ceza İnfaz Sisteminde Sivil Toplum Derneği / Türkiye Hapishane Çalışmaları Merkezi (CİSST / TCPS) için, hem de hapishane çalışmaları alanında bir ilk niteliği taşıyor. Önümüzdeki yıllarda da koşullar çerçevesinde devam etmeyi planladığımız Almanakların, hapishaneler alanında yürütülecek çalışmalar için önem teşkil ettiğini düşünüyoruz.
 

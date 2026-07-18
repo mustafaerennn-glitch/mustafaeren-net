@@ -12,23 +12,18 @@ sayfaSayisi: 125
 kapak: ./_images/hapiste-saglik-kapak.webp
 kapakAlt: 'Hapiste Sağlık kitabı kapağı'
 pdf: /pdf/hapiste-saglik-proje-kitabi.pdf
+kunye:
+  - etiket: 'Yazar'
+    deger: 'Berivan Korkut'
+  - etiket: 'Editörler'
+    deger: 'Ayşegül Algan, Mustafa Eren'
+  - etiket: 'Kapak Tasarımı'
+    deger: 'Tayfun Koç'
+  - etiket: 'Basım Tarihi'
+    deger: 'Mart 2017'
+  - etiket: 'ISBN No'
+    deger: '978-605-82675-0-3'
 ---
-
-**Eser Adı:** Hapiste Sağlık / Proje Kitabı
-
-**Yazar:** Berivan Korkut
-
-**Yayınevi:** TCPS Kitaplığı
-
-**Editörler:** Ayşegül Algan, Mustafa Eren
-
-**Kapak Tasarımı:** Tayfun Koç
-
-**Basım Tarihi**: Mart 2017
-
-**Sayfa Sayısı:** 125
-
-**ISBN No:** 978-605-82675-0-3
 
 Elinizde tuttuğunuz bu kitap, Ceza İnfaz Sisteminde Sivil Toplum Derneği’nin Hollanda Büyükelçiliği’nin destekleriyle sürdürdüğü “Hapiste Sağlık” projesi kapsamında yürüttüğü faaliyetler sırasında edindiği bilgileri kamuoyuyla paylaşmak için kaleme alınmıştır.
 

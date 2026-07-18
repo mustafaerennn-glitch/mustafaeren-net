@@ -12,23 +12,18 @@ sayfaSayisi: 124
 kapak: ./_images/turkiyede-lgbti-mahpus-olmak-kapak.webp
 kapakAlt: 'Türkiye''de LGBTİ Mahpus Olmak kitabı kapağı'
 pdf: /pdf/turkiyede-lgbti-mahpus-olmak.pdf
+kunye:
+  - etiket: 'Yazar'
+    deger: 'Hilal Başak Demirbaş'
+  - etiket: 'Editörler'
+    deger: 'Ayşegül Algan, Mustafa Eren'
+  - etiket: 'Kapak Tasarımı'
+    deger: 'Tayfun Koç'
+  - etiket: 'Basım Tarihi'
+    deger: 'Şubat 2016'
+  - etiket: 'ISBN No'
+    deger: '978-605-83651-1-7'
 ---
-
-**Eser Adı:** Türkiye'de LGBTİ Mahpus Olmak
-
-**Yazar:** Hilal Başak Demirbaş
-
-**Yayınevi:** TCPS Kitaplığı
-
-**Editörler:** Ayşegül Algan, Mustafa Eren
-
-**Kapak Tasarımı:** Tayfun Koç
-
-**Basım Tarihi**: Şubat 2016
-
-**Sayfa Sayısı:** 124
-
-**ISBN No:** 978-605-83651-1-7
 
 Hapishanelerde ayrımcılık, şiddet, aşağılanma ve cinsel tacize en çok maruz kalan gruplardan biri LGBTİ mahpuslardır. LGBTİ’lerin Türkiye’de genel olarak yaşadıkları sorunları düşündüğümüzde, hapishanelerde karşılaşacakları problemlerin katlanarak artacağını tahmin etmek zor değildir. Ulusal mevzu-atta LGBTİ mahpusların özel ihtiyaçlarına yönelik bir politika olmamasının yanı sıra idari personel ve ceza infaz memurlarını bu hususta eğitecek bir program da mevcut değildir. Bu sebeple LGBTİ mahpusların, infaz süresini insan haklarına ve onuruna uygun geçirmelerini sağlayacak koşulları yaratacak, bulundukları hapishanelerde güvenliklerini alacak, kendilerine özgü ihtiyaçlarını karşılayacak, hapsedilme sonrasında topluma yeniden katılımları için programlar hazırlayacak, bu minvalde stratejiler oluşturacak ve tüm bunları uygulamaya geçirecek yöntemler geliştirmek elzemdir.
 

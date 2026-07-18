@@ -13,17 +13,12 @@ yayineviUrl: https://www.academia.edu/87063447/Mustafa_Eren_O_zel_I_htiyac_lar%C
 sayfaSayisi: 101
 kapak: ./_images/ozel-ihtiyaclari-olan-mahpuslar-projesi-sonuc-raporu-kapak.webp
 kapakAlt: 'Özel İhtiyaçları Olan Mahpuslar Projesi Sonuç Raporu kapağı'
+kunye:
+  - etiket: 'Yazar'
+    deger: 'Mustafa Eren'
+  - etiket: 'Basım Tarihi'
+    deger: 'Kasım 2013'
 ---
-
-**Eser Adı:** Özel İhtiyaçları Olan Mahpuslar Projesi Sonuç Raporu
-
-**Yazar:** Mustafa Eren
-
-**Yayınevi:** CİSST
-
-**Basım Tarihi**: Kasım 2013
-
-**Sayfa Sayısı:** 101
 
 Özel İhtiyaçları Olan Mahpuslar Projesi Kasım 2012 yılında başlamış, tam bir sene sürmüş ve Kasım 2013 tarihinde sona ermiştir.
 

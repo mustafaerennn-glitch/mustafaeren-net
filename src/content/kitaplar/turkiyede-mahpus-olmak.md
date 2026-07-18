@@ -13,17 +13,14 @@ kapak: ./_images/turkiyede-mahpus-olmak-kapak.webp
 kapakAlt: "Türkiye'de Mahpus Olmak konferans kitabı kapağı"
 seri: CİSST/TCPS Konferansları
 pdf: /pdf/turkiyede-mahpus-olmak-konferans-kitabi.pdf
+kunye:
+  - etiket: 'Eser Adı'
+    deger: 'Türkiye''de Mahpus Olmak (27-28 Şubat 2016, CİSST/TCPS Konferansları — Konferans Kitabı)'
+  - etiket: 'Katkım'
+    deger: '"Türkiye Hapishanelerinin Tarihsel Çerçevesi ve Mevcut Durumu" bölümü (s. 11-23)'
+  - etiket: 'Yayına Hazırlayan'
+    deger: 'Ayşegül Algan'
 ---
-
-**Eser Adı:** Türkiye'de Mahpus Olmak (27-28 Şubat 2016, CİSST/TCPS Konferansları — Konferans Kitabı)
-
-**Katkım:** "Türkiye Hapishanelerinin Tarihsel Çerçevesi ve Mevcut Durumu" bölümü (s. 11-23)
-
-**Yayına Hazırlayan:** Ayşegül Algan
-
-**Yayınevi:** TCPS Kitaplığı
-
-**Sayfa Sayısı:** 223
 
 Kitaba katkım olan bölümde, Türkiye'deki hapishanelerin tarihini Osmanlı'dan günümüze üç döneme ayırarak ele alıyor, ardından mevcut durumu (mahpus sayıları, doluluk oranları gibi) güncel rakamlarla ortaya koyuyorum.
 

@@ -6,6 +6,7 @@ import TopicsRow from '../metadata/TopicsRow.astro';
 import LangCluster from '../metadata/LangCluster.astro';
 import ArticleBody from './ArticleBody.astro';
 import BookCard from '../cards/BookCard.astro';
+import KunyeBlock from './KunyeBlock.astro';
 import { getAreasForTopicRefs, getTopicsMap, ALAN_LABELS, ALAN_LABELS_I18N } from '../../lib/taxonomy';
 import { getTranslationCluster } from '../../i18n/translationLookup';
 import { contentUrl, routes, LANG_NAMES } from '../../i18n/routes';
@@ -105,6 +106,8 @@ const sayfaLabel = SAYFA_LABEL[lang];
       </div>
     </div>
   </div>
+
+  {entry.data.kunye && entry.data.kunye.length > 0 && <KunyeBlock items={entry.data.kunye} />}
 
   <ArticleBody>
     <Content />

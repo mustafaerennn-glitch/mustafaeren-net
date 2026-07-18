@@ -16,21 +16,16 @@ sayfaSayisi: 154
 kapak: ./_images/mahpus-haklari-el-kitabi-kapak.webp
 kapakAlt: 'Mahpus Hakları El Kitabı kapağı'
 pdf: /pdf/mahpus-haklari-el-kitabi.pdf
+kunye:
+  - etiket: 'Yazar'
+    deger: 'Başak Ekinci – Mustafa Eren'
+  - etiket: 'Kapak Tasarımı'
+    deger: 'Tayfun Koç'
+  - etiket: 'Basım Tarihi'
+    deger: 'Mart 2015'
+  - etiket: 'ISBN No'
+    deger: '978-9944-0751-6-9'
 ---
-
-**Eser Adı:** Mahpus Hakları El Kitabı
-
-**Yazar:** Başak Ekinci – Mustafa Eren
-
-**Yayınevi:** TCPS Kitaplığı
-
-**Kapak Tasarımı:** Tayfun Koç
-
-**Basım Tarihi:** Mart 2015
-
-**Sayfa Sayısı:** 152
-
-**ISBN No:** 978-9944-0751-6-9
 
 Bu el kitabı, hapishaneler ve akıl hastaneleri gibi kapalı kurumlarda insan hakları ihlallerinin daha yoğun yaşanabileceğinin bilgisi ve kaygısıyla; mahpuslara hapiste tutulmalarına rağmen var olan haklarını anlatmak, onları, hak ihlallerine karşı nereye, nasıl başvuracakları konusunda bilgilendirmek amacıyla kaleme alınmıştır. Umarız, çok sayıda mahpusa ulaşır ve haklarını koruyabilmenin araçlarından biri haline gelir.
 

@@ -15,15 +15,12 @@ yayineviUrl: https://cisst.org.tr/kitaplar/mahpuslar-icin-haklarim-basvuru-kilav
 sayfaSayisi: 24
 kapak: ./_images/haklarim-basvuru-kilavuzu-kapak.webp
 kapakAlt: 'Haklarım Başvuru Kılavuzu kapağı'
+kunye:
+  - etiket: 'Yazar'
+    deger: 'Mustafa Eren'
+  - etiket: 'Basım Tarihi'
+    deger: '2016'
 ---
-
-**Eser Adı:** Mahpuslar İçin Haklarım Başvuru Kılavuzu
-
-**Yazar:** Mustafa Eren
-
-**Basım Tarihi:** 2016
-
-**Sayfa Sayısı:** 24
 
 Eğer, hapishane idaresi veya personelinin uygulamalarının kanunlara veya insan haklarına aykırı olduğuna, haklarının ihlal edildiğine inanıyorsan (örneğin; hasta olduğun halde revir için dilekçe yazdığında çıkarılmıyor veya geç çıkarılıyorsan, ziyaret süren kısıtlanıyorsa, kantinde ihtiyaçlarını bulamıyorsan, verdiğin dilekçelere cevap alamıyorsan …),
 

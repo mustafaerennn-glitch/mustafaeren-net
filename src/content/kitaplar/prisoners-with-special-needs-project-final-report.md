@@ -13,17 +13,12 @@ kapak: ./_images/prisoners-with-special-needs-project-final-report-kapak.webp
 kapakAlt: 'Prisoners with Special Needs Project Final Report cover'
 digerDillerdeGoster:
   - tr
+kunye:
+  - etiket: 'Yazar'
+    deger: 'Mustafa Eren'
+  - etiket: 'Basım Tarihi'
+    deger: 'Kasım 2013'
 ---
-
-**Eser Adı:** Prisoners with Special Needs Project Final Report
-
-**Yazar:** Mustafa Eren
-
-**Yayınevi:** CİSST
-
-**Basım Tarihi**: Kasım 2013
-
-**Sayfa Sayısı:** 20
 
 The Prisoners with Special Needs Project began in November 2012, lasted a full year, and ended on November 2013.
 

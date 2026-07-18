@@ -13,21 +13,16 @@ sayfaSayisi: 88
 kapak: ./_images/isci-mahpuslar-kapak.webp
 kapakAlt: 'Türkiye''de İşçi Mahpusların Güncel Durumu kitabı kapağı'
 pdf: /pdf/turkiyede-isci-mahpuslarin-guncel-durumu.pdf
+kunye:
+  - etiket: 'Yazar'
+    deger: 'Mustafa Eren, Yusuf Engin'
+  - etiket: 'Kapak Tasarımı'
+    deger: 'Tayfun Koç'
+  - etiket: 'Basım Tarihi'
+    deger: 'Aralık 2018'
+  - etiket: 'ISBN No'
+    deger: '978-605-82675-8-9'
 ---
-
-**Eser Adı:** Türkiye'de İşçi Mahpusların Güncel Durumu
-
-**Yazar:** Mustafa Eren, Yusuf Engin
-
-**Yayınevi:** TCPS Kitaplığı
-
-**Kapak Tasarımı:** Tayfun Koç
-
-**Basım Tarihi**: Aralık 2018
-
-**Sayfa Sayısı:** 88
-
-**ISBN No:** 978-605-82675-8-9
 
 Hapishaneler denildiğinde akla çalışmak, mahpusların çalıştırılması ya hiç gelmez ya da bu konu oldukça tali olarak görülür ve görmezden gelinir. Göz ardı edilen, yok sayılan, emek ve insan hakları örgütlerinin radarına girmeyi dahi başaramayan bu konu Türkiye’nin ceza infaz sisteminde hacim olarak giderek büyüyen bir yer ediniyor kendisine.
 

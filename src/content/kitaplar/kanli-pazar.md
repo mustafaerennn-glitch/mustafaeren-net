@@ -15,21 +15,16 @@ yayineviUrl: https://www.yaykoop.com/kanli-pazar
 sayfaSayisi: 284
 kapak: ./_images/kanli-pazar-kapak.webp
 kapakAlt: 'Kanlı Pazar kitabı kapağı'
+kunye:
+  - etiket: 'Yazar'
+    deger: 'Mustafa Eren'
+  - etiket: 'Kapak Tasarımı'
+    deger: 'Şahan Yatarkalkmaz'
+  - etiket: 'Basım Tarihi'
+    deger: 'Şubat 2012'
+  - etiket: 'ISBN No'
+    deger: '978-605-4511-43-3'
 ---
-
-**Eser Adı:** Kanlı Pazar – 1960'lar Türkiyesi'nde Milliyetçiler, İslamcılar ve Sol
-
-**Yazar:** Mustafa Eren
-
-**Yayınevi:** Kalkedon Yayıncılık
-
-**Kapak Tasarımı:** Şahan Yatarkalkmaz
-
-**Basım Tarihi:** Şubat 2012
-
-**Sayfa Sayısı:** 284
-
-**ISBN No:** 978-605-4511-43-3
 
 Kitabı iki bölüm olarak düşünmek mümkün. İlk bölümde 1960'lardan 1970'lere Türkiye'nin siyasal panoraması sunuluyor. Yazar, Türkiye'nin günümüzde hala varlığını koruyan siyasal ayrışmalarının 1960'larda ortaya çıktığını gösteriyor. Sağ ve sol terimlerinin Türkiye'nin siyasal literatürüne girişi önemli oranda bu dönemdedir. Milliyetçi mukaddesatçı kesimin, milliyetçiler ve İslamcılar olarak ayrışması, solcu gençlik içerisindeki milli demokratik devrim (MDD) ve sosyalist devrim (SD) ayrılığı, Devrimci Doğu Kültür Ocakları'nın kuruluşuyla yaşanan milliyet temelli ayrışma… Solcu gençliğin Kemalizmden sosyalizme, sosyalizmden radikal devrimci hareketlere geçirdiği dönüşüm … Tüm bu ayrışmaların ve dönüşümlerin ortaya çıkışı ve 1960'lardan 1970'lere gerçekleştirilen başlıca eylemler bu bölümde anlatılıyor.
 

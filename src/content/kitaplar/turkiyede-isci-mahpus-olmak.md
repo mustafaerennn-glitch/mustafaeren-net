@@ -13,23 +13,18 @@ sayfaSayisi: 125
 kapak: ./_images/turkiyede-isci-mahpus-olmak-kapak.webp
 kapakAlt: 'Türkiye''de İşçi Mahpus Olmak kitabı kapağı'
 pdf: /pdf/turkiyede-isci-mahpus-olmak.pdf
+kunye:
+  - etiket: 'Yazar'
+    deger: 'Tayfun Koç'
+  - etiket: 'Editörler'
+    deger: 'Mustafa Eren'
+  - etiket: 'Kapak Tasarımı'
+    deger: 'Tayfun Koç'
+  - etiket: 'Basım Tarihi'
+    deger: 'Aralık 2016'
+  - etiket: 'ISBN No'
+    deger: '978-605-83651-8-6'
 ---
-
-**Eser Adı:** Türkiye'de İşçi Mahpus Olmak
-
-**Yazar:** Tayfun Koç
-
-**Yayınevi:** TCPS Kitaplığı
-
-**Editörler:** Mustafa Eren
-
-**Kapak Tasarımı:** Tayfun Koç
-
-**Basım Tarihi**: Aralık 2016
-
-**Sayfa Sayısı:** 125
-
-**ISBN No:** 978-605-83651-8-6
 
 Hapiste çalışma denildiğinde çoğu insanın aklına elişi ürünler, çoğu zaman da boncuktan yapılmış kuş gelir. Ancak bugün hapishane işyurtları, tarım ve hayvancılıktan mobilya üretimine, tekstilden yangın tüpü imalatına, hatta ABD’de patriot füze aparatlarına varana kadar çok geniş bir alanda üretim yapmaktadır.
 

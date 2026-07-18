@@ -150,6 +150,12 @@ const kitaplar = defineCollection({
       // "tanıtım sayfası" değil) çeviriler için, tek tek işaretlenerek kullanılır —
       // varsayılan davranış (çeviriler yalnızca kendi `lang` sekmesinde görünür) budur.
       digerDillerdeGoster: z.array(localeSchema).optional(),
+      // Künye — Yazar/Editörler/Kapak Tasarımı/Basım Tarihi/ISBN gibi yapısal alanlar.
+      // Sabit alan adları yerine sıralı {etiket, deger} listesi: kitaba göre farklı roller
+      // olabiliyor (Yazar / Editörler / Katkım / Yayına Hazırlayan / Diğer Yazarlar gibi),
+      // esnek liste bunların hepsini kayıpsız karşılıyor. Zaten ayrı alanı olan Yayınevi ve
+      // Sayfa Sayısı buraya TEKRAR girilmez (üst meta satırında zaten gösteriliyor).
+      kunye: z.array(z.object({ etiket: z.string(), deger: z.string() })).optional(),
     }),
 });
 

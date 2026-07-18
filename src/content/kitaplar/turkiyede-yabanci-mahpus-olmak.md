@@ -12,23 +12,18 @@ sayfaSayisi: 98
 kapak: ./_images/turkiyede-yabanci-mahpus-olmak-kapak.webp
 kapakAlt: 'Türkiye''de Yabancı Mahpus Olmak kitabı kapağı'
 pdf: /pdf/turkiyede-yabanci-mahpus-olmak.pdf
+kunye:
+  - etiket: 'Yazar'
+    deger: 'Hilal Başak Demirbaş'
+  - etiket: 'Editörler'
+    deger: 'Ayşegül Algan, Mustafa Eren'
+  - etiket: 'Kapak Tasarımı'
+    deger: 'Tayfun Koç'
+  - etiket: 'Basım Tarihi'
+    deger: 'Temmuz 2016'
+  - etiket: 'ISBN No'
+    deger: '978-605-83651-5-5'
 ---
-
-**Eser Adı:** Türkiye'de Yabancı Mahpus Olmak
-
-**Yazar:** Hilal Başak Demirbaş
-
-**Yayınevi:** TCPS Kitaplığı
-
-**Editörler:** Ayşegül Algan, Mustafa Eren
-
-**Kapak Tasarımı:** Tayfun Koç
-
-**Basım Tarihi**: Temmuz 2016
-
-**Sayfa Sayısı:** 98
-
-**ISBN No:** 978-605-83651-5-5
 
 Yabancı uyruklu mahpuslar genel tanım itibariyle hapishanesinde tutuldukları ülkenin vatandaşı olmayan kişilerdir. O ülkede yaşayan, dili ve kültürü bilen kişiler olabilecekleri gibi turizm, öğrenim gibi sebeplerle kısa süreliğine uğramış ya da o ülkede yalnızca bir geçiş noktası olduğu için bulunan kişiler de olabilirler.
 

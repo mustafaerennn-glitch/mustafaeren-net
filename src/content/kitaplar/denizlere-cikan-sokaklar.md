@@ -13,23 +13,18 @@ sayfaSayisi: 784
 kapak: ./_images/denizlere-cikan-sokaklar-kapak.webp
 kapakAlt: 'Denizlere Çıkan Sokaklar: Türkiye''nin 68''i kitabı kapağı'
 pdf: /pdf/denizlere-cikan-sokaklar-onizleme.pdf
+kunye:
+  - etiket: 'Katkım'
+    deger: '"Yankee Go Home" Dedikleri İçin Kanlı Pazar''ı Yaşadılar bölümü (s. 95-133)'
+  - etiket: 'Hazırlayanlar'
+    deger: 'Rıdvan Akar, Hülya Demir, Hakan Koçak'
+  - etiket: 'Kapak Tasarımı'
+    deger: 'Geray Gençer'
+  - etiket: 'Basım Tarihi'
+    deger: 'Nisan 2022'
+  - etiket: 'ISBN No'
+    deger: '978-625-8049-43-5'
 ---
-
-**Eser Adı:** Denizlere Çıkan Sokaklar: Türkiye'nin 68'i
-
-**Katkım:** "Yankee Go Home" Dedikleri İçin Kanlı Pazar'ı Yaşadılar bölümü (s. 95-133)
-
-**Hazırlayanlar:** Rıdvan Akar, Hülya Demir, Hakan Koçak
-
-**Yayınevi:** İBB Kültür A.Ş. (İstanbul Büyükşehir Belediyesi Kültür Dairesi Başkanlığı için özel olarak üretilmiştir)
-
-**Kapak Tasarımı:** Geray Gençer
-
-**Basım Tarihi:** Nisan 2022
-
-**Sayfa Sayısı:** 784
-
-**ISBN No:** 978-625-8049-43-5
 
 Rıdvan Akar, Hülya Demir ve Hakan Koçak'ın hazırladığı bu kitap, İstanbul Büyükşehir Belediyesi'nin desteğiyle yayımlanan ve 1968 kuşağının Türkiye'deki mücadelesini otuzu aşkın yazarın katkısıyla ele alan kapsamlı bir derleme.
 

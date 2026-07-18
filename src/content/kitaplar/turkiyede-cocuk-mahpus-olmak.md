@@ -12,23 +12,18 @@ sayfaSayisi: 154
 kapak: ./_images/turkiyede-cocuk-mahpus-olmak-kapak.webp
 kapakAlt: 'Türkiye''de Çocuk Mahpus Olmak kitabı kapağı'
 pdf: /pdf/turkiyede-cocuk-mahpus-olmak.pdf
+kunye:
+  - etiket: 'Yazar'
+    deger: 'Alper Yalçın'
+  - etiket: 'Editörler'
+    deger: 'Mustafa Eren'
+  - etiket: 'Kapak Tasarımı'
+    deger: 'Tayfun Koç'
+  - etiket: 'Basım Tarihi'
+    deger: 'Haziran 2016'
+  - etiket: 'ISBN No'
+    deger: '978-605-83651-3-1'
 ---
-
-**Eser Adı:** Türkiye'de Çocuk Mahpus Olmak
-
-**Yazar:** Alper Yalçın
-
-**Yayınevi:** TCPS Kitaplığı
-
-**Editörler:** Mustafa Eren
-
-**Kapak Tasarımı:** Tayfun Koç
-
-**Basım Tarihi**: Haziran 2016
-
-**Sayfa Sayısı:** 154
-
-**ISBN No:** 978-605-83651-3-1
 
 Birleşmiş Milletler Çocuk Hakları Sözleşmesi’nde çocukların özgürlüğünden yoksun bırakılmasının başvurulacak en son çare olarak benimsenmesinin ve bu ilkenin taraf devletlerin ulusal yasalarında güvence altına alınmasının nedeni, hapsedilmenin çocuklar üzerindeki olumsuz etkilerinin ispatlanmış olmasından kaynaklanmaktadır.
 
