@@ -11,6 +11,8 @@ yayineviUrl: https://www.academia.edu/87062953/Mustafa_Eren_Prisoners_with_Speci
 sayfaSayisi: 20
 kapak: ./_images/prisoners-with-special-needs-project-final-report-kapak.webp
 kapakAlt: ''
+digerDillerdeGoster:
+  - tr
 ---
 
 **Eser Adı:** Prisoners with Special Needs Project Final Report

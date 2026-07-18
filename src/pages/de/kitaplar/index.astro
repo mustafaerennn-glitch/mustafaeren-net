@@ -7,7 +7,7 @@ import { routes, type Locale } from '../../../i18n/routes';
 import LangCountRow from '../../../components/metadata/LangCountRow.astro';
 import { getContentCountsByLang } from '../../../lib/availability';
 import { ui } from '../../../i18n/ui';
-import { buildKitaplarEntries, KITAP_TURU_SLUGS, KITAP_TURU_LABELS_I18N } from '../../../lib/kitaplar';
+import { buildKitaplarEntries, kitapHref, KITAP_TURU_SLUGS, KITAP_TURU_LABELS_I18N } from '../../../lib/kitaplar';
 import { paginateRows } from '../../../lib/pressPagination';
 
 const lang = 'de';
@@ -62,7 +62,7 @@ const langItems = (['tr', 'en', 'de', 'fr'] as Locale[]).map((l) => ({
     {
       pageEntries.map((entry) => (
         <BookCard
-          href={`/de/kitaplar/${entry.id}/`}
+          href={kitapHref(entry)}
           cover={entry.data.kapak}
           coverAlt={entry.data.kapakAlt}
           title={entry.data.title}

@@ -9,6 +9,7 @@ import { getContentCountsByLang } from '../../../../../lib/availability';
 import { ui } from '../../../../../i18n/ui';
 import {
   buildKitaplarEntries,
+  kitapHref,
   KITAP_TURU_SLUGS,
   KITAP_TURU_BY_SLUG,
   KITAP_TURU_LABELS_I18N,
@@ -84,7 +85,7 @@ const turLabel = turuLabels[currentTur];
         <div class="book-grid">
           {pageEntries.map((entry) => (
             <BookCard
-              href={`/de/kitaplar/${entry.id}/`}
+              href={kitapHref(entry)}
               cover={entry.data.kapak}
               coverAlt={entry.data.kapakAlt}
               title={entry.data.title}

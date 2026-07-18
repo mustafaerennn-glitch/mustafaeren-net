@@ -144,6 +144,12 @@ const kitaplar = defineCollection({
       yayineviUrl: z.string().url().optional(),
       seri: z.string().optional(), // örn. "TCPS Kitaplığı" — badge olarak gösterilir, ayrı kategori DEĞİL
       pdf: linkSchema.optional(),
+      // İSTİSNAİ alan: bu kitap kendi `lang`'ı dışında hangi dillerin Kitaplar
+      // listesinde (Tümü + tür sekmeleri) de bir kart olarak görünsün. Yalnızca
+      // gerçekten ayrı yayımlanmış (aynı eserin farklı dilde tam metni olan,
+      // "tanıtım sayfası" değil) çeviriler için, tek tek işaretlenerek kullanılır —
+      // varsayılan davranış (çeviriler yalnızca kendi `lang` sekmesinde görünür) budur.
+      digerDillerdeGoster: z.array(localeSchema).optional(),
     }),
 });
 

@@ -13,6 +13,8 @@ kapak: ./_images/alternatives-to-imprisonment-kapak.webp
 kapakAlt: 'Alternatives to Imprisonment conference book cover'
 seri: CİSST/TCPS Conferences
 pdf: /pdf/alternatives-to-imprisonment-conference-book.pdf
+digerDillerdeGoster:
+  - tr
 ---
 
 **Book title:** Alternatives to Imprisonment (24-25 November 2018, CİSST/TCPS Conference — Conference Book)
