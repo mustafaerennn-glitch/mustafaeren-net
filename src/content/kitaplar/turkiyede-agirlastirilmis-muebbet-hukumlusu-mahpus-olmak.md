@@ -11,6 +11,7 @@ yayineviUrl: https://cisst.org.tr/kitaplar/turkiyede-agirlastirilmis-muebbet-huk
 sayfaSayisi: 129
 kapak: ./_images/turkiyede-agirlastirilmis-muebbet-hukumlusu-mahpus-olmak-kapak.webp
 kapakAlt: ''
+pdf: /pdf/turkiyede-agirlastirilmis-muebbet-hukumlusu-mahpus-olmak.pdf
 ---
 
 **Eser Adı:** Türkiye'de Ağırlaştırılmış Müebbet Hükümlüsü Mahpus Olmak

@@ -11,6 +11,7 @@ yayineviUrl: https://cisst.org.tr/kitaplar/tu%cc%88rkiyede-kadin-mahpus-olmak/
 sayfaSayisi: 154
 kapak: ./_images/turkiyede-kadin-mahpus-olmak-kapak.webp
 kapakAlt: ''
+pdf: /pdf/turkiyede-kadin-mahpus-olmak.pdf
 ---
 
 **Eser Adı:** Türkiye'de Kadın Mahpus Olmak

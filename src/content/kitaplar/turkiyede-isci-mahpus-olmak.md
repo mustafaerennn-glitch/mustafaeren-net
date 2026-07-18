@@ -12,6 +12,7 @@ yayineviUrl: https://cisst.org.tr/kitaplar/tu%cc%88rkiyede-isci-mahpus-olmak/
 sayfaSayisi: 125
 kapak: ./_images/turkiyede-isci-mahpus-olmak-kapak.webp
 kapakAlt: ''
+pdf: /pdf/turkiyede-isci-mahpus-olmak.pdf
 ---
 
 **Eser Adı:** Türkiye'de İşçi Mahpus Olmak

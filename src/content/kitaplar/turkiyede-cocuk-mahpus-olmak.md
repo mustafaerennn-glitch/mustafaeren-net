@@ -11,6 +11,7 @@ yayineviUrl: https://cisst.org.tr/kitaplar/turkiyede-cocuk-mahpus-olmak/
 sayfaSayisi: 154
 kapak: ./_images/turkiyede-cocuk-mahpus-olmak-kapak.webp
 kapakAlt: ''
+pdf: /pdf/turkiyede-cocuk-mahpus-olmak.pdf
 ---
 
 **Eser Adı:** Türkiye'de Çocuk Mahpus Olmak

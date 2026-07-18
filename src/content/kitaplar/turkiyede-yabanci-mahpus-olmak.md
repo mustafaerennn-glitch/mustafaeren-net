@@ -11,6 +11,7 @@ yayineviUrl: https://cisst.org.tr/kitaplar/tu%cc%88rkiyede-yabanci-mahpus-olmak-
 sayfaSayisi: 98
 kapak: ./_images/turkiyede-yabanci-mahpus-olmak-kapak.webp
 kapakAlt: ''
+pdf: /pdf/turkiyede-yabanci-mahpus-olmak.pdf
 ---
 
 **Eser Adı:** Türkiye'de Yabancı Mahpus Olmak

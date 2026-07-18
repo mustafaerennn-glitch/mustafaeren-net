@@ -11,6 +11,7 @@ yayineviUrl: https://cisst.org.tr/kitaplar/hekimler-icin-uluslararasi-ve-ulusal-
 sayfaSayisi: 26
 kapak: ./_images/hekimler-icin-mahpusun-saglik-hakki-kapak.webp
 kapakAlt: ''
+pdf: /pdf/hekimler-icin-mahpusun-saglik-hakki.pdf
 ---
 
 **Eser Adı:** Hekimler İçin Mahpusun Sağlık Hakkı
