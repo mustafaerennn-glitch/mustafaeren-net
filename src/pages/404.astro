@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { routes } from '../i18n/routes';
+
+const lang = 'tr';
+---
+
+<BaseLayout lang={lang} title="Sayfa bulunamadı" canonical="/404/" current={undefined}>
+  <div class="notfound">
+    <p class="eyebrow">404</p>
+    <h1>Sayfa bulunamadı</h1>
+    <p class="desc">Aradığınız sayfa taşınmış, kaldırılmış ya da hiç var olmamış olabilir.</p>
+    <a class="btn-secondary" href={routes.anaSayfa.tr}>Ana sayfaya dön</a>
+  </div>
+</BaseLayout>
+
+<style>
+  .notfound {
+    padding: 3rem 0 4rem;
+    text-align: center;
+  }
+  .eyebrow {
+    font-size: 13px;
+    color: var(--text-muted);
+    letter-spacing: 0.04em;
+    margin-bottom: 8px;
+  }
+  h1 {
+    font-size: 26px;
+    line-height: 1.3;
+    margin-bottom: 10px;
+  }
+  .desc {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    max-width: 420px;
+    margin: 0 auto 1.75rem;
+  }
+  .btn-secondary {
+    font-size: 13.5px;
+    font-family: var(--font-sans);
+    border-radius: var(--radius);
+    padding: 9px 16px;
+    border: 0.5px solid var(--border);
+    background: transparent;
+    color: var(--text-primary);
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  }
+  .btn-secondary:hover {
+    border-color: var(--text-accent);
+    color: var(--text-accent);
+    transform: translateY(-1px);
+  }
+</style>
