@@ -2,6 +2,8 @@
 title: 'Hapsetmenin Alternatifleri'
 lang: tr
 description: 'Eser Adı: Hapsetmenin Alternatifleri Katkım: "Türkiye''de Hapsetmenin Alternatiflerini Konuşmak Neden Gereklidir?" (s. 58-79) Yayına Hazırlayan: Tayfun Koç…'
+translations:
+  - alternatives-to-imprisonment
 topics:
   - toplu-hapsetme
   - ceza-infaz-istatistikleri

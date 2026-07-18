@@ -2,6 +2,8 @@
 title: Özel İhtiyaçları Olan Mahpuslar Projesi Sonuç Raporu
 lang: tr
 description: 'Eser Adı: Özel İhtiyaçları Olan Mahpuslar Projesi Sonuç Raporu Yazar: Mustafa Eren Yayınevi: CİSST Basım Tarihi: Kasım 2013 Sayfa Sayısı: 101 Özel İhtiyaçları…'
+translations:
+  - prisoners-with-special-needs-project-final-report
 topics:
   - engelli-yasli-mahpuslar
 year: 2013

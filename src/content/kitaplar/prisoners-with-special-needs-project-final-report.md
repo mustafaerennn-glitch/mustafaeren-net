@@ -1,6 +1,6 @@
 ---
 title: Prisoners with Special Needs Project Final Report
-lang: tr
+lang: en
 description: 'Eser Adı: Prisoners with Special Needs Project Final Report Yazar: Mustafa Eren Yayınevi: CİSST Basım Tarihi: Kasım 2013 Sayfa Sayısı: 20 The Prisoners with…'
 topics:
   - engelli-yasli-mahpuslar
