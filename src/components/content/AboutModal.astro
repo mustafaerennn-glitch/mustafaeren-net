@@ -61,6 +61,12 @@ const { id, triggerLabel, title, metaLine, closeLabel = 'Kapat' } = Astro.props;
     background: transparent;
     text-decoration: none;
     display: inline-block;
+    transition: transform 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  }
+  .btn-secondary:hover {
+    border-color: var(--text-accent);
+    color: var(--text-accent);
+    transform: translateY(-1px);
   }
   dialog {
     max-width: 480px;
