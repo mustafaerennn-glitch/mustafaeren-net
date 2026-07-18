@@ -14,7 +14,7 @@ yayinevi: CİSST
 yayineviUrl: https://cisst.org.tr/kitaplar/2015-turkiye-hapishaneler-almanagi/
 sayfaSayisi: 250
 kapak: ./_images/turkiye-hapishaneler-almanagi-kapak.webp
-kapakAlt: ''
+kapakAlt: 'Türkiye Hapishaneler Almanağı 2015 kitabı kapağı'
 pdf: /pdf/turkiye-hapishaneler-almanagi-2015.pdf
 ---
 

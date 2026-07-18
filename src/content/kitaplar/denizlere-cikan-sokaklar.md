@@ -11,7 +11,7 @@ yayinevi: İBB Kültür A.Ş. Yayınları
 yayineviUrl: https://kultur.istanbul/turkiyenin-68i-denizlere-cikan-sokaklar-kitabi-tum-kitapcilarda/
 sayfaSayisi: 784
 kapak: ./_images/denizlere-cikan-sokaklar-kapak.webp
-kapakAlt: ''
+kapakAlt: 'Denizlere Çıkan Sokaklar: Türkiye''nin 68''i kitabı kapağı'
 pdf: /pdf/denizlere-cikan-sokaklar-onizleme.pdf
 ---
 

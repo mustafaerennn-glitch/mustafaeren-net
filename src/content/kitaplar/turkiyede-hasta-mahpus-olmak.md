@@ -10,7 +10,7 @@ yayinevi: CİSST
 yayineviUrl: https://cisst.org.tr/kitaplar/turkiyede-hasta-mahpus-olmak/
 sayfaSayisi: 129
 kapak: ./_images/turkiyede-hasta-mahpus-olmak-kapak.webp
-kapakAlt: ''
+kapakAlt: 'Türkiye''de Hasta Mahpus Olmak kitabı kapağı'
 pdf: /pdf/turkiyede-hasta-mahpus-olmak.pdf
 ---
 

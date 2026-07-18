@@ -10,7 +10,7 @@ yayinevi: CİSST
 yayineviUrl: https://cisst.org.tr/kitaplar/tu%cc%88rkiyede-yabanci-mahpus-olmak-2/
 sayfaSayisi: 98
 kapak: ./_images/turkiyede-yabanci-mahpus-olmak-kapak.webp
-kapakAlt: ''
+kapakAlt: 'Türkiye''de Yabancı Mahpus Olmak kitabı kapağı'
 pdf: /pdf/turkiyede-yabanci-mahpus-olmak.pdf
 ---
 

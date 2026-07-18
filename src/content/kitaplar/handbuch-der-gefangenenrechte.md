@@ -11,7 +11,7 @@ yayinevi: CİSST
 yayineviUrl: https://cisst.org.tr/kitaplar/mahmus-haklari-el-kitabi/
 sayfaSayisi: 154
 kapak: ./_images/mahpus-haklari-el-kitabi-kapak.webp
-kapakAlt: ''
+kapakAlt: 'Buchcover: Handbuch der Gefangenenrechte'
 ---
 
 *Diese Seite bietet eine deutschsprachige Übersicht über ein Buch, das nur auf Türkisch erschienen ist. Die Originalausgabe finden Sie auf der Verlagsseite.*

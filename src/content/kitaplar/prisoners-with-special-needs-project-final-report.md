@@ -10,7 +10,7 @@ yayinevi: CİSST
 yayineviUrl: https://www.academia.edu/87062953/Mustafa_Eren_Prisoners_with_Special_Needs_Project_Final_Report_2013
 sayfaSayisi: 20
 kapak: ./_images/prisoners-with-special-needs-project-final-report-kapak.webp
-kapakAlt: ''
+kapakAlt: 'Prisoners with Special Needs Project Final Report cover'
 digerDillerdeGoster:
   - tr
 ---

@@ -10,7 +10,7 @@ yayinevi: CİSST
 yayineviUrl: https://cisst.org.tr/kitaplar/tu%cc%88rkiyede-kadin-mahpus-olmak/
 sayfaSayisi: 154
 kapak: ./_images/turkiyede-kadin-mahpus-olmak-kapak.webp
-kapakAlt: ''
+kapakAlt: 'Türkiye''de Kadın Mahpus Olmak kitabı kapağı'
 pdf: /pdf/turkiyede-kadin-mahpus-olmak.pdf
 ---
 

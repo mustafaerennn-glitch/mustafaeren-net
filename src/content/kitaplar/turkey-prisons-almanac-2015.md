@@ -11,7 +11,7 @@ yayinevi: CİSST
 yayineviUrl: https://cisst.org.tr/kitaplar/2015-turkiye-hapishaneler-almanagi/
 sayfaSayisi: 250
 kapak: ./_images/turkiye-hapishaneler-almanagi-kapak.webp
-kapakAlt: ''
+kapakAlt: 'Turkey Prisons Almanac 2015 book cover'
 ---
 
 *This page presents an English-language overview of a book published only in Turkish. See the publisher's page for the original edition.*

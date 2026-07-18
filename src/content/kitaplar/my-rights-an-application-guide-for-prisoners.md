@@ -11,7 +11,7 @@ yayinevi: CİSST
 yayineviUrl: https://cisst.org.tr/kitaplar/mahpuslar-icin-haklarim-basvuru-kilavuzu/
 sayfaSayisi: 24
 kapak: ./_images/haklarim-basvuru-kilavuzu-kapak.webp
-kapakAlt: ''
+kapakAlt: 'My Rights: An Application Guide for Prisoners cover'
 ---
 
 *This page presents an English-language overview of a booklet published only in Turkish. See the publisher's page for the original edition.*

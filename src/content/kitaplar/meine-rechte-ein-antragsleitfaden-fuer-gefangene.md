@@ -11,7 +11,7 @@ yayinevi: CİSST
 yayineviUrl: https://cisst.org.tr/kitaplar/mahpuslar-icin-haklarim-basvuru-kilavuzu/
 sayfaSayisi: 24
 kapak: ./_images/haklarim-basvuru-kilavuzu-kapak.webp
-kapakAlt: ''
+kapakAlt: 'Buchcover: Meine Rechte - Ein Antragsleitfaden für Gefangene'
 ---
 
 *Diese Seite bietet eine deutschsprachige Übersicht über eine Broschüre, die nur auf Türkisch erschienen ist. Die Originalausgabe finden Sie auf der Verlagsseite.*

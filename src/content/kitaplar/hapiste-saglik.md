@@ -10,7 +10,7 @@ yayinevi: CİSST
 yayineviUrl: https://cisst.org.tr/kitaplar/hapiste-saglik/
 sayfaSayisi: 125
 kapak: ./_images/hapiste-saglik-kapak.webp
-kapakAlt: ''
+kapakAlt: 'Hapiste Sağlık kitabı kapağı'
 pdf: /pdf/hapiste-saglik-proje-kitabi.pdf
 ---
 

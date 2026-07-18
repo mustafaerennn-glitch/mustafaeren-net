@@ -11,7 +11,7 @@ yayinevi: CİSST
 yayineviUrl: https://cisst.org.tr/kitaplar/mahmus-haklari-el-kitabi/
 sayfaSayisi: 154
 kapak: ./_images/mahpus-haklari-el-kitabi-kapak.webp
-kapakAlt: ''
+kapakAlt: 'Handbook of Prisoners'' Rights book cover'
 ---
 
 *This page presents an English-language overview of a book published only in Turkish. See the publisher's page for the original edition.*

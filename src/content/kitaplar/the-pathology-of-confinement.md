@@ -11,7 +11,7 @@ yayinevi: Kalkedon Yayınları
 yayineviUrl: https://www.yaykoop.com/kapatilmanin-patolojisi
 sayfaSayisi: 345
 kapak: ./_images/kapatilmanin-patolojisi-kapak.webp
-kapakAlt: ''
+kapakAlt: 'The Pathology of Confinement book cover'
 ---
 
 *This page presents an English-language overview of a book published only in Turkish. See the publisher's page for the original edition.*

@@ -10,7 +10,7 @@ yayinevi: CİSST
 yayineviUrl: https://cisst.org.tr/kitaplar/turkiyede-cocuk-mahpus-olmak/
 sayfaSayisi: 154
 kapak: ./_images/turkiyede-cocuk-mahpus-olmak-kapak.webp
-kapakAlt: ''
+kapakAlt: 'Türkiye''de Çocuk Mahpus Olmak kitabı kapağı'
 pdf: /pdf/turkiyede-cocuk-mahpus-olmak.pdf
 ---
 

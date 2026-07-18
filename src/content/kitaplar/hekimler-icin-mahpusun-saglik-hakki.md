@@ -10,7 +10,7 @@ yayinevi: CİSST
 yayineviUrl: https://cisst.org.tr/kitaplar/hekimler-icin-uluslararasi-ve-ulusal-mevzuatta-mahpusun-saglik-hakki/
 sayfaSayisi: 26
 kapak: ./_images/hekimler-icin-mahpusun-saglik-hakki-kapak.webp
-kapakAlt: ''
+kapakAlt: 'Hekimler İçin Mahpusun Sağlık Hakkı broşürü kapağı'
 pdf: /pdf/hekimler-icin-mahpusun-saglik-hakki.pdf
 ---
 

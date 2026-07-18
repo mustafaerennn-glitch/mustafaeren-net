@@ -11,7 +11,7 @@ yayinevi: CİSST
 yayineviUrl: https://cisst.org.tr/kitaplar/mahmus-haklari-el-kitabi/
 sayfaSayisi: 154
 kapak: ./_images/mahpus-haklari-el-kitabi-kapak.webp
-kapakAlt: ''
+kapakAlt: 'Couverture du Manuel des droits des détenus'
 ---
 
 *Cette page présente un aperçu en français d'un ouvrage publié uniquement en turc. L'édition originale est disponible sur le site de l'éditeur.*

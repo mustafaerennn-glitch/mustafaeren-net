@@ -11,7 +11,7 @@ yayinevi: Kalkedon Yayınları
 yayineviUrl: https://www.yaykoop.com/kapatilmanin-patolojisi
 sayfaSayisi: 345
 kapak: ./_images/kapatilmanin-patolojisi-kapak.webp
-kapakAlt: ''
+kapakAlt: 'Buchcover: Die Pathologie der Einsperrung'
 ---
 
 *Diese Seite bietet eine deutschsprachige Übersicht über ein Buch, das nur auf Türkisch erschienen ist. Die Originalausgabe finden Sie auf der Verlagsseite.*

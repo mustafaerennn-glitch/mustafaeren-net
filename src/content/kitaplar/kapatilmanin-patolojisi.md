@@ -14,7 +14,7 @@ yayinevi: Kalkedon Yayınları
 yayineviUrl: https://www.yaykoop.com/kapatilmanin-patolojisi
 sayfaSayisi: 345
 kapak: ./_images/kapatilmanin-patolojisi-kapak.webp
-kapakAlt: ''
+kapakAlt: 'Kapatılmanın Patolojisi kitabı kapağı'
 ---
 
 **Eser Adı:** Kapatılmanın Patolojisi / Osmanlı’dan Günümüze Hapishanenin Tarihi

@@ -10,7 +10,7 @@ yayinevi: Kalkedon Yayınları
 yayineviUrl: https://www.idefix.com/haciyatmazi-devirmek-neoliberal-pratiklere-karsi-kolektivite-p-200491
 sayfaSayisi: 400
 kapak: ./_images/haciyatmazi-devirmek-kapak.webp
-kapakAlt: ''
+kapakAlt: 'Hacıyatmazı Devirmek kitabı kapağı'
 seri: Siyaset ve Ekonomi Kitaplığı
 pdf: /pdf/haciyatmazi-devirmek-poas-bolumu.pdf
 ---

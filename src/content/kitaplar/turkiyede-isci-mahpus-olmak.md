@@ -11,7 +11,7 @@ yayinevi: CİSST
 yayineviUrl: https://cisst.org.tr/kitaplar/tu%cc%88rkiyede-isci-mahpus-olmak/
 sayfaSayisi: 125
 kapak: ./_images/turkiyede-isci-mahpus-olmak-kapak.webp
-kapakAlt: ''
+kapakAlt: 'Türkiye''de İşçi Mahpus Olmak kitabı kapağı'
 pdf: /pdf/turkiyede-isci-mahpus-olmak.pdf
 ---
 

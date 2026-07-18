@@ -11,7 +11,7 @@ yayinevi: CİSST
 yayineviUrl: https://cisst.org.tr/kitaplar/mahpuslar-icin-haklarim-basvuru-kilavuzu/
 sayfaSayisi: 24
 kapak: ./_images/haklarim-basvuru-kilavuzu-kapak.webp
-kapakAlt: ''
+kapakAlt: 'Couverture de Mes droits : guide de recours pour les détenus'
 ---
 
 *Cette page présente un aperçu en français d'un livret publié uniquement en turc. L'édition originale est disponible sur le site de l'éditeur.*

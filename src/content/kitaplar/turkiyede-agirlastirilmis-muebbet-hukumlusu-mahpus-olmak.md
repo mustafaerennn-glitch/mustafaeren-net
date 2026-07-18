@@ -10,7 +10,7 @@ yayinevi: CİSST
 yayineviUrl: https://cisst.org.tr/kitaplar/turkiyede-agirlastirilmis-muebbet-hukumlusu-mahpus-olmak-2/
 sayfaSayisi: 129
 kapak: ./_images/turkiyede-agirlastirilmis-muebbet-hukumlusu-mahpus-olmak-kapak.webp
-kapakAlt: ''
+kapakAlt: 'Türkiye''de Ağırlaştırılmış Müebbet Hükümlüsü Mahpus Olmak kitabı kapağı'
 pdf: /pdf/turkiyede-agirlastirilmis-muebbet-hukumlusu-mahpus-olmak.pdf
 ---
 

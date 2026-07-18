@@ -14,7 +14,7 @@ yayinevi: Kalkedon Yayınları
 yayineviUrl: https://www.yaykoop.com/kanli-pazar
 sayfaSayisi: 284
 kapak: ./_images/kanli-pazar-kapak.webp
-kapakAlt: ''
+kapakAlt: 'Kanlı Pazar kitabı kapağı'
 ---
 
 **Eser Adı:** Kanlı Pazar – 1960'lar Türkiyesi'nde Milliyetçiler, İslamcılar ve Sol

@@ -10,7 +10,7 @@ yayinevi: CİSST
 yayineviUrl: https://cisst.org.tr/kitaplar/tu%cc%88rkiyede-lgbti-mahpus-olmak-3/
 sayfaSayisi: 124
 kapak: ./_images/turkiyede-lgbti-mahpus-olmak-kapak.webp
-kapakAlt: ''
+kapakAlt: 'Türkiye''de LGBTİ Mahpus Olmak kitabı kapağı'
 pdf: /pdf/turkiyede-lgbti-mahpus-olmak.pdf
 ---
 

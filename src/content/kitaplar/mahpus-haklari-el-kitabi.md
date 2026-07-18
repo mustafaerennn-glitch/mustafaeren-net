@@ -14,7 +14,7 @@ yayinevi: CİSST
 yayineviUrl: https://cisst.org.tr/kitaplar/mahmus-haklari-el-kitabi/
 sayfaSayisi: 154
 kapak: ./_images/mahpus-haklari-el-kitabi-kapak.webp
-kapakAlt: ''
+kapakAlt: 'Mahpus Hakları El Kitabı kapağı'
 pdf: /pdf/mahpus-haklari-el-kitabi.pdf
 ---
 

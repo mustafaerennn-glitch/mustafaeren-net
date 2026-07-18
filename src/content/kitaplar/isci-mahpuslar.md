@@ -11,7 +11,7 @@ yayinevi: CİSST
 yayineviUrl: https://cisst.org.tr/kitaplar/tu%cc%88rkiyede-isci-mahpuslarin-gu%cc%88ncel-durumu/
 sayfaSayisi: 88
 kapak: ./_images/isci-mahpuslar-kapak.webp
-kapakAlt: ''
+kapakAlt: 'Türkiye''de İşçi Mahpusların Güncel Durumu kitabı kapağı'
 pdf: /pdf/turkiyede-isci-mahpuslarin-guncel-durumu.pdf
 ---
 

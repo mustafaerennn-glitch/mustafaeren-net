@@ -11,7 +11,7 @@ yayinevi: Kalkedon Yayınları
 yayineviUrl: https://www.yaykoop.com/kanli-pazar
 sayfaSayisi: 284
 kapak: ./_images/kanli-pazar-kapak.webp
-kapakAlt: ''
+kapakAlt: 'Buchcover: Kanlı Pazar - Nationalisten, Islamisten und die Linke'
 ---
 
 *Diese Seite bietet eine deutschsprachige Übersicht über ein Buch, das nur auf Türkisch erschienen ist. Die Originalausgabe finden Sie auf der Verlagsseite.*

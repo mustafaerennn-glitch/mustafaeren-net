@@ -12,7 +12,7 @@ yayinevi: CİSST
 yayineviUrl: https://www.academia.edu/87063447/Mustafa_Eren_O_zel_I_htiyac_lar%C4%B1_Olan_Mahpuslar_Projesi_Rapor
 sayfaSayisi: 101
 kapak: ./_images/ozel-ihtiyaclari-olan-mahpuslar-projesi-sonuc-raporu-kapak.webp
-kapakAlt: ''
+kapakAlt: 'Özel İhtiyaçları Olan Mahpuslar Projesi Sonuç Raporu kapağı'
 ---
 
 **Eser Adı:** Özel İhtiyaçları Olan Mahpuslar Projesi Sonuç Raporu

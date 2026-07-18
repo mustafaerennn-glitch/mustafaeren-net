@@ -10,7 +10,7 @@ yayinevi: CİSST
 yayineviUrl: https://cisst.org.tr/kitaplar/tu%cc%88rkiyede-roman-mahpus-olmak/
 sayfaSayisi: 114
 kapak: ./_images/turkiyede-roman-mahpus-olmak-kapak.webp
-kapakAlt: ''
+kapakAlt: 'Türkiye''de Roman Mahpus Olmak kitabı kapağı'
 pdf: /pdf/turkiyede-roman-mahpus-olmak.pdf
 ---
 

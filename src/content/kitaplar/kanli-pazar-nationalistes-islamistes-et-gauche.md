@@ -11,7 +11,7 @@ yayinevi: Kalkedon Yayınları
 yayineviUrl: https://www.yaykoop.com/kanli-pazar
 sayfaSayisi: 284
 kapak: ./_images/kanli-pazar-kapak.webp
-kapakAlt: ''
+kapakAlt: 'Couverture du livre Kanlı Pazar : nationalistes, islamistes et gauche'
 ---
 
 *Cette page présente un aperçu en français d'un ouvrage publié uniquement en turc. L'édition originale est disponible sur le site de l'éditeur.*

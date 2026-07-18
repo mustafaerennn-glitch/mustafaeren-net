@@ -14,7 +14,7 @@ yayinevi: CİSST
 yayineviUrl: https://cisst.org.tr/kitaplar/mahpuslar-icin-haklarim-basvuru-kilavuzu/
 sayfaSayisi: 24
 kapak: ./_images/haklarim-basvuru-kilavuzu-kapak.webp
-kapakAlt: ''
+kapakAlt: 'Haklarım Başvuru Kılavuzu kapağı'
 ---
 
 **Eser Adı:** Mahpuslar İçin Haklarım Başvuru Kılavuzu
