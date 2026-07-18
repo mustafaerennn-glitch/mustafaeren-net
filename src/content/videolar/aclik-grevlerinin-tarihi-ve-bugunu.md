@@ -5,7 +5,7 @@ description: Mustafa Eren, Namık Kemal Dinç'in konuğu olarak İMC TV Dirok pr
 topics:
   - olum-oruclari
 publishDate: '2012-10-27'
-mecra: dirok
+mecra: imc-tv
 videoTuru: söyleşi
 embedUrl: https://www.youtube.com/embed/GKd8OhK-BHo
 durationMinutes: 50

@@ -5,7 +5,7 @@ description: Kanlı Pazar Dirok Programında
 topics:
   - kanli-pazar
 publishDate: '2012-05-24'
-mecra: dirok
+mecra: imc-tv
 videoTuru: söyleşi
 embedUrl: https://www.youtube.com/embed/nEZEZu3uYYs
 durationMinutes: 38
