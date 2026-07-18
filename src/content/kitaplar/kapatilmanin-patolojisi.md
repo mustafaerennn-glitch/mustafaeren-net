@@ -1,7 +1,7 @@
 ---
 title: Kapatılmanın Patolojisi
 lang: tr
-description: This is project excerpt. You can specify its content and length as you wish
+description: 'Eser Adı: Kapatılmanın Patolojisi / Osmanlı''dan Günümüze Hapishanenin Tarihi Yazar: Mustafa Eren Yayınevi: Kalkedon Yayıncılık Kapak Tasarımı: Şahan Yatarkalkmaz…'
 topics:
   - mahpus
 translations:
