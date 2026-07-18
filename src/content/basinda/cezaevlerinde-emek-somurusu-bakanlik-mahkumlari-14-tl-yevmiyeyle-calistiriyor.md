@@ -6,14 +6,9 @@ topics:
   - isci-mahpuslar
   - emek-isci-haklari
 publishDate: '2020-12-14'
-mecra: dw
+mecra: birgun
 featuredImage: ./_images/cezaevlerinde-emek-somurusu-bakanlik-mahkumlari-14-tl-yevmiyeyle-calistiriyor-featured.webp
 featuredImageAlt: ''
-sources:
-  - mecra: dw
-    tur: birincil
-  - mecra: birgun
-    tur: ikincil
 ---
 
 [BirGün](https://www.birgun.net/haber/cezaevlerinde-emek-somurusu-bakanlik-mahkumlari-14-tl-yevmiyeyle-calistiriyor-326535) - 14 Aralık 2020
