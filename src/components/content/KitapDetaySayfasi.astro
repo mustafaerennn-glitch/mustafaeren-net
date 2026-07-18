@@ -45,6 +45,27 @@ const KITAP_TURU_BADGE: Record<string, Record<string, string>> = {
 const rolLabel = KITAP_TURU_ROL[lang][entry.data.kitapTuru];
 const badgeLabel = KITAP_TURU_BADGE[lang][entry.data.kitapTuru];
 
+// Başlığın üstündeki küçük etiket artık "Yazar"/"Editör" gibi bir ROL kelimesi değil,
+// doğrudan o roldeki kişinin/kişilerin adı — künyedeki ilgili satırdan okunuyor. Kural,
+// kitapTuru'ndan değil kitapta GERÇEKTEN kimin ne olduğundan geliyor: bir "Yazar" varsa
+// (kitap Mustafa Eren'in editörlüğünü yaptığı bir kitap olsa bile) her zaman yazarın adı
+// gösterilir; yazar yoksa (derleme/konferans kitabı gibi) yayına hazırlayan/editör adına
+// düşülür. İkisi de künyede yoksa (örn. çeviri özet sayfaları henüz künyeye geçirilmediyse
+// veya mahpusun-ogrenim-hakki gibi isimli bir hazırlayanı olmayan broşürlerde) eski rol
+// kelimesine geri düşülüyor.
+const YAZAR_ETIKETLERI = ['Yazar', 'Author', 'Authors', 'Autor', 'Autoren', 'Auteur', 'Auteurs'];
+const HAZIRLAYAN_ETIKETLERI = [
+  'Editörler', 'Editör', 'Editors', 'Editor', 'Herausgeber', 'Herausgeberin', 'Éditeurs', 'Éditeur', 'Direction éditoriale',
+  'Yayına Hazırlayan', 'Yayına Hazırlayanlar', 'Hazırlayanlar', 'Edited by', 'Herausgegeben von', 'Publié sous la direction de',
+];
+function eyebrowIsmi(): string {
+  const yazar = entry.data.kunye?.find((k) => YAZAR_ETIKETLERI.includes(k.etiket));
+  if (yazar) return yazar.deger;
+  const hazirlayan = entry.data.kunye?.find((k) => HAZIRLAYAN_ETIKETLERI.includes(k.etiket));
+  return hazirlayan?.deger ?? rolLabel;
+}
+const eyebrowLabel = eyebrowIsmi();
+
 const areaSlugs = await getAreasForTopicRefs(entry.data.topics);
 const topicsMap = await getTopicsMap();
 const alanLabels = lang === 'tr' ? ALAN_LABELS : ALAN_LABELS_I18N[lang];
@@ -62,8 +83,6 @@ const others = (await getCollection('kitaplar', (e) => e.data.lang === lang && e
 
 const breadcrumbBaslik = t.navKitaplar;
 const anaSayfaHref = routes.anaSayfa[lang];
-const SAYFA_LABEL: Record<string, string> = { tr: 'sayfa', en: 'pages', de: 'Seiten', fr: 'pages' };
-const sayfaLabel = SAYFA_LABEL[lang];
 ---
 
 <BaseLayout
@@ -81,28 +100,31 @@ const sayfaLabel = SAYFA_LABEL[lang];
       <Image src={entry.data.kapak} alt={entry.data.kapakAlt} width={300} />
     </div>
     <div class="book-info">
-      <p class="role-eyebrow">{rolLabel}</p>
-      <h1>{entry.data.title}</h1>
-      <p class="book-meta-line">{entry.data.year} · {entry.data.yayinevi} · {entry.data.sayfaSayisi} {sayfaLabel}</p>
-      {
-        entry.data.yayinDili && entry.data.yayinDili !== lang && (
-          <p class="yayin-dili-line">{t.yayinDiliEtiket}: {LANG_NAMES[entry.data.yayinDili]}</p>
-        )
-      }
-      <div class="badges">
-        <span class="badge">{badgeLabel}</span>
-        {entry.data.seri && <span class="badge seri">{entry.data.seri}</span>}
+      <div class="book-info-top">
+        <p class="role-eyebrow">{eyebrowLabel}</p>
+        <h1>{entry.data.title}</h1>
       </div>
-      {cluster.length > 1 && (
-        <p class="lang-line">
-          <LangCluster currentLang={lang} items={cluster.map((c) => ({ lang: c.lang, href: contentUrl('kitaplar', c.lang, c.slug) }))} />
-        </p>
-      )}
-      <div class="cta-row">
-        {entry.data.pdf && <a class="btn-primary" href={entry.data.pdf}>{t.pdfOku}</a>}
-        {entry.data.yayineviUrl && (
-          <a class="btn-secondary" href={entry.data.yayineviUrl} target="_blank" rel="noopener">{t.yayineviSayfasi}</a>
+      <div class="book-info-bottom">
+        {
+          entry.data.yayinDili && entry.data.yayinDili !== lang && (
+            <p class="yayin-dili-line">{t.yayinDiliEtiket}: {LANG_NAMES[entry.data.yayinDili]}</p>
+          )
+        }
+        {cluster.length > 1 && (
+          <p class="lang-line">
+            <LangCluster currentLang={lang} items={cluster.map((c) => ({ lang: c.lang, href: contentUrl('kitaplar', c.lang, c.slug) }))} />
+          </p>
         )}
+        <div class="cta-row">
+          {entry.data.pdf && <a class="btn-primary" href={entry.data.pdf}>{t.pdfOku}</a>}
+          {entry.data.yayineviUrl && (
+            <a class="btn-secondary" href={entry.data.yayineviUrl} target="_blank" rel="noopener">{t.yayineviSayfasi}</a>
+          )}
+        </div>
+        <div class="badges">
+          <span class="badge">{badgeLabel}</span>
+          {entry.data.seri && <span class="badge seri">{entry.data.seri}</span>}
+        </div>
       </div>
     </div>
   </div>
@@ -161,34 +183,37 @@ const sayfaLabel = SAYFA_LABEL[lang];
     flex: 1;
     min-width: 0;
     padding-top: 4px;
+    display: flex;
+    flex-direction: column;
+  }
+  .book-info-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: auto;
+    margin-bottom: auto;
   }
   .role-eyebrow {
-    font-size: 12px;
+    font-size: 13px;
     color: var(--text-muted);
     text-transform: uppercase;
     letter-spacing: 0.04em;
     margin-bottom: 8px;
   }
-  .book-meta-line {
-    font-size: 13px;
-    color: var(--text-secondary);
-    margin: 10px 0 0;
-    line-height: 1.6;
-  }
   .yayin-dili-line {
     font-size: 12px;
     color: var(--text-muted);
-    margin: 4px 0 0;
+    margin: 0;
   }
   .lang-line {
     font-size: 12px;
-    margin: 10px 0 0;
+    margin: 0;
   }
   .badges {
     display: flex;
     gap: 8px;
     flex-wrap: wrap;
-    margin: 14px 0 16px;
+    margin: 0;
   }
   .badge {
     font-size: 11px;
@@ -206,7 +231,7 @@ const sayfaLabel = SAYFA_LABEL[lang];
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
-    margin-top: 16px;
+    margin: 0;
   }
   .btn-primary,
   .btn-secondary {

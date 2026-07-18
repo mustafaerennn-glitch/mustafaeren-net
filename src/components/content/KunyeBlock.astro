@@ -1,8 +1,8 @@
 ---
-// Kitap detay sayfasındaki yapısal künye (Yazar/Editörler/Kapak Tasarımı/Basım Tarihi/ISBN
-// gibi) — gövdedeki serbest metinden görsel olarak ayrışsın diye kompakt bir kutuda,
-// ArticleBody'nin makale tipografisinden (büyük punto, geniş satır aralığı) bağımsız
-// kendi stiliyle render edilir.
+// Kitap detay sayfasındaki yapısal künye (Yazar/Yayınevi/Basım Tarihi/Sayfa Sayısı/Kapak
+// Tasarımı/ISBN gibi) — kutu/arka plan YOK, sayfayla aynı zeminde; ArticleBody'nin makale
+// tipografisinden (büyük punto, geniş satır aralığı, birincil metin rengi) bilinçli olarak
+// küçük punto + dar satır aralığı + soluk renkle ayrışır.
 interface Props {
   items: { etiket: string; deger: string }[];
 }
@@ -23,31 +23,26 @@ const { items } = Astro.props;
 
 <style>
   .kunye {
-    background: var(--surface-1);
-    border: 0.5px solid var(--border);
-    border-radius: var(--radius);
-    padding: 4px 18px;
     margin: 0 0 1.75rem;
+    padding-left: 10px;
   }
   .kunye-row {
     display: flex;
     flex-wrap: wrap;
-    gap: 4px 8px;
-    padding: 9px 0;
-    font-size: 13px;
-    line-height: 1.5;
-  }
-  .kunye-row + .kunye-row {
-    border-top: 0.5px solid var(--border);
+    gap: 2px 8px;
+    padding: 4px 0;
+    font-size: 12.5px;
+    line-height: 1.15;
   }
   .kunye-row dt {
-    flex: 0 0 128px;
+    flex: 0 0 118px;
     color: var(--text-muted);
   }
   .kunye-row dd {
     flex: 1 1 200px;
     margin: 0;
     color: var(--text-primary);
+    font-weight: 500;
   }
   @media (max-width: 480px) {
     .kunye-row dt {

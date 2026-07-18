@@ -19,10 +19,14 @@ pdf: /pdf/turkiye-hapishaneler-almanagi-2015.pdf
 kunye:
   - etiket: 'Yazar'
     deger: 'Ayşegül Algan, Duygu Koçoğlu, Mustafa Eren'
-  - etiket: 'Kapak Tasarımı'
-    deger: 'Tayfun Koç'
+  - etiket: 'Yayınevi'
+    deger: 'TCPS Kitaplığı'
   - etiket: 'Basım Tarihi'
     deger: 'Temmuz 2016'
+  - etiket: 'Sayfa Sayısı'
+    deger: '250'
+  - etiket: 'Kapak Tasarımı'
+    deger: 'Tayfun Koç'
   - etiket: 'ISBN No'
     deger: '978-605-83651-4-8'
 ---
