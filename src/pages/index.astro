@@ -209,6 +209,16 @@ const kitaplar = ANA_SAYFA_KITAP_SIRASI.map((id) => tumYazdiklarim.find((k) => k
     object-fit: cover;
     display: block;
   }
+  @media (max-width: 600px) {
+    .hero {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .avatar {
+      width: 96px;
+      height: 96px;
+    }
+  }
   .section {
     margin-bottom: 2.5rem;
   }
