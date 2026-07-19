@@ -130,18 +130,30 @@ const basindaHref = `${localePrefix}/basinda/`;
       <div class="menu mobile-menu-list">
         <a class:list={{ current: current === 'yazilar' }} href={yazilarHref}>{t.navYazilar}</a>
 
-        <p class:list={['mobile-menu-label', { current: current === 'videolar' }]}>{t.navVideolar}</p>
-        <a href={`${localePrefix}/videolar/`}>{t.pillTumu}</a>
-        {VIDEO_TURLERI.map((v) => <a href={`${localePrefix}/videolar/?tur=${v.tur}`}>{v.label}</a>)}
+        <details class="mobile-submenu">
+          <summary class:list={{ current: current === 'videolar' }}>{t.navVideolar}</summary>
+          <div class="mobile-submenu-list">
+            <a href={`${localePrefix}/videolar/`}>{t.pillTumu}</a>
+            {VIDEO_TURLERI.map((v) => <a href={`${localePrefix}/videolar/?tur=${v.tur}`}>{v.label}</a>)}
+          </div>
+        </details>
 
-        <p class:list={['mobile-menu-label', { current: current === 'kitaplar' }]}>{t.navKitaplar}</p>
-        <a href={`${localePrefix}/kitaplar/`}>{t.pillTumu}</a>
-        {KITAP_TURLERI.map((k) => <a href={`${localePrefix}/kitaplar/tip/${KITAP_TURU_SLUGS[k.tip]}/`}>{k.label}</a>)}
+        <details class="mobile-submenu">
+          <summary class:list={{ current: current === 'kitaplar' }}>{t.navKitaplar}</summary>
+          <div class="mobile-submenu-list">
+            <a href={`${localePrefix}/kitaplar/`}>{t.pillTumu}</a>
+            {KITAP_TURLERI.map((k) => <a href={`${localePrefix}/kitaplar/tip/${KITAP_TURU_SLUGS[k.tip]}/`}>{k.label}</a>)}
+          </div>
+        </details>
 
         <a class:list={{ current: current === 'basinda' }} href={basindaHref}>{t.navBasinda}</a>
 
-        <p class:list={['mobile-menu-label', { current: current === 'konular' }]}>{t.navKonular}</p>
-        {ALANLAR.map((a) => <a href={`${localePrefix}/alanlar/${a.slug}/`}>{a.label}</a>)}
+        <details class="mobile-submenu">
+          <summary class:list={{ current: current === 'konular' }}>{t.navKonular}</summary>
+          <div class="mobile-submenu-list">
+            {ALANLAR.map((a) => <a href={`${localePrefix}/alanlar/${a.slug}/`}>{a.label}</a>)}
+          </div>
+        </details>
 
         <a class:list={{ current: current === 'hakkimda' }} href={hakkimdaHref}>{t.navHakkimda}</a>
         <a class:list={{ current: current === 'iletisim' }} href={iletisimHref}>{t.navIletisim}</a>
@@ -213,10 +225,10 @@ const basindaHref = `${localePrefix}/basinda/`;
   .nav-actions .mobile-menu {
     display: none;
   }
-  .nav-actions .dropdown summary {
+  .nav-actions .dropdown > summary {
     display: flex;
   }
-  .nav-actions .dropdown summary::after {
+  .nav-actions .dropdown > summary::after {
     content: none;
   }
   .nav-link {
@@ -271,20 +283,46 @@ const basindaHref = `${localePrefix}/basinda/`;
     background: var(--surface-1);
     color: var(--text-primary);
   }
-  .mobile-menu-label {
-    margin: 10px 0 2px;
-    padding: 0 10px;
-    font-size: 11px;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    color: var(--text-muted);
+  .mobile-submenu summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    color: var(--text-secondary);
+    font-size: 14.5px;
+    padding: 10px 4px;
   }
-  .mobile-menu-label:first-child {
-    margin-top: 0;
+  .mobile-submenu summary::-webkit-details-marker {
+    display: none;
   }
-  .mobile-menu-label.current {
+  /* Aşağı ok — punto farkı yerine, "bunun alt seçenekleri var" bilgisini taşıyan tek işaret
+     bu (talimat: tüm ana menü öğeleri aynı punto/kalınlıkta olmalı, ayrım yalnızca oktan
+     gelmeli). Kapalıyken aşağı, açıkken yukarı bakacak şekilde döner. */
+  .mobile-submenu summary::after {
+    content: '';
+    width: 7px;
+    height: 7px;
+    border-right: 1.5px solid var(--text-muted);
+    border-bottom: 1.5px solid var(--text-muted);
+    transform: rotate(45deg);
+    flex-shrink: 0;
+    transition: transform 0.15s ease;
+  }
+  .mobile-submenu[open] > summary::after {
+    transform: rotate(225deg);
+  }
+  .mobile-submenu summary.current {
     color: var(--text-primary);
+    font-weight: 500;
+  }
+  .mobile-submenu-list {
+    display: flex;
+    flex-direction: column;
+    padding-left: 14px;
+    border-left: 0.5px solid var(--border);
+    margin: 4px 0 4px 6px;
   }
   @media (max-width: 600px) {
     /* Nav artık iki satır: marka + sağa yanaşık aksiyon çubuğu (ara/dil/menü). İkisi de
@@ -322,11 +360,16 @@ const basindaHref = `${localePrefix}/basinda/`;
       left: 0;
       right: 0;
       min-width: 0;
-      max-height: 80vh;
+      /* Talimat: panel tüm ekranı kaplamasın, altındaki sayfa görünmeye devam etsin —
+         hem yükseklik sınırlı hem de zemin yarı saydam/bulanık (frosted glass). */
+      max-height: 50vh;
       overflow-y: auto;
       padding: 10px 20px 20px;
-      border-radius: 0;
-      border-width: 0.5px 0 0;
+      border-radius: 0 0 var(--radius) var(--radius);
+      border-width: 0.5px 0.5px 0.5px 0;
+      background: rgba(247, 246, 242, 0.7);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
       box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
       z-index: 40;
     }
@@ -334,6 +377,10 @@ const basindaHref = `${localePrefix}/basinda/`;
     .dropdown.mobile-menu .menu a {
       padding: 10px 4px;
       font-size: 14.5px;
+    }
+    .dropdown.mobile-menu .menu > a.current {
+      color: var(--text-primary);
+      font-weight: 500;
     }
   }
 </style>
