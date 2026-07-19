@@ -22,9 +22,9 @@ const contentCounts = (await getContentCountsByLang())[lang];
 // İlke: kullanıcı bu dildeyse yalnızca bu dilde mevcut içeriğe yönlendirilir — Yazılar boşsa
 // (bu dilde hiç yoksa) birincil CTA Basında'ya döner, o da boşsa buton hiç gösterilmez.
 const primaryCta = contentCounts.yazilar > 0
-  ? { href: '/en/yazilar/', label: t.anaSayfaCtaYazilar }
+  ? { href: '/en/yazilar/', label: t.anaSayfaCtaYazilar, shortLabel: t.navYazilar }
   : contentCounts.basinda > 0
-    ? { href: '/en/basinda/', label: t.navBasinda }
+    ? { href: '/en/basinda/', label: t.navBasinda, shortLabel: t.navBasinda }
     : null;
 
 const bio =
@@ -73,7 +73,12 @@ const kitaplar = (await getCollection('kitaplar', (e) => e.data.lang === lang &&
       <h1>Mustafa Eren</h1>
       <p class="bio">{bio}</p>
       <div class="cta-row">
-        {primaryCta && <a class="btn-primary" href={primaryCta.href}>{primaryCta.label}</a>}
+        {primaryCta && (
+          <a class="btn-primary" href={primaryCta.href}>
+            <span class="btn-full">{primaryCta.label}</span>
+            <span class="btn-short">{primaryCta.shortLabel}</span>
+          </a>
+        )}
         <a class="btn-secondary" href={routes.hakkimda.en}>{t.hakkimdaBaslik}</a>
       </div>
     </div>
@@ -226,6 +231,20 @@ const kitaplar = (await getCollection('kitaplar', (e) => e.data.lang === lang &&
     height: 100%;
     object-fit: cover;
     display: block;
+  }
+  .btn-short {
+    display: none;
+  }
+  @media (max-width: 600px) {
+    .btn-full {
+      display: none;
+    }
+    .btn-short {
+      display: inline;
+    }
+    .books-grid > :global(:nth-child(5)) {
+      display: none;
+    }
   }
   .section {
     margin-bottom: 2.5rem;

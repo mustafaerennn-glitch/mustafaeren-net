@@ -55,7 +55,10 @@ const kitaplar = ANA_SAYFA_KITAP_SIRASI.map((id) => tumYazdiklarim.find((k) => k
       <h1>Mustafa Eren</h1>
       <p class="bio">{bio}</p>
       <div class="cta-row">
-        <a class="btn-primary" href="/yazilar/">Yazıları gör</a>
+        <a class="btn-primary" href="/yazilar/">
+          <span class="btn-full">Yazıları gör</span>
+          <span class="btn-short">Yazılar</span>
+        </a>
         <a class="btn-secondary" href="/hakkimda/">Hakkımda</a>
       </div>
     </div>
@@ -209,14 +212,18 @@ const kitaplar = ANA_SAYFA_KITAP_SIRASI.map((id) => tumYazdiklarim.find((k) => k
     object-fit: cover;
     display: block;
   }
+  .btn-short {
+    display: none;
+  }
   @media (max-width: 600px) {
-    .hero {
-      flex-direction: column;
-      align-items: flex-start;
+    .btn-full {
+      display: none;
     }
-    .avatar {
-      width: 96px;
-      height: 96px;
+    .btn-short {
+      display: inline;
+    }
+    .books-grid > :global(:nth-child(5)) {
+      display: none;
     }
   }
   .section {
