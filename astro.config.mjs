@@ -1,8 +1,20 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
+import sitemap from '@astrojs/sitemap';
+
+// Site haritasında görünmesi anlamsız yardımcı sayfalar — arama sonuç sayfaları (tekil içerik
+// taşımıyor) ve iletişim formu teşekkür sayfaları (form gönderiminden sonra ulaşılan, arama
+// trafiği için hedeflenmemiş "dead-end" sayfalar).
+const SITEMAP_HARIC_DESENLERI = [/\/ara\//, /\/search\//, /\/suche\//, /\/recherche\//, /\/tesekkur\//, /\/thank-you\//, /\/dank\//, /\/merci\//];
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://mustafaeren.net',
+  integrations: [
+    sitemap({
+      filter: (page) => !SITEMAP_HARIC_DESENLERI.some((desen) => desen.test(page)),
+    }),
+  ],
   i18n: {
     defaultLocale: 'tr',
     locales: ['tr', 'en', 'de', 'fr'],
