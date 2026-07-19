@@ -1,5 +1,6 @@
 ---
 import { getCollection, getEntry } from 'astro:content';
+import { getImage } from 'astro:assets';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import TopicsRow from '../../components/metadata/TopicsRow.astro';
 import AboutModal from '../../components/content/AboutModal.astro';
@@ -55,6 +56,8 @@ const otherCards = await Promise.all(
     };
   }),
 );
+
+const ogImage = await getImage({ src: entry.data.thumbnail, width: 1200 });
 ---
 
 <BaseLayout
@@ -63,6 +66,8 @@ const otherCards = await Promise.all(
   description={entry.data.description}
   canonical={canonical}
   current="videolar"
+  image={ogImage.src}
+  ogType="article"
   pagefindType="Video"
   pagefindMecra={mecra?.data.ad}
   breadcrumb={[{ label: 'Ana sayfa', href: '/' }, { label: 'Videolar', href: '/videolar/' }, { label: entry.data.title }]}

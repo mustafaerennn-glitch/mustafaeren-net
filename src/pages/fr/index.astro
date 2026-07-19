@@ -1,6 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
-import { Image } from 'astro:assets';
+import { Image, getImage } from 'astro:assets';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BookCard from '../../components/cards/BookCard.astro';
 import { getAreaCounts, ALAN_LABELS, ALAN_LABELS_I18N } from '../../lib/taxonomy';
@@ -55,6 +55,8 @@ const feed = await getMergedFeed(5, lang);
 // Kitaplar koleksiyonunda şu an FR girdi yok (yalnızca TR yayınlar var) — bölüm bu yüzden
 // TR ana sayfadaki gibi koşullu, sahte/boş kitap kartı üretilmiyor.
 const kitaplar = (await getCollection('kitaplar', (e) => e.data.lang === lang && e.data.kitapTuru === 'yazdıklarım')).slice(0, 5);
+
+const ogImage = await getImage({ src: profilFoto, width: 1200 });
 ---
 
 <BaseLayout
@@ -64,6 +66,7 @@ const kitaplar = (await getCollection('kitaplar', (e) => e.data.lang === lang &&
   canonical={routes.anaSayfa.fr}
   alternates={alternates}
   showLangSwitcher
+  image={ogImage.src}
 >
   <section class="hero">
     <div class="hero-text">

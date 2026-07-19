@@ -1,5 +1,6 @@
 ---
 import { getEntry, render, type CollectionEntry } from 'astro:content';
+import { getImage } from 'astro:assets';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import MecraRozeti from '../metadata/MecraRozeti.astro';
 import MetaCluster from '../metadata/MetaCluster.astro';
@@ -48,6 +49,10 @@ const siteUrl = new URL(canonical, 'https://mustafaeren.net').toString();
 
 // Ana sayfa artık 4 dilde de gerçek (bkz. src/pages/{en,de,fr}/index.astro).
 const homeHref = routes.anaSayfa[lang];
+
+// Open Graph/Twitter Card görseli — öne çıkan görsel zaten her Yazı'da zorunlu alan, elle
+// bir şey girmeye gerek yok (bkz. BaseLayout'taki image prop notu).
+const ogImage = await getImage({ src: entry.data.featuredImage, width: 1200 });
 ---
 
 <BaseLayout
@@ -57,6 +62,8 @@ const homeHref = routes.anaSayfa[lang];
   canonical={canonical}
   alternates={alternates}
   current="yazilar"
+  image={ogImage.src}
+  ogType="article"
   pagefindType="Yazı"
   pagefindMecra={mecra?.data.ad}
   breadcrumb={[{ label: BREADCRUMB_HOME_LABEL[lang], href: homeHref }, { label: YAZILAR_LABEL[lang], href: '/yazilar/' }, { label: entry.data.title }]}

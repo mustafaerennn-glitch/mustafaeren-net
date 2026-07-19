@@ -1,5 +1,6 @@
 ---
 import { getEntry, render, type CollectionEntry } from 'astro:content';
+import { getImage } from 'astro:assets';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import MecraRozeti from '../metadata/MecraRozeti.astro';
 import MetaCluster from '../metadata/MetaCluster.astro';
@@ -64,6 +65,8 @@ if (entry.data.sources && entry.data.sources.length > 0) {
       .map((s) => ({ name: s.mecra.data.ad, title: entry.data.title, url: s.mecra.data.url })),
   };
 }
+
+const ogImage = await getImage({ src: entry.data.featuredImage, width: 1200 });
 ---
 
 <BaseLayout
@@ -73,6 +76,8 @@ if (entry.data.sources && entry.data.sources.length > 0) {
   canonical={canonical}
   alternates={alternates}
   current="basinda"
+  image={ogImage.src}
+  ogType="article"
   pagefindType="Basında"
   pagefindMecra={mecra.data.ad}
   breadcrumb={[{ label: BREADCRUMB_HOME_LABEL[lang], href: homeHref }, { label: BASINDA_LABEL[lang], href: '/basinda/' }, { label: entry.data.title }]}

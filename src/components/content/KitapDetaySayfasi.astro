@@ -1,6 +1,6 @@
 ---
 import { getCollection, render, type CollectionEntry } from 'astro:content';
-import { Image } from 'astro:assets';
+import { Image, getImage } from 'astro:assets';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import TopicsRow from '../metadata/TopicsRow.astro';
 import LangCluster from '../metadata/LangCluster.astro';
@@ -83,6 +83,8 @@ const others = (await getCollection('kitaplar', (e) => e.data.lang === lang && e
 
 const breadcrumbBaslik = t.navKitaplar;
 const anaSayfaHref = routes.anaSayfa[lang];
+
+const ogImage = await getImage({ src: entry.data.kapak, width: 1200 });
 ---
 
 <BaseLayout
@@ -92,6 +94,7 @@ const anaSayfaHref = routes.anaSayfa[lang];
   canonical={canonical}
   alternates={alternates}
   current="kitaplar"
+  image={ogImage.src}
   pagefindType="Kitap"
   breadcrumb={[{ label: t.anaSayfa, href: anaSayfaHref }, { label: breadcrumbBaslik, href: `${localePrefix}/kitaplar/` }, { label: entry.data.title }]}
 >
