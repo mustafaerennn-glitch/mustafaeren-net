@@ -90,7 +90,7 @@ export const ui = {
     hakkimdaBaslik: 'About',
     hakkimdaOzet: 'This is a sample "general page" created to test the i18n routing spike.',
     iletisimNav: 'Contact',
-    anaSayfaEyebrow: 'Researcher · Writer · Editor',
+    anaSayfaEyebrow: 'Sociologist · Researcher · Writer',
     anaSayfaCtaYazilar: 'See articles',
     projeEtiket: 'Project',
     projeAciklama: 'A living digital archive',
@@ -164,7 +164,7 @@ export const ui = {
     hakkimdaOzet:
       'Dies ist eine Beispiel-„allgemeine Seite“, die für den i18n-Routing-Spike erstellt wurde.',
     iletisimNav: 'Kontakt',
-    anaSayfaEyebrow: 'Forscher · Autor · Herausgeber',
+    anaSayfaEyebrow: 'Soziologe · Forscher · Autor',
     anaSayfaCtaYazilar: 'Artikel ansehen',
     projeEtiket: 'Projekt',
     projeAciklama: 'Ein lebendiges digitales Archiv',
@@ -238,7 +238,7 @@ export const ui = {
     hakkimdaOzet:
       'Ceci est un exemple de « page générale » créée pour tester le spike de routage i18n.',
     iletisimNav: 'Contact',
-    anaSayfaEyebrow: 'Chercheur · Auteur · Éditeur',
+    anaSayfaEyebrow: 'Sociologue · Chercheur · Auteur',
     anaSayfaCtaYazilar: 'Voir les articles',
     projeEtiket: 'Projet',
     projeAciklama: 'Une archive numérique vivante',
