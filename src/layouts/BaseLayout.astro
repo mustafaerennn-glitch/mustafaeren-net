@@ -101,9 +101,15 @@ const OG_LOCALE: Record<Locale, string> = { tr: 'tr_TR', en: 'en_US', de: 'de_DE
     {description && <meta name="twitter:description" content={description} />}
     <meta name="twitter:image" content={ogImageAbsolute} />
 
-    <!-- Cloudflare Web Analytics -->
-    <script is:inline type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "4cb702c6cf6c493f88d8a27cedff9688"}'></script>
-    <!-- End Cloudflare Web Analytics -->
+    {
+      // Yalnızca production build'de (deploy edilen site) yüklenir — geliştirme sırasında
+      // (astro dev, localhost testleri) analitik verisini kirletmesin diye.
+      import.meta.env.PROD && (
+        <>
+          <script is:inline type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "4cb702c6cf6c493f88d8a27cedff9688"}'></script>
+        </>
+      )
+    }
   </head>
   <body>
     <div class="page" style={pageWidth ? `--page-width: ${pageWidth}` : undefined}>
