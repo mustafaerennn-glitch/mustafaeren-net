@@ -100,6 +100,10 @@ const OG_LOCALE: Record<Locale, string> = { tr: 'tr_TR', en: 'en_US', de: 'de_DE
     <meta name="twitter:title" content={title} />
     {description && <meta name="twitter:description" content={description} />}
     <meta name="twitter:image" content={ogImageAbsolute} />
+
+    <!-- Cloudflare Web Analytics -->
+    <script is:inline type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "4cb702c6cf6c493f88d8a27cedff9688"}'></script>
+    <!-- End Cloudflare Web Analytics -->
   </head>
   <body>
     <div class="page" style={pageWidth ? `--page-width: ${pageWidth}` : undefined}>
