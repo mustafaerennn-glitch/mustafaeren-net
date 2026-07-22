@@ -178,7 +178,14 @@ const basindaHref = `${localePrefix}/basinda/`;
     background: var(--surface-0);
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    /* Eskiden .topnav'ın SADECE 2 çocuğu vardı (brand, nav-items — arama nav-items'ın İÇİNDE
+       son öğeydi), space-between tek boşluğu brand ile nav-items arasına koyuyordu. Arama
+       mobil aksiyon çubuğu için nav-items'tan ayrılıp nav-actions'a taşınınca .topnav 3 çocuklu
+       oldu; space-between bu sefer İKİ boşluk (brand↔nav-items VE nav-items↔nav-actions)
+       dağıtmaya başladı — nav linkleriyle arama ikonu arasında istenmeyen bir açıklık oluştu.
+       Çözüm: .topnav flex-start'a alınıp tek boşluk nav-items'ın kendi margin-left:auto'suyla
+       (aşağıda) geri yaratılıyor — nav-items + nav-actions yine TEK blok halinde sağa yaslanıyor. */
+    justify-content: flex-start;
     padding: 0 0 1rem;
     border-bottom: 0.5px solid var(--border);
     flex-wrap: wrap;
@@ -215,6 +222,7 @@ const basindaHref = `${localePrefix}/basinda/`;
     color: var(--text-secondary);
     flex-wrap: wrap;
     align-items: center;
+    margin-left: auto;
   }
   .nav-actions {
     display: flex;
