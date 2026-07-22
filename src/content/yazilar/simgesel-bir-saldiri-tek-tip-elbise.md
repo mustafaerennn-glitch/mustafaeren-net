@@ -5,6 +5,10 @@ description: TTE'nin, hukuki, sosyolojik, psikolojik, insani, vicdani açıdan s
 topics:
   - mahpus
   - tek-tip-elbise
+translations:
+  - a-symbolic-assault-mandatory-prison-uniforms
+  - ein-symbolischer-angriff-die-obligatorische-gefangniskleidung
+  - une-attaque-symbolique-luniforme-carceral-obligatoire
 publishDate: '2017-08-26'
 mecra: bianet
 featuredImage: ./_images/simgesel-bir-saldiri-tek-tip-elbise-featured.webp
