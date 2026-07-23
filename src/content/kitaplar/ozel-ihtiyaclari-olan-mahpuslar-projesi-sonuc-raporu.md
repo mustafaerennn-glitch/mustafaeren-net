@@ -6,6 +6,7 @@ translations:
   - prisoners-with-special-needs-project-final-report
 topics:
   - engelli-yasli-mahpuslar
+  - yabanci-mahpuslar-goc
 year: 2013
 kitapTuru: yazdıklarım
 yayinevi: CİSST

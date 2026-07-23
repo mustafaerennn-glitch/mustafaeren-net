@@ -41,6 +41,7 @@ export const TOPIC_LABELS_I18N: Record<'en' | 'de' | 'fr', Record<string, string
     'hukuk-adalet-sistemi': 'Law / Justice System',
     'emek-isci-haklari': 'Labour / Workers’ Rights',
     multecilik: 'Refugees',
+    'yabanci-mahpuslar-goc': 'Foreign Prisoners',
     'yapay-zeka-etik': 'AI Use and Ethics',
   },
   de: {
@@ -78,6 +79,7 @@ export const TOPIC_LABELS_I18N: Record<'en' | 'de' | 'fr', Record<string, string
     'hukuk-adalet-sistemi': 'Recht / Justizsystem',
     'emek-isci-haklari': 'Arbeit / Arbeitnehmerrechte',
     multecilik: 'Flüchtlinge',
+    'yabanci-mahpuslar-goc': 'Ausländische Gefangene',
     'yapay-zeka-etik': 'KI-Nutzung und Ethik',
   },
   fr: {
@@ -115,6 +117,7 @@ export const TOPIC_LABELS_I18N: Record<'en' | 'de' | 'fr', Record<string, string
     'hukuk-adalet-sistemi': 'Droit / système judiciaire',
     'emek-isci-haklari': 'Travail / droits des travailleurs',
     multecilik: 'Réfugiés',
+    'yabanci-mahpuslar-goc': 'Prisonniers étrangers',
     'yapay-zeka-etik': "Utilisation de l'IA et éthique",
   },
 };

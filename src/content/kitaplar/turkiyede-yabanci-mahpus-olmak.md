@@ -4,6 +4,7 @@ lang: tr
 description: 'Eser Adı: Türkiye''de Yabancı Mahpus Olmak Yazar: Hilal Başak Demirbaş Yayınevi: TCPS Kitaplığı Editörler: Ayşegül Algan, Mustafa Eren Kapak Tasarımı: Tayfun…'
 topics:
   - yabanci-azinlik-mahpuslar
+  - yabanci-mahpuslar-goc
 year: 2016
 kitapTuru: editörlük
 yayinevi: CİSST

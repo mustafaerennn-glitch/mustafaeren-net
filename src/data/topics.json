@@ -33,5 +33,6 @@
   { "id": "hukuk-adalet-sistemi", "ad": "Hukuk / Adalet Sistemi", "alan": "siyasi-tarih" },
   { "id": "emek-isci-haklari", "ad": "Emek / İşçi Hakları", "alan": "emek" },
   { "id": "multecilik", "ad": "Mülteciler", "alan": "goc" },
+  { "id": "yabanci-mahpuslar-goc", "ad": "Yabancı Mahpuslar", "alan": "goc" },
   { "id": "yapay-zeka-etik", "ad": "Yapay Zeka Kullanımı ve Etik", "alan": "diger" }
 ]
