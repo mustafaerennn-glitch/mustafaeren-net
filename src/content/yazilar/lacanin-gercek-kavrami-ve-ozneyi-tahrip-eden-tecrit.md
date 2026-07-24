@@ -13,6 +13,7 @@ publishDate: '2012-06-30'
 mecra: bianet
 featuredImage: ./_images/lacanin-gercek-kavrami-ve-ozneyi-tahrip-eden-tecrit-featured.webp
 featuredImageAlt: ''
+featuredImageFit: fill
 ---
 
 Hiç kimseyle ilişki kuramayan, konuşamayan, duyamayan, dokunamayan kişi, başkasının yokluğunda kendisine yönelir. İnsanı sabitleyebilirsiniz ancak beyin çalışmaya, düşünmeye devam edecektir ve ürettikleri de her zaman için kontrolünüzde olmayacak ve zamanla tamamen kontrolünüzden çıkabilecektir.

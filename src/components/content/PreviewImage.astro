@@ -1,6 +1,8 @@
 ---
-// Öne çıkan görsel — STANDART alan (Yazı/Basında'da zorunlu). object-fit: contain,
+// Öne çıkan görsel — STANDART alan (Yazı/Basında'da zorunlu). Varsayılan object-fit: contain,
 // farklı en-boy oranları sayfayı bozmasın diye (kitap kapağındaki kırpmama ilkesiyle aynı).
+// `fit="fill"` yalnızca içeriğe özel olarak (featuredImageFit alanı üzerinden) tek tek
+// devreye alınır — örn. kutuya kırpılmadan tam oturması istenen özel üretim görseller.
 import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
 
@@ -8,15 +10,16 @@ interface Props {
   image: ImageMetadata;
   alt: string;
   caption?: string;
+  fit?: 'contain' | 'fill';
 }
 
-const { image, alt, caption } = Astro.props;
+const { image, alt, caption, fit = 'contain' } = Astro.props;
 ---
 
 {/* Kaynak görsel 800px'ten küçükse istenen genişlik onu geçmiyor — Astro'nun görsel
     servisinin küçük orijinalleri büyütüp bulanıklaştırmasını önler (bkz. Aşama 4E bulgusu). */}
 <figure class="preview-image">
-  <Image src={image} alt={alt} width={Math.min(800, image.width)} />
+  <Image src={image} alt={alt} width={Math.min(800, image.width)} style={`object-fit: ${fit};`} />
   {caption && <figcaption class="preview-caption">{caption}</figcaption>}
 </figure>
 
@@ -31,7 +34,6 @@ const { image, alt, caption } = Astro.props;
   .preview-image :global(img) {
     width: 100%;
     max-height: 320px;
-    object-fit: contain;
     display: block;
     background: var(--surface-2);
   }

@@ -79,6 +79,9 @@ const yazilar = defineCollection({
       // mecra yoksa: UI'da gri "Mustafaeren.net" rozeti gösterilir (bkz. mockup)
       featuredImage: image(), // ZORUNLU (Yazılar'ın standart alanı, opsiyonel değil)
       featuredImageAlt: z.string(), // dekoratifse bilinçli olarak boş string kabul edilir
+      // yoksa 'contain' (kırpmadan sığdırır); 'fill' yalnızca kutuya tam oturması istenen
+      // özel üretim görsellerde (ör. metin/kırpma hassasiyeti olmayan illüstrasyon) kullanılır
+      featuredImageFit: z.enum(['contain', 'fill']).optional(),
       pdf: linkSchema.optional(),
       editorNote: z.string().optional(), // nadir/koşullu — arşiv/çeviri notu
     }),

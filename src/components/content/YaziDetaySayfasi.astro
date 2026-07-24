@@ -81,7 +81,11 @@ const ogImage = await getImage({ src: entry.data.featuredImage, width: 1200 });
 
   {entry.data.editorNote && <EditorNote>{entry.data.editorNote}</EditorNote>}
 
-  <PreviewImage image={entry.data.featuredImage} alt={entry.data.featuredImageAlt} />
+  <PreviewImage
+    image={entry.data.featuredImage}
+    alt={entry.data.featuredImageAlt}
+    fit={entry.data.featuredImageFit}
+  />
 
   <ArticleBody>
     <Content />

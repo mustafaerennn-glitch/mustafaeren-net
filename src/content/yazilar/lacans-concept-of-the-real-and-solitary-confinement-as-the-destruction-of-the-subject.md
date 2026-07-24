@@ -8,6 +8,7 @@ topics:
 publishDate: '2026-07-24'
 featuredImage: ./_images/lacanin-gercek-kavrami-ve-ozneyi-tahrip-eden-tecrit-featured.webp
 featuredImageAlt: ''
+featuredImageFit: fill
 ---
 
 *Note: The original Turkish version of this article was first published on Bianet on 30 June 2012.*
@@ -34,21 +35,21 @@ But how can one describe what it feels like to be held in captivity not for a da
 
 When former prisoners are asked to recount such experiences, one frequently encounters responses like the following: [5]
 
-Were there particular practices or incidents that you witnessed or experienced during this period?
-
-What we lived through was not a series of isolated incidents. It was an uninterrupted, infernal regime of cruelty. To describe torture by saying, "This happened one day, then something else happened the next," might perhaps leave the listener or reader with a few horrifying images. But those endless minutes, those days that would not pass, those months, those years—these cannot be conveyed simply by saying, "I witnessed this" or "I experienced that." Others have written about it. But how much can anyone write? Whatever is written remains inadequate.
-
-Even listening to accounts of the September 12 period, and particularly those concerning this prison, is deeply difficult for people.
-
-You are right to find it difficult. I myself struggle to speak about it and to write about it.
-
-After your release, were you able to share your experiences with your family?
-
-Only occasionally... A nightmare cannot truly be shared.
+> "**Were there particular practices or incidents that you witnessed or experienced during this period?**
+>
+> What we lived through was not a series of isolated incidents. It was an uninterrupted, infernal regime of cruelty. To describe torture by saying, "This happened one day, then something else happened the next," might perhaps leave the listener or reader with a few horrifying images. But those endless minutes, those days that would not pass, those months, those years—these cannot be conveyed simply by saying, "I witnessed this" or "I experienced that." Others have written about it. But how much can anyone write? Whatever is written remains inadequate.
+>
+> **Even listening to accounts of the September 12 period, and particularly those concerning this prison, is deeply difficult for people.**
+>
+> You are right to find it difficult. I myself struggle to speak about it and to write about it.
+>
+> **After your release, were you able to share your experiences with your family?**
+>
+> Only occasionally... A nightmare cannot truly be shared."
 
 J. D. Nasio, one of Lacan's students, offers an example strikingly similar to the final sentence above when explaining the Real. Imagine someone who wakes after a terrifying nightmare and, the next morning, attempts to describe it:
 
-"I remember experiencing a similar terror as a child when I saw a shadow climbing the walls of my room."
+> "I remember experiencing a similar terror as a child when I saw a shadow climbing the walls of my room."
 
 According to Nasio, "the Real is precisely the substance of fear itself, the very material of emotion." It is the emotional experience that remains unchanged despite the passage of decades, the part of our psychic life that time cannot erase or transform.[6] The fear cannot itself be expressed; instead, it is approached indirectly through an earlier experience. The Real cannot be spoken, symbolized, or represented. The moment it is symbolized, it ceases to be the Real.
 
@@ -58,107 +59,107 @@ Former prisoners consistently state that prolonged solitary confinement causes p
 
 Günter Sonnenberg, a member of the Red Army Faction (RAF) who spent sixteen years imprisoned in Stuttgart-Stammheim, described solitary confinement in these words:
 
-"The problem is this: when a person remains in a closed room for a long time, hearing no sounds, seeing no one, unable even to look out of a window, when there are no sensory stimuli at all, the person becomes ill. Human beings need stimuli and responses from others. When these disappear, isolation sets in, and one begins to break down."[8]
+> "The problem is this: when a person remains in a closed room for a long time, hearing no sounds, seeing no one, unable even to look out of a window, when there are no sensory stimuli at all, the person becomes ill. Human beings need stimuli and responses from others. When these disappear, isolation sets in, and one begins to break down."[8]
 
 What Sonnenberg calls the absence of stimuli is known scientifically as sensory deprivation. Human beings exist only through their senses and through their relationships with other people. When deprived of both, psychological disturbance becomes almost inevitable. Here Lacan's understanding of the Symbolic becomes particularly illuminating. The individual, the One, cannot exist in isolation but always exists in relation to others. Every signifier acquires meaning only through its relation to other signifiers. The Symbolic therefore consists of at least two elements: the One and the Others.[9] To force the One into absolute isolation is therefore to initiate a process of destruction.
 
-"It is torture. Torture that leaves no evidence. There are no wounds on the body, no visible proof. Yet you know it is happening because your consciousness begins to dissolve. Your memory deteriorates. The boundary between reality and imagination disappears, and you begin to confuse the two. Under such conditions, you even forget how to speak, because there is no one with whom you can speak."[10]
+> "It is torture. Torture that leaves no evidence. There are no wounds on the body, no visible proof. Yet you know it is happening because your consciousness begins to dissolve. Your memory deteriorates. The boundary between reality and imagination disappears, and you begin to confuse the two. Under such conditions, you even forget how to speak, because there is no one with whom you can speak."[10]
 
 A person who can neither relate to others nor speak, hear, or touch inevitably turns inward in the absence of others. One may immobilize the body, yet the mind continues to function. It continues to think. What it produces, however, cannot remain under external control forever. Over time it may escape control altogether. This is precisely why findings suggesting that prolonged solitary confinement can produce schizophrenia-like symptoms deserve serious attention.[11]
 
 Another former prisoner, Andreas Vogel, who also spent years in solitary confinement, described the experience as follows: [12]
 
-"You are constantly talking to yourself. While talking to yourself, you believe you are actually speaking with other people. But you are not, you are speaking only inside your own head, and you cannot recognize this. Sometimes this continues even years later. Solitary confinement drives a person inward. You become both the object of the attack and its target. To spend all your time confronting yourself is extraordinarily difficult."
+> "You are constantly talking to yourself. While talking to yourself, you believe you are actually speaking with other people. But you are not, you are speaking only inside your own head, and you cannot recognize this. Sometimes this continues even years later. Solitary confinement drives a person inward. You become both the object of the attack and its target. To spend all your time confronting yourself is extraordinarily difficult."
 
 Perhaps no testimony illustrates both the indescribability of solitary confinement and its devastating psychological effects more vividly than the letters of Ulrike Meinhof. One of the leading figures of the Red Army Faction (RAF), Meinhof was imprisoned in 1972 and was found dead in her prison cell on 9 May 1976, during the fourth year of her imprisonment. In one of her letters she attempted to describe solitary confinement: [13]
 
-**Buried Alive by Bullets**
-
-*16 June 1972 – 9 February 1973*
-
-The feeling that something is exploding inside your head—as though your skull is about to burst.
-
-The sensation that your spinal cord is being forced upward into your brain.
-
-The feeling that your brain is shrivelling like dried fruit.
-
-A constant sense of tension, as though you are being controlled by remote control.
-
-The feeling that your heart is leaving your body through urination, as though you can no longer hold your own fluids.
-
-The feeling that the cell itself is moving. You wake up, open your eyes, and the cell is moving. Then, when sunlight enters in the afternoon, it suddenly stops. You cannot stop the sensation that it is moving.
-
-You cannot tell whether you are trembling from cold or from fever. You cannot make sense of why you are shaking.
-
-Speaking in a normal voice requires enormous effort, as much effort as shouting.
-
-The feeling that your tongue is paralysed. You can no longer recognize the meanings of words; you merely guess them. You become unable to tolerate hissing sounds. Guards, visits, exercise periods, all begin to resemble hallucinations.
-
-Headaches.
-
-Flashes of lightning.
-
-Grammar, sentence structure, syntax, none of them remain under your control. While writing the second line of a page, you have already forgotten how the first line began.
-
-The feeling that your insides are burning.
-
-Whenever you try to explain what is happening or what might be happening, you experience the sensation of throwing boiling water into another person's face or as though it were boiling gasoline capable of consuming an entire human body. An overwhelming aggression that has nowhere to go. That is the worst part.
-
-The clear awareness that you have no chance of survival.
-
-Complete failure.
-
-The inability to explain any of it.
-
-Nothing remains from visits. Half an hour later you struggle mechanically to remember whether the visit took place today or last week.
-
-Bathing once a week feels like briefly coming up for air. The sensation of relief lasts only a few hours.
-
-The feeling that time and space have collapsed into one another.
-
-The feeling that your body has lost its shape.
-
-Staggering.
-
-Then, suddenly, overwhelming joy simply from hearing something that reminds you of the acoustic difference between night and day.
-
-The feeling that time flows over you again and again; that your brain expands again and again; that your spinal cord sinks downward again and again, for weeks.
-
-The sensation that your skin has been peeled away.
-
-**Second Stay in the Dead Wing (December 1973)**
-
-You wake up to a roaring sound in your ears, convinced that you are being beaten.
-
-The feeling that your body hangs loose and lifeless.
-
-The sensation of existing inside a vacuum, as though you have been sealed inside a bullet.
-
-Then comes shock, as though an iron plate has fallen onto your head.
-
-The comparisons that come to mind: a grinding machine, skin stretched by speed, a space simulation capsule, Kafka's Penal Colony, a man lying on a bed of nails, an endless ride on a carousel.
-
-The radio brings only the slightest relief, like slowing from 240 kilometers per hour to 190.
-
-The fact that all of this occurs in a cell physically indistinguishable from any other makes communication with those who have never experienced sensory isolation virtually impossible.
-
-It also confuses the prisoner. (The whiteness of the cells, like military hospital rooms, intensifies the terror, but only together with the silence. Once you realize this, you begin painting the walls.)
-
-Naturally, under such circumstances, one begins to prefer death.
-
-Nils Milberg, who experienced similar conditions in the empty prison hospital wing at Frankfurt-Preungesheim, accused the judge of trying to kill him.
-
-What actually takes place is an execution carried out from within. It is as though one's interior dissolves, like substances melting in acid. Concentrating all one's energy on resistance may slow the process, but it cannot prevent its effects entirely.
-
-Part of the insidiousness lies in being stripped of one's personhood.
-
-In this permanent state of exception, no one exists except yourself.
+> **Buried Alive by Bullets**
+>
+> *16 June 1972 – 9 February 1973*
+>
+> The feeling that something is exploding inside your head—as though your skull is about to burst.
+>
+> The sensation that your spinal cord is being forced upward into your brain.
+>
+> The feeling that your brain is shrivelling like dried fruit.
+>
+> A constant sense of tension, as though you are being controlled by remote control.
+>
+> The feeling that your heart is leaving your body through urination, as though you can no longer hold your own fluids.
+>
+> The feeling that the cell itself is moving. You wake up, open your eyes, and the cell is moving. Then, when sunlight enters in the afternoon, it suddenly stops. You cannot stop the sensation that it is moving.
+>
+> You cannot tell whether you are trembling from cold or from fever. You cannot make sense of why you are shaking.
+>
+> Speaking in a normal voice requires enormous effort, as much effort as shouting.
+>
+> The feeling that your tongue is paralysed. You can no longer recognize the meanings of words; you merely guess them. You become unable to tolerate hissing sounds. Guards, visits, exercise periods, all begin to resemble hallucinations.
+>
+> Headaches.
+>
+> Flashes of lightning.
+>
+> Grammar, sentence structure, syntax, none of them remain under your control. While writing the second line of a page, you have already forgotten how the first line began.
+>
+> The feeling that your insides are burning.
+>
+> Whenever you try to explain what is happening or what might be happening, you experience the sensation of throwing boiling water into another person's face or as though it were boiling gasoline capable of consuming an entire human body. An overwhelming aggression that has nowhere to go. That is the worst part.
+>
+> The clear awareness that you have no chance of survival.
+>
+> Complete failure.
+>
+> The inability to explain any of it.
+>
+> Nothing remains from visits. Half an hour later you struggle mechanically to remember whether the visit took place today or last week.
+>
+> Bathing once a week feels like briefly coming up for air. The sensation of relief lasts only a few hours.
+>
+> The feeling that time and space have collapsed into one another.
+>
+> The feeling that your body has lost its shape.
+>
+> Staggering.
+>
+> Then, suddenly, overwhelming joy simply from hearing something that reminds you of the acoustic difference between night and day.
+>
+> The feeling that time flows over you again and again; that your brain expands again and again; that your spinal cord sinks downward again and again, for weeks.
+>
+> The sensation that your skin has been peeled away.
+>
+> **Second Stay in the Dead Wing (December 1973)**
+>
+> You wake up to a roaring sound in your ears, convinced that you are being beaten.
+>
+> The feeling that your body hangs loose and lifeless.
+>
+> The sensation of existing inside a vacuum, as though you have been sealed inside a bullet.
+>
+> Then comes shock, as though an iron plate has fallen onto your head.
+>
+> The comparisons that come to mind: a grinding machine, skin stretched by speed, a space simulation capsule, Kafka's Penal Colony, a man lying on a bed of nails, an endless ride on a carousel.
+>
+> The radio brings only the slightest relief, like slowing from 240 kilometers per hour to 190.
+>
+> The fact that all of this occurs in a cell physically indistinguishable from any other makes communication with those who have never experienced sensory isolation virtually impossible.
+>
+> It also confuses the prisoner. (The whiteness of the cells, like military hospital rooms, intensifies the terror, but only together with the silence. Once you realize this, you begin painting the walls.)
+>
+> Naturally, under such circumstances, one begins to prefer death.
+>
+> Nils Milberg, who experienced similar conditions in the empty prison hospital wing at Frankfurt-Preungesheim, accused the judge of trying to kill him.
+>
+> What actually takes place is an execution carried out from within. It is as though one's interior dissolves, like substances melting in acid. Concentrating all one's energy on resistance may slow the process, but it cannot prevent its effects entirely.
+>
+> Part of the insidiousness lies in being stripped of one's personhood.
+>
+> In this permanent state of exception, no one exists except yourself.
 
 Meinhof does not describe solitary confinement directly. Instead, she attempts to make it intelligible by drawing upon previous experiences and metaphors. Two expressions in particular deserve emphasis: "dissolving from within" and "being stripped of one's personhood." It is here that we must return once more to Lacan.
 
 Explaining the Symbolic through his notion of the Symbolic Father, J. D. Nasio writes: [14]
 
-"The Symbolic Father is not the symbolic representation of paternal authority, but rather a unique signifier that organizes psychic life and guarantees its coherence. For clinicians, the concept of the Symbolic Father is particularly useful in explaining the mechanism underlying psychosis. In psychosis, mental life collapses because the signifier that organizes psychic functioning, the Symbolic Father, has, like a blown fuse, ceased to operate."
+> "The Symbolic Father is not the symbolic representation of paternal authority, but rather a unique signifier that organizes psychic life and guarantees its coherence. For clinicians, the concept of the Symbolic Father is particularly useful in explaining the mechanism underlying psychosis. In psychosis, mental life collapses because the signifier that organizes psychic functioning, the Symbolic Father, has, like a blown fuse, ceased to operate."
 
 Through sensory deprivation, solitary confinement destroys precisely what Lacan identifies as the Symbolic order. This conclusion has also been supported by numerous scientific experiments and has long entered the medical literature.
 
@@ -166,11 +167,11 @@ Among the most influential are the sensory deprivation experiments conducted at 
 
 Following their experiments in the early 1950s, Gross and Svab summarized some of their findings as follows: [18]
 
-"After an initial period during which the subjects generally slept, they gradually lost their sense of calm and relief. Their capacity for controlled thinking also deteriorated. Their emotional states fluctuated between apathy, irritability, and distress, accompanied by restlessness, fatigue, and headaches."
+> "After an initial period during which the subjects generally slept, they gradually lost their sense of calm and relief. Their capacity for controlled thinking also deteriorated. Their emotional states fluctuated between apathy, irritability, and distress, accompanied by restlessness, fatigue, and headaches."
 
 They further observed:
 
-"Even when offered additional financial compensation, the participants proved unable to continue the experiments for another two or three days. For some, the conditions became so unbearable that the planned psychological assessments had to be terminated prematurely."
+> "Even when offered additional financial compensation, the participants proved unable to continue the experiments for another two or three days. For some, the conditions became so unbearable that the planned psychological assessments had to be terminated prematurely."
 
 Taken together, these experiments clearly demonstrate the destructive effects of sensory deprivation on the human mind and strongly support Lacan's assertion that the One cannot exist in complete isolation.
 

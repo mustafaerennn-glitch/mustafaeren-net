@@ -8,6 +8,7 @@ topics:
 publishDate: '2026-07-24'
 featuredImage: ./_images/lacanin-gercek-kavrami-ve-ozneyi-tahrip-eden-tecrit-featured.webp
 featuredImageAlt: ''
+featuredImageFit: fill
 ---
 
 *Note : la version originale turque de cet article a été publiée pour la première fois sur Bianet le 30 juin 2012.*
@@ -34,21 +35,21 @@ Mais comment décrire ce que l'on éprouve à être enfermé non pas un jour, un
 
 Lorsque l’on demande aux survivants de témoigner de ces expériences, l'on se heurte fréquemment à de tels propos :[5]
 
-Y a-t-il eu durant cette période des pratiques ou des événements concrets dont vous avez été témoin ou victime ?
-
-Ce que nous avons vécu ne relevait pas d'incidents isolés. Nous parlons d’une cruauté ininterrompue. Décrire la torture en disant : « Ce jour-là, il s’est passé ceci, le lendemain cela », peut éveiller quelques images terribles dans l'esprit de qui écoute ou lit. Mais ces minutes sans fin, ces jours, ces mois et ces années qui n'en finissaient pas de passer ne sauraient se transmettre par de simples mots comme « J’ai vu ceci » ou « J’ai vécu cela ». Certains ont écrit là-dessus. Mais que peut-on bien écrire ? Tout ce qui s'écrit demeure insuffisant !
-
-Même écouter les récits sur la période consécutive au 12 septembre [le coup d’État militaire de 1980] et, plus particulièrement, sur cette prison [la prison de Diyarbakır] s'avère très difficile pour les gens.
-
-Vous avez raison de dire que c’est difficile. Il m’est tout aussi difficile d’en parler que d’en écrire.
-
-Avez-vous pu partager ce que vous avez vécu avec vos proches après votre libération ?
-
-Très rarement... Un cauchemar ne se partage pas vraiment.
+> « **Y a-t-il eu durant cette période des pratiques ou des événements concrets dont vous avez été témoin ou victime ?**
+>
+> Ce que nous avons vécu ne relevait pas d'incidents isolés. Nous parlons d’une cruauté ininterrompue. Décrire la torture en disant : « Ce jour-là, il s’est passé ceci, le lendemain cela », peut éveiller quelques images terribles dans l'esprit de qui écoute ou lit. Mais ces minutes sans fin, ces jours, ces mois et ces années qui n'en finissaient pas de passer ne sauraient se transmettre par de simples mots comme « J’ai vu ceci » ou « J’ai vécu cela ». Certains ont écrit là-dessus. Mais que peut-on bien écrire ? Tout ce qui s'écrit demeure insuffisant !
+>
+> **Même écouter les récits sur la période consécutive au 12 septembre [le coup d’État militaire de 1980] et, plus particulièrement, sur cette prison [la prison de Diyarbakır] s'avère très difficile pour les gens.**
+>
+> Vous avez raison de dire que c’est difficile. Il m’est tout aussi difficile d’en parler que d’en écrire.
+>
+> **Avez-vous pu partager ce que vous avez vécu avec vos proches après votre libération ?**
+>
+> Très rarement... Un cauchemar ne se partage pas vraiment. »
 
 J. D. Nasio, élève de Lacan, recourt, pour expliquer le Réel, à un exemple qui rejoint précisément la dernière phrase de ce témoignage : celui du cauchemar. Nasio décrit un sujet qui s'éveille la nuit d’un terrible cauchemar et tente, le lendemain matin, d’expliquer ce qu’il a éprouvé:
 
-« Je me souviens d’avoir ressenti enfant une peur et une terreur similaires lorsqu’une ombre grimpait sur les murs de ma chambre. »
+> « Je me souviens d’avoir ressenti enfant une peur et une terreur similaires lorsqu’une ombre grimpait sur les murs de ma chambre. »
 
 Selon Nasio, « le Réel est précisément la nature de la peur, la matière même du sentiment ». C’est un état émotionnel que nous éprouvons quarante ou cinquante ans plus tard exactement comme dans l’enfance, un état ineffaçable et inaltéré. C’est « cette partie de notre monde psychique qui ne s’est pas modifiée au fil du temps ».[6]
 
@@ -60,119 +61,119 @@ Les détenus qui témoignent qu’un isolement prolongé conduit à une destruct
 
 Günter Sonnenberg, arrêté en tant que membre de la Fraction Armée Rouge (RAF), enfermé dans la prison de Stuttgart-Stammheim et incarcéré pendant seize ans, déclare à propos de l’isolement:[8]
 
-« Le problème est le suivant : lorsqu’un être humain demeure longtemps dans un espace clos, n’entend aucun bruit, ne voit aucun être humain, ne peut pas regarder par la fenêtre, c’est-à-dire lorsqu’il se trouve privé de stimuli tels que des sons ou des impressions visuelles, il devient malade. Car l’être humain a besoin de stimuli et de réponses en retour. Si ceux-ci viennent à manquer, l’être humain est isolé et tombe malade. »
+> « Le problème est le suivant : lorsqu’un être humain demeure longtemps dans un espace clos, n’entend aucun bruit, ne voit aucun être humain, ne peut pas regarder par la fenêtre, c’est-à-dire lorsqu’il se trouve privé de stimuli tels que des sons ou des impressions visuelles, il devient malade. Car l’être humain a besoin de stimuli et de réponses en retour. Si ceux-ci viennent à manquer, l’être humain est isolé et tombe malade. »
 
 L’état que Sonnenberg décrit par le manque de stimuli est scientifiquement connu sous le nom de privation sensorielle ou privation perceptive. L’être humain ne peut exister que par ses sens et dans sa relation avec autrui. Si cela lui est retiré, des troubles surviennent inévitablement. C’est précisément ici que la conception lacanienne du Symbolique devient intelligible. Le « Un » ne saurait exister seul ; il se réfère toujours aux « Autres ». Chaque signifiant ne prend sa valeur qu'au regard d'autres signifiants. C’est pourquoi l’ordre symbolique comporte deux unités: le « Un » et les « Autres ».[9] Forcer le « Un » à l'isolement, c’est en précipiter la destruction:[10]
 
-« C’est une torture. Une torture qui ne laisse pas de traces. C’est-à-dire qu’il n’y a pas de blessures sur le corps. Pas de preuves. Mais l’être humain le ressent. Car la conscience se dissout. La mémoire se perd. La frontière entre réalité et représentation se brouille, on confond réalité et fiction. Dans ces conditions, l’être humain désapprend par exemple jusqu'à la parole, faute de pouvoir parler avec quiconque. »
+> « C’est une torture. Une torture qui ne laisse pas de traces. C’est-à-dire qu’il n’y a pas de blessures sur le corps. Pas de preuves. Mais l’être humain le ressent. Car la conscience se dissout. La mémoire se perd. La frontière entre réalité et représentation se brouille, on confond réalité et fiction. Dans ces conditions, l’être humain désapprend par exemple jusqu'à la parole, faute de pouvoir parler avec quiconque. »
 
 Celui qui ne peut nouer de relation avec personne, ni parler, ni entendre, ni toucher, se tourne vers lui-même en l’absence de l’Autre. On peut immobiliser le corps, mais l’esprit continue de penser. Ses productions ne demeurent toutefois pas éternellement sous contrôle et peuvent avec le temps échapper totalement à toute maîtrise. Le constat qu’un isolement de longue durée peut conduire à un tableau clinique proche de la schizophrénie est à cet égard révélateur.[11]
 
-« On se parle constamment à soi-même. Tout en se parlant à soi-même, on croit s'adresser réellement à d’autres. Mais il n'en est rien, on ne parle que dans sa tête, sans même s’en rendre compte. Parfois cela se répète des années plus tard encore. L’isolement rabat l’être humain sur lui-même. On se trouve au centre de l'attaque tout en en étant la cible. Il est extrêmement difficile d’être constamment confronté à son propre moi. »(D’après les récits d’Andreas Vogel, un autre prisonnier soumis à l'isolement.)[12]
+> « On se parle constamment à soi-même. Tout en se parlant à soi-même, on croit s'adresser réellement à d’autres. Mais il n'en est rien, on ne parle que dans sa tête, sans même s’en rendre compte. Parfois cela se répète des années plus tard encore. L’isolement rabat l’être humain sur lui-même. On se trouve au centre de l'attaque tout en en étant la cible. Il est extrêmement difficile d’être constamment confronté à son propre moi. »(D’après les récits d’Andreas Vogel, un autre prisonnier soumis à l'isolement.)[12]
 
 L’un des exemples les plus saisissants de l’impossibilité de décrire l’isolement et ses effets sur l’être humain réside dans les lettres d’Ulrike Meinhof. Meinhof, l’une des figures de proue de la Fraction Armée Rouge, fut arrêtée en 1972 et retrouvée morte dans sa cellule le 9 mai 1976, lors de sa quatrième année de détention. Dans l’une de ses lettres, elle tente d'exprimer l’isolement en ces termes:[13]
 
-**Enfermée dans une sphère**
-
-*16 juin 1972 – 9 février 1973*
-
-La sensation que la tête explose (la sensation que la boîte crânienne devrait en fait éclater, s’arracher).
-
-La sensation que la moelle épinière est compressée dans le cerveau.
-
-La sensation que le cerveau rétrécit, comme un fruit séché.
-
-La sensation d’être constamment et imperceptiblement sous tension, comme si l’on était téléguidée.
-
-La sensation qu'on vous arrache vos associations d’idées.
-
-La sensation de pisser son âme hors du corps, comme lorsque l'on ne peut retenir son urine.
-
-La sensation que la cellule roule. Tu te réveilles, tu ouvres les yeux : la cellule roule ; l'après-midi, quand le soleil entre, elle s'arrête net. La sensation de rouler ne te quitte pas. Tu ne peux déterminer si tu trembles de froid ou de fièvre — tu as froid.
-
-Pour parler à voix normale, il faut fournir un effort, comme s'il fallait parler très fort.
-
-La sensation de devenir muet — de ne plus saisir le sens des mots, de ne plus faire que deviner.
-
-Les sifflements (s, ss, tz, z, ch) sont intolérables.
-
-Les gardiens, les visites, la promenade apparaissent totalement irréels, comme des hallucinations.
-
-Maux de tête.
-
-Éclairs.
-
-Structure de la phrase, grammaire, syntaxe — incontrôlables. En écrivant : deux lignes ; à la fin de la deuxième, on a déjà oublié le début de la première.
-
-La sensation de brûler de l'intérieur.
-
-Quand on dit ce qui est ou ce qui pourrait être, la sensation de jeter de l'eau bouillante ou de l'essence enflammée au visage de l'autre.
-
-Une agressivité sans la moindre échappatoire.
-
-C'est le pire.
-
-La certitude que l'on n'a aucune chance de survivre ; l'échec absolu à le faire comprendre.
-
-Des visites, il ne reste rien. Une demi-heure plus tard, on ne peut plus que reconstruire mécaniquement si la visite a eu lieu aujourd'hui ou la semaine précédente.
-
-Se baigner une fois par semaine signifie un instant de réapparition, de répit — cela dure quelques heures.
-
-La sensation que le temps et l'espace se confondent.
-
-La sensation de défiguration, de titubement.
-
-Puis une joie folle lorsqu'on perçoit quelque chose qui rappelle la différence acoustique entre le jour et la nuit.
-
-La sensation que le temps s'écoule, que le cerveau se dilate de nouveau, que la moelle épinière redescend — pendant des semaines.
-
-La sensation d'avoir la peau arrachée.
-
-**Deuxième séjour dans le Quartier des morts (décembre 1973)**
-
-Un bourdonnement dans l'oreille ; on s'éveille avec la sensation d'être frappé.
-
-La sensation de se mouvoir comme au ralenti.
-
-La sensation de se trouver dans le vide, comme si l'on était enfermé dans une boule de plomb.
-
-Puis le choc. Comme si une plaque de fer s'abattait sur la tête.
-
-Comparaisons et notions qui viennent à l'esprit : broyeur psychique, lissage de la peau par la vitesse, capsule de simulation spatiale, La Colonie pénitentiaire de Kafka — l'homme sur le lit de clous —, un manège perpétuel.
-
-À propos de la radio : une sensation de soulagement minime, un peu comme le passage de 240 km/h à 190 km/h.
-
-Que tout cela se déroule dans une cellule qui ne se distingue extérieurement en rien des autres cellules renforce encore les effets de cette expérience et rend toute communication impossible avec des personnes qui ne connaissent pas l'isolement acoustique.
-
-Cela désoriente également le prisonnier lui-même. (Que les cellules soient blanches, comme les chambres d'un hôpital militaire, rend la terreur éprouvée plus intense encore ; mais seulement conjuguée au silence. Dès qu'on s'en rend compte, on repeint les murs.)
-
-Naturellement, dans une telle situation, on préfère la mort.
-
-Nils Milberg, qui se trouvait dans une telle cellule (service médical vide) à Francfort-Preungesheim, a accusé le juge de vouloir le tuer.
-
-Mais c'est à l'exécution de la « mise à mort » que nous sommes exposés là-dedans.
-
-Il s'agit d'une dissolution de l'intérieur, comme des substances qui se dissolvent dans l'acide.
-
-En se concentrant sur la résistance, on peut ralentir ce processus, mais on ne peut en annuler totalement les effets.
-
-Une partie de cette perfidie consiste à se voir dépossédé de son unité personnelle.
-
-Dans cet état d'exception, il n'y a personne d'autre que soi-même.
+> **Enfermée dans une sphère**
+>
+> *16 juin 1972 – 9 février 1973*
+>
+> La sensation que la tête explose (la sensation que la boîte crânienne devrait en fait éclater, s’arracher).
+>
+> La sensation que la moelle épinière est compressée dans le cerveau.
+>
+> La sensation que le cerveau rétrécit, comme un fruit séché.
+>
+> La sensation d’être constamment et imperceptiblement sous tension, comme si l’on était téléguidée.
+>
+> La sensation qu'on vous arrache vos associations d’idées.
+>
+> La sensation de pisser son âme hors du corps, comme lorsque l'on ne peut retenir son urine.
+>
+> La sensation que la cellule roule. Tu te réveilles, tu ouvres les yeux : la cellule roule ; l'après-midi, quand le soleil entre, elle s'arrête net. La sensation de rouler ne te quitte pas. Tu ne peux déterminer si tu trembles de froid ou de fièvre — tu as froid.
+>
+> Pour parler à voix normale, il faut fournir un effort, comme s'il fallait parler très fort.
+>
+> La sensation de devenir muet — de ne plus saisir le sens des mots, de ne plus faire que deviner.
+>
+> Les sifflements (s, ss, tz, z, ch) sont intolérables.
+>
+> Les gardiens, les visites, la promenade apparaissent totalement irréels, comme des hallucinations.
+>
+> Maux de tête.
+>
+> Éclairs.
+>
+> Structure de la phrase, grammaire, syntaxe — incontrôlables. En écrivant : deux lignes ; à la fin de la deuxième, on a déjà oublié le début de la première.
+>
+> La sensation de brûler de l'intérieur.
+>
+> Quand on dit ce qui est ou ce qui pourrait être, la sensation de jeter de l'eau bouillante ou de l'essence enflammée au visage de l'autre.
+>
+> Une agressivité sans la moindre échappatoire.
+>
+> C'est le pire.
+>
+> La certitude que l'on n'a aucune chance de survivre ; l'échec absolu à le faire comprendre.
+>
+> Des visites, il ne reste rien. Une demi-heure plus tard, on ne peut plus que reconstruire mécaniquement si la visite a eu lieu aujourd'hui ou la semaine précédente.
+>
+> Se baigner une fois par semaine signifie un instant de réapparition, de répit — cela dure quelques heures.
+>
+> La sensation que le temps et l'espace se confondent.
+>
+> La sensation de défiguration, de titubement.
+>
+> Puis une joie folle lorsqu'on perçoit quelque chose qui rappelle la différence acoustique entre le jour et la nuit.
+>
+> La sensation que le temps s'écoule, que le cerveau se dilate de nouveau, que la moelle épinière redescend — pendant des semaines.
+>
+> La sensation d'avoir la peau arrachée.
+>
+> **Deuxième séjour dans le Quartier des morts (décembre 1973)**
+>
+> Un bourdonnement dans l'oreille ; on s'éveille avec la sensation d'être frappé.
+>
+> La sensation de se mouvoir comme au ralenti.
+>
+> La sensation de se trouver dans le vide, comme si l'on était enfermé dans une boule de plomb.
+>
+> Puis le choc. Comme si une plaque de fer s'abattait sur la tête.
+>
+> Comparaisons et notions qui viennent à l'esprit : broyeur psychique, lissage de la peau par la vitesse, capsule de simulation spatiale, La Colonie pénitentiaire de Kafka — l'homme sur le lit de clous —, un manège perpétuel.
+>
+> À propos de la radio : une sensation de soulagement minime, un peu comme le passage de 240 km/h à 190 km/h.
+>
+> Que tout cela se déroule dans une cellule qui ne se distingue extérieurement en rien des autres cellules renforce encore les effets de cette expérience et rend toute communication impossible avec des personnes qui ne connaissent pas l'isolement acoustique.
+>
+> Cela désoriente également le prisonnier lui-même. (Que les cellules soient blanches, comme les chambres d'un hôpital militaire, rend la terreur éprouvée plus intense encore ; mais seulement conjuguée au silence. Dès qu'on s'en rend compte, on repeint les murs.)
+>
+> Naturellement, dans une telle situation, on préfère la mort.
+>
+> Nils Milberg, qui se trouvait dans une telle cellule (service médical vide) à Francfort-Preungesheim, a accusé le juge de vouloir le tuer.
+>
+> Mais c'est à l'exécution de la « mise à mort » que nous sommes exposés là-dedans.
+>
+> Il s'agit d'une dissolution de l'intérieur, comme des substances qui se dissolvent dans l'acide.
+>
+> En se concentrant sur la résistance, on peut ralentir ce processus, mais on ne peut en annuler totalement les effets.
+>
+> Une partie de cette perfidie consiste à se voir dépossédé de son unité personnelle.
+>
+> Dans cet état d'exception, il n'y a personne d'autre que soi-même.
 
 Meinhof ne décrit pas directement l’isolement, mais s'efforce de le faire entendre à travers ses expériences passées. Dans ce récit, les expressions « dissolution de l’intérieur » et « se voir dépossédé de son unité personnelle » méritent d'être soulignées ; il convient ici de revenir à Lacan.
 
 Nasio, qui explicite le Symbolique dans la triade lacanienne à travers le concept du « Père symbolique » et rappelle que le « Un » ne saurait exister seul, développe:[14]
 
-« Le Père symbolique n’est pas l’image symbolique de l'autorité paternelle, mais un signifiant spécifique qui ordonne cette vie et garantit son intégrité. Pour les cliniciens, le concept de “Père symbolique” est très utile pour expliquer le mécanisme qui mène à la psychose. Dans cette maladie, la santé psychique s’est effondrée parce que le signifiant que l’on nomme “Père symbolique” et qui règle le fonctionnement mental a sauté comme un fusible. »
+> « Le Père symbolique n’est pas l’image symbolique de l'autorité paternelle, mais un signifiant spécifique qui ordonne cette vie et garantit son intégrité. Pour les cliniciens, le concept de “Père symbolique” est très utile pour expliquer le mécanisme qui mène à la psychose. Dans cette maladie, la santé psychique s’est effondrée parce que le signifiant que l’on nomme “Père symbolique” et qui règle le fonctionnement mental a sauté comme un fusible. »
 
 En privant le sujet de ses perceptions sensorielles, l’isolement détruit précisément cette dimension que Lacan définit comme l’ordre symbolique. Ce phénomène a d’ailleurs été mis en évidence par de nombreuses expérimentations et fait désormais partie intégrante de la littérature médicale. Parmi les travaux les plus connus figurent les expériences sur la privation perceptive menées en 1954 au laboratoire Hebb de l’Université McGill (Canada),[15] les recherches entreprises dès 1971 à la clinique universitaire de Hambourg dans une unité spécialisée baptisée « Camera Silens »,[16] ainsi que les études de Jan Gross et Ludvik Svab.[17]
 
 Dans leur étude intitulée Évaluation d’expériences sur la privation sensorielle, rédigée au début des années 1950, Gross et Svab aboutissaient notamment aux constats suivants:[18]
 
-« Alors que les sujets dormaient généralement au début, ils perdaient progressivement tout sentiment de repos et d'apaisement ; ils perdaient en outre la capacité de penser de manière contrôlée. Leur humeur oscillait entre apathie, irritabilité et anxiété. Dans le même temps, de l’agitation, de la fatigue et des maux de tête faisaient leur apparition. »
+> « Alors que les sujets dormaient généralement au début, ils perdaient progressivement tout sentiment de repos et d'apaisement ; ils perdaient en outre la capacité de penser de manière contrôlée. Leur humeur oscillait entre apathie, irritabilité et anxiété. Dans le même temps, de l’agitation, de la fatigue et des maux de tête faisaient leur apparition. »
 
-« Bien qu’une rémunération supérieure leur eût été promise, les sujets se sont révélés incapables de prolonger les expériences de deux ou trois jours supplémentaires. Pour certains d'entre eux, le séjour dans les conditions du test était devenu si insupportable que l’analyse psychologique prévue a dû être interrompue prématurément. »
+> « Bien qu’une rémunération supérieure leur eût été promise, les sujets se sont révélés incapables de prolonger les expériences de deux ou trois jours supplémentaires. Pour certains d'entre eux, le séjour dans les conditions du test était devenu si insupportable que l’analyse psychologique prévue a dû être interrompue prématurément. »
 
 Toutes ces expérimentations mettent en évidence les effets destructeurs de la privation perceptive sur l’être humain et confirment la thèse lacanienne selon laquelle le « Un » ne peut exister dans l’isolement. C’est précisément cette spécificité qui distingue l’isolement des autres formes de détention et le rend si difficile à décrire et à comprendre. Il s’agit d’un état que même ceux qui l’ont traversé n’ont pu appréhender pleinement, mais seulement endurer.
 
