@@ -5,6 +5,10 @@ description: Hiç kimseyle ilişki kuramayan, konuşamayan, duyamayan, dokunamay
 topics:
   - kutsal-insan
   - tecrit-izolasyon
+translations:
+  - lacans-concept-of-the-real-and-solitary-confinement-as-the-destruction-of-the-subject
+  - lacans-konzept-des-realen-und-die-isolation-als-zerstorung-des-subjekts
+  - le-concept-du-reel-chez-lacan-et-lisolement-comme-destruction-du-sujet
 publishDate: '2012-06-30'
 mecra: bianet
 featuredImage: ./_images/lacanin-gercek-kavrami-ve-ozneyi-tahrip-eden-tecrit-featured.webp
