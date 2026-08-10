@@ -14,7 +14,6 @@ featuredImage: ./_images/BirGun-gunesle-kose-kapmaca-20260805.png
 featuredImageAlt: 'BirGün''ün "Güneşle köşe kapmaca" başlıklı haberinden ekran görüntüsü.'
 ---
 **[BirGün](https://www.birgun.net/haber/gunesle-kose-kapmaca-727495) – 5 Ağustos 2026**
-# Güneşle köşe kapmaca
 
 > Komedyen Göktaş’ın mektubu, "kuyu tipi" cezaevlerini gündeme taşıdı. Hukukçular bu cezaevlerinin hukuka aykırı olduğunu vurgularken sosyolog Mustafa Eren, "Adına 'havalandırma' denilen bir kuyunun dibindesiniz" dedi.
 
@@ -59,4 +58,5 @@ Güneşsizlik ve hareketsizlik D vitamini eksikliğine, kas-iskelet hastalıklar
 ### Kimler tutuluyor?
 
 Mevzuata göre bu kurumlarda "ağırlaştırılmış müebbet hapis cezası" alan hükümlüler ile "terör ve örgütlü suçlardan" hüküm almış olanların tutulması gerekir. Ancak uygulamada, henüz hüküm giymemiş tutuklular da barındırılıyor.
-Haberin orijinali için [BirGün](https://www.birgun.net/haber/gunesle-kose-kapmaca-727495) sayfasına bakılabilir.
+
+*Haberin orijinali için [BirGün](https://www.birgun.net/haber/gunesle-kose-kapmaca-727495) sayfasına bakılabilir.*
