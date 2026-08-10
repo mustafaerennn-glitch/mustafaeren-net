@@ -1,7 +1,7 @@
 ---
 title: "Lacan's Concept of the Real and Solitary Confinement as the Destruction of the Subject"
 lang: en
-description: A person who can neither relate to others nor speak, hear, or touch inevitably turns inward in the absence of others…
+description: A 2012 article on solitary confinement through Lacan's concept of the Real, republished in 2026 with a new preface on the return of "well-type" high-security prisons to public debate.
 topics:
   - kutsal-insan
   - tecrit-izolasyon
@@ -11,7 +11,19 @@ featuredImageAlt: ''
 featuredImageFit: fill
 ---
 
-*Note: The original Turkish version of this article was first published on Bianet on 30 June 2012.*
+**Preface to the 2026 Edition**
+
+The transfer of arrested mayors, as well as journalists, artists, and politicians known for their opposition to the government, to a new generation of high-security prisons commonly referred to as "well-type" (kuyu tipi) prisons has once again brought these institutions to public attention in Turkey. The common characteristic of S-Type, Y-Type, and High Security prisons is that they further extend the system of architectural solitary confinement first institutionalized with F-Type prisons.
+
+Since 2020, the number of these prisons, constructed and opened with little public attention, has increased rapidly. As of 1 July 2026, of Turkey's 402 prisons, 7 are S-Type, 22 are High Security, and 12 are Y-Type institutions. When the 13 F-Type prisons, 1 D-Type prison, and the Erzurum H-Type High Security Prison—which was later converted into a cell-based institution—are included, the total number of prisons built around a regime of solitary confinement reaches 56. According to official figures, these institutions have a combined capacity of 34,342 prisoners.
+
+As criticism grows that the judiciary has been transformed into a cudgel of political power, and that prisons increasingly function as mechanisms of punishment, intimidation, and hostage-taking, solitary confinement has become one of the central elements of this system. For this reason, I believe that this article—first published in Bianet in June 2012, in which I discuss solitary confinement through Jacques Lacan's concept of the Real—has lost none of its relevance.
+
+Solitary confinement is a form of torture that is difficult to articulate, invisible, and silent. Both the F-Type prisons and the new generation of high-security prisons now widely known as "well-type" prisons constitute architectural embodiments of this form of torture. At a time when the government has once again placed the rhetoric of "democratization" on the political agenda, a serious discussion of solitary confinement and the penal regime that makes it possible remains one of the clearest tests of that claim.
+
+The article below was originally published in Bianet in June 2012.
+
+---
 
 Suppose you fall in love. How would you describe it? Search the word love online and you will find countless definitions and descriptions. Everyone attempts to explain it through their own experience: "It sweeps you off your feet," "You can think of no one else," "You lose your appetite," "You would cross mountains and deserts," "Unrequited love is the truest love." You can even find explanations of its biochemical foundations.[1]
 

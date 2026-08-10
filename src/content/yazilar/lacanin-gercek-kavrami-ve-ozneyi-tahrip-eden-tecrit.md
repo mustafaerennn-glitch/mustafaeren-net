@@ -1,7 +1,7 @@
 ---
 title: Lacan'ın Gerçek Kavramı ve Özneyi Tahrip Eden Tecrit
 lang: tr
-description: Hiç kimseyle ilişki kuramayan, konuşamayan, duyamayan, dokunamayan kişi, başkasının yokluğunda kendisine yönelir. İnsanı sabitleyebilirsiniz ancak beyin…
+description: 2012 tarihli bu yazı, "kuyu tipi" hapishanelerin yeniden gündeme geldiği 2026'da, tecridin güncelliğine dair yeni bir önsözle yeniden yayımlanıyor.
 topics:
   - kutsal-insan
   - tecrit-izolasyon
@@ -15,6 +15,21 @@ featuredImage: ./_images/lacanin-gercek-kavrami-ve-ozneyi-tahrip-eden-tecrit-fea
 featuredImageAlt: ''
 featuredImageFit: fill
 ---
+
+**2026 Önsözü**
+
+Tutuklanan belediye başkanlarının ve muhalif kimliğiyle tanınan gazeteci, sanatçı ve siyasetçilerin "kuyu tipi" olarak adlandırılan yeni nesil yüksek güvenlikli hapishanelere gönderilmesiyle birlikte bu hapishaneler yeniden kamuoyunun gündemine girdi. S Tipi, Y Tipi ve Yüksek Güvenlikli Ceza İnfaz Kurumları olarak adlandırılan bu hapishanelerin ortak özelliği, F Tipi hapishanelerle kurumsallaşan mimari tecrit uygulamasını daha da ileri taşıyan bir yapıya sahip olmalarıdır.
+
+2020 yılından itibaren sessiz sedasız inşa edilerek faaliyete geçirilen bu hapishanelerin sayısı hızla arttı. 1 Temmuz 2026 tarihi itibarıyla Türkiye'deki 402 hapishanenin 7'si S Tipi, 22'si Yüksek Güvenlikli ve 12'si Y Tipidir. Bunlara tecrit esasına dayalı 13 F Tipi, 1 D Tipi ve sonradan hücre sistemine dönüştürülen Erzurum H Tipi Yüksek Güvenlikli Ceza İnfaz Kurumu da eklendiğinde, tecrit mimarisi üzerine kurulu hapishanelerin sayısı 56'ya ulaşmaktadır. Resmî kapasite verilerine göre bu kurumlarda 34.342 kişilik yer bulunmaktadır.
+
+Yargının siyasal iktidarın sopasına dönüştürüldüğü, hapishanelerin ise cezalandırma, gözdağı verme ve rehin alma işlevleri üstlendiği yönündeki eleştiriler giderek güçlenirken, tecrit de bu mekanizmanın merkezî unsurlarından biri hâline gelmektedir. Bu nedenle, tecridi Jacques Lacan'ın Gerçek kavramı çerçevesinde tartıştığım ve ilk kez Haziran 2012'de Bianet'te yayımlanan bu makalenin bugün de güncelliğini koruduğunu düşünüyorum.
+
+Tecrit, dile getirilmesi güç, görünmez ve sessiz bir işkence yöntemidir. F Tipi hapishaneler de bugün kamuoyunda "kuyu tipi" olarak anılan yeni nesil yüksek güvenlikli hapishaneler de bu işkencenin mimariye bürünmüş biçimleridir. Demokratikleşme söylemlerinin iktidar tarafından yeniden gündeme getirildiği bir dönemde, tecridin ve onu mümkün kılan infaz rejiminin tartışılması, samimiyetin en önemli ölçütlerinden biri olmayı sürdürmektedir.
+
+Aşağıda, Haziran 2012'de Bianet'te yayımlanan makaleyi bulabilirsiniz.
+
+---
+
 
 Hiç kimseyle ilişki kuramayan, konuşamayan, duyamayan, dokunamayan kişi, başkasının yokluğunda kendisine yönelir. İnsanı sabitleyebilirsiniz ancak beyin çalışmaya, düşünmeye devam edecektir ve ürettikleri de her zaman için kontrolünüzde olmayacak ve zamanla tamamen kontrolünüzden çıkabilecektir.
 

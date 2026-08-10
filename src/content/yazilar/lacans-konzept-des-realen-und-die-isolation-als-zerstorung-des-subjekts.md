@@ -1,7 +1,7 @@
 ---
 title: Lacans Konzept des Realen und die Isolation als Zerstörung des Subjekts
 lang: de
-description: Wer mit niemandem eine Beziehung aufbauen, mit niemandem sprechen, niemanden hören oder berühren kann, wendet sich in der Abwesenheit des Anderen sich selbst zu…
+description: Ein Aufsatz von 2012 über Isolationshaft im Lichte von Lacans Begriff des Realen, 2026 mit einem neuen Vorwort zur erneuten öffentlichen Debatte um sogenannte „Brunnen-Typ“-Hochsicherheitsgefängnisse neu veröffentlicht.
 topics:
   - kutsal-insan
   - tecrit-izolasyon
@@ -11,7 +11,19 @@ featuredImageAlt: ''
 featuredImageFit: fill
 ---
 
-*Hinweis: Die türkische Originalfassung dieses Artikels wurde erstmals am 30. Juni 2012 auf Bianet veröffentlicht.*
+**Vorwort zur Ausgabe 2026**
+
+Mit der Verlegung verhafteter Bürgermeister sowie oppositioneller Journalistinnen und Journalisten, Künstlerinnen und Künstler sowie Politikerinnen und Politiker in die als „Brunnen-Typ“ (kuyu tipi) bezeichneten neuen Hochsicherheitsgefängnisse sind diese Haftanstalten erneut in den Fokus der Öffentlichkeit gerückt. Gemeinsam ist den Gefängnissen der Typen S, Y und Hochsicherheit, dass sie das mit den F-Typ-Gefängnissen institutionalisierte System architektonischer Isolation noch weiter verschärfen.
+
+Seit 2020 wurden diese Gefängnisse weitgehend ohne öffentliche Aufmerksamkeit errichtet und in Betrieb genommen; ihre Zahl ist seither rasch gestiegen. Zum 1. Juli 2026 verfügte die Türkei über insgesamt 402 Haftanstalten, darunter 7 Gefängnisse des Typs S, 22 Hochsicherheitsgefängnisse und 12 Gefängnisse des Typs Y. Rechnet man die 13 F-Typ-Gefängnisse, ein D-Typ-Gefängnis sowie das Erzurum H-Typ-Hochsicherheitsgefängnis hinzu, das später in ein zellenbasiertes Gefängnis umgewandelt wurde, so erhöht sich die Zahl der auf einem System der Isolation beruhenden Haftanstalten auf 56. Nach offiziellen Angaben verfügen diese Einrichtungen über eine Gesamtkapazität von 34.342 Plätzen.
+
+Während die Kritik zunimmt, die Justiz sei zum Knüppel politischer Machtausübung geworden und Gefängnisse dienten zunehmend der Bestrafung, Einschüchterung und dem Festhalten politischer Gegner als Geiseln, nimmt auch die Isolationshaft innerhalb dieses Systems eine immer zentralere Rolle ein. Aus diesem Grund bin ich der Auffassung, dass dieser erstmals im Juni 2012 in Bianet veröffentlichte Aufsatz, in dem ich die Isolationshaft im Lichte von Jacques Lacans Begriff des Realen diskutiere, bis heute nichts von seiner Aktualität verloren hat.
+
+Isolationshaft ist eine Form der Folter – schwer beschreibbar, unsichtbar und still. Sowohl die F-Typ-Gefängnisse als auch die heute als „Brunnen-Typ“ (kuyu tipi) bezeichneten neuen Hochsicherheitsgefängnisse stellen architektonische Ausprägungen dieser Folter dar. In einer Zeit, in der die Regierung den Diskurs über eine angebliche „Demokratisierung“ erneut auf die politische Tagesordnung setzt, bleibt eine Auseinandersetzung mit der Isolationshaft und dem Strafvollzugssystem, das sie ermöglicht, einer der wichtigsten Maßstäbe für die Glaubwürdigkeit dieses Anspruchs.
+
+Nachfolgend finden Sie den Aufsatz, der im Juni 2012 erstmals in Bianet veröffentlicht wurde.
+
+---
 
 Angenommen, Sie verlieben sich. Wie würden Sie das beschreiben? Wenn Sie den Begriff „Liebe“ im Internet suchen, stoßen Sie auf unzählige Definitionen und Beschreibungen. Jeder versucht, die Liebe aus der eigenen Erfahrung heraus zu erklären: „Man verliert den Boden unter den Füßen“, „Man kann an niemanden sonst mehr denken“, „Man verliert den Appetit“, „Man würde Berge versetzen und Wüsten durchqueren“, „Unerfüllte Liebe ist die wahrhaftigste Liebe“ ... Sogar Informationen und Schemata zu den „biochemischen Grundlagen der Liebe“ lassen sich im Internet finden [1].
 

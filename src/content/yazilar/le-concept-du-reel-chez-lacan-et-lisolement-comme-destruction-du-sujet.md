@@ -1,7 +1,7 @@
 ---
 title: "Le concept du Réel chez Lacan et l'isolement comme destruction du sujet"
 lang: fr
-description: Celui qui ne peut nouer de relation avec personne, ni parler, ni entendre, ni toucher, se tourne vers lui-même en l'absence de l'Autre…
+description: Un article de 2012 sur l'isolement à travers le concept lacanien du Réel, republié en 2026 avec une nouvelle préface sur le retour des prisons de haute sécurité dites « de type puits » au cœur du débat public.
 topics:
   - kutsal-insan
   - tecrit-izolasyon
@@ -11,7 +11,19 @@ featuredImageAlt: ''
 featuredImageFit: fill
 ---
 
-*Note : la version originale turque de cet article a été publiée pour la première fois sur Bianet le 30 juin 2012.*
+**Préface à l'édition 2026**
+
+Le transfert de maires arrêtés, ainsi que de journalistes, d'artistes et de responsables politiques connus pour leur opposition au pouvoir, vers une nouvelle génération de prisons de haute sécurité communément appelées prisons de type « puits » (kuyu tipi), a replacé ces établissements pénitentiaires au cœur du débat public en Turquie. Les établissements de type S, de type Y et les prisons de haute sécurité ont en commun de pousser encore plus loin le système d'isolement architectural institutionnalisé avec les prisons de type F.
+
+Depuis 2020, ces prisons, construites et mises en service dans une relative discrétion, se sont multipliées rapidement. Au 1er juillet 2026, sur les 402 établissements pénitentiaires que compte la Turquie, 7 étaient de type S, 22 des prisons de haute sécurité et 12 de type Y. Si l'on y ajoute les 13 prisons de type F, une prison de type D ainsi que la prison de haute sécurité de type H d'Erzurum, ultérieurement transformée en établissement fondé sur le système cellulaire, le nombre total de prisons reposant sur une architecture de l'isolement atteint 56. Selon les chiffres officiels, leur capacité totale s'élève à 34 342 places.
+
+Alors que les critiques dénonçant la transformation du pouvoir judiciaire en matraque du pouvoir politique se font de plus en plus nombreuses et que les prisons sont de plus en plus perçues comme des mécanismes de punition, d'intimidation et de prise d'otages, l'isolement occupe une place toujours plus centrale dans ce dispositif. C'est pourquoi je considère que cet article, publié pour la première fois dans Bianet en juin 2012 et dans lequel j'analyse l'isolement à la lumière du concept lacanien du Réel, conserve aujourd'hui toute son actualité.
+
+L'isolement est une forme de torture difficile à exprimer, silencieuse et invisible. Les prisons de type F, tout comme les nouvelles prisons de haute sécurité aujourd'hui désignées dans le débat public comme des prisons de type « puits » (kuyu tipi), constituent des incarnations architecturales de cette forme de torture. À une époque où le pouvoir remet une nouvelle fois à l'ordre du jour son discours sur la « démocratisation », le débat sur l'isolement et sur le régime pénitentiaire qui le rend possible demeure l'un des principaux critères permettant d'en apprécier la sincérité.
+
+Vous trouverez ci-dessous l'article publié dans Bianet en juin 2012.
+
+---
 
 Imaginez que vous tombiez amoureux. Comment le décririez-vous ? Si vous cherchez le terme « amour » sur Internet, vous tomberez sur d’innombrables définitions et descriptions. Chacun tente d’expliquer l’amour à partir de sa propre expérience : « On perd pied », « On ne peut plus penser à personne d’autre », « On perd l’appétit », « On déplacerait des montagnes et traverserait des déserts », « L’amour non partagé est le plus vrai des amours »... On trouve même sur Internet des informations et des schémas sur les « bases biochimiques de l’amour ».[1]
 
