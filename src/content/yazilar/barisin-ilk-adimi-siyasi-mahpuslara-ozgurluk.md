@@ -16,8 +16,6 @@ featuredImageAlt: ''
 pdf: /pdf/barisin-ilk-adimi-siyasi-mahpuslara-ozgurluk.pdf
 ---
 
-**Bianet – 14 Mayıs 2025**
-
 Kürt hareketinin silah bırakma ve kendini feshetme kararlı, Türkiye’nin son on yıllarına damga vuran ve inkar politikalarının yol açtığı çatışmalı sürecin ardından farklı kesimlerde yeni bir “çözüm” ya da “barış” süreci olasılığını gündeme taşıdı. Kimileri bu kararı tarihi bir kopuş olarak değerlendirirken, kimileri içinse bu, iktidarın siyaseti şekillendirme gücüne alan açan bir sessizlik evresi. Ne olursa olsun, ortaya çıkan yeni siyasal iklim, devletin ve hükümetin nasıl bir adım atacağına ilişkin beklentileri de beraberinde getiriyor.
 
 Bu bağlamda en çok tartışılan konulardan biri de binlercesi 30 yılı aşkın bir süredir hapiste tutulan siyasi mahpusların özgürlüğü ya da bir başka ifadeyle “af” meselesi.[\[i\]](#_edn1) Her ne kadar hükümet kanadından yapılan açıklamalarda genel bir affın gündemde olmadığı ifade edilse de, infaz sisteminde sınırlı düzenlemeler yapılabileceği belirtiliyor.[\[ii\]](#_edn2) Ancak Türkiye’de infaz düzenlemeleri, özellikle AKP döneminde, yalnızca teknik birer değişiklik değil; derin siyasal anlamlar taşıyan, kapsamı itibarıyla ayrımcı ve seçici politikaların aracı hâline gelmiş uygulamalardır.
@@ -69,11 +67,5 @@ Hürriyet. (11 Mayıs 2025). _Adalet Bakanı Yılmaz Tunç’tan 10. Yargı Pake
 
 Kepenek, E. (23 Ağustos 2024). _İlhan Sami Çolak’ın tahliyesini engelleyen Cezaevi İdare Kurulları nasıl çalışıyor?_ Bianet. Erişim tarihi: 13 Mayıs 2025.  
 [https://bianet.org/haber/ilhan-sami-comakin-tahliyesini-engelleyen-cezaevi-idare-kurullari-nasil-calisiyor-298913](https://bianet.org/haber/ilhan-sami-comakin-tahliyesini-engelleyen-cezaevi-idare-kurullari-nasil-calisiyor-298913)
-
-[📤 PDF'i İndir](/pdf/barisin-ilk-adimi-siyasi-mahpuslara-ozgurluk.pdf)
-
-[🔗 İngilizce Versiyon](/en/yazilar/peace-freedom-for-political-prisoners/)
-
-[🔗 Almanca Versiyon](/de/yazilar/der-erste-schritt-zum-frieden-freiheit-fur-politische-gefangene/)
 
 [🔗 Bianet (Orijinal)](https://bianet.org/yazi/barisin-ilk-adimi-siyasi-mahpuslara-ozgurluk-307427)

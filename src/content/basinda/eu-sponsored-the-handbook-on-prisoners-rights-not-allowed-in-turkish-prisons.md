@@ -10,8 +10,6 @@ featuredImage: ./_images/eu-sponsored-the-handbook-on-prisoners-rights-not-allow
 featuredImageAlt: ''
 ---
 
-By [**SCF**](https://stockholmcf.org/author/rdktrsthlmcf/) - [August 28, 2017](https://stockholmcf.org/eu-sponsored-the-handbook-on-prisoners-rights-not-allowed-in-turkish-prisons/)
-
 “The Handbook on Prisoners’ Rights”, a guide for inmates to protect their rights in jail which was published by the contributions of the European Union and Turkey’s Institution of Human Rights and Equality (TİHEK) has not reportedly been allowed in Denizli T Type Prison.
 
 The Civil Society in the Penal System (CISST) chairman Mustafa Eren told turkish media that they have submitted the handbook to the prisoners in the Denizli Prison but the book was rejected by the education department at the prison on August 15.

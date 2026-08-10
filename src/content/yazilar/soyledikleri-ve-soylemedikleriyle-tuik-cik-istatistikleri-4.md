@@ -10,8 +10,6 @@ featuredImage: ./_images/soyledikleri-ve-soylemedikleriyle-tuik-cik-istatistikle
 featuredImageAlt: ''
 ---
 
-Bianet - 25 Kasım 2021
-
 [“Terör” iddiasıyla yargılama değil yaftalama](https://m.bianet.org/bianet/bianet/253889-teror-iddiasiyla-yargilama-degil-yaftalama)
 
 [![](./_images/soyledikleri-ve-soylemedikleriyle-tuik-cik-istatistikleri-4-inline-1.webp)](./_images/soyledikleri-ve-soylemedikleriyle-tuik-cik-istatistikleri-4-inline-1.webp)

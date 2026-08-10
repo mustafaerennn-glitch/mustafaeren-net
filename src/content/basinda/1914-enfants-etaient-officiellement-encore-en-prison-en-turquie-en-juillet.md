@@ -10,8 +10,6 @@ featuredImage: ./_images/1914-enfants-etaient-officiellement-encore-en-prison-en
 featuredImageAlt: ''
 ---
 
-[Kedistan](http://bianet.org/bianet/cocuk/157041-1914-cocuk-cezaevinde) – 04.11.2014
-
 Le Ministre de la Justice Bekir Bozdag a répondu au la question parlementaire de Pervin Buldan du Parti du Peuple Démocratique (HDP) à propos des enfants en prison et de la pression qu’ils y vivaient.
 
 Bekir Bozdag a déclaré qu’un total de 1,914 enfants incluant 472 condamnés et 1,442 prisonniers étaient en prison. Il a aussi mentionné que 353 enfants restaient avec leurs mères prisonnières ou condamnées.

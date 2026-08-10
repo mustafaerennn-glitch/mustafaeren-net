@@ -11,8 +11,6 @@ featuredImage: ./_images/cocuk-mahpuslara-yonelik-tecavuzler-hak-talepleri-featu
 featuredImageAlt: ''
 ---
 
-**[Sivil Düşün](http://sivildusun.net/cocuk-mahpuslara-yonelik-tecavuzler-hak-talepleri/) – 18 Haziran 2016**
-
 **Mustafa Eren**
 
 Türkiye’de hapishaneler söz konusu olduğunda akla ilk gelenler “reformlar”, “iyileştirmeler”, “olumlu koşullar”, “iyi örnekler” değil ne yazık ki. Hapishaneler, Türkiye’de, kötü muamele, yangınlar, kapasite fazlalığı, ölümler, ölüm oruçları ile beraber gündeme gelebiliyor. Bu bakış açısını ortadan kaldırabilecek oldukça az örnek var ve bunun başlıca nedenini de devletin, sivil toplumun bu alanda daha etkin ve aktif yer alabilmesini engelleyen tutumu oluşturuyor. Bu tutum değişene kadar hapishaneler olumsuzluklarla beraber anılmaya devam edilecek. Bu olumsuzlukların en fazla gündeme gelenlerinden birini de herkesin daha hassas olduğu çocuk mahpuslar oluşturuyor. Her bir kaç senede bir çocuk hapishanelerindeki kötü muamele, taciz, tecavüz haberi kamuoyunun gündemine düşüyor ve önce bir tartışma yaratsa da sonrasında unutuluşa terk ediliyor. Son olarak 5 Mayıs 2016 tarihinde Konya E Tipi Kapalı Hapishanesi’nde üç çocuğun koğuşta kalan diğer çocuklardan bazılarına sırayla tecavüz ettiği basına yansıdı. Basına yansıyan haberlere göre adliyeye intikal eden tecavüz nedeniyle üç kişi 21 yıla varan ek hapis cezaları aldı.[\[1\]](#_ftn1) Konya ilk değildi. Öncesinde Pozantı, Antalya ve Şakran’da da oldukça vahim durumlar yaşandığı basına yansımıştı. Bu yaşananlara dair anlatımlar üzerinden çocuk hapishanelerine biraz daha yakından bakalım.

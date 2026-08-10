@@ -10,8 +10,6 @@ featuredImage: ./_images/1914-children-officially-in-prison-in-turkey-featured.w
 featuredImageAlt: ''
 ---
 
-[Bianet](https://bianet.org/english/human-rights/157061-1-914-children-officially-in-prison-in-turkey) – 09 July 2014
-
 Justice Minister Bekir Bozdağ responded a parliamentarian inquiry of Pervin Buldan from People’s Democratic Party (HDP) about the children in prisons and the pressure they are experiencing.
 
 Bekir Bozdağ stated a total of 1,914 children including 472 convicts and 1,442 prisoners were in jail. He also stated 353 children stayed with their convict or prisoner mothers.

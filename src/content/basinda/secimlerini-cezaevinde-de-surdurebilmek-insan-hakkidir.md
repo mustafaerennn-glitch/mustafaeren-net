@@ -10,7 +10,7 @@ featuredImage: ./_images/secimlerini-cezaevinde-de-surdurebilmek-insan-hakkidir-
 featuredImageAlt: Seçimlerini Cezaevinde de Sürdürebilmek İnsan Hakkıdır
 ---
 
-Bianet - Yüce Yöney - 23 Ağustos 2013
+**Yüce Yöney**
 
 Ceza İnfaz Sisteminde Sivil Toplum Derneği'nden **Zafer Kıraç** ve **Mustafa Eren** bianet’e cezaevlerinde mahpusların ihtiyaçlarını katinden karşılamak zorunda kalmalarını değerlendirdi.
 

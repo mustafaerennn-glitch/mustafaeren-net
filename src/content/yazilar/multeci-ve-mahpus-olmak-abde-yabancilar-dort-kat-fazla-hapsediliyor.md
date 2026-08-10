@@ -7,6 +7,7 @@ topics:
   - mahpus
 translations:
   - migrants-refugees-prison-eu
+  - in-eu-landern-einwanderer-fluchtlinge-asylsuchende-und-gefangener-auslander-werden-viermal-haufiger-inhaftiert
 publishDate: '2021-06-26'
 mecra: bianet
 featuredImage: ./_images/multeci-ve-mahpus-olmak-abde-yabancilar-dort-kat-fazla-hapsediliyor-featured.webp

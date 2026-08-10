@@ -10,9 +10,7 @@ featuredImage: ./_images/coup-arrests-push-turkish-penal-system-to-breaking-poin
 featuredImageAlt: ''
 ---
 
-[Reuters](https://www.reuters.com/article/us-turkey-security-prison/coup-arrests-push-turkish-penal-system-to-breaking-point-idUSKCN10F1RV) – August 04, 2016
-
-[Seda Sezer](https://www.reuters.com/journalists/seda-sezer), [Daren Butler](https://www.reuters.com/journalists/daren-butler)
+**Seda Sezer, Daren Butler**
 
 ISTANBUL (Reuters) - Even before last month’s coup attempt, Turkey’s penal system was overstretched, with crowded prisons and backlogged courts. Now, it is struggling to cope with an influx of thousands who have been detained in the aftermath of the attempted putsch.
 
@@ -38,7 +36,7 @@ A government official told Reuters there wasn’t a prison problem.
 
 The July 15 abortive putsch saw a faction of the military commandeer tanks, helicopters and fighter jets in an attempt to topple the government. Turkey blames followers of Fethullah Gulen, a Muslim cleric who has lived in self-imposed exile in rural Pennsylvania since 1999. Gulen has denies the charges he was behind the failed putsch, and has condemned the coup.
 
-**SLEEPING IN SHIFTS**
+### Sleeping in shifts
 
 “Jails had already exceeded capacity before July 15, with prisoners sleeping in corridors and by toilets,” said Veli Agbaba, the deputy head of the main opposition, the secular Republican People’s Party (CHP), who has made hundreds of prison visits in the last five years for his work on a CHP commission investigating conditions in jails.
 
@@ -70,7 +68,7 @@ Justice Minister Bekir Bozdag said in a television interview this week that ther
 
 Congo's opposition leader wins chaotic presidential election
 
-**HOSTILE LAWYERS**
+### Hostile lawyers
 
 Bozdag has said no court in the country is capable of handling the number of defendants, which could total up to 30,000, and that new courthouses will be built for the trials.
 

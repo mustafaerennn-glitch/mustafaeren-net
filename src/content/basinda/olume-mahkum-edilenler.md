@@ -11,7 +11,7 @@ featuredImage: ./_images/olume-mahkum-edilenler-featured.webp
 featuredImageAlt: ''
 ---
 
-[Hürriyet](http://www.hurriyet.com.tr/yazarlar/melis-alphan/olume-mahk-m-edilenler-40050123) – Melis Alphan – 5 Şubat 2016
+**Melis Alphan**
 
 Bunların 114’ü kanser hastası imiş. Türkiye’de yılda 300’den fazla mahpusun hapishanelerde öldüğünü biliyor muydunuz? Evet, neredeyse her gün hapishanelerden bir tabut çıkıyor.
 

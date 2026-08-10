@@ -10,8 +10,6 @@ featuredImage: ./_images/hakcetelesi-cisst-tcps-mustafa-eren-2-featured.webp
 featuredImageAlt: ''
 ---
 
-[Sivil Düşün](http://sivildusun.net/hakcetelesi-cisst-tcps/) - 15 Kasım 2018
-
 Türkiye Hapishane Çalışmaları Merkezinden Mustafa Eren’in #HakÇetelesi tanımları:
 
 ## **Hak temelli yaklaşım**

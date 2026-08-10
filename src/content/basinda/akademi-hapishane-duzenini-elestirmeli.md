@@ -10,7 +10,7 @@ featuredImage: ./_images/akademi-hapishane-duzenini-elestirmeli-featured.webp
 featuredImageAlt: ''
 ---
 
-[Bilim ve Gelecek](https://bilimvegelecek.com.tr/index.php/2014/01/01/akademi-hapishane-duzenini-elestirmeli/) – Baha Okar – 1 Ocak 2014
+**Baha Okar**
 
 _F tipi hücrelerin, Heidelberg Üniversitesi’nde bir grup profesörün duyumsal yoksun bırakma üzerine araştırmalarının bir parçası olarak kapalı mekân üzerinde yaptıkları deneylerin sonucunda kurgulandığını görüyoruz. Türkiye’de de egemenlerin cephesinden bakan, sorunların sisteme dokunmadan ve çatışmalar olmaksızın çözümü üzerine eğilen akademik çalışmalar var hapishaneler üzerine. Egemen olanın dışında, eleştirel bir akademik üretim mümkün mü, bunu düşünmeliyiz._
 

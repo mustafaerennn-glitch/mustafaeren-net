@@ -11,13 +11,11 @@ featuredImage: ./_images/mahbeslerden-hapishanelere-hapishanelerden-cezaevlerine
 featuredImageAlt: ''
 ---
 
-Bilim ve Gelecek – Ocak 2014 – Sayı 119
-
 _Türkiye’de kapatılma mekanları mahbeslerden hapishanelere hapishanelerden cezaevlerine evrilmiş ve bu geçiş süreci 1990’larda ve 2000’li yıllarda kesintisiz olarak devam etmiştir. Türkiye siyasi tarihinin hapishanelerin evrimi üzerinden okunması, bu tarihe farklı bir gözle bakma imkânları sunmaktadır._
 
 Yasalar, mimarideki dönüşüm ve pratikler göz önüne alınarak Osmanlı’dan günümüze Türkiye’nin hapishaneler tarihine bakıldığında “mahbes”, “hapishane” ve “cezaevi” olmak üzere üç aşama olduğu iddia edilebilir. Türkiye hapishaneleri mahbesten hapishaneye, hapishaneden cezaevine evrilmiştir.
 
-**MAHBES (ZİNDAN) DÖNEMİ**
+### Mahbes (zindan) dönemi
 
 Osmanlı’nın hukuk sistemi İslam hukukuna dayanır. Şer’i hukuk temel olduğu ancak bunun yanı sıra örfi hukukun varlığının da görüldüğü Osmanlı’da bedeni cezalar esastır ancak tazir[\[1\]](#_ftn1) cezalarının bir çeşidi olarak insanların kapatılması söz konusudur. Buna rağmen “hürriyeti bağlayıcı cezaların infaz edildiği yer” anlamında hapishanelerden söz edilemez. Bu cezanın Osmanlı hukukuna girişi 19. yüzyılda gerçekleşir. Daha öncesinde özellikle kanunnameler hapis cezasına temel teşkil etmektedir. Örneğin 1512-1520 tarihleri arasında tahtta bulunan I. Selim’in Kanunnamesi’ne göre kamu yararı gözetilerek hapis ve para cezası birlikte veya tercih edilerek uygulanabilir. Ayrıca aynı Kanunname’nin 33. maddesine göre müttehem (şüpheli) ve mazınne (bir şey olduğu tahmin edilen) olanların tutuklanması, 50. maddesine göre ise hakim kararı olmadan kimsenin tutuklanmaması emredilmektedir.
 
@@ -85,7 +83,7 @@ Osmanlı özelinde, dönüşümün yaşandığı 19. yüzyıla kadar olan ve “
 
 Günümüzden bakıldığında, Osmanlı’nın 19. yüzyıla kadar sürmüş olan bu mahbesler sürecinde işkence yöntemleri, pranga, tomruk ve daha bir dolu eleştirilecek konu bulabilmek mümkündür. Ancak bu eleştirilerin yanı sıra sürgün, cezirebentlik, kalebentlik gibi kişiyi ailesinden koparmadan, bir sosyal çevre içerisinde yaşamasına olanak sağlayabilecek ceza infaz yöntemlerinin varlığı da hapsetmeye alternatif yöntemlerin tartışıldığı günümüzde gerekçeleriyle beraber ufuk açıcı olanaklar taşıyabilir. Bu konu, hapsetmeye alternatif yöntemlerle ilgili olarak bir kenara not edilmelidir.
 
-**MAHBESTEN HAPİSHANEYE**
+### Mahbesten hapishaneye
 
 Osmanlı’da hapishanelere geçiş süreci 19. yüzyılın ikinci çeyreğinde görünür hale gelir. Bu süreç bir yandan Foucault’un da hapishane üzerine çalışmalarında dikkat çektiği gibi Batı’da hapishanelerin gelişmeye başladığı süreçken diğer yandan Osmanlı’nın kimilerine göre “modernleşmeye” başladığı kimilerine göre ise “yarı sömürge” haline geldiği süreçtir. Cezaların infazında hapishanelerin merkezi bir yer edindiği bu süreç Osmanlı’da da görülürken, bunun kapitalist Batı ile giderek toprak yitiren ve iflas ederek gelir kaynaklarının yönetimini dahi Batılı güçlere bırakan (Duyun-ı Umumiye) Osmanlı arasında hangi dinamiklerle gerçekleştiği tartışması Tanzimat ve aslında bir bütün olarak “Osmanlı modernleşmesi” tartışmalarının da bir prototipi olarak görülebilir.
 
@@ -153,7 +151,7 @@ Yeni nizamnamede yer alan mahpusların hayatlarına müdahale isteği, zindan s�
 
 Sonuç olarak; Osmanlı’da 19. yüzyıldan özellikle de 1830’lardan sonra genel reform çabalarının bir parçası olarak hapishaneler alanında da reformlar yapılmaya çalışıldığı; bu reformların kendisini yeni mimari ve yeni kanunlar olarak gösterdiği ama asıl önemlisi kapatılmanın cezalandırmanın yanı sıra “ıslah” ile birlikte ele alınmaya başladığı; yapılmaya çalışılan reformların bir yandan bütçe darlığı ve savaşlar diğer yandan da hapishanelerin Dahiliye, Zabtiye ve Adliye nezaretleri tarafından bölünmüş olması nedeniyle oldukça yavaş işlediği ve hapishanelerin bu haliyle Cumhuriyet’e devrolduğu söylenebilir.
 
-**CUMHURİYET DÖNEMİ HAPİSHANELERİ; KOPUŞ DEĞİL SÜREKLİLİK**
+### Cumhuriyet dönemi hapishaneleri; kopuş değil süreklilik
 
 Hapishaneler açısından bakıldığında Osmanlı’dan Cumhuriyet dönemine bir kopuştan değil süreklilikten söz edilebilir. Osmanlı’da 19. yüzyıldan itibaren mahbesten hapishanelere doğru evrilen kapatılma mekanları için aynı süreç devam etmiştir.
 
@@ -181,7 +179,7 @@ Mahbesten hapishanelere dönüşüm sürecinin yaşandığı 19. yüzyıldan iti
 
 1970’lere doğru, hapishanelerden cezaevlerine geçildiği sırada Kullanılmakta olan 608 hapishanenin 367 tanesi ise Osmanlı’dan kalmıştır ve bunların 330 tanesi harap durumdadır. Cumhuriyet’in kuruluşundan itibaren yaklaşık 50 yıllık süre içinde 241 hapishane inşa edilmiş ve 25 hapishanenin inşaatı da devam etmektedir.
 
-**HAPİSHANELERDEN CEZAEVLERİNE**
+### Hapishanelerden cezaevlerine
 
 Türkiye’de 12 Eylül dönemi hapishanelerinde yaşanılanlar üzerine yazılmış onlarca kitap bulmak mümkündür. Diyarbakır, Mamak, Metris örneklerinde açıkça görülebileceği gibi 12 Eylül dönemi hapishaneleri vahşet ve direnişle anılmaktadır. Öncesinde görülmeyen bu vahşet ve direniş 12 Eylül’ün, Türkiye’nin geneli için olduğu gibi hapishaneleri açısından da bir dönüm noktası olduğunu göstermektedir. Daha yakından bakıldığında ise bu geçiş sürecinin 12 Mart ile beraber 1970’li yıllarda başladığı görülebilir. Bu dönüşüm sürecinin ana nedenlerinden birini 1960’lı yıllarda yükselen sol, devrimci mücadele oluşturmaktadır. Sol, sosyalist gençlik 1960’lı yılların sonlarına doğru radikal devrimci örgütler kurup, silahlı mücadeleye başlamış, 12 Mart darbesi sürecinde başlıca önderleri kırlarda, şehirlerde ve hapishanelerde yaşamını yitirmiş, birçok önemli kadrosu ise tutuklanıp hapishanelere kapatılmıştır. Bu yeni süreçte hapishanelerde “tretman” uygulamaları öne çıkar. Hapishanelerden cezaevlerine giden sürecin odağında bu “tretman”, “iyileştirme” anlayışı vardır. Bu yeni sürecin üç ayak üzerine inşa edildiğini, ilerletildiğini söylemek yanlış olmayacaktır. Bu sürecin ilk ayağını daha öncesinden adımları atılan ancak bir türlü uygulamaya geçirilemeyen mahpusların gündelik yaşamlarına müdahale oluşturmaktadır. İkinci ayak, hapishanelere bakışı bir bütün olarak değiştirmek ve hapishaneleri terörle beraber sunarak her türlü müdahaleyi meşrulaştırmak, olanaklı kılmaktır. Son ayak ise tretmanı olanaklı kılacak mimari dönüşümlerdir.
 
@@ -257,7 +255,7 @@ Operasyona rağmen, ölüm orucu, mahpuslar tarafından, zorla sevk edildikleri 
 
 “Oda sistemi”ne dayalı hapishanelerin yaygınlaşması ve yeni kanunların özellikle de CİK’in yürürlüğe girmesiyle beraber hapishanelerden cezaevlerine geçiş süreci son bulur ve cezaevleri sürecine girilmiş olur. Bu yeni sürecin merkezinde “infazda temel amaç” olgusu ve “iyileştirme” iddiası yatmakta ve bu merkez, üzerine tartışılmasını gerektirmektedir.
 
-**KAYNAKÇA**
+**Kaynakça**
 
 Acar, İ. (2001) Osmanlı Kanunnameleri ve İslam Ceza Hukuku (1), _D.E.Ü İlahiyat Fakültesi Dergisi_, Sayı XIII-XIV, 53-68
 
@@ -391,7 +389,7 @@ Yetkin, F., Tanboğa, M. (1993), _Dörtlerin Gecesi_, Ankara, Yurt Kitap Yayın
 
 Yıldız, G. (2012) _Mapusane-Osmanlı Hapishanelerinin Kuruluş Serüveni (1839-1908)_, İstanbul, Kitabevi
 
-**SON NOTLAR**
+**Son notlar**
 
 [\[1\]](#_ftnref1) Kelime anlamı edeblendirmek (te’dib etmek), menetmek ve azarlamak olan tazir, hakkında şer’i hüküm mevcut olmayan cürümlerden dolayı tatbik edilecek cezalara denk düşmektedir.
 

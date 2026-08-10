@@ -17,8 +17,6 @@ featuredImageAlt: ''
 pdf: /pdf/neue-hochsicherheits-gefaengnisse-tuerkei.pdf
 ---
 
-**Bianet – 1 Oktober 2022**
-
 In der Türkei werden seit einigen Jahren still und leise neue Gefängnisse eines „neuen Typs“ eröffnet, ohne dass die Öffentlichkeit darüber informiert wird. Wenn man sich an die Zeiten erinnert, in denen das von politischen Inhaftierten als „Sarg“ bezeichnete Gefängnis in Eskişehir in den Jahren 1991 und 1996 eröffnet wurde oder an die Einführung der zellenbasierten F-Typ-Gefängnisse im Jahr 2000, so war diese Stille keineswegs üblich. Damals machten die Inhaftierten durch Hungerstreiks und Todesfasten auf ihre Ablehnung aufmerksam, während in der Öffentlichkeit – unter Beteiligung von Berufsverbänden, Intellektuellen, Künstler:innen und Politiker:innen – die Qualität der neuen Gefängnisse diskutiert wurde. Heute hingegen erfährt man von der Existenz neuer Gefängnisse erst dann, wenn diese eröffnet werden, Inhaftierte dorthin verlegt oder verbannt werden, dort Misshandlungen erfahren und versuchen, dies öffentlich zu machen. Die Regierung nimmt es nicht einmal mehr für nötig, die Öffentlichkeit zu informieren. Obwohl mit den Bezeichnungen S, Y und „Hochsicherheits-“i drei neue Typen von Hochsicherheitsgefängnissen eröffnet wurden, geben die zuständigen Stellen keinerlei Auskunft über deren architektonische Besonderheiten oder das dort geltende Vollzugsregime. Interessierte und Betroffene sind gezwungen, entweder Anträge nach dem Informationsfreiheitsgesetz zu stellen oder auf bruchstückhafte, quelllose Gerüchte zurückzugreifen, die im Internet kursieren.
 
 Die Gründe für diese Rücksichtslosigkeit der Regierung können selbstverständlich diskutiert werden (die Schwäche der demokratischen Opposition, die weitgehende Kontrolle der „nationalen Medien“, die veränderte Qualität und Quantität der politischen Inhaftierten usw.). Doch genau hier will dieser Text nicht den Schwerpunkt setzen. Vielmehr möchte er gemeinsam mit den Leser:innen über eine Frage nachdenken und zur Diskussion anregen: Warum war es in den letzten Jahren erforderlich, Dutzende neuer Gefängnisse von drei neuen Typen von Hochsicherheitsgefängnissen zu eröffnen?
@@ -326,11 +324,5 @@ Eine Person, deren Urteil noch nicht rechtskräftig ist und deren Gerichtsverfah
 **verschärfte lebenslange Freiheitsstrafe** **→ Ağırlaştırılmış müebbet hapis cezası**
 
 Eine besondere Sanktion, die in der Türkei nach der Abschaffung der Todesstrafe eingeführt wurde. Im Unterschied zur gewöhnlichen lebenslangen Freiheitsstrafe bedeutet sie für strafrechtlich verurteilte Personen längere Haftzeiten, während sie für politische Inhaftierte faktisch lebenslange Inhaftierung bis zum Tod vorsieht. Politische Inhaftierte mit einer solchen Strafe haben keinerlei Möglichkeit, von Mechanismen wie bedingter Entlassung, vorzeitiger Haftentlassung oder Amnestie zu profitieren. Der Europäische Gerichtshof für Menschenrechte (EGMR) hat diese Strafe als „_Haft ohne Hoffnung auf Entlassung__“_ bezeichnet und sie im Hinblick auf menschenrechtliche Standards kritisiert.
-
-[🔗 **Türkische Version**](/yazilar/yeni-tip-hapishaneler-ve-toplumsal-muhalefete-gozdagi/)
-
-[🔗 **Englische Version**](/en/yazilar/new-high-security-prisons-turkey/)
-
-[📥 **PDF Herunterladen**](/pdf/neue-hochsicherheits-gefaengnisse-tuerkei.pdf)
 
 [🔗 B**ianet (Orijinal)**](https://bianet.org/yazi/yeni-tip-hapishaneler-ve-toplumsal-muhalefete-gozdagi-267878)

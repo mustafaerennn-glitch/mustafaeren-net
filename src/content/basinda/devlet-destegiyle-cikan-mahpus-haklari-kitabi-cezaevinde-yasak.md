@@ -10,8 +10,6 @@ featuredImage: ./_images/devlet-destegiyle-cikan-mahpus-haklari-kitabi-cezaevind
 featuredImageAlt: ''
 ---
 
-[Cumhuriyet](http://www.cumhuriyet.com.tr/haber/turkiye/809218/Devlet_destegiyle_cikan__Mahpus_Haklari__kitabi_cezaevinde_yasak_.html) – 23 Ağustos 2017
-
 ![](https://media.cumhuriyet.com.tr/Archive/2017/8/23/809218_resource/Screenshot_5.jpg)
 
 Ceza İnfaz Sisteminde Sivil Toplum Derneği Yönetim Kurulu Başkanı Mustafa Eren, Olağanüstü Hal kapsamında çıkarılan KHK’lar nedeniyle tutuklu hükümlülerin kitaba ulaşmakta ciddi sıkıntılar yaşadıklarını söyledi.
@@ -26,7 +24,7 @@ Mahpus Hakları El Kitabını, Türkiye Cumhuriyeti Devleti ve AB’liğin katk�
 
 “Eğitim Birimi’nin kitabı kabul edilmemesinin hukuki dayanağı nedir?” diye soran Eren, Adalet Bakanlığı ve Ceza ve Tevkif Evleri Genel Müdürlüğü’nün harekete geçip, keyfiliğe son vermesini istedi.
 
-**‘BİR CEZAEVİ MÜDÜRÜ TEŞEKKÜR ETTİ’**
+### ‘Bir cezaevi müdürü teşekkür etti’
 
 “Kitabı kabul etmeyen birimin adının ‘Eğitim Birimi’ olması ayrıca bir ironi” diyen Eren şunları söyledi: “Adında ‘eğitim’ geçen bir birimin kitapları alması yönünde ısrarcı olması gerekirken, kitaplara karşı olan bir birimle karşı karşıyayız bu hapishane özelinde. Ancak bu durumu tüm hapishanelerde genellememek gerekiyor. Bazı hapishaneler idareleri derneğimiz arayarak bizzat kendileri talep ediyor. Daha geçtiğimiz hafta bir hapishane müdürü doğrudan derneğimizi arayarak yayınlarımız için güzel sözler kullanarak talepte bulunmuştur.”
 

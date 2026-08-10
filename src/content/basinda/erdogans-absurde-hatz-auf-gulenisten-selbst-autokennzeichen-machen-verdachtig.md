@@ -10,7 +10,7 @@ featuredImage: ./_images/erdogans-absurde-hatz-auf-gulenisten-selbst-autokennzei
 featuredImageAlt: ''
 ---
 
-**[ntv](https://www.n-tv.de/politik/Selbst-Autokennzeichen-machen-verdaechtig-article18600236.html) –** _Von Nadja Kriewald, Istanbul – 9 September 2016_
+**Nadja Kriewald**
 
 ![](./_images/erdogans-absurde-hatz-auf-gulenisten-selbst-autokennzeichen-machen-verdachtig-inline-1.webp)
 

@@ -49,8 +49,4 @@ The revised Rule 5.1 reads:
 _“The prison regime should seek to minimize any differences between prison life and life at liberty that tend to lessen the responsibility of the prisoners or the respect due to their dignity as human beings.”_  
 Source: _United Nations Standard Minimum Rules for the Treatment of Prisoners (the Nelson Mandela Rules)_, UNODC, 2015.
 
-[🔗 **Original article in Turkish**](/yazilar/ozel-ihtiyaclari-olan-mahpuslar-ve-insan-haklari/)
-
-[📄 **Download PDF Version**](/pdf/prisoners-with-special-needs-and-human-rights.pdf)
-
 [🔗 **View the full UN Handbook**](https://www.unodc.org/pdf/criminal_justice/Handbook_on_Prisoners_with_Special_Needs.pdf)

@@ -440,8 +440,3 @@ Die letzten beiden Spalten der Tabelle wurden unter Rückgriff auf zahlreiche un
 
 [\[vi\]](#_ednref6) Das Foto stammt aus Google Maps. **Zugriffsdatum:** 13. April 2025
 
-📄 Dieser Artikel ist auch als PDF verfügbar:
-
-[📥 _PDF-Version herunterladen_](/pdf/die-akp-und-der-strafvollzug-kriminalisierung-und-die-republik-der-gefangniscampus.pdf)
-
-[📎 Die Originalversion dieses Artikels auf Türkisch finden Sie hier](/yazilar/akp-kriminalizasyon-ve-kampus-hapishaneler-cumhuriyeti/)

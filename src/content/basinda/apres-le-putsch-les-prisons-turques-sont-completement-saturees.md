@@ -10,8 +10,6 @@ featuredImage: ./_images/apres-le-putsch-les-prisons-turques-sont-completement-s
 featuredImageAlt: ''
 ---
 
-[l'humanité](https://www.humanite.fr/apres-le-putsch-les-prisons-turques-sont-completement-saturees-613251) \- Vendredi, 5 Août, 2016
-
 Les milliers de fonctionnaires et militaires incarcérés suite à la tentative de coup d'état ont complètement saturé le système carcéral et judiciaire turc. Les prisons sont plus que surpeuplées et les tribunaux sont d'autant plus débordés que les magistrats et procureurs eux même étaient au premier rang de la purge et que 3000 d'entre eux ont grossi les rangs des prisonniers...
 
 "Pour faire de la place, ils empilent les prisonniers les uns sur les autres", déclare Mustafa Eren, président du CISST (Société civile pour le système pénal), un groupe de défense des droits. A la prison de Tekirdag, dans le nord-ouest du pays, six détenus s'entassent dans des cellules prévues pour trois. Dans la prison de Silivri, à l'ouest d'Istanbul, des détenus dorment dans le gymnase, dit-il.

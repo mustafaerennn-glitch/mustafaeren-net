@@ -20,9 +20,7 @@ featuredImageAlt: AKP, Kriminalizasyon ve "Kampüs" Hapishaneler
 pdf: /pdf/akp-kriminalizasyon-ve-kampus-hapishaneler-cumhuriyeti.pdf
 ---
 
-[Bianet](https://bianet.org/yazi/akp-kriminalizasyon-ve-kampus-hapishaneler-cumhuriyeti-306454) - 15 Nisan 2025
-
-## MAHPUS SAYISI RESMİ OLARAK 400 BİNİ AŞTI
+## Mahpus sayısı resmi olarak 400 bini aştı
 
 ![](./_images/akp-kriminalizasyon-ve-kampus-hapishaneler-cumhuriyeti-inline-1.webp)
 
@@ -100,10 +98,3 @@ Tabloda kendi müdürlüğü olmayan, bir başka hapishaneye “bağlı” hapis
 
 (ME/VC)
 
-📄 15 Nisan 2025 tarihde Bianet'te yayınlanan bu yazının PDF versiyonuna buradan ulaşabilirsiniz:
-
-[📥 Yazının PDF Versiyonu](/pdf/akp-kriminalizasyon-ve-kampus-hapishaneler-cumhuriyeti.pdf)
-
-[🇩🇪 Yazının Almanca Versiyonu](/de/yazilar/die-akp-und-der-strafvollzug-kriminalisierung-und-die-republik-der-gefangniscampus/)
-
-[🇬🇧 **Yazının İngilizce Versiyonu**](/en/yazilar/akp-criminalization-and-the-republic-of-campus-prisons/)

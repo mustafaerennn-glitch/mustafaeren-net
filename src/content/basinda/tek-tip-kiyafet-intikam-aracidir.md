@@ -10,7 +10,7 @@ featuredImage: ./_images/tek-tip-kiyafet-intikam-aracidir-featured.webp
 featuredImageAlt: ''
 ---
 
-[Duvar](https://www.gazeteduvar.com.tr/gundem/2017/08/29/tek-tip-kiyafet-intikam-aracidir) - Ahmet Külsoy - 29 Ağustos 2017
+**Ahmet Külsoy**
 
 **DUVAR -** "Şimdi bunlara tek tip elbise getiriyoruz, fakat bu tek tip elbise renk olarak badem var ya badem içinin koyusu bir renk olacak. İki tip olacak . Bir tulum olacak, bir de ceket pantolon olacak. Bunların bir kısmı diyelim ki darbeciler tulum giyecek, diğerleri yanı teröristeler ceket pantolon giyecek. Artık bundan sonra istedikleri gibi giyinip gelme yok. Bunlar bu şekilde tüm dünyaya tanıtılacak. Tek tip konusunda , arkadaşlar çalışmalarını hızlandırıyor 70 bin civarında bir kıyafet hazırlanacak. Kıyafetler yargılama sürecinde giyilecek"
 
@@ -20,7 +20,7 @@ Tek tip kıyafet uygulaması Cumhurbaşkanı Recep Tayyip Erdoğan'ın bu açık
 
 İnsan Hakları Derneği İstanbul Şube Başkanı Gülseren Yoleri, "Tek tip elbise mahpusun tüm kişilik haklarını gasp eden, hem fiziki hem manevi varlığını yok etmeyi amaç edinmiş, sistemli bir işkence’ derken, Ceza İnfaz Sisteminde Sivil Toplum Derneği Yönetim Kurulu Başkanı Mustafa Eren "Tek tip elbisenin, hukuki, sosyolojik, psikolojik, insanı vicdanı açıdan savunulacak tarafı yoktur. Masumiyet karinesinin ihlali olduğu kişiyi kriminalize etmek için kullanıldığı kişiliksizleştirmenin aracı olduğu aşikar" ifadesini kullanıyor.
 
-**'ERDOĞAN'IN KULLANDIĞI İFADELER İNTİKAMCI'**
+### 'Erdoğan'ın kullandığı ifadeler intikamcı'
 
 Cumhurbaşkanın Erdoğan'ın 15 Temmuz'un yıldönümünde tek tip elbiseyi gündeme getirdiği konuşmada büyük bölümünün suçluluğu yargı kararıyla ispatlanmamış mahpuslar için kullandığı ‘Hain’, 'Kafalarınık kopartacağız’, 'Cezaevinin duvarları arkasında çürüyüp gidecekler’, 'Mahkemeye Guatanamo’da olduğu gibi tek tip elbise giyecekler' şeklindeki söylemlerin ‘intikamcı’ olduğunu belirten İHD İstanbul Şube Başkanı Gülseren Yoleri, şöyle dedi:
 
@@ -28,7 +28,7 @@ Cumhurbaşkanın Erdoğan'ın 15 Temmuz'un yıldönümünde tek tip elbiseyi gü
 
 ![](http://web.archive.org/web/20250521051150im_/https://www.gazeteduvar.com.tr/2017/08/gulserenyoleri.jpg)
 
-**ULUSLARARASI KURALLARA AYKIRI**
+### Uluslararası kurallara aykırı
 
 Yoleri, bu tür uygulamaların uluslararası hukuka aykırı olduğunu belirtirken şunları kaydetti: "1955 tarihli BM Minimum Cezaevi Standart Kuralları, 1973 tarihli Avrupa Konseyi Minimum Cezaevi Tretman Kuralları ve 1987 tarihli Avrupa Cezaevi Kuralları, 2016 tarihli revizyonla BM Mahkumlara Muamelede Standart Asgari Kurallar; ceza infazının intikam aracı olarak kullanılmayacağını söylüyor. Avrupa Ceza Kuralları ‘Özgürlükten yoksun bırakma insan onuruna saygılı olmanın gerektirdiği maddi ve manevi koşullara uygun olarak yapılmalıdır’ diyor."
 
@@ -36,17 +36,17 @@ Juliet Ash'ın "Parmaklıklar Ardında Giyim Kuşam: Suç Ögesi Olarak Hapishan
 
 "Avrupa İşkenceyi İzleme Komitesi’nin 2016 raporunun açıklanmasına iktidar izin vermedi. Kapasite üzerinde doluluğun yarattığı sorunlar nasıl aşılacak sorusu cevap bekliyor. Yetersizliği tartışılan Cezaevleri İzleme Kurulları'nın görevine KHK ile son verilmesi nedeniyle boşluğun nasıl doldurulacağı sorusu cevap bekliyor ve sorunlar devasa boyutlara ulaşmışken karşımıza tek tip elbise uygulaması çıkartılıyor."
 
-**'UZUN VADEDE HEP BAŞARISIZ OLDU'**
+### 'Uzun vadede hep başarısız oldu'
 
 İnsan hakları savunucuları olarak, mahpusların direnci ile karşılaşacağı bilinen tek tip elbise uygulaması nedeniyle doğacak sorunlardan kaygılı olduklarını kaydeden Yoleri, şunları dile getirdi: "Gerek önceki yıllarda yaşanan deneyimler gerekse uluslararası deneyimler bir işkence yöntemi olarak organize edilen tek tip elbise uygulamasının başlar başlamaz sorunlara neden olduğunu ancak uzun vadede başarısız bir uygulama olduğunu göstermektedir. Hükümet bütün bunları bile bile tek tip elbiseyi gündeme getirmiş olmakla çıkacak her sorunun sorumlusu olmayı peşinen kabul etmiştir. Dileğimiz o dur ki, kimsenin canı yanmadan hükümet bu uygulamadan vazgeçsin."
 
-**'TEK TİP ELBİSE AKIL TUTULMASIDIR'**
+### 'Tek tip elbise akıl tutulmasıdır'
 
 Ceza İnfaz Sisteminde Sivil Toplum Derneği Yönetim Kurulu Başkanı Mustafa Eren ise şunları söyledi: "Tek tip elbiseyi, üstelik de Guantanamo gibi tüm dünyanın eleştirilerine maruz kalmış bir örnek üzerinden meşrulaştırmaya çalışmak, akıl tutulmasıdır. Bu akıl tutulmasından Türkiye, çabuk kurtulacaktır."
 
 ![](http://web.archive.org/web/20250521051150im_/https://www.gazeteduvar.com.tr/2017/08/eren-5.jpg)
 
-**TEK TİP ELBİSE NEYİ HEDEFLER?**
+### Tek tip elbise neyi hedefler?
 
 Eren'in tek tip kıyafet elbise (TTE) ilişkin 8 madde halinde topladığı eleştirileri şöyle:
 

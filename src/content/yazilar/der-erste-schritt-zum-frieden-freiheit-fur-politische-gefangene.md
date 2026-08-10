@@ -15,8 +15,6 @@ featuredImageAlt: ''
 pdf: /pdf/der-erste-schritt-zum-frieden-freiheit-fur-politische-gefangene.pdf
 ---
 
-**_Bianet_** **– 14 Mai 2025**
-
 Die entschlossene Haltung der kurdischen Bewegung, die Waffen niederzulegen und sich selbst aufzulösen, hat nach Jahrzehnten des Konflikts – verursacht durch die Politik der Leugnung – in der Türkei die Möglichkeit eines neuen „Lösungs-“ oder „Friedensprozesses“ in verschiedenen gesellschaftlichen Kreisen wieder auf die Tagesordnung gebracht. Während einige diese Entscheidung als einen historischen Bruch bewerten, sehen andere darin eine Phase der Stille, die der Regierung Raum gibt, das politische Feld neu zu gestalten. So oder so bringt das daraus entstehende neue politische Klima Erwartungen mit sich, welche Schritte der Staat und die Regierung unternehmen werden.
 
 Eines der am meisten diskutierten Themen in diesem Zusammenhang ist die Freilassung politischer Gefangener – von denen Tausende seit über 30 Jahren inhaftiert sind – oder, anders ausgedrückt, die Frage einer „Amnestie“.[\[i\]](#_edn1) Obwohl Regierungsvertreter erklärt haben, dass eine allgemeine Amnestie nicht auf der Tagesordnung stehe, wurde angedeutet, dass begrenzte Änderungen im Strafvollzugssystem möglich seien.[\[ii\]](#_edn2) Doch in der Türkei – insbesondere während der AKP-Ära – sind Reformen des Strafvollzugs nicht bloß technische Anpassungen, sondern Praktiken mit tiefgreifender politischer Bedeutung geworden, die als Werkzeuge diskriminierender und selektiver Politiken dienen.
@@ -86,11 +84,5 @@ Hürriyet. (2025, 11. Mai). _Justizminister Yılmaz Tunç äußert sich zum 10. 
 
 Kepenek, E. (2024, 23. August). _Wie funktionieren die Gefängnisverwaltungs- und Beobachtungsausschüsse, die die Freilassung von İlhan Sami Çolak verhinderten?_ Bianet. Zugriff: 13. Mai 2025.  
 [https://bianet.org/haber/ilhan-sami-comakin-tahliyesini-engelleyen-cezaevi-idare-kurullari-nasil-calisiyor-298913](https://bianet.org/haber/ilhan-sami-comakin-tahliyesini-engelleyen-cezaevi-idare-kurullari-nasil-calisiyor-298913)
-
-[📥 **PDF Herunterladen**](/pdf/der-erste-schritt-zum-frieden-freiheit-fur-politische-gefangene.pdf)
-
-[🔗 **Türkische Version**](/yazilar/barisin-ilk-adimi-siyasi-mahpuslara-ozgurluk/)
-
-[🔗 **Englische Version**](/en/yazilar/peace-freedom-for-political-prisoners/)
 
 [🔗 Bianet (Original)](https://bianet.org/yazi/barisin-ilk-adimi-siyasi-mahpuslara-ozgurluk-307427)

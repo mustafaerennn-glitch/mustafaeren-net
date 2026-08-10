@@ -10,7 +10,7 @@ featuredImage: ./_images/ayaktasin-iyi-gorunuyorsun-featured.webp
 featuredImageAlt: ''
 ---
 
-**HASTA MAHPUSA TIBBİ DEĞERLENDİRME**
+### Hasta mahpusa tıbbi değerlendirme
 
 "Ayaktasın, İyi Görünüyorsun"
 

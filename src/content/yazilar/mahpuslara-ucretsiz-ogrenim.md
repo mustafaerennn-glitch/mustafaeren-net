@@ -171,7 +171,7 @@ Bu konuda üzerinde önemle durulması gereken bir başka nokta da, hem öğreni
 
 Mahpusların öğrenim hakları önündeki engeller kaldırılmalı, ücretsiz, koşula bağlı olmaksızın eğitim görebilmeleri teminat altına alınmalı. (ME/AS)
 
-**KAYNAKÇA**
+**Kaynakça**
 
 (1) "Öğrenim", "öğretim" ve "eğitim" kelimeleri hem kanunlar ve genelgeler gibi resmi belgelerde hem de araştırma vb. yazılarda birbirlerinin yerine kullanılabilmektedir. Ancak bu terimler arasında farklar söz konusudur. "Eğitim" terimi TDK Sözlük'te "Çocukların ve gençlerin toplum yaşayışında yerlerini almaları için gerekli bilgi, beceri ve anlayışları elde etmelerine, kişiliklerini geliştirmelerine okul içinde veya dışında, doğrudan veya dolaylı yardım etme, terbiye" olarak açıklanmaktadır. Bu açıklamada da görüleceği gibi "eğitim", "Herhangi bir meslek, sanat veya iş için gerekli bilgi, beceri ve alışkanlıkların elde edilmesi amacıyla yapılan çalışma, tahsil" olarak açıklanan "öğrenim" teriminden daha kapsayıcıdır ve aynı zamanda öğrenimin içermediği yoğunlukta bir "terbiye eden" "eğiten" otoritesini kapsamaktadır. "Eğitim" teriminde "eğiten"den "eğitilen"e yönelen bir otorite söz konusudur. Hem bu yüzden hem de yazı sadece "öğrenim"e denk düşen okul faaliyetlerini kapsadığından yazı içerisinde eğitim yerine öğrenim, öğretim kelimelerinin kullanılması tercih edilmiştir.
 

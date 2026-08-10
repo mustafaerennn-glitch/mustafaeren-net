@@ -13,8 +13,6 @@ mecra: birgun
 featuredImage: ./_images/BirGun-gunesle-kose-kapmaca-20260805.png
 featuredImageAlt: 'BirGün''ün "Güneşle köşe kapmaca" başlıklı haberinden ekran görüntüsü.'
 ---
-**[BirGün](https://www.birgun.net/haber/gunesle-kose-kapmaca-727495) – 5 Ağustos 2026**
-
 > Komedyen Göktaş’ın mektubu, "kuyu tipi" cezaevlerini gündeme taşıdı. Hukukçular bu cezaevlerinin hukuka aykırı olduğunu vurgularken sosyolog Mustafa Eren, "Adına 'havalandırma' denilen bir kuyunun dibindesiniz" dedi.
 
 **Meral Danyıldız**

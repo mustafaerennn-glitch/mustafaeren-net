@@ -11,7 +11,7 @@ featuredImage: ./_images/yeni-doganindan-okul-cagindakilere-kadar-yuzlerce-cocuk
 featuredImageAlt: ''
 ---
 
-[Ahval](https://ahvalnews.com/tr/cezaevindeki-cocuklar/yeni-doganindan-okul-cagindakilere-kadar-yuzlerce-cocuk-mahpus) - Mehmet Hakkı Yılmaz - 2 Şubat 2018
+**Mehmet Hakkı Yılmaz**
 
 Türkiye’nin 669 çocuğu cezaevlerinde büyüyor. OHAL öncesi altı ayı dolmayan bebekler anneleriyle tutuklanamazken, artık bir ayı bile dolmayan bebekler anneleriyle birlikte cezaevlerinde.
 

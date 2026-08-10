@@ -10,8 +10,6 @@ featuredImage: ./_images/tuik-verileri-avrupa-komisyonunun-space-raporuna-karsi-
 featuredImageAlt: ''
 ---
 
-## Açık Radyo - 24 Kasım 2021
-
 # "Türkiye ucuzluyor ve yabancı yatırımlarla ihracatın artacağına dair bir akıl yürütülüyor" Cengiz Aktar, Nereye Doğru’nun bu haftaki bölümünde, Türkiye, Avrupa ve Orta Doğu’daki son gelişmelere yer verdi.
 
 [Nereye Doğru: 24 Kasım 2021](https://acikradyo.com.tr/turkiye-ucuzluyor-ve-yabanci-yatirimlarla-ihracatin-artacagina-dair-bir-akil-yurutuluyor)

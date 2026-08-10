@@ -10,7 +10,7 @@ featuredImage: ./_images/lgbtilere-ozel-cezaevi-tecrit-mi-guvenlik-mi-featured.w
 featuredImageAlt: ''
 ---
 
-[BBC Türkçe](https://www.bbc.com/turkce/haberler/2014/04/140417_lgbt_ozel_hapishane) - Şafak Timur - 19 Nisan 2014
+**Şafak Timur**
 
 **Adalet Bakanlığı, lezbiyen, gay, biseksüel, transeksüel ve interseks (LGBTİ) bireyler için ayrı bir hapishane açmayı planlıyor.**
 

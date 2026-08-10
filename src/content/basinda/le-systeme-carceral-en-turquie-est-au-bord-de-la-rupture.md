@@ -10,8 +10,6 @@ featuredImage: ./_images/le-systeme-carceral-en-turquie-est-au-bord-de-la-ruptur
 featuredImageAlt: ''
 ---
 
-[RTS](https://www.rts.ch/info/monde/7922500-le-systeme-carceral-en-turquie-est-au-bord-de-la-rupture.html) - Modifié le 06 août 2016 à 10:59
-
 ![](./_images/le-systeme-carceral-en-turquie-est-au-bord-de-la-rupture-inline-1.webp)
 
 Manifestation devant la prison de Metris, à Istanbul. \[Keystone\]

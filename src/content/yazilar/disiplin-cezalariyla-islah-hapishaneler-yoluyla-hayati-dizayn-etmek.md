@@ -12,7 +12,7 @@ featuredImage: ./_images/disiplin-cezalariyla-islah-hapishaneler-yoluyla-hayati-
 featuredImageAlt: ''
 ---
 
-[Bianet](https://bianet.org/biamag/insan-haklari/246652-hapishaneler-yoluyla-hayati-dizayn-etmek) - 3 Temmuz 2021 _* Fotoğraf: Pexels_
+_* Fotoğraf: Pexels_
 
 Türkiye’de 2001 yılında, Avrupa Birliği’ne uyum yasaları kapsamında yapılan düzenlemelerin etkisiyle İnfaz Hakimlikleri kuruldu. Avrupa Toplulukları Komisyonu’nun hazırladığı “Türkiye’nin Avrupa Birliğine Katılım Sürecine İlişkin 2001 Yılı İlerleme Raporu”nda İnfaz Hakimliklerinin kuruluşu olumlu olarak değerlendirildi ve “Toplam 140 infaz hakimliği birimi oluşturulmaktadır. İnfaz hakimliği, hükümlüler ve tutuklulara yönelik eylemlere ve bu eylemlerle ilgili şikayetlerin değerlendirilmesine yönelik kararları almakla sorumludur.”[[1]](file:///C:/Users/hsb/Downloads/Disiplin%20Cezalar%C4%B1%20-%20Bianet.docx#_ftn1) sözleriyle bu kurumların asıl işlevi dile getirildi.
 

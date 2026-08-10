@@ -11,7 +11,7 @@ featuredImage: ./_images/en-buyuk-engel-iktidarin-kendisi-featured.webp
 featuredImageAlt: ''
 ---
 
-[Yeni Yaşam](https://yeniyasamgazetesi.com/en-buyuk-engel-iktidarin-kendisi/) – Gülcan Kılagöz – 3 Aralık 2018
+**Gülcan Kılagöz**
 
 **Türkiye’de yaklaşık 9 milyon engelli yurttaş bulunuyor. Cezaevlerinde ise son açıklamalara göre 248 engelli var. İktidarın engelli politikasını eleştiren HDP Milletvekili Musa Piroğlu, ‘AKP sorunu çözmek yerine bir bağımlılık ilişkisi yaratmayı tercih ediyor’ dedi**
 

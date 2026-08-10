@@ -10,7 +10,7 @@ featuredImage: ./_images/sentenced-to-death-in-turkish-jails-featured.webp
 featuredImageAlt: ''
 ---
 
-**[Hürriyet Daily News](http://www.hurriyetdailynews.com/opinion/melis-alphan/sentenced-to-death-in-turkish-jails-94834) – Melis Alphan - February 06, 2016**
+**Melis Alphan**
 
 The Justice Ministry recently announced that there are 387 inmates in Turkey’s prisons with serious illnesses. Of these inmates, 114 are suffering from cancer.  
   

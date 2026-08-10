@@ -10,7 +10,7 @@ featuredImage: ./_images/vatandasliktan-cete-uyeligine-ayca-soylemez-birgun-feat
 featuredImageAlt: ''
 ---
 
-[BirGün](https://www.birgun.net/makale/vatandasliktan-cete-uyeligine-367520) - Ayça Söylemez - 30 Kasım 2021
+**Ayça Söylemez**
 
 Hapishanelerdeki insan hakları ihlalleri çoğunlukla içeride olanı ya da yakınlarını ilgilendirirken, kimin neden hapishanede olduğuna dair bilgiler tüm toplumun fotoğrafını veriyor.
 

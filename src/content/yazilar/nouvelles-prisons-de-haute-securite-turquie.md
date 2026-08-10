@@ -16,8 +16,6 @@ featuredImage: ./_images/new-high-security-prisons-turkey-inline-7.webp
 featuredImageAlt: Vue aérienne de l'établissement pénitentiaire fermé de type S de Bodrum
 ---
 
-**Bianet – 1er octobre 2022**
-
 Depuis plusieurs années, de nouveaux « types » de prisons sont ouverts en Turquie dans une discrétion quasi totale, sans que l'opinion publique en soit informée. Pourtant, si l'on se souvient des périodes d'ouverture de la prison d'Eskişehir, qualifiée de « cercueil » par les prisonniers politiques, en 1991 et 1996, ou encore de la mise en service des prisons de type F fondées sur l'isolement cellulaire en 2000, un tel silence n'avait rien d'habituel. À l'époque, les prisonniers exprimaient leur opposition par des grèves de la faim et des jeûnes de la mort, tandis que la nature de ces nouveaux établissements faisait l'objet d'un débat public auquel participaient les organisations professionnelles, des intellectuels, des artistes et des responsables politiques.
 
 Aujourd'hui, l'existence de ces nouvelles prisons n'est connue qu'une fois celles-ci ouvertes, lorsque des prisonniers y sont transférés — ou, selon leurs termes, exilés —, qu'ils y subissent des mauvais traitements et tentent de les rendre publics. Le pouvoir ne juge même plus nécessaire d'informer l'opinion publique. Bien que trois nouveaux types de prisons de haute sécurité, désignés sous les appellations S, Y et « Haute sécurité »[1], aient été mis en service, aucune information officielle n'a été fournie concernant leurs caractéristiques architecturales ni le régime d'exécution des peines qui leur est propre. Les personnes concernées ou souhaitant s'informer sont ainsi contraintes de déposer des demandes d'accès à l'information ou de se contenter de renseignements fragmentaires circulant sur Internet, dont les sources demeurent souvent incertaines.
@@ -266,11 +264,5 @@ Türkiye İnsan Hakları ve Eşitlik Kurumu (TİHEK). (2019, août). _Denizli D 
 Türkiye İnsan Hakları ve Eşitlik Kurumu (TİHEK). (2022, 17 mai). _Diyarbakır D Tipi Kapalı Ceza İnfaz Kurumu Ziyareti_ (Rapport n° 2022/17). [https://www.tihek.gov.tr/upload/file_editor/2022/07/1658230366.pdf](https://www.tihek.gov.tr/upload/file_editor/2022/07/1658230366.pdf)
 
 Türk Tabipleri Birliği (TTB). (2000). _F Tipi Cezaevlerine İlişkin Türk Tabipleri Birliği Raporu_. [https://www.ttb.org.tr/eweb/rapor/f_tipi.html](https://www.ttb.org.tr/eweb/rapor/f_tipi.html)
-
-[🔗 Version turque](/yazilar/yeni-tip-hapishaneler-ve-toplumsal-muhalefete-gozdagi/)
-
-[🔗 Version anglaise](/en/yazilar/new-high-security-prisons-turkey/)
-
-[🔗 Version allemande](/de/yazilar/neue-hochsicherheits-gefaengnisse-tuerkei/)
 
 [🔗 Bianet (Original)](https://bianet.org/biamag/toplum/267878-yeni-tip-hapishaneler-ve-toplumsal-muhalefete-gozdagi)

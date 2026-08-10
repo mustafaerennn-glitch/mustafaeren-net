@@ -10,8 +10,6 @@ featuredImage: ./_images/iceride-baski-disarida-tek-tipe-tepki-buyuyor-featured.
 featuredImageAlt: ''
 ---
 
-[ANF](https://anfapimobile2.news/guncel/Iceride-baski-disarida-tek-tip-e-tepki-bueyueyor-101655) - 18 Oca 2018
-
 Bayburt M Tipi Cezaevi’nde kadın tutsaklara iletişim yasağı uygulandığı öğrenildi. Tutsak yakınlarının verdiği bilgilere göre, aralarında Bulanık Belediye Eşbaşkanı Figen Yaşar’ın da olduğu tutsaklara telefon ile görüşme, mektup ve faks gönderme yasağı konulduğu belirtilirken, yasağın tutsaklardan kaçını kapsadığı öğrenilemedi. Yasağın gerekçesi hakkında da bilgi edinilemedi.
 
 Öte yandan cezaevi yönetiminin ailelere verdiği bilgiye göre, söz konusu yasak 11 Şubat’a kadar sürecek.

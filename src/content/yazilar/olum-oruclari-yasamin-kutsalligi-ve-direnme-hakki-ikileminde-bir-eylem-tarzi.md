@@ -5,14 +5,14 @@ description: Açlık grevi, ölüm orucu kişinin kendi iradesiyle alınan karar
 topics:
   - olum-oruclari
   - mahpus
+translations:
+  - death-fasts-sanctity-of-life-right-to-resist
 publishDate: '2017-09-30'
 mecra: msgsu-sosyal-bilimler-dergisi
 featuredImage: ./_images/olum-oruclari-yasamin-kutsalligi-ve-direnme-hakki-ikileminde-bir-eylem-tarzi-featured.webp
 featuredImageAlt: ''
 pdf: /pdf/olum-oruclari-yasamin-kutsalligi-ve-direnme-hakki-ikileminde-bir-eylem-tarzi.pdf
 ---
-
-[MSGSÜ Sosyal Bilimler Dergisi](https://sosbildergi.msgsu.edu.tr/index.php/dergi-arsiv/31-15-sayi) - Cilt 1 Sayı 15 - Bahar 2017
 
 Özet
 
@@ -534,9 +534,5 @@ Yine 1989 Haziran’ında başlayan ve 1990 Şubat’ına kadar devam eden bir b
 [\[46\]](#_ftnref46) Ulus Baker, “Ölüm Orucu-Notlar”, Birikim, Sayı 88, Ağustos 1996, s. 33
 
 [\[47\]](#_ftnref47) Gandhi ve Thoreau, 2015, s. 62-63
-
-[📥  PDF’i İndir](/pdf/olum-oruclari-yasamin-kutsalligi-ve-direnme-hakki-ikileminde-bir-eylem-tarzi.pdf)
-
-[🔗  İngilizce Versiyon](/en/yazilar/death-fasts-sanctity-of-life-right-to-resist/)
 
 [🔗 MSGSÜ (Orijinal)](https://sosbildergi.msgsu.edu.tr/index.php/dergi-arsiv/31-15-sayi)

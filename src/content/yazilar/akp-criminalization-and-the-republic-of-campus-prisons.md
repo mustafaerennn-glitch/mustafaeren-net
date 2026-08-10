@@ -16,8 +16,6 @@ featuredImageAlt: ''
 pdf: /pdf/akp-criminalization-and-the-republic-of-campus-prisons.pdf
 ---
 
-[Bianet](https://bianet.org/yazi/akp-criminalization-and-the-republic-of-campus-prisons-306473) \- 15 April 2025
-
 The penal enforcement regime in Turkey has been transformed in the last 20 years not only by the increase in the number of prisoners but also by the ideological orientation behind this increase. Under AKP rule, prisons have transformed from being a “punitive” part of the criminal justice system into a mechanism of administration and social discipline. This new period, which started in the 1970s, was carried to a new phase with the opening of the Type-F prisons, and under AKP rule, it has been further scaled up and almost all of its characteristic features have become visible.\[1\]
 
 ## An explosion in the number of prisoners: From 50,000 to 400,000
@@ -94,8 +92,3 @@ Since the table also lists prisons that do not have their own directorate and ar
 
 \[6\] Image taken from Google Maps. Accessed Apr 13, 2025
 
-[📥 Download PDF Version](/pdf/akp-criminalization-and-the-republic-of-campus-prisons.pdf)
-
-[🔗 **Original article in Turkish**](/yazilar/barisin-ilk-adimi-siyasi-mahpuslara-ozgurluk/)
-
-[🔗 **German version of this article**](/de/yazilar/der-erste-schritt-zum-frieden-freiheit-fur-politische-gefangene/)

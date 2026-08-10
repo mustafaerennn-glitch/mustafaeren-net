@@ -41,6 +41,4 @@ This phrasing transparently discloses both the creative process and the technolo
   
 This policy text is drafted as a working proposal, with the aim of outlining ethical principles for AI-assisted content creation and advocating for the visibility of human labor in digital production. I consider the principles and approach outlined in this document to be essential components of ethical practice in all types of content.
 
-[🔗 Original article in Turkish](https://bianet.org/yazi/yapay-zeka-destekli-icerik-uretimi-uzerine-etik-politika-bir-tutum-ve-cagri-metni-306787)
-
 [🔗 Bianet (Original)](https://bianet.org/yazi/yapay-zeka-destekli-icerik-uretimi-uzerine-etik-politika-bir-tutum-ve-cagri-metni-306787)

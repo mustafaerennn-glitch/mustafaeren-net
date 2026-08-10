@@ -4,13 +4,13 @@ lang: tr
 description: Türkiye’deki hapishaneler, nötr ve standart yapılar gibi görünse de; gerçekte sağlıklı, Sünni, heteroseksüel, yetişkin Türk erkeklerinin ihtiyaçlarını…
 topics:
   - engelli-yasli-mahpuslar
+translations:
+  - prisoners-with-special-needs-in-turkish-prisons
 publishDate: '2014-05-18'
 mecra: teorik-bakis
 featuredImage: ./_images/ozel-ihtiyacli-mahpuslar-ve-turkiye-hapishaneleri-featured.webp
 featuredImageAlt: ''
 ---
-
-Teorik Bakış - Mayıs 2014 - Sayı 4
 
 **Mustafa Eren\***
 

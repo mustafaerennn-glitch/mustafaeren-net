@@ -11,8 +11,6 @@ featuredImage: ./_images/turkiyede-mahpus-olmak-ve-ozel-ihtiyaclari-olan-mahpusl
 featuredImageAlt: ''
 ---
 
-[Güncel Hukuk](http://www.guncelhukuk.com.tr/guncel-hukukta-bu-ay/temmuz-2016.html) – Temmuz 2016 / 7- 151
-
 Eva Tanz
 
 CİSST/TCPS Yönetim Kurulu Üyesi

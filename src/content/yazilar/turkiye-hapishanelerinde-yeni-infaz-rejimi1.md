@@ -10,8 +10,6 @@ featuredImage: ./_images/turkiye-hapishanelerinde-yeni-infaz-rejimi1-featured.we
 featuredImageAlt: ''
 ---
 
-**Duvar - Eylül 2014 - Mustafa Eren\***
-
 **Türkiye Hapishanelerinde Yeni İnfaz Rejimi\[1\]**
 
 Türkiye’de mahpuslar artık bir araya gelebildiği koğuşlardan ziyade “oda”larda tutuluyorlar. Günlük yaşamlarını kendilerinin programlayabilmesi bir yana “rehabilitasyon”, “iyileştirme”, “topluma yeniden kazandırma” gibi gerekçelerle onlar için yaşam programlanmaya çalışılıyor. İşte bu farklılık sistemsel bir değişiklik/dönüşüm sürecinin göstergesi. Bu dönüşümün asıl olarak 1970’lerde başladığı ve 2000 yılıyla beraber ise kendisini tamamen görünür kıldığı söylenebilir. Dönüşümün sistemsel olarak nitelendirebilmemizin birkaç dayanağı var. Öncelikli olarak mimari açıdan topyekün bir değişimin hedeflendiği ve bu yönde önemli adımlar atıldığını görebilmek mümkün. Ancak mimari dönüşüm, bir değişimi “sistemsel” olarak nitelendirmeye yetmez. Zaten dönüşümü “sistemsel” kılan asıl öğeyi bu mimari dönüşüm aracılığıyla mahpusların yaşantısına müdahalenin amaçlanması yani bir bütün olarak yeni bir “hapishane rejimi”nin hedeflenmesi oluşturmakta olduğu söylenebilir.

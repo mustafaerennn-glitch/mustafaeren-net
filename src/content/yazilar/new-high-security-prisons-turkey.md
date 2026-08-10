@@ -17,8 +17,6 @@ featuredImageAlt: Illustration of a high-security prison door and text describin
 pdf: /pdf/new-high-security-prisons-turkey.pdf
 ---
 
-**Bianet – 1 October 2022**
-
 In recent years, new types of prisons have been quietly opened in Turkey without any public announcement or transparency. This silence is unusual when compared to previous periods—such as the opening of Eskişehir Prison, described by political prisoners as a "coffin cell," in 1991 and 1996, or the introduction of the F-Type high-security prisons based on solitary confinement in 2000. Back then, prisoners protested through hunger strikes and death fasts, while professional associations, intellectuals, artists, and politicians sparked public debates over the nature of these new prisons. Today, however, the public only learns of new prisons once they are already operational—when prisoners are transferred or exiled there, subjected to ill-treatment, and attempt to make their voices heard. The government no longer bothers to inform the public. Although three new high-security prison types —designated as S, Y, and "High-Security"— have been introduced, there has been no official disclosure regarding their architectural features or the specific penal regimes they enforce.[\[i\]](#_edn1) Those concerned or curious are left to file Freedom of Information requests or rely on scattered, often unverifiable claims circulating online.
 
 Of course, there are several possible explanations for this recklessness on the part of the government—such as the weakness of democratic opposition, the near-total control over mainstream media, or the shifting nature and composition of the political prisoner population. But this is not the main focus of this article. Instead, it invites readers to reflect and discuss a central question: Why has the government felt the need to open dozens of new high-security prisons in three entirely new models over the past few years? In the early 2000s, the government opened 14 F-Type and 2 D-Type high-security prisons, but in the two decades that followed, no new high-security facilities were built. Even after the July 15 coup attempt, when tens of thousands were arrested on charges of being “FETÖ members,” the state did not feel compelled to build more of these prisons. So why now? What is driving the construction of these massive new high-security prisons with capacities in the thousands?
@@ -305,6 +303,3 @@ This version has been prepared for open access circulation. For citation, please
 *   **NNC News** (2022). “High-Security Prison in Burdur” (January 2, 2020). Accessed September 30, 2022. [https://www.nnchaber.com/burdurda-yuksek-guvenlikli-ceza-evi-5019432-haberi](https://www.nnchaber.com/burdurda-yuksek-guvenlikli-ceza-evi-5019432-haberi)
 *   **Turkish Medical Association (TTB)** (2000). _Report on F-Type Prisons_. [https://www.ttb.org.tr/eweb/rapor/f\_tipi.html](https://www.ttb.org.tr/eweb/rapor/f_tipi.html)
 
-[🔗 Turkish Version](/yazilar/yeni-tip-hapishaneler-ve-toplumsal-muhalefete-gozdagi/)
-
-[📥 Download PDF](/pdf/new-high-security-prisons-turkey.pdf)

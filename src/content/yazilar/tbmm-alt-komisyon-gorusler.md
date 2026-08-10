@@ -196,8 +196,6 @@ Bu görüşlerin, 2016’da olduğu gibi bugün de arkasında durduğumu vurgula
 Mustafa Eren  
 Zürih / 17 Mayıs 2025
 
-[📥 PDF’i İndir](/pdf/tbmm-alt-komisyon-gorusler.pdf)
-
 [⬇️ TBMM Tutanağı (PDF)](/pdf/tbmm-tutanak-kirac-eren.pdf)
 
 [🔗 TBMM Tutanağı (Web)](https://www5.tbmm.gov.tr/develop/owa/komisyon_tutanaklari.goruntule?pTutanakId=1546)

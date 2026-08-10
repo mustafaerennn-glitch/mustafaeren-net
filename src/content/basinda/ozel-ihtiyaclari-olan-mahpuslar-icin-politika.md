@@ -10,7 +10,7 @@ featuredImage: ./_images/ozel-ihtiyaclari-olan-mahpuslar-icin-politika-featured.
 featuredImageAlt: ''
 ---
 
-[Bianet](https://bianet.org/haber/ozel-ihtiyaclari-olan-mahpuslar-icin-politika-uretilmesi-gerek-143991) / Yüce Yöney - 30 Ocak 2013 (Güncelleme: 31 Ekim 2013)  
+**Yüce Yöney**  
 
 ![](https://static.bianet.org/system/uploads/1/images/000/045/062/original/hapishane_501.jpg)
 

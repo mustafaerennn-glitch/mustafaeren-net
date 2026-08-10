@@ -11,7 +11,7 @@ featuredImage: ./_images/bakanlik-bilgileri-hatali-yorumluyordunuz-kaldirdik-fea
 featuredImageAlt: ''
 ---
 
-Bianet: 16 Aralık 2020 _* Fotoğraf: Vural Yavaş / Pixabay_
+_* Fotoğraf: Vural Yavaş / Pixabay_
 
 Adalet Bakanlığı son iki yıldır en temel verileri [güncel verileri açıklamaktan dahi imtina ediyor](https://bianet.org/bianet/insan-haklari/234138-mahpus-sayisi-400-bin-i-gordu-mu-bakanlik-neden-aciklamiyor). Güncel verilerin açıklanmaması elbette bir tercih ve bu tercih Türkiye’de ceza infaz sistemleri, hapishaneler, insan hakları alanlarında çalışanların en temel verilerden dahi yoksun kalmasına yol açıyor.
 

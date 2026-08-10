@@ -274,4 +274,3 @@ Ja'fari
 
 [📄 Download PDF Version](https://www.academia.edu/129309088/Prisoners_with_Special_Needs_and_Turkey_s_Prisons_Built_for_Adult_Sunni_Healthy_Heterosexual_Turkish_Men)
 
-[🔗 Original article in Turkish](/yazilar/ozel-ihtiyacli-mahpuslar-ve-turkiye-hapishaneleri/)

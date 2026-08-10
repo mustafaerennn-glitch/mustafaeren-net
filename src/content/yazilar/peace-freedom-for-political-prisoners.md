@@ -16,8 +16,6 @@ featuredImageAlt: ''
 pdf: /pdf/peace-freedom-for-political-prisoners.pdf
 ---
 
-**[Bianet](https://bianet.org/yazi/barisin-ilk-adimi-siyasi-mahpuslara-ozgurluk-307427) – 14 May 2025**
-
 The Kurdish movement's decisive stance to lay down arms and dissolve itself has brought the possibility of a new “solution” or “peace” process back into the public agenda, following decades of conflict fueled by denialist state policies in Turkey. While some interpret this as a historic rupture, others see it as a phase of silence that creates room for the government to reshape the political landscape. Regardless of interpretation, this new political climate raises expectations about what steps the state and government will take.
 
 One of the most debated issues in this context is the release of political prisoners—thousands of whom have been held for over 30 years—or in other words, the issue of “amnesty.”[\[i\]](#_edn1) Although government officials have declared that a general amnesty is not on the agenda, they have indicated that limited amendments to the penal execution system could be possible.[\[ii\]](#_edn2) However, in Turkey—especially during the AKP era—penal execution reforms have not merely been technical adjustments; rather, they have become tools of discriminatory and selective policies with deep political implications.[\[iii\]](#_edn3)
@@ -82,11 +80,5 @@ Civil Society in the Penal System Association (CISST). (2016). _Our Thoughts on 
 Andal, H. (2025, April 17). _His Release Lasted Less Than a Day: Selçuk Kozağaçlı Sent Back to Prison_. Bianet. Retrieved May 13, 2025, from [https://bianet.org/haber/tahliyesi-bir-gunden-az-surdu-selcuk-kozagacli-hapse-gonderildi-306546](https://bianet.org/haber/tahliyesi-bir-gunden-az-surdu-selcuk-kozagacli-hapse-gonderildi-306546)
 
 Kepenek, E. (2024, August 23). _How Do Prison Administration Boards Operate? The Case of İlhan Sami Çolak_. Bianet. Retrieved May 13, 2025, from [https://bianet.org/haber/ilhan-sami-comakin-tahliyesini-engelleyen-cezaevi-idare-kurullari-nasil-calisiyor-298913](https://bianet.org/haber/ilhan-sami-comakin-tahliyesini-engelleyen-cezaevi-idare-kurullari-nasil-calisiyor-298913)
-
-[**📥 Download PDF**](/pdf/peace-freedom-for-political-prisoners.pdf)
-
-🔗 **Turkish Version**
-
-🔗 **German Version**
 
 [🔗 Bianet (Original)](https://bianet.org/yazi/barisin-ilk-adimi-siyasi-mahpuslara-ozgurluk-307427)

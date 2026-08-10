@@ -15,8 +15,6 @@ featuredImage: ./_images/barisin-ilk-adimi-siyasi-mahpuslara-ozgurluk-featured.w
 featuredImageAlt: ''
 ---
 
-**Bianet – 14 mai 2025**
-
 La décision du mouvement kurde de déposer les armes et de mettre fin à son existence organisationnelle a ravivé, dans différents secteurs de la société, l'idée d'un nouveau processus de « résolution » ou de paix après des décennies de conflit marquées par les politiques de déni. Pour certains, cette décision constitue une rupture historique ; pour d'autres, elle ouvre avant tout une période de silence permettant au pouvoir de redéfinir l'espace politique. Quoi qu'il en soit, le nouveau climat politique qui en résulte suscite des attentes quant aux initiatives que l'État et le gouvernement pourraient désormais prendre.
 
 Dans ce contexte, l'une des questions les plus débattues concerne la libération des prisonniers politiques — dont plusieurs milliers sont détenus depuis plus de trente ans —, ou, autrement dit, la possibilité d'une amnistie.[\[i\]](#_edn1) Si les représentants du gouvernement affirment qu'une amnistie générale n'est pas à l'ordre du jour, ils laissent néanmoins entendre que des modifications limitées du système d'exécution des peines pourraient être envisagées.[\[ii\]](#_edn2) En Turquie, toutefois, les réformes relatives à l'exécution des peines n'ont jamais constitué de simples ajustements techniques. En particulier sous les gouvernements de l'AKP, elles sont devenues des instruments de politiques sélectives et discriminatoires, porteurs d'une forte dimension politique.

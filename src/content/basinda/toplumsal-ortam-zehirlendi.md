@@ -10,7 +10,7 @@ featuredImage: ./_images/toplumsal-ortam-zehirlendi-featured.webp
 featuredImageAlt: ''
 ---
 
-[Cumhuriyet](http://www.cumhuriyet.com.tr/haber/turkiye/595336/_Toplumsal_ortam_zehirlendi_.html) - Pınar Öğünç - 5 Eylül 2016
+**Pınar Öğünç**
 
 ![](https://media.cumhuriyet.com.tr/Archive/2016/9/4/595336_resource/05BERIVAN-KORKUT-MUSTAFA-EREN-PINAR-SAY6.jpg)
 

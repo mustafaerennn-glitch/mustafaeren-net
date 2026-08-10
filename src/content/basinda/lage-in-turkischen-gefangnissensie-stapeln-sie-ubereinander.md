@@ -10,8 +10,6 @@ featuredImage: ./_images/lage-in-turkischen-gefangnissensie-stapeln-sie-ubereina
 featuredImageAlt: ''
 ---
 
-Spiegel - Samstag, **06.08.2016**
-
 **Schon vor dem Putschversuch waren die Gefängnisse in der Türkei überfüllt, jetzt droht das Justizsystem zu kollabieren. Menschenrechtler kritisieren prekäre Haftbedingungen und gewaltsame Übergriffe.**
 
 ![](./_images/lage-in-turkischen-gefangnissensie-stapeln-sie-ubereinander-inline-1.webp)

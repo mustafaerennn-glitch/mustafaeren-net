@@ -61,8 +61,3 @@ In the tables and graphs, data from Türkiye is also included to allow for compa
 
 [\[v\]](#_ednref5) As this article primarily focuses on EU member states, the evaluation of Türkiye has been kept relatively brief.
 
-[Download PDF Version](/pdf/migrants-refugees-prison-eu.pdf)
-
-[🔗 Original article in Turkish](/yazilar/multeci-ve-mahpus-olmak-abde-yabancilar-dort-kat-fazla-hapsediliyor/)
-
-[🔗 German version of this article](/de/yazilar/in-eu-landern-einwanderer-fluchtlinge-asylsuchende-und-gefangener-auslander-werden-viermal-haufiger-inhaftiert/)

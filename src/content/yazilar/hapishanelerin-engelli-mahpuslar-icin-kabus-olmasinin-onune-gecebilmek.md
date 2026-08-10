@@ -10,8 +10,6 @@ featuredImage: ./_images/hapishanelerin-engelli-mahpuslar-icin-kabus-olmasinin-o
 featuredImageAlt: ''
 ---
 
-[Engelliler Biz Platformu](https://www.engelliler.biz/forum/sakatlik-calismalari-inisiyatifi/128487-hapishanelerin-engelli-mahpuslar-icin-kabus-olmasinin-onune-gecebilmek.html) - 9 Mayıs 2013
-
 [Ceza İnfaz Sisteminde Sivil Toplum Derneği](http://www.cezaevindestk.org/) Koordinatörü [Mustafa EREN](http://www.mustafaeren.net/)
 
 Ceza İnfaz Sisteminde Sivil Toplum Derneği (CİSST) çatısı altında “Özel İhtiyaçları Olan Mahpuslar” adıyla bir çalışma gerçekleştirdik. Kasım 2012 ile Kasım 2013 tarihleri arasında bir yıl süren bu çalışma kapsamında sosyal bilimler literatüründe “dezavantajlı gruplar”, “hassas gruplar”, “kırılgan gruplar” olarak da adlandırılan ve “özel ihtiyaçları olan gruplar” olarak adlandırmanın daha doğru olduğunu düşündüğüm gruplardan dördüyle; LGBTİ, yaşlı, yabancı uyruklu ve engelli mahpuslarla ilgilendik.(1)
@@ -136,7 +134,7 @@ Engelli avukatlar, engelli ziyaretçiler ve engelli hapishane personeli de söz 
 
 “Özel İhtiyaçları Olan Mahpuslar Projesi” engelli mahpuslar konusunda ancak giriş niteliğinde bir çalışma olarak görülebilir ve yukarıda dile getirilen dört tespit hapishaneler ve erişilebilirlik konusunda ancak ilk sözler olabilir.(8) Bu çalışma, Adalet Bakanlığı’nın, Ceza ve Tevkifevleri Genel Müdürlüğü’nün söz konusu olan “özel ihtiyaçları olan mahpuslar” olduğunda sayısal verilerden dahi yoksun olduğunu göstermiştir. Bu nedenle gerekli birikime sahip olan engelli dernekleri, kurum ve kuruluşları, STÖ’leri hapishaneler ve erişilebilirlik konusunu da gündemlerine almalı ve her bir engel durumu için kendi standartlarını ortaya koymalı, engelli mahpusların bu ihtiyaçlarının karşılanması için “hak temelli” bir mücadele yürütebilmelidir. Adalet Bakanlığı’nın bugüne değin STÖ’lerin hapishanelere girmesi konusunda yeterince istekli davranmadığı açıktır. Bu duruma rağmen engelli STÖ’leri, hapishanelerde çalışma yapabilmek, atölyeler, seminerler düzenleyebilmek, izleme faaliyeti gerçekleştirebilmek için ısrarcı olabilmelidir. Bu olmadığı sürece gözlerden uzak olan, gözlerden uzak tutulan bu mekanların engelliler için birer “kabus” olmasının önüne geçebilmek mümkün olamayacaktır.(9)
 
-**NOTLAR:**
+**Notlar:**
 
 (1) Bir grubu dezavantajlı, hassas, kırılgan olarak nitelendirmek sorunu o grubun kendisine bedenine, kimliğine, kişiliğine, kültürüne odaklamaktadır. Hassaslığının, kırılganlığının, dezavantajının nedeni yine kendisidir bu söylem içinde. Oysa ki “özel ihtiyaçları olan gruplar” nitelendirmesi grubun varlığından da öte bir şekilde, hak temelli bir mücadele için gerekli kapıyı aralamakta ve dezavantajın, kırılganlığın, hassaslığın bir adım ötesine, nasıl giderilebileceğine işaret etmekte, bu ihtiyaçlar giderildiğinde ortada bir dezavantaj, hassaslık ve kırılganlık kalmayacağını söylemektedir. Bu nedenle “özel ihtiyaçları olan gruplar” ifadesi kanımca daha doğrudur ve özellikle de sivil toplum örgütlerinin kullanımı için ön açıcı olabilecektir.
 

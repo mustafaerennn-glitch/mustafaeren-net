@@ -10,8 +10,6 @@ featuredImage: ./_images/evolutions-du-regime-carceral-en-turquie-featured.webp
 featuredImageAlt: ''
 ---
 
-**[Pages de Gauche 179](https://pagesdegauche.ch/n-179-repression-et-resistances-en-turquie/) – 8 avril 2021**
-
 **Entretien avec Sarah Caunes et Mustafa Eren**
 
 **Évolutions du régime carcéral en Turquie.**

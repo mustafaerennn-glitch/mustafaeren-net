@@ -11,7 +11,7 @@ featuredImage: ./_images/mahkum-calisanlarin-sosyal-hak-hayali-featured.webp
 featuredImageAlt: ''
 ---
 
-[AGOS](https://www.agos.com.tr/tr/yazi/27235/mahkm-calisanlarin-sosyal-hak-hayali) / Ahmet Külsoy - 27.06.2022
+**Ahmet Külsoy**
 
 AHMET KÜLSOY
 

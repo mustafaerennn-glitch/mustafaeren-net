@@ -10,8 +10,6 @@ featuredImage: ./_images/outside-turkey-1914-children-officially-in-prison-featu
 featuredImageAlt: ''
 ---
 
-[Inside out Borders](https://insideoutborders.com/2014/07/11/outsideturkey-1914-children-officially-in-prison/) – 11 July 2014
-
 ΣΥΝΤΆΚΤΗΣ [INSIDEOUT BORDERS](https://insideoutborders.com/en/author/maria_lila/) · ΔΗΜΟΣΙΕΎΤΗΚΕ 11 ΙΟΥΛΊΟΥ 2014 · ΕΝΗΜΕΡΏΘΗΚΕ 11 ΙΟΥΛΊΟΥ 2014
 
 Responding to a parliamentarian inquiry of Pervin Buldan from HDP, Justice Minister Bekir Bozdağ said 1,914 children are in prison in Turkey.

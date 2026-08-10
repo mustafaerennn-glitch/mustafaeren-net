@@ -10,7 +10,7 @@ featuredImage: ./_images/prisoners-right-to-education-obstructed-through-statuto
 featuredImageAlt: ''
 ---
 
-[Bianet](https://bianet.org/haber/prisoners-right-to-education-obstructed-through-statutory-decree-180983) / Beyza Kural, 22.11.2016
+**Beyza Kural**
 
 ![](./_images/prisoners-right-to-education-obstructed-through-statutory-decree-inline-1.webp)
 

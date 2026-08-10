@@ -10,8 +10,6 @@ featuredImage: ./_images/mahpus-sayisi-400-bini-gordu-mu-bakanlik-neden-aciklami
 featuredImageAlt: ''
 ---
 
-[Bianet](https://bianet.org/bianet/insan-haklari/234138-mahpus-sayisi-400-bin-i-gordu-mu-bakanlik-neden-aciklamiyor) - 10 Kasım 2020
-
 _* Fotoğraf: Marko Lovric / Pixabay_
 
 Türkiye’de insan hakları, adalet, hapishaneler, suç, ceza vb. alanlarda gerek sosyal bilim çalışmaları yürütmek gerekse de hak savunuculuğu yapmak zordur. Üstelik de bu zorluğun var olması için çalışmalarınızın “eleştirel” olmasına gerek de yoktur. Bazı yapısal ve kurumsal problemler her bir çalışmayı “zor” kılabilmektedir. Adalet Bakanlığı’nın verileri paylaşmaktaki ketum tavrı da bu kurumsal problemlerin en önemlilerinden biridir.

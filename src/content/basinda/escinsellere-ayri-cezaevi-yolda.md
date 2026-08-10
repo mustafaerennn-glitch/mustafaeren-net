@@ -10,7 +10,7 @@ featuredImage: ./_images/escinsellere-ayri-cezaevi-yolda-featured.webp
 featuredImageAlt: ''
 ---
 
-**[Milliyet](http://www.milliyet.com.tr/escinsellere-ayri-cezaevi-yolda/gundem/detay/1866198/default.htm) - Önder Yılmaz - 13 Nisan 2014**
+**Önder Yılmaz**
 
 **Adalet Bakanı [Bekir Bozdağ](http://www.milliyet.com.tr/bekir-bozdag/), farklı cinsel eğilimleri olan hükümlü ve tutukluların barındırılması için müstakil bir [cezaevi](http://www.milliyet.com.tr/cezaevi/) yapımı için çalışma başlatıldığını açıkladı. Planlanan cezaevi LGBT bireylerin sosyal yaşamdan koparılacağı gerekçesiyle tepki topladı...**
 

@@ -10,8 +10,6 @@ featuredImage: ./_images/cezaevlerindeki-tutuklu-sayisi-260-bini-asti-featured.w
 featuredImageAlt: ''
 ---
 
-[Yeni Yaşam](https://yeniyasamgazetesi.com/cezaevlerindeki-tutuklu-sayisi-260-bini-asti/) – 24 Kasım 2018
-
 **“Hapsetmenin Alternatifleri” başlıklı konferansta konuşan Ceza İnfaz Sisteminde Sivil Toplum Derneği (CİSST) Yönetim Kurulu Üyesi Mustafa Eren, Türkiye cezaevlerindeki tutuklu sayısının 260 bini aştığını belirtti.**
 
 Ceza İnfaz Sisteminde Sivil Toplum Derneği (CİSST) ve Türkiye Hapishane Çalışma Merkezi’nin (TCPS) ortak düzenlediği “Hapsetmenin Alternatifleri” başlıklı uluslararası konferans Mimar Sinan Üniversitesi Bomonti Kampüsü’nde başladı. İki gün sürecek olan konferansa yurt içi ve yurt dışından çok sayıda akademisyen, yazar, araştırmacı ve aktivist katıldı.

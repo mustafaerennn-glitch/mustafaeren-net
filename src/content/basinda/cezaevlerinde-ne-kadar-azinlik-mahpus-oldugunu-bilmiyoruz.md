@@ -11,7 +11,7 @@ featuredImage: ./_images/cezaevlerinde-ne-kadar-azinlik-mahpus-oldugunu-bilmiyor
 featuredImageAlt: ''
 ---
 
-[Agos](http://www.agos.com.tr/tr/yazi/16147/cezaevlerinde-ne-kadar-azinlik-mahpus-oldugunu-bilmiyoruz) - Melek Demiral - 08.08.2016
+**Melek Demiral**
 
 **_Melek Demiral_**
 

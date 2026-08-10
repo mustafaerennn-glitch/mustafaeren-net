@@ -15,8 +15,6 @@ featuredImage: ./_images/simgesel-bir-saldiri-tek-tip-elbise-featured.webp
 featuredImageAlt: ''
 ---
 
-MUSTAFA EREN YAZDI
-
 [Simgesel Bir Saldırı: Tek Tip Elbise](https://m.bianet.org/biamag/toplum/189416-simgesel-bir-saldiri-tek-tip-elbise)
 
 Osmanlı'da gündeme gelmiş olsa da asıl uygulanmaya çalışıldığı süreç 12 Eylül darbe sürecindeki Türkiye olmuş ve siyasi mahpusların yoğun direnişleriyle karşılaştıktan sonra vazgeçilmiştir.

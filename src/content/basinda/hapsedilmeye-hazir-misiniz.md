@@ -10,7 +10,7 @@ featuredImage: ./_images/hapsedilmeye-hazir-misiniz-featured.webp
 featuredImageAlt: ''
 ---
 
-[Bianet](https://m.bianet.org/bianet/insan-haklari/156087-hapsedilmeye-hazir-misiniz) - Haluk Kalafat - 30.05.2014
+**Haluk Kalafat**
 
 Mustafa Eren yeni kitabı “Kapatılmanın Patolojisi”nde Osmanlı'dan Günümüze Hapishanenin Tarihi’ni anlatıyor. Kalkedon’dan yayınlanan çalışmanın en dikkat çekici bölümü, Mustafa Eren’in büyük bir emek vererek oluşturduğu “Suç Oranları ve Artan Mahpus Sayısı ile İlişkisi” başlığını taşıyor.
 

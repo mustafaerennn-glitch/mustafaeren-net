@@ -11,7 +11,7 @@ featuredImage: ./_images/cezaevinde-agir-hasta-featured.webp
 featuredImageAlt: ''
 ---
 
-[Al Jazeera Turk](http://www.aljazeera.com.tr/imzali-haberler/hasta-mahkum-1-cezaevinde-agir-hasta) – Murat Utku – 30 Ocak 2014
+**Murat Utku**
 
 Ağır hasta tutuklu ve hükümlülerin yaşadığı sorunlar zaman zaman gündeme geliyor ama tedavi süreçlerinden çok ölüm haberleriyle. Sivil Toplum Örgütlerine göre cezaevlerinde 550, Adalet Bakanlığı’na göre 334 ağır hasta var.
 

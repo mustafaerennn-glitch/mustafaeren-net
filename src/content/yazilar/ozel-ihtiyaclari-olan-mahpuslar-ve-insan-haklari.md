@@ -5,6 +5,8 @@ description: Bu metin, Birleşmiş Milletler’in “Özel İhtiyaçları Olan M
 topics:
   - engelli-yasli-mahpuslar
   - insan-haklari
+translations:
+  - prisoners-with-special-needs-and-human-rights
 publishDate: '2013-01-27'
 featuredImage: ./_images/ozel-ihtiyaclari-olan-mahpuslar-ve-insan-haklari-featured.webp
 featuredImageAlt: ''
@@ -37,4 +39,3 @@ Ceza İnfaz Sisteminde Sivil Toplum Derneği’nin (CİSST) kitabın çevirisini
 
 [🔗 **Elkitabının CİSST Baskısı (Tam Metin)**](https://cisst.org.tr/wp-content/uploads/2025/07/ozel-ihtiyaclara-sahip-mahpuslar-uzerine-el-kitabi.pdf)
 
-[**📥 Yazının PDF Versiyonu**](/pdf/ozel-ihtiyaclari-olan-mahpuslar-ve-insan-haklari.pdf)

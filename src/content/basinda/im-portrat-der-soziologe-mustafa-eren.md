@@ -10,9 +10,7 @@ featuredImage: ./_images/im-portrat-der-soziologe-mustafa-eren-featured.webp
 featuredImageAlt: ''
 ---
 
-[Perspektiven Studium](https://www.perspektiven-studium.ch/storytelling4/) 22.04.2022
-
-## IM PORTRÄT: DER SOZIOLOGE MUSTAFA EREN
+## Im Porträt: der Soziologe Mustafa Eren
 
 _von Sabine Zurschmitten_
 

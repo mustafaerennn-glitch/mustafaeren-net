@@ -10,8 +10,6 @@ featuredImage: ./_images/turquie-le-systeme-carceral-au-bord-de-la-rupture-featu
 featuredImageAlt: ''
 ---
 
-[Ouest France](https://www.ouest-france.fr/monde/turquie/turquie-le-systeme-carceral-au-bord-de-la-rupture-4404136) \- Publié le 05/08/2016 à 10:05
-
 ![](./_images/turquie-le-systeme-carceral-au-bord-de-la-rupture-inline-1.webp)
 
 En mars, la Turquie comptait 188 000 détenus, depuis le putsch, 12 000 personnes supplémentaires ont été placées en détention provisoire. | Reuters

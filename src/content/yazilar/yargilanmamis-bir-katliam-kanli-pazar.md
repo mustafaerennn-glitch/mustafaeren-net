@@ -11,8 +11,6 @@ featuredImage: ./_images/yargilanmamis-bir-katliam-kanli-pazar-featured.webp
 featuredImageAlt: ''
 ---
 
-BirGün – 16 Şubat 2014
-
 Tarihler 1969 Şubat’ını gösterdiğinde 6. Filo Türkiye’nin karasularına bir kez daha girecek ve Dolmabahçe’ye demirleyecektir. 6. Filo, o yıllarda ABD’nin Akdeniz’deki gezici karakolu olarak görev yapmaktadır. Amerikan donanmalarının Türkiye’nin karasularına ilk girişi 1946’yılında gerçekleşir. Türkiye’nin Washington Büyükelçisi Münir Ertegün yaşamını yitirdiğinde cenazesi Amerikan Missouri Zırhlısı ile Türkiye getirilir. Ertegün’ün cenazesi sadece bir bahanedir. Adeta bir panayıra hazırlanır gibi çalışmalar yapılır. Gezi İsyanı sırasında müezzininin sürgünüyle gündeme gelen Dolmabahçe Sarayı’nın hemen yanı başındaki Bezm-i Alem Valide Sultan Camii’nin minareleri arasına “Welcome” mahyası astırılır; Kız Kulesi’nin üzerine “Welcome Missouri” yazılır;PTT üzerinde Missouri’nin resmi olan özel seri pul bastırır; Tekel, Amerikan zırhlısıyla gelen her bir Amerikan askerine verilmek üzere, üzerinde ABD ve Türkiye bayraklarının yer aldığı, adı Missouri olan özel bir sigara hazırlatır. Hazırlıklar bununla da sınırlı değildir, boyası yapılan yerler arasında genelev de vardır. Genelevin boyanması da yeterli görülmez, genelevdeki seks işçisi kadınlar muayeneden geçirilirler ve sağlıklı oldukları teyit edilmiş olur. Tüm bu hazırlıklar Amerikan donanması ve Amerikan askerleri içindir.
 
 ![](./_images/yargilanmamis-bir-katliam-kanli-pazar-inline-1.webp) ![](./_images/yargilanmamis-bir-katliam-kanli-pazar-inline-2.webp) ![](./_images/yargilanmamis-bir-katliam-kanli-pazar-inline-3.webp)

@@ -11,8 +11,6 @@ featuredImage: ./_images/report-shows-hard-prison-conditions-for-lgbts-people-wi
 featuredImageAlt: ''
 ---
 
-[Hürriyet Daily News](http://www.hurriyetdailynews.com/report-shows-hard-prison-conditions-for-lgbts-people-with-disabilities-57690) – November 11, 2013
-
 A recent report has shown that prison conditions in Turkey are poor for LGBT individuals, people with disabilities and the elderly.  
   
 The Civil Society in the Penal System Foundation (CİSST) compiled its report titled “Project of Inmates with Special Needs,” after one year of research in three prisons, Ümraniye, Bakırköy and Maltepe, in Istanbul.  

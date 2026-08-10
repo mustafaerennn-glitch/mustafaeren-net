@@ -10,7 +10,7 @@ featuredImage: ./_images/the-trial-of-iihan-comak-in-istanbul-featured.webp
 featuredImageAlt: ''
 ---
 
-[Bedford Row International](http://9bri.com/the-trial-of-iihan-comak-in-istanbul/), October 6, 2016 By [Alexander Kay](http://9bri.com/author/gillian-higgins/)
+**Alexander Kay**
 
 ![](./_images/the-trial-of-iihan-comak-in-istanbul-inline-1.webp)
 

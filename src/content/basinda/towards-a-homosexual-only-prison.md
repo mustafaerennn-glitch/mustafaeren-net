@@ -10,8 +10,6 @@ featuredImage: ./_images/towards-a-homosexual-only-prison-featured.webp
 featuredImageAlt: ''
 ---
 
-[LGBTI News Turkey](https://lgbtinewsturkey.com/2014/04/14/towards-a-homosexual-only-prison/) - 13 April 2014
-
 Source: Damla Yur, “Eşcinsellere Ayrı Cezaevi Yolda” (“Towards Homosexual-Only Prisons”), _Milliyet,_ 13 April 2014, [http://gundem.milliyet.com.tr/escinsellere-ayri-cezaevi-yolda/gundem/detay/1866198/default.htm](http://gundem.milliyet.com.tr/escinsellere-ayri-cezaevi-yolda/gundem/detay/1866198/default.htm)
 
 **Minister of Justice Bekir Bozdağ declared that there is an initiation to establish a special prison to hold prisoners and detainees with alternative sexual orientations. The prison plan received negative reactions for the reason that it would alienate LGBT individuals from social life…**
