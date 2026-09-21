@@ -82,6 +82,9 @@ const yazilar = defineCollection({
       // yoksa 'contain' (kırpmadan sığdırır); 'fill' yalnızca kutuya tam oturması istenen
       // özel üretim görsellerde (ör. metin/kırpma hassasiyeti olmayan illüstrasyon) kullanılır
       featuredImageFit: z.enum(['contain', 'fill']).optional(),
+      // görselin altında görünür bir altyazı (ör. basın fotoğrafı açıklaması) gerektiğinde —
+      // yoksa görsel altyazısız gösterilir; featuredImageAlt ile karıştırılmamalı (o erişilebilirlik içindir)
+      featuredImageCaption: z.string().optional(),
       pdf: linkSchema.optional(),
       editorNote: z.string().optional(), // nadir/koşullu — arşiv/çeviri notu
     }),
@@ -97,6 +100,7 @@ const basinda = defineCollection({
       mecra: mecraRefRequired, // ZORUNLU — Basında'nın tamamı mecralı
       featuredImage: image(), // ZORUNLU
       featuredImageAlt: z.string(),
+      featuredImageCaption: z.string().optional(),
       editorNote: z.string().optional(),
       sources: z
         .array(
