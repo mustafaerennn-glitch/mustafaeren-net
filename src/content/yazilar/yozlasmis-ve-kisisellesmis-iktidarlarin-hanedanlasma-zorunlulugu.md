@@ -4,6 +4,8 @@ lang: tr
 description: Tek adam rejimlerinde yolsuzluk ve karşılıklı rehinlik ağının iktidarı kaybetmeyi nasıl bir varlık-yokluk sorununa dönüştürdüğünü ve veraset sorununun neden hanedanlaşmayı bir tercih değil zorunluluk haline getirdiğini tartışan bir yazı.
 topics:
   - hukuk-adalet-sistemi
+translations:
+  - the-dynastic-imperative-of-corrupt-and-personalized-regimes
 publishDate: '2026-09-23'
 featuredImage: ./_images/yozlasmis-ve-kisisellesmis-iktidarlarin-hanedanlasma-zorunlulugu-featured.webp
 featuredImageAlt: ''
