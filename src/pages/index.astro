@@ -70,21 +70,19 @@ const ogImage = await getImage({ src: profilFoto, width: 1200 });
   </section>
 
   <section class="section" style="margin-bottom: 2rem;">
-    <div class="project-card">
-      <div>
+    <div class="project-row">
+      <a class="project-card" href="https://kanlipazar.net" target="_blank" rel="noopener">
+        <span class="project-arrow" aria-hidden="true">↗</span>
         <p class="project-label">Proje</p>
         <p class="project-name">Kanlı Pazar</p>
         <p class="project-desc">Yaşayan dijital arşiv</p>
-      </div>
-      <a class="section-link" href="https://kanlipazar.net" target="_blank" rel="noopener">Git →</a>
-    </div>
-    <div class="project-card" style="margin-top: 0.75rem;">
-      <div>
+      </a>
+      <a class="project-card" href="https://sandiktankayyuma.net" target="_blank" rel="noopener">
+        <span class="project-arrow" aria-hidden="true">↗</span>
         <p class="project-label">Proje</p>
         <p class="project-name">Sandıktan Kayyuma</p>
         <p class="project-desc">Seçilmiş belediye başkanlarına müdahalenin tarihi</p>
-      </div>
-      <a class="section-link" href="https://sandiktankayyuma.net" target="_blank" rel="noopener">Git →</a>
+      </a>
     </div>
   </section>
 
@@ -250,15 +248,36 @@ const ogImage = await getImage({ src: profilFoto, width: 1200 });
     color: var(--text-accent);
     text-decoration: none;
   }
+  .project-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
   .project-card {
+    position: relative;
+    display: block;
     background: var(--surface-1);
     border-radius: 12px;
-    padding: 1.25rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-    flex-wrap: wrap;
+    padding: 1.25rem 2.5rem 1.25rem 1.25rem;
+    color: inherit;
+    text-decoration: none;
+    transition: background 0.15s ease;
+  }
+  .project-card:hover {
+    background: var(--surface-2, var(--surface-1));
+    filter: brightness(0.97);
+  }
+  .project-arrow {
+    position: absolute;
+    top: 1.1rem;
+    right: 1.1rem;
+    font-size: 14px;
+    color: var(--text-muted);
+  }
+  @media (max-width: 560px) {
+    .project-row {
+      grid-template-columns: 1fr;
+    }
   }
   .project-label {
     font-size: 12px;
