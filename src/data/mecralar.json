@@ -11,6 +11,7 @@
   { "id": "bbc-turkce", "ad": "BBC Türkçe", "url": "https://www.bbc.com/turkce", "yayinEki": "'de", "iyelikEki": "'nin" },
   { "id": "bedford-row-international", "ad": "Bedford Row International", "url": "https://9bri.com", "yayinEki": "'da", "iyelikEki": "'ın" },
   { "id": "bilim-ve-gelecek", "ad": "Bilim ve Gelecek", "url": "https://bilimvegelecek.com.tr", "yayinEki": "'te", "iyelikEki": "'in" },
+  { "id": "birikim", "ad": "Birikim", "url": "https://birikimdergisi.com", "yayinEki": "'de", "iyelikEki": "'in" },
   { "id": "birgun", "ad": "BirGün", "url": "https://www.birgun.net", "yayinEki": "'de", "iyelikEki": "'ün" },
   { "id": "cumhuriyet", "ad": "Cumhuriyet", "url": "https://www.cumhuriyet.com.tr", "yayinEki": "'te", "iyelikEki": "'in" },
   { "id": "duvar", "ad": "Duvar", "url": "https://www.gazeteduvar.com.tr", "yayinEki": "'da", "iyelikEki": "'ın" },
