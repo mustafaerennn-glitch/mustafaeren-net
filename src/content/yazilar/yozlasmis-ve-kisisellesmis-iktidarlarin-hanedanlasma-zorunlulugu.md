@@ -7,6 +7,7 @@ topics:
 translations:
   - the-dynastic-imperative-of-corrupt-and-personalized-regimes
 publishDate: '2026-09-23'
+seri: Hanedanlaşma Yazı Dizisi 1
 featuredImage: ./_images/yozlasmis-ve-kisisellesmis-iktidarlarin-hanedanlasma-zorunlulugu-featured.webp
 featuredImageAlt: ''
 featuredImageCaption: "Görsel GPT ile üretilmiştir."

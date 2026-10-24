@@ -77,6 +77,7 @@ const yazilar = defineCollection({
       publishDate: z.coerce.date(), // tam tarih (gün dahil)
       mecra: mecraRefOptional,
       // mecra yoksa: UI'da gri "Mustafaeren.net" rozeti gösterilir (bkz. mockup)
+      seri: z.string().optional(), // örn. "Hanedanlaşma Yazı Dizisi 1" — başlık üstünde etiket, ayrı kategori DEĞİL
       featuredImage: image(), // ZORUNLU (Yazılar'ın standart alanı, opsiyonel değil)
       featuredImageAlt: z.string(), // dekoratifse bilinçli olarak boş string kabul edilir
       // yoksa 'contain' (kırpmadan sığdırır); 'fill' yalnızca kutuya tam oturması istenen

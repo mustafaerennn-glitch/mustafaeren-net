@@ -5,6 +5,7 @@ description: How corruption and a "mutual hostage network" turn the loss of powe
 topics:
   - hukuk-adalet-sistemi
 publishDate: '2026-09-23'
+seri: Dynasticization Essay Series 1
 featuredImage: ./_images/the-dynastic-imperative-of-corrupt-and-personalized-regimes-featured.webp
 featuredImageAlt: ''
 featuredImageCaption: "Image generated with GPT."

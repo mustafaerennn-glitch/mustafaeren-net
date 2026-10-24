@@ -70,6 +70,8 @@ const ogImage = await getImage({ src: entry.data.featuredImage, width: 1200 });
 >
   <MecraRozeti mecra={mecra ? { ad: mecra.data.ad, url: mecra.data.url } : undefined} />
 
+  {entry.data.seri && <p class="seri">{entry.data.seri}</p>}
+
   <h1 class="title">{entry.data.title}</h1>
 
   <MetaCluster
@@ -98,6 +100,11 @@ const ogImage = await getImage({ src: entry.data.featuredImage, width: 1200 });
 </BaseLayout>
 
 <style>
+  .seri {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin: 0 0 6px;
+  }
   .title {
     font-size: 26px;
     line-height: 1.35;
