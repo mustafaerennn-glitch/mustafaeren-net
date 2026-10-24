@@ -4,6 +4,8 @@ lang: tr
 description: Nazarbayev’in damatlar ve kızı üzerinden kurmaya çalıştığı veraset düzeninin nasıl çöktüğünü, halefi Tokayev’in iktidarı ve Nazarbayev ailesinin dokunulmazlıklarını nasıl elinden aldığını ve şef değişse de düzenin neden aynı kaldığını tartışan bir yazı.
 topics:
   - hukuk-adalet-sistemi
+translations:
+  - a-failed-attempt-at-dynasticization-nazarbayevs-kazakhstan
 publishDate: '2026-10-24'
 seri: Hanedanlaşma Yazı Dizisi 2
 featuredImage: ./_images/basarisiz-bir-hanedanlasma-girisimi-nazarbayev-kazakistani-featured.webp
