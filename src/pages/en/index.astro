@@ -104,6 +104,12 @@ const ogImage = await getImage({ src: profilFoto, width: 1200 });
         <p class="project-name">Sandıktan Kayyuma</p>
         <p class="project-desc">{t.projeAciklamaKayyum}</p>
       </a>
+      <a class="project-card" href="https://nanikgames.com" target="_blank" rel="noopener">
+        <span class="project-arrow" aria-hidden="true">↗</span>
+        <p class="project-label">{t.projeEtiket}</p>
+        <p class="project-name">Nanik Games</p>
+        <p class="project-desc">{t.projeAciklamaNanik}</p>
+      </a>
     </div>
   </section>
 
@@ -271,15 +277,15 @@ const ogImage = await getImage({ src: profilFoto, width: 1200 });
   }
   .project-row {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 12px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
   }
   .project-card {
     position: relative;
     display: block;
     background: var(--surface-1);
     border-radius: 12px;
-    padding: 1.25rem 2.5rem 1.25rem 1.25rem;
+    padding: 1rem 2rem 1rem 1rem;
     color: inherit;
     text-decoration: none;
     transition: background 0.15s ease;
